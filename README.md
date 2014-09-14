@@ -1,7 +1,7 @@
 Swift Structures
 ====================
 
-This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called Swift. While theory of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With the Swift language now officially released, its general syntax should be familiar enough for most programmers to understand.  
+This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called <a href="http://developer.apple.com/swift" target="_blank">Swift</a>. While theory of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.  
 
 
 Audience
