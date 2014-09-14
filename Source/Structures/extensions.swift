@@ -1,0 +1,27 @@
+//
+//  extensions.swift
+//  SwiftStructures
+//
+//  Created by Wayne Bishop on 8/20/14.
+//  Copyright (c) 2014 Arbutus Software Inc. All rights reserved.
+//
+
+import Foundation
+
+
+
+extension String {
+    
+    ///compute the length of string
+    var length: Int {
+        return Array(self).count
+    }
+    
+    ///returns characters of a string up to a specified index
+    func substringToIndex(to: Int) -> String {
+        return self.substringToIndex(advance(self.startIndex, to))
+    }
+    
+}
+
+
