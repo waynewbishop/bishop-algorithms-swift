@@ -36,5 +36,5 @@ Getting Started
 + Example - An empty single-view application template
 + SwiftTests - Unit tests with XCTest Framework
 
-To run the project you'll need Xcode 6.0 GM Seed or later. Code for all data structures and algorthims can be copied directly into your own project. The project also includes a iOS single-view starting template.
+To run the project you'll need Xcode 6.0 GM Seed or later. Code for all algorthims can be copied directly into your own project. The project also includes a iOS single-view starting template.
 
