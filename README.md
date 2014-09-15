@@ -33,8 +33,12 @@ Getting Started
 --------------------
 
 Running Swift Structures requires Xcode 6.0 GM Seed or later. The directories are organized as follows:
-
 + Source - Code for all Swift data structures and algorithms
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
+
+Questions
+--------------------
+
+Have a question? Feel free to contact me on <a href="http://www.twitter.com/waynewbishop" target="_blank">Twitter</a> or <a href="http://www.waynewbishop.com/contact" target="_blank">online</a>.
 
