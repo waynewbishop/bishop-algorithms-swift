@@ -32,9 +32,9 @@ With plans to expand the list algorithms, developers are welcome to follow the p
 Getting Started
 --------------------
 
-+ Source - Code for all Swift data structures and algorthims
-+ Example - An empty single-view application template
-+ SwiftTests - Unit tests with XCTest Framework
+Running Swift Structures requires Xcode 6.0 GM Seed or later. The directories are organized as follows:
 
-To run the project you'll need Xcode 6.0 GM Seed or later. Code for all algorthims can be copied directly into your own project. The project also includes a iOS single-view starting template.
++ Source - Code for all Swift data structures and algorithms
++ Example - An empty iOS single-view application template
++ SwiftTests - Unit tests with XCTest Framework
 
