@@ -26,7 +26,7 @@ The project features code-level examples for the following items:
 + Dijkstra's Shortest Path
 + Heaps & Heapsort Operations
 
-With plans to expand the list algorithms, developers are welcome to follow the project through Github or online at www.waynewbishop.com/swift. As a collaborative open-source effort, I also welcome feedback and code-level contribution from others. 
+With plans to expand the list algorithms, developers are welcome to follow the project through Github or online at www.waynewbishop.com/swift. As a collaborative open-source effort, I also welcome feedback and code-level <a href="https://help.github.com/articles/be-social" target="_blank">contribution</a> from others. 
 
 
 Getting Started
