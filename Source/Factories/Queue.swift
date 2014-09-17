@@ -14,7 +14,7 @@ public class Queue<T> {
     
     
     //enqueue the specified object
-    func enQueue(var key: T) {
+    func enQueue(key: T) {
 
         
         //check for the instance

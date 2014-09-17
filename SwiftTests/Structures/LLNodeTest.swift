@@ -14,14 +14,13 @@ class LLNodeTest: XCTestCase {
     var testNode: LLNode<Int> = LLNode<Int>()
     
     //test a node instance
-    func testInit() {
+    func testInstance() {
         
         XCTAssertNotNil(testNode, "instance not initialized..")
         XCTAssertNil(testNode.key, "key not initialized..")
         XCTAssertNil(testNode.next, "next node propety not initialized..")
         XCTAssertNil(testNode.previous, "previous node propety not initialized..")
-    
     }
     
     
-} //end testcase
+}

@@ -11,9 +11,9 @@ import Foundation
 
 public class AVLTree<T: Comparable> {
     
-    private var key : T? = nil
-    private var left: AVLTree? = nil
-    private var right: AVLTree? = nil
+   var key: T? = nil
+   var left: AVLTree? = nil
+   var right: AVLTree? = nil
     
     
    private func printcode(object: T) {
