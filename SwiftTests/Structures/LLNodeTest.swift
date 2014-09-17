@@ -12,18 +12,21 @@ import XCTest
 class LLNodeTest: XCTestCase {
 
     
-    //test for nill values
-    func testInitalization() {
+    //test a node instance
+    func testInit() {
         
-        var testNode: LLNode<Int>! = LLNode<Int>()
+        var testNode: LLNode<Int> = LLNode<Int>()
         
-        XCTAssertNotNil(testNode, "...instance not initialized.")
-        XCTAssertNil(testNode.key, "..key not initialized.")
+        XCTAssertNotNil(testNode, "instance not initialized..")
+        XCTAssertNil(testNode.key, "key not initialized..")
         
-        if let nextNode = testNode.next {
-            XCTFail("..left node value not initialized")
+        if let nodeNext = testNode.next {
+            XCTFail("next node propety not initialized..")
         }
         
+        if let nodePrevious = testNode.previous {
+            XCTFail("previous node property not initialized..")
+        }
         
     }
     

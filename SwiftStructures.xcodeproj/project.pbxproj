@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA7B7C5219C8F5FE00D2E177 /* LLNodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C5119C8F5FE00D2E177 /* LLNodeTest.swift */; };
 		DA7B7C5319C8F67A00D2E177 /* LLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022219C567A40035F1A0 /* LLNode.swift */; };
+		DA7B7C5519C94C2F00D2E177 /* QNodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C5419C94C2F00D2E177 /* QNodeTest.swift */; };
+		DA7B7C5619C94C4800D2E177 /* QNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022119C567A40035F1A0 /* QNode.swift */; };
 		DAE001DF19C564720035F1A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE001DE19C564720035F1A0 /* AppDelegate.swift */; };
 		DAE001E119C564720035F1A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE001E019C564720035F1A0 /* ViewController.swift */; };
 		DAE001E419C564720035F1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE001E219C564720035F1A0 /* Main.storyboard */; };
@@ -49,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		DA7B7C5119C8F5FE00D2E177 /* LLNodeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNodeTest.swift; sourceTree = "<group>"; };
+		DA7B7C5419C94C2F00D2E177 /* QNodeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNodeTest.swift; sourceTree = "<group>"; };
 		DAE001D919C564720035F1A0 /* SwiftStructures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStructures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE001DD19C564720035F1A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE001DE19C564720035F1A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				DA7B7C5119C8F5FE00D2E177 /* LLNodeTest.swift */,
+				DA7B7C5419C94C2F00D2E177 /* QNodeTest.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -327,6 +331,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA7B7C5219C8F5FE00D2E177 /* LLNodeTest.swift in Sources */,
+				DA7B7C5619C94C4800D2E177 /* QNode.swift in Sources */,
+				DA7B7C5519C94C2F00D2E177 /* QNodeTest.swift in Sources */,
 				DA7B7C5319C8F67A00D2E177 /* LLNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
