@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 
 class FactoriesTest: XCTestCase {
-
+    
     let numberList : Array<Int> = [8, 2, 10, 9, 7, 5]
     
     
@@ -18,7 +18,7 @@ class FactoriesTest: XCTestCase {
         
         //create a new instance
         var linkedList: LinkedList<Int> = LinkedList<Int>()
-
+        
         
         //append list items
         for number in numberList {
@@ -53,3 +53,5 @@ class FactoriesTest: XCTestCase {
     }
     
 }
+
+

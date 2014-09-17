@@ -12,10 +12,9 @@ public class Queue<T> {
    
     private var top: QNode<T>! = QNode<T>()
     
-    
     //enqueue the specified object
     func enQueue(key: T) {
-
+        
         
         //check for the instance
         if (top == nil) {

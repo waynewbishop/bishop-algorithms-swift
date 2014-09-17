@@ -11,7 +11,7 @@ import XCTest
 
 class StructuresTest: XCTestCase {
 
-
+    
     func testLLNode() {
         var testNode: LLNode<Int> = LLNode<Int>()
         
