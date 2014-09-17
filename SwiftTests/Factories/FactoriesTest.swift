@@ -19,24 +19,36 @@ class FactoriesTest: XCTestCase {
         //create a new instance
         var linkedList: LinkedList<Int> = LinkedList<Int>()
 
+        
         //append list items
         for number in numberList {
             linkedList.addLink(number)
         }
-
         
         //print all the keys
         linkedList.printAllKeys();
         
         
+        if (linkedList.count != numberList.count) {
+            XCTFail("linked list count doesn't match number list..")
+        }
+        
         //note how the second parameter name is specified in the calling function
         linkedList.addLinkAtIndex(4, index: 3)
-        
         linkedList.printAllKeys()
+        
+        if (linkedList.count != numberList.count + 1) {
+            XCTFail("linked list addition at index failed..")
+        }
+        
         
         linkedList.removeLinkAtIndex(1)
         linkedList.printAllKeys()
 
+        if (linkedList.count != numberList.count) {
+            XCTFail("linked list count doesn't match number list..")
+        }
+        
         
     }
     
