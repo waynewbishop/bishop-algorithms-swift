@@ -114,22 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DA7B7C4F19C8F4D400D2E177 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				DA7B7C6519CA2C3500D2E177 /* FactoriesTest.swift */,
-			);
-			path = Factories;
-			sourceTree = "<group>";
-		};
-		DA7B7C5019C8F50B00D2E177 /* Structures */ = {
-			isa = PBXGroup;
-			children = (
-				DA7B7C6319CA284100D2E177 /* StructuresTest.swift */,
-			);
-			path = Structures;
-			sourceTree = "<group>";
-		};
 		DAE001D019C564720035F1A0 = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +157,8 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA7B7C4F19C8F4D400D2E177 /* Factories */,
-				DA7B7C5019C8F50B00D2E177 /* Structures */,
+				DA7B7C6519CA2C3500D2E177 /* FactoriesTest.swift */,
+				DA7B7C6319CA284100D2E177 /* StructuresTest.swift */,
 				DAE0020419C564C90035F1A0 /* Supporting Files */,
 			);
 			path = SwiftTests;

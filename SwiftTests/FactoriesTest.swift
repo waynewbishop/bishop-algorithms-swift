@@ -33,7 +33,8 @@ class FactoriesTest: XCTestCase {
             XCTFail("linked list count doesn't match number list..")
         }
         
-        //note how the second parameter name is specified in the calling function
+        
+        //insert a node at a specific index
         linkedList.addLinkAtIndex(4, index: 3)
         linkedList.printAllKeys()
         
@@ -50,7 +51,9 @@ class FactoriesTest: XCTestCase {
         }
         
         
-    }
+        
+    } //end function
+
     
 }
 
