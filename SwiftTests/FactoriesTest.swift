@@ -55,6 +55,87 @@ class FactoriesTest: XCTestCase {
     } //end function
 
     
+    func testInsertionSort() {
+        
+        var sortTest: Sorting = Sorting()
+        XCTAssertNotNil(sortTest, "sorting instance not created..")
+        
+        
+        //pass the list to be sorted
+        var resultList: Array<Int>! = sortTest.insertionSort(numberList)
+        
+        
+        //determine if the numbers are sorted
+        var x: Int = 0
+        for (x = 0; x < resultList.count; x++) {
+            
+            if ((x > 0) && (resultList[x] < resultList[x - 1])) {
+                XCTFail("numberlist items not in sorted order..")
+            }
+            else {
+                println("item \(resultList[x]) is sorted..")
+            }
+            
+            
+        } //end for
+        
+        
+        
+    } //end function
+    
+    
+    
+    func testBubbleSort() {
+        
+        
+        var sortTest: Sorting = Sorting()
+        XCTAssertNotNil(sortTest, "sorting instance not created..")
+        
+        
+        //pass the list to be sorted
+        var resultList: Array<Int>! = sortTest.bubbleSort(numberList)
+        
+        
+        //determine if the numbers are sorted
+        var x: Int = 0
+        for (x = 0; x < resultList.count; x++) {
+            
+            if ((x > 0) && (resultList[x] < resultList[x - 1])) {
+                XCTFail("numberlist items not in sorted order..")
+            }
+            else {
+                println("item \(resultList[x]) is sorted..")
+            }
+            
+            
+        } //end for
+        
+        
+        
+    } //end function
+
+    
+    
+    //invoke in-order travesal algorithm
+    func testAVLDepthTraversal() {
+        
+        //create a new instance
+        var avlTest: AVLTree<Int> = AVLTree<Int>()
+        XCTAssertNotNil(avlTest, "avl instance not created..")
+        
+        
+        //build the list
+        for number in numberList {
+                avlTest.addNode(number)
+        }
+
+        //check on this in the output
+        avlTest.processAVLDepthTraversal()
+        
+        
+    } //end function
+    
+    
 }
 
 

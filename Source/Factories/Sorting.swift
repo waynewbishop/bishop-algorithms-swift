@@ -10,14 +10,13 @@ import Foundation
 
 public class Sorting {
     
-   private var numberList : Array<Int> = [8, 2, 10, 9, 11, 1, 15]
     
     /* 
     insertion sort algorithm - rank set of random numbers lowest to highest by
     inserting numbers based on a sorted and unsorted side.
     */
     
-    public func insertionSort() {
+    public func insertionSort(var numberList: Array<Int>) -> Array<Int> {
         
         var x, y, key : Int
         
@@ -26,11 +25,6 @@ public class Sorting {
 
             //obtain a key to be evaluated
             key = numberList[x]
-          
-            
-            if (key == 1){
-                println("stop.")
-            }
             
             
             //iterate backwards through the sorted portion
@@ -47,13 +41,15 @@ public class Sorting {
                     //insert the number at the key position
                     numberList.insert(key, atIndex: y)
                     
-                    
                 }
                 
             }
             
             
         } //end for
+        
+        
+        return numberList
         
         
     } //end function
@@ -68,7 +64,7 @@ public class Sorting {
     right side of the set after the first iteration.
     */
     
-   public func bubbleSort() {
+    public func bubbleSort(var numberList: Array<Int>) -> Array<Int> {
         
 
         //establish the iteration counters
@@ -113,6 +109,7 @@ public class Sorting {
             
         } //end for
         
+        return numberList
  
     } //end function
     

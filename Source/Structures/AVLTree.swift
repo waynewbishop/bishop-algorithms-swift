@@ -8,6 +8,7 @@
 
 import Foundation
 
+/* An AVL Tree is another name for a binary search tree*/
 
 public class AVLTree<T: Comparable> {
     
@@ -72,6 +73,39 @@ public class AVLTree<T: Comparable> {
 
         
     } //end function
+    
+    
+    
+    //depth first search in-order traversal
+    func processAVLDepthTraversal() {
+        
+        
+        //check for a nil condition
+        if (self.key == nil) {
+            println("no key provided..")
+            return
+        }
+        
+        
+        //process the left side
+        if (self.left != nil) {
+            left?.processAVLDepthTraversal()
+        }
+        
+        println("the key is \(self.key!)")
+        
+        
+        //process the right side
+        if (self.right != nil) {
+            right?.processAVLDepthTraversal()
+        }
+
+        
+        
+    } //end function
+    
+        
+        
     
 
 } //end class

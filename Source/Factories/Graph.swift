@@ -23,7 +23,7 @@ public class SwiftGraph {
     
     
     //create a new vertex
-    func addVertex(key: String) -> Vertex {
+    func addVertex(#key: String) -> Vertex {
         
         
         //set the key
