@@ -16,6 +16,7 @@ public class SwiftGraph {
     private var canvas: Array<Vertex>
     public var isDirected: Bool
     
+    
     init() {
         canvas = Array<Vertex>()
         isDirected = true
@@ -41,7 +42,7 @@ public class SwiftGraph {
     
     
     //add edge to source vertex
-    func addEdge(source: Vertex, neighbor: Vertex, weight: Int) {
+    func addEdge(#source: Vertex, neighbor: Vertex, weight: Int) {
         
         
         //create a new edge

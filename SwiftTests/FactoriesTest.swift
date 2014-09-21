@@ -26,7 +26,7 @@ class FactoriesTest: XCTestCase {
         }
         
         //print all the keys
-        linkedList.printAllKeys();
+        linkedList.printAllKeys()
         
         
         if (linkedList.count != numberList.count) {
