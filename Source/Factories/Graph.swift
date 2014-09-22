@@ -116,6 +116,48 @@ public class SwiftGraph {
     
     
     
+    
+    
+    /* reverse the sequence of paths given the shortest path.
+       process analagous to reversing a linked list. */
+
+    func reverseShortestPath(var head: Path!, source: Vertex) -> Path! {
+        
+        if (head == nil) {
+            return nil;
+        }
+        
+        
+        var current: Path! = head
+        var prev: Path!
+        var next: Path!
+        
+        
+        while(current != nil) {
+            next = current.previous
+            current.previous = prev
+            prev = current
+            current = next
+        }
+        
+        
+        //append the source path to the sequence
+        var sourcePath: Path = Path()
+        
+        sourcePath.destination = source
+        sourcePath.previous = prev
+        sourcePath.total = nil
+        
+        head = sourcePath
+        
+        
+        return head
+        
+    }
+
+    
+    
+    
     //process Dijkstra's shortest path algorthim
     func processDijkstra(source: Vertex, destination: Vertex) -> Path? {
         
@@ -217,7 +259,6 @@ public class SwiftGraph {
         
     }
     
-
     
     
     ///an optimized version of Dijkstra's shortest path algorthim
@@ -296,6 +337,8 @@ public class SwiftGraph {
         
     }
     
+
+
     
     
 }

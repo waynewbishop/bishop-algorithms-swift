@@ -9,7 +9,10 @@
 import UIKit
 import XCTest
 
-/* unit test cases specific to graph algorithms */
+/* 
+   unit test cases specific to graph algorithms
+   to test your own graph, replace the vertices and edges.
+*/
 
 class GraphsTest: XCTestCase {
 
@@ -54,7 +57,6 @@ class GraphsTest: XCTestCase {
         neighborTest(vertexB, neighbor: vertexD)
         neighborTest(vertexB, neighbor: vertexC)
         neighborTest(vertexD, neighbor: vertexE)
-        
     }
     
     
@@ -71,52 +73,32 @@ class GraphsTest: XCTestCase {
         var shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
 
         
-        //reverse the sequence of the shortest path
-        self.reversePathSequence(shortestPath, source: sourceVertex)
+        XCTAssertNotNil(shortestPath, "shortest path not found..")
+        
+        
+        var reversedPath: Path! = Path()
+        var current: Path! = Path()
+
+        reversedPath = testGraph.reverseShortestPath(shortestPath, source: vertexA)
+        current = reversedPath
+
+        
+        println()
+        
+        //iterate and print each path sequence
+        while (current != nil) {
+                println("The path is : \(current.destination.key!) with a total of : \(current.total)..")
+                current = current.previous
+        }
+        
+        println()
+        
         
     }
+    
     
     
     //MARK: - Helper functions
-
-    
-    /* reverse the path shortest path sequence */
-    
-    func reversePathSequence(var head: Path!, source: Vertex) -> Path! {
-        
-        if (head == nil) {
-            return nil;
-        }
-        
-        
-        var current: Path! = head
-        var prev: Path! = Path()
-        var next: Path! = Path()
-        
-        
-        while(current != nil) {
-            next = current.previous
-            current.previous = prev
-            prev = current
-            current = next
-        }
-
-        
-        //append the source path to the sequence
-        var sourcePath: Path = Path()
-
-        sourcePath.destination = source
-        sourcePath.previous = prev
-        sourcePath.total = nil
-        
-        head = sourcePath
-        
-        
-        return head
-        
-    }
-    
-    
     
     
     /* helper function to check for neighbor membership */

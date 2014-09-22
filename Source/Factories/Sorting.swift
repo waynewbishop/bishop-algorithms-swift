@@ -16,7 +16,7 @@ public class Sorting {
     inserting numbers based on a sorted and unsorted side.
     */
     
-    public func insertionSort(var numberList: Array<Int>) -> Array<Int> {
+    func insertionSort(var numberList: Array<Int>) -> Array<Int> {
         
         var x, y, key : Int
         
@@ -64,7 +64,7 @@ public class Sorting {
     right side of the set after the first iteration.
     */
     
-    public func bubbleSort(var numberList: Array<Int>) -> Array<Int> {
+    func bubbleSort(var numberList: Array<Int>) -> Array<Int> {
         
 
         //establish the iteration counters
