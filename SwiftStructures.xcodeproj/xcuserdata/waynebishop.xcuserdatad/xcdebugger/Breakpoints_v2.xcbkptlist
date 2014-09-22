@@ -400,28 +400,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/GraphsTest.swift"
-            timestampString = "432953112.121978"
+            timestampString = "433032165.086214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "testBuildGraph()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftTests/GraphsTest.swift"
-            timestampString = "432953308.125418"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "testBuildGraph()"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "testVertexNeighbors()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

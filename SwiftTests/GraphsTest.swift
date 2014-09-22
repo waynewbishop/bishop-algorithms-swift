@@ -20,13 +20,14 @@ class GraphsTest: XCTestCase {
     var vertexC: Vertex!
     var vertexD: Vertex!
     var vertexE: Vertex!
-
     
-    //add the vertices to the graph
-    func testBuildGraph() {
+    
+    //called before each test invocation
+    override func setUp() {
+        super.setUp()
         
+        /* build the vertices */
         
-        //build the vertices
         vertexA = testGraph.addVertex(key: "A")
         vertexB = testGraph.addVertex(key: "B")
         vertexC = testGraph.addVertex(key: "C")
@@ -34,32 +35,93 @@ class GraphsTest: XCTestCase {
         vertexE = testGraph.addVertex(key: "E")
         
         
-        //connect the vertices with weighted edges
+        /* connect the vertices with weighted edges */
+        
         testGraph.addEdge(source: vertexA, neighbor: vertexD, weight: 4)
         testGraph.addEdge(source: vertexA, neighbor: vertexB, weight: 1)
         testGraph.addEdge(source: vertexB, neighbor: vertexD, weight: 5)
         testGraph.addEdge(source: vertexB, neighbor: vertexC, weight: 2)
         testGraph.addEdge(source: vertexD, neighbor: vertexE, weight: 8)
 
+    }
+    
+    
+    //validate neighbor association
+    func testVertexNeighbors() {
 
-        //validate neighbor association
-        if (neighborTest(vertexA, neighbor: vertexD) == false) {
-            XCTFail("\(vertexD.key!) is not neighbor of \(vertexA.key!)")
-        }
-        
-        if (neighborTest(vertexA, neighbor: vertexB) == false) {
-            XCTFail("\(vertexB.key) is not a neighbor of \(vertexA)")
-        }
-        
-        
+        neighborTest(vertexA, neighbor: vertexD)
+        neighborTest(vertexA, neighbor: vertexB)
+        neighborTest(vertexB, neighbor: vertexD)
+        neighborTest(vertexB, neighbor: vertexC)
+        neighborTest(vertexD, neighbor: vertexE)
         
     }
     
     
     
+    //return the shortest path based on two non-negative edge weights
+    func testDijkstra() {
+        
+        
+        var sourceVertex: Vertex = vertexA
+        var destinationVertex: Vertex = vertexE
+
+        
+        //return the optional shortest path
+        var shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
+
+        
+        //reverse the sequence of the shortest path
+        self.reversePathSequence(shortestPath, source: sourceVertex)
+        
+    }
+    
+    
+    //MARK: - Helper functions
+
+    
+    /* reverse the path shortest path sequence */
+    
+    func reversePathSequence(var head: Path!, source: Vertex) -> Path! {
+        
+        if (head == nil) {
+            return nil;
+        }
+        
+        
+        var current: Path! = head
+        var prev: Path! = Path()
+        var next: Path! = Path()
+        
+        
+        while(current != nil) {
+            next = current.previous
+            current.previous = prev
+            prev = current
+            current = next
+        }
+
+        
+        //append the source path to the sequence
+        var sourcePath: Path = Path()
+
+        sourcePath.destination = source
+        sourcePath.previous = prev
+        sourcePath.total = nil
+        
+        head = sourcePath
+        
+        
+        return head
+        
+    }
+    
+    
+    
+    
     /* helper function to check for neighbor membership */
     
-    func neighborTest(source: Vertex, neighbor: Vertex) -> Bool {
+    func neighborTest(source: Vertex, neighbor: Vertex) -> Bool! {
         
         //add unvisited vertices to the queue
         for e in source.neighbors {
@@ -68,7 +130,8 @@ class GraphsTest: XCTestCase {
             }
         }
         
-        return false
+        XCTFail("vertex \(neighbor.key!) is not a neighbor of vertext \(source.key!)")
+        return nil;
         
     }
   

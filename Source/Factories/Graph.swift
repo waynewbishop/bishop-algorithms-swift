@@ -116,8 +116,6 @@ public class SwiftGraph {
     
     
     
-    
-    
     //process Dijkstra's shortest path algorthim
     func processDijkstra(source: Vertex, destination: Vertex) -> Path? {
         
