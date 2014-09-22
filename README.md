@@ -29,6 +29,46 @@ The project features code-level examples for the following items:
 I plan to write further additional examples of algorithms and all developers are welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">www.waynewbishop.com/swift</a>. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="https://help.github.com/articles/be-social" target="_blank">contribution</a> from others. 
 
 
+Example
+--------------------
+
+```
+  /* graph traversal - breadth first search */
+  
+   func traverseGraphBFS(startingv: Vertex) {
+
+        //establish a new queue
+        var graphQueue: Queue<Vertex> = Queue<Vertex>()
+    
+    
+        //queue a starting vertex
+        graphQueue.enQueue(startingv)
+    
+        while(!graphQueue.isEmpty()) {
+            
+            //traverse the next queued vertex
+            var vitem = graphQueue.deQueue() as Vertex!
+            println("traversed vertex: \(vitem.key as String!)..")
+            vitem.visited = true
+            
+            
+            //add unvisited vertices to the queue
+            for e in vitem.neighbors {
+                if e.neighbor.visited == false {
+                    println("adding vertex: \(e.neighbor.key as String!) to queue..")
+                    graphQueue.enQueue(e.neighbor)
+                }
+            }
+            
+        } //end while
+    
+    
+        println("graph traversal complete..")
+    
+    
+    } //end function
+```
+
 Getting Started
 --------------------
 
