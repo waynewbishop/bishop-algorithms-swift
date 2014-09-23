@@ -11,9 +11,11 @@ import Foundation
 
 class SwiftStack<T> {
     
-    
     private var top: LLNode<T>! = LLNode<T>()
 
+    
+    //TODO: Add count computed property
+    
     
     //push an item onto the stack
     func push(var key: T) {

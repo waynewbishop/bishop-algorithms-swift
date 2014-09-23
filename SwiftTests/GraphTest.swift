@@ -14,7 +14,7 @@ import XCTest
    to test your own graph, replace the vertices and edges.
 */
 
-class GraphsTest: XCTestCase {
+class GraphTest: XCTestCase {
 
     var testGraph: SwiftGraph = SwiftGraph()
     

@@ -12,6 +12,10 @@ public class Queue<T> {
    
     private var top: QNode<T>! = QNode<T>()
     
+    
+    //TODO: Add count computed property
+    
+    
     //enqueue the specified object
     func enQueue(key: T) {
         

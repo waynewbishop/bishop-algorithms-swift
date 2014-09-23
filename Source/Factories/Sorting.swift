@@ -10,8 +10,43 @@ import Foundation
 
 public class Sorting {
     
+    var isKeyFound: Bool = false
     
-    /* 
+    
+    /*
+    binary search algorthim. Find the value at the middle index.
+    note the use of the tuple to organize the upper and lower search bounds.
+    */
+    
+    func binarySearch(var numberList: Array<Int>, key: Int, range:(imin: Int, imax: Int)) {
+    
+    
+        var midIndex: Double = round(Double((range.imin + range.imax) / 2))
+        var midNumber = numberList[Int(midIndex)]
+    
+    
+        //use recursion to reduce the possible search range
+        if (midNumber > key ) {
+            binarySearch(numberList, key: key, range: (range.imin, Int(midIndex) - 1))
+        
+    
+        //use recursion to increase the possible search range
+        } else if (midNumber < key ) {
+            binarySearch(numberList, key: key, range: (Int(midIndex) + 1, range.imax))
+            
+            
+        } else {
+            isKeyFound = true
+            println("value \(key) found..")
+        }
+        
+        
+    } //end function
+    
+
+
+    
+    /*
     insertion sort algorithm - rank set of random numbers lowest to highest by
     inserting numbers based on a sorted and unsorted side.
     */

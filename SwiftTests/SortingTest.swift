@@ -1,59 +1,51 @@
 //
-//  FactoriesTest.swift
+//  BinarySearchTest.swift
 //  SwiftStructures
 //
-//  Created by Wayne Bishop on 9/17/14.
+//  Created by Wayne Bishop on 9/23/14.
 //  Copyright (c) 2014 Arbutus Software Inc. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class FactoriesTest: XCTestCase {
+class SortingTest: XCTestCase {
     
     let numberList : Array<Int> = [8, 2, 10, 9, 7, 5]
+
+    
+    //MARK: - Binary Search Algorithm
+    
+
+    //test the binary search
+    func testBinarySearch() {
+        
+        
+        var sortTest: Sorting = Sorting()
+        var searchList: Array<Int> = Array<Int>()
+        XCTAssertNotNil(sortTest, "sorting instance not created..")
+        
+        
+        //populate the list with values
+        for number in 1...500 {
+            searchList.append(number)
+        }
+        
+        
+        //set the key and range (tuple)
+        sortTest.binarySearch(searchList, key: 182, range: (1, 500))
+        
+        //check the indicator
+        var isFound: Bool = sortTest.isKeyFound
+
+        XCTAssertTrue(isFound, "binary search key not found..")
+        
+    }
     
     
-    func testLinkedList() {
-        
-        //create a new instance
-        var linkedList: LinkedList<Int> = LinkedList<Int>()
-        
-        
-        //append list items
-        for number in numberList {
-            linkedList.addLink(number)
-        }
-        
-        //print all the keys
-        linkedList.printAllKeys()
-        
-        
-        if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
-        }
-        
-        
-        //insert a node at a specific index
-        linkedList.addLinkAtIndex(4, index: 3)
-        linkedList.printAllKeys()
-        
-        if (linkedList.count != numberList.count + 1) {
-            XCTFail("linked list addition at index failed..")
-        }
-        
-        
-        linkedList.removeLinkAtIndex(1)
-        linkedList.printAllKeys()
-
-        if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
-        }
-        
-        
-        
-    } //end function
-
+    
+    //MARK: Sorting Algorithms
+    
     
     func testInsertionSort() {
         
@@ -78,7 +70,6 @@ class FactoriesTest: XCTestCase {
             
             
         } //end for
-        
         
         
     } //end function
@@ -116,26 +107,4 @@ class FactoriesTest: XCTestCase {
 
     
     
-    //invoke in-order travesal algorithm
-    func testAVLDepthTraversal() {
-        
-        //create a new instance
-        var avlTest: AVLTree<Int> = AVLTree<Int>()
-        XCTAssertNotNil(avlTest, "avl instance not created..")
-        
-        
-        //build the list
-        for number in numberList {
-                avlTest.addNode(number)
-        }
-
-        //check on this in the output
-        avlTest.processAVLDepthTraversal()
-        
-        
-    } //end function
-    
-    
 }
-
-
