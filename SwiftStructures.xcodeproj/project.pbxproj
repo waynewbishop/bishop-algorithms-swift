@@ -16,7 +16,7 @@
 		DA7B7C5919CA0BCC00D2E177 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022319C567A40035F1A0 /* Vertex.swift */; };
 		DA7B7C5A19CA0BF300D2E177 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022419C567A40035F1A0 /* Edge.swift */; };
 		DA7B7C6219CA178900D2E177 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022519C567A40035F1A0 /* AVLTree.swift */; };
-		DA7B7C6419CA284100D2E177 /* StructuresTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C6319CA284100D2E177 /* StructuresTest.swift */; };
+		DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C6319CA284100D2E177 /* StructureTest.swift */; };
 		DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */; };
 		DA7BD6AF19CCED3A00DB2CB4 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021219C5677D0035F1A0 /* Graph.swift */; };
 		DA7BD6B019CCED6D00DB2CB4 /* PathHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021619C5677D0035F1A0 /* PathHeap.swift */; };
@@ -76,7 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA7B7C6319CA284100D2E177 /* StructuresTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructuresTest.swift; sourceTree = "<group>"; };
+		DA7B7C6319CA284100D2E177 /* StructureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureTest.swift; sourceTree = "<group>"; };
 		DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTest.swift; sourceTree = "<group>"; };
 		DAD971AB19D1F86300C133C9 /* SortingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortingTest.swift; sourceTree = "<group>"; };
 		DAD971AD19D222E300C133C9 /* LinkedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedTest.swift; sourceTree = "<group>"; };
@@ -167,11 +167,11 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */,
 				DAD971B019D2232400C133C9 /* AVLTest.swift */,
 				DAD971AD19D222E300C133C9 /* LinkedTest.swift */,
 				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,
-				DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */,
-				DA7B7C6319CA284100D2E177 /* StructuresTest.swift */,
+				DA7B7C6319CA284100D2E177 /* StructureTest.swift */,
 				DAE0020419C564C90035F1A0 /* Supporting Files */,
 			);
 			path = SwiftTests;
@@ -352,7 +352,7 @@
 				DA7BD6B119CCED7A00DB2CB4 /* Queue.swift in Sources */,
 				DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */,
 				DA34572C19CA3EE800DC871F /* LinkedList.swift in Sources */,
-				DA7B7C6419CA284100D2E177 /* StructuresTest.swift in Sources */,
+				DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */,
 				DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */,
 				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,
 				DA7B7C5619C94C4800D2E177 /* QNode.swift in Sources */,

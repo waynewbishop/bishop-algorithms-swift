@@ -61,6 +61,7 @@ class GraphTest: XCTestCase {
     
     
     
+    
     //return the shortest path based on two non-negative edge weights
     func testDijkstra() {
         
@@ -79,7 +80,8 @@ class GraphTest: XCTestCase {
         var reversedPath: Path! = Path()
         var current: Path! = Path()
 
-        reversedPath = testGraph.reverseShortestPath(shortestPath, source: vertexA)
+        //reverse the sequence of paths
+        reversedPath = testGraph.reversePath(shortestPath, source: vertexA)
         current = reversedPath
 
         
@@ -93,16 +95,23 @@ class GraphTest: XCTestCase {
         
         println()
         
+    }
+
+    
+    
+    //test breadth-first search
+    func testBFSTraversal() {
+        testGraph.traverseGraphBFS(vertexA)
+        println()
         
     }
     
     
     
-    //MARK: - Helper functions
+    //MARK: - Helper function
+
     
-    
-    /* helper function to check for neighbor membership */
-    
+    //check for neighbor membership
     func neighborTest(source: Vertex, neighbor: Vertex) -> Bool! {
         
         //add unvisited vertices to the queue

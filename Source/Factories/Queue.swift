@@ -13,7 +13,31 @@ public class Queue<T> {
     private var top: QNode<T>! = QNode<T>()
     
     
-    //TODO: Add count computed property
+    //the number of items
+    var count: Int {
+        
+        
+        if (top.key == nil) {
+            return 0
+        }
+            
+        else  {
+            
+            var current: QNode<T> = top
+            var x: Int = 1
+            
+            
+            //cycle through the list of items
+            while (current.next != nil) {
+                current = current.next!;
+                x++
+            }
+            
+            return x
+            
+            }
+    }
+
     
     
     //enqueue the specified object
@@ -84,7 +108,6 @@ public class Queue<T> {
     }
     
 
-    
    //check for the presence of a value
    func isEmpty() -> Bool {
     
@@ -101,33 +124,6 @@ public class Queue<T> {
     
     
     
-    //determine the count of the queue
-    func count() -> Int {
-        
-        var x: Int = 0
-        
-        
-        //determine if the key or instance exist
-        let topitem: T? = self.top?.key
-        
-        if (topitem == nil) {
-            return 0
-        }
-        
-        
-        var current: QNode = top
-        
-        x++
-        
-        //cycle through the list of items to get to the end.
-        while (current.next != nil) {
-            current = current.next!;
-            x++
-        }
-        
-        return x
-        
-    }
     
     
 } //end class

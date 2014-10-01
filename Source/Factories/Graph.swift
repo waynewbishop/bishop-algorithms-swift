@@ -80,9 +80,10 @@ public class SwiftGraph {
 
     
     
-    //breadth first search
+   //breadth first search
    func traverseGraphBFS(startingv: Vertex) {
 
+    
         //establish a new queue
         var graphQueue: Queue<Vertex> = Queue<Vertex>()
     
@@ -94,17 +95,20 @@ public class SwiftGraph {
             
             //traverse the next queued vertex
             var vitem = graphQueue.deQueue() as Vertex!
-            println("traversed vertex: \(vitem.key as String!)..")
-            vitem.visited = true
             
             
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
                 if e.neighbor.visited == false {
-                    println("adding vertex: \(e.neighbor.key as String!) to queue..")
+                    println("adding vertex: \(e.neighbor.key!) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
+            
+            
+            vitem.visited = true
+            println("traversed vertex: \(vitem.key!)..")
+            
             
         } //end while
     
@@ -121,7 +125,7 @@ public class SwiftGraph {
     /* reverse the sequence of paths given the shortest path.
        process analagous to reversing a linked list. */
 
-    func reverseShortestPath(var head: Path!, source: Vertex) -> Path! {
+    func reversePath(var head: Path!, source: Vertex) -> Path! {
         
         if (head == nil) {
             return nil;

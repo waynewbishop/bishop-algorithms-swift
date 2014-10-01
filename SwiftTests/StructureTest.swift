@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class StructuresTest: XCTestCase {
+class StructureTest: XCTestCase {
 
     
     func testLLNode() {
@@ -92,5 +92,6 @@ class StructuresTest: XCTestCase {
         XCTAssertNil(testTree.right, "right property not initialized..")
         
     }
+
     
 }

@@ -12,7 +12,42 @@ import XCTest
 class LinkedTest: XCTestCase {
 
     
-    let numberList : Array<Int> = [8, 2, 10, 9, 7, 5]
+    //establish the test numbers
+    var numberList : Array<Int>!
+    
+    
+    override func setUp() {
+        super.setUp()
+        
+        numberList = [8, 2, 10, 9, 7, 5]
+    }
+
+    
+    
+    
+    func testAddLink() {
+        
+        //create a new instance
+        var linkedList: LinkedList<Int> = LinkedList<Int>()
+        
+        
+        //append list items
+        for number in numberList {
+            linkedList.addLink(number)
+        }
+        
+        //print all the keys
+        linkedList.printAllKeys()
+        
+        
+        if (linkedList.count != numberList.count) {
+            XCTFail("linked list count doesn't match number list..")
+        }
+        
+    }
+
+    
+    //TODO: insert a LLNode item for a given index
     
     
     func testLinkedList() {

@@ -12,7 +12,7 @@ import XCTest
 class AVLTest: XCTestCase {
  
     
-    let numberList : Array<Int> = [8, 2, 10, 9, 7, 5]
+    let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6]
     
     
     //invoke in-order travesal algorithm

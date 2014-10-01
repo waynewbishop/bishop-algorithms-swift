@@ -8,7 +8,7 @@
 
 import Foundation
 
-/* An AVL Tree is another name for a binary search tree*/
+/* An AVL Tree is another name for a balanced binary search tree*/
 
 public class AVLTree<T: Comparable> {
     
@@ -99,7 +99,6 @@ public class AVLTree<T: Comparable> {
         if (self.right != nil) {
             right?.processAVLDepthTraversal()
         }
-
         
         
     } //end function
