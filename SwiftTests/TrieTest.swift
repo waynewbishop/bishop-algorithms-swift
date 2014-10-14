@@ -30,7 +30,7 @@ class TrieTest: XCTestCase {
     
 
     /*
-    the findWord() algorithm will only return strings identified as words. For example, the prefix "Ba" has 3 children,
+    the findWord algorithm will only return strings identified as words. For example, the prefix "Ba" has 3 children,
     but only 2 are marked as final. Even though the phrase "Bal" is found in the trie, it is not
     identified as a word.
     */
@@ -47,7 +47,7 @@ class TrieTest: XCTestCase {
     
     
     /*
-    the findWord() algorthim will identify both parents and children identified as words
+    the findWord algorthim will identify both parents and children identified as words
     */
     
     func testFindWithWord() {
