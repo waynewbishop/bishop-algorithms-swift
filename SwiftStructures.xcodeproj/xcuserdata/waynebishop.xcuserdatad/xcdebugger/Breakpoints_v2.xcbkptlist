@@ -67,5 +67,51 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Factories/Trie.swift"
+            timestampString = "435013454.332891"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "findWord(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftStructures.Trie.findWithPrefix (SwiftStructures.Trie)(Swift.String) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.String&gt;&gt;"
+                  moduleName = "SwiftStructures"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/Trie.swift"
+                  timestampString = "435014127.439283"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "2092">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.Trie.findWithPrefix (SwiftTests.Trie)(Swift.String) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Swift.String&gt;&gt;"
+                  moduleName = "SwiftTests"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/Trie.swift"
+                  timestampString = "435014129.05066"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "2092">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

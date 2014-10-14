@@ -2,83 +2,149 @@
 //  Trie.swift
 //  SwiftStructures
 //
-//  Created by Wayne Bishop on 8/18/14.
+//  Created by Wayne Bishop on 10/14/14.
 //  Copyright (c) 2014 Arbutus Software Inc. All rights reserved.
 //
 
 import Foundation
 
 
-public class SwiftTrie {
+public class Trie {
     
-    var key: String!
-    var children: Array<SwiftTrie>
-    var isFinal: Bool
-    var level: Int
-
+    private var root: TrieNode!
     
-    init() {
-        self.key = nil
-        self.children = Array<SwiftTrie>()
-        self.isFinal = false
-        self.level = 0
-    }
-
     
-    //returns all content based on the prefix
-    func processPrefix(keyword: String) {
-        
+    init(){
+        root = TrieNode()
     }
     
-
-    ///builds a recursive tree of dictionary content
-    func addWord(keyWord: String) {
+    
+    //finds all words based on the prefix
+    func findWord(keyword: String) -> Array<String>! {
         
         
-        if (keyWord.length == 0){
-            return;
+        if (keyword.length == 0){
+            return nil;
         }
         
         
-        //check for base case
-        if (keyWord.length == self.level) {
-            self.isFinal = true
-            println("end of word reached!")
-            return;
-        }
+        var current: TrieNode = root
+        var searchKey: String!
+        var wordList: Array<String>! = Array<String>()
         
-
-        var childToUse: SwiftTrie! = nil
-        var searchKey: String = keyWord.substringToIndex(self.level + 1)
         
-        //iterate through the node children
-        for child in children {
-            if (child.key == searchKey) {
-                childToUse = child
-                break
+        while(keyword.length != current.level) {
+            
+            var childToUse: TrieNode!
+            var searchKey: String = keyword.substringToIndex(current.level + 1)
+            
+            
+           // println("current has \(current.children.count) children..")
+            
+            
+            //iterate through the node children
+            for child in current.children {
+                
+                if (child.key == searchKey) {
+                    childToUse = child
+                    break
+                }
+                
             }
+            
+            current = childToUse
+            
+            
+        } //end while
+        
+
+        
+        //include keyword if applicable
+        if ((current.key == keyword) && (current.isFinal)) {
+            wordList.append(current.key)
+        }
+
+        
+        //include only children that are words
+        for child in current.children {
+            
+            if (child.isFinal == true) {
+                wordList.append(child.key)
+            }
+            
         }
         
-            
-        //create a new node
-        if  (childToUse == nil) {
-            
-            childToUse = SwiftTrie()
-
-            childToUse.key = searchKey
-            childToUse.level = self.level + 1;
-            self.children.append(childToUse)
-            
-        }
         
-        
-        //add the remaining characters
-        childToUse.addWord(keyWord)
+        return wordList
 
+        
         
     } //end function
     
     
+    
+    
+    
+    ///builds a recursive tree of dictionary content
+    func addWord(keyword: String) {
+        
+        
+        if (keyword.length == 0){
+            return;
+        }
+
+        
+        var current: TrieNode = root
+        var searchKey: String!
+        
+        
+        while(keyword.length != current.level) {
+            
+            var childToUse: TrieNode!
+            var searchKey: String = keyword.substringToIndex(current.level + 1)
+            
+            
+            //println("current has \(current.children.count) children..")
+            
+            
+            //iterate through the node children
+            for child in current.children {
+                
+                if (child.key == searchKey) {
+                    childToUse = child
+                    break
+                }
+                
+            }
+            
+            
+            //create a new node
+            if  (childToUse == nil) {
+                
+                childToUse = TrieNode()
+                childToUse.key = searchKey
+                childToUse.level = current.level + 1;
+                current.children.append(childToUse)
+            }
+            
+            
+            current = childToUse
+            
+            
+        } //end while
+        
+        
+        
+        //add final end of word check
+        if (keyword.length == current.level) {
+            current.isFinal = true
+            println("end of word reached!")
+            return;
+        }
+        
+        
+        
+    } //end function
+    
+
 }
-
-

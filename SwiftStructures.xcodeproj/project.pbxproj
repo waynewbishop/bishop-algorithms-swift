@@ -21,6 +21,11 @@
 		DA7BD6AF19CCED3A00DB2CB4 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021219C5677D0035F1A0 /* Graph.swift */; };
 		DA7BD6B019CCED6D00DB2CB4 /* PathHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021619C5677D0035F1A0 /* PathHeap.swift */; };
 		DA7BD6B119CCED7A00DB2CB4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021419C5677D0035F1A0 /* Queue.swift */; };
+		DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA81469E19ED831B004516F9 /* TrieTest.swift */; };
+		DA8146A219ED84EE004516F9 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022619C567A40035F1A0 /* extensions.swift */; };
+		DA8146A319ED84F1004516F9 /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021719C5677D0035F1A0 /* TrieNode.swift */; };
+		DA8146A519ED905B004516F9 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8146A419ED905B004516F9 /* Trie.swift */; };
+		DA8146A619ED905B004516F9 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8146A419ED905B004516F9 /* Trie.swift */; };
 		DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AB19D1F86300C133C9 /* SortingTest.swift */; };
 		DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AD19D222E300C133C9 /* LinkedTest.swift */; };
 		DAD971B119D2232400C133C9 /* AVLTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971B019D2232400C133C9 /* AVLTest.swift */; };
@@ -34,7 +39,7 @@
 		DAE0021B19C5677D0035F1A0 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021419C5677D0035F1A0 /* Queue.swift */; };
 		DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021519C5677D0035F1A0 /* Stack.swift */; };
 		DAE0021D19C5677D0035F1A0 /* PathHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021619C5677D0035F1A0 /* PathHeap.swift */; };
-		DAE0021E19C5677D0035F1A0 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021719C5677D0035F1A0 /* Trie.swift */; };
+		DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021719C5677D0035F1A0 /* TrieNode.swift */; };
 		DAE0022719C567A40035F1A0 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022019C567A40035F1A0 /* Path.swift */; };
 		DAE0022819C567A40035F1A0 /* QNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022119C567A40035F1A0 /* QNode.swift */; };
 		DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022219C567A40035F1A0 /* LLNode.swift */; };
@@ -78,6 +83,8 @@
 /* Begin PBXFileReference section */
 		DA7B7C6319CA284100D2E177 /* StructureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureTest.swift; sourceTree = "<group>"; };
 		DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTest.swift; sourceTree = "<group>"; };
+		DA81469E19ED831B004516F9 /* TrieTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieTest.swift; sourceTree = "<group>"; };
+		DA8146A419ED905B004516F9 /* Trie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		DAD971AB19D1F86300C133C9 /* SortingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortingTest.swift; sourceTree = "<group>"; };
 		DAD971AD19D222E300C133C9 /* LinkedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedTest.swift; sourceTree = "<group>"; };
 		DAD971B019D2232400C133C9 /* AVLTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVLTest.swift; sourceTree = "<group>"; };
@@ -96,7 +103,7 @@
 		DAE0021419C5677D0035F1A0 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		DAE0021519C5677D0035F1A0 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		DAE0021619C5677D0035F1A0 /* PathHeap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathHeap.swift; sourceTree = "<group>"; };
-		DAE0021719C5677D0035F1A0 /* Trie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
+		DAE0021719C5677D0035F1A0 /* TrieNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieNode.swift; sourceTree = "<group>"; };
 		DAE0022019C567A40035F1A0 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		DAE0022119C567A40035F1A0 /* QNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNode.swift; sourceTree = "<group>"; };
 		DAE0022219C567A40035F1A0 /* LLNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNode.swift; sourceTree = "<group>"; };
@@ -167,6 +174,7 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA81469E19ED831B004516F9 /* TrieTest.swift */,
 				DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */,
 				DAD971B019D2232400C133C9 /* AVLTest.swift */,
 				DAD971AD19D222E300C133C9 /* LinkedTest.swift */,
@@ -197,13 +205,13 @@
 		DAE0021019C5673F0035F1A0 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				DA8146A419ED905B004516F9 /* Trie.swift */,
 				DAE0021119C5677D0035F1A0 /* LinkedList.swift */,
 				DAE0021219C5677D0035F1A0 /* Graph.swift */,
 				DAE0021319C5677D0035F1A0 /* Sorting.swift */,
 				DAE0021419C5677D0035F1A0 /* Queue.swift */,
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
-				DAE0021719C5677D0035F1A0 /* Trie.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 		DAE0021F19C567870035F1A0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				DAE0021719C5677D0035F1A0 /* TrieNode.swift */,
 				DAE0022019C567A40035F1A0 /* Path.swift */,
 				DAE0022119C567A40035F1A0 /* QNode.swift */,
 				DAE0022219C567A40035F1A0 /* LLNode.swift */,
@@ -330,7 +339,7 @@
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
 				DAE0021B19C5677D0035F1A0 /* Queue.swift in Sources */,
 				DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */,
-				DAE0021E19C5677D0035F1A0 /* Trie.swift in Sources */,
+				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DAE0021D19C5677D0035F1A0 /* PathHeap.swift in Sources */,
 				DAE0022A19C567A40035F1A0 /* Vertex.swift in Sources */,
 				DAE0022C19C567A40035F1A0 /* AVLTree.swift in Sources */,
@@ -338,6 +347,7 @@
 				DAE0022D19C567A40035F1A0 /* extensions.swift in Sources */,
 				DAE001DF19C564720035F1A0 /* AppDelegate.swift in Sources */,
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,
+				DA8146A519ED905B004516F9 /* Trie.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,
 				DAE0022819C567A40035F1A0 /* QNode.swift in Sources */,
@@ -353,9 +363,13 @@
 				DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */,
 				DA34572C19CA3EE800DC871F /* LinkedList.swift in Sources */,
 				DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */,
+				DA8146A619ED905B004516F9 /* Trie.swift in Sources */,
+				DA8146A219ED84EE004516F9 /* extensions.swift in Sources */,
 				DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */,
+				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
 				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,
 				DA7B7C5619C94C4800D2E177 /* QNode.swift in Sources */,
+				DA8146A319ED84F1004516F9 /* TrieNode.swift in Sources */,
 				DA7B7C6219CA178900D2E177 /* AVLTree.swift in Sources */,
 				DA26BCCF19CBA3D200C0903A /* Sorting.swift in Sources */,
 				DA7B7C5A19CA0BF300D2E177 /* Edge.swift in Sources */,
