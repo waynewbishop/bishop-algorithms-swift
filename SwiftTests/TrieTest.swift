@@ -18,6 +18,7 @@ class TrieTest: XCTestCase {
         super.setUp()
         
         XCTAssertNotNil(testTrie, "Trie instance not correctly intialized..")
+    
         
         //add words to data structure
         testTrie.addWord("Ball")
@@ -43,7 +44,7 @@ class TrieTest: XCTestCase {
         }
         
     }
-    
+
     
     
     /*
@@ -58,6 +59,28 @@ class TrieTest: XCTestCase {
         }
         
     }
+    
+    
+    //testing false search results
+    func testFindNoExist() {
+        
+        var keyword: String = "Barstool"
+        var wordList: Array<String>! = testTrie.findWord(keyword)
+        
+        
+        if (wordList == nil) {
+            println("keyword \(keyword) not found in trie..")
+        }
+        
+        else {
+            for word in wordList {
+                println("\(word) found in trie..")
+            }
+        }
+        
+
+        
+    } //end function
     
 
 }

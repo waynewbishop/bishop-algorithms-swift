@@ -39,27 +39,32 @@ public class Trie {
             var searchKey: String = keyword.substringToIndex(current.level + 1)
             
             
-           // println("current has \(current.children.count) children..")
+            println("looking for prefix: \(searchKey)..")
             
             
-            //iterate through the node children
+            //iterate through any children
             for child in current.children {
                 
                 if (child.key == searchKey) {
                     childToUse = child
+                    current = childToUse
                     break
                 }
                 
             }
             
-            current = childToUse
+ 
+            if (childToUse == nil) {
+                return nil
+            }
             
             
         } //end while
         
+        
 
         
-        //include keyword if applicable
+        //retrieve the keyword and any decendants
         if ((current.key == keyword) && (current.isFinal)) {
             wordList.append(current.key)
         }
@@ -85,7 +90,7 @@ public class Trie {
     
     
     
-    ///builds a recursive tree of dictionary content
+    //builds a recursive tree of dictionary content
     func addWord(keyword: String) {
         
         
