@@ -21,6 +21,7 @@ The project features code-level examples for the following items:
 + Bubble Sort
 + Generics
 + Binary Search Trees
++ Tries
 + Stacks & Queues
 + Graphs
 + Dijkstra's Shortest Path
