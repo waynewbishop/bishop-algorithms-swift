@@ -11,6 +11,7 @@ import Foundation
 
 
 extension String {
+  
     
     ///compute the length of string
     var length: Int {
@@ -21,6 +22,7 @@ extension String {
     func substringToIndex(to: Int) -> String {
         return self.substringToIndex(advance(self.startIndex, to))
     }
+
     
 }
 

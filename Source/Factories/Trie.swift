@@ -62,7 +62,6 @@ public class Trie {
         } //end while
         
         
-
         
         //retrieve the keyword and any decendants
         if ((current.key == keyword) && (current.isFinal)) {
