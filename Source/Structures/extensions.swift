@@ -22,6 +22,13 @@ extension String {
     func substringToIndex(to: Int) -> String {
         return self.substringToIndex(advance(self.startIndex, to))
     }
+    
+    
+    //return a character at a specific index
+    func characterAtIndex(position: Int) -> String {
+        return String(Array(self)[position])
+    }
+    
 
     
 }
