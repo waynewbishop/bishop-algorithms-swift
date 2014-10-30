@@ -10,17 +10,38 @@ import UIKit
 import XCTest
 
 class HashTest: XCTestCase {
-
-    var hashTable: HashTable = HashTable()
     
+    var listsize: Int!
+    var swiftTable: HashTable!
+
     
     override func setUp() {
         super.setUp()
+        
+        listsize = 25
+        swiftTable = HashTable(capacity: listsize)
     }
+
     
-    
+    //test the hash algorithm - add your own value to test
     func testCreateHash() {
-        hashTable.createHash("Dog")
+        
+        var hashValue: Int!
+        hashValue = swiftTable.createHash("Dog")
+        XCTAssertNotNil(hashValue, "test failed: no hash value detected..")
+        
+        if (hashValue != nil) {
+            println("the computed hash value is: \(hashValue)..")
+        }
+        
     }
+    
+
+    //test the addition of words to the hash table
+    func testAddWord() {
+        swiftTable.addWord("Wayne", lastname: "Bishop")
+        swiftTable.addWord("Wayne", lastname: "Bishop")
+    }
+    
 
 }

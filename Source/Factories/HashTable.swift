@@ -11,40 +11,84 @@ import Foundation
 
 class HashTable {
     
-    private var bucket: Array<HashNode>!
-    private var listsize: Int
+    private var bucket: Array<HashNode!>
+    
+    
+    //initialize the bucket with nil values
+    init(capacity: Int) {
+        self.bucket = Array<HashNode!>(count: capacity, repeatedValue:nil)
+        
+    }
 
     
-    init() {
-        self.bucket = Array<HashNode>()
-        self.listsize = 0
-    }
+    //add the key using the specified hash
+    func addWord(firstname: String, lastname: String) {
+        
+        var hashindex: Int!
+        var fullname: String!
+        
+        
+        //create a hashvalue using the complete name
+        fullname = firstname + lastname
+        hashindex = self.createHash(fullname)
+        
+        
+        var childToUse: HashNode = HashNode()
+        var head: HashNode!
+        
+        
+        childToUse.firstname = firstname
+        childToUse.lastname = lastname
+        
+        
+        //check for an existing list
+        if (bucket[hashindex] == nil) {
+            bucket[hashindex] = childToUse
+        }
+        
+        else {
+            
+            println("a collision occured. implementing chaining..")
+            head = bucket[hashindex]
+
+            
+            //append new item to the head of the list
+            childToUse.next = HashNode()
+            childToUse.next = head
+            head = childToUse
+            
+            
+            //update the chained list
+            bucket[hashindex] = head
+        }
+
+        
+    } //end function
+    
     
     
     //return the hash value to be used
-    func createHash(firstname: String) -> Int! {
+    func createHash(fullname: String) -> Int! {
         
         var remainder: Int = 0
-        var quotient: Int = 0
+        var divisor: Int = 0
         
 
-        for key in firstname.unicodeScalars {
+        for key in fullname.unicodeScalars {
             println("the ascii value of \(key) is \(key.value)..")
-            quotient += Int(key.value)
-            
+            divisor += Int(key.value)
         }
         
-        
         /*
-        note: use the quotient and modulus to find the remainder. The listsize is used
-        as the modulus to ensure all possible outcomes are between 0 and the list size. This is a
-        very slick solution.
+        note: use the dividend and divisor to find the remainder. The bucket count is used
+        as the dividend to ensure all possible outcomes are between 0 and 25. This is an example
+        of a simple but effective hash algorithm.
         */
         
-        remainder = quotient % 24
+        remainder = divisor % bucket.count
         
 
-        return remainder
+        return remainder - 1
     }
     
     
