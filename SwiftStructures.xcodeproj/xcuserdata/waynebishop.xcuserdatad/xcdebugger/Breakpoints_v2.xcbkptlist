@@ -148,15 +148,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/HashTest.swift"
-            timestampString = "436381134.40835"
+            timestampString = "436389071.712517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "testAddWord()"
             landmarkType = "5">
          </BreakpointContent>
@@ -210,16 +210,78 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/Factories/HashTable.swift"
-            timestampString = "436386520.282065"
+            timestampString = "436387583.014989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "createHash(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftStructures.HashTable.createHash (SwiftStructures.HashTable)(Swift.String) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;Swift.Int&gt;"
+                  moduleName = "SwiftStructures"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/HashTable.swift"
+                  timestampString = "436387290.107113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1390">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.HashTable.createHash (SwiftTests.HashTable)(Swift.String) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;Swift.Int&gt;"
+                  moduleName = "SwiftTests"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/HashTable.swift"
+                  timestampString = "436387290.531036"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1390">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Factories/HashTable.swift"
+            timestampString = "436387566.345918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "addWord(_:lastname:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/HashTest.swift"
+            timestampString = "436389065.78922"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "testAddWord()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

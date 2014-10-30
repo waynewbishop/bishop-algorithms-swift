@@ -50,10 +50,9 @@ class HashTable {
             
             println("a collision occured. implementing chaining..")
             head = bucket[hashindex]
-
+            
             
             //append new item to the head of the list
-            childToUse.next = HashNode()
             childToUse.next = head
             head = childToUse
             
@@ -80,7 +79,7 @@ class HashTable {
         }
         
         /*
-        note: use the dividend and divisor to find the remainder. The bucket count is used
+        note: modular math is used to calculate a hash value. The bucket count is used
         as the dividend to ensure all possible outcomes are between 0 and 25. This is an example
         of a simple but effective hash algorithm.
         */
