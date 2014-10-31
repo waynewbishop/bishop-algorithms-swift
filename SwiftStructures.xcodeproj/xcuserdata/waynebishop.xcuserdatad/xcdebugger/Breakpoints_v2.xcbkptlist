@@ -151,22 +151,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/HashTest.swift"
-            timestampString = "436389071.712517"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "testAddWord()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Source/Factories/HashTable.swift"
             timestampString = "436384914.465137"
             startingColumnNumber = "9223372036854775807"
@@ -214,11 +198,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/Factories/HashTable.swift"
-            timestampString = "436387583.014989"
+            timestampString = "436473701.62357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "createHash(_:)"
             landmarkType = "5">
             <Locations>
@@ -276,12 +260,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/HashTest.swift"
-            timestampString = "436389065.78922"
+            timestampString = "436473690.695156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "testAddWord()"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "testFindWord()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

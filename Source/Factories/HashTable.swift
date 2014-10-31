@@ -66,6 +66,56 @@ class HashTable {
     
     
     
+    //determine if the word is found in the hash table
+    func findWord(firstname: String, lastname: String) -> Bool! {
+        
+        var hashindex: Int!
+        var fullname: String!
+        
+        
+        fullname = firstname + lastname
+        hashindex = self.createHash(fullname)
+        
+        
+        //determine if the value is present
+        if (bucket[hashindex] == nil) {
+            println("name not found in hash table..")
+            return false
+        }
+        
+            
+        //iterate through the list of items to find a match
+        else {
+            
+            var current: HashNode! = bucket[hashindex]
+            
+            while (current != nil) {
+                
+                var hashName: String! = current.firstname + current.lastname
+                
+                if (hashName == fullname) {
+                    println("\(current.firstname) \(current.lastname) found in hash table..")
+                    return true
+                }
+                
+                
+                println("searching for word through chained list..")
+                current = current.next
+                
+                
+             } //end while
+            
+            
+        } //end if
+        
+        
+        println("name not found in hash table..")
+        return false
+        
+    }
+    
+    
+    
     //return the hash value to be used
     func createHash(fullname: String) -> Int! {
         
@@ -74,7 +124,7 @@ class HashTable {
         
 
         for key in fullname.unicodeScalars {
-            println("the ascii value of \(key) is \(key.value)..")
+            //println("the ascii value of \(key) is \(key.value)..")
             divisor += Int(key.value)
         }
         

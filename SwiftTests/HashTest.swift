@@ -28,27 +28,6 @@ class HashTest: XCTestCase {
         
         listsize = 25
         swiftTable = HashTable(capacity: listsize)
-    }
-
-    
-    //test the hash algorithm - add your own value to test
-    func testCreateHash() {
-        
-        var hashValue: Int!
-        hashValue = swiftTable.createHash("Dog")
-        XCTAssertNotNil(hashValue, "test failed: no hash value detected..")
-        
-        
-        if (hashValue != nil) {
-            println("the computed hash value is: \(hashValue)..")
-        }
-        
-    }
-    
-
-    //test the addition of words to the hash table
-    func testAddWord() {
-        
         
         /*
         note: the addition of each word should have its own corresponding "slot" in the
@@ -67,6 +46,32 @@ class HashTest: XCTestCase {
         swiftTable.addWord("Albert", lastname: "Einstein")
         
     }
+    
+    
+    //find the word in the hash table
+    func testFindWord() {
+        
+        swiftTable.findWord("Frank", lastname: "Smith") //found in hash table
+        swiftTable.findWord("John", lastname: "Cervello") //not found (no collision)
+        swiftTable.findWord("Andrew", lastname: "Collins") //not found in hash table (collision detected)
+    }
+
+    
+    
+    //test the hash algorithm - add your own value to test
+    func testCreateHash() {
+        
+        var hashValue: Int!
+        hashValue = swiftTable.createHash("Dog")
+        XCTAssertNotNil(hashValue, "test failed: no hash value detected..")
+        
+        
+        if (hashValue != nil) {
+            println("the computed hash value is: \(hashValue)..")
+        }
+
+        
+    } //end function
     
 
 }
