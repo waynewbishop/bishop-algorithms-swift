@@ -11,12 +11,12 @@ import Foundation
 
 class HashTable {
     
-    private var bucket: Array<HashNode!>
+    private var buckets: Array<HashNode!>
     
     
-    //initialize the bucket with nil values
+    //initialize the buckets with nil values
     init(capacity: Int) {
-        self.bucket = Array<HashNode!>(count: capacity, repeatedValue:nil)
+        self.buckets = Array<HashNode!>(count: capacity, repeatedValue:nil)
         
     }
 
@@ -42,14 +42,14 @@ class HashTable {
         
         
         //check for an existing list
-        if (bucket[hashindex] == nil) {
-            bucket[hashindex] = childToUse
+        if (buckets[hashindex] == nil) {
+            buckets[hashindex] = childToUse
         }
         
         else {
             
             println("a collision occured. implementing chaining..")
-            head = bucket[hashindex]
+            head = buckets[hashindex]
             
             
             //append new item to the head of the list
@@ -58,7 +58,7 @@ class HashTable {
             
             
             //update the chained list
-            bucket[hashindex] = head
+            buckets[hashindex] = head
         }
 
         
@@ -78,7 +78,7 @@ class HashTable {
         
         
         //determine if the value is present
-        if (bucket[hashindex] == nil) {
+        if (buckets[hashindex] == nil) {
             println("name not found in hash table..")
             return false
         }
@@ -87,7 +87,7 @@ class HashTable {
         //iterate through the list of items to find a match
         else {
             
-            var current: HashNode! = bucket[hashindex]
+            var current: HashNode! = buckets[hashindex]
             
             while (current != nil) {
                 
@@ -134,7 +134,7 @@ class HashTable {
         of a simple but effective hash algorithm.
         */
         
-        remainder = divisor % bucket.count
+        remainder = divisor % buckets.count
         
 
         return remainder - 1
