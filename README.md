@@ -1,7 +1,7 @@
 Swift Structures
 ====================
 
-This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called <a href="http://developer.apple.com/swift" target="_blank">Swift</a>. While details of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.  
+This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called <a href="http://www.apple.com/swift" target="_blank">Swift</a>. While details of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.  
 
 
 Audience
@@ -20,6 +20,7 @@ The project features code-level examples for the following items:
 + Insertion Sort
 + Bubble Sort
 + Generics
++ Hash Tables
 + Binary Search Trees
 + Tries
 + Stacks & Queues
