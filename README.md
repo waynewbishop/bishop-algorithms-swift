@@ -20,6 +20,7 @@ The project features code-level examples for the following items:
 + Insertion Sort
 + Bubble Sort
 + Quick Sort
++ Merge Sort
 + Generics
 + Hash Tables
 + Binary Search Trees
