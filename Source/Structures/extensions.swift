@@ -29,8 +29,14 @@ extension String {
         return String(Array(self)[position])
     }
     
-
-    
 }
 
-
+extension Int {
+	
+	func times(closure:(Int)->Void) {
+		for i in 0...self {
+			closure(i)
+		}
+	}
+	
+}

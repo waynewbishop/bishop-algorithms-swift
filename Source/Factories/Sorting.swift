@@ -147,8 +147,38 @@ public class Sorting {
         return numberList
  
     } //end function
-    
-    
-    
+	
+	
+		// Quick sort works by dividing and conquering
+		// Firstly it picks a pivot point then looks at all items in the observed array
+		// and moves values to the left or right of the pivot based on their value
+		// it works recursively so that either side will be eventually sorted back to the top
+
+		func quickSort(var hops:Array<Int>) -> Array<Int> {
+			
+			if (hops.count <= 1) {
+				return hops
+			}
+			
+			var pivot = hops.removeAtIndex(0)
+			var leftBucket:[Int] = []
+			var rightBucket:[Int] = []
+			
+			(hops.count - 1).times { i in
+				if (hops[i] <= pivot) {
+					leftBucket.append(hops[i])
+				} else {
+					rightBucket.append(hops[i])
+				}
+			}
+			
+			var mergedArray:[Int] = []
+			mergedArray += quickSort(leftBucket)
+			mergedArray += [pivot]
+			mergedArray += quickSort(rightBucket)
+			
+			return mergedArray
+		}
+	
     
 }
