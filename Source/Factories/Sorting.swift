@@ -147,8 +147,76 @@ public class Sorting {
         return numberList
  
     } //end function
-    
-    
-    
+	
+	
+		// Quick sort works by dividing and conquering
+		// Firstly it picks a pivot point then looks at all items in the observed array
+		// and moves values to the left or right of the pivot based on their value
+		// it works recursively so that either side will be eventually sorted back to the top
+
+		func quickSort(var hops:[Int]) -> [Int] {
+			
+			if (hops.count <= 1) {
+				return hops
+			}
+			
+			var pivot = hops.removeAtIndex(0)
+			var leftBucket:[Int] = []
+			var rightBucket:[Int] = []
+			
+			(hops.count - 1).times { i in
+				if (hops[i] <= pivot) {
+					leftBucket.append(hops[i])
+				} else {
+					rightBucket.append(hops[i])
+				}
+			}
+			
+			var mergedArray:[Int] = []
+			mergedArray += quickSort(leftBucket)
+			mergedArray += [pivot]
+			mergedArray += quickSort(rightBucket)
+			
+			return mergedArray
+		}
+	
+	
+		// Merge sort works by breaking down each side and sorting as it comes back up
+		// Each left & right side is sorted by using pointers as to which value should be included
+		// to sort, as each side is sorted as it comes back up the "tree" we can be sure that our pointers
+		// can be safely moved left to right whereby the values are increasing
+		func mergeSort(input:[Int]) -> [Int] {
+			
+			if (input.count <= 1) {
+				return input
+			}
+			
+			let mid = Int(floor(Double(input.count / 2)))
+			let left = Array(input[0..<mid])
+			let right = Array(input[mid..<input.count])
+			
+			let leftSide = mergeSort(left)
+			let rightSide = mergeSort(right)
+			
+			return sortForMergeSort(leftSide, right: rightSide)
+		}
+		
+		func sortForMergeSort(left:[Int], right:[Int]) -> [Int] {
+			
+			var sortedArray:[Int] = []
+			var leftCount = 0
+			var rightCount = 0
+			
+			(left.count + right.count).times { i in
+				if (leftCount < left.count && (rightCount >= right.count || left[leftCount] <= right[rightCount])) {
+					sortedArray.append(left[leftCount++])
+				} else if (rightCount < right.count && (leftCount >= left.count || right[rightCount] < left[leftCount])) {
+					sortedArray.append(right[rightCount++])
+				}
+			}
+			
+			return sortedArray
+		}
+	
     
 }

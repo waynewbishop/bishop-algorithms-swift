@@ -41,14 +41,60 @@ class SortingTest: XCTestCase {
         XCTAssertTrue(isFound, "binary search key not found..")
         
     }
-    
-    
-    
+	
+		func testQuickSort() {
+			
+			
+			var sortTest: Sorting = Sorting()
+			XCTAssertNotNil(sortTest, "sorting instance not created..")
+			
+			var resultList: Array<Int>! = sortTest.quickSort(numberList)
+			
+			var x: Int = 0
+			for (x = 0; x < resultList.count; x++) {
+				
+				if ((x > 0) && (resultList[x] < resultList[x - 1])) {
+					XCTFail("numberlist items not in sorted order..")
+				}
+				else {
+					println("item \(resultList[x]) is sorted..")
+				}
+				
+				
+			}
+			
+		}
+	
+		func testMergeSort() {
+			
+			
+			var sortTest: Sorting = Sorting()
+			XCTAssertNotNil(sortTest, "sorting instance not created..")
+			
+			var resultList: Array<Int>! = sortTest.mergeSort(numberList)
+			
+			var x: Int = 0
+			for (x = 0; x < resultList.count; x++) {
+				
+				if ((x > 0) && (resultList[x] < resultList[x - 1])) {
+					XCTFail("numberlist items not in sorted order..")
+				}
+				else {
+					println("item \(resultList[x]) is sorted..")
+				}
+				
+				
+			}
+			
+		}
+	
+	
+	
     //MARK: Sorting Algorithms
-    
-    
+	
+	
     func testInsertionSort() {
-        
+			
         var sortTest: Sorting = Sorting()
         XCTAssertNotNil(sortTest, "sorting instance not created..")
         
