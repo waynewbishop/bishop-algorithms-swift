@@ -82,6 +82,11 @@ Running Swift Structures requires Xcode 6.0 GM Seed or later. The directories ar
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
 
+Branches
+--------------------
++ master - The production master branch. Clone or fork this repository for the latest stable copy
++ develop - The active development branch. Suggestions and <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
+
 Questions
 --------------------
 
