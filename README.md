@@ -84,8 +84,8 @@ Running Swift Structures requires Xcode 6.0 GM Seed or later. The directories ar
 
 Branches
 --------------------
-+ master - The production master branch. Clone or fork this repository for the latest stable copy
-+ develop - The active development branch. Suggestions and <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
++ master - The production branch. Clone or fork this repository for the latest copy
++ develop - The active development branch. <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">Pull requests</a> should be directed to this branch
 
 Questions
 --------------------
