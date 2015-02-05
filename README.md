@@ -82,6 +82,11 @@ Running Swift Structures requires Xcode 6.0 GM Seed or later. The directories ar
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
 
+Usage
+--------------------
+Individuals are welcome to use the code in commercial and open-source projects. As a courteously, please provide attribution to <a href="http://www.waynebishop.com" target="_blank">waynewbishop.com</a>. For more information, review the complete <a href="https://github.com/waynewbishop/SwiftStructures/blob/master/License.md" target="_blank">license agreement</a>. 
+
+
 Branches
 --------------------
 + master - The production branch. Clone or fork this repository for the latest copy
