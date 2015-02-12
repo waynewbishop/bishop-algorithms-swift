@@ -15,7 +15,7 @@ extension String {
     
     ///compute the length of string
     var length: Int {
-        return Array(self).count
+        return countElements(self)
     }
     
     ///returns characters of a string up to a specified index
