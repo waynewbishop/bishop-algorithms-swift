@@ -47,9 +47,6 @@ class LinkedTest: XCTestCase {
     }
 
     
-    //TODO: insert a LLNode item for a given index
-    
-    
     func testLinkedList() {
         
         //create a new instance

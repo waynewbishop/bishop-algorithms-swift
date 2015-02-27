@@ -101,7 +101,7 @@ public class LinkedList<T: Equatable> {
     func removeLinkAtIndex(index: Int) {
         
         var current: LLNode<T>? =  head
-        var trailer: LLNode<T>? = nil
+        var trailer: LLNode<T>?
         var listIndex: Int = 0
         
         
@@ -149,7 +149,7 @@ public class LinkedList<T: Equatable> {
         
         //establish the trailer, current and new items
         var current: LLNode<T>? = head
-        var trailer: LLNode<T>? = nil
+        var trailer: LLNode<T>?
         var listIndex: Int = 0
         
         
