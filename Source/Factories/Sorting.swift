@@ -99,56 +99,42 @@ public class Sorting {
     right side of the set after the first iteration.
     */
     
-    func bubbleSort(var numberList: Array<Int>) -> Array<Int> {
+    func bubbleSort(var numberList: Array<Int>) ->Array<Int> {
         
-
-        //establish the iteration counters
         var x, y, z, passes, key : Int
-
         
-        for (x = 0; x < numberList.count; ++x) {
+        //track collection iterations
+        for x in 0..<numberList.count {
             
-            //outer loop is maintained to track how many iterations to pass through the list
             passes = (numberList.count - 1) - x;
             
+            //use shorthand "half-open" range operator
             
-                for (y = 0; y < passes; y++) {
+            for y in 0..<passes {
+                key = numberList[y]
+                
+                println("comparing \(key) and \(numberList[y + 1])")
+                
+                //compare and rank values
+                if (key > numberList[y + 1]) {
                     
-                    //obtain the key item to sort
-                    key = numberList[y]
+                    z = numberList[y + 1]
+                    numberList[y + 1] = key
+                    numberList[y] = z
                     
-                    
-                    println("comparing \(key) and \(numberList[y + 1])")
-                    
-                    
-                        if (key > numberList[y + 1]) {
-                            
-                            //pull out the value to be swapped
-                            z = numberList[y + 1]
-                            
-                            
-                            //write the key where the previous value was placed
-                            numberList[y + 1] = key
-                            
-                            
-                            //place the pulled value in the previous position
-                            numberList[y] = z
-                            
-                            
-                            
-                        } //end if
-
-                    
-                } //end for
-
+                }
+                
+            } //end for
             
         } //end for
+    
         
         return numberList
- 
+        
     } //end function
-	
-	
+    
+    
+ 	
 		// Quick sort works by dividing and conquering
 		// Firstly it picks a pivot point then looks at all items in the observed array
 		// and moves values to the left or right of the pivot based on their value
