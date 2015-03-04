@@ -135,7 +135,7 @@ public class Sorting {
     
     
  	
-		// Quick sort works by dividing and conquering
+		// quick sort - works by dividing and conquering
 		// Firstly it picks a pivot point then looks at all items in the observed array
 		// and moves values to the left or right of the pivot based on their value
 		// it works recursively so that either side will be eventually sorted back to the top
@@ -167,33 +167,51 @@ public class Sorting {
 		}
 	
 	
-		// Merge sort works by breaking down each side and sorting as it comes back up
-		// Each left & right side is sorted by using pointers as to which value should be included
-		// to sort, as each side is sorted as it comes back up the "tree" we can be sure that our pointers
-		// can be safely moved left to right whereby the values are increasing
+        /*
+		merge sort - works by breaking down each side and sorting as it comes back up
+		Each left and right side is sorted by using pointers as to which value should be included
+		to sort, as each side is sorted as it comes back up the "tree" we can be sure that our pointers
+		can be safely moved left to right whereby the values are increasing 
+        */
+    
 		func mergeSort(input:[Int]) -> [Int] {
-			
+            
+            //establish the base case
 			if (input.count <= 1) {
 				return input
 			}
 			
+            //find the mid point of the input and move them into two buckets
 			let mid = Int(floor(Double(input.count / 2)))
 			let left = Array(input[0..<mid])
 			let right = Array(input[mid..<input.count])
 			
+
+            //recursive call here to continue to divide each side
 			let leftSide = mergeSort(left)
 			let rightSide = mergeSort(right)
 			
+            //conquer for each method invocation
 			return sortForMergeSort(leftSide, right: rightSide)
 		}
 		
+    
 		func sortForMergeSort(left:[Int], right:[Int]) -> [Int] {
 			
+            //create a new array to place our sorted numbers
 			var sortedArray:[Int] = []
 			var leftCount = 0
 			var rightCount = 0
-			
+            
+			// For all of the numbers on both sides
 			(left.count + right.count).times { i in
+                
+                /*
+                if we've exhausted the right side, or if we still have some to use on
+                the left side and the current left side number is smaller in value than the
+                right sides current value, then add the left numbers value to the sorted array
+                */
+                
 				if (leftCount < left.count && (rightCount >= right.count || left[leftCount] <= right[rightCount])) {
 					sortedArray.append(left[leftCount++])
 				} else if (rightCount < right.count && (leftCount >= left.count || right[rightCount] < left[leftCount])) {
