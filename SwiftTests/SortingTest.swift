@@ -130,6 +130,12 @@ class SortingTest: XCTestCase {
     
     func testMergeSort() {
         
+        10.times { i in
+           // echo "(i) times"
+            println("\(i) times")
+        }
+        
+
         
         var sortTest: Sorting = Sorting()
         XCTAssertNotNil(sortTest, "sorting instance not created..")

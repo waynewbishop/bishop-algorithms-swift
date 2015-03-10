@@ -203,6 +203,18 @@ public class Sorting {
 			var leftCount = 0
 			var rightCount = 0
             
+            var someNode: LLNode<Int> = LLNode<Int>()
+            
+            
+            /*
+            var someCount: Int = left.count + right.count
+            
+            for i in 0...someCount {
+                println(i)
+            }
+            */
+            
+            
 			// For all of the numbers on both sides
 			(left.count + right.count).times { i in
                 

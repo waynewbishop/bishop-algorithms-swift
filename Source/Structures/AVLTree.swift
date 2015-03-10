@@ -8,28 +8,26 @@
 
 import Foundation
 
+
 /* An AVL Tree is another name for a balanced binary search tree*/
 
 public class AVLTree<T: Comparable> {
     
-   var key: T? = nil
-   var left: AVLTree? = nil
-   var right: AVLTree? = nil
-    
-    
-   private func printcode(object: T) {
-        println("..the value is: \(object)")
+    var key: T?
+    var left: AVLTree?
+    var right: AVLTree?
+   
+    init() {
+        
     }
+   
     
-
     //function to add item based on its value
     func addNode(key: T) {
         
         //check for the head node
         if (self.key == nil) {
             self.key = key
-            
-            printcode(key)
             return
         }
         
@@ -47,7 +45,6 @@ public class AVLTree<T: Comparable> {
                 var leftChild : AVLTree = AVLTree()
                 leftChild.key = key
                 self.left = leftChild
-                printcode(key)
             }
             
         } //end if
@@ -66,7 +63,6 @@ public class AVLTree<T: Comparable> {
                 var rightChild : AVLTree = AVLTree()
                 rightChild.key = key
                 self.right = rightChild
-                printcode(key)
             }
             
         } //end if
@@ -92,7 +88,7 @@ public class AVLTree<T: Comparable> {
             left?.processAVLDepthTraversal()
         }
         
-        println("the key is \(self.key!)")
+        printKey(self.key!)
         
         
         //process the right side
@@ -103,8 +99,14 @@ public class AVLTree<T: Comparable> {
         
     } //end function
     
-        
-        
+    
+    
+    //helper function
+    func printKey(value: T) {
+        println("..the traversed value is: \(value)")
+    }
+
+    
     
 
 } //end class
