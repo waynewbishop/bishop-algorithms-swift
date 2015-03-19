@@ -41,22 +41,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source/Structures/AVLTree.swift"
-            timestampString = "447721043.30582"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "processAVLDepthTraversal()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SwiftTests/GraphTest.swift"
             timestampString = "433884575.335849"
             startingColumnNumber = "9223372036854775807"
@@ -594,12 +578,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/AVLTest.swift"
-            timestampString = "447720933.916183"
+            timestampString = "448345414.628455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "testAVLDepthTraversal()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "setUp()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

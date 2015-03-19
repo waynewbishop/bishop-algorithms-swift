@@ -16,7 +16,7 @@ class AVLTest: XCTestCase {
  
     
     var avlTest: AVLTree<Int> = AVLTree<Int>()
-    let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6]
+    let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
     
     
     //called before each test invocation
@@ -29,13 +29,14 @@ class AVLTest: XCTestCase {
         
         //build the tree list
         for number in numberList {
-            avlTest.addNode(number)
             println("adding \(number) to avl tree...")
+            avlTest.addNode(number)
         }
         
 
     }
 
+    
     
     //invoke in-order travesal algorithm
     func testAVLDepthTraversal() {

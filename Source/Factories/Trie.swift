@@ -89,7 +89,7 @@ public class Trie {
     
     
     
-    //builds a recursive tree of dictionary content
+    //builds a iterative tree of dictionary content
     func addWord(keyword: String) {
         
         
