@@ -31,7 +31,6 @@ class AVLTest: XCTestCase {
         XCTAssertNotNil(avlTest, "avl instance not created..")
         
         
-        //balanced tree - O(log n)
         let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
         
 
@@ -66,7 +65,6 @@ class AVLTest: XCTestCase {
         XCTAssertNotNil(avlTest, "avl instance not created..")
 
         
-        //unbalanced tree - O(n)
         let numberList : Array<Int> = [8, 7, 6, 5, 4, 3, 2, 1]
         
         
