@@ -49,9 +49,13 @@ public class AVLTree<T: Comparable> {
                 self.left = leftChild
             }
             
-            //recalculate parents after placing the leaf node
+            //recalculate the hierarchy after placing node
             self.setNodeHeight()
             println("traversing left side. height of \(self.key!) is: \(self.height)...")
+            
+            
+            //TODO: check node balance and perform any required rotations..
+            
             
         } //end if
        
@@ -73,9 +77,11 @@ public class AVLTree<T: Comparable> {
                          
             }
             
-            //recalculate parents after placing the leaf node
+            //recalculate the hierarchy after placing node
             self.setNodeHeight()
             println("traversing right side. height of \(self.key!) is: \(self.height)...")
+            
+            //TODO: check node balance and perform any required rotations..
             
             
         } //end if
@@ -91,17 +97,17 @@ public class AVLTree<T: Comparable> {
     //calculate the height of a node
     func setNodeHeight() -> Bool {
         
+        
         //check for a nil condition
         if (self.key == nil) {
             println("no key provided..")
             return false
         }
         
-        
-        println("key: \(self.key!)")
+        //println("key: \(self.key!)")
         
 
-        //initialize node variables
+        //initialize leaf variables
         var nodeHeight: Int = 0
         var leftHeight: Int!
         var rightHeight: Int!
@@ -133,17 +139,46 @@ public class AVLTree<T: Comparable> {
 
 
     
-    //calculate if the tree is "balanced" - a balanced tree is O(log n)
-    func isAVLBalanced() -> Bool! {
+    //determine if the tree is "balanced" - operations on a balanced tree is O(log n)
+    func isTreeBalanced() -> Bool {
+
         
-        //TODO: compare the height of the root node siblings.
+        //check for a nil condition
+        if (self.key == nil) {
+            println("no key provided..")
+            return false
+        }
+
         
-        return nil;
+        //initialize leaf variables
+        var leftHeight: Int! = self.left?.height
+        var rightHeight: Int! = self.right?.height
+        var variance: Int
+        
+        
+        //calculate left side
+        if (leftHeight == nil) {
+            leftHeight = 0
+        }
+        
+        //calculate right side
+        if (rightHeight == nil) {
+            rightHeight = 0
+        }
+        
+        //allow height variance of 1. This will allow for odd numbered sets
+        if (leftHeight - rightHeight <= 1) {
+            return true
+        }
+        else {
+            return false
+        }
+        
+        
     }
     
-
     
-    // MARK: tree traversal algorithm
+    // MARK: traversal algorithm
     
     
     //depth first search in-order traversal
