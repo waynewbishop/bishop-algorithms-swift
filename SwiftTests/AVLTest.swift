@@ -35,7 +35,9 @@ class AVLTest: XCTestCase {
         
 
     }
-
+    
+    
+    //TODO: Determine how I can change this so that I can run checks for balanced and unbalanced trees..
     
     
     //invoke in-order travesal algorithm

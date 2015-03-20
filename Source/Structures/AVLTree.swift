@@ -39,7 +39,6 @@ public class AVLTree<T: Comparable> {
             
             if (self.left != nil) {
                 left?.addNode(key)
-
             }
                 
             else {
@@ -50,6 +49,7 @@ public class AVLTree<T: Comparable> {
                 self.left = leftChild
             }
             
+            //recalculate parents after placing the leaf node
             self.setNodeHeight()
             println("traversing left side. height of \(self.key!) is: \(self.height)...")
             
@@ -73,7 +73,7 @@ public class AVLTree<T: Comparable> {
                          
             }
             
-            
+            //recalculate parents after placing the leaf node
             self.setNodeHeight()
             println("traversing right side. height of \(self.key!) is: \(self.height)...")
             
@@ -88,16 +88,8 @@ public class AVLTree<T: Comparable> {
     // MARK: - tree balancing algorithms
     
     
-    //calculate the "height" of a node
+    //calculate the height of a node
     func setNodeHeight() -> Bool {
-        
-        var leftHeight: Int = 0
-        var rightHeight: Int = 0
-        var nodeHeight: Int = 0
- 
-        
-        println("key: \(self.key!)")
-        
         
         //check for a nil condition
         if (self.key == nil) {
@@ -106,25 +98,31 @@ public class AVLTree<T: Comparable> {
         }
         
         
+        println("key: \(self.key!)")
+        
+
+        //initialize node variables
+        var nodeHeight: Int = 0
+        var leftHeight: Int!
+        var rightHeight: Int!
+
+        
+        leftHeight = self.left?.height
+        rightHeight = self.right?.height
+
+        
         //calculate left side
-        if (self.left == nil) {
+        if (leftHeight == nil) {
             leftHeight = 0
-        }
-        else {
-            leftHeight = self.left!.height
-            
         }
         
         //calculate right side
-        if (self.right == nil) {
+        if (rightHeight == nil) {
             rightHeight = 0
         }
-        else {
-            rightHeight = self.right!.height
-        }
         
         
-        //do comparision and set the height
+        //do comparision and calculate node height
         nodeHeight = max(leftHeight, rightHeight) + 1
         
         self.height = nodeHeight
