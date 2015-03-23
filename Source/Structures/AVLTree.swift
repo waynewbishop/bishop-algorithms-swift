@@ -19,16 +19,18 @@ public class AVLTree<T: Comparable> {
     var height: Int
    
     init() {
-        self.height = 0
+        //set math purposes
+        self.height = -1
     }
     
     
     //function to add item based on its value
     func addNode(key: T) {
         
-        //check for the head node
+        //check for the root node
         if (self.key == nil) {
             self.key = key
+            self.height = 0
             return
         }
         
@@ -101,7 +103,7 @@ public class AVLTree<T: Comparable> {
         var nodeHeight: Int = 0
         
         if (aNode == nil) {
-            return 0
+            return -1
         }
         else {
            return aNode.height
@@ -150,7 +152,7 @@ public class AVLTree<T: Comparable> {
         }
         
         
-        //calculate variance as absolute value to account for right and left imbalances
+        //use absolute value to account for right and left imbalances
         if (abs(self.getNodeHeight(self.left) - self.getNodeHeight(self.right)) <= 1) {
             return true
         }
@@ -159,7 +161,9 @@ public class AVLTree<T: Comparable> {
         }
         
         
-    }
+    } //end function
+
+    
 
     
     //check to ensure node meets avl property
@@ -181,25 +185,10 @@ public class AVLTree<T: Comparable> {
         //determine single-right or double rotation
         else {
             
-            var leftHeight: Int! = self.left?.height
-            var rightHeight: Int! = self.right?.height
-            
-            
-            //calculate left side
-            if (leftHeight == nil) {
-                leftHeight = 0
-            }
-            
-            //calculate right side
-            if (rightHeight == nil) {
-                rightHeight = 0
-            }
-            
-            
-            if (leftHeight > rightHeight) {
-                //TODO: perform a right rotation
+            //right rotation
+            if (self.getNodeHeight(self.left) - self.getNodeHeight(self.right) <= 1) {
+                println("performing right node rotation...")
                 
-                //1. create a new node. Copy the values self to the new node...
                 
                 //create a new right node
                 var childToUse : AVLTree = AVLTree()
@@ -208,8 +197,16 @@ public class AVLTree<T: Comparable> {
                 //2. assign the self pointer the left leaf..
                 //3. add the pointer created in step 1 as the right node of the new self.
                 
+                
+            }
+
+            
+            //double rotation
+            if (self.getNodeHeight(self.right) - self.getNodeHeight(self.left) <= 1) {
+                println("performing right node rotation...")
             }
             
+
             return true
 
             
