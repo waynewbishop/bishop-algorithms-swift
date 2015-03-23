@@ -65,7 +65,6 @@ class AVLTest: XCTestCase {
         XCTAssertNotNil(avlTest, "avl instance not created..")
 
         
-       // let numberList : Array<Int> = [8, 7, 6, 5, 4, 3, 2, 1]
         let numberList: Array<Int> = [29, 26, 23]
                 
         //test for new instance

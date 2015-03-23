@@ -185,12 +185,10 @@ public class AVLTree<T: Comparable> {
         //determine single-right or double rotation
         else {
             
-            //right rotation
             if (self.getNodeHeight(self.left) - self.getNodeHeight(self.right) <= 1) {
                 println("performing right node rotation...")
                 
                 
-                //create a new right node
                 var childToUse : AVLTree = AVLTree()
                 childToUse = self
                 
