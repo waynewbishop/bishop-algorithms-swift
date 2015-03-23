@@ -581,40 +581,26 @@
             timestampString = "448579969.3682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "testAVLBalancedTree()"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "testAVLUnbalancedTreeLeft()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.AVLTest.testAVLBalancedTree (SwiftTests.AVLTest)() -&gt; ()"
-                  moduleName = "SwiftTests"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/AVLTest.swift"
-                  timestampString = "448579160.402166"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "1809">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.AVLTest.(testAVLBalancedTree (SwiftTests.AVLTest) -&gt; () -&gt; ()).(implicit closure #3) with unmangled suffix &quot;_promote0&quot;"
-                  moduleName = "SwiftTests"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/AVLTest.swift"
-                  timestampString = "448579160.429245"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Structures/AVLTree.swift"
+            timestampString = "448836645.93435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "setNodeHeight()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -624,13 +610,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/AVLTest.swift"
-            timestampString = "448579969.3682"
+            timestampString = "448836582.879729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "testAVLUnbalancedTree()"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "testAVLUnbalancedTreeRight()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.AVLTest.testAVLUnbalancedTreeRight (SwiftTests.AVLTest)() -&gt; ()"
+                  moduleName = "SwiftTests"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/AVLTest.swift"
+                  timestampString = "448836758.215931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "1809">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.AVLTest.(testAVLUnbalancedTreeRight (SwiftTests.AVLTest) -&gt; () -&gt; ()).(implicit closure #3) with unmangled suffix &quot;_promote0&quot;"
+                  moduleName = "SwiftTests"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/AVLTest.swift"
+                  timestampString = "448836758.216275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

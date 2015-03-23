@@ -91,7 +91,24 @@ public class AVLTree<T: Comparable> {
 
 
     
+    
     // MARK: - tree balancing algorithms
+
+    
+    //retrieve the height of a node
+    func getNodeHeight(aNode: AVLTree!) -> Int {
+        
+        var nodeHeight: Int = 0
+        
+        if (aNode == nil) {
+            return 0
+        }
+        else {
+           return aNode.height
+        }
+        
+    }
+    
     
     
     //calculate the height of a node
@@ -109,34 +126,17 @@ public class AVLTree<T: Comparable> {
 
         //initialize leaf variables
         var nodeHeight: Int = 0
-        var leftHeight: Int!
-        var rightHeight: Int!
-
-        
-        leftHeight = self.left?.height
-        rightHeight = self.right?.height
-
-        
-        //calculate left side
-        if (leftHeight == nil) {
-            leftHeight = 0
-        }
-        
-        //calculate right side
-        if (rightHeight == nil) {
-            rightHeight = 0
-        }
         
         
         //do comparision and calculate node height
-        nodeHeight = max(leftHeight, rightHeight) + 1
+        nodeHeight = max(self.getNodeHeight(self.left), self.getNodeHeight(self.right)) + 1
         
         self.height = nodeHeight
         
         return true
         
     }
-
+    
 
     
     //determine if the tree is "balanced" - operations on a balanced tree is O(log n)
@@ -148,26 +148,10 @@ public class AVLTree<T: Comparable> {
             println("no key provided..")
             return false
         }
-
-        
-        //initialize leaf variables
-        var leftHeight: Int! = self.left?.height
-        var rightHeight: Int! = self.right?.height
-        var variance: Int
         
         
-        //calculate left side
-        if (leftHeight == nil) {
-            leftHeight = 0
-        }
-        
-        //calculate right side
-        if (rightHeight == nil) {
-            rightHeight = 0
-        }
-        
-        //allow height variance of 1. This will allow for odd numbered sets
-        if (leftHeight - rightHeight <= 1) {
+        //calculate variance as absolute value to account for right and left imbalances
+        if (abs(self.getNodeHeight(self.left) - self.getNodeHeight(self.right)) <= 1) {
             return true
         }
         else {
@@ -176,6 +160,64 @@ public class AVLTree<T: Comparable> {
         
         
     }
+
+    
+    //check to ensure node meets avl property
+    func isValidAVLTree() -> Bool {
+        
+        
+        //check for valid scenario
+        if (self.key == nil) {
+            println("no key provided..")
+            return false
+        }
+        
+        
+        if (self.isTreeBalanced() == true) {
+            println("node \(self.key) already balanced..")
+            return true
+        }
+        
+        //determine single-right or double rotation
+        else {
+            
+            var leftHeight: Int! = self.left?.height
+            var rightHeight: Int! = self.right?.height
+            
+            
+            //calculate left side
+            if (leftHeight == nil) {
+                leftHeight = 0
+            }
+            
+            //calculate right side
+            if (rightHeight == nil) {
+                rightHeight = 0
+            }
+            
+            
+            if (leftHeight > rightHeight) {
+                //TODO: perform a right rotation
+                
+                //1. create a new node. Copy the values self to the new node...
+                
+                //create a new right node
+                var childToUse : AVLTree = AVLTree()
+                childToUse = self
+                
+                //2. assign the self pointer the left leaf..
+                //3. add the pointer created in step 1 as the right node of the new self.
+                
+            }
+            
+            return true
+
+            
+        } //end if
+        
+        
+    }
+
     
     
     // MARK: traversal algorithm
