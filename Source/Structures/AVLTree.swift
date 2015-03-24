@@ -51,12 +51,15 @@ public class AVLTree<T: Comparable> {
                 self.left = leftChild
             }
             
-            //recalculate the hierarchy after placing node
+            //recalculate height (after placing a node)
             self.setNodeHeight()
-            println("traversing left side. height of \(self.key!) is: \(self.height)...")
             
-            
-            //TODO: check node balance and perform any required rotations..
+            println("traversing left side. node \(self.key!) with height: \(self.height)...")
+
+
+            //check AVL property
+            self.isValidAVLTree()
+
             
             
         } //end if
@@ -79,9 +82,9 @@ public class AVLTree<T: Comparable> {
                          
             }
             
-            //recalculate the hierarchy after placing node
+            //recalculate height (
             self.setNodeHeight()
-            println("traversing right side. height of \(self.key!) is: \(self.height)...")
+            println("traversing right side. node \(self.key!) with height: \(self.height)...")
             
             //TODO: check node balance and perform any required rotations..
             
@@ -96,6 +99,7 @@ public class AVLTree<T: Comparable> {
     
     // MARK: - tree balancing algorithms
 
+    
     
     //retrieve the height of a node
     func getNodeHeight(aNode: AVLTree!) -> Int {
@@ -131,7 +135,7 @@ public class AVLTree<T: Comparable> {
         
         
         //do comparision and calculate node height
-        nodeHeight = max(self.getNodeHeight(self.left), self.getNodeHeight(self.right)) + 1
+        nodeHeight = max(getNodeHeight(self.left), getNodeHeight(self.right)) + 1
         
         self.height = nodeHeight
         
@@ -152,8 +156,8 @@ public class AVLTree<T: Comparable> {
         }
         
         
-        //use absolute value to account for right and left imbalances
-        if (abs(self.getNodeHeight(self.left) - self.getNodeHeight(self.right)) <= 1) {
+        //use absolute value to manage right and left imbalances
+        if (abs(getNodeHeight(self.left) - getNodeHeight(self.right)) <= 1) {
             return true
         }
         else {
@@ -178,30 +182,48 @@ public class AVLTree<T: Comparable> {
         
         
         if (self.isTreeBalanced() == true) {
-            println("node \(self.key) already balanced..")
+            println("node \(self.key!) already balanced..")
             return true
         }
         
         //determine single-right or double rotation
         else {
             
-            if (self.getNodeHeight(self.left) - self.getNodeHeight(self.right) <= 1) {
+            
+            if (getNodeHeight(self.left) - getNodeHeight(self.right) > 1) {
                 println("performing right node rotation...")
                 
                 
+                //create a new leaf node
                 var childToUse : AVLTree = AVLTree()
-                childToUse = self
+                childToUse.height = 0
+                childToUse.key = self.key
                 
-                //2. assign the self pointer the left leaf..
-                //3. add the pointer created in step 1 as the right node of the new self.
                 
+                //reset the root node
+                self.key = self.left?.key
+                self.height = getNodeHeight(self.left)
+
+                
+                //assign the new right node
+                self.right = childToUse
+                
+
+                //adjust the left node
+                self.left = self.left?.left
+                self.left?.height = 0
+                
+                println("root is: \(self.key!) | left is : \(self.left?.key!) | right is : \(self.right?.key!)..")
+                
+
+                return true
                 
             }
 
             
             //double rotation
-            if (self.getNodeHeight(self.right) - self.getNodeHeight(self.left) <= 1) {
-                println("performing right node rotation...")
+            if (getNodeHeight(self.right) - getNodeHeight(self.left) > 1) {
+                println("performing left node rotation...")
             }
             
 

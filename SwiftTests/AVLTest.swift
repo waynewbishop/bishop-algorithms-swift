@@ -56,7 +56,7 @@ class AVLTest: XCTestCase {
     }
     
     
-    //build model for an left-heavy unbalanced tree - O(n)
+    //build and balance a model for a left-heavy tree - O(n)
     func testAVLUnbalancedTreeLeft() {
         
         
@@ -65,7 +65,7 @@ class AVLTest: XCTestCase {
         XCTAssertNotNil(avlTest, "avl instance not created..")
 
         
-        let numberList: Array<Int> = [29, 26, 23]
+        let numberList: Array<Int> = [29, 26, 23, 20]
                 
         //test for new instance
         XCTAssertNotNil(avlTest, "avl instance not created..")
@@ -82,12 +82,13 @@ class AVLTest: XCTestCase {
         avlTest.processAVLDepthTraversal()
         
         
-        //tree balance check
-        XCTAssertFalse(avlTest.isTreeBalanced(), "tree is balanced..")
+        //avl property check
+        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is balanced..")
         
     }
     
-    
+
+    /*
     //build model for an right-heavy unbalanced tree - O(n)
     func testAVLUnbalancedTreeRight() {
         
@@ -116,10 +117,11 @@ class AVLTest: XCTestCase {
         
         
         //tree balance check
-        XCTAssertFalse(avlTest.isTreeBalanced(), "tree is balanced..")
+        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
         
         
     }
+  */
     
 
 
