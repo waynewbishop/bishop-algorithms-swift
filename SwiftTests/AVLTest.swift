@@ -56,8 +56,8 @@ class AVLTest: XCTestCase {
     }
     
     
-    //build and balance a model for a left-heavy tree - O(n)
-    func testAVLUnbalancedTreeLeft() {
+    //build a model for multiple right rotations - O(n)
+    func testAVLRotationRight() {
         
         
         //test for new instance
@@ -83,22 +83,21 @@ class AVLTest: XCTestCase {
         
         
         //avl property check
-        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is balanced..")
+        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
         
     }
     
-
-    /*
-    //build model for an right-heavy unbalanced tree - O(n)
-    func testAVLUnbalancedTreeRight() {
-        
+    
+    
+    //build a model multiple left rotations - O(n)
+    func testAVLRotationLeft() {
         
         //test for new instance
         var avlTest: AVLTree<Int> = AVLTree<Int>()
         XCTAssertNotNil(avlTest, "avl instance not created..")
         
         
-        let numberList : Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8]
+        let numberList: Array<Int> = [19, 20, 23, 26, 29]
         
         
         //test for new instance
@@ -116,12 +115,47 @@ class AVLTest: XCTestCase {
         avlTest.processAVLDepthTraversal()
         
         
-        //tree balance check
+        //avl property check
         XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
-        
+
         
     }
-  */
+    
+    
+    
+    //build a model for left and right rotations - 0(n)
+    func testAVLRotationLeftAndRight() {
+        
+        //test for new instance
+        var avlTest: AVLTree<Int> = AVLTree<Int>()
+        XCTAssertNotNil(avlTest, "avl instance not created..")
+        
+        
+        let numberList: Array<Int> = [19, 20, 21, 26, 16, 12]
+        
+        
+        //test for new instance
+        XCTAssertNotNil(avlTest, "avl instance not created..")
+        
+        
+        //build the tree list
+        for number in numberList {
+            println("adding \(number) to avl tree...")
+            avlTest.addNode(number)
+        }
+        
+        
+        //traverse the completed tree
+        avlTest.processAVLDepthTraversal()
+        
+        
+        //avl property check
+        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
+
+        
+    }
+    
+    
     
 
 

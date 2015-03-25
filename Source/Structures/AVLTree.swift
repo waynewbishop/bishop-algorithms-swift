@@ -51,9 +51,8 @@ public class AVLTree<T: Comparable> {
                 self.left = leftChild
             }
             
-            //recalculate height (after placing a node)
+            //recalculate node height for hierarchy
             self.setNodeHeight()
-            
             println("traversing left side. node \(self.key!) with height: \(self.height)...")
 
 
@@ -82,11 +81,14 @@ public class AVLTree<T: Comparable> {
                          
             }
             
-            //recalculate height (
+            //recalculate node height for hierarchy
             self.setNodeHeight()
             println("traversing right side. node \(self.key!) with height: \(self.height)...")
             
-            //TODO: check node balance and perform any required rotations..
+            
+            //check AVL property
+            self.isValidAVLTree()
+            
             
             
         } //end if
@@ -171,7 +173,7 @@ public class AVLTree<T: Comparable> {
 
     
     //check to ensure node meets avl property
-    func isValidAVLTree() -> Bool {
+    func isValidAVLTree() -> Bool! {
         
         
         //check for valid scenario
@@ -186,18 +188,19 @@ public class AVLTree<T: Comparable> {
             return true
         }
         
-        //determine single-right or double rotation
+        //determine rotation type
         else {
             
             
+            //create a new leaf node
+            var childToUse : AVLTree = AVLTree()
+            childToUse.height = 0
+            childToUse.key = self.key
+            
+            
             if (getNodeHeight(self.left) - getNodeHeight(self.right) > 1) {
-                println("performing right node rotation...")
                 
-                
-                //create a new leaf node
-                var childToUse : AVLTree = AVLTree()
-                childToUse.height = 0
-                childToUse.key = self.key
+                println("\n starting right rotation on \(self.key!)..")
                 
                 
                 //reset the root node
@@ -213,27 +216,46 @@ public class AVLTree<T: Comparable> {
                 self.left = self.left?.left
                 self.left?.height = 0
                 
-                println("root is: \(self.key!) | left is : \(self.left?.key!) | right is : \(self.right?.key!)..")
+                println("root is: \(self.key!) | left is : \(self.left!.key!) | right is : \(self.right!.key!)..")
                 
-
                 return true
                 
             }
 
             
-            //double rotation
             if (getNodeHeight(self.right) - getNodeHeight(self.left) > 1) {
-                println("performing left node rotation...")
+                
+                println("\n starting left rotation on \(self.key!)..")
+                
+                //reset the root node
+                self.key = self.right?.key
+                self.height = getNodeHeight(self.right)
+                
+                
+                //assign the new left node
+                self.left = childToUse
+                
+                
+                //adjust the right node
+                self.right = self.right?.right
+                self.right?.height = 0
+                
+                println("root is: \(self.key!) | left is : \(self.left!.key!) | right is : \(self.right!.key!)..")
+                
+                return true
+                
             }
             
+            
+            return nil
 
-            return true
 
             
         } //end if
         
+
         
-    }
+    } //end function
 
     
     
