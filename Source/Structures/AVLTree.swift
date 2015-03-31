@@ -106,8 +106,6 @@ public class AVLTree<T: Comparable> {
     //retrieve the height of a node
     func getNodeHeight(aNode: AVLTree!) -> Int {
         
-        var nodeHeight: Int = 0
-        
         if (aNode == nil) {
             return -1
         }

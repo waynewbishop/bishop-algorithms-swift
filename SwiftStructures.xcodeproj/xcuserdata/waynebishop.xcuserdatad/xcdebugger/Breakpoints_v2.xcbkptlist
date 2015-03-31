@@ -578,11 +578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/Structures/AVLTree.swift"
-            timestampString = "449012449.395747"
+            timestampString = "449528160.018434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "setNodeHeight()"
             landmarkType = "5">
          </BreakpointContent>
@@ -593,28 +593,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/AVLTest.swift"
-            timestampString = "448916825.280984"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "testAVLRotationRight()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Source/Structures/AVLTree.swift"
-            timestampString = "449017145.540418"
+            timestampString = "449528160.018434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "isValidAVLTree()"
             landmarkType = "5">
          </BreakpointContent>
@@ -626,44 +610,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/Structures/AVLTree.swift"
-            timestampString = "449017145.540418"
+            timestampString = "449528160.018434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "isValidAVLTree()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftTests/AVLTest.swift"
-            timestampString = "449014510.496953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "testAVLRotationLeft()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftTests/AVLTest.swift"
-            timestampString = "449017140.213378"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "testAVLRotationLeftAndRight()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
