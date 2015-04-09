@@ -200,7 +200,34 @@ public class LinkedList<T: Equatable> {
         } //end while
         
     }
+  
+  func reverseLinkedList() {
+    //if count == 1 or count == 0,no need to reverse
+    if count <= 1{
+      return
+    }
     
+    var current : LLNode<T>? = head
+    var next : LLNode<T>? = nil
+    
+    while(current != nil) {
+      //reverse
+      next = current!.next
+      current!.next = current!.previous
+      current!.previous = next
+      
+      
+      if next == nil {
+        head = current!
+      } //end if
+      
+      //move to next node
+      current = next
+    } //end while
+    
+    
+  }
+  
     
 } //end class
 
