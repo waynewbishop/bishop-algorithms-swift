@@ -18,7 +18,6 @@ class LinkedTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         numberList = [8, 2, 10, 9, 7, 5]
     }
 
@@ -85,6 +84,30 @@ class LinkedTest: XCTestCase {
         
         
     } //end function
+    
 
+    
+
+    //reverse a linked list
+    func testReverseLinkedList() {
+        
+        
+        var forwardList: LinkedList<Int> = LinkedList<Int>()
+        var reverseList: LinkedList<Int> = LinkedList<Int>()
+        
+        
+        //append list items
+        for number in numberList {
+            forwardList.addLink(number)
+        }
+
+        
+        //TODO: test other bound scenarios for new method..
+        
+        var outOfBounds: LLNode! = forwardList.linkAtIndex(6)
+        
+        
+    }
+    
     
 }

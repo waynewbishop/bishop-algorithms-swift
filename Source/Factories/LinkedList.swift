@@ -19,7 +19,6 @@ public class LinkedList<T: Equatable> {
     //the number of items
     var count: Int {
         
-        
             if (head.key == nil) {
                 return 0
             }
@@ -135,9 +134,48 @@ public class LinkedList<T: Equatable> {
         
     } //end function
     
+
+
+    
+    //obtain link at a specific index
+    func linkAtIndex(index: Int) ->LLNode<T>! {
+        
+        //TODO: Add this initial conditional logic for all index-related methods..
+        
+        
+        //check for nil conditions
+        if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
+            return nil
+        }
+
+        
+        //retrieve the first node
+        if (index == 0) {
+            return head
+        }
+            
+            
+        else  {
+            var current: LLNode<T>! = head.next
+            var x: Int = 1
+            
+            //cycle through the list of items
+            while (index != x) {
+                current = current.next!;
+                x++
+            }
+            
+            return current
+            
+        } //end else
+    
+        
+    } //end function
     
     
-    //just testing optionals and value assignment
+
+    
+    //insert a link a specific index
     func addLinkAtIndex(key: T, index: Int) {
         
         
@@ -201,16 +239,23 @@ public class LinkedList<T: Equatable> {
         
     }
   
+    
+    
+  //reverse the order of a linked list
   func reverseLinkedList() {
+    
     //if count == 1 or count == 0,no need to reverse
-    if count <= 1{
+    if self.count <= 1{
       return
     }
+
     
     var current : LLNode<T>? = head
     var next : LLNode<T>? = nil
     
+    
     while(current != nil) {
+        
       //reverse
       next = current!.next
       current!.next = current!.previous
@@ -219,14 +264,16 @@ public class LinkedList<T: Equatable> {
       
       if next == nil {
         head = current!
-      } //end if
+      }
       
       //move to next node
       current = next
-    } //end while
+        
+    }//end while
     
     
-  }
+  }//end function
+    
   
     
 } //end class
