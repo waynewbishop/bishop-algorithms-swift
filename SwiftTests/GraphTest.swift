@@ -121,7 +121,7 @@ class GraphTest: XCTestCase {
             }
         }
         
-        XCTFail("vertex \(neighbor.key!) is not a neighbor of vertext \(source.key!)")
+        XCTFail("vertex \(neighbor.key!) is not a neighbor of vertex \(source.key!)")
         return nil;
         
     }

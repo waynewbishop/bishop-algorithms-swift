@@ -19,7 +19,6 @@ public class LinkedList<T: Equatable> {
     //the number of items
     var count: Int {
         
-        
             if (head.key == nil) {
                 return 0
             }
@@ -39,6 +38,22 @@ public class LinkedList<T: Equatable> {
                 return x
                 
             }
+    }
+    
+    
+    
+    
+    //empty list check
+    func isEmpty() ->Bool! {
+        
+        //check for nil conditions
+        if (self.count == 0 || head.key == nil) {
+            return true
+        }
+        else {
+            return false
+        }
+        
     }
     
     
@@ -79,6 +94,7 @@ public class LinkedList<T: Equatable> {
         
     }
     
+
     
     //print all keys for the class
     func printAllKeys() {
@@ -97,11 +113,130 @@ public class LinkedList<T: Equatable> {
     }
     
     
-    //remove a link at a specific index
+    //MARK: Key & Index Operations
+    
+    
+    //obtain link at a specific index
+    func linkAtIndex(index: Int) ->LLNode<T>! {
+        
+        
+        //check for nil conditions
+        if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
+            return nil
+        }
+        
+        
+        //retrieve the first node
+        if (index == 0) {
+            return head
+        }
+            
+            
+        else  {
+            var current: LLNode<T>! = head.next
+            var x: Int = 1
+            
+            //cycle through the list of items
+            while (index != x) {
+                current = current.next;
+                x++
+            }
+            
+            return current
+            
+        } //end else
+        
+        
+    } //end function
+
+    
+    
+    
+    //insert at specific index
+    func addLinkAtIndex(key: T, index: Int) {
+        
+        
+        //check for nil conditions
+        if ((index < 0) || (index > (self.count - 1))) {
+            println("link index does not exist..")
+        }
+        
+        
+        //establish the head node
+        if (head.key == nil) {
+            head.key = key;
+            return;
+        }
+        
+        //establish the trailer, current and new items
+        var current: LLNode<T>? = head
+        var trailer: LLNode<T>?
+        var listIndex: Int = 0
+        
+        
+        //iterate through the list to find the insertion point
+        while (current != nil) {
+            
+            if (index == listIndex) {
+                
+                var childToUse: LLNode = LLNode<T>()
+                
+                //create the new node
+                childToUse.key = key;
+                
+                
+                //connect the node infront of the current node
+                childToUse.next = current
+                childToUse.previous = trailer
+                
+                
+                //use optional binding when using the trailer
+                if let linktrailer = trailer {
+                    linktrailer.next = childToUse
+                    childToUse.previous = linktrailer
+                }
+                
+                
+                //point new node to the current / previous
+                current!.previous = childToUse
+                
+                
+                //replace the head node if required
+                if (index == 0) {
+                    head = childToUse
+                }
+                
+                
+                break
+                
+            } //end if
+            
+            
+            //iterate through to the next item
+            trailer = current
+            current = current?.next
+            listIndex += 1
+            
+            
+        } //end while
+        
+    }
+
+    
+    
+    
+    //remove at specific index
     func removeLinkAtIndex(index: Int) {
         
+        //check for nil conditions
+        if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
+            println("link index does not exist..")
+            return
+        }
+        
+
         var current: LLNode<T>? =  head
-        var trailer: LLNode<T>? = nil
+        var trailer: LLNode<T>?
         var listIndex: Int = 0
         
         
@@ -135,72 +270,44 @@ public class LinkedList<T: Equatable> {
         
     } //end function
     
-    
-    
-    //just testing optionals and value assignment
-    func addLinkAtIndex(key: T, index: Int) {
-        
-        
-        //establish the head node
-        if (head.key == nil) {
-            head.key = key;
-            return;
-        }
-        
-        //establish the trailer, current and new items
-        var current: LLNode<T>? = head
-        var trailer: LLNode<T>? = nil
-        var listIndex: Int = 0
-        
-        
-        //iterate through the list to find the insertion point
-        while (current != nil) {
-            
-            if (index == listIndex) {
-                
-                var childToUse: LLNode = LLNode<T>()
-                
-                //create the new node
-                childToUse.key = key;
-                
-                
-                //connect the node infront of the current node
-                childToUse.next = current
-                childToUse.previous = trailer
-                
-                
-                //use optional binding when using the trailer 
-                if let linktrailer = trailer {
-                    linktrailer.next = childToUse
-                    childToUse.previous = linktrailer
-                }
-                
-                
-                //point new node to the current / previous
-                current!.previous = childToUse
-                
-                
-                //replace the head node if required
-                if (index == 0) {
-                    head = childToUse
-                }
-                
-                
-                break
-                
-            } //end if
 
-            
-            //iterate through to the next item
-            trailer = current
-            current = current?.next
-            listIndex += 1
-            
-            
-        } //end while
-        
-    }
+
     
+    
+  //reverse the order of a linked list
+  func reverseLinkedList() {
+    
+    //if count == 1 or count == 0,no need to reverse
+    if self.count <= 1{
+      return
+    }
+
+    
+    var current : LLNode<T>? = head
+    var next : LLNode<T>? = nil
+    
+    
+    while(current != nil) {
+        
+      //reverse
+      next = current!.next
+      current!.next = current!.previous
+      current!.previous = next
+      
+      
+      if next == nil {
+        head = current!
+      }
+      
+      //move to next node
+      current = next
+        
+    }//end while
+    
+    
+  }//end function
+    
+  
     
 } //end class
 

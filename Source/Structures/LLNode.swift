@@ -10,8 +10,12 @@ import Foundation
 
 class LLNode<T> {
     
-    var key: T! = nil
-    var next: LLNode? = nil
-    var previous: LLNode? = nil
+    var key: T!
+    var next: LLNode?
+    var previous: LLNode? 
+    
+    init(){
+    }
+    
 }
 
