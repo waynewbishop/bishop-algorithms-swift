@@ -41,27 +41,32 @@ class LinkedTest: XCTestCase {
         var nodecount: Int = linkedList.count
 
         
-        
         //lowest bound
         var lowerbound: LLNode! = linkedList.linkAtIndex(0)
-        if (lowerbound == nil) {
+        if ((lowerbound == nil) || (lowerbound.key != numberList[0])) {
             XCTFail("lowest bound retrieve fail..")
         }
         
         
         //upper bound
         var upperbound: LLNode! = linkedList.linkAtIndex(nodecount - 1)
-        if (upperbound.key != numberList[nodecount - 1]) {
+        if ((upperbound == nil) || (upperbound.key != numberList[nodecount - 1])) {
           XCTFail("upper bound retrieve fail..")
         }
 
         
-        //obtain a random index
+        
+        //random index
         var range: UInt32 = UInt32(numberList.count)
         var randomIndex = Int(arc4random_uniform(range))
         
+        
 
-        //TODO: retrieve value at random index..
+        //retrieve random index
+        var randomlink: LLNode! = linkedList.linkAtIndex(randomIndex)
+        if ((randomlink == nil) || (randomlink.key != numberList[randomIndex])) {
+            XCTFail("random index retrieve fail..")
+        }
         
         
     }
@@ -74,19 +79,18 @@ class LinkedTest: XCTestCase {
     func testAddLinkAtIndex() {
 
         
-        //create a new instance
+        //create list and test pair
         var linkedList: LinkedList<Int> = self.buildLinkedList()
         var testPair: keyIndex = keyIndex(key: 4, index: 3)
         
         
         linkedList.addLinkAtIndex(testPair.key, index: testPair.index)
         linkedList.printAllKeys()
-
         
 
         //retrieve the selected value
         var current = linkedList.linkAtIndex(testPair.index) as LLNode!
-        
+
         
         if ((current == nil) || (current.key != testPair.key)) {
             XCTFail("linked list addition at index failed..")
@@ -99,7 +103,7 @@ class LinkedTest: XCTestCase {
 
         
         
-        //retrieve value at position
+        //retrieve new value at same position
         var removed = linkedList.linkAtIndex(testPair.index) as LLNode!
         if (removed.key == testPair.key) {
             XCTFail("linked list removal failed..")
@@ -114,16 +118,28 @@ class LinkedTest: XCTestCase {
     //reverse a linked list
     func testReverseLinkedList() {
         
-        //create a new instance
+
         var linkedList: LinkedList<Int> = self.buildLinkedList()
+        var linkForwards: LLNode! = linkedList.linkAtIndex(0)
+        var key: Int = 0
         
-        //TODO: obtain and store value at a specific index
+        if (linkForwards == nil) {
+            XCTFail("link for reversal not found..")
+        }
         
         //reverse the list
         linkedList.reverseLinkedList()
         linkedList.printAllKeys()
         
-        //TODO: test the saved key/value pair against the reversed positioned items..
+        
+        var linkBackwards: LLNode! = linkedList.linkAtIndex(0)
+
+        
+        //evaluate keys
+        if (linkForwards.key == linkBackwards.key) {
+            XCTFail("reversed list failed..")
+        }
+        
         
     }
 
@@ -132,6 +148,7 @@ class LinkedTest: XCTestCase {
     //MARK: helper function
     
 
+    
     //helper method to build list
     func buildLinkedList() ->LinkedList<Int>! {
         
