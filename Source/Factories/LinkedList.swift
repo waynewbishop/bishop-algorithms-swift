@@ -142,7 +142,6 @@ public class LinkedList<T: Equatable> {
         
         //TODO: Add this initial conditional logic for all index-related methods..
         
-        
         //check for nil conditions
         if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
             return nil
@@ -161,7 +160,7 @@ public class LinkedList<T: Equatable> {
             
             //cycle through the list of items
             while (index != x) {
-                current = current.next!;
+                current = current.next;
                 x++
             }
             

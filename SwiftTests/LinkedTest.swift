@@ -9,6 +9,16 @@
 import UIKit
 import XCTest
 
+
+
+//basic struct for grouping values
+struct keyIndex {
+    private var key: Int
+    private var index: Int
+}
+
+
+
 class LinkedTest: XCTestCase {
 
     
@@ -20,67 +30,57 @@ class LinkedTest: XCTestCase {
         super.setUp()
         numberList = [8, 2, 10, 9, 7, 5]
     }
-
     
     
-    
-    func testAddLink() {
+    //retrieve specific links
+    func testLinkAtIndex() {
         
         //create a new instance
-        var linkedList: LinkedList<Int> = LinkedList<Int>()
+        var linkedList: LinkedList<Int> = self.buildLinkedList()
         
+        //TODO: Work on building upper, lower and non-existent test bounds
         
-        //append list items
-        for number in numberList {
-            linkedList.addLink(number)
-        }
-        
-        //print all the keys
-        linkedList.printAllKeys()
-        
-        
-        if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
-        }
         
     }
 
     
-    func testLinkedList() {
+
+    //test nodes at a specific index
+    func testAddLinkAtIndex() {
+
         
         //create a new instance
-        var linkedList: LinkedList<Int> = LinkedList<Int>()
+        var linkedList: LinkedList<Int> = self.buildLinkedList()
+        var testPair: keyIndex = keyIndex(key: 4, index: 3)
         
         
-        //append list items
-        for number in numberList {
-            linkedList.addLink(number)
-        }
-        
-        //print all the keys
+        //insert at a specific index
+        linkedList.addLinkAtIndex(testPair.key, index: testPair.index)
         linkedList.printAllKeys()
+
+        
+
+        //retrieve the selected value
+        var current = linkedList.linkAtIndex(testPair.index) as LLNode!
         
         
-        if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
-        }
-        
-        
-        //insert a node at a specific index
-        linkedList.addLinkAtIndex(4, index: 3)
-        linkedList.printAllKeys()
-        
-        if (linkedList.count != numberList.count + 1) {
+        if ((current == nil) || (current.key != testPair.key)) {
             XCTFail("linked list addition at index failed..")
         }
+
         
-        
-        linkedList.removeLinkAtIndex(1)
+        //remove at a specific index
+        linkedList.removeLinkAtIndex(testPair.index)
         linkedList.printAllKeys()
+
         
-        if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
+        //retrieve value at position
+        var removed = linkedList.linkAtIndex(testPair.index) as LLNode!
+        
+        if (removed.key == testPair.key) {
+            XCTFail("linked list removal failed..")
         }
+        
         
         
     } //end function
@@ -102,12 +102,38 @@ class LinkedTest: XCTestCase {
         }
 
         
-        //TODO: test other bound scenarios for new method..
+    }
+
+    
+
+    //MARK: helper function
+    
+
+    //helper method to build list
+    func buildLinkedList() ->LinkedList<Int>! {
         
-        var outOfBounds: LLNode! = forwardList.linkAtIndex(6)
+        
+        //create a new instance
+        var linkedList: LinkedList<Int> = LinkedList<Int>()
+        
+        
+        //append list items
+        for number in numberList {
+            linkedList.addLink(number)
+        }
+        
+        //print all the keys
+        linkedList.printAllKeys()
+        
+        
+        if (linkedList.count != numberList.count) {
+            XCTFail("linked list count doesn't match number list..")
+            return nil
+        }
+        
+        return linkedList
         
         
     }
-    
     
 }
