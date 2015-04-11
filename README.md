@@ -24,6 +24,7 @@ The project features code-level examples for the following items:
 + Generics
 + Hash Tables
 + Binary Search Trees
++ Tree Balancing (Rotations)
 + Tries
 + Stacks & Queues
 + Graphs
@@ -77,7 +78,7 @@ Example
 Getting Started
 --------------------
 
-Running Swift Structures requires Xcode 6.0 GM Seed or later. The directories are organized as follows:
+Swift Structures has been optimized for Xcode 6.3 (e.g., Swift 1.2) or later. The directories are organized as follows:
 + Source - Code for all Swift data structures and algorithms
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
