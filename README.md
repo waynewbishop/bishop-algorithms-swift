@@ -93,6 +93,14 @@ Branches
 + master - The production branch. Clone or fork this repository for the latest copy
 + develop - The active development branch. <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">Pull requests</a> should be directed to this branch
 
+
+Other Projects
+--------------------
+
++ <a href="https://github.com/EvgenyKarkan/EKAlgorithms" target="_blank">EKAlgorithms</a> - A set of computer exercises implemented in Objective-C
++ <a href="https://github.com/sagivo/algorithms" target="_blank">Algorithms</a> - A playground for common questions implemented in Ruby
+
+
 Questions
 --------------------
 
