@@ -12,16 +12,15 @@ import Foundation
 public class PathHeap {
     
     private var heap: Array<Path>
-
+    
+    init() {
+        heap = Array<Path>()
+    }
+    
     
     //the number of frontier items
     var count: Int {
         return self.heap.count
-    }
-    
-    
-    init() {
-        heap = Array<Path>()
     }
     
     

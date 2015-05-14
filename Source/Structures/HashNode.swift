@@ -14,7 +14,4 @@ class HashNode {
     var lastname: String!
     var next: HashNode!
     
-    init() {
-    }
-    
 }

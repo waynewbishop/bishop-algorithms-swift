@@ -113,7 +113,7 @@ public class LinkedList<T: Equatable> {
     }
     
     
-    //MARK: Key & Index Operations
+    //MARK: Key & index operations
     
     
     //obtain link at a specific index
@@ -248,7 +248,6 @@ public class LinkedList<T: Equatable> {
                 
                 //redirect the trailer and next pointers
                 trailer!.next = current?.next
-                current!.next!.previous = trailer
                 current = nil
                 break
                 
