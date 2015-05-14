@@ -31,7 +31,7 @@ public class LinkedList<T: Equatable> {
                 
                 //cycle through the list of items
                 while ((current.next) != nil) {
-                    current = current.next!;
+                    current = current.next!
                     x++
                 }
                 
@@ -64,8 +64,8 @@ public class LinkedList<T: Equatable> {
         
         //establish the head node
         if (head.key == nil) {
-            head.key = key;
-            return;
+            head.key = key
+            return
         }
     
         
@@ -79,9 +79,9 @@ public class LinkedList<T: Equatable> {
                 
                 var childToUse: LLNode = LLNode<T>()
                 
-                childToUse.key = key;
+                childToUse.key = key
                 childToUse.previous = current
-                current!.next = childToUse;
+                current!.next = childToUse
                 break
             }
                 
@@ -99,7 +99,7 @@ public class LinkedList<T: Equatable> {
     //print all keys for the class
     func printAllKeys() {
         
-        var current: LLNode! = head;
+        var current: LLNode! = head
         
         println("------------------")
         
@@ -113,32 +113,25 @@ public class LinkedList<T: Equatable> {
     }
     
     
-    //MARK: Key & Index Operations
+    //MARK: Key & index operations
     
     
     //obtain link at a specific index
     func linkAtIndex(index: Int) ->LLNode<T>! {
-        
         
         //check for nil conditions
         if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
             return nil
         }
         
-        
-        //retrieve the first node
-        if (index == 0) {
-            return head
-        }
-            
             
         else  {
-            var current: LLNode<T>! = head.next
-            var x: Int = 1
+            var current: LLNode<T>! = head
+            var x: Int = 0
             
             //cycle through the list of items
             while (index != x) {
-                current = current.next;
+                current = current.next
                 x++
             }
             
@@ -164,8 +157,8 @@ public class LinkedList<T: Equatable> {
         
         //establish the head node
         if (head.key == nil) {
-            head.key = key;
-            return;
+            head.key = key
+            return
         }
         
         //establish the trailer, current and new items
@@ -182,7 +175,7 @@ public class LinkedList<T: Equatable> {
                 var childToUse: LLNode = LLNode<T>()
                 
                 //create the new node
-                childToUse.key = key;
+                childToUse.key = key
                 
                 
                 //connect the node infront of the current node
@@ -256,7 +249,7 @@ public class LinkedList<T: Equatable> {
                 //redirect the trailer and next pointers
                 trailer!.next = current?.next
                 current = nil
-                break;
+                break
                 
             }
             
