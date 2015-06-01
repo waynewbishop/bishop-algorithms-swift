@@ -44,7 +44,6 @@ public class Sorting {
     } //end function
     
 
-
     
     /*
     insertion sort algorithm - rank set of random numbers lowest to highest by

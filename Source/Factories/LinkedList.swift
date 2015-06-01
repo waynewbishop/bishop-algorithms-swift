@@ -16,8 +16,8 @@ public class LinkedList<T: Equatable> {
     private var head: LLNode<T> = LLNode<T>()
     
     
-    //the number of items
-    var count: Int {
+   //the number of items
+   var count: Int {
         
             if (head.key == nil) {
                 return 0
@@ -30,7 +30,7 @@ public class LinkedList<T: Equatable> {
                 
                 
                 //cycle through the list of items
-                while ((current.next) != nil) {
+                while current.next != nil {
                     current = current.next!
                     x++
                 }
@@ -41,6 +41,40 @@ public class LinkedList<T: Equatable> {
     }
     
     
+
+    //filter list content - example of higher order function
+    func filter(formula:(LLNode<T> -> Bool)) -> LinkedList<T>! {
+
+        
+        //check for instance
+        if (head.key == nil) {
+            return nil
+        }
+        
+        
+        var current: LLNode! = head
+        var results: LinkedList<T>! = LinkedList<T>()
+
+        
+        //TODO: Fix logic to count the final item in the collection...
+        
+        while current.next != nil {
+            
+            //filter based on formula
+            if formula(current) == true {
+                results.addLink(current.key)
+            }
+            
+            current = current.next!
+        }
+        
+        
+        return results
+    }
+    
+    
+    //TODO: Also build a generic map function as well! -  why not..
+
     
     
     //empty list check
