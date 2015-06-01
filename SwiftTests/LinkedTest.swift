@@ -30,31 +30,6 @@ class LinkedTest: XCTestCase {
         super.setUp()
         numberList = [8, 2, 10, 9, 7, 5]
     }
-
-    
-    //MARK: Closure Examples
-
-    
-    //filter based on criteria
-    func testLinkFilterExpression() {
-        
-        var linkedList: LinkedList<Int> = self.buildLinkedList()
-
-        
-        //inline closure expression
-        var results: LinkedList<Int>! = linkedList.filter { (node: LLNode<Int>) -> Bool in
-            return node.key <= 8
-        }
-        
-        println("filtered count is \(results.count)")
-        
-    }
-
-    
-    //TODO: Demonstrate passing a function to a closure as a contant
-    func testLinkFilterFunction() {
-        
-    }
     
     
     //retrieve specific links
@@ -172,7 +147,6 @@ class LinkedTest: XCTestCase {
     //MARK: helper functions
 
     
-
     
     //helper method to build list
     func buildLinkedList() ->LinkedList<Int>! {

@@ -41,41 +41,6 @@ public class LinkedList<T: Equatable> {
     }
     
     
-
-    //filter list content - example of higher order function
-    func filter(formula:(LLNode<T> -> Bool)) -> LinkedList<T>! {
-
-        
-        //check for instance
-        if (head.key == nil) {
-            return nil
-        }
-        
-        
-        var current: LLNode! = head
-        var results: LinkedList<T>! = LinkedList<T>()
-
-        
-        //TODO: Fix logic to count the final item in the collection...
-        
-        while current.next != nil {
-            
-            //filter based on formula
-            if formula(current) == true {
-                results.addLink(current.key)
-            }
-            
-            current = current.next!
-        }
-        
-        
-        return results
-    }
-    
-    
-    //TODO: Also build a generic map function as well! -  why not..
-
-    
     
     //empty list check
     func isEmpty() ->Bool! {
@@ -335,6 +300,85 @@ public class LinkedList<T: Equatable> {
   }//end function
     
   
+    
+    //MARK: Closure operations
+    
+
+    
+    /*
+    notes: These "generic methods" mimic the map & filter array
+    functions found in the Swift standard library.
+    */
+    
+    
+    //filter list content - higher order function
+    func filter(formula:(LLNode<T> -> Bool)) -> LinkedList<T>! {
+        
+        
+        //check for instance
+        if (head.key == nil) {
+            return nil
+        }
+        
+        
+        var current: LLNode! = head
+        var results: LinkedList<T>! = LinkedList<T>()
+        
+        
+        while (current != nil) {
+            
+            //filter based on formula
+            if formula(current) == true {
+                results.addLink(current.key)
+            }
+            
+            
+            current = current.next
+        }
+        
+        
+        return results
+        
+    }
+    
+    
+    
+    //map list content - higher order function
+    func map(formula:(LLNode<T> -> T)) -> LinkedList<T>! {
+        
+        
+        //check for instance
+        if (head.key == nil) {
+            return nil
+        }
+        
+        
+        var current: LLNode! = head
+        var results: LinkedList<T>! = LinkedList<T>()
+        var newKey: T!
+        
+        
+        while (current != nil) {
+            
+            //map based on formula
+            newKey = formula(current)
+            
+            //add non-nil entries
+            if newKey != nil {
+                results.addLink(newKey)
+            }
+            
+            
+            current = current.next
+        }
+        
+        
+        return results
+        
+    }
+
+    
+    
     
 } //end class
 
