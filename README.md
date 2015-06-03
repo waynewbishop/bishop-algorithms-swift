@@ -39,7 +39,7 @@ I plan to write further additional examples of algorithms and all developers are
 Example
 --------------------
 
-```
+```swift
   /* graph traversal - breadth first search */
   
   func traverseGraphBFS(startingv: Vertex) {
