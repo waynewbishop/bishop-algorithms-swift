@@ -325,7 +325,7 @@ public class LinkedList<T: Equatable> {
         var results: LinkedList<T>! = LinkedList<T>()
         
         
-        while (current != nil) {
+        while current != nil {
             
             //filter based on formula
             if formula(current) == true {
@@ -358,7 +358,7 @@ public class LinkedList<T: Equatable> {
         var newKey: T!
         
         
-        while (current != nil) {
+        while current != nil {
             
             //map based on formula
             newKey = formula(current)
