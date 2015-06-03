@@ -43,15 +43,10 @@ public class LinkedList<T: Equatable> {
     
     
     //empty list check
-    func isEmpty() ->Bool! {
+    func isEmpty() -> Bool! {
         
-        //check for nil conditions
-        if (self.count == 0 || head.key == nil) {
-            return true
-        }
-        else {
-            return false
-        }
+        // returns true if count is 0 or if the list's head is nil
+        return self.count == 0 || head.key == nil
         
     }
     
