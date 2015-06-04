@@ -22,6 +22,7 @@ The project features code-level examples for the following items:
 + Quick Sort
 + Merge Sort
 + Generics
++ Closures
 + Hash Tables
 + Binary Search Trees
 + Tree Balancing (Rotations)
