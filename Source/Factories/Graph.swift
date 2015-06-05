@@ -90,8 +90,9 @@ public class SwiftGraph {
     
         //queue a starting vertex
         graphQueue.enQueue(startingv)
+
     
-        while(!graphQueue.isEmpty()) {
+        while !graphQueue.isEmpty() {
             
             //traverse the next queued vertex
             var vitem = graphQueue.deQueue() as Vertex!
@@ -127,8 +128,8 @@ public class SwiftGraph {
 
     func reversePath(var head: Path!, source: Vertex) -> Path! {
         
-        if (head == nil) {
-            return nil;
+        if head == nil {
+           return nil
         }
         
         
@@ -191,19 +192,15 @@ public class SwiftGraph {
         var bestPath: Path = Path()
         
         
-        while(frontier.count != 0) {
-
+        while frontier.count != 0 {
             
             //support path changes using the greedy approach
             bestPath = Path()
-            
-            
-            var x: Int = 0
             var pathIndex: Int = 0
-            
-            
-            for (x = 0; x < frontier.count; x++) {
 
+            
+            for x in 0..<frontier.count {
+               
                 var itemPath: Path = frontier[x]
                 
                 if  (bestPath.total == nil) || (itemPath.total < bestPath.total) {
@@ -212,7 +209,8 @@ public class SwiftGraph {
                 }
                 
             }
-
+            
+            
             
             //enumerate the bestPath edges
             for e in bestPath.destination.neighbors {
@@ -294,9 +292,8 @@ public class SwiftGraph {
         var bestPath: Path = Path()
         
         
-        while(frontier.count != 0) {
-            
-            
+        while frontier.count != 0 {
+                        
             //use the greedy approach to obtain the best path
             bestPath = Path()
             bestPath = frontier.peek()

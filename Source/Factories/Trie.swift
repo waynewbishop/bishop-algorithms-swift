@@ -24,7 +24,7 @@ public class Trie {
         
         
         if (keyword.length == 0){
-            return nil;
+            return nil
         }
         
         
@@ -33,7 +33,7 @@ public class Trie {
         var wordList: Array<String>! = Array<String>()
         
         
-        while(keyword.length != current.level) {
+        while (keyword.length != current.level) {
             
             var childToUse: TrieNode!
             var searchKey: String = keyword.substringToIndex(current.level + 1)
@@ -54,8 +54,8 @@ public class Trie {
             }
             
  
-            if (childToUse == nil) {
-                return nil
+            if childToUse == nil {
+               return nil
             }
             
             
@@ -93,8 +93,8 @@ public class Trie {
     func addWord(keyword: String) {
         
         
-        if (keyword.length == 0){
-            return;
+        if keyword.length == 0 {
+           return
         }
 
         

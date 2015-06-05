@@ -19,7 +19,7 @@ public class LinkedList<T: Equatable> {
    //the number of items
    var count: Int {
         
-            if (head.key == nil) {
+            if head.key == nil {
                 return 0
             }
                 
@@ -69,7 +69,7 @@ public class LinkedList<T: Equatable> {
         
         while (current != nil) {
             
-            if (current?.next == nil) {
+            if current?.next == nil {
                 
                 var childToUse: LLNode = LLNode<T>()
                 

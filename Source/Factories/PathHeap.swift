@@ -29,8 +29,7 @@ public class PathHeap {
     func peek() -> Path! {
         
         if (heap.count > 0) {
-            var shortestPath: Path = heap[0]
-            return shortestPath
+            return heap[0] //the shortest path
         }
         else {
             return nil

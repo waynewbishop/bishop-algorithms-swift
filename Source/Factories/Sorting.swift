@@ -52,11 +52,11 @@ public class Sorting {
     
     func insertionSort(var numberList: Array<Int>) -> Array<Int> {
         
-        var x, y, key : Int
+        var y, key : Int
         
-        
-        for (x = 0; x < numberList.count; x++) {
 
+        for x in 0..<numberList.count {
+            
             //obtain a key to be evaluated
             key = numberList[x]
             
@@ -65,10 +65,10 @@ public class Sorting {
             for (y = x; y > -1; y--) {
                 
                 println("comparing \(key) and \(numberList[y])")
+
                 
-                if (key < numberList[y]) {
+                if key < numberList[y] {
                     
-                
                     //remove item from original position
                     numberList.removeAtIndex(y + 1)
                     
@@ -77,7 +77,7 @@ public class Sorting {
                     
                 }
                 
-            }
+            } //end for
             
             
         } //end for
