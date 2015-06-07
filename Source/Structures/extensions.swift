@@ -44,7 +44,7 @@ extension String {
         functions for manipulating native Swift strings. Even there is a
         native Array.reverse() method, this has been added as an example interview question.
         */
-
+        
         
         //convert to array
         var characters = Array(self)

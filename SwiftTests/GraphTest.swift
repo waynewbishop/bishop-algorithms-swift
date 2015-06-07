@@ -61,42 +61,39 @@ class GraphTest: XCTestCase {
     
     
     
-    
-    //return the shortest path based on two non-negative edge weights
-    func testDijkstra() {
+    //find the shortest path using heapsort operations - O(1)
+    func testDijkstraWithHeaps() {
+        
+        var sourceVertex = vertexA
+        var destinationVertex = vertexE
         
         
-        var sourceVertex: Vertex = vertexA
-        var destinationVertex: Vertex = vertexE
-
-        
-        //return the optional shortest path
-        var shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
-
-        
+        var shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex, destination: destinationVertex)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
+        printPath(shortestPath)
         
-        var reversedPath: Path! = Path()
-        var current: Path! = Path()
+    }
+    
+    
+    
+    
+    //find the shortest path based on two non-negative edge weights - O(n)
+    func testDijkstra() {
+        
+        var sourceVertex = vertexA
+        var destinationVertex = vertexE
 
-        //reverse the sequence of paths
-        reversedPath = testGraph.reversePath(shortestPath, source: vertexA)
-        current = reversedPath
-
         
-        println()
+        var shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
+        XCTAssertNotNil(shortestPath, "shortest path not found..")
         
-        //iterate and print each path sequence
-        while (current != nil) {
-                println("The path is : \(current.destination.key!) with a total of : \(current.total)..")
-                current = current.previous
-        }
+        printPath(shortestPath)
         
-        println()
         
     }
 
+    
     
     
     //test breadth-first search
@@ -123,6 +120,30 @@ class GraphTest: XCTestCase {
         
         XCTFail("vertex \(neighbor.key!) is not a neighbor of vertex \(source.key!)")
         return nil;
+        
+    }
+    
+    
+    //reverse a path data structure
+    func printPath(shortestPath: Path!) {
+
+        
+        var reversedPath: Path! = Path()
+        var current: Path! = Path()
+        
+        
+        //reverse the sequence of paths
+        reversedPath = testGraph.reversePath(shortestPath, source: vertexA)
+        current = reversedPath
+        
+        
+        //iterate and print each path sequence
+        while (current != nil) {
+            println("The path is : \(current.destination.key!) with a total of : \(current.total)..")
+            current = current.previous
+        }
+
+        
         
     }
   
