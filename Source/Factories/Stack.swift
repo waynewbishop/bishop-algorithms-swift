@@ -16,7 +16,6 @@ class SwiftStack<T> {
     
     //TODO: Convert count method to computed property
     
-    
     //push an item onto the stack
     func push(var key: T) {
         

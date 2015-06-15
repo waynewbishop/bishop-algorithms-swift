@@ -100,7 +100,7 @@ class AVLTest: XCTestCase {
         
         
         //traverse the completed tree
-        avlTest.processAVLDepthTraversal()
+        avlTest.traverse(nil)
         
         
         //tree balance check
@@ -109,7 +109,6 @@ class AVLTest: XCTestCase {
         
     }
 
-    
-
+   
 
 }

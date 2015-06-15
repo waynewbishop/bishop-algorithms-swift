@@ -9,7 +9,6 @@
 import Foundation
 
 
-
 extension String {
   
     
@@ -36,18 +35,24 @@ extension String {
     }
 
     
+    //convert a string into a character array
+    func characters() ->Array<Character>! {
+        return Array(self)
+    }
+
+    
     //reverse string order
     func reverse() -> String! {
-        
+                
         /*
         notes: While this operation would normally be done 'in-place', there are limited
         functions for manipulating native Swift strings. Even there is a
         native Array.reverse() method, this has been added as an example interview question.
         */
-        
+
         
         //convert to array
-        var characters = Array(self)
+        var characters = self.characters()
         
         var findex: Int = 0
         var bindex: Int = characters.count - 1
@@ -69,9 +74,11 @@ extension String {
         return String(characters)
         
     }
-  
+
     
 }
+
+
 
 
 

@@ -42,7 +42,7 @@ class HashTable {
         
         
         //check for an existing list
-        if (buckets[hashindex] == nil) {
+        if  buckets[hashindex] == nil {
             buckets[hashindex] = childToUse
         }
         
@@ -78,7 +78,7 @@ class HashTable {
         
         
         //determine if the value is present
-        if (buckets[hashindex] == nil) {
+        if  buckets[hashindex] == nil {
             println("name not found in hash table..")
             return false
         }

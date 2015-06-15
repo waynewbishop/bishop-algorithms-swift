@@ -257,34 +257,74 @@ public class AVLTree<T: Comparable> {
 
     
     
-    // MARK: traversal algorithm
-    
+    // MARK: traversal algorithms
+
+    /*
     
     //depth first search in-order traversal
     func processAVLDepthTraversal() {
         
         
         //check for a nil condition
-        if (self.key == nil) {
+        if  self.key == nil {
             println("no key provided..")
             return
         }
-        
+    
         
         //process the left side
-        if (self.left != nil) {
+        if  self.left != nil {
             left?.processAVLDepthTraversal()
         }
         
         println("..the traversed value is: \(self.key!). height: \(self.height)..")
         
         //process the right side
-        if (self.right != nil) {
+        if  self.right != nil {
             right?.processAVLDepthTraversal()
         }
         
         
     } //end function
+    
+    */
+    
+    
+    
+    //use dfs with trailing closure to update all values
+    func traverse(formula: (AVLTree<T> -> ())! ) {
+        
+        //check for a nil condition
+        if  self.key == nil {
+            println("no key provided..")
+            return
+        }
+        
+        
+        //process the left side
+        if self.left != nil {
+            left?.traverse(formula)
+        }
+
+        
+        //invoke optional formula
+        if formula != nil {
+            formula(self)
+            println("..the updated value is: \(self.key!). height: \(self.height)..")
+        }
+        else {
+            println("...the value is: \(self.key!) - height: \(self.height)..")
+        }
+
+                
+        //process the right side
+        if self.right != nil {
+            right?.traverse(formula)
+        }
+
+        
+    }
+    
 
 
     

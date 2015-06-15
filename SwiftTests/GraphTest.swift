@@ -72,6 +72,7 @@ class GraphTest: XCTestCase {
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
         printPath(shortestPath)
+
         
     }
     
@@ -99,8 +100,6 @@ class GraphTest: XCTestCase {
     //test breadth-first search
     func testBFSTraversal() {
         testGraph.traverseGraphBFS(vertexA)
-        println()
-        
     }
     
     
@@ -110,6 +109,7 @@ class GraphTest: XCTestCase {
     
     //check for neighbor membership
     func neighborTest(source: Vertex, neighbor: Vertex) -> Bool! {
+
         
         //add unvisited vertices to the queue
         for e in source.neighbors {
@@ -119,7 +119,7 @@ class GraphTest: XCTestCase {
         }
         
         XCTFail("vertex \(neighbor.key!) is not a neighbor of vertex \(source.key!)")
-        return nil;
+        return nil
         
     }
     
