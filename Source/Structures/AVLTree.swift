@@ -9,6 +9,12 @@
 import Foundation
 
 
+struct Foo {
+    let bar: (inout baz: String) -> ()
+}
+
+
+
 /* An AVL Tree is another name for a balanced binary search tree*/
 
 public class AVLTree<T: Comparable> {
@@ -258,41 +264,13 @@ public class AVLTree<T: Comparable> {
     
     
     // MARK: traversal algorithms
-
-    /*
-    
-    //depth first search in-order traversal
-    func processAVLDepthTraversal() {
-        
-        
-        //check for a nil condition
-        if  self.key == nil {
-            println("no key provided..")
-            return
-        }
-    
-        
-        //process the left side
-        if  self.left != nil {
-            left?.processAVLDepthTraversal()
-        }
-        
-        println("..the traversed value is: \(self.key!). height: \(self.height)..")
-        
-        //process the right side
-        if  self.right != nil {
-            right?.processAVLDepthTraversal()
-        }
-        
-        
-    } //end function
-    
-    */
     
     
+    /* TODO - implement bfs with inout parameter for graphs functions..
     
     //use dfs with trailing closure to update all values
-    func traverse(formula: (AVLTree<T> -> ())! ) {
+    func traverse(formula: (inout node: AVLTree<T>) -> T) {
+        
         
         //check for a nil condition
         if  self.key == nil {
@@ -306,20 +284,76 @@ public class AVLTree<T: Comparable> {
             left?.traverse(formula)
         }
 
+        var someNode: AVLTree<T> = AVLTree<T>()
         
-        //invoke optional formula
-        if formula != nil {
-            formula(self)
-            println("..the updated value is: \(self.key!). height: \(self.height)..")
-        }
-        else {
-            println("...the value is: \(self.key!) - height: \(self.height)..")
-        }
-
-                
+        //invoke the formula
+        formula(node: &someNode)
+        println(self.key!)
+        
         //process the right side
         if self.right != nil {
             right?.traverse(formula)
+        }
+        
+        
+    }
+    
+    */
+    
+    
+    //use dfs with trailing closure to update all values
+    func traverse(formula: AVLTree<T> -> T) {
+        
+        
+        //check for a nil condition
+        if  self.key == nil {
+            println("no key provided..")
+            return
+        }
+        
+        
+        //process the left side
+        if self.left != nil {
+            left?.traverse(formula)
+        }
+    
+        
+        //invoke formula - apply results
+        let newKey: T = formula(self)
+        self.key! = newKey
+        
+        
+        //process the right side
+        if self.right != nil {
+            right?.traverse(formula)
+        }
+        
+        
+    }
+
+    
+    
+    //traverse all values
+    func traverse() {
+        
+        //check for a nil condition
+        if  self.key == nil {
+            println("no key provided..")
+            return
+        }
+        
+        
+        //process the left side
+        if self.left != nil {
+            left?.traverse()
+        }
+        
+        println("...the value is: \(self.key!) - height: \(self.height)..")
+        
+
+        //process the right side
+        if self.right != nil {
+            right?.traverse()
         }
 
         

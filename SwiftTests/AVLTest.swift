@@ -79,8 +79,57 @@ class AVLTest: XCTestCase {
     }
 
     
+
     
-    //MARK: Helper Function
+    //MARK: Closure Tests
+    
+
+
+    //update tree values with function
+    func testAVLTraverseFunction() {
+        
+        var avlTest = self.buildClosureTree()
+        
+        //invoke formula function
+        avlTest.traverse(traverseFormula)
+        
+        
+        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
+        
+    }
+    
+    
+    //update tree values with closure expression
+    func testAVLTraverseExpression() {
+        
+        var avlTest = self.buildClosureTree()
+        
+        avlTest.traverse { (node: AVLTree<Int>) -> Int in
+            
+            var results = node.key! + node.height
+            println("the updated key is: \(results). node height is: \(node.height)")
+            return results
+            
+        }
+        
+        
+    }
+    
+    
+    //example function - can only be calcuated through a traversal
+    func traverseFormula(node: AVLTree<Int>) -> Int {
+        
+        var results = node.key! + node.height
+        println("the updated key is: \(results). node height is: \(node.height)")
+        return results
+        
+    }
+    
+    
+   
+    
+    
+    //MARK: Helper Functions
     
     
     //helper function - build and balance bst
@@ -100,7 +149,7 @@ class AVLTest: XCTestCase {
         
         
         //traverse the completed tree
-        avlTest.traverse(nil)
+        avlTest.traverse()
         
         
         //tree balance check
@@ -108,7 +157,34 @@ class AVLTest: XCTestCase {
         
         
     }
+    
 
-   
+    
+    //helper function - build specific model to be traversed with closures
+    func buildClosureTree() -> AVLTree<Int> {
+        
+        
+        //test for new instance
+        var avlTest: AVLTree<Int> = AVLTree<Int>()
+        XCTAssertNotNil(avlTest, "avl instance not created..")
+        
+        
+        //provide a balanced list
+        let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
+        
+        
+        //build the tree list
+        for number in numberList {
+            println("adding \(number) to avl tree...")
+            avlTest.addNode(number)
+        }
+        
+        
+        return avlTest
+        
+    }
+
+    
+    
 
 }

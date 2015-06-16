@@ -292,6 +292,7 @@
 		DAE001D119C564720035F1A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Arbutus Software Inc.";
 				TargetAttributes = {

@@ -307,7 +307,7 @@ public class LinkedList<T: Equatable> {
     
     
     //filter list content - higher order function
-    func filter(formula:(LLNode<T> -> Bool)) -> LinkedList<T>! {
+    func filter(formula: LLNode<T> -> Bool) -> LinkedList<T>! {
         
         
         //check for instance
@@ -339,7 +339,7 @@ public class LinkedList<T: Equatable> {
     
     
     //map list content - higher order function
-    func map(formula:(LLNode<T> -> T)) -> LinkedList<T>! {
+    func map(formula: LLNode<T> -> T) -> LinkedList<T>! {
         
         
         //check for instance
