@@ -323,6 +323,9 @@ public class AVLTree<T: Comparable> {
         let newKey: T = formula(self)
         self.key! = newKey
         
+
+        println("...the updated value is: \(self.key!) - height: \(self.height)..")
+        
         
         //process the right side
         if self.right != nil {

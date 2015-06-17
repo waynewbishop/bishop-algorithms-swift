@@ -96,45 +96,43 @@ class AVLTest: XCTestCase {
     }
     
     
-    //update tree values with closure expression
+    //update avl values with closure expression
     func testAVLTraverseExpression() {
         
         var avlTest = self.buildClosureTree()
+        var didFail: Bool = false
         
+        /*
+        notes: for this test, the didFail variable is known to be 'captured' by the closure expression.
+        this technique allows a single variable to be used for each function call.
+        */
         
         avlTest.traverse { (node: AVLTree<Int>) -> Int in
             
-            var testVal = node.key!
             var results = node.key! + node.height
-            
-            if node.height > 0 && results == testVal {  //very simple test
-                XCTFail("closure update failed..")
+            if node.height > 0 && node.key! == results {
+                didFail = true
             }
-            else {
-               println("the updated key is: \(results). node height is: \(node.height)")
-            }
-            
+          
             return results
             
-        } //end closure
+        }
+        
+        XCTAssertFalse(didFail, "..closure update failed..")
         
         
     }
 
     
     
-    //example function - can only be calcuated through a traversal
+    //update avl values with closure function
     func traverseFormula(node: AVLTree<Int>) -> Int {
         
-        var testVal = node.key!
         var results = node.key! + node.height
-        
-        if node.height > 0 && results == testVal {  //very simple test
-            XCTFail("closure update failed..")
+        if node.height > 0 && node.key! == results {
+             XCTFail("closure update failed..")
         }
-        else {
-            println("the updated key is: \(results). node height is: \(node.height)")
-        }
+
         
         return results
         
