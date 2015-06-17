@@ -9,7 +9,10 @@
 import Foundation
 
 
+
+
 /* An AVL Tree is another name for a balanced binary search tree*/
+
 
 public class AVLTree<T: Comparable> {
     
@@ -17,11 +20,15 @@ public class AVLTree<T: Comparable> {
     var left: AVLTree?
     var right: AVLTree?
     var height: Int
-   
+
+    
     init() {
         //set math purposes
         self.height = -1
     }
+
+    
+    //TODO: Build computed count property for class
     
     
     //function to add item based on its value
@@ -257,34 +264,70 @@ public class AVLTree<T: Comparable> {
 
     
     
-    // MARK: traversal algorithm
+    // MARK: traversal algorithms
     
     
-    //depth first search in-order traversal
-    func processAVLDepthTraversal() {
+    //use dfs with trailing closure to update all values
+    func traverse(formula: AVLTree<T> -> T) {
         
         
         //check for a nil condition
-        if (self.key == nil) {
+        if  self.key == nil {
             println("no key provided..")
             return
         }
         
         
         //process the left side
-        if (self.left != nil) {
-            left?.processAVLDepthTraversal()
+        if self.left != nil {
+            left?.traverse(formula)
         }
+    
         
-        println("..the traversed value is: \(self.key!). height: \(self.height)..")
+        //invoke formula - apply results
+        let newKey: T = formula(self)
+        self.key! = newKey
+        
+
+        println("...the updated value is: \(self.key!) - height: \(self.height)..")
+        
         
         //process the right side
-        if (self.right != nil) {
-            right?.processAVLDepthTraversal()
+        if self.right != nil {
+            right?.traverse(formula)
         }
         
         
-    } //end function
+    }
+
+    
+    
+    //traverse all values
+    func traverse() {
+        
+        //check for a nil condition
+        if  self.key == nil {
+            println("no key provided..")
+            return
+        }
+        
+        
+        //process the left side
+        if self.left != nil {
+            left?.traverse()
+        }
+        
+        println("...the value is: \(self.key!) - height: \(self.height)..")
+        
+
+        //process the right side
+        if self.right != nil {
+            right?.traverse()
+        }
+
+        
+    }
+    
 
 
     

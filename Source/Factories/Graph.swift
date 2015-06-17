@@ -80,46 +80,6 @@ public class SwiftGraph {
 
     
     
-   //breadth first search
-   func traverseGraphBFS(startingv: Vertex) {
-
-    
-        //establish a new queue
-        var graphQueue: Queue<Vertex> = Queue<Vertex>()
-    
-    
-        //queue a starting vertex
-        graphQueue.enQueue(startingv)
-    
-        while(!graphQueue.isEmpty()) {
-            
-            //traverse the next queued vertex
-            var vitem = graphQueue.deQueue() as Vertex!
-            
-            
-            //add unvisited vertices to the queue
-            for e in vitem.neighbors {
-                if e.neighbor.visited == false {
-                    println("adding vertex: \(e.neighbor.key!) to queue..")
-                    graphQueue.enQueue(e.neighbor)
-                }
-            }
-            
-            
-            vitem.visited = true
-            println("traversed vertex: \(vitem.key!)..")
-            
-            
-        } //end while
-    
-    
-        println("graph traversal complete..")
-    
-    
-    } //end function
-    
-    
-    
     
     
     /* reverse the sequence of paths given the shortest path.
@@ -127,8 +87,8 @@ public class SwiftGraph {
 
     func reversePath(var head: Path!, source: Vertex) -> Path! {
         
-        if (head == nil) {
-            return nil;
+        if head == nil {
+           return nil
         }
         
         
@@ -191,19 +151,15 @@ public class SwiftGraph {
         var bestPath: Path = Path()
         
         
-        while(frontier.count != 0) {
-
+        while frontier.count != 0 {
             
             //support path changes using the greedy approach
             bestPath = Path()
-            
-            
-            var x: Int = 0
             var pathIndex: Int = 0
-            
-            
-            for (x = 0; x < frontier.count; x++) {
 
+            
+            for x in 0..<frontier.count {
+               
                 var itemPath: Path = frontier[x]
                 
                 if  (bestPath.total == nil) || (itemPath.total < bestPath.total) {
@@ -212,7 +168,8 @@ public class SwiftGraph {
                 }
                 
             }
-
+            
+            
             
             //enumerate the bestPath edges
             for e in bestPath.destination.neighbors {
@@ -294,9 +251,8 @@ public class SwiftGraph {
         var bestPath: Path = Path()
         
         
-        while(frontier.count != 0) {
-            
-            
+        while frontier.count != 0 {
+                        
             //use the greedy approach to obtain the best path
             bestPath = Path()
             bestPath = frontier.peek()
@@ -341,7 +297,145 @@ public class SwiftGraph {
         
     }
     
+    
+    //MARK: traversal algorithms
+    
+    
+    //bfs traversal with inout closure function
+    func traverse(startingv: Vertex, formula: (inout node: Vertex) -> ()) {
 
+        
+        //establish a new queue
+        var graphQueue: Queue<Vertex> = Queue<Vertex>()
+        
+        
+        //queue a starting vertex
+        graphQueue.enQueue(startingv)
+        
+        
+        while !graphQueue.isEmpty() {
+            
+            //traverse the next queued vertex
+            var vitem: Vertex = graphQueue.deQueue() as Vertex!
+            
+            
+            //add unvisited vertices to the queue
+            for e in vitem.neighbors {
+                if e.neighbor.visited == false {
+                    println("adding vertex: \(e.neighbor.key!) to queue..")
+                    graphQueue.enQueue(e.neighbor)
+                }
+            }
+            
+
+            /*
+            notes: this demonstrates how to invoke a closure with an inout parameter.
+            By passing by reference no return value is required.
+            */
+            
+            //invoke formula
+            formula(node: &vitem)
+            
+            
+        } //end while
+        
+        
+        println("graph traversal complete..")
+        
+        
+    }
+
+    
+    
+    
+    //breadth first search
+    func traverse(startingv: Vertex) {
+        
+        
+        //establish a new queue
+        var graphQueue: Queue<Vertex> = Queue<Vertex>()
+        
+        
+        //queue a starting vertex
+        graphQueue.enQueue(startingv)
+        
+        
+        while !graphQueue.isEmpty() {
+            
+            //traverse the next queued vertex
+            var vitem = graphQueue.deQueue() as Vertex!
+            
+            
+            //add unvisited vertices to the queue
+            for e in vitem.neighbors {
+                if e.neighbor.visited == false {
+                    println("adding vertex: \(e.neighbor.key!) to queue..")
+                    graphQueue.enQueue(e.neighbor)
+                }
+            }
+            
+            
+            vitem.visited = true
+            println("traversed vertex: \(vitem.key!)..")
+            
+            
+        } //end while
+        
+        
+        println("graph traversal complete..")
+        
+        
+    } //end function
+    
+    
+    
+    //use bfs with trailing closure to update all values
+    func update(startingv: Vertex, formula:(Vertex -> Bool)) {
+        
+        
+        //establish a new queue
+        var graphQueue: Queue<Vertex> = Queue<Vertex>()
+        
+        
+        //queue a starting vertex
+        graphQueue.enQueue(startingv)
+        
+        
+        while !graphQueue.isEmpty() {
+            
+            //traverse the next queued vertex
+            var vitem = graphQueue.deQueue() as Vertex!
+            
+            
+            //add unvisited vertices to the queue
+            for e in vitem.neighbors {
+                if e.neighbor.visited == false {
+                    println("adding vertex: \(e.neighbor.key!) to queue..")
+                    graphQueue.enQueue(e.neighbor)
+                }
+            }
+            
+            
+            //apply formula..
+            if formula(vitem) == false {
+                println("formula unable to update: \(vitem.key)")
+            }
+            else {
+                println("traversed vertex: \(vitem.key!)..")
+            }
+            
+            vitem.visited = true
+            
+            
+        } //end while
+        
+        
+        println("graph traversal complete..")
+        
+        
+    }
+
+    
 
     
     

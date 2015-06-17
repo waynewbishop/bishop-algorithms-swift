@@ -31,7 +31,6 @@ class LinkedTest: XCTestCase {
         numberList = [8, 2, 10, 9, 7, 5]
     }
     
-
     
     //retrieve specific links
     func testLinkAtIndex() {
@@ -145,9 +144,9 @@ class LinkedTest: XCTestCase {
 
     
 
-    //MARK: helper function
-    
+    //MARK: helper functions
 
+    
     
     //helper method to build list
     func buildLinkedList() ->LinkedList<Int>! {

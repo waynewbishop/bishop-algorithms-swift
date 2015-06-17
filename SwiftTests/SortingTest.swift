@@ -20,7 +20,6 @@ class SortingTest: XCTestCase {
     //test the binary search
     func testBinarySearch() {
         
-        
         var sortTest: Sorting = Sorting()
         var searchList: Array<Int> = Array<Int>()
         XCTAssertNotNil(sortTest, "sorting instance not created..")

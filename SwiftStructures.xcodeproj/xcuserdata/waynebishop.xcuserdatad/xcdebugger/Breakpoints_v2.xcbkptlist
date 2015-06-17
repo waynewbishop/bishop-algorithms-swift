@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "433202176.323449"
+            timestampString = "455485678.455821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "testBinarySearch()"
-            landmarkType = "5">
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "SortingTest"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -25,29 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "433202176.323449"
+            filePath = "Source/Structures/AVLTree.swift"
+            timestampString = "456247944.908568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "testBinarySearch()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftTests/GraphTest.swift"
-            timestampString = "433884575.335849"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "testBFSTraversal()"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "addNode(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,45 +122,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/Factories/HashTable.swift"
-            timestampString = "436473701.62357"
+            timestampString = "436384914.465137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "createHash(_:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "addWord(_:lastname:)"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftStructures.HashTable.createHash (SwiftStructures.HashTable)(Swift.String) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;Swift.Int&gt;"
+                  symbolName = "SwiftStructures.HashTable.addWord (SwiftStructures.HashTable)(Swift.String, lastname : Swift.String) -&gt; ()"
                   moduleName = "SwiftStructures"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/HashTable.swift"
-                  timestampString = "436387290.107113"
+                  timestampString = "436385815.557101"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "1390">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "83">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.HashTable.createHash (SwiftTests.HashTable)(Swift.String) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;Swift.Int&gt;"
+                  symbolName = "SwiftTests.HashTable.addWord (SwiftTests.HashTable)(Swift.String, lastname : Swift.String) -&gt; ()"
                   moduleName = "SwiftTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/HashTable.swift"
-                  timestampString = "436387290.531036"
+                  timestampString = "436385815.972549"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "1390">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "83">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Factories/HashTable.swift"
+            timestampString = "440107229.684455"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "createHash(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -201,13 +201,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/HashTest.swift"
-            timestampString = "436473690.695156"
+            filePath = "Source/Factories/HashTable.swift"
+            timestampString = "440100931.401745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "testFindWord()"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "createHash(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -217,136 +217,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source/Factories/LinkedList.swift"
-            timestampString = "446752152.412562"
+            filePath = "Source/Factories/HashTable.swift"
+            timestampString = "440105795.048075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "LinkedList"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftStructures.LinkedList.(head in _C685BD10A844A7115D842A21C4D62606).setter : SwiftStructures.LLNode&lt;A&gt;"
-                  moduleName = "SwiftStructures"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/LinkedList.swift"
-                  timestampString = "446753539.951046"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftStructures.LinkedList.(head in _C685BD10A844A7115D842A21C4D62606).materializeForSet : SwiftStructures.LLNode&lt;A&gt;"
-                  moduleName = "SwiftStructures"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/LinkedList.swift"
-                  timestampString = "446753539.951244"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftStructures.LinkedList.init &lt;A : Swift.Equatable&gt;(SwiftStructures.LinkedList&lt;A&gt;.Type)() -&gt; SwiftStructures.LinkedList&lt;A&gt;"
-                  moduleName = "SwiftStructures"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/LinkedList.swift"
-                  timestampString = "446753539.95149"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "34">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.LinkedList.(head in _7663D1FD05310586662E75A09644BE7E).getter : SwiftTests.LLNode&lt;A&gt;"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/LinkedList.swift"
-                  timestampString = "446753549.706714"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.LinkedList.(head in _7663D1FD05310586662E75A09644BE7E).setter : SwiftTests.LLNode&lt;A&gt;"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/LinkedList.swift"
-                  timestampString = "446753549.707234"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.LinkedList.(head in _7663D1FD05310586662E75A09644BE7E).materializeForSet : SwiftTests.LLNode&lt;A&gt;"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/LinkedList.swift"
-                  timestampString = "446753549.707515"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.LinkedList.init &lt;A : Swift.Equatable&gt;(SwiftTests.LinkedList&lt;A&gt;.Type)() -&gt; SwiftTests.LinkedList&lt;A&gt;"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/Source/Factories/LinkedList.swift"
-                  timestampString = "446753549.707859"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "34">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "447120217.016996"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "testBubbleSort()"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "createHash(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -357,45 +234,123 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "447294072.29884"
+            timestampString = "455485678.455821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "testMergeSort()"
+            startingLineNumber = "187"
+            endingLineNumber = "187">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/ClosureTest.swift"
+            timestampString = "456266000.373619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "testLinkFilterFunction()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.SortingTest.testMergeSort (SwiftTests.SortingTest)() -&gt; ()"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
-                  timestampString = "447187053.314134"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "50">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.SortingTest.(testMergeSort (SwiftTests.SortingTest) -&gt; () -&gt; ()).(implicit closure #1) with unmangled suffix &quot;_promote0&quot;"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
-                  timestampString = "447187053.315169"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/ClosureTest.swift"
+            timestampString = "456266000.373619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "testLinkMapFunction()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Factories/Graph.swift"
+            timestampString = "456097750.336523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "reversePath(_:source:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Factories/Graph.swift"
+            timestampString = "456097750.336523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "processDijkstra(_:destination:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Factories/Graph.swift"
+            timestampString = "456097750.336523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "processDijkstraWithHeap(_:destination:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/GraphTest.swift"
+            timestampString = "455412052.069473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "testDijkstra()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/GraphTest.swift"
+            timestampString = "455412052.069473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "testDijkstraWithHeaps()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -405,92 +360,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "447293971.372243"
+            timestampString = "455485491.612575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "testMergeSort()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.SortingTest.testMergeSort (SwiftTests.SortingTest)() -&gt; ()"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
-                  timestampString = "447294073.955029"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "133"
-                  endingLineNumber = "133"
-                  offsetFromSymbolStart = "53">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.SortingTest.(testMergeSort (SwiftTests.SortingTest) -&gt; () -&gt; ()).(closure #1)"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
-                  timestampString = "447294073.955509"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "133"
-                  endingLineNumber = "133"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source/Structures/AVLTree.swift"
-            timestampString = "449528160.018434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "setNodeHeight()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source/Structures/AVLTree.swift"
-            timestampString = "449528160.018434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "isValidAVLTree()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source/Structures/AVLTree.swift"
-            timestampString = "449528160.018434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "isValidAVLTree()"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "testBinarySearch()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -501,12 +376,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/AVLTest.swift"
-            timestampString = "450241329.409035"
+            timestampString = "456181735.622928"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "testAVLRotationLeftAndRight()"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "testAVLTraverseFunction()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -516,13 +391,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/LinkedTest.swift"
-            timestampString = "450477497.137313"
+            filePath = "SwiftTests/AVLTest.swift"
+            timestampString = "456260659.816063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "testLinkAtIndex()"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "testAVLTraverseExpression()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -532,45 +407,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/LinkedTest.swift"
-            timestampString = "450477486.552421"
+            filePath = "SwiftTests/GraphTest.swift"
+            timestampString = "456268719.724707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "testReverseLinkedList()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source/Factories/LinkedList.swift"
-            timestampString = "453332894.164471"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "removeLinkAtIndex(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftTests/HashTest.swift"
-            timestampString = "453333733.811467"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "setUp()"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "testBFSTraverseExpression()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

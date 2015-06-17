@@ -22,6 +22,7 @@ The project features code-level examples for the following items:
 + Quick Sort
 + Merge Sort
 + Generics
++ Closures
 + Hash Tables
 + Binary Search Trees
 + Tree Balancing (Rotations)
@@ -39,7 +40,7 @@ I plan to write further additional examples of algorithms and all developers are
 Example
 --------------------
 
-```
+```swift
   /* graph traversal - breadth first search */
   
   func traverseGraphBFS(startingv: Vertex) {

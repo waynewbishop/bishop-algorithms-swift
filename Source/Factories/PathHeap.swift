@@ -29,8 +29,7 @@ public class PathHeap {
     func peek() -> Path! {
         
         if (heap.count > 0) {
-            var shortestPath: Path = heap[0]
-            return shortestPath
+            return heap[0] //the shortest path
         }
         else {
             return nil
@@ -64,27 +63,23 @@ public class PathHeap {
         if (childIndex != 0) {
             parentIndex = Int(floorf((childIndex - 1) / 2))
         }
+
         
+        var childToUse: Path
+        var parentToUse: Path
         
         
         //use the bottom-up approach
-        while (childIndex != 0) {
+        while childIndex != 0 {
             
             
-            var childToUse: Path = heap[Int(childIndex)]
-            var parentToUse: Path = heap[parentIndex]
+            childToUse = heap[Int(childIndex)]
+            parentToUse = heap[parentIndex]
             
             
             //swap child and parent positions
-            if (childToUse.total < parentToUse.total) {
-                
-                heap.insert(childToUse, atIndex: parentIndex)
-                heap.removeAtIndex(Int(childIndex) + 1)
-                
-                
-                heap.insert(parentToUse, atIndex: Int(childIndex))
-                heap.removeAtIndex(parentIndex + 1)
-                
+            if childToUse.total < parentToUse.total {
+                swap(&heap[parentIndex], &heap[Int(childIndex)])
             }
             
             

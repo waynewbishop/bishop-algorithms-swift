@@ -61,50 +61,88 @@ class GraphTest: XCTestCase {
     
     
     
-    
-    //return the shortest path based on two non-negative edge weights
-    func testDijkstra() {
+    //find the shortest path using heapsort operations - O(1)
+    func testDijkstraWithHeaps() {
+        
+        var sourceVertex = vertexA
+        var destinationVertex = vertexE
         
         
-        var sourceVertex: Vertex = vertexA
-        var destinationVertex: Vertex = vertexE
-
-        
-        //return the optional shortest path
-        var shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
-
-        
+        var shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex, destination: destinationVertex)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
-        
-        var reversedPath: Path! = Path()
-        var current: Path! = Path()
-
-        //reverse the sequence of paths
-        reversedPath = testGraph.reversePath(shortestPath, source: vertexA)
-        current = reversedPath
+        printPath(shortestPath)
 
         
-        println()
+    }
+    
+    
+    
+    
+    //find the shortest path based on two non-negative edge weights - O(n)
+    func testDijkstra() {
         
-        //iterate and print each path sequence
-        while (current != nil) {
-                println("The path is : \(current.destination.key!) with a total of : \(current.total)..")
-                current = current.previous
+        var sourceVertex = vertexA
+        var destinationVertex = vertexE
+
+        
+        var shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
+        XCTAssertNotNil(shortestPath, "shortest path not found..")
+        
+        printPath(shortestPath)
+        
+        
+    }
+
+    
+    //MARK: Closures and traversals
+ 
+    
+    //breadth-first search
+    func testBFSTraverse() {
+        testGraph.traverse(vertexA)
+    }
+    
+    
+    //breadth-first search with function
+    func testBFSTraverseFunction() {
+        testGraph.traverse(vertexA, formula: traverseFormula)
+    }
+
+    
+    
+    //breadth-first search with closure expression
+    func testBFSTraverseExpression() {
+        
+        /*
+        notes: the inout parameter is passed by reference.
+        As a result, no return type is required. Also note the trailing closure syntax.
+        */
+
+        testGraph.traverse(vertexA) { (inout node: Vertex) -> () in
+            
+            node.visited = true
+            println("traversed vertex: \(node.key!)..")
+            
         }
         
-        println()
         
     }
+    
 
     
-    
-    //test breadth-first search
-    func testBFSTraversal() {
-        testGraph.traverseGraphBFS(vertexA)
-        println()
+    //closure function passed as parameter
+    func traverseFormula(inout node: Vertex) -> () {
         
+        /*
+        notes: the inout parameter is passed by reference. 
+        As a result, no return type is required.
+        */
+        
+        node.visited = true
+        println("traversed vertex: \(node.key!)..")
     }
+
     
     
     
@@ -113,6 +151,7 @@ class GraphTest: XCTestCase {
     
     //check for neighbor membership
     func neighborTest(source: Vertex, neighbor: Vertex) -> Bool! {
+
         
         //add unvisited vertices to the queue
         for e in source.neighbors {
@@ -122,7 +161,31 @@ class GraphTest: XCTestCase {
         }
         
         XCTFail("vertex \(neighbor.key!) is not a neighbor of vertex \(source.key!)")
-        return nil;
+        return nil
+        
+    }
+    
+    
+    //reverse a path data structure
+    func printPath(shortestPath: Path!) {
+
+        
+        var reversedPath: Path! = Path()
+        var current: Path! = Path()
+        
+        
+        //reverse the sequence of paths
+        reversedPath = testGraph.reversePath(shortestPath, source: vertexA)
+        current = reversedPath
+        
+        
+        //iterate and print each path sequence
+        while (current != nil) {
+            println("The path is : \(current.destination.key!) with a total of : \(current.total)..")
+            current = current.previous
+        }
+
+        
         
     }
   

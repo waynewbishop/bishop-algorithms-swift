@@ -16,10 +16,10 @@ public class LinkedList<T: Equatable> {
     private var head: LLNode<T> = LLNode<T>()
     
     
-    //the number of items
-    var count: Int {
+   //the number of items
+   var count: Int {
         
-            if (head.key == nil) {
+            if head.key == nil {
                 return 0
             }
                 
@@ -30,7 +30,7 @@ public class LinkedList<T: Equatable> {
                 
                 
                 //cycle through the list of items
-                while ((current.next) != nil) {
+                while current.next != nil {
                     current = current.next!
                     x++
                 }
@@ -42,17 +42,11 @@ public class LinkedList<T: Equatable> {
     
     
     
-    
     //empty list check
-    func isEmpty() ->Bool! {
+    func isEmpty() -> Bool! {
         
-        //check for nil conditions
-        if (self.count == 0 || head.key == nil) {
-            return true
-        }
-        else {
-            return false
-        }
+        // returns true if count is 0 or if the list's head is nil
+        return self.count == 0 || head.key == nil
         
     }
     
@@ -75,7 +69,7 @@ public class LinkedList<T: Equatable> {
         
         while (current != nil) {
             
-            if (current?.next == nil) {
+            if current?.next == nil {
                 
                 var childToUse: LLNode = LLNode<T>()
                 
@@ -301,6 +295,85 @@ public class LinkedList<T: Equatable> {
   }//end function
     
   
+    
+    //MARK: Closure operations
+    
+
+    
+    /*
+    notes: These "generic methods" mimic the map & filter array
+    functions found in the Swift standard library.
+    */
+    
+    
+    //filter list content - higher order function
+    func filter(formula: LLNode<T> -> Bool) -> LinkedList<T>! {
+        
+        
+        //check for instance
+        if head.key == nil {
+           return nil
+        }
+        
+        
+        var current: LLNode! = head
+        var results: LinkedList<T>! = LinkedList<T>()
+        
+        
+        while current != nil {
+            
+            //filter based on formula
+            if formula(current) == true {
+                results.addLink(current.key)
+            }
+            
+            
+            current = current.next
+        }
+        
+        
+        return results
+        
+    }
+    
+    
+    
+    //map list content - higher order function
+    func map(formula: LLNode<T> -> T) -> LinkedList<T>! {
+        
+        
+        //check for instance
+        if head.key == nil {
+           return nil
+        }
+        
+        
+        var current: LLNode! = head
+        var results: LinkedList<T>! = LinkedList<T>()
+        var newKey: T!
+        
+        
+        while current != nil {
+            
+            //map based on formula
+            newKey = formula(current)
+            
+            //add non-nil entries
+            if newKey != nil {
+                results.addLink(newKey)
+            }
+            
+            
+            current = current.next
+        }
+        
+        
+        return results
+        
+    }
+
+    
+    
     
 } //end class
 
