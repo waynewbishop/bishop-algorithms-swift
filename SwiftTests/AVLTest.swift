@@ -93,9 +93,6 @@ class AVLTest: XCTestCase {
         //invoke formula function
         avlTest.traverse(traverseFormula)
         
-        
-        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
-        
     }
     
     
@@ -104,23 +101,41 @@ class AVLTest: XCTestCase {
         
         var avlTest = self.buildClosureTree()
         
+        
         avlTest.traverse { (node: AVLTree<Int>) -> Int in
             
+            var testVal = node.key!
             var results = node.key! + node.height
-            println("the updated key is: \(results). node height is: \(node.height)")
+            
+            if node.height > 0 && results == testVal {  //very simple test
+                XCTFail("closure update failed..")
+            }
+            else {
+               println("the updated key is: \(results). node height is: \(node.height)")
+            }
+            
             return results
             
-        }
+        } //end closure
         
         
     }
+
     
     
     //example function - can only be calcuated through a traversal
     func traverseFormula(node: AVLTree<Int>) -> Int {
         
+        var testVal = node.key!
         var results = node.key! + node.height
-        println("the updated key is: \(results). node height is: \(node.height)")
+        
+        if node.height > 0 && results == testVal {  //very simple test
+            XCTFail("closure update failed..")
+        }
+        else {
+            println("the updated key is: \(results). node height is: \(node.height)")
+        }
+        
         return results
         
     }
@@ -178,6 +193,10 @@ class AVLTest: XCTestCase {
             println("adding \(number) to avl tree...")
             avlTest.addNode(number)
         }
+
+        
+        //tree balance check
+        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
         
         
         return avlTest

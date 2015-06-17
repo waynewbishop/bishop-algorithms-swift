@@ -9,13 +9,10 @@
 import Foundation
 
 
-struct Foo {
-    let bar: (inout baz: String) -> ()
-}
-
 
 
 /* An AVL Tree is another name for a balanced binary search tree*/
+
 
 public class AVLTree<T: Comparable> {
     
@@ -23,11 +20,15 @@ public class AVLTree<T: Comparable> {
     var left: AVLTree?
     var right: AVLTree?
     var height: Int
-   
+
+    
     init() {
         //set math purposes
         self.height = -1
     }
+
+    
+    //TODO: Build computed count property for class
     
     
     //function to add item based on its value
