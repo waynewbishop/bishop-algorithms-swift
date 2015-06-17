@@ -95,12 +95,54 @@ class GraphTest: XCTestCase {
     }
 
     
+    //MARK: Closures and traversals
+ 
     
-    
-    //test breadth-first search
-    func testBFSTraversal() {
-        testGraph.traverseGraphBFS(vertexA)
+    //breadth-first search
+    func testBFSTraverse() {
+        testGraph.traverse(vertexA)
     }
+    
+    
+    //breadth-first search with function
+    func testBFSTraverseFunction() {
+        testGraph.traverse(vertexA, formula: traverseFormula)
+    }
+
+    
+    
+    //breadth-first search with closure expression
+    func testBFSTraverseExpression() {
+        
+        /*
+        notes: the inout parameter is passed by reference.
+        As a result, no return type is required. Also note the trailing closure syntax.
+        */
+
+        testGraph.traverse(vertexA) { (inout node: Vertex) -> () in
+            
+            node.visited = true
+            println("traversed vertex: \(node.key!)..")
+            
+        }
+        
+        
+    }
+    
+
+    
+    //closure function passed as parameter
+    func traverseFormula(inout node: Vertex) -> () {
+        
+        /*
+        notes: the inout parameter is passed by reference. 
+        As a result, no return type is required.
+        */
+        
+        node.visited = true
+        println("traversed vertex: \(node.key!)..")
+    }
+
     
     
     

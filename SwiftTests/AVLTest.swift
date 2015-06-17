@@ -104,7 +104,7 @@ class AVLTest: XCTestCase {
         
         /*
         notes: for this test, the didFail variable is known to be 'captured' by the closure expression.
-        this technique allows a single variable to be used for each function call.
+        this technique allows a single variable to be used.
         */
         
         avlTest.traverse { (node: AVLTree<Int>) -> Int in

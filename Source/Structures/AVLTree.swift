@@ -267,41 +267,6 @@ public class AVLTree<T: Comparable> {
     // MARK: traversal algorithms
     
     
-    /* TODO - implement bfs with inout parameter for graphs functions..
-    
-    //use dfs with trailing closure to update all values
-    func traverse(formula: (inout node: AVLTree<T>) -> T) {
-        
-        
-        //check for a nil condition
-        if  self.key == nil {
-            println("no key provided..")
-            return
-        }
-        
-        
-        //process the left side
-        if self.left != nil {
-            left?.traverse(formula)
-        }
-
-        var someNode: AVLTree<T> = AVLTree<T>()
-        
-        //invoke the formula
-        formula(node: &someNode)
-        println(self.key!)
-        
-        //process the right side
-        if self.right != nil {
-            right?.traverse(formula)
-        }
-        
-        
-    }
-    
-    */
-    
-    
     //use dfs with trailing closure to update all values
     func traverse(formula: AVLTree<T> -> T) {
         

@@ -297,13 +297,59 @@ public class SwiftGraph {
         
     }
     
-
     
     //MARK: traversal algorithms
     
     
+    //bfs traversal with inout closure function
+    func traverse(startingv: Vertex, formula: (inout node: Vertex) -> ()) {
+
+        
+        //establish a new queue
+        var graphQueue: Queue<Vertex> = Queue<Vertex>()
+        
+        
+        //queue a starting vertex
+        graphQueue.enQueue(startingv)
+        
+        
+        while !graphQueue.isEmpty() {
+            
+            //traverse the next queued vertex
+            var vitem: Vertex = graphQueue.deQueue() as Vertex!
+            
+            
+            //add unvisited vertices to the queue
+            for e in vitem.neighbors {
+                if e.neighbor.visited == false {
+                    println("adding vertex: \(e.neighbor.key!) to queue..")
+                    graphQueue.enQueue(e.neighbor)
+                }
+            }
+            
+
+            /*
+            notes: this demonstrates how to invoke a closure with an inout parameter.
+            By passing by reference no return value is required.
+            */
+            
+            //invoke formula
+            formula(node: &vitem)
+            
+            
+        } //end while
+        
+        
+        println("graph traversal complete..")
+        
+        
+    }
+
+    
+    
+    
     //breadth first search
-    func traverseGraphBFS(startingv: Vertex) {
+    func traverse(startingv: Vertex) {
         
         
         //establish a new queue

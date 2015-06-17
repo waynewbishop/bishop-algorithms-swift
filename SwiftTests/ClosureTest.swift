@@ -21,8 +21,9 @@ class ClosureTest: XCTestCase {
     
     /*
     notes: This test class mimics the map & filter array
-    functions found in the Swift standard library. Each test demonstrates the nessesary syntax
-    to implement a closure as an inline expression or standard function.
+    functions found in the Swift standard library. Optimized for linked lists, each test
+    demonstrates the nessesary syntax to implement a closure as an inline expression or standard function.
+    See additional closure examples with GraphTest.swift and AVLTest.swift.
     */
     
     
