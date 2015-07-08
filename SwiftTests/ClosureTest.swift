@@ -9,15 +9,37 @@
 import UIKit
 import XCTest
 
+
+
+//MARK:  custom operator
+
+
+/* 
+notes: infix class operator to represent exponent operation
+single carat symbol reserved for XOR bit manipulation
+*/
+
+
+infix operator ^^ {}
+
+func ^^(base: Int, power: Int) -> Int {
+    
+    //rounded to nearest int
+    var results: Double = round(pow(Double(base), Double(power)))
+    return Int(results)
+}
+
+
+
 class ClosureTest: XCTestCase {
 
     var numberList: Array<Int>!
-
     
     override func setUp() {
         super.setUp()
         numberList =  [8, 5, 2, 10, 9, 7]
     }
+    
     
     /*
     notes: This test class mimics the map & filter array
@@ -116,6 +138,11 @@ class ClosureTest: XCTestCase {
     }
     
 
+
+    
+    
+    
+
     //map based on function
     func testLinkMapFunction() {
         
@@ -171,7 +198,6 @@ class ClosureTest: XCTestCase {
     }
   
     
-    
     //helper method to build list
     func buildLinkedList() ->LinkedList<Int>! {
         
@@ -196,6 +222,6 @@ class ClosureTest: XCTestCase {
         
     }
 
-    
+
 
 }
