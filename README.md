@@ -32,7 +32,7 @@ The project features code-level examples for the following items:
 + Dijkstra's Shortest Path
 + Heaps & Heapsort Operations
 + Depth-First Search
-+ Breath-First Search
++ Breadth-First Search
 
 I plan to write further additional examples of algorithms and all developers are welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">www.waynewbishop.com/swift</a>. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="https://help.github.com/articles/be-social" target="_blank">contribution</a> from others. 
 
