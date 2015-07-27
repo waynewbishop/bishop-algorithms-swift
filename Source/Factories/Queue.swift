@@ -99,7 +99,7 @@ public class Queue<T> {
           top = nextitem
         }
         else {
-            top = nil
+            top = QNode<T>()
         }
     
     
