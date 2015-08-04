@@ -34,7 +34,11 @@ The project features code-level examples for the following items:
 + Depth-First Search
 + Breadth-First Search
 
-I plan to write further additional examples of algorithms and all developers are welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">www.waynewbishop.com/swift</a>. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="https://help.github.com/articles/be-social" target="_blank">contribution</a> from others. 
+The Book
+--------------------
+Available in <a href="http://shop.waynewbishop.com" target="_blank">print or pdf format</a>, the book features algorithms from this project and color illustrations that will benefit students and professionals. The goal? Blend modern code and computer science to help you pass the technical interview or build your next app.
+
+I plan to write additional algorithms and all developers are welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">www.waynewbishop.com/swift</a>. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
 
 
 Example
