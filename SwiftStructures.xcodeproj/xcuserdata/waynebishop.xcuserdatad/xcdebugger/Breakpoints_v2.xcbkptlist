@@ -417,5 +417,53 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/QueueTest.swift"
+            timestampString = "460501194.08009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "testDeQueue()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.QueueTest.testDeQueue (SwiftTests.QueueTest)() -&gt; ()"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/QueueTest.swift"
+                  timestampString = "460500433.726646"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "402">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.QueueTest.(testDeQueue (SwiftTests.QueueTest) -&gt; () -&gt; ()).(implicit closure #1)"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///iPhone%20Development/SwiftStructures/SwiftTests/QueueTest.swift"
+                  timestampString = "460500433.727014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
