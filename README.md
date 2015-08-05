@@ -36,7 +36,7 @@ The project features code-level examples for the following items:
 
 Online, Print & PDF
 --------------------
-Available in print or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. People are also welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">www.waynewbishop.com/swift</a>. As a collaborative open-source effort, I welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
+Available in print or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. People are also welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">waynewbishop.com/swift</a>. As a collaborative open-source effort, I welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
 
 
 Example
