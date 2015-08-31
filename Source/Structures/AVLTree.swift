@@ -52,7 +52,7 @@ public class AVLTree<T: Comparable> {
                 
             else {
                 //create a new left node
-                var leftChild : AVLTree = AVLTree()
+                let leftChild : AVLTree = AVLTree()
                 leftChild.key = key
                 leftChild.height = 0
                 self.left = leftChild
@@ -60,7 +60,7 @@ public class AVLTree<T: Comparable> {
             
             //recalculate node height for hierarchy
             self.setNodeHeight()
-            println("traversing left side. node \(self.key!) with height: \(self.height)...")
+            print("traversing left side. node \(self.key!) with height: \(self.height)...")
 
 
             //check AVL property
@@ -81,7 +81,7 @@ public class AVLTree<T: Comparable> {
                 
             else {
                 //create a new right node
-                var rightChild : AVLTree = AVLTree()
+                let rightChild : AVLTree = AVLTree()
                 rightChild.key = key
                 rightChild.height = 0
                 self.right = rightChild
@@ -90,7 +90,7 @@ public class AVLTree<T: Comparable> {
             
             //recalculate node height for hierarchy
             self.setNodeHeight()
-            println("traversing right side. node \(self.key!) with height: \(self.height)...")
+            print("traversing right side. node \(self.key!) with height: \(self.height)...")
             
             
             //check AVL property
@@ -130,7 +130,7 @@ public class AVLTree<T: Comparable> {
         
         //check for a nil condition
         if (self.key == nil) {
-            println("no key provided..")
+            print("no key provided..")
             return false
         }
         
@@ -158,7 +158,7 @@ public class AVLTree<T: Comparable> {
         
         //check for a nil condition
         if (self.key == nil) {
-            println("no key provided..")
+            print("no key provided..")
             return false
         }
         
@@ -183,13 +183,13 @@ public class AVLTree<T: Comparable> {
         
         //check for valid scenario
         if (self.key == nil) {
-            println("no key provided..")
+            print("no key provided..")
             return false
         }
         
         
         if (self.isTreeBalanced() == true) {
-            println("node \(self.key!) already balanced..")
+            print("node \(self.key!) already balanced..")
             return true
         }
         
@@ -198,14 +198,14 @@ public class AVLTree<T: Comparable> {
             
             
             //create a new leaf node
-            var childToUse : AVLTree = AVLTree()
+            let childToUse : AVLTree = AVLTree()
             childToUse.height = 0
             childToUse.key = self.key
             
             
             if (getNodeHeight(self.left) - getNodeHeight(self.right) > 1) {
                 
-                println("\n starting right rotation on \(self.key!)..")
+                print("\n starting right rotation on \(self.key!)..")
                 
                 
                 //reset the root node
@@ -221,7 +221,7 @@ public class AVLTree<T: Comparable> {
                 self.left = self.left?.left
                 self.left?.height = 0
                 
-                println("root is: \(self.key!) | left is : \(self.left!.key!) | right is : \(self.right!.key!)..")
+                print("root is: \(self.key!) | left is : \(self.left!.key!) | right is : \(self.right!.key!)..")
                 
                 return true
                 
@@ -230,7 +230,7 @@ public class AVLTree<T: Comparable> {
             
             if (getNodeHeight(self.right) - getNodeHeight(self.left) > 1) {
                 
-                println("\n starting left rotation on \(self.key!)..")
+                print("\n starting left rotation on \(self.key!)..")
                 
                 //reset the root node
                 self.key = self.right?.key
@@ -245,7 +245,7 @@ public class AVLTree<T: Comparable> {
                 self.right = self.right?.right
                 self.right?.height = 0
                 
-                println("root is: \(self.key!) | left is : \(self.left!.key!) | right is : \(self.right!.key!)..")
+                print("root is: \(self.key!) | left is : \(self.left!.key!) | right is : \(self.right!.key!)..")
                 
                 return true
                 
@@ -273,7 +273,7 @@ public class AVLTree<T: Comparable> {
         
         //check for a nil condition
         if  self.key == nil {
-            println("no key provided..")
+            print("no key provided..")
             return
         }
         
@@ -289,7 +289,7 @@ public class AVLTree<T: Comparable> {
         self.key! = newKey
         
 
-        println("...the updated value is: \(self.key!) - height: \(self.height)..")
+        print("...the updated value is: \(self.key!) - height: \(self.height)..")
         
         
         //process the right side
@@ -307,7 +307,7 @@ public class AVLTree<T: Comparable> {
         
         //check for a nil condition
         if  self.key == nil {
-            println("no key provided..")
+            print("no key provided..")
             return
         }
         
@@ -317,7 +317,7 @@ public class AVLTree<T: Comparable> {
             left?.traverse()
         }
         
-        println("...the value is: \(self.key!) - height: \(self.height)..")
+        print("...the value is: \(self.key!) - height: \(self.height)..")
         
 
         //process the right side

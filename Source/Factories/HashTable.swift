@@ -33,7 +33,7 @@ class HashTable {
         hashindex = self.createHash(fullname)
         
         
-        var childToUse: HashNode = HashNode()
+        let childToUse: HashNode = HashNode()
         var head: HashNode!
         
         
@@ -48,7 +48,7 @@ class HashTable {
         
         else {
             
-            println("a collision occured. implementing chaining..")
+            print("a collision occured. implementing chaining..")
             head = buckets[hashindex]
             
             
@@ -79,7 +79,7 @@ class HashTable {
         
         //determine if the value is present
         if  buckets[hashindex] == nil {
-            println("name not found in hash table..")
+            print("name not found in hash table..")
             return false
         }
         
@@ -91,15 +91,15 @@ class HashTable {
             
             while (current != nil) {
                 
-                var hashName: String! = current.firstname + current.lastname
+                let hashName: String! = current.firstname + current.lastname
                 
                 if (hashName == fullname) {
-                    println("\(current.firstname) \(current.lastname) found in hash table..")
+                    print("\(current.firstname) \(current.lastname) found in hash table..")
                     return true
                 }
                 
                 
-                println("searching for word through chained list..")
+                print("searching for word through chained list..")
                 current = current.next
                 
                 
@@ -109,7 +109,7 @@ class HashTable {
         } //end if
         
         
-        println("name not found in hash table..")
+        print("name not found in hash table..")
         return false
         
     }
