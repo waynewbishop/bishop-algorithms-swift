@@ -67,7 +67,7 @@ class HashTest: XCTestCase {
         
         
         if (hashValue != nil) {
-            println("the computed hash value is: \(hashValue)..")
+            print("the computed hash value is: \(hashValue)..")
         }
 
         

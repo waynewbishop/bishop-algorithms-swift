@@ -14,30 +14,30 @@ extension String {
     
     //compute the length of string
     var length: Int {
-        return count(self)
+        return self.characters.count
     }
     
     //returns characters of a string up to a specified index
     func substringToIndex(to: Int) -> String {
-        return self.substringToIndex(advance(self.startIndex, to))
+        return self.substringToIndex(self.startIndex.advancedBy(to))
     }
     
     
     //return a character at a specific index
     func stringAtIndex(position: Int) -> String {
-        return String(Array(self)[position])
+        return String(Array(self.characters)[position])
     }
 
     
     //insert a string at a specified index
     func insertSubstring(string:String, index:Int) -> String {
-        return  prefix(self,index) + string + suffix(self,count(self)-index)
+        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count-index))
     }
 
     
     //convert a string into a character array
     func characters() ->Array<Character>! {
-        return Array(self)
+        return Array(self.characters)
     }
 
     

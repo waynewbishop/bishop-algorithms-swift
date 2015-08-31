@@ -17,7 +17,7 @@ class SwiftStack<T> {
     //TODO: Convert count method to computed property
     
     //push an item onto the stack
-    func push(var key: T) {
+    func push(key: T) {
         
         
         //check for the instance
@@ -34,7 +34,7 @@ class SwiftStack<T> {
         else {
             
             //establish the new item instance
-            var childToUse: LLNode<T> = LLNode<T>()
+            let childToUse: LLNode<T> = LLNode<T>()
             childToUse.key = key
             
             
@@ -60,7 +60,7 @@ class SwiftStack<T> {
         }
         
         //retrieve and queue the next item
-        var queueitem: T? = top.key!
+        let queueitem: T? = top.key!
         
         
         //reset the top value
@@ -100,7 +100,7 @@ class SwiftStack<T> {
     func isEmpty() -> Bool {
         
         //determine if the key or instance exist
-        if let topitem: T = self.top?.key {
+        if let _: T = self.top?.key {
             return false
         }
             
