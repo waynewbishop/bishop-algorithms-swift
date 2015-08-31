@@ -21,8 +21,8 @@ public class Sorting {
     func binarySearch(var numberList: Array<Int>, key: Int, range:(imin: Int, imax: Int)) {
     
     
-        var midIndex: Double = round(Double((range.imin + range.imax) / 2))
-        var midNumber = numberList[Int(midIndex)]
+        let midIndex: Double = round(Double((range.imin + range.imax) / 2))
+        let midNumber = numberList[Int(midIndex)]
     
     
         //use recursion to reduce the possible search range
@@ -37,7 +37,7 @@ public class Sorting {
             
         } else {
             isKeyFound = true
-            println("value \(key) found..")
+            print("value \(key) found..")
         }
         
         
@@ -64,7 +64,7 @@ public class Sorting {
             //iterate backwards through the sorted portion
             for (y = x; y > -1; y--) {
                 
-                println("comparing \(key) and \(numberList[y])")
+                print("comparing \(key) and \(numberList[y])")
 
                 
                 if key < numberList[y] {
@@ -100,7 +100,7 @@ public class Sorting {
     
     func bubbleSort(var numberList: Array<Int>) ->Array<Int> {
         
-        var x, y, z, passes, key : Int
+        var z, passes, key : Int
         
         //track collection iterations
         for x in 0..<numberList.count {
@@ -112,7 +112,7 @@ public class Sorting {
             for y in 0..<passes {
                 key = numberList[y]
                 
-                println("comparing \(key) and \(numberList[y + 1])")
+                print("comparing \(key) and \(numberList[y + 1])")
                 
                 //compare and rank values
                 if (key > numberList[y + 1]) {
@@ -145,7 +145,7 @@ public class Sorting {
 				return hops
 			}
 			
-			var pivot = hops.removeAtIndex(0)
+			let pivot = hops.removeAtIndex(0)
 			var leftBucket:[Int] = []
 			var rightBucket:[Int] = []
 			
@@ -201,9 +201,6 @@ public class Sorting {
 			var sortedArray:[Int] = []
 			var leftCount = 0
 			var rightCount = 0
-            
-            var someNode: LLNode<Int> = LLNode<Int>()
-            
             
             /*
             var someCount: Int = left.count + right.count

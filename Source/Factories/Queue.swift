@@ -56,7 +56,7 @@ public class Queue<T> {
             return
         }
         
-        var childToUse: QNode<T> = QNode<T>()
+        let childToUse: QNode<T> = QNode<T>()
         var current: QNode = top
     
         
@@ -91,7 +91,7 @@ public class Queue<T> {
         }
     
         //retrieve and queue the next item
-        var queueitem: T? = top.key!
+        let queueitem: T? = top.key!
 
     
         //use optional binding 
@@ -112,7 +112,7 @@ public class Queue<T> {
    func isEmpty() -> Bool {
     
         //determine if the key or instance exist
-        if let topitem: T = self.top?.key {
+        if let _: T = self.top?.key {
             return false
         }
     
