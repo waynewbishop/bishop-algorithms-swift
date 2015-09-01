@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 class SortingTest: XCTestCase {
     
     let numberList : Array<Int> = [8, 2, 10, 9, 7, 5]

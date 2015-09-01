@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-
+@testable import SwiftStructures
 
 
 //struct for testing indicies

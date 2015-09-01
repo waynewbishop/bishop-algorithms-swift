@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 /* An AVL Tree is another name for a balanced binary search tree*/
 
 

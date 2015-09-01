@@ -9,6 +9,7 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
 
 
 //MARK:  custom operator

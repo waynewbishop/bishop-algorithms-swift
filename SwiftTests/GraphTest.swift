@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 /* 
    unit test cases specific to graph algorithms
    to test your own graph, replace the vertices and edges.

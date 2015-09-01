@@ -7,6 +7,8 @@
 //
 
 import XCTest
+@testable import SwiftStructures
+
 
 class QueueTest: XCTestCase {
 

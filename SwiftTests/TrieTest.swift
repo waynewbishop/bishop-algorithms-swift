@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 class TrieTest: XCTestCase {
     
     var testTrie: Trie = Trie()
