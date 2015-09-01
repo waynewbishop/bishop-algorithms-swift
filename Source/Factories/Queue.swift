@@ -29,7 +29,7 @@ public class Queue<T> {
             
             //cycle through the list of items
             while (current.next != nil) {
-                current = current.next!;
+                current = current.next!
                 x++
             }
             
@@ -52,7 +52,7 @@ public class Queue<T> {
         
         //establish the top node
         if (top.key == nil) {
-            top.key = key;
+            top.key = key
             return
         }
         
@@ -67,8 +67,8 @@ public class Queue<T> {
                 
         
         //append a new item
-        childToUse.key = key;
-        current.next = childToUse;
+        childToUse.key = key
+        current.next = childToUse
         
     }
     

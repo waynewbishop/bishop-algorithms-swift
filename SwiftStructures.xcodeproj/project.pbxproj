@@ -16,6 +16,7 @@
 		DA908DDA1A015FB400DD9864 /* HashNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA908DD91A015FB400DD9864 /* HashNode.swift */; };
 		DA908DDC1A0160A300DD9864 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA908DDB1A0160A300DD9864 /* HashTable.swift */; };
 		DA908DDE1A016A7700DD9864 /* HashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA908DDD1A016A7700DD9864 /* HashTest.swift */; };
+		DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */; settings = {ASSET_TAGS = (); }; };
 		DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */; };
 		DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AB19D1F86300C133C9 /* SortingTest.swift */; };
 		DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AD19D222E300C133C9 /* LinkedTest.swift */; };
@@ -80,6 +81,7 @@
 		DA908DD91A015FB400DD9864 /* HashNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashNode.swift; sourceTree = "<group>"; };
 		DA908DDB1A0160A300DD9864 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		DA908DDD1A016A7700DD9864 /* HashTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTest.swift; sourceTree = "<group>"; };
+		DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
 		DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
 		DAD971AB19D1F86300C133C9 /* SortingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortingTest.swift; sourceTree = "<group>"; };
 		DAD971AD19D222E300C133C9 /* LinkedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedTest.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */,
 				DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */,
 				DA66A4891B1CF50500D1B43F /* ClosureTest.swift */,
 				DA908DDD1A016A7700DD9864 /* HashTest.swift */,
@@ -367,6 +370,7 @@
 				DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */,
 				DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */,
 				DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */,
+				DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */,
 				DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */,
 				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
 				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,

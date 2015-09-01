@@ -465,5 +465,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/StackTest.swift"
+            timestampString = "462839817.190649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "testPopStack()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.StackTest.testPopStack (SwiftTests.StackTest)() -&gt; ()"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/StackTest.swift"
+                  timestampString = "462839827.238911"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "511">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.StackTest.(testPopStack (SwiftTests.StackTest) -&gt; () -&gt; ()).(implicit closure #1)"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/StackTest.swift"
+                  timestampString = "462839827.239096"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

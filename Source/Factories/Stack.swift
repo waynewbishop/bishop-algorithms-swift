@@ -9,12 +9,37 @@
 import Foundation
 
 
-class SwiftStack<T> {
+class Stack<T> {
     
     private var top: LLNode<T>! = LLNode<T>()
-
     
-    //TODO: Convert count method to computed property
+    
+    //the number of items
+    var count: Int {
+        
+        
+        //determine if the key or instance exist
+        let topitem: T? = self.top?.key
+            
+        if (topitem == nil) {
+            return 0
+        }
+            
+        var current: LLNode = top
+        var x: Int = 1
+        
+        
+        //cycle through the list of items to get to the end.
+        while ((current.next) != nil) {
+            current = current.next!
+            x++
+        }
+            
+        return x
+        
+        
+    }
+    
     
     //push an item onto the stack
     func push(key: T) {
@@ -27,8 +52,8 @@ class SwiftStack<T> {
         
         
         //determine if the head node is populated
-        if (top.key == nil){
-            top.key = key;
+        if (top.key == nil) {
+            top.key = key
             return
         }
         else {
@@ -39,8 +64,8 @@ class SwiftStack<T> {
             
             
             //set newly created item at the top
-            childToUse.next = top;
-            top = childToUse;
+            childToUse.next = top
+            top = childToUse
             
          
         }
@@ -110,7 +135,7 @@ class SwiftStack<T> {
         
     }
     
-    
+    /*
     
     //determine the count of the queue
     func count() -> Int {
@@ -132,13 +157,15 @@ class SwiftStack<T> {
         
         //cycle through the list of items to get to the end.
         while ((current.next) != nil) {
-            current = current.next!;
+            current = current.next!
             x++
         }
         
         return x
         
     }
+    
+  */
     
 
 }
