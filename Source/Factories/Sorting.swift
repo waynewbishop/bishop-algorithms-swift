@@ -138,7 +138,7 @@ public class Sorting {
     
     func selectionSort(var numberList: Array<Int>) ->Array<Int> {
         
-        var x, y, z : Int
+        var y : Int
         
         // iterate through the entire array
         for x in 0..<numberList.count {
@@ -149,7 +149,7 @@ public class Sorting {
             // iterate through the rest of the array (x+1 to the end of the array)
             for y = x+1; y < numberList.count; y++ {
                 
-                println("comparing \(numberList[minimum]) and \(numberList[y])")
+                print("comparing \(numberList[minimum]) and \(numberList[y])")
                 
                 // store the lowest value as minimum
                 if numberList[minimum] > numberList[y] {
@@ -159,7 +159,7 @@ public class Sorting {
             } //end for
             
             // swap the minimum value with the current array iteration
-            var z = numberList[x]
+            let z = numberList[x]
             numberList[x] = numberList[minimum]
             numberList[minimum] = z
             

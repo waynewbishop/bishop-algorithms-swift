@@ -110,7 +110,7 @@ class SortingTest: XCTestCase {
     func testSelectionSort() {
         
         
-        var sortTest: Sorting = Sorting()
+        let sortTest: Sorting = Sorting()
         XCTAssertNotNil(sortTest, "sorting instance not created..")
         
         
@@ -126,7 +126,7 @@ class SortingTest: XCTestCase {
                 XCTFail("numberlist items not in sorted order..")
             }
             else {
-                println("item \(resultList[x]) is sorted..")
+                print("item \(resultList[x]) is sorted..")
             }
             
             
