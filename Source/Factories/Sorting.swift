@@ -89,9 +89,6 @@ public class Sorting {
     } //end function
     
     
-    
-    
-    
     /*
     bubble sort algorithm - rank items from the lowest to highest by swapping
     groups of two items from left to right. The highest item in the set will bubble up to the
@@ -124,6 +121,47 @@ public class Sorting {
                 }
                 
             } //end for
+            
+        } //end for
+        
+        
+        return numberList
+        
+    } //end function
+    
+    
+    /*
+    selection sort algorithm - rank items from the lowest to highest by iterating through
+    the array and swapping the current iteration with the lowest value in the rest of the array
+    until it reaches the end of the array.
+    */
+    
+    func selectionSort(var numberList: Array<Int>) ->Array<Int> {
+        
+        var x, y, z : Int
+        
+        // iterate through the entire array
+        for x in 0..<numberList.count {
+            
+            // start minimum value at first element of the iteration
+            var minimum = x
+            
+            // iterate through the rest of the array (x+1 to the end of the array)
+            for y = x+1; y < numberList.count; y++ {
+                
+                println("comparing \(numberList[minimum]) and \(numberList[y])")
+                
+                // store the lowest value as minimum
+                if numberList[minimum] > numberList[y] {
+                    minimum = y
+                }
+                                
+            } //end for
+            
+            // swap the minimum value with the current array iteration
+            var z = numberList[x]
+            numberList[x] = numberList[minimum]
+            numberList[minimum] = z
             
         } //end for
     
