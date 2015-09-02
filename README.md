@@ -88,7 +88,7 @@ Example
 Getting Started
 --------------------
 
-Swift Structures has been optimized for Xcode 6.3 (e.g., Swift 1.2) or later. The directories are organized as follows:
+Swift Structures has been optimized for Xcode 7 (e.g., Swift 2.0) or later. The directories are organized as follows:
 + Source - Code for all Swift data structures and algorithms
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
