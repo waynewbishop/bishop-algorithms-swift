@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 /* An AVL Tree is another name for a balanced binary search tree*/
 
 
@@ -88,7 +91,7 @@ class AVLTest: XCTestCase {
     //update tree values with function
     func testAVLTraverseFunction() {
         
-        var avlTest = self.buildClosureTree()
+        let avlTest = self.buildClosureTree()
         
         //invoke formula function
         avlTest.traverse(traverseFormula)
@@ -99,7 +102,7 @@ class AVLTest: XCTestCase {
     //update avl values with closure expression
     func testAVLTraverseExpression() {
         
-        var avlTest = self.buildClosureTree()
+        let avlTest = self.buildClosureTree()
         var didFail: Bool = false
         
         /*
@@ -109,7 +112,7 @@ class AVLTest: XCTestCase {
         
         avlTest.traverse { (node: AVLTree<Int>) -> Int in
             
-            var results = node.key! + node.height
+            let results = node.key! + node.height
             if node.height > 0 && node.key! == results {
                 didFail = true
             }
@@ -128,7 +131,7 @@ class AVLTest: XCTestCase {
     //update avl values with closure function
     func traverseFormula(node: AVLTree<Int>) -> Int {
         
-        var results = node.key! + node.height
+        let results = node.key! + node.height
         if node.height > 0 && node.key! == results {
              XCTFail("closure update failed..")
         }
@@ -150,13 +153,13 @@ class AVLTest: XCTestCase {
         
         
         //test for new instance
-        var avlTest: AVLTree<Int> = AVLTree<Int>()
+        let avlTest: AVLTree<Int> = AVLTree<Int>()
         XCTAssertNotNil(avlTest, "avl instance not created..")
         
         
         //build the tree list
         for number in numberList {
-            println("adding \(number) to avl tree...")
+            print("adding \(number) to avl tree...")
             avlTest.addNode(number)
         }
         
@@ -178,7 +181,7 @@ class AVLTest: XCTestCase {
         
         
         //test for new instance
-        var avlTest: AVLTree<Int> = AVLTree<Int>()
+        let avlTest: AVLTree<Int> = AVLTree<Int>()
         XCTAssertNotNil(avlTest, "avl instance not created..")
         
         
@@ -188,7 +191,7 @@ class AVLTest: XCTestCase {
         
         //build the tree list
         for number in numberList {
-            println("adding \(number) to avl tree...")
+            print("adding \(number) to avl tree...")
             avlTest.addNode(number)
         }
 

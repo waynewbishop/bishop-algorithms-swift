@@ -21,8 +21,8 @@ public class Sorting {
     func binarySearch(var numberList: Array<Int>, key: Int, range:(imin: Int, imax: Int)) {
     
     
-        var midIndex: Double = round(Double((range.imin + range.imax) / 2))
-        var midNumber = numberList[Int(midIndex)]
+        let midIndex: Double = round(Double((range.imin + range.imax) / 2))
+        let midNumber = numberList[Int(midIndex)]
     
     
         //use recursion to reduce the possible search range
@@ -37,7 +37,7 @@ public class Sorting {
             
         } else {
             isKeyFound = true
-            println("value \(key) found..")
+            print("value \(key) found..")
         }
         
         
@@ -64,7 +64,7 @@ public class Sorting {
             //iterate backwards through the sorted portion
             for (y = x; y > -1; y--) {
                 
-                println("comparing \(key) and \(numberList[y])")
+                print("comparing \(key) and \(numberList[y])")
 
                 
                 if key < numberList[y] {
@@ -89,9 +89,6 @@ public class Sorting {
     } //end function
     
     
-    
-    
-    
     /*
     bubble sort algorithm - rank items from the lowest to highest by swapping
     groups of two items from left to right. The highest item in the set will bubble up to the
@@ -100,7 +97,7 @@ public class Sorting {
     
     func bubbleSort(var numberList: Array<Int>) ->Array<Int> {
         
-        var x, y, z, passes, key : Int
+        var z, passes, key : Int
         
         //track collection iterations
         for x in 0..<numberList.count {
@@ -112,7 +109,7 @@ public class Sorting {
             for y in 0..<passes {
                 key = numberList[y]
                 
-                println("comparing \(key) and \(numberList[y + 1])")
+                print("comparing \(key) and \(numberList[y + 1])")
                 
                 //compare and rank values
                 if (key > numberList[y + 1]) {
@@ -124,6 +121,47 @@ public class Sorting {
                 }
                 
             } //end for
+            
+        } //end for
+        
+        
+        return numberList
+        
+    } //end function
+    
+    
+    /*
+    selection sort algorithm - rank items from the lowest to highest by iterating through
+    the array and swapping the current iteration with the lowest value in the rest of the array
+    until it reaches the end of the array.
+    */
+    
+    func selectionSort(var numberList: Array<Int>) ->Array<Int> {
+        
+        var y : Int
+        
+        // iterate through the entire array
+        for x in 0..<numberList.count {
+            
+            // start minimum value at first element of the iteration
+            var minimum = x
+            
+            // iterate through the rest of the array (x+1 to the end of the array)
+            for y = x+1; y < numberList.count; y++ {
+                
+                print("comparing \(numberList[minimum]) and \(numberList[y])")
+                
+                // store the lowest value as minimum
+                if numberList[minimum] > numberList[y] {
+                    minimum = y
+                }
+                                
+            } //end for
+            
+            // swap the minimum value with the current array iteration
+            let z = numberList[x]
+            numberList[x] = numberList[minimum]
+            numberList[minimum] = z
             
         } //end for
     
@@ -145,7 +183,7 @@ public class Sorting {
 				return hops
 			}
 			
-			var pivot = hops.removeAtIndex(0)
+			let pivot = hops.removeAtIndex(0)
 			var leftBucket:[Int] = []
 			var rightBucket:[Int] = []
 			
@@ -201,9 +239,6 @@ public class Sorting {
 			var sortedArray:[Int] = []
 			var leftCount = 0
 			var rightCount = 0
-            
-            var someNode: LLNode<Int> = LLNode<Int>()
-            
             
             /*
             var someCount: Int = left.count + right.count

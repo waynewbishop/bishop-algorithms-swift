@@ -29,7 +29,7 @@ public class Queue<T> {
             
             //cycle through the list of items
             while (current.next != nil) {
-                current = current.next!;
+                current = current.next!
                 x++
             }
             
@@ -52,11 +52,11 @@ public class Queue<T> {
         
         //establish the top node
         if (top.key == nil) {
-            top.key = key;
+            top.key = key
             return
         }
         
-        var childToUse: QNode<T> = QNode<T>()
+        let childToUse: QNode<T> = QNode<T>()
         var current: QNode = top
     
         
@@ -67,8 +67,8 @@ public class Queue<T> {
                 
         
         //append a new item
-        childToUse.key = key;
-        current.next = childToUse;
+        childToUse.key = key
+        current.next = childToUse
         
     }
     
@@ -91,7 +91,7 @@ public class Queue<T> {
         }
     
         //retrieve and queue the next item
-        var queueitem: T? = top.key!
+        let queueitem: T? = top.key!
 
     
         //use optional binding 
@@ -112,7 +112,7 @@ public class Queue<T> {
    func isEmpty() -> Bool {
     
         //determine if the key or instance exist
-        if let topitem: T = self.top?.key {
+        if let _: T = self.top?.key {
             return false
         }
     

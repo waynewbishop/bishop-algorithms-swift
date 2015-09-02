@@ -9,6 +9,7 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
 
 
 //MARK:  custom operator
@@ -25,7 +26,7 @@ infix operator ^^ {}
 func ^^(base: Int, power: Int) -> Int {
     
     //rounded to nearest int
-    var results: Double = round(pow(Double(base), Double(power)))
+    let results: Double = round(pow(Double(base), Double(power)))
     return Int(results)
 }
 
@@ -55,11 +56,11 @@ class ClosureTest: XCTestCase {
     //filter based on expression
     func testLinkFilterExpression() {
         
-        var linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = self.buildLinkedList()
         
         
         //inline closure expression
-        var results: LinkedList<Int>! = linkedList.filter { (node: LLNode<Int>) -> Bool in
+        let results: LinkedList<Int>! = linkedList.filter { (node: LLNode<Int>) -> Bool in
             return node.key > 5
         }
         
@@ -77,10 +78,10 @@ class ClosureTest: XCTestCase {
     //filter based on function
     func testLinkFilterFunction() {
         
-        var linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = self.buildLinkedList()
 
         //pass formula as parameter
-        var results: LinkedList<Int>! = linkedList.filter(filterFormula)
+        let results: LinkedList<Int>! = linkedList.filter(filterFormula)
         
         //print results
         results.printAllKeys()
@@ -100,7 +101,7 @@ class ClosureTest: XCTestCase {
     //map based on expression
     func testLinkMapExpression() {
 
-        var linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = self.buildLinkedList()
         
         //inline closure expression
         let results: LinkedList<Int> = linkedList.map { (node: LLNode<Int>) -> Int in
@@ -146,10 +147,10 @@ class ClosureTest: XCTestCase {
     //map based on function
     func testLinkMapFunction() {
         
-        var linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = self.buildLinkedList()
         
         //pass formula as parameter
-        var results: LinkedList<Int>! = linkedList.map(mapFormula)
+        let results: LinkedList<Int>! = linkedList.map(mapFormula)
         
         //print results
         results.printAllKeys()
@@ -203,7 +204,7 @@ class ClosureTest: XCTestCase {
         
         
         //create a new instance
-        var linkedList: LinkedList<Int> = LinkedList<Int>()
+        let linkedList: LinkedList<Int> = LinkedList<Int>()
         
         
         //append list items

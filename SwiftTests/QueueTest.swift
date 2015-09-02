@@ -7,6 +7,8 @@
 //
 
 import XCTest
+@testable import SwiftStructures
+
 
 class QueueTest: XCTestCase {
 
@@ -29,14 +31,14 @@ class QueueTest: XCTestCase {
     //test the deQueueing process
     func testDeQueue() {
         
-        var q: Queue<Int>! = buildQueue()
+        let q: Queue<Int>! = buildQueue()
         
         XCTAssertNotNil(q, "queue instance not present..")
         
         
         //deQueue based on list size
         numberList.count.times { (s: Int) -> Void in
-            println("queue count: \(q.count)")
+            print("queue count: \(q.count)")
             q.deQueue()
         }
 
@@ -50,7 +52,7 @@ class QueueTest: XCTestCase {
     
     func buildQueue() -> Queue<Int>! {
         
-        var newq: Queue<Int>! = Queue<Int>()
+        let newq: Queue<Int>! = Queue<Int>()
         
         XCTAssertTrue(newq.count == 0, "new queue instance not created..")
         
@@ -58,7 +60,7 @@ class QueueTest: XCTestCase {
         //build queue
         for s in numberList {
             newq.enQueue(s)
-            println("count is: \(newq.count)")
+            print("count is: \(newq.count)")
         }
         
         

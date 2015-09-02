@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 /* 
    unit test cases specific to graph algorithms
    to test your own graph, replace the vertices and edges.
@@ -64,11 +67,11 @@ class GraphTest: XCTestCase {
     //find the shortest path using heapsort operations - O(1)
     func testDijkstraWithHeaps() {
         
-        var sourceVertex = vertexA
-        var destinationVertex = vertexE
+        let sourceVertex = vertexA
+        let destinationVertex = vertexE
         
         
-        var shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex, destination: destinationVertex)
+        let shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex, destination: destinationVertex)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
         printPath(shortestPath)
@@ -82,11 +85,11 @@ class GraphTest: XCTestCase {
     //find the shortest path based on two non-negative edge weights - O(n)
     func testDijkstra() {
         
-        var sourceVertex = vertexA
-        var destinationVertex = vertexE
+        let sourceVertex = vertexA
+        let destinationVertex = vertexE
 
         
-        var shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
+        let shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
         printPath(shortestPath)
@@ -122,7 +125,7 @@ class GraphTest: XCTestCase {
         testGraph.traverse(vertexA) { (inout node: Vertex) -> () in
             
             node.visited = true
-            println("traversed vertex: \(node.key!)..")
+            print("traversed vertex: \(node.key!)..")
             
         }
         
@@ -140,7 +143,7 @@ class GraphTest: XCTestCase {
         */
         
         node.visited = true
-        println("traversed vertex: \(node.key!)..")
+        print("traversed vertex: \(node.key!)..")
     }
 
     
@@ -181,7 +184,7 @@ class GraphTest: XCTestCase {
         
         //iterate and print each path sequence
         while (current != nil) {
-            println("The path is : \(current.destination.key!) with a total of : \(current.total)..")
+            print("The path is : \(current.destination.key!) with a total of : \(current.total)..")
             current = current.previous
         }
 

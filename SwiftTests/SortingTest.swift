@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 class SortingTest: XCTestCase {
     
     let numberList : Array<Int> = [8, 2, 10, 9, 7, 5]
@@ -20,7 +23,7 @@ class SortingTest: XCTestCase {
     //test the binary search
     func testBinarySearch() {
         
-        var sortTest: Sorting = Sorting()
+        let sortTest: Sorting = Sorting()
         var searchList: Array<Int> = Array<Int>()
         XCTAssertNotNil(sortTest, "sorting instance not created..")
         
@@ -35,7 +38,7 @@ class SortingTest: XCTestCase {
         sortTest.binarySearch(searchList, key: 182, range: (1, 500))
         
         //check the indicator
-        var isFound: Bool = sortTest.isKeyFound
+        let isFound: Bool = sortTest.isKeyFound
 
         XCTAssertTrue(isFound, "binary search key not found..")
         
@@ -47,7 +50,7 @@ class SortingTest: XCTestCase {
 	
     func testInsertionSort() {
 			
-        var sortTest: Sorting = Sorting()
+        let sortTest: Sorting = Sorting()
         XCTAssertNotNil(sortTest, "sorting instance not created..")
         
         
@@ -63,7 +66,7 @@ class SortingTest: XCTestCase {
                 XCTFail("numberlist items not in sorted order..")
             }
             else {
-                println("item \(resultList[x]) is sorted..")
+                print("item \(resultList[x]) is sorted..")
             }
             
             
@@ -77,7 +80,7 @@ class SortingTest: XCTestCase {
     func testBubbleSort() {
         
         
-        var sortTest: Sorting = Sorting()
+        let sortTest: Sorting = Sorting()
         XCTAssertNotNil(sortTest, "sorting instance not created..")
         
         
@@ -93,7 +96,7 @@ class SortingTest: XCTestCase {
                 XCTFail("numberlist items not in sorted order..")
             }
             else {
-                println("item \(resultList[x]) is sorted..")
+                print("item \(resultList[x]) is sorted..")
             }
             
             
@@ -104,10 +107,40 @@ class SortingTest: XCTestCase {
 
     
     
+    func testSelectionSort() {
+        
+        
+        let sortTest: Sorting = Sorting()
+        XCTAssertNotNil(sortTest, "sorting instance not created..")
+        
+        
+        //pass the list to be sorted
+        var resultList: Array<Int>! = sortTest.selectionSort(numberList)
+        
+        
+        //determine if the numbers are sorted
+        var x: Int = 0
+        for (x = 0; x < resultList.count; x++) {
+            
+            if ((x > 0) && (resultList[x] < resultList[x - 1])) {
+                XCTFail("numberlist items not in sorted order..")
+            }
+            else {
+                print("item \(resultList[x]) is sorted..")
+            }
+            
+            
+        } //end for
+        
+        
+    } //end function
+    
+    
+    
     func testQuickSort() {
         
         
-        var sortTest: Sorting = Sorting()
+        let sortTest: Sorting = Sorting()
         XCTAssertNotNil(sortTest, "sorting instance not created..")
         
         var resultList: Array<Int>! = sortTest.quickSort(numberList)
@@ -119,7 +152,7 @@ class SortingTest: XCTestCase {
                 XCTFail("numberlist items not in sorted order..")
             }
             else {
-                println("item \(resultList[x]) is sorted..")
+                print("item \(resultList[x]) is sorted..")
             }
             
             
@@ -131,12 +164,12 @@ class SortingTest: XCTestCase {
         
         10.times { i in
            // echo "(i) times"
-            println("\(i) times")
+            print("\(i) times")
         }
         
 
         
-        var sortTest: Sorting = Sorting()
+        let sortTest: Sorting = Sorting()
         XCTAssertNotNil(sortTest, "sorting instance not created..")
         
         var resultList: Array<Int>! = sortTest.mergeSort(numberList)
@@ -148,7 +181,7 @@ class SortingTest: XCTestCase {
                 XCTFail("numberlist items not in sorted order..")
             }
             else {
-                println("item \(resultList[x]) is sorted..")
+                print("item \(resultList[x]) is sorted..")
             }
             
             

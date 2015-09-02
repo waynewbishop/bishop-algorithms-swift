@@ -71,7 +71,7 @@ public class LinkedList<T: Equatable> {
             
             if current?.next == nil {
                 
-                var childToUse: LLNode = LLNode<T>()
+                let childToUse: LLNode = LLNode<T>()
                 
                 childToUse.key = key
                 childToUse.previous = current
@@ -95,11 +95,11 @@ public class LinkedList<T: Equatable> {
         
         var current: LLNode! = head
         
-        println("------------------")
+        print("------------------")
         
         //assign the next instance
         while (current != nil) {
-            println("link item is: \(current.key)")
+            print("link item is: \(current.key)")
             current = current.next
         }
         
@@ -145,7 +145,7 @@ public class LinkedList<T: Equatable> {
         
         //check for nil conditions
         if ((index < 0) || (index > (self.count - 1))) {
-            println("link index does not exist..")
+            print("link index does not exist..")
         }
         
         
@@ -166,7 +166,7 @@ public class LinkedList<T: Equatable> {
             
             if (index == listIndex) {
                 
-                var childToUse: LLNode = LLNode<T>()
+                let childToUse: LLNode = LLNode<T>()
                 
                 //create the new node
                 childToUse.key = key
@@ -217,7 +217,7 @@ public class LinkedList<T: Equatable> {
         
         //check for nil conditions
         if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
-            println("link index does not exist..")
+            print("link index does not exist..")
             return
         }
         
@@ -317,7 +317,7 @@ public class LinkedList<T: Equatable> {
         
         
         var current: LLNode! = head
-        var results: LinkedList<T>! = LinkedList<T>()
+        let results: LinkedList<T>! = LinkedList<T>()
         
         
         while current != nil {
@@ -349,7 +349,7 @@ public class LinkedList<T: Equatable> {
         
         
         var current: LLNode! = head
-        var results: LinkedList<T>! = LinkedList<T>()
+        let results: LinkedList<T>! = LinkedList<T>()
         var newKey: T!
         
         

@@ -9,6 +9,9 @@
 import UIKit
 import XCTest
 
+@testable import SwiftStructures
+
+
 class HashTest: XCTestCase {
     
     var listsize: Int!
@@ -67,7 +70,7 @@ class HashTest: XCTestCase {
         
         
         if (hashValue != nil) {
-            println("the computed hash value is: \(hashValue)..")
+            print("the computed hash value is: \(hashValue)..")
         }
 
         
