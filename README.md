@@ -1,13 +1,13 @@
 Swift Structures
 ====================
 
-This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called <a href="http://www.apple.com/swift" target="_blank">Swift</a>. While details of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.  
+This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called <a href="http://www.apple.com/swift" target="_blank">Swift</a>. While details of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.
 
 
 Audience
 ---------------------
 
-As a developer, you should already be familiar with the basics of programming. Beyond algorithms, this project also aims to provide an alternative for learning the basics of Swift. This includes implementations of many Swift-specific features such as optionals, extensions and generics. Beyond Swift, audiences should be familiar with Singleton and Factory design patterns along with sets, arrays and dictionaries. 
+As a developer, you should already be familiar with the basics of programming. Beyond algorithms, this project also aims to provide an alternative for learning the basics of Swift. This includes implementations of many Swift-specific features such as optionals, extensions and generics. Beyond Swift, audiences should be familiar with Singleton and Factory design patterns along with sets, arrays and dictionaries.
 
 
 Features
@@ -37,46 +37,52 @@ The project features code-level examples for the following items:
 
 Online, Print & PDF
 --------------------
-Available in print or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. People are also welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">waynewbishop.com/swift</a>. As a collaborative open-source effort, I welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
+Available in print or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. People are also welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">waynewbishop.com/swift</a>. As a collaborative open-source effort, I welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others.
 
 
 Example
 --------------------
 
 ```swift
-  /* graph traversal - breadth first search */
-  
-  func traverseGraphBFS(startingv: Vertex) {
-    
-        //establish a new queue
-        var graphQueue: Queue<Vertex> = Queue<Vertex>()
-    
-    
-        //queue a starting vertex
-        graphQueue.enQueue(startingv)
-    
-        while(!graphQueue.isEmpty()) {
-            
-            //traverse the next queued vertex
-            var vitem = graphQueue.deQueue() as Vertex!
-            
-            //add unvisited vertices to the queue
-            for e in vitem.neighbors {
-                if e.neighbor.visited == false {
-                    println("adding vertex: \(e.neighbor.key!) to queue..")
-                    graphQueue.enQueue(e.neighbor)
-                }
-            }
-            
-            vitem.visited = true
-            println("traversed vertex: \(vitem.key!)..")
-            
-        } //end while
-    
-        println("graph traversal complete..")
-        
-    
-    } //end function
+
+  //breadth first search
+  func traverse(startingv: Vertex) {
+
+
+      //establish a new queue
+      let graphQueue: Queue<Vertex> = Queue<Vertex>()
+
+
+          //queue a starting vertex
+          graphQueue.enQueue(startingv)
+
+
+          while !graphQueue.isEmpty() {
+
+              //traverse the next queued vertex
+              let vitem = graphQueue.deQueue() as Vertex!
+
+
+              //add unvisited vertices to the queue
+              for e in vitem.neighbors {
+                  if e.neighbor.visited == false {
+                      print("adding vertex: \(e.neighbor.key!) to queue..")
+                      graphQueue.enQueue(e.neighbor)
+                  }
+              }
+
+
+              vitem.visited = true
+              print("traversed vertex: \(vitem.key!)..")
+
+
+          } //end while
+
+
+          print("graph traversal complete..")
+
+
+      } //end function
 ```
 
 Getting Started
@@ -89,14 +95,14 @@ Swift Structures has been optimized for Xcode 6.3 (e.g., Swift 1.2) or later. Th
 
 Usage
 --------------------
-Individuals are welcome to use the code with commercial and open-source projects. As a courtesy, please provide attribution to <a href="http://www.waynebishop.com" target="_blank">waynewbishop.com</a>. For more information, review the complete <a href="https://github.com/waynewbishop/SwiftStructures/blob/master/License.md" target="_blank">license agreement</a>. 
+Individuals are welcome to use the code with commercial and open-source projects. As a courtesy, please provide attribution to <a href="http://www.waynebishop.com" target="_blank">waynewbishop.com</a>. For more information, review the complete <a href="https://github.com/waynewbishop/SwiftStructures/blob/master/License.md" target="_blank">license agreement</a>.
 
 
 Branches
 --------------------
 + master - The production branch. Clone or fork this repository for the latest copy
 + develop - The active development branch. <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">Pull requests</a> should be directed to this branch
-
++ swift-2.0 - The developmental Swift 2.0 branch. Direct all pull requests with code that is written for Swift 2.0 to this branch.
 
 Other Projects
 --------------------
@@ -109,4 +115,3 @@ Questions
 --------------------
 
 Have a question? Feel free to contact me on <a href="http://www.twitter.com/waynewbishop" target="_blank">Twitter</a> or <a href="http://www.waynewbishop.com/contact" target="_blank">online</a>.
-
