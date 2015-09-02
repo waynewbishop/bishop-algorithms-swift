@@ -122,7 +122,7 @@ public class Trie {
                 
                 childToUse = TrieNode()
                 childToUse.key = searchKey
-                childToUse.level = current.level + 1;
+                childToUse.level = current.level + 1
                 current.children.append(childToUse)
             }
             
@@ -138,7 +138,7 @@ public class Trie {
         if (keyword.length == current.level) {
             current.isFinal = true
             print("end of word reached!")
-            return;
+            return
         }
         
         
