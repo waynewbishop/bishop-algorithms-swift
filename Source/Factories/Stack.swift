@@ -135,37 +135,5 @@ class Stack<T> {
         
     }
     
-    /*
-    
-    //determine the count of the queue
-    func count() -> Int {
-        
-        var x: Int = 0
-        
-        
-        //determine if the key or instance exist
-        let topitem: T? = self.top?.key
-        
-        if (topitem == nil) {
-             return 0
-        }
-        
-        
-        var current: LLNode = top
-        
-        x++
-        
-        //cycle through the list of items to get to the end.
-        while ((current.next) != nil) {
-            current = current.next!
-            x++
-        }
-        
-        return x
-        
-    }
-    
-  */
-    
 
 }

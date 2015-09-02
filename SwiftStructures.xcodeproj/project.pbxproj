@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1A7D6B1B97A2080007BD2B /* Bloom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A7D6A1B97A2080007BD2B /* Bloom.swift */; settings = {ASSET_TAGS = (); }; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4891B1CF50500D1B43F /* ClosureTest.swift */; };
 		DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C6319CA284100D2E177 /* StructureTest.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA1A7D6A1B97A2080007BD2B /* Bloom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bloom.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
 		DA7B7C6319CA284100D2E177 /* StructureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureTest.swift; sourceTree = "<group>"; };
 		DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTest.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DA908DDB1A0160A300DD9864 /* HashTable.swift */,
+				DA1A7D6A1B97A2080007BD2B /* Bloom.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */,
 				DA908DDA1A015FB400DD9864 /* HashNode.swift in Sources */,
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
+				DA1A7D6B1B97A2080007BD2B /* Bloom.swift in Sources */,
 				DAE0021D19C5677D0035F1A0 /* PathHeap.swift in Sources */,
 				DAE0022A19C567A40035F1A0 /* Vertex.swift in Sources */,
 				DAE0022C19C567A40035F1A0 /* AVLTree.swift in Sources */,
