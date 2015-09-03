@@ -14,7 +14,7 @@ import XCTest
 class BloomTest: XCTestCase {
     
     var listsize: Int!
-    var filter: Bloom<String>!
+    var filter: Bloom!
 
     
     override func setUp() {
@@ -22,16 +22,14 @@ class BloomTest: XCTestCase {
         
         //set the initial size and capacity
         listsize = 25
-        filter = Bloom<String>(capacity: listsize)
-      
+        filter = Bloom(capacity: listsize)
     }
     
     
-
+    
+    
     func testAddWord() {
-       
-        filter.add("Wayne")
-        
+        filter.addWord("Testing")
     }
     
  
