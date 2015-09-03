@@ -44,38 +44,43 @@ Example
 --------------------
 
 ```swift
-  /* graph traversal - breadth first search */
-  
-  func traverseGraphBFS(startingv: Vertex) {
+    /* graph traversal - breadth first search */
     
+    func traverse(startingv: Vertex) {
+        
         //establish a new queue
-        var graphQueue: Queue<Vertex> = Queue<Vertex>()
-    
-    
+        let graphQueue: Queue<Vertex> = Queue<Vertex>()
+        
+        
         //queue a starting vertex
         graphQueue.enQueue(startingv)
-    
-        while(!graphQueue.isEmpty()) {
+        
+        
+        while !graphQueue.isEmpty() {
             
             //traverse the next queued vertex
-            var vitem = graphQueue.deQueue() as Vertex!
+            let vitem = graphQueue.deQueue() as Vertex!
+            
             
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
                 if e.neighbor.visited == false {
-                    println("adding vertex: \(e.neighbor.key!) to queue..")
+                    print("adding vertex: \(e.neighbor.key!) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
             
+            
             vitem.visited = true
-            println("traversed vertex: \(vitem.key!)..")
+            print("traversed vertex: \(vitem.key!)..")
+            
             
         } //end while
-    
-        println("graph traversal complete..")
         
-    
+        
+        print("graph traversal complete..")
+        
+        
     } //end function
 ```
 
