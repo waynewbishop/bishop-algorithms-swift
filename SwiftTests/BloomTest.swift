@@ -23,14 +23,33 @@ class BloomTest: XCTestCase {
         //set the initial size and capacity
         listsize = 25
         filter = Bloom(capacity: listsize)
+
+
+        //TODO: build an array of words that pass (no overlap)
+        //TODO: build an array of words that pass (overlap)
+        //TODO: build an array of words that fail (no overlap)
+        
+        
+        //add the a test word to the set
+        filter.addWord("Testing") //TODO: change to help method(s)
+        
     }
     
     
     
     
-    func testAddWord() {
-        filter.addWord("Testing")
+    func testContains() {
+        
+        if filter.contains("Testing") == true {
+            print("word contained in set...")
+        }
+            
+        else {
+            XCTFail("word not found..")
+        }
+        
     }
+
     
- 
+    
 }
