@@ -77,9 +77,6 @@ class Bloom {
         position.third = self.createhash((String(position.second)))
         
 
-        //TODO: Change to swift 2.0 guard statement (with boolean optional..)?
-        
-        
         //determine if found in any position
         if bloomset[position.first] == nil {
             return false
@@ -88,12 +85,12 @@ class Bloom {
         else if bloomset[position.second] == nil {
             return false
         }
-        
+            
         else if bloomset[position.third] == nil {
             return false
             
         }
-
+        
         //all tests passed
         else {
             return true

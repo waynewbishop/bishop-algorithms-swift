@@ -40,7 +40,7 @@ class BloomTest: XCTestCase {
     
     func testContains() {
         
-        if filter.contains("Testing") == true {
+        if filter.contains("Foo") == true {
             print("word contained in set...")
         }
             
