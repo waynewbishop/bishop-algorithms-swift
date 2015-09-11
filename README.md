@@ -25,6 +25,7 @@ The project features code-level examples for the following items:
 + Generics
 + Closures
 + Hash Tables
++ Bloom Filters
 + Binary Search Trees
 + Tree Balancing (Rotations)
 + Tries
@@ -35,9 +36,9 @@ The project features code-level examples for the following items:
 + Depth-First Search
 + Breadth-First Search
 
-Online, Print & PDF
+The Book
 --------------------
-Available in print or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. People are also welcome to follow the project through Github or online at <a href="http://www.waynewbishop.com/swift" target="_blank">waynewbishop.com/swift</a>. As a collaborative open-source effort, I welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
+Available in print or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
 
 
 Example
@@ -51,16 +52,13 @@ Example
         //establish a new queue
         let graphQueue: Queue<Vertex> = Queue<Vertex>()
         
-        
         //queue a starting vertex
         graphQueue.enQueue(startingv)
-        
         
         while !graphQueue.isEmpty() {
             
             //traverse the next queued vertex
             let vitem = graphQueue.deQueue() as Vertex!
-            
             
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
@@ -70,16 +68,12 @@ Example
                 }
             }
             
-            
             vitem.visited = true
             print("traversed vertex: \(vitem.key!)..")
             
-            
         } //end while
         
-        
         print("graph traversal complete..")
-        
         
     } //end function
 ```
@@ -87,7 +81,7 @@ Example
 Getting Started
 --------------------
 
-Swift Structures has been optimized for Xcode 6.3 (e.g., Swift 1.2) or later. The directories are organized as follows:
+Swift Structures has been optimized for Xcode 7.0 GM Seed (e.g., Swift 2.0) or later. The directories are organized as follows:
 + Source - Code for all Swift data structures and algorithms
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
