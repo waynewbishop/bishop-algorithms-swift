@@ -17,18 +17,32 @@ extension String {
         return self.characters.count
     }
     
+    
     //returns characters of a string up to a specified index
     func substringToIndex(to: Int) -> String {
         return self.substringToIndex(self.startIndex.advancedBy(to))
     }
     
     
+    
     //return a character at a specific index
     func stringAtIndex(position: Int) -> String {
         return String(Array(self.characters)[position])
     }
-
     
+    
+    //replace string content
+    func replace(string:String, replacement:String) -> String {
+        return self.stringByReplacingOccurrencesOfString(string, withString: replacement)
+    }
+    
+    
+    //removes empty string content
+    func removeWhitespace() -> String {
+        return self.replace(" ", replacement: "")
+    }
+    
+
     //insert a string at a specified index
     func insertSubstring(string:String, index:Int) -> String {
         return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count-index))

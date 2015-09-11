@@ -29,6 +29,7 @@ class BloomTest: XCTestCase {
         //TODO: build an array of words that pass (overlap)
         //TODO: build an array of words that fail (no overlap)
         
+        //Need to just build a list of words to determine what overlaps - check indicies..
         
         //add the a test word to the set
         filter.addWord("Testing") //TODO: change to help method(s)
@@ -40,7 +41,7 @@ class BloomTest: XCTestCase {
     
     func testContains() {
         
-        if filter.contains("Foo") == true {
+        if filter.contains("Testing".replace(" ", replacement: "")) == true {
             print("word contained in set...")
         }
             
