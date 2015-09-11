@@ -21,34 +21,36 @@ class BloomTest: XCTestCase {
         super.setUp()
         
         //set the initial size and capacity
-        listsize = 25
+        listsize = 50
         filter = Bloom(capacity: listsize)
 
-
-        //TODO: build an array of words that pass (no overlap)
-        //TODO: build an array of words that pass (overlap)
-        //TODO: build an array of words that fail (no overlap)
         
-        //Need to just build a list of words to determine what overlaps - check indicies..
-        
-        //add the a test word to the set
-        filter.addWord("Testing") //TODO: change to help method(s)
+        //add word list
+        filter.addWord("Seal")
+        filter.addWord("Sour")
+        filter.addWord("Seattle") // -- overlap with "Sour" index at 2nd position
+        filter.addWord("Seat")
+        filter.addWord("Sat")
+        filter.addWord("Sell")
         
     }
     
-    
-    
-    
-    func testContains() {
+
+    //test words inclded in filter set
+    func testContainsPass() {
         
-        if filter.contains("Testing".replace(" ", replacement: "")) == true {
-            print("word contained in set...")
-        }
-            
-        else {
-            XCTFail("word not found..")
-        }
+        XCTAssertTrue(filter.contains("Seal"), "word not contained in set..")
+        XCTAssertTrue(filter.contains("Sour"), "word not contained in set..")
+        XCTAssertTrue(filter.contains("Seattle"), "word not contained in set..")
+    }
+    
+    
+    //test words not included in filter set
+    func testContainsFail() {
         
+        XCTAssertFalse(filter.contains("Sea"), "word contained in set..")
+        XCTAssertFalse(filter.contains("Sunk"), "word contained in set..")
+        XCTAssertFalse(filter.contains("Sick"), "word contained in set..")
     }
 
     

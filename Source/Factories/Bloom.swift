@@ -10,6 +10,7 @@ import Foundation
 
 class Bloom {
 
+
     //initialize the filter
     private var bloomset: Array<Bool!>
     private var empty: Bool = true
@@ -34,15 +35,15 @@ class Bloom {
     
     
     /*
-     notes: As shown, the idea of "adding" elements to a bloom filter doesn't take place.
-     Their goal is to test for the existence of membership in a specified set.
+     note: As shown, the concept of "adding" key element (eg. Strings) to a bloom filter doesn't
+     take place. Unlike other structures, their goal is to test for membership.
     */
 
     
-    func addWord(element: String){
+    func addWord(element: String) -> Bool {
         
         
-        //track positions with tuple
+        //track position indicies with tuple
         var position: (first: Int, second: Int, third: Int)
         
         
@@ -52,15 +53,42 @@ class Bloom {
         position.third = self.createhash((String(position.second)))
  
         
-        //flip boolean values at designated position
-        bloomset[position.first] = true
-        bloomset[position.second] = true
-        bloomset[position.third] = true
-
+        print("\(element) positions are: \(position)")
         
-        self.empty = false
+
+        /*
+        note: All 3 positions are checked for existing membership. As a result, it is valid for
+        their to be some overlap with existing positions.
+        */
+        
+        
+
+        //gaurd against collision
+        if (bloomset[position.first] != nil) && (bloomset[position.second] != nil) && (bloomset[position.third] != nil) {
+            print("word collision occurred..")
+            return false
+        }
+        
+        else {
+            
+            //flip boolean values at designated position
+            bloomset[position.first] = true
+            bloomset[position.second] = true
+            bloomset[position.third] = true
+            
+            print("element: \(element) added to set..")
+            print("----------")
+            
+            
+            self.empty = false
+            return true
+            
+        }
+        
+        
         
     }
+    
     
     
     //check for membership
@@ -97,16 +125,13 @@ class Bloom {
         }
         
         
-    }
+    } //end function
 
     
-
-    
-    //MARK: helper function..
     
 
-    //hash algorithm - allocates the spread
-    func createhash(element: String) -> Int! {
+    //hash algorithm - calculates the spread
+    private func createhash(element: String) -> Int! {
         
         var remainder: Int = 0
         var divisor: Int = 0
@@ -114,8 +139,8 @@ class Bloom {
         
         /*
         note: modular math is used to calculate a hash value. The position count is used
-        as the dividend to ensure all possible outcomes are between 0 and 25 . This is an example
-        of a simple but effective hash algorithm.
+        as the dividend to ensure all possible outcomes are between 0 and the collection size. 
+        This is an example of a simple but effective hash algorithm.
         */
         
         
@@ -125,10 +150,13 @@ class Bloom {
         }
         
         
-        //zero-based index adjustment
+        //assignment and divisibility check
         remainder = divisor % bloomset.count
-        remainder -= 1
-
+        
+        if remainder != 0 {
+            remainder -= 1
+        }
+        
         
         return remainder
         

@@ -116,8 +116,8 @@ class HashTable {
     
     
     
-    //return the hash value to be used
-    func createHash(fullname: String) -> Int! {
+   //return the hash value to be used
+   func createHash(fullname: String) -> Int! {
         
         var remainder: Int = 0
         var divisor: Int = 0
@@ -130,8 +130,8 @@ class HashTable {
         
         /*
         note: modular math is used to calculate a hash value. The bucket count is used
-        as the dividend to ensure all possible outcomes are between 0 and 25. This is an example
-        of a simple but effective hash algorithm.
+        as the dividend to ensure all possible outcomes are between 0 and the collection size. 
+        This is an example of a simple but effective hash algorithm.
         */
         
         remainder = divisor % buckets.count
