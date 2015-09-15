@@ -22,6 +22,17 @@ class AVLTest: XCTestCase {
     override func setUp() {
         super.setUp()
     }
+    
+    
+    
+    func testCount() {
+        let numberList = [1, 2, 3, 5, 234, -20]
+        let tree = AVLTree<Int>()
+        for number in numberList {
+            tree.addNode(number)
+        }
+        XCTAssert(tree.count == numberList.count, "Expected tree's size to be \(numberList.count), got \(tree.count) instead.")
+    }
 
 
     

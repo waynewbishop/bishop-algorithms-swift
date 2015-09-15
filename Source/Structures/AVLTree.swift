@@ -11,7 +11,7 @@ import Foundation
 
 
 
-/* An AVL Tree is another name for a balanced binary search tree*/
+/* An AVL Tree is a kind of self-balancing binary search tree */
 
 
 public class AVLTree<T: Comparable> {
@@ -28,7 +28,12 @@ public class AVLTree<T: Comparable> {
     }
 
     
-    //TODO: Build computed count property for class
+    var count: Int {
+        var left = 0, right = 0
+        if let child = self.left { left = child.count }
+        if let child = self.right { right = child.count }
+        return left + 1 + right
+    }
     
     
     //function to add item based on its value
