@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Bloom {
+class Bloom<T: Equatable> {
 
 
     //initialize the filter
@@ -40,7 +40,7 @@ class Bloom {
     */
 
     
-    func addWord(element: String) -> Bool {
+    func addElement(element: T) -> Bool {
         
         
         //track position indicies with tuple
@@ -49,9 +49,9 @@ class Bloom {
         
         //establish position "spread"
         position.first = self.createhash(element)
-        position.second = self.createhash(String(position.first))
-        position.third = self.createhash((String(position.second)))
- 
+        position.second = self.createhash(position.first)
+        position.third = self.createhash(position.second)
+        
         
         print("\(element) positions are: \(position)")
         
@@ -92,7 +92,7 @@ class Bloom {
     
     
     //check for membership
-    func contains(element: String) -> Bool {
+    func contains(element: T) -> Bool {
         
         
         //track positions with tuple
@@ -101,8 +101,8 @@ class Bloom {
         
         //establish position "spread"
         position.first = self.createhash(element)
-        position.second = self.createhash(String(position.first))
-        position.third = self.createhash((String(position.second)))
+        position.second = self.createhash(position.first)
+        position.third = self.createhash(position.second)
         
 
         //determine if found in any position
@@ -123,7 +123,7 @@ class Bloom {
         else {
             return true
         }
-        
+    
         
     } //end function
 
@@ -131,7 +131,7 @@ class Bloom {
     
 
     //hash algorithm - calculates the spread
-    private func createhash(element: String) -> Int! {
+    private func createhash<T>(element: T) -> Int! {
         
         var remainder: Int = 0
         var divisor: Int = 0
