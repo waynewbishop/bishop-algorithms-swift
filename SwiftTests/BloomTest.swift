@@ -85,7 +85,7 @@ class BloomTest: XCTestCase {
                 XCTFail("test failed")
             }
             else {
-                //TODO: print pair combination here..
+                print("pair: (\(s.first),\(s.second))")
             }
             
         }
@@ -110,6 +110,9 @@ class BloomTest: XCTestCase {
             if s.first + s.second != sumtotal {
                 XCTFail("test failed")
             }
+            else {
+               print("pair: (\(s.first),\(s.second))")
+            }
             
         }
         
@@ -125,8 +128,7 @@ class BloomTest: XCTestCase {
     
     //calculate unique pairs - O(n)
     func printPairs(valueList: Array<Int>, sum: Int) -> Array<Pairset>! {
-        
-        
+                
         var sumList: Array<Pairset> = Array<Pairset>()
         let filter: Bloom<Int> = Bloom()
 
