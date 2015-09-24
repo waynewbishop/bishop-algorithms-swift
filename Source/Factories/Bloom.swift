@@ -8,59 +8,74 @@
 
 import Foundation
 
-class Bloom<T: Equatable> {
+class Bloom<T> {
 
-
-    //initialize the filter
+    
     private var bloomset: Array<Bool!>
-    private var empty: Bool = true
+    private var empty: Bool
+
+    
+    /*
+    note: unlike other collections, the capacity of 100 does not limit the
+    data structure to hold a limited number of items.
+    */
+
+    private var capacity: Int = 100
+
     
     
-    init(capacity: Int) {
+    init() {
         self.bloomset = Array<Bool!>(count: capacity, repeatedValue: nil)
+        self.empty = true
     }
-
+    
 
     
-    //the number of set items
-    var count: Int {
-        return self.bloomset.count
-    }
+    //initialize with items
+    init(items: Array<T>) {
+        
+        self.bloomset = Array<Bool!>(count: capacity, repeatedValue: nil)
+        self.empty = true
 
+        for s in items {
+            self.addElement(s)
+        }
+        
+    }
     
-    //return set status
+    
     var isEmpty: Bool {
         return empty
     }
     
     
+    
     /*
-     note: As shown, the concept of "adding" key element (eg. Strings) to a bloom filter doesn't
-     take place. Unlike other structures, their goal is to test for membership.
+     note: As shown, the concept of "adding" item elements to a bloom filter doesn't
+     take place. The structure's goal is to test for membership.
     */
 
     
-    func addElement(element: T) -> Bool {
+    func addElement(item: T) -> Bool {
         
         
-        //track position indicies with tuple
         var position: (first: Int, second: Int, third: Int)
         
         
         //establish position "spread"
-        position.first = self.createhash(element)
-        position.second = self.createhash(position.first)
-        position.third = self.createhash(position.second)
+        position.first = hash(item)
+        position.second = hash(position.first)
+        position.third = hash(position.second)
         
         
-        print("\(element) positions are: \(position)")
+        print("\(item) positions are: \(position)")
         
 
-        /*
-        note: All 3 positions are checked for existing membership. As a result, it is valid for
-        their to be some overlap with existing positions.
-        */
         
+        /*
+        note: All positions are checked for existing membership. As a result, it is valid for
+        their to be 2 or less overlaping positions.
+        */
         
 
         //gaurd against collision
@@ -71,12 +86,12 @@ class Bloom<T: Equatable> {
         
         else {
             
-            //flip boolean values at designated position
+            
             bloomset[position.first] = true
             bloomset[position.second] = true
             bloomset[position.third] = true
             
-            print("element: \(element) added to set..")
+            print("element: \(item) added to set..")
             print("----------")
             
             
@@ -95,17 +110,16 @@ class Bloom<T: Equatable> {
     func contains(element: T) -> Bool {
         
         
-        //track positions with tuple
         var position: (first: Int, second: Int, third: Int)
         
         
-        //establish position "spread"
-        position.first = self.createhash(element)
-        position.second = self.createhash(position.first)
-        position.third = self.createhash(position.second)
+        //establish "spread"
+        position.first = hash(element)
+        position.second = hash(position.first)
+        position.third = hash(position.second)
         
 
-        //determine if found in any position
+        //check positions
         if bloomset[position.first] == nil {
             return false
         }
@@ -116,10 +130,10 @@ class Bloom<T: Equatable> {
             
         else if bloomset[position.third] == nil {
             return false
-            
         }
         
-        //all tests passed
+            
+        //all passed
         else {
             return true
         }
@@ -130,8 +144,9 @@ class Bloom<T: Equatable> {
     
     
 
-    //hash algorithm - calculates the spread
-    private func createhash<T>(element: T) -> Int! {
+    
+    //hash algorithm - determines spread
+    private func hash<T>(element: T) -> Int! {
         
         var remainder: Int = 0
         var divisor: Int = 0
@@ -142,7 +157,7 @@ class Bloom<T: Equatable> {
         as the dividend to ensure all possible outcomes are between 0 and the collection size. 
         This is an example of a simple but effective hash algorithm.
         */
-        
+                
         
         for key in String(element).unicodeScalars {
             //print("the ascii value of \(key) is \(key.value)..")

@@ -11,76 +11,129 @@ import XCTest
 @testable import SwiftStructures
 
 
+
+//simple structure to group value pairs
 struct Pairset {
-    var first: Int = 0
-    var second: Int = 0
+    
+    var first: Int
+    var second: Int
+    
+    init() {
+        self.first = 0
+        self.second = 0
+    }
+    
 }
+
 
 
 
 class BloomTest: XCTestCase {
     
-    var listsize: Int!
-    var filter: Bloom<String>!
-
     
     override func setUp() {
         super.setUp()
         
-        //set the initial size and capacity
-        listsize = 50
-        filter = Bloom(capacity: listsize)
+        }
+    
 
+    
+    
+    //test filter for contained strings
+    func testContainsString() {
+        
+        
         /*
-        
-        //add word list
-        filter.addWord("Seal")
-        filter.addWord("Sour")
-        filter.addWord("Seattle") // -- overlap with "Sour" index at 2nd position
-        filter.addWord("Seat")
-        filter.addWord("Sat")
-        filter.addWord("Sell")
-        
+        notes: the inclusion of "Seattle" overlap with "Sour"
+        at the second position index
         */
-    }
-    
-
-    //test words inclded in filter set
-    func testContainsPass() {
         
-        XCTAssertTrue(filter.contains("Seal"), "word not contained in set..")
-        XCTAssertTrue(filter.contains("Sour"), "word not contained in set..")
-        XCTAssertTrue(filter.contains("Seattle"), "word not contained in set..")
-    }
-    
-    
-    //test words not included in filter set
-    func testContainsFail() {
+        let filter: Bloom<String>! = Bloom(items: ["Seal", "Sour", "Seattle", "Seat", "Sat", "Sell"])
         
-        XCTAssertFalse(filter.contains("Sea"), "word contained in set..")
-        XCTAssertFalse(filter.contains("Sunk"), "word contained in set..")
-        XCTAssertFalse(filter.contains("Sick"), "word contained in set..")
+        
+        //test included words
+        XCTAssertTrue(filter.contains("Seal"), "word not in set..")
+        XCTAssertTrue(filter.contains("Sour"), "word not in set..")
+        XCTAssertTrue(filter.contains("Seattle"), "word not in set..")
+        
+        
+        //test excluded words
+        XCTAssertFalse(filter.contains("Sea"), "word included in set..")
+        XCTAssertFalse(filter.contains("Sunk"), "word included in set..")
+        XCTAssertFalse(filter.contains("Sick"), "word included in set..")
+        
+        
     }
 
     
-    /*
-    Notes: find all unique pairs of (a, b) whose sum is equal to T.
-    Process occurs in linear time O(n).
-    */
     
     
-    func testFindPairOfSum() {
-        
-        
+    //conduct pair-sum test with 5
+    func testPairSumFive() {
+     
         let valueList: Array<Int> = [5, 3, 7, 0, 1, 4, 2]
-        var uniqueList = Array<Int>()
-        let sum: Int = 5
+        let sumtotal: Int = 5
         
-        var finalList = Array<Pairset>()
         
+        let sumList: Array<Pairset> = self.printPairs(valueList, sum: sumtotal)
+        
+        
+        //conduct final test
+        for s in sumList {
+            
+            if s.first + s.second != sumtotal {
+                XCTFail("test failed")
+            }
+            else {
+                //TODO: print pair combination here..
+            }
+            
+        }
+        
+        
+    }
+    
+    
+    
+    //conduct pair-sum test with 10
+    func testPairSumTen() {
+        
+        let valueList: Array<Int> = [8, 3, 7, 0, 1, 4, 2, 6, 5]
+        let sumtotal: Int = 10
+        
+        
+        let sumList: Array<Pairset> = self.printPairs(valueList, sum: sumtotal)
+        
+        
+        //conduct final test
+        for s in sumList {
+            if s.first + s.second != sumtotal {
+                XCTFail("test failed")
+            }
+            
+        }
+        
+        
+    }
+
+    
+
+    
+    //MARK: //helper functions
+    
+
+    
+    //calculate unique pairs - O(n)
+    func printPairs(valueList: Array<Int>, sum: Int) -> Array<Pairset>! {
+        
+        
+        var sumList: Array<Pairset> = Array<Pairset>()
+        let filter: Bloom<Int> = Bloom()
+
         
         for s in 0...valueList.count - 1 {
             
+
             print("s is: \(s)")
             
             
@@ -88,47 +141,37 @@ class BloomTest: XCTestCase {
             let results = sum - valueList[s]
             
             
-            //check for membership - TODO: Change to bloom filter
-            
             if valueList.contains(results) {
-                
-                
                 var valpair: Pairset! = Pairset()
                 
                 
-                //create paired assignment
+                //assign pair
                 valpair.first = valueList[s]
                 valpair.second = results
                 
                 
-                
-                //check first pair value
-                if !uniqueList.contains(valpair.first) {
-                    uniqueList.append(valpair.first)
+                //test for bloom membership
+                if !filter.contains(valpair.first) {
+                    filter.addElement(valpair.first)
                 }
                 
                 
-                //check second pair value
-                if !uniqueList.contains(valpair.second) {
-                    uniqueList.append(valpair.second)
+                if !filter.contains(valpair.second) {
+                    filter.addElement(valpair.second)
                     
-                    
-                    //add the unique pair to the final liost
-                    finalList.append(valpair)
-                    
-                } //end if
-                                
-                
-            } //end if
-            
-            
-        } //end for
+                    //add the unique pair to the final list
+                    sumList.append(valpair)
+                }
+            }
+        }
+
         
-        print("end test..")
+        return sumList
+
         
     } //end function
-    
 
+    
     
     
     
