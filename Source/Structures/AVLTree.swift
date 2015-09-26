@@ -29,9 +29,8 @@ public class AVLTree<T: Comparable> {
 
     
     var count: Int {
-        var left = 0, right = 0
-        if let child = self.left { left = child.count }
-        if let child = self.right { right = child.count }
+        let left = self.left?.count ?? 0
+        let right = self.right?.count ?? 0
         return left + 1 + right
     }
     
