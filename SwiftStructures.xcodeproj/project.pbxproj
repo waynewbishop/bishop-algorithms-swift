@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09AA18CD1BC04F7500D64C04 /* IndexingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AA18CC1BC04F7500D64C04 /* IndexingError.swift */; settings = {ASSET_TAGS = (); }; };
 		DA1A7D6B1B97A2080007BD2B /* Bloom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A7D6A1B97A2080007BD2B /* Bloom.swift */; settings = {ASSET_TAGS = (); }; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA5171861B9888310091F94B /* BloomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5171851B9888310091F94B /* BloomTest.swift */; settings = {ASSET_TAGS = (); }; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09AA18CC1BC04F7500D64C04 /* IndexingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexingError.swift; sourceTree = "<group>"; };
 		DA1A7D6A1B97A2080007BD2B /* Bloom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bloom.swift; sourceTree = "<group>"; };
 		DA5171851B9888310091F94B /* BloomTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomTest.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DA908DDB1A0160A300DD9864 /* HashTable.swift */,
 				DA1A7D6A1B97A2080007BD2B /* Bloom.swift */,
+				09AA18CC1BC04F7500D64C04 /* IndexingError.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				DAE001DF19C564720035F1A0 /* AppDelegate.swift in Sources */,
 				DA908DDC1A0160A300DD9864 /* HashTable.swift in Sources */,
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,
+				09AA18CD1BC04F7500D64C04 /* IndexingError.swift in Sources */,
 				DA8146A519ED905B004516F9 /* Trie.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,
