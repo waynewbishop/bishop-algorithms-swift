@@ -62,7 +62,7 @@ public class Sorting {
             
             
             //iterate backwards through the sorted portion
-            for (y = x; y > -1; y--) {
+            for (y = (x - 1); y > -1; y--) {
                 
                 print("comparing \(key) and \(numberList[y])")
 
