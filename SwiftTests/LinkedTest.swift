@@ -41,14 +41,14 @@ class LinkedTest: XCTestCase {
 
         
         //lowest bound
-        let lowerbound: LLNode! = linkedList.linkAtIndex(0)
+        let lowerbound: LLNode! = try! linkedList.linkAtIndex(0)
         if ((lowerbound == nil) || (lowerbound.key != numberList[0])) {
             XCTFail("lowest bound retrieve fail..")
         }
         
         
         //upper bound
-        let upperbound: LLNode! = linkedList.linkAtIndex(nodecount - 1)
+        let upperbound: LLNode! = try! linkedList.linkAtIndex(nodecount - 1)
         if ((upperbound == nil) || (upperbound.key != numberList[nodecount - 1])) {
           XCTFail("upper bound retrieve fail..")
         }
@@ -62,7 +62,7 @@ class LinkedTest: XCTestCase {
         
 
         //retrieve random index
-        let randomlink: LLNode! = linkedList.linkAtIndex(randomIndex)
+        let randomlink: LLNode! = try! linkedList.linkAtIndex(randomIndex)
         if ((randomlink == nil) || (randomlink.key != numberList[randomIndex])) {
             XCTFail("random index retrieve fail..")
         }
@@ -83,12 +83,12 @@ class LinkedTest: XCTestCase {
         let testPair: keyIndex = keyIndex(key: 4, index: 3)
         
         
-        linkedList.addLinkAtIndex(testPair.key, index: testPair.index)
+        try! linkedList.addLinkAtIndex(testPair.key, index: testPair.index)
         linkedList.printAllKeys()
         
 
         //retrieve the selected value
-        let current = linkedList.linkAtIndex(testPair.index) as LLNode!
+        let current = try! linkedList.linkAtIndex(testPair.index) as LLNode!
 
         
         if ((current == nil) || (current.key != testPair.key)) {
@@ -97,13 +97,13 @@ class LinkedTest: XCTestCase {
 
         
         
-        linkedList.removeLinkAtIndex(testPair.index)
+        try! linkedList.removeLinkAtIndex(testPair.index)
         linkedList.printAllKeys()
 
         
         
         //retrieve new value at same position
-        let removed = linkedList.linkAtIndex(testPair.index) as LLNode!
+        let removed = try! linkedList.linkAtIndex(testPair.index) as LLNode!
         if (removed.key == testPair.key) {
             XCTFail("linked list removal failed..")
         }
@@ -119,7 +119,7 @@ class LinkedTest: XCTestCase {
         
 
         let linkedList: LinkedList<Int> = self.buildLinkedList()
-        let linkForwards: LLNode! = linkedList.linkAtIndex(0)
+        let linkForwards: LLNode! = try! linkedList.linkAtIndex(0)
         
         if (linkForwards == nil) {
             XCTFail("link for reversal not found..")
@@ -130,7 +130,7 @@ class LinkedTest: XCTestCase {
         linkedList.printAllKeys()
         
         
-        let linkBackwards: LLNode! = linkedList.linkAtIndex(0)
+        let linkBackwards: LLNode! = try! linkedList.linkAtIndex(0)
 
         
         //evaluate keys
@@ -156,7 +156,7 @@ class LinkedTest: XCTestCase {
         
         
         //append list items
-        for number in numberList {
+        for number in numberList.reverse() {
             linkedList.addLink(number)
         }
         

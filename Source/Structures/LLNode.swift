@@ -14,5 +14,15 @@ class LLNode<T> {
     var next: LLNode?
     var previous: LLNode?
     
+	init()
+	{
+	}
+	
+	init(key: T!, next: LLNode?, previous: LLNode?)
+	{
+		self.key = key
+		self.next = next
+		self.previous = previous
+	}
 }
 
