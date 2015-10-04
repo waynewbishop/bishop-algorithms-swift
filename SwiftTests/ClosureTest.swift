@@ -81,12 +81,12 @@ class ClosureTest: XCTestCase {
         let linkedList: LinkedList<Int> = self.buildLinkedList()
 
         //pass formula as parameter
-        let results: LinkedList<Int>! = linkedList.filter(filterFormula)
+        let results: LinkedList<Int>? = linkedList.filter(filterFormula)
         
         //print results
-        results.printAllKeys()
+        results?.printAllKeys()
         
-        if results.count == linkedList.count {
+        if results?.count == linkedList.count {
             XCTFail("linked list not filtered..")
         }
         
@@ -104,7 +104,7 @@ class ClosureTest: XCTestCase {
         let linkedList: LinkedList<Int> = self.buildLinkedList()
         
         //inline closure expression
-        let results: LinkedList<Int> = linkedList.map { (node: LLNode<Int>) -> Int in
+        let results: LinkedList<Int>? = linkedList.map { (node: LLNode<Int>) -> Int in
 
             var value: Int!
             
@@ -125,12 +125,12 @@ class ClosureTest: XCTestCase {
 
         
         //print results
-        results.printAllKeys()
+        results?.printAllKeys()
 
         
         //iterate and compare values
         for s in 0..<numberList.count {
-            if try! linkedList.linkAtIndex(s).key == results.linkAtIndex(s).key {
+            if try! linkedList.linkAtIndex(s).key == results?.linkAtIndex(s).key {
                 XCTFail("linked list map formula not applied..")
             }
         }
@@ -208,7 +208,7 @@ class ClosureTest: XCTestCase {
         
         
         //append list items
-        for number in numberList {
+        for number in numberList.reverse() {
             linkedList.addLink(number)
         }
         

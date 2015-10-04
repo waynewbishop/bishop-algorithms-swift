@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LLNode<T> {
+public class LLNode<T> {
     
     var key: T!
     var next: LLNode?
