@@ -92,11 +92,11 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 
 	//insert at specific index
 	public func addLinkAtIndex(key: T, index: Int) throws -> LLNode<T>? {
+		let current = try nodeAtIndex(index)
 		guard index != 0 else {
 			addLink(key)
 			return head
 		}
-		let current = try nodeAtIndex(index)
 		return addNode(key, next: current, previous: current.previous)
 	}
 
