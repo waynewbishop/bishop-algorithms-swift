@@ -60,14 +60,14 @@ class ClosureTest: XCTestCase {
         
         
         //inline closure expression
-        let results: LinkedList<Int>! = linkedList.filter { (node: LLNode<Int>) -> Bool in
+        let results: LinkedList<Int>? = linkedList.filter { (node: LLNode<Int>) -> Bool in
             return node.key > 5
         }
         
         //display filtered results
-        results.printAllKeys()
+        results?.printAllKeys()
         
-        if results.count == linkedList.count {
+        if results?.count == linkedList.count {
             XCTFail("linked list not filtered..")
         }
         
@@ -199,30 +199,17 @@ class ClosureTest: XCTestCase {
     }
   
     
-    //helper method to build list
-    func buildLinkedList() ->LinkedList<Int>! {
+	//helper method to build list
+	func buildLinkedList() ->LinkedList<Int>! {
+	
+		//create a new instance
+		let linkedList: LinkedList<Int> = LinkedList<Int>(values: numberList)
+					
+		if (linkedList.count != numberList.count) {
+			XCTFail("linked list count doesn't match number list..")
+			return nil
+		}
         
-        
-        //create a new instance
-        let linkedList: LinkedList<Int> = LinkedList<Int>()
-        
-        
-        //append list items
-        for number in numberList.reverse() {
-            linkedList.addLink(number)
-        }
-        
-        
-        if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
-            return nil
-        }
-        
-        return linkedList
-        
-        
-    }
-
-
-
+		return linkedList
+	}
 }

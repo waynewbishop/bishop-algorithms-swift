@@ -9,13 +9,25 @@
 import Foundation
 
 
-public class LinkedList<T>: SequenceType {
-    
+public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
+	
+	init()
+	{
+	}
+	
+	init(values: Array<T>!)
+	{
+		//append list items
+		for value in values.reverse() {
+			self.addLink(value)
+		}
+	}
+	
 	//the number of items
 	private var _count: Int = 0
     
 	//create a new LLNode instance
-	private var head: LLNode<T>?
+	var head: LLNode<T>?
 	
    //the number of items (read-only property)
    var count: Int {
@@ -31,23 +43,42 @@ public class LinkedList<T>: SequenceType {
 	
 	//append a new item to a linked list
 	func addLink(key: T) {
-		let newValue: LLNode<T> = LLNode<T>(key: key, next: head, previous: nil)
-		head?.previous = newValue
-		head = newValue
-		_count++
+		head = addNode(key, next: head, previous: nil)
+	}
+	
+	func removeLink()
+	{
+		head = removeNode()
+	}
+	
+	func addNode(key: T!, next: LLNode<T>?, previous: LLNode<T>?) -> LLNode<T>
+	{
+		let node = LLNode<T>(key: key, next: next, previous: previous)
+		defer {
+			node.addSelf()
+			_count++
+		}
+		return node
+	}
+	
+	func removeNode() -> LLNode<T>?
+	{
+		let node = head
+		defer {
+			node?.removeSelf()
+			_count--
+		}
+		return head?.next
 	}
 	
 	//print all keys for the class
 	func printAllKeys() {
-			
-		var current: LLNode? = head
-        
+		
 		print("------------------")
         
 		//assign the next instance
-		while (current != nil) {
-			print("link item is: \(current?.key)")
-			current = current?.next
+		for current in self {
+			print("link item is: \(current.key)")
 		}
 	}
 	
@@ -60,36 +91,28 @@ public class LinkedList<T>: SequenceType {
 
 
 	//insert at specific index
-	public func addLinkAtIndex(key: T, index: Int) throws -> Void {
+	public func addLinkAtIndex(key: T, index: Int) throws -> LLNode<T>? {
 		guard index != 0 else {
 			addLink(key)
-			return
+			return head
 		}
 		let current = try nodeAtIndex(index)
-		let childToUse: LLNode<T> = LLNode<T>(key: key, next: current, previous: current!.previous)
-		current!.previous?.next = childToUse
-		current!.previous = childToUse
+		return addNode(key, next: current, previous: current.previous)
 	}
 
 	//remove at specific index
-	func removeLinkAtIndex(index: Int) throws {
-		guard index != 0 else {
-			guard _count > 0 else {
-				return
-			}
-			head = head?.next
-			head?.previous = nil
-			_count--
-			return
-		}
-		
+	func removeLinkAtIndex(index: Int) throws -> LLNode<T>? {
 		let current = try nodeAtIndex(index)
-		current!.previous?.next = current?.next
-		current!.next?.previous = current?.previous
-
+		guard (index != 0) else {
+			removeLink()
+			return head
+		}
+		defer { _count-- }
+		current.removeSelf()
+		return current
 	} //end function
         
-	func nodeAtIndex(index: Int) throws -> LLNode<T>?
+	func nodeAtIndex(index: Int) throws -> LLNode<T>
 	{
 		guard index >= 0 else {
 			throw IndexingError.Underflow
@@ -103,7 +126,7 @@ public class LinkedList<T>: SequenceType {
 		while (index != count++) {
 			current = current?.next
 		}
-		return current
+		return current!
 	}
     
 	//reverse the order of a linked list
@@ -113,18 +136,16 @@ public class LinkedList<T>: SequenceType {
 		
 		for current in self {
 			//reverse
-			next = current.next
-			current.next = current.previous
-			current.previous = next
-			if (next == nil)
+			defer {
+				current.reverseSelf()
+			}
+			if (current.next == nil)
 			{
 				head = current
 			}
 		}
 	}//end function
-    
-  
-    
+	
 	//MARK: Closure operations
 	
 	//SequenceType
@@ -134,28 +155,38 @@ public class LinkedList<T>: SequenceType {
 		return anyGenerator {
 			if (node != nil)
 			{
-				defer { node = node!.next }
+				defer { node = node?.next }
 				return node
 			}
 			return nil
 		}
 	}
 	
+	func combine(result: LLNode<T>?, value: T) -> LLNode<T>? {
+		return addNode(value, next: result, previous: nil)
+	}
+	
+	//ArrayLiteralConvertible
+	public required init(arrayLiteral elements: T...)
+	{
+		head = elements.reverse().reduce(head, combine: self.combine)
+	}
+
 	/*
 	notes: These "generic methods" mimic the map & filter array
 	functions found in the Swift standard library
 	*/
 	
 	//filter list content - higher order function
-	func filter(formula: LLNode<T> -> Bool) -> LinkedList<T>? {
+	func filter(formula: LLNode<T> -> Bool) -> LinkedList<T> {
 		
-		let results: LinkedList<T>? = LinkedList<T>()
+		let results: LinkedList<T> = LinkedList<T>()
 		
 		for current in self {
 			
 			//filter based on formula
 			if formula(current) == true {
-				results?.addLink(current.key)
+				results.addLink(current.key)
 			}
 		}
 		
@@ -163,19 +194,18 @@ public class LinkedList<T>: SequenceType {
 	}
 	
 	//map list content - higher order function
-	public func map(formula: LLNode<T> -> T) -> LinkedList<T>? {
+	public func map(formula: LLNode<T> -> T) -> LinkedList<T> {
 		
-		let results: LinkedList<T>? = LinkedList<T>()
+		let results: LinkedList<T> = LinkedList<T>()
 		var newKey: T!
-		
-		
+	
 		for current in self {
 			//map based on formula
 			newKey = formula(current)
 			
 			//add non-nil entries
 			if newKey != nil {
-				results?.addLink(newKey)
+				results.addLink(newKey)
 			}
 		}
 		

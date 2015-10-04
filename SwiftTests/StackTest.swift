@@ -42,7 +42,9 @@ class StackTest: XCTestCase {
         //remove stack items..
         myStack.count.times { (s: Int) -> Void in
             print("stack count: \(myStack.count)")
+					if (myStack.count > 0) {
             myStack.pop()
+					}
         }
 
         
