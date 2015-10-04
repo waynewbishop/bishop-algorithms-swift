@@ -48,7 +48,7 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 	
 	func removeLink()
 	{
-		head = removeNode()
+		head = removeNode(head)?.next
 	}
 	
 	func addNode(key: T!, next: LLNode<T>?, previous: LLNode<T>?) -> LLNode<T>
@@ -57,6 +57,16 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 		defer {
 			node.addSelf()
 			_count++
+		}
+		return node
+	}
+	
+	func removeNode(next: LLNode<T>?) -> LLNode<T>?
+	{
+		let node = next
+		defer {
+			node?.removeSelf()
+			_count--
 		}
 		return node
 	}
@@ -107,9 +117,7 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 			removeLink()
 			return head
 		}
-		defer { _count-- }
-		current.removeSelf()
-		return current
+		return removeNode(current)
 	} //end function
         
 	func nodeAtIndex(index: Int) throws -> LLNode<T>
