@@ -60,8 +60,8 @@ class ClosureTest: XCTestCase {
         
         
         //inline closure expression
-        let results: LinkedList<Int>? = linkedList.filter { (node: LLNode<Int>) -> Bool in
-            return node.key > 5
+        let results: LinkedList<Int>? = linkedList.filter { (node: Int) -> Bool in
+            return node > 5
         }
         
         //display filtered results
@@ -172,8 +172,8 @@ class ClosureTest: XCTestCase {
     
     
     //function to be passed as a parameter
-    func filterFormula(node: LLNode<Int>) -> Bool {
-        return node.key > 5
+    func filterFormula(node: Int) -> Bool {
+        return node > 5
     }
 
     

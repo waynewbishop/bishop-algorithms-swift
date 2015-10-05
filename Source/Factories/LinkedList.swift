@@ -176,14 +176,14 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 	*/
 	
 	//filter list content - higher order function
-	func filter(formula: LLNode<T> -> Bool) -> LinkedList<T> {
+	func filter(formula: T -> Bool) -> LinkedList<T> {
 		
 		let results: LinkedList<T> = LinkedList<T>()
 		
 		for current in self {
 			
 			//filter based on formula
-			if formula(current) == true {
+			if formula(current.key) == true {
 				results.addLink(current.key)
 			}
 		}
