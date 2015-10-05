@@ -71,16 +71,6 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 		return node
 	}
 	
-	func removeNode() -> LLNode<T>?
-	{
-		let node = head
-		defer {
-			node?.removeSelf()
-			_count--
-		}
-		return head?.next
-	}
-	
 	//print all keys for the class
 	func printAllKeys() {
 		
