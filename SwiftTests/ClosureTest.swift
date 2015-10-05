@@ -56,7 +56,7 @@ class ClosureTest: XCTestCase {
     //filter based on expression
     func testLinkFilterExpression() {
         
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = [8, 2, 10, 9, 7, 5]
         
         
         //inline closure expression
@@ -78,7 +78,7 @@ class ClosureTest: XCTestCase {
     //filter based on function
     func testLinkFilterFunction() {
         
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = [8, 2, 10, 9, 7, 5]
 
         //pass formula as parameter
         let results: LinkedList<Int>? = linkedList.filter(filterFormula)
@@ -101,7 +101,7 @@ class ClosureTest: XCTestCase {
     //map based on expression
     func testLinkMapExpression() {
 
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = [8, 2, 10, 9, 7, 5]
         
         //inline closure expression
         let results: LinkedList<Int>? = linkedList.map { (node: LLNode<Int>) -> Int in
@@ -147,7 +147,7 @@ class ClosureTest: XCTestCase {
     //map based on function
     func testLinkMapFunction() {
         
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList: LinkedList<Int> = [8, 2, 10, 9, 7, 5]
         
         //pass formula as parameter
         let results: LinkedList<Int>! = linkedList.map(mapFormula)
