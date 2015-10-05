@@ -129,18 +129,14 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
     
 	//reverse the order of a linked list
 	func reverseLinkedList() {
-	
-		var next : LLNode<T>? = head
-		
+
 		for current in self {
 			//reverse
-			defer {
-				current.reverseSelf()
-			}
 			if (current.next == nil)
 			{
 				head = current
 			}
+			current.reverseSelf()
 		}
 	}//end function
 	
