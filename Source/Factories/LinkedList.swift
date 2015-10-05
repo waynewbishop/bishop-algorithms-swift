@@ -103,7 +103,7 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 	//remove at specific index
 	func removeLinkAtIndex(index: Int) throws -> LLNode<T>? {
 		let current = try nodeAtIndex(index)
-		guard (index != 0) else {
+		guard index != 0 else {
 			removeLink()
 			return head
 		}
