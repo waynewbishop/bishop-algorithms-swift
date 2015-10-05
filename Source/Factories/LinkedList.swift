@@ -15,7 +15,7 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 	{
 	}
 	
-	init(values: Array<T>!)
+	init(values: Array<T>)
 	{
 		//append list items
 		for value in values.reverse() {
@@ -51,7 +51,7 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 		head = removeNode(head)?.next
 	}
 	
-	func addNode(key: T!, next: LLNode<T>?, previous: LLNode<T>?) -> LLNode<T>
+	func addNode(key: T, next: LLNode<T>?, previous: LLNode<T>?) -> LLNode<T>
 	{
 		let node = LLNode<T>(key: key, next: next, previous: previous)
 		defer {
