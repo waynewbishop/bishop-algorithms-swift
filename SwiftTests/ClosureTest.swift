@@ -104,18 +104,18 @@ class ClosureTest: XCTestCase {
         let linkedList: LinkedList<Int> = [8, 2, 10, 9, 7, 5]
         
         //inline closure expression
-        let results: LinkedList<Int>? = linkedList.map { (node: LLNode<Int>) -> Int in
+        let results: LinkedList<Int>? = linkedList.map { (node: Int) -> Int in
 
             var value: Int!
             
             //evaluate based on switch
-            switch node.key {
+            switch node {
                 case 0..<5:
-                    value = node.key * 2
+                    value = node * 2
                 case 5...10:
-                    value = node.key * 3
+                    value = node * 3
                 default:
-                    value = node.key
+                    value = node
             }
             
             return value
@@ -179,18 +179,18 @@ class ClosureTest: XCTestCase {
     
     
     //function to be passed as a parameter
-    func mapFormula(node: LLNode<Int>) -> Int {
+    func mapFormula(node: Int) -> Int {
         
         var value: Int!
         
         //evaluate based on switch
-        switch node.key {
+        switch node {
         case 0..<5:
-            value = node.key * 2
+            value = node * 2
         case 5...10:
-            value = node.key * 3
+            value = node * 3
         default:
-            value = node.key
+            value = node
         }
         
         return value

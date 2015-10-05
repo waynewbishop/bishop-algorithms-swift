@@ -192,14 +192,14 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 	}
 	
 	//map list content - higher order function
-	public func map(formula: LLNode<T> -> T) -> LinkedList<T> {
+	public func map<U>(formula: T -> U) -> LinkedList<U> {
 		
-		let results: LinkedList<T> = LinkedList<T>()
-		var newKey: T!
+		let results: LinkedList<U> = LinkedList<U>()
+		var newKey: U!
 	
 		for current in self {
 			//map based on formula
-			newKey = formula(current)
+			newKey = formula(current.key)
 			
 			//add non-nil entries
 			if newKey != nil {
