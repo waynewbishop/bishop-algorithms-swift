@@ -179,7 +179,7 @@ class LinkedTest: XCTestCase {
 			current2 = generator2.next()
 			current3 = generator3.next()
 		}
-		if (current1 != nil && current2 != nil && current3 != nil)
+		if (current1 != nil || current2 != nil || current3 != nil)
 		{
 			XCTFail("initialization is not match")
 		}
