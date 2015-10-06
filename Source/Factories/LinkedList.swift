@@ -85,7 +85,7 @@ public class LinkedList<T>: SequenceType, ArrayLiteralConvertible {
 	//MARK: Key & index operations
 
 	//obtain link at a specific index
-	func linkAtIndex(index: Int) throws ->LLNode<T>! {
+	func linkAtIndex(index: Int) throws ->LLNode<T> {
 		return try nodeAtIndex(index)
 	} //end function
 

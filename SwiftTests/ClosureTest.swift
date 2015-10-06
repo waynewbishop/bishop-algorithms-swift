@@ -34,13 +34,7 @@ func ^^(base: Int, power: Int) -> Int {
 
 class ClosureTest: XCTestCase {
 
-    var numberList: Array<Int>!
-    
-    override func setUp() {
-        super.setUp()
-        numberList =  [8, 5, 2, 10, 9, 7]
-    }
-    
+    var numberList: Array<Int> = [8, 5, 2, 10, 9, 7]
     
     /*
     notes: This test class mimics the map & filter array
@@ -104,9 +98,9 @@ class ClosureTest: XCTestCase {
         let linkedList: LinkedList<Int> = [8, 2, 10, 9, 7, 5]
         
         //inline closure expression
-        let results: LinkedList<Int>? = linkedList.map { (node: Int) -> Int in
+        let results: LinkedList<Int> = linkedList.map { (node: Int) -> Int in
 
-            var value: Int!
+            var value: Int
             
             //evaluate based on switch
             switch node {
@@ -125,12 +119,12 @@ class ClosureTest: XCTestCase {
 
         
         //print results
-        results?.printAllKeys()
+        results.printAllKeys()
 
         
         //iterate and compare values
         for s in 0..<numberList.count {
-            if try! linkedList.linkAtIndex(s).key == results?.linkAtIndex(s).key {
+            if try! linkedList.linkAtIndex(s).key == results.linkAtIndex(s).key {
                 XCTFail("linked list map formula not applied..")
             }
         }
@@ -150,7 +144,7 @@ class ClosureTest: XCTestCase {
         let linkedList: LinkedList<Int> = [8, 2, 10, 9, 7, 5]
         
         //pass formula as parameter
-        let results: LinkedList<Int>! = linkedList.map(mapFormula)
+        let results: LinkedList<Int> = linkedList.map(mapFormula)
         
         //print results
         results.printAllKeys()
@@ -181,7 +175,7 @@ class ClosureTest: XCTestCase {
     //function to be passed as a parameter
     func mapFormula(node: Int) -> Int {
         
-        var value: Int!
+        var value: Int
         
         //evaluate based on switch
         switch node {
@@ -197,19 +191,4 @@ class ClosureTest: XCTestCase {
 
         
     }
-  
-    
-	//helper method to build list
-	func buildLinkedList() ->LinkedList<Int>! {
-	
-		//create a new instance
-		let linkedList: LinkedList<Int> = LinkedList<Int>(values: numberList)
-					
-		if (linkedList.count != numberList.count) {
-			XCTFail("linked list count doesn't match number list..")
-			return nil
-		}
-        
-		return linkedList
-	}
 }

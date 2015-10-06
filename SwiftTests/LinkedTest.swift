@@ -22,15 +22,7 @@ struct keyIndex {
 
 class LinkedTest: XCTestCase {
 
-    
-    var numberList : Array<Int>!
-    
-    
-    override func setUp() {
-        super.setUp()
-        numberList = [8, 2, 10, 9, 7, 5]
-    }
-    
+    var numberList : Array<Int> = [8, 2, 10, 9, 7, 5]
     
     //retrieve specific links
     func testLinkAtIndex() {

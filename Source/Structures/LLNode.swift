@@ -10,11 +10,11 @@ import Foundation
 
 public class LLNode<T> {
     
-    var key: T!
+    var key: T
     var next: LLNode?
     var previous: LLNode?
 	
-	init(key: T!, next: LLNode?, previous: LLNode?)
+	init(key: T, next: LLNode?, previous: LLNode?)
 	{
 		self.key = key
 		self.next = next
