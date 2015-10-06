@@ -13,18 +13,6 @@ import XCTest
 
 
 class StructureTest: XCTestCase {
-
-    
-    func testLLNode() {
-        let testNode: LLNode<Int> = LLNode<Int>()
-        
-        XCTAssertNotNil(testNode, "instance not initialized..")
-        XCTAssertNil(testNode.key, "key not initialized..")
-        XCTAssertNil(testNode.next, "next node propety not initialized..")
-        XCTAssertNil(testNode.previous, "previous node propety not initialized..")
-    }
-
-    
     
     func testQNode() {
         let testNode: QNode<Int> = QNode<Int>()
