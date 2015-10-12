@@ -66,7 +66,7 @@ public class SwiftGraph {
             let reverseEdge = Edge()
             
             
-            //estabish the reversed properties
+            //establish the reversed properties
             reverseEdge.neighbor = source
             reverseEdge.weight = weight
             neighbor.neighbors.append(reverseEdge)

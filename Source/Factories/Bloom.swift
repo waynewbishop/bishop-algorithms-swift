@@ -10,7 +10,6 @@ import Foundation
 
 class Bloom<T> {
 
-    
     private var bloomset: Array<Bool!>
     private var empty: Bool
 
@@ -118,7 +117,10 @@ class Bloom<T> {
         position.second = hash(position.first)
         position.third = hash(position.second)
         
+        
+        print("position \(element) is \(position)..")
 
+        
         //check positions
         if bloomset[position.first] == nil {
             return false
