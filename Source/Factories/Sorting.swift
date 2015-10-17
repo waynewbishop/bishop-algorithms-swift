@@ -52,29 +52,22 @@ public class Sorting {
     
     func insertionSort(var numberList: Array<Int>) -> Array<Int> {
         
-        var y, key : Int
-        
-
-        for x in 0..<numberList.count {
-            
-            //obtain a key to be evaluated
-            key = numberList[x]
-            
-            
+        //obtain an Int to be evaluated
+        for (idx, int) in numberList.enumerate() {
+                        
             //iterate backwards through the sorted portion
-            for (y = x; y > -1; y--) {
+            for x in (0..<idx).reverse() {
                 
-                print("comparing \(key) and \(numberList[y])")
+                print("comparing \(int) and \(numberList[x])")
 
-                
-                if key < numberList[y] {
+                if int < numberList[x] {
                     
                     //remove item from original position
-                    numberList.removeAtIndex(y + 1)
+                    numberList.removeAtIndex(x + 1)
                     
                     //insert the number at the key position
-                    numberList.insert(key, atIndex: y)
-                    
+                    numberList.insert(int, atIndex: x)
+                
                 }
                 
             } //end for
@@ -84,7 +77,6 @@ public class Sorting {
         
         
         return numberList
-        
         
     } //end function
     
