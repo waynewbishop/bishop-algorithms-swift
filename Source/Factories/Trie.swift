@@ -29,7 +29,7 @@ public class Trie {
         
         
         var current: TrieNode = root
-        var wordList: Array<String>! = Array<String>()
+        var wordList: Array<String> = Array<String>()
         
         while (keyword.length != current.level) {
             
