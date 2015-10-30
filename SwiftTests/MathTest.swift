@@ -22,12 +22,8 @@ class MathTest: XCTestCase {
     }
     
     
-    //TODO: Revise this model so its similar to the AVL model..
-
-    
     //published example
     func testFibonnaciEssayExample() {
-        
         
         let positions: Int = 4
         let results: Array<Int>! = math.fib(positions)
@@ -40,6 +36,17 @@ class MathTest: XCTestCase {
         
     }
 
+    
+    
+    func testFibRecursive() {
+        
+        let positions: Int = 4
+        
+        //set the number of iterations
+        math.fibRecursive(positions, sequence: nil)
+        
+        
+    }
     
  
 }

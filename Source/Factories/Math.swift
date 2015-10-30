@@ -12,7 +12,7 @@ import Foundation
 class Math {
     
     
-    //build the fibonnaci sequence to a specified position
+    //build fibonnaci sequence to a specified position
     func fib(n: Int) ->Array<Int>! {
         
         
@@ -39,6 +39,40 @@ class Math {
         
     }
 
+    
+    
+    //build fibonnaci sequence to a specified position
+    func fibRecursive(n: Int, var sequence: Array<Int>!) {
+
+        
+        //initialize sequence
+        if sequence == nil || sequence.count < 2 {
+            sequence = [0, 1]
+        }
+
+        
+        let i: Int = sequence.count
+        
+        
+        //set base condition
+        if i == n {
+            
+            for s in sequence {
+                print("value is:\(s)")
+            }
+            
+            return
+        }
+        
+        let results: Int = sequence[i - 1] + sequence[i - 2]
+        sequence.append(results)
+
+        
+        //set iteration
+        fibRecursive(n, sequence: sequence)
+
+    }
+    
     
     
 }
