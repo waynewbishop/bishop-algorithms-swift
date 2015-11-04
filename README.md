@@ -22,6 +22,7 @@ The project features code-level examples for the following items:
 + Selection Sort
 + Quick Sort
 + Merge Sort
++ Fibonacci Numbers
 + Generics
 + Closures
 + Hash Tables
@@ -38,7 +39,7 @@ The project features code-level examples for the following items:
 
 The Book
 --------------------
-Available in print or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
+Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
 
 
 Example
