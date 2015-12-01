@@ -10,124 +10,308 @@ import Foundation
 
 public class Sorting {
     
-    var isKeyFound: Bool = false
+    
+    //MARK: - Binary Search
     
     
     /*
-    binary search algorthim. Find the value at the middle index.
-    note the use of the tuple to organize the upper and lower search bounds.
+    binary search algorithm. Find the value at a specified index.
+    note the use array slicing to adjust the upper and lower array bounds.
     */
     
-    func binarySearch(var numberList: Array<Int>, key: Int, range:(imin: Int, imax: Int)) {
     
-    
-        let midIndex: Double = round(Double((range.imin + range.imax) / 2))
-        let midNumber = numberList[Int(midIndex)]
-    
-    
-        //use recursion to reduce the possible search range
-        if (midNumber > key ) {
-            binarySearch(numberList, key: key, range: (range.imin, Int(midIndex) - 1))
+    func binarySearch(sequence: Array<Int>, key: Int) {
+
         
-    
-        //use recursion to increase the possible search range
-        } else if (midNumber < key ) {
-            binarySearch(numberList, key: key, range: (Int(midIndex) + 1, range.imax))
-            
-            
-        } else {
-            isKeyFound = true
-            print("value \(key) found..")
+        //establish indices - extensions
+        let min = sequence.minIndex()
+        let max = sequence.maxIndex()
+        let mid = sequence.midIndex()
+
+        
+        //check bounds
+        if key > sequence[max] || key < sequence[min] {
+            print("search value \(key) not found..")
+            return
         }
         
         
-    } //end function
+        //evaluate chosen number..
+        let n = sequence[mid]
     
+        
+        print(String(n) + "value attempted..")
+        
+        
+        if n > key {
+            let slice: Array<Int> = Array(sequence[min...mid - 1])
+            self.binarySearch(slice, key: key)
+        }
+        
+        
+        if n < key {
+            let slice: Array<Int> = Array(sequence[mid + 1...max])
+            self.binarySearch(slice, key: key)
+        }
+        
+        
+        else {
+            print("search value \(key) found..")
+            return
+        }
+        
+        
+    }
+    
+    
+    
+    
+    /*
+    modified binary search algorithm. 
+    makes use of closure expression to pass state information
+    */
+    
+    func binarySearch(sequence: Array<Int>, key: Int, results: Bool -> Void) {
+        
+        
+        //establish indices - extensions
+        let min = sequence.minIndex()
+        let max = sequence.maxIndex()
+        let mid = sequence.midIndex()
+        
+        
+        //check bounds
+        if key > sequence[max] || key < sequence[min] {
+            print("search value \(key) not found..")
+            results(false)
+            return
+        }
+        
+        
+        //evaluate chosen number..
+        let n = sequence[mid]
+        
+        
+        print(String(n) + "value attempted..")
+        
+        
+        if n > key {
+            let slice: Array<Int> = Array(sequence[min...mid - 1])
+            self.binarySearch(slice, key: key)
+        }
+        
+        
+        if n < key {
+            let slice: Array<Int> = Array(sequence[mid + 1...max])
+            self.binarySearch(slice, key: key)
+        }
+            
+    
+        else {
+            print("search value \(key) found..")
+            results(true)
+            return
+        }
+        
+        
+    }
 
+    
+    
+    //MARK: - Linear Search
+    
+    
+    /*
+    linear search - use fast enumeration to iterate through a sequence
+    of values. algorithm performance of O(n).
+    */
+    
+    func linearSearch(numberlist: Array<Int>, key: Int) {
+
+        
+        //check all possible values
+        for number in numberlist {
+            if number == key {
+                print("value at key: \(key) found..")
+                break
+            }
+        }
+        
+    }
+    
+    
+    //MARK: - Insertion Sort
+    
     
     /*
     insertion sort algorithm - rank set of random numbers lowest to highest by
     inserting numbers based on a sorted and unsorted side.
     */
     
-    func insertionSort(var numberList: Array<Int>) -> Array<Int> {
+    func insertionSort(numberList: Array<Int>) -> Array<Int> {
         
-        var y, key : Int
         
-
-        for x in 0..<numberList.count {
+        //mutated copy
+        var output = numberList
+        
+        
+        for primaryIndex in 0..<output.count {
             
-            //obtain a key to be evaluated
-            key = numberList[x]
+            let key = output[primaryIndex]
             
             
-            //iterate backwards through the sorted portion
-            for (y = x; y > -1; y--) {
+            for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
                 
-                print("comparing \(key) and \(numberList[y])")
-
+                print("comparing \(key) and \(numberList[secondaryIndex])")
                 
-                if key < numberList[y] {
+                if key < output[secondaryIndex] {
                     
-                    //remove item from original position
-                    numberList.removeAtIndex(y + 1)
-                    
-                    //insert the number at the key position
-                    numberList.insert(key, atIndex: y)
+                    //move into correct position
+                    output.removeAtIndex(secondaryIndex + 1)
+                    output.insert(key, atIndex: secondaryIndex)
                     
                 }
+            }
+        }
+        
+        
+        return output
+        
+    }
+
+    
+    
+
+    /*
+    insertion sort algorithm - (Generics)
+    */
+    
+    func insertionSortG<T: Comparable>(numberList: [T]) -> [T] {
+        
+
+        //mutated copy
+        var output = Array(numberList)
+        
+        
+        for primaryIndex in 0..<output.count {
+            
+            let key = output[primaryIndex]
+            
+            
+            for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
                 
-            } //end for
-            
-            
-        } //end for
+                print("comparing \(key) and \(numberList[secondaryIndex])")
+                
+                if key < output[secondaryIndex] {
+
+                    //move into correct position
+                    output.removeAtIndex(secondaryIndex + 1)
+                    output.insert(key, atIndex: secondaryIndex)
+                    
+                }
+            }
+        }
         
         
-        return numberList
+        return output
         
-        
-    } //end function
+    }
+
     
     
+    //MARK: - Bubble Sort
+    
+
     /*
     bubble sort algorithm - rank items from the lowest to highest by swapping
     groups of two items from left to right. The highest item in the set will bubble up to the
     right side of the set after the first iteration.
     */
+
     
-    func bubbleSort(var numberList: Array<Int>) ->Array<Int> {
+    func bubbleSort(numberList: Array<Int>) -> Array<Int> {
         
-        var z, passes, key : Int
         
-        //track collection iterations
-        for x in 0..<numberList.count {
+        //mutated copy
+        var output = numberList
+        
+        
+        for primaryIndex in 0..<numberList.count {
             
-            passes = (numberList.count - 1) - x;
             
-            //use shorthand "half-open" range operator
+            let passes = (output.count - 1) - primaryIndex
             
-            for y in 0..<passes {
-                key = numberList[y]
+            
+            //"half-open" range operator
+            for secondaryIndex in 0..<passes {
                 
-                print("comparing \(key) and \(numberList[y + 1])")
+                let key = output[secondaryIndex]
                 
-                //compare and rank values
-                if (key > numberList[y + 1]) {
+                
+                print("comparing \(key) and \(output[secondaryIndex + 1])")
+                
+                
+                //compare / rank values
+                if (key > output[secondaryIndex + 1]) {
                     
-                    z = numberList[y + 1]
-                    numberList[y + 1] = key
-                    numberList[y] = z
+                    let thirdIndex = output[secondaryIndex + 1]
+                    output[secondaryIndex + 1] = key
+                    output[secondaryIndex] = thirdIndex
                     
                 }
-                
-            } //end for
+            }
+        }
+        
+        
+        return output
+        
+    }
+    
+    
+    /*
+    bubble sort algorithm - (Generics)
+    */
+    
+    func bubbleSortG<T: Comparable>(numberList: [T]) -> [T] {
+        
+        
+        //mutated copy
+        var output = Array(numberList)
+
+        
+        for primaryIndex in 0..<numberList.count {
             
-        } //end for
+            
+            let passes = (output.count - 1) - primaryIndex
+            
+            
+            //"half-open" range operator
+            for secondaryIndex in 0..<passes {
+                
+                let key = output[secondaryIndex]
+                
+                
+                print("comparing \(key) and \(output[secondaryIndex + 1])")
+                
+                
+                //compare / rank values
+                if (key > output[secondaryIndex + 1]) {
+                    
+                    let thirdIndex = output[secondaryIndex + 1]
+                    output[secondaryIndex + 1] = key
+                    output[secondaryIndex] = thirdIndex
+                    
+                }
+            }
+        }
         
         
-        return numberList
+        return output
         
-    } //end function
+    }
+    
+    
+    //MARK: - Selection Sort
     
     
     /*
@@ -135,40 +319,86 @@ public class Sorting {
     the array and swapping the current iteration with the lowest value in the rest of the array
     until it reaches the end of the array.
     */
-    
-    func selectionSort(var numberList: Array<Int>) ->Array<Int> {
+
+    func selectionSort(numberList: Array<Int>) -> Array<Int> {
         
-        var y : Int
         
-        // iterate through the entire array
-        for x in 0..<numberList.count {
+        //mutated copy
+        var output = numberList
+        
+        
+        for primaryIndex in 0..<output.count {
             
-            // start minimum value at first element of the iteration
-            var minimum = x
+            var minimum = primaryIndex
             
-            // iterate through the rest of the array (x+1 to the end of the array)
-            for y = x+1; y < numberList.count; y++ {
+            // iterate through remainder
+            for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
                 
-                print("comparing \(numberList[minimum]) and \(numberList[y])")
                 
-                // store the lowest value as minimum
-                if numberList[minimum] > numberList[y] {
-                    minimum = y
+                print("comparing \(output[minimum]) and \(output[secondaryIndex])")
+                
+                // store lowest value as minimum
+                if output[minimum] > output[secondaryIndex] {
+                    minimum = secondaryIndex
                 }
-                                
-            } //end for
+            }
             
-            // swap the minimum value with the current array iteration
-            let z = numberList[x]
-            numberList[x] = numberList[minimum]
-            numberList[minimum] = z
             
-        } //end for
+            // swap minimum value with array iteration
+            if primaryIndex != minimum {
+                swap(&output[primaryIndex], &output[minimum])
+            }
+            
+        }
+        
+        
+        return output
+        
+    }
     
+    
+    /*
+    selection sort algorithm - (Generics)
+    */
+    
+    func selectionSortG<T: Comparable>(numberList: [T]) -> [T] {
+
         
-        return numberList
+        //mutated copy
+        var output = Array(numberList)
         
-    } //end function
+        
+        for primaryIndex in 0..<output.count {
+            
+            var minimum = primaryIndex
+            
+            // iterate through remainder
+            for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
+                
+                
+                print("comparing \(output[minimum]) and \(output[secondaryIndex])")
+                
+                // store lowest value as minimum
+                if output[minimum] > output[secondaryIndex] {
+                    minimum = secondaryIndex
+                }
+            }
+            
+            
+            // swap minimum value with array iteration
+            if primaryIndex != minimum {
+                swap(&output[primaryIndex], &output[minimum])
+            }
+            
+        }
+        
+        
+        return output
+        
+    }
+
+    
+    //MARK: - Other Sorting Algorithms
     
     
  	

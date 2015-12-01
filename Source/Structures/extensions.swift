@@ -106,3 +106,27 @@ extension Int {
 	}
 	
 }
+
+
+
+extension Array {
+
+    
+    //returns the middle index
+    func midIndex() -> Int {
+        return Int(floor(Double(self.count / 2)))
+    }
+    
+    
+    //returns the first index
+    func minIndex() ->Int {
+        return 0
+    }
+    
+
+    //returns the max index
+    func maxIndex() ->Int {
+        return self.count - 1
+    }
+    
+}

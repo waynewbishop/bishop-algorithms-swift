@@ -180,6 +180,7 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,
 				DA20DEEB1BE2DAC90032A378 /* MathTest.swift */,
 				DA5171851B9888310091F94B /* BloomTest.swift */,
 				DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */,
@@ -190,7 +191,6 @@
 				DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */,
 				DAD971B019D2232400C133C9 /* AVLTest.swift */,
 				DAD971AD19D222E300C133C9 /* LinkedTest.swift */,
-				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,
 				DA7B7C6319CA284100D2E177 /* StructureTest.swift */,
 				DAE0020419C564C90035F1A0 /* Supporting Files */,
 			);
