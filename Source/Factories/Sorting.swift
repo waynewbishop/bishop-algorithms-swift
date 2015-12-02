@@ -186,11 +186,11 @@ public class Sorting {
     insertion sort algorithm - (Generics)
     */
     
-    func insertionSortG<T: Comparable>(numberList: [T]) -> [T] {
+    func insertionSortG<T: Comparable>(sequence: [T]) -> [T] {
         
 
         //mutated copy
-        var output = Array(numberList)
+        var output = Array(sequence)
         
         
         for primaryIndex in 0..<output.count {
@@ -200,7 +200,7 @@ public class Sorting {
             
             for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
                 
-                print("comparing \(key) and \(numberList[secondaryIndex])")
+                print("comparing \(key) and \(sequence[secondaryIndex])")
                 
                 if key < output[secondaryIndex] {
 
@@ -268,14 +268,14 @@ public class Sorting {
     bubble sort algorithm - (Generics)
     */
     
-    func bubbleSortG<T: Comparable>(numberList: [T]) -> [T] {
+    func bubbleSortG<T: Comparable>(sequence: [T]) -> [T] {
         
         
         //mutated copy
-        var output = Array(numberList)
+        var output = Array(sequence)
 
         
-        for primaryIndex in 0..<numberList.count {
+        for primaryIndex in 0..<sequence.count {
             
             
             let passes = (output.count - 1) - primaryIndex
@@ -353,11 +353,11 @@ public class Sorting {
     selection sort algorithm - (Generics)
     */
     
-    func selectionSortG<T: Comparable>(numberList: [T]) -> [T] {
+    func selectionSortG<T: Comparable>(sequence: [T]) -> [T] {
 
         
         //mutated copy
-        var output = Array(numberList)
+        var output = Array(sequence)
         
         
         for primaryIndex in 0..<output.count {

@@ -16,13 +16,15 @@ class SortingTest: XCTestCase {
 
     
     private var numberList: Array<Int>!
+    private var textList: Array<String>!
     private var sortTest: Sorting!
-    
 
     
     override func setUp() {
         super.setUp()
+        
         numberList = [8, 2, 10, 9, 7, 5]
+        textList = ["Dog", "Cat", "Dinasour", "Lion", "Cheetah", "Gazelle", "Elephant", "Aardvark"]
         sortTest = Sorting()
     }
     
@@ -54,7 +56,7 @@ class SortingTest: XCTestCase {
     */
     
     func testBinarySearchClosure() {
-
+        
         
         var searchList: Array<Int> = Array<Int>()
         var isFound: Bool = false
@@ -86,9 +88,12 @@ class SortingTest: XCTestCase {
     func testInsertionSort() {
         
         let resultList: Array<Int> = sortTest.insertionSort(numberList)
+        let sequence = sortTest.insertionSortG(textList)
+        
         
         //evaluate results
         XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(sequence), "item sequence not in sorted order..")
         
     }
     
@@ -96,10 +101,13 @@ class SortingTest: XCTestCase {
     
     func testBubbleSort() {
         
-        let resultList: Array<Int> = sortTest.bubbleSort(numberList)
-                
+        let resultsList: Array<Int> = sortTest.bubbleSort(numberList)
+        let sequence = sortTest.bubbleSortG(textList)
+        
+        
         //evaluate results
-        XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(resultsList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(sequence), "item sequence not in sorted order..")
         
     }
 
@@ -108,10 +116,12 @@ class SortingTest: XCTestCase {
     func testSelectionSort() {
         
         let resultList: Array<Int> = sortTest.selectionSort(numberList)
+        let sequence = sortTest.insertionSortG(textList)
       
+        
         //evaulate results
         XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
-        
+        XCTAssertTrue(self.IsSorted(sequence), "item sequence not in sorted order..")
         
     }
     
@@ -142,8 +152,8 @@ class SortingTest: XCTestCase {
     //MARK: Helper Function
     
     
-    //determine sorted list
-    func IsSorted(sequence: Array<Int>) -> Bool {
+    //generic method to determine sorted order
+    func IsSorted<T: Comparable>(sequence: [T]) -> Bool {
         
         
         for var primaryIndex = 0; primaryIndex < sequence.count; primaryIndex++ {
