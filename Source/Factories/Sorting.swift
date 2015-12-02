@@ -251,13 +251,9 @@ public class Sorting {
                 print("comparing \(key) and \(output[secondaryIndex + 1])")
                 
                 
-                //compare / rank values
+                //compare / swap positions
                 if (key > output[secondaryIndex + 1]) {
-                    
-                    let thirdIndex = output[secondaryIndex + 1]
-                    output[secondaryIndex + 1] = key
-                    output[secondaryIndex] = thirdIndex
-                    
+                    swap(&output[secondaryIndex], &output[secondaryIndex + 1])
                 }
             }
         }
@@ -294,13 +290,9 @@ public class Sorting {
                 print("comparing \(key) and \(output[secondaryIndex + 1])")
                 
                 
-                //compare / rank values
+                //compare / swap positions
                 if (key > output[secondaryIndex + 1]) {
-                    
-                    let thirdIndex = output[secondaryIndex + 1]
-                    output[secondaryIndex + 1] = key
-                    output[secondaryIndex] = thirdIndex
-                    
+                    swap(&output[secondaryIndex], &output[secondaryIndex + 1])
                 }
             }
         }
