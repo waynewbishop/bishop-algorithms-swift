@@ -16,7 +16,11 @@ class SortingTest: XCTestCase {
 
     
     private var numberList: Array<Int>!
+    private var triviaNumberList: Array<Int>!
+    private var emptyNumberList: Array<Int>!
     private var textList: Array<String>!
+    private var triviaTextList: Array<String>!
+    private var emptyTextList: Array<String>!
     private var sortTest: Sorting!
 
     
@@ -24,7 +28,11 @@ class SortingTest: XCTestCase {
         super.setUp()
         
         numberList = [8, 2, 10, 9, 7, 5]
+        triviaNumberList = [1] // Should have just one element
+        emptyNumberList = []
         textList = ["Dog", "Cat", "Dinasour", "Lion", "Cheetah", "Gazelle", "Elephant", "Aardvark"]
+        triviaTextList = ["Dog"]
+        emptyTextList = []
         sortTest = Sorting()
     }
     
@@ -88,12 +96,19 @@ class SortingTest: XCTestCase {
     func testInsertionSort() {
         
         let resultList: Array<Int> = sortTest.insertionSort(numberList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
         let sequence = sortTest.insertionSortG(textList)
-        
+        let triviaSequence = sortTest.insertionSortG(triviaTextList)
+        let emptySequence = sortTest.insertionSortG(emptyTextList)
         
         //evaluate results
         XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
         XCTAssertTrue(self.IsSorted(sequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(triviaSequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptySequence), "item sequence not in sorted order..")
         
     }
     
@@ -102,13 +117,19 @@ class SortingTest: XCTestCase {
     func testBubbleSort() {
         
         let resultsList: Array<Int> = sortTest.bubbleSort(numberList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
         let sequence = sortTest.bubbleSortG(textList)
-        
+        let triviaSequence = sortTest.insertionSortG(triviaTextList)
+        let emptySequence = sortTest.insertionSortG(emptyTextList)
         
         //evaluate results
         XCTAssertTrue(self.IsSorted(resultsList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
         XCTAssertTrue(self.IsSorted(sequence), "item sequence not in sorted order..")
-        
+        XCTAssertTrue(self.IsSorted(triviaSequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptySequence), "item sequence not in sorted order..")
     }
 
     
@@ -116,12 +137,20 @@ class SortingTest: XCTestCase {
     func testSelectionSort() {
         
         let resultList: Array<Int> = sortTest.selectionSort(numberList)
-        let sequence = sortTest.selectionSortG(textList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
+        let sequence = sortTest.insertionSortG(textList)
+        let triviaSequence = sortTest.insertionSortG(triviaTextList)
+        let emptySequence = sortTest.insertionSortG(emptyTextList)
       
         
         //evaulate results
         XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
         XCTAssertTrue(self.IsSorted(sequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(triviaSequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptySequence), "item sequence not in sorted order..")
         
     }
     
@@ -130,9 +159,13 @@ class SortingTest: XCTestCase {
     func testQuickSort() {
         
         let resultList: Array<Int> = sortTest.quickSort(numberList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
         
         //evaluate results
         XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
         
     }
     
@@ -141,9 +174,13 @@ class SortingTest: XCTestCase {
     func testMergeSort() {
         
         let resultList: Array<Int> = sortTest.mergeSort(numberList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
         
         //evaluate results
         XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
         
     }
     
@@ -155,17 +192,17 @@ class SortingTest: XCTestCase {
     //generic method to determine sorted order
     func IsSorted<T: Comparable>(sequence: [T]) -> Bool {
         
+        guard sequence.count > 1 else { return true } // immediately return true for trivial cases
         
-        for var primaryIndex = 0; primaryIndex < sequence.count; primaryIndex++ {
+        // after the guard check we are guaranteed that sequence has at least two elements
+        
+        let rangeFromSecondElement = sequence.startIndex.successor()..<sequence.endIndex
+        
+        return !rangeFromSecondElement.contains { index in
             
-            //test sequence
-            if (primaryIndex > 0 && sequence[primaryIndex] < sequence[primaryIndex - 1]) {
-                return false
-            }
+            sequence[index.predecessor()] > sequence[index]
             
         }
-        
-        return true
         
     }
     
