@@ -116,7 +116,7 @@ class SortingTest: XCTestCase {
     func testSelectionSort() {
         
         let resultList: Array<Int> = sortTest.selectionSort(numberList)
-        let sequence = sortTest.insertionSortG(textList)
+        let sequence = sortTest.selectionSortG(textList)
       
         
         //evaulate results
