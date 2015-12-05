@@ -198,9 +198,9 @@ class SortingTest: XCTestCase {
         
         let rangeFromSecondElement = sequence.startIndex.successor()..<sequence.endIndex
         
-        return rangeFromSecondElement.contains { index in
+        return !rangeFromSecondElement.contains { index in
             
-            sequence[index.predecessor()] < sequence[index]
+            sequence[index.predecessor()] > sequence[index]
             
         }
         
