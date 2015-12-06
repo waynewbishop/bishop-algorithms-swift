@@ -43,17 +43,29 @@ class SortingTest: XCTestCase {
 
     func testBinarySearch() {
         
-        var searchList: Array<Int> = Array<Int>()
+        let searchList: Array<Int> = (0...500).map { $0 }
         
-
-        //populate collection..
-        for number in 0...500 {
-            searchList.append(number)
-        }
+        let integerKey: Int = 235
+        
+        let sortedTextList = ["aaa", "aab", "aac", "bar", "foo", "zoo"]
+        let textKey = "foo"
+        let failingKey = "fo"
         
         //perform theoretical search
-        sortTest.binarySearch(searchList, key: 235)
+        XCTAssertTrue(sortTest.binarySearch(searchList, key: integerKey), "value \(integerKey) not found..")
         
+        // perfrorm search among array slice
+        XCTAssertTrue(sortTest.binarySearch(searchList[200...250], key: integerKey), "value \(integerKey) not found..")
+        
+        // find first
+        XCTAssertTrue(sortTest.binarySearch(searchList[200...250], key: 200), "first value not found..")
+        
+        // find last
+        XCTAssertTrue(sortTest.binarySearch(searchList[200...250], key: 250), "last value not found..")
+        
+        // test generics with text
+        XCTAssertTrue(sortTest.binarySearch(sortedTextList, key: textKey), "value \(textKey) not found..")
+        XCTAssertFalse(sortTest.binarySearch(sortedTextList, key: failingKey), "value \(failingKey) should not be found..")
     }
     
 
@@ -66,15 +78,9 @@ class SortingTest: XCTestCase {
     func testBinarySearchClosure() {
         
         
-        var searchList: Array<Int> = Array<Int>()
+        let searchList: Array<Int> = (0...500).map { $0 }
         var isFound: Bool = false
         let key: Int = 235
-        
-
-        //populate collection..
-        for number in 0...500 {
-            searchList.append(number)
-        }
         
         
         //capture state with trailing closure

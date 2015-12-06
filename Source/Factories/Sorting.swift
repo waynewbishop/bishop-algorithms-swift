@@ -15,52 +15,47 @@ public class Sorting {
     
     
     /*
-    binary search algorithm. Find the value at a specified index.
+    binary search algorithm. Find key among array sorted in ascending order
     note the use array slicing to adjust the upper and lower array bounds.
     */
     
+    /*
+    Biary search _looks_ at the array without changing it,
+    we will implement the algorithm with the sequence _seen as_ an array slice.
+    An array slice can be considered as a _view_ on a contiguos part of an array.
+    */
     
-    func binarySearch(sequence: Array<Int>, key: Int) {
-
+    func binarySearch<T where T: Comparable>(sequence: Array<T>, key: T) -> Bool {
         
-        //establish indices - extensions
-        let min = sequence.minIndex()
-        let max = sequence.maxIndex()
-        let mid = sequence.midIndex()
-
+        // Use binary search on the entire sequence slice
         
-        //check bounds
-        if key > sequence[max] || key < sequence[min] {
-            print("search value \(key) not found..")
-            return
-        }
+        let allSequenceRange = sequence.startIndex..<sequence.endIndex
         
-        
-        //evaluate chosen number..
-        let n = sequence[mid]
+        return binarySearch(sequence[allSequenceRange], key: key)
+    }
     
+    func binarySearch<T where T: Comparable>(slice: ArraySlice<T>, key: T) -> Bool {
         
-        print(String(n) + "value attempted..")
-        
-        
-        if n > key {
-            let slice: Array<Int> = Array(sequence[min...mid - 1])
-            self.binarySearch(slice, key: key)
-        }
-        
-        
-        if n < key {
-            let slice: Array<Int> = Array(sequence[mid + 1...max])
-            self.binarySearch(slice, key: key)
-        }
-        
-        
+        guard let first = slice.first, let last = slice.last    // guard that slice contains elements
+            where key >= first && key <= last                   // guard key is between first and lats element
         else {
-            print("search value \(key) found..")
-            return
+            print("search value \(key) not found..")
+            return false
         }
         
+        let midIndex = slice.startIndex + (slice.count / 2)
+        let n = slice[midIndex]
         
+        print("\(n) value attempted..")
+        
+        if n == key {   // we have found it
+            print("search value \(key) found..")
+            return true
+        } else if key > n {
+            return binarySearch(slice[midIndex..<slice.endIndex], key: key) // search among bigger ns
+        } else {
+            return binarySearch(slice[slice.startIndex..<midIndex], key: key) // search among smaller ns
+        }
     }
     
     
