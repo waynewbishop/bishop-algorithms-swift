@@ -38,24 +38,22 @@ class MathTest: XCTestCase {
     //published example - default option
     func testFibonnaci() {
         
-        let positions: Int = 2
-        let results: Array<Int>? = Math.fib(positions)
         
         //test results
-        buildResultsTest(results)
-        
+        XCTAssertFalse(isFibonacci(Math.fib(1)), "1 fibonnaci test failed.. Should return nil")
+        XCTAssertTrue(isFibonacci(Math.fib(2)), "2 fibonnaci test failed..")
+        XCTAssertTrue(isFibonacci(Math.fib(4)), "4 fibonnaci test failed..")
     }
 
     
     //recursive option
     func testFibRecursive() {
     
-        let positions: Int = 4
-        
-        let results: Array<Int>? =  Math.fibRecursive(positions)
 
         //test results
-        buildResultsTest(results)
+        XCTAssertFalse(isFibonacci(Math.fibRecursive(1)), "Recursive 1 fibonnaci test failed.. Should return nil")
+        XCTAssertTrue(isFibonacci(Math.fibRecursive(2)), "Recursive 2 fibonnaci test failed..")
+        XCTAssertTrue(isFibonacci(Math.fibRecursive(4)), "Recursive 4 fibonnaci test failed..")
         
     }
     
@@ -78,7 +76,7 @@ class MathTest: XCTestCase {
         
 
         //test results
-        buildResultsTest(results)
+        XCTAssertTrue(isFibonacci(results), "Closure fibonnaci test failed..")
         
     }
     
@@ -86,18 +84,15 @@ class MathTest: XCTestCase {
     
     
     //helper function - test results validity
-    func buildResultsTest(r: Array<Int>?) {
+    func isFibonacci(r: Array<Int>?) -> Bool {
 
-        guard let r = r where r.count >= 2 else {    // guard that r is not nil and contains at least 2 elements.
-            XCTFail("fibonnaci test failed..")
-            return
+        guard let r = r where r.count >= 2 else {           // guard that r is not nil and contains at least 2 elements.
+            return false
         }
 
         let fibGenerator = fibSequence.generate()
         
-        XCTAssertFalse( r.contains { $0 != fibGenerator.next() },   // Results should not contain any element != generated from fibGenerator
-            "fibonnaci test failed.."
-        )
+        return !r.contains { $0 != fibGenerator.next() }    // Results should not contain any element != generated from fibGenerator
     }
     
  
