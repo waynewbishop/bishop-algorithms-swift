@@ -11,11 +11,25 @@ import XCTest
 @testable import SwiftStructures
 
 
-private var math: Math = Math()
-
 
 class MathTest: XCTestCase {
-
+    
+    /*
+        fibSequence will be used in order to generate Fibonacci generators
+        a Fibonacci generator will generate the next Fibonacci number starting from 0
+        until overflaw crash (i.e.: it will never return nil)
+    */
+    let fibSequence: AnySequence<Int> = {
+        return AnySequence { _ -> AnyGenerator<Int> in
+            var state = (0, 1)
+            return anyGenerator {
+                let result = state.0
+                state = (state.1, state.0 + state.1)
+                return result
+            }
+        }
+    }()
+    
     override func setUp() {
         super.setUp()
     }
@@ -25,7 +39,7 @@ class MathTest: XCTestCase {
     func testFibonnaci() {
         
         let positions: Int = 2
-        let results: Array<Int>? = math.fib(positions)
+        let results: Array<Int>? = Math.fib(positions)
         
         //test results
         buildResultsTest(results)
@@ -38,7 +52,7 @@ class MathTest: XCTestCase {
     
         let positions: Int = 4
         
-        let results: Array<Int>? =  math.fibRecursive(positions)
+        let results: Array<Int>? =  Math.fibRecursive(positions)
 
         //test results
         buildResultsTest(results)
@@ -53,7 +67,7 @@ class MathTest: XCTestCase {
         let positions: Int = 23
 
         
-        let results: Array<Int>? = math.fib(positions) { (sequence: Array<Int>) -> Int in
+        let results: Array<Int>? = Math.fib(positions) { (sequence: Array<Int>) -> Int in
             
             //initialize and set formula
             let i: Int = sequence.count
@@ -79,12 +93,11 @@ class MathTest: XCTestCase {
             return
         }
 
-        if r.count < 3 {
-            XCTAssertTrue(r.elementsEqual([0, 1]))
-        } else {
-            XCTAssertTrue(r[r.endIndex - 1] == r[r.endIndex - 2] + r[r.endIndex - 3])
-        }
+        let fibGenerator = fibSequence.generate()
         
+        XCTAssertFalse( r.contains { $0 != fibGenerator.next() },   // Results should not contain any element != generated from fibGenerator
+            "fibonnaci test failed.."
+        )
     }
     
  

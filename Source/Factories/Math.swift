@@ -9,14 +9,15 @@
 import Foundation
 
 
-class Math {
+struct Math {}
+
+//MARK: - Fibonacci algorithms
 
 
-    //MARK: Fibonacci algorithms
+//build fibonacci sequence to a specified position - default
+extension Math {
     
-    
-    //build fibonacci sequence to a specified position - default
-    func fib(n: Int) -> [Int]? {
+    static func fib(n: Int) -> [Int]? {
         
         guard n > 1 else { return nil }     // guarantee that position is 2 or more, we will return at least 2 elements or nil
         
@@ -39,10 +40,12 @@ class Math {
         
     }
 
+}
+
+//build fibonacci sequence to a specified position - recursive
+extension Math {
     
-    
-    //build fibonacci sequence to a specified position - recursive
-    func fibRecursive(n: Int) -> [Int]? {
+    static func fibRecursive(n: Int) -> [Int]? {
 
         guard n > 1 else { return nil }   // guarantee that position is 2 or more, else we return nil
         
@@ -71,10 +74,12 @@ class Math {
         return prevSequence + [nextFib]
     }
     
+}
+
+//build fibonacci sequence to a specified position - trailing closure
+extension Math {
     
-    
-    //build fibonacci sequence to a specified position - trailing closure
-    func fib(n: Int, formula: Array<Int> -> Int) -> Array<Int>? {
+    static func fib(n: Int, formula: Array<Int> -> Int) -> Array<Int>? {
                 
         if n < 2 {
             return nil
@@ -99,6 +104,4 @@ class Math {
         
         
     } //end function
-    
-    
 }
