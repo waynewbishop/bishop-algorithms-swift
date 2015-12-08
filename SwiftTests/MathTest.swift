@@ -24,8 +24,8 @@ class MathTest: XCTestCase {
     //published example - default option
     func testFibonnaci() {
         
-        let positions: Int = 4
-        let results: Array<Int>! = math.fib(positions)
+        let positions: Int = 2
+        let results: Array<Int>? = math.fib(positions)
         
         //test results
         buildResultsTest(results)
@@ -35,12 +35,13 @@ class MathTest: XCTestCase {
     
     //recursive option
     func testFibRecursive() {
+    
+        let positions: Int = 4
         
-        let positions: Int = 9
-        
-        //set the number of iterations
-        math.fib(positions)
-        
+        let results: Array<Int>? =  math.fibRecursive(positions)
+
+        //test results
+        buildResultsTest(results)
         
     }
     
@@ -52,7 +53,7 @@ class MathTest: XCTestCase {
         let positions: Int = 23
 
         
-        let results: Array<Int>! = math.fib(positions) { (sequence: Array<Int>!) -> Int in
+        let results: Array<Int>? = math.fib(positions) { (sequence: Array<Int>) -> Int in
             
             //initialize and set formula
             let i: Int = sequence.count
@@ -71,17 +72,18 @@ class MathTest: XCTestCase {
     
     
     //helper function - test results validity
-    func buildResultsTest(r: Array<Int>!) {
+    func buildResultsTest(r: Array<Int>?) {
 
-        
-        if r == nil {
+        guard let r = r where r.count >= 2 else {    // guard that r is not nil and contains at least 2 elements.
             XCTFail("fibonnaci test failed..")
+            return
         }
-        
-        if r[r.endIndex - 1] != r[r.endIndex - 2] + r[r.endIndex - 3] {
-            XCTFail("fibonnaci test failed..")
+
+        if r.count < 3 {
+            XCTAssertTrue(r.elementsEqual([0, 1]))
+        } else {
+            XCTAssertTrue(r[r.endIndex - 1] == r[r.endIndex - 2] + r[r.endIndex - 3])
         }
-        
         
     }
     
