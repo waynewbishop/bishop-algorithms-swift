@@ -149,7 +149,7 @@ public class Sorting {
     */
     
     func insertionSort(numberList: Array<Int>) -> Array<Int> {
-        
+        guard numberList.count > 1 else { return numberList } // immediately return the trivial cases
         
         //mutated copy
         var output = numberList
@@ -187,7 +187,7 @@ public class Sorting {
     */
     
     func insertionSortG<T: Comparable>(sequence: [T]) -> [T] {
-        
+        guard sequence.count > 1 else { return sequence } // immediately return the trivial cases
 
         //mutated copy
         var output = Array(sequence)
@@ -230,7 +230,7 @@ public class Sorting {
 
     
     func bubbleSort(numberList: Array<Int>) -> Array<Int> {
-        
+        guard numberList.count > 1 else { return numberList } // immediately return the trivial cases
         
         //mutated copy
         var output = numberList
@@ -269,7 +269,7 @@ public class Sorting {
     */
     
     func bubbleSortG<T: Comparable>(sequence: [T]) -> [T] {
-        
+        guard sequence.count > 1 else { return sequence } // immediately return the trivial cases
         
         //mutated copy
         var output = Array(sequence)
@@ -313,7 +313,7 @@ public class Sorting {
     */
 
     func selectionSort(numberList: Array<Int>) -> Array<Int> {
-        
+        guard numberList.count > 1 else { return numberList } // immediately return the trivial cases
         
         //mutated copy
         var output = numberList
@@ -354,7 +354,7 @@ public class Sorting {
     */
     
     func selectionSortG<T: Comparable>(sequence: [T]) -> [T] {
-
+        guard sequence.count > 1 else { return sequence } // immediately return the trivial cases
         
         //mutated copy
         var output = Array(sequence)
@@ -400,10 +400,8 @@ public class Sorting {
 		// it works recursively so that either side will be eventually sorted back to the top
 
 		func quickSort(var hops:[Int]) -> [Int] {
-			
-			if (hops.count <= 1) {
-				return hops
-			}
+            
+			guard hops.count > 1 else { return hops } // immediately return the trivial cases
 			
 			let pivot = hops.removeAtIndex(0)
 			var leftBucket:[Int] = []
@@ -435,10 +433,8 @@ public class Sorting {
     
 		func mergeSort(input:[Int]) -> [Int] {
             
-            //establish the base case
-			if (input.count <= 1) {
-				return input
-			}
+            guard input.count > 1 else { return input } // immediately return the trivial cases
+
 			
             //find the mid point of the input and move them into two buckets
 			let mid = Int(floor(Double(input.count / 2)))
