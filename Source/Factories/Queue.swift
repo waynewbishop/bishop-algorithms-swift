@@ -16,26 +16,22 @@ public class Queue<T> {
     //the number of items
     var count: Int {
         
-        
-        if (top.key == nil) {
-            return 0
-        }
-            
-        else  {
+        //set count equal to 0
+        var count: Int = 0
+    
+        if (top.key != nil) { //if there are nodes, count them
             
             var current: QNode<T> = top
-            var x: Int = 1
-            
+            count++ //Add one for the top
             
             //cycle through the list of items
             while (current.next != nil) {
                 current = current.next!
-                x++
+                count++
             }
-            
-            return x
-            
-            }
+        }
+        
+        return count //return the count
     }
 
     
@@ -80,7 +76,7 @@ public class Queue<T> {
     
     
     //retrieve items from the top level in O(1) constant time
-   func deQueue() -> T? {
+    func deQueue() -> T? {
     
     
         //determine if the key or instance exist
@@ -102,24 +98,16 @@ public class Queue<T> {
             top = QNode<T>()
         }
     
-    
         return queueitem
         
     }
     
-
-   //check for the presence of a value
-   func isEmpty() -> Bool {
     
-        //determine if the key or instance exist
-        if let _: T = self.top?.key {
-            return false
-        }
-    
-        else {
-            return true
-        }
-    
+    //check for the presence of a value
+    func isEmpty() -> Bool {
+        
+        //If count is 0, return true.
+        return self.count == 0 ? true : false
     }
     
     
