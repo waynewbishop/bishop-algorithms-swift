@@ -48,7 +48,7 @@ class BloomTest: XCTestCase {
         at the second position index
         */
         
-        let filter: Bloom<String>! = Bloom(items: ["Seal", "Sour", "Seattle", "Seat", "Sat", "Sell"])
+        let filter: Bloom<String> = Bloom(items: ["Seal", "Sour", "Seattle", "Seat", "Sat", "Sell"])
         
         
         //test included words
