@@ -230,6 +230,7 @@ public class LinkedList<T: Equatable> {
         //determine if the removal is at the head
         if (index == 0) {
             current = current?.next
+            current?.previous = nil
             head = current!
             return
         }
