@@ -144,14 +144,14 @@ public class LinkedList<T: Equatable> {
         
         
         //check for nil conditions
-        if ((index < 0) || (index > (self.count - 1))) {
+        if ((index < 0) || (index > self.count)) {
             print("link index does not exist..")
+            return
         }
         
-        
-        //establish the head node
-        if (head.key == nil) {
-            head.key = key
+        // do normal append
+        if (index == self.count) {
+            self.addLink(key)
             return
         }
         
@@ -206,7 +206,7 @@ public class LinkedList<T: Equatable> {
             
             
         } //end while
-        
+
     }
 
     
