@@ -162,7 +162,7 @@ public class Sorting {
             
             for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
                 
-                print("comparing \(key) and \(numberList[secondaryIndex])")
+                print("comparing \(key) and \(output[secondaryIndex])")
                 
                 if key < output[secondaryIndex] {
                     
@@ -200,7 +200,7 @@ public class Sorting {
             
             for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
                 
-                print("comparing \(key) and \(sequence[secondaryIndex])")
+                print("comparing \(key) and \(output[secondaryIndex])")
                 
                 if key < output[secondaryIndex] {
 
