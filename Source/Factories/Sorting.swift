@@ -149,7 +149,13 @@ public class Sorting {
     */
     
     func insertionSort(numberList: Array<Int>) -> Array<Int> {
-        guard numberList.count > 1 else { return numberList } // immediately return the trivial cases
+        
+
+        //check for trivial case
+        guard numberList.count > 1 else {
+            return numberList
+        }
+        
         
         //mutated copy
         var output = numberList
@@ -187,7 +193,12 @@ public class Sorting {
     */
     
     func insertionSortG<T: Comparable>(sequence: [T]) -> [T] {
-        guard sequence.count > 1 else { return sequence } // immediately return the trivial cases
+
+        
+        // immediately return the trivial cases
+        guard sequence.count > 1 else {
+            return sequence
+        }
 
         //mutated copy
         var output = Array(sequence)
@@ -230,7 +241,13 @@ public class Sorting {
 
     
     func bubbleSort(numberList: Array<Int>) -> Array<Int> {
-        guard numberList.count > 1 else { return numberList } // immediately return the trivial cases
+
+        
+        //check for trivial case
+        guard numberList.count > 1 else {
+            return numberList
+        }
+        
         
         //mutated copy
         var output = numberList
@@ -269,7 +286,12 @@ public class Sorting {
     */
     
     func bubbleSortG<T: Comparable>(sequence: [T]) -> [T] {
-        guard sequence.count > 1 else { return sequence } // immediately return the trivial cases
+        
+        // immediately return the trivial cases
+        guard sequence.count > 1 else {
+            return sequence
+        }
+        
         
         //mutated copy
         var output = Array(sequence)
@@ -313,7 +335,13 @@ public class Sorting {
     */
 
     func selectionSort(numberList: Array<Int>) -> Array<Int> {
-        guard numberList.count > 1 else { return numberList } // immediately return the trivial cases
+        
+
+        //check for trivial case
+        guard numberList.count > 1 else {
+            return numberList
+        }
+ 
         
         //mutated copy
         var output = numberList
@@ -354,7 +382,12 @@ public class Sorting {
     */
     
     func selectionSortG<T: Comparable>(sequence: [T]) -> [T] {
-        guard sequence.count > 1 else { return sequence } // immediately return the trivial cases
+        
+        // immediately return the trivial cases
+        guard sequence.count > 1 else {
+            return sequence
+        }
+
         
         //mutated copy
         var output = Array(sequence)

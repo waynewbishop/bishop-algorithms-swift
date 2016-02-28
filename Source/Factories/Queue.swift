@@ -10,7 +10,13 @@ import Foundation
 
 public class Queue<T> {
    
-    private var top: QNode<T>! = QNode<T>()
+    private var top: QNode<T>!
+    
+    
+    init() {
+      top = QNode<T>()
+    }
+    
     
     
     //the number of items
@@ -29,7 +35,7 @@ public class Queue<T> {
             
             //cycle through the list of items
             while (current.next != nil) {
-                current = current.next!
+                current = current.next
                 x++
             }
             
@@ -38,31 +44,51 @@ public class Queue<T> {
             }
     }
 
+
+    //MARK: Supporting Functions
     
+    
+    
+    //retrieve the top most item
+    func peek() -> T! {
+        return top.key
+    }
+    
+    
+    
+    //check for the presence of a value
+    func isEmpty() -> Bool {
+        
+        guard top.key != nil else {
+            return true
+        }
+        
+        return false
+        
+    }
+
+
+    
+    //MARK: Queuing Functions
+
     
     //enqueue the specified object
     func enQueue(key: T) {
         
         
-        //check for the instance
-        if (top == nil) {
-            top = QNode<T>()
-        }
-        
-        
-        //establish the top node
+        //check top node
         if (top.key == nil) {
             top.key = key
             return
         }
         
         let childToUse: QNode<T> = QNode<T>()
-        var current: QNode = top
+        var current: QNode<T> = top
     
         
-        //cycle through the list of items to get to the end.
+        //cycle through the list
         while (current.next != nil) {
-            current = current.next!
+            current = current.next
         }
                 
         
@@ -72,27 +98,21 @@ public class Queue<T> {
         
     }
     
+
     
-    //retrieve the top most item
-    func peek() -> T? {
-        return top.key!
-    }
-    
-    
-    //retrieve items from the top level in O(1) constant time
+    //retrieve items from the top level - O(1) time
    func deQueue() -> T? {
     
     
-        //determine if the key or instance exist
-        let topitem: T? = self.top?.key
-    
-        if (topitem == nil) {
+        //determine key instance
+        guard top.key != nil else {
             return nil
         }
     
+    
         //retrieve and queue the next item
-        let queueitem: T? = top.key!
-
+        let queueitem: T? = top.key
+    
     
         //use optional binding 
         if let nextitem = top.next {
@@ -106,23 +126,6 @@ public class Queue<T> {
         return queueitem
         
     }
-    
-
-   //check for the presence of a value
-   func isEmpty() -> Bool {
-    
-        //determine if the key or instance exist
-        if let _: T = self.top?.key {
-            return false
-        }
-    
-        else {
-            return true
-        }
-    
-    }
-    
-    
     
     
     

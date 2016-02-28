@@ -35,7 +35,7 @@ public class AVLTree<T: Comparable> {
     }
     
     
-    //function to add item based on its value
+    //position item based on its value
     func addNode(key: T) {
         
         //check for the root node
@@ -105,9 +105,17 @@ public class AVLTree<T: Comparable> {
         } //end if
 
         
-    } //end function
+    }
 
 
+    
+    //TODO: find a node - O(log n)
+    func findNode(key: T) ->Bool! {
+
+        //guard for nil condition
+        return nil
+    }
+    
     
     
     // MARK: - tree balancing algorithms
@@ -154,7 +162,6 @@ public class AVLTree<T: Comparable> {
         
     }
     
-
     
     //determine if the tree is "balanced" - operations on a balanced tree is O(log n)
     func isTreeBalanced() -> Bool {
@@ -306,15 +313,14 @@ public class AVLTree<T: Comparable> {
 
     
     
-    //traverse all values
+    //regular dfs traversal
     func traverse() {
-        
-        //check for a nil condition
-        if  self.key == nil {
+
+        //check for nil condition
+        guard self.key != nil else {
             print("no key provided..")
             return
         }
-        
         
         //process the left side
         if self.left != nil {
@@ -332,7 +338,6 @@ public class AVLTree<T: Comparable> {
         
     }
     
-
 
     
 

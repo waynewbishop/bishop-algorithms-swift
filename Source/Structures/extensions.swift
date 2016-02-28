@@ -12,13 +12,13 @@ import Foundation
 extension String {
   
     
-    //compute the length of string
+    //compute the length
     var length: Int {
         return self.characters.count
     }
     
     
-    //returns characters of a string up to a specified index
+    //returns characters up to a specified index
     func substringToIndex(to: Int) -> String {
         return self.substringToIndex(self.startIndex.advancedBy(to))
     }

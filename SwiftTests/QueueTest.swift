@@ -36,14 +36,17 @@ class QueueTest: XCTestCase {
         XCTAssertNotNil(q, "queue instance not present..")
         
         
-        //deQueue based on list size
+        //deQueue list items..
         numberList.count.times { (s: Int) -> Void in
-            print("queue count: \(q.count)")
+            print("the queued item is \(q.peek() as Int!)")
             q.deQueue()
         }
 
         
+        //check for queued items
         XCTAssertTrue(q.count == 0, "deQueue process failed..")
+        XCTAssertTrue(q.isEmpty(), "queue isEmpty() process failed..")
+        
         
     }
     

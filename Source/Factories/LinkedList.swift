@@ -44,10 +44,7 @@ public class LinkedList<T: Equatable> {
     
     //empty list check
     func isEmpty() -> Bool! {
-        
-        // returns true if count is 0 or if the list's head is nil
         return self.count == 0 || head.key == nil
-        
     }
     
     
@@ -98,11 +95,11 @@ public class LinkedList<T: Equatable> {
         print("------------------")
         
         //assign the next instance
-        while (current != nil) {
+        
+        while current != nil {
             print("link item is: \(current.key)")
             current = current.next
         }
-        
         
     }
     
@@ -134,7 +131,7 @@ public class LinkedList<T: Equatable> {
         } //end else
         
         
-    } //end function
+    }
 
     
     

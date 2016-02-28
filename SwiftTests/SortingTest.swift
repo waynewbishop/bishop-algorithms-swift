@@ -15,6 +15,15 @@ import XCTest
 class SortingTest: XCTestCase {
 
     
+    /*
+    
+    TODO:
+    Only have 3 collection examples. Text, numbers and an empty set. He's also missed consistently using the same method calls 
+    for each sorting example. Each of these should be reviewed carefully. Consider refactoring the isSorted method to something more
+    readable.
+    
+    */
+    
     private var numberList: Array<Int>!
     private var triviaNumberList: Array<Int>!
     private var emptyNumberList: Array<Int>!
@@ -55,7 +64,6 @@ class SortingTest: XCTestCase {
         sortTest.binarySearch(searchList, key: 235)
         
     }
-    
 
 
     /*
