@@ -17,50 +17,47 @@ public class Sorting {
     /*
     binary search algorithm. Find the value at a specified index.
     note the use array slicing to adjust the upper and lower array bounds.
+    returns true if the key was found in the sequence.
     */
     
     
-    func binarySearch(sequence: Array<Int>, key: Int) {
+    func binarySearch(sequence: Array<Int>, key: Int)->Bool {
 
+        var result = false
         
         //establish indices - extensions
         let min = sequence.minIndex()
         let max = sequence.maxIndex()
         let mid = sequence.midIndex()
-
         
         //check bounds
         if key > sequence[max] || key < sequence[min] {
             print("search value \(key) not found..")
-            return
+            return false
         }
         
         
         //evaluate chosen number..
         let n = sequence[mid]
-    
         
         print(String(n) + "value attempted..")
         
-        
         if n > key {
             let slice: Array<Int> = Array(sequence[min...mid - 1])
-            self.binarySearch(slice, key: key)
+            result = self.binarySearch(slice, key: key)
         }
         
-        
-        if n < key {
+        else if n < key {
             let slice: Array<Int> = Array(sequence[mid + 1...max])
-            self.binarySearch(slice, key: key)
+            result = self.binarySearch(slice, key: key)
         }
-        
         
         else {
             print("search value \(key) found..")
-            return
+            result = true
         }
         
-        
+        return result
     }
     
     
