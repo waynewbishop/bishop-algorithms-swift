@@ -43,17 +43,41 @@ class SortingTest: XCTestCase {
 
     func testBinarySearch() {
         
-        var searchList: Array<Int> = Array<Int>()
-        
+        var searchList = Array<Int>()
+        var firstHalfOfList =  Array<Int>()
+        var secondHalfOfList =  Array<Int>()
 
-        //populate collection..
-        for number in 0...500 {
-            searchList.append(number)
+        //populate collection 0-399 and then 401-500 (missing 400 for testing the missing value condition)
+        for number in 0...399 {
+            firstHalfOfList.append(number)
+        }
+        for number in 401...500 {
+            secondHalfOfList.append(number)
         }
         
-        //perform theoretical search
-        sortTest.binarySearch(searchList, key: 235)
+        //combine the two halves into the full search list
+        searchList = firstHalfOfList + secondHalfOfList
         
+        //search for existing keys within range of the array
+        let resultListFirstHalf = firstHalfOfList.map{sortTest.binarySearch(searchList, key: $0)}
+        
+        for result in resultListFirstHalf {
+            XCTAssertTrue(result)
+        }
+        
+        //search for existing keys within range of the array
+        let resultListSecondHalf = secondHalfOfList.map{sortTest.binarySearch(searchList, key: $0)}
+        
+        for result in resultListSecondHalf {
+            XCTAssertTrue(result)
+        }
+        
+        //search for non-existent key within range of the array
+        XCTAssertFalse(sortTest.binarySearch(searchList, key: 400))
+        
+        //search for key outside the range of the array
+        XCTAssertFalse(sortTest.binarySearch(searchList, key: 600))
+
     }
     
 
