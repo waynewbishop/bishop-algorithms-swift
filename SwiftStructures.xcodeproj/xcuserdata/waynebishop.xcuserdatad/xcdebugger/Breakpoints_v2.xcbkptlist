@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "470775684.155673"
+            filePath = "SwiftTests/QueueTest.swift"
+            timestampString = "478329176.8783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "testInsertionSort()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "testDeQueue()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,29 +26,125 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "470793494.748467"
+            timestampString = "479339255.370745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "testInsertionSort()"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "testBinaryTestNotFound()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.SortingTest.testBinaryTestNotFound (SwiftTests.SortingTest)() -&gt; ()"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
+                  timestampString = "479339260.753731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.SortingTest.(testBinaryTestNotFound (SwiftTests.SortingTest) -&gt; () -&gt; ()).(implicit closure #1)"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
+                  timestampString = "479339260.754201"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Factories/Sorting.swift"
+            timestampString = "479340936.614523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "binarySearch(_:key:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/QueueTest.swift"
-            timestampString = "478329176.8783"
+            filePath = "Source/Factories/Sorting.swift"
+            timestampString = "479340938.86391"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "testDeQueue()"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "binarySearch(_:key:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTests/SortingTest.swift"
+            timestampString = "479341252.146534"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "testBinarySearch()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.SortingTest.testBinarySearch (SwiftTests.SortingTest)() -&gt; ()"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
+                  timestampString = "479341338.386205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftTests.SortingTest.(testBinarySearch (SwiftTests.SortingTest) -&gt; () -&gt; ()).(implicit closure #1)"
+                  moduleName = "SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
+                  timestampString = "479341338.386463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

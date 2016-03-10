@@ -52,73 +52,32 @@ class SortingTest: XCTestCase {
 
     func testBinarySearch() {
         
-        var searchList = Array<Int>()
-        var firstHalfOfList =  Array<Int>()
-        var secondHalfOfList =  Array<Int>()
-
-        //populate collection 0-399 and then 401-500 (missing 400 for testing the missing value condition)
-        for number in 0...399 {
-            firstHalfOfList.append(number)
-        }
-        for number in 401...500 {
-            secondHalfOfList.append(number)
-        }
-        
-        //combine the two halves into the full search list
-        searchList = firstHalfOfList + secondHalfOfList
-        
-        //search for existing keys within range of the array
-        let resultListFirstHalf = firstHalfOfList.map{sortTest.binarySearch(searchList, key: $0)}
-        
-        for result in resultListFirstHalf {
-            XCTAssertTrue(result)
-        }
-        
-        //search for existing keys within range of the array
-        let resultListSecondHalf = secondHalfOfList.map{sortTest.binarySearch(searchList, key: $0)}
-        
-        for result in resultListSecondHalf {
-            XCTAssertTrue(result)
-        }
-        
-        //search for non-existent key within range of the array
-        XCTAssertFalse(sortTest.binarySearch(searchList, key: 400))
-        
-        //search for key outside the range of the array
-        XCTAssertFalse(sortTest.binarySearch(searchList, key: 600))
-
-    }
-
-
-    /*
-    modified binary search algorithm.
-    makes use of closure expression to pass state information
-    */
-    
-    func testBinarySearchClosure() {
-        
-        
         var searchList: Array<Int> = Array<Int>()
-        var isFound: Bool = false
         let key: Int = 235
-        
 
+        
         //populate collection..
         for number in 0...500 {
             searchList.append(number)
         }
         
-        
-        //capture state with trailing closure
-        sortTest.binarySearch(searchList, key: key) { (found: Bool) -> Void in
-            isFound = found
-        }
-        
-        
-        XCTAssertTrue(isFound, "value \(key) not found..")
-        
+        //perform theoretical search
+        XCTAssertTrue(sortTest.binarySearch(searchList, key: key), "binary key value \(key) not found..")
         
     }
+
+    
+    func testBinaryTestNotFound() {
+        
+        let searchList: Array<Int> = [0,4,7,9,13,16,34]
+        let key: Int = 8
+        
+        
+        //test for false positive
+        XCTAssertFalse(sortTest.binarySearch(searchList, key: key), "binary key value \(key) found..")
+        
+    }
+    
     
     
 	

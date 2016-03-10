@@ -21,7 +21,7 @@ public class Sorting {
     */
     
     
-    func binarySearch(sequence: Array<Int>, key: Int)->Bool {
+    func binarySearch(sequence: Array<Int>, key: Int) -> Bool {
 
         var result = false
         
@@ -29,6 +29,7 @@ public class Sorting {
         let min = sequence.minIndex()
         let max = sequence.maxIndex()
         let mid = sequence.midIndex()
+        
         
         //check bounds
         if key > sequence[max] || key < sequence[min] {
@@ -40,7 +41,8 @@ public class Sorting {
         //evaluate chosen number..
         let n = sequence[mid]
         
-        print(String(n) + "value attempted..")
+        print(String(n) + " value attempted..")
+        
         
         if n > key {
             let slice: Array<Int> = Array(sequence[min...mid - 1])
@@ -61,58 +63,6 @@ public class Sorting {
     }
     
     
-    
-    
-    /*
-    modified binary search algorithm. 
-    makes use of closure expression to pass state information
-    */
-    
-    func binarySearch(sequence: Array<Int>, key: Int, results: Bool -> Void) {
-        
-        
-        //establish indices - extensions
-        let min = sequence.minIndex()
-        let max = sequence.maxIndex()
-        let mid = sequence.midIndex()
-        
-        
-        //check bounds
-        if key > sequence[max] || key < sequence[min] {
-            print("search value \(key) not found..")
-            results(false)
-            return
-        }
-        
-        
-        //evaluate chosen number..
-        let n = sequence[mid]
-        
-        
-        print(String(n) + "value attempted..")
-        
-        
-        if n > key {
-            let slice: Array<Int> = Array(sequence[min...mid - 1])
-            self.binarySearch(slice, key: key)
-        }
-        
-        
-        if n < key {
-            let slice: Array<Int> = Array(sequence[mid + 1...max])
-            self.binarySearch(slice, key: key)
-        }
-            
-    
-        else {
-            print("search value \(key) found..")
-            results(true)
-            return
-        }
-        
-        
-    }
-
     
     
     //MARK: - Linear Search
