@@ -36,7 +36,7 @@ class SortingTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        numberList = [8, 2, 10, 9, 7, 5]
+        numberList = (0..<10).map { _ in random() } // 10 random Ints
         triviaNumberList = [1] // Should have just one element
         emptyNumberList = []
         textList = ["Dog", "Cat", "Dinasour", "Lion", "Cheetah", "Gazelle", "Elephant", "Aardvark"]

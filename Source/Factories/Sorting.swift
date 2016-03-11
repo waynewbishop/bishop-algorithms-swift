@@ -417,51 +417,64 @@ public class Sorting {
 
 			
             //find the mid point of the input and move them into two buckets
-			let mid = Int(floor(Double(input.count / 2)))
-			let left = Array(input[0..<mid])
-			let right = Array(input[mid..<input.count])
+			let mid = input.startIndex + (input.count / 2)
+			let left = input.startIndex..<mid
+			let right = mid..<input.endIndex
 			
 
             //recursive call here to continue to divide each side
-			let leftSide = mergeSort(left)
-			let rightSide = mergeSort(right)
+			let leftSide = mergeSort(Array<Int>(left))
+			let rightSide = mergeSort(Array<Int>(right))
 			
             //conquer for each method invocation
-			return sortForMergeSort(leftSide, right: rightSide)
+			return mergeSortedLeft(leftSide, andRight: rightSide)
 		}
 		
     
-		func sortForMergeSort(left:[Int], right:[Int]) -> [Int] {
+		func mergeSortedLeft(left:[Int], andRight right:[Int]) -> [Int] {
 			
+            let totalElements = left.count + right.count
+            
+            guard totalElements > 0 else { return [] }  // make sure we have something to do
+            
+            
             //create a new array to place our sorted numbers
 			var sortedArray:[Int] = []
-			var leftCount = 0
-			var rightCount = 0
+            sortedArray.reserveCapacity(totalElements)
             
-            /*
-            var someCount: Int = left.count + right.count
             
-            for i in 0...someCount {
-                println(i)
+            var leftGenerator = left.generate()         // Generate the sequence of left side elements
+            var rightGenerator = right.generate()       // Generate the sequence of right side elements
+            
+            var leftHead = leftGenerator.next()         // Left side head element or nil if left is empty
+            var rightHead = rightGenerator.next()       // Right side head element or nil if right is empty
+            
+            MERGE: while true {
+                switch (leftHead, rightHead) {
+                    
+                case let(l?, r?) where l <= r:          // Both left and right heads exists and left head is less than or equal to right head
+                    sortedArray.append(l)               // we append left head to sorted array
+                    leftHead = leftGenerator.next()     // and advance left head
+                    
+                case let(l?, r?) where l > r:           // Both left and right heads exists and left head is grater than right head
+                    sortedArray.append(r)               // we append right head to sorted array
+                    rightHead = rightGenerator.next()   // and advance right head
+                    
+                case let(nil, r?):                      // Left head is nil (i.e.: exausted), hance we only have right elements
+                    sortedArray.append(r)               // we append right head to sorted array
+                    rightHead = rightGenerator.next()   // and advance right head
+                    
+                case let(l?, nil):                      // Right head is nil (i.e.: exausted), hance we only have left elements
+                    sortedArray.append(l)               // we append left head to sorted array
+                    leftHead = leftGenerator.next()     // and advance left head
+                    
+                case (nil, nil):                        // Both left and right heads are nil, thus we exausted both sides
+                    break MERGE                         // we break the MERGE loop
+                    
+                default:                                // We already covered all possible cases but this is still necessary as of Swift 2
+                    break MERGE
+                }
             }
-            */
-            
-            
-			// For all of the numbers on both sides
-			(left.count + right.count).times { i in
-                
-                /*
-                if we've exhausted the right side, or if we still have some to use on
-                the left side and the current left side number is smaller in value than the
-                right sides current value, then add the left numbers value to the sorted array
-                */
-                
-				if (leftCount < left.count && (rightCount >= right.count || left[leftCount] <= right[rightCount])) {
-					sortedArray.append(left[leftCount++])
-				} else if (rightCount < right.count && (leftCount >= left.count || right[rightCount] < left[leftCount])) {
-					sortedArray.append(right[rightCount++])
-				}
-			}
 			
 			return sortedArray
 		}
