@@ -11,11 +11,25 @@ import XCTest
 @testable import SwiftStructures
 
 
-private var math: Math = Math()
-
 
 class MathTest: XCTestCase {
-
+    
+    /*
+        fibSequence will be used in order to generate Fibonacci generators
+        a Fibonacci generator will generate the next Fibonacci number starting from 0
+        until overflaw crash (i.e.: it will never return nil)
+    */
+    let fibSequence: AnySequence<Int> = {
+        return AnySequence { _ -> AnyGenerator<Int> in
+            var state = (0, 1)
+            return anyGenerator {
+                let result = state.0
+                state = (state.1, state.0 + state.1)
+                return result
+            }
+        }
+    }()
+    
     override func setUp() {
         super.setUp()
     }
@@ -24,23 +38,22 @@ class MathTest: XCTestCase {
     //published example - default option
     func testFibonnaci() {
         
-        let positions: Int = 4
-        let results: Array<Int>! = math.fib(positions)
         
         //test results
-        buildResultsTest(results)
-        
+        XCTAssertFalse(isFibonacci(Math.fib(1)), "1 fibonnaci test failed.. Should return nil")
+        XCTAssertTrue(isFibonacci(Math.fib(2)), "2 fibonnaci test failed..")
+        XCTAssertTrue(isFibonacci(Math.fib(4)), "4 fibonnaci test failed..")
     }
 
     
     //recursive option
     func testFibRecursive() {
-        
-        let positions: Int = 9
-        
-        //set the number of iterations
-        math.fib(positions)
-        
+    
+
+        //test results
+        XCTAssertFalse(isFibonacci(Math.fibRecursive(1)), "Recursive 1 fibonnaci test failed.. Should return nil")
+        XCTAssertTrue(isFibonacci(Math.fibRecursive(2)), "Recursive 2 fibonnaci test failed..")
+        XCTAssertTrue(isFibonacci(Math.fibRecursive(4)), "Recursive 4 fibonnaci test failed..")
         
     }
     
@@ -52,7 +65,7 @@ class MathTest: XCTestCase {
         let positions: Int = 23
 
         
-        let results: Array<Int>! = math.fib(positions) { (sequence: Array<Int>!) -> Int in
+        let results: Array<Int>? = Math.fib(positions) { (sequence: Array<Int>) -> Int in
             
             //initialize and set formula
             let i: Int = sequence.count
@@ -63,7 +76,7 @@ class MathTest: XCTestCase {
         
 
         //test results
-        buildResultsTest(results)
+        XCTAssertTrue(isFibonacci(results), "Closure fibonnaci test failed..")
         
     }
     
@@ -71,18 +84,15 @@ class MathTest: XCTestCase {
     
     
     //helper function - test results validity
-    func buildResultsTest(r: Array<Int>!) {
+    func isFibonacci(r: Array<Int>?) -> Bool {
 
-        
-        if r == nil {
-            XCTFail("fibonnaci test failed..")
+        guard let r = r where r.count >= 2 else {           // guard that r is not nil and contains at least 2 elements.
+            return false
         }
+
+        let fibGenerator = fibSequence.generate()
         
-        if r[r.endIndex - 1] != r[r.endIndex - 2] + r[r.endIndex - 3] {
-            XCTFail("fibonnaci test failed..")
-        }
-        
-        
+        return !r.contains { $0 != fibGenerator.next() }    // Results should not contain any element != generated from fibGenerator
     }
     
  
