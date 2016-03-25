@@ -150,36 +150,34 @@ public class Sorting {
     
     func insertionSort(numberList: Array<Int>) -> Array<Int> {
         
-        
         //mutated copy
         var output = numberList
-        
         
         for primaryIndex in 0..<output.count {
             
             let key = output[primaryIndex]
             
             
-            for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
+            for (primaryIndex, key) in output.enumerate() {
                 
-                print("comparing \(key) and \(numberList[secondaryIndex])")
+                for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
                 
-                if key < output[secondaryIndex] {
+                    print("comparing \(key) and \(numberList[secondaryIndex])")
+                    
+                    if key < output[secondaryIndex] {
                     
                     //move into correct position
                     output.removeAtIndex(secondaryIndex + 1)
                     output.insert(key, atIndex: secondaryIndex)
-                    
+                
                 }
             }
         }
-        
         
         return output
         
     }
 
-    
     
 
     /*
@@ -188,21 +186,21 @@ public class Sorting {
     
     func insertionSortG<T: Comparable>(sequence: [T]) -> [T] {
         
-
         //mutated copy
         var output = Array(sequence)
-        
-        
+ 
         for primaryIndex in 0..<output.count {
             
             let key = output[primaryIndex]
             
             
-            for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
+            for (primaryIndex, key) in output.enumerate() {
                 
-                print("comparing \(key) and \(sequence[secondaryIndex])")
-                
-                if key < output[secondaryIndex] {
+                for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
+                    
+                    print("comparing \(key) and \(numberList[secondaryIndex])")
+                    
+                    if key < output[secondaryIndex] {
 
                     //move into correct position
                     output.removeAtIndex(secondaryIndex + 1)
@@ -211,7 +209,6 @@ public class Sorting {
                 }
             }
         }
-        
         
         return output
         
@@ -324,8 +321,11 @@ public class Sorting {
             var minimum = primaryIndex
             
             // iterate through remainder
-            for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
-                
+            //for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
+            
+                for (primaryIndex, key) in output.enumerate() {
+                    
+                    for secondaryIndex in (primaryIndex + 1).stride(through: 0, by: +1) {
                 
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
@@ -365,9 +365,12 @@ public class Sorting {
             var minimum = primaryIndex
             
             // iterate through remainder
-            for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
+            //for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
                 
+            for (primaryIndex, key) in output.enumerate() {
                 
+                for secondaryIndex in (primaryIndex + 1).stride(through: output.count, by: +1) {
+                    
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
                 // store lowest value as minimum
@@ -376,14 +379,12 @@ public class Sorting {
                 }
             }
             
-            
             // swap minimum value with array iteration
             if primaryIndex != minimum {
                 swap(&output[primaryIndex], &output[minimum])
             }
             
         }
-        
         
         return output
         
