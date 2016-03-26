@@ -323,8 +323,6 @@ public class Sorting {
     }
 
     
-    // TODO: Refactor
-    
     /*
     selection sort algorithm - (Generics)
     */
