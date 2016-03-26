@@ -312,7 +312,7 @@ public class Sorting {
             
                 for (primaryIndex, key) in output.enumerate() {
                     
-                    for secondaryIndex in (primaryIndex + 1).stride(through: 0, by: +1) {
+                    for secondaryIndex in (primaryIndex + 1).stride(through: 0, by: + 1) {
                 
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
@@ -478,5 +478,5 @@ public class Sorting {
 			return sortedArray
 		}
 	
-    
+        
 }

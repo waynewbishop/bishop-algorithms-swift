@@ -48,7 +48,7 @@ class Math {
     //build fibonacci sequence to a specified position - recursive
     func fib(n: Int, sequence: Array<Int> = [0, 1]) {
         
-        var seq = sequence
+        var sequenceMutable = sequence
         
             
         //initialize sequence
@@ -57,7 +57,7 @@ class Math {
         }
         
         
-        let i: Int = seq.count
+        let i: Int = sequenceMutable.count
         
         
         //set base condition
@@ -65,12 +65,12 @@ class Math {
             return
         }
         
-        let results: Int = seq[i - 1] + seq[i - 2]
-        seq.append(results)
+        let results: Int = sequenceMutable[i - 1] + sequenceMutable[i - 2]
+        sequenceMutable.append(results)
 
         
         //set iteration
-        fib(n, sequence: seq)
+        fib(n, sequence: sequenceMutable)
 
     }
     
