@@ -153,18 +153,13 @@ public class Sorting {
         //mutated copy
         var output = numberList
         
-        for primaryIndex in 0..<output.count {
+        for (primaryIndex, key) in output.enumerate() {
             
-            let key = output[primaryIndex]
-            
-            
-            for (primaryIndex, key) in output.enumerate() {
+            for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
                 
-                for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
+                print("comparing \(key) and \(numberList[secondaryIndex])")
                 
-                    print("comparing \(key) and \(numberList[secondaryIndex])")
-                    
-                    if key < output[secondaryIndex] {
+                if key < output[secondaryIndex] {
                     
                     //move into correct position
                     output.removeAtIndex(secondaryIndex + 1)
@@ -175,11 +170,9 @@ public class Sorting {
         }
         
         return output
-        
     }
 
     
-
     /*
     insertion sort algorithm - (Generics)
     */
@@ -188,19 +181,14 @@ public class Sorting {
         
         //mutated copy
         var output = Array(sequence)
- 
-        for primaryIndex in 0..<output.count {
+        
+        for (primaryIndex, key) in output.enumerate() {
             
-            let key = output[primaryIndex]
-            
-            
-            for (primaryIndex, key) in output.enumerate() {
+            for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
                 
-                for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
-                    
-                    print("comparing \(key) and \(numberList[secondaryIndex])")
-                    
-                    if key < output[secondaryIndex] {
+                print("comparing \(key) and \(sequence[secondaryIndex])")
+                
+                if key < output[secondaryIndex] {
 
                     //move into correct position
                     output.removeAtIndex(secondaryIndex + 1)
@@ -211,7 +199,6 @@ public class Sorting {
         }
         
         return output
-        
     }
 
     
