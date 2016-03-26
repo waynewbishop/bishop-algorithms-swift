@@ -285,10 +285,8 @@ public class Sorting {
         
     }
     
-    
     //MARK: - Selection Sort
     
-    // TODO: Bracket!!
     /*
     selection sort algorithm - rank items from the lowest to highest by iterating through
     the array and swapping the current iteration with the lowest value in the rest of the array
@@ -297,21 +295,15 @@ public class Sorting {
 
     func selectionSort(numberList: Array<Int>) -> Array<Int> {
         
-        
         //mutated copy
         var output = numberList
-        
-        
-        for primaryIndex in 0..<output.count {
+
+        // iterate through remainder
+        for primaryIndex in output.indices {
             
             var minimum = primaryIndex
             
-            // iterate through remainder
-            //for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
-            
-                for (primaryIndex, key) in output.enumerate() {
-                    
-                    for secondaryIndex in (primaryIndex + 1).stride(through: 0, by: +1) {
+            for secondaryIndex in primaryIndex.stride(to: output.count, by: 1) {
                 
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
@@ -321,19 +313,17 @@ public class Sorting {
                 }
             }
             
-            
             // swap minimum value with array iteration
             if primaryIndex != minimum {
                 swap(&output[primaryIndex], &output[minimum])
             }
-            
         }
         
-        
         return output
-        
     }
+
     
+    // TODO: Refactor
     
     /*
     selection sort algorithm - (Generics)
