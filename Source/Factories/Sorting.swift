@@ -242,7 +242,6 @@ public class Sorting {
             }
         }
         
-        
         return output
         
     }
@@ -289,7 +288,7 @@ public class Sorting {
     
     //MARK: - Selection Sort
     
-    
+    // TODO: Bracket!!
     /*
     selection sort algorithm - rank items from the lowest to highest by iterating through
     the array and swapping the current iteration with the lowest value in the rest of the array
@@ -312,7 +311,7 @@ public class Sorting {
             
                 for (primaryIndex, key) in output.enumerate() {
                     
-                    for secondaryIndex in (primaryIndex + 1).stride(through: 0, by: + 1) {
+                    for secondaryIndex in (primaryIndex + 1).stride(through: 0, by: +1) {
                 
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
@@ -387,21 +386,23 @@ public class Sorting {
 		// and moves values to the left or right of the pivot based on their value
 		// it works recursively so that either side will be eventually sorted back to the top
 
-		func quickSort(var hops:[Int]) -> [Int] {
+		func quickSort(hops:[Int]) -> [Int] {
 			
-			if (hops.count <= 1) {
+            var hopsMutable = hops
+            
+			if (hopsMutable.count <= 1) {
 				return hops
 			}
 			
-			let pivot = hops.removeAtIndex(0)
+			let pivot = hopsMutable.removeAtIndex(0)
 			var leftBucket:[Int] = []
 			var rightBucket:[Int] = []
 			
-			(hops.count - 1).times { i in
-				if (hops[i] <= pivot) {
-					leftBucket.append(hops[i])
+			(hopsMutable.count - 1).times { i in
+				if (hopsMutable[i] <= pivot) {
+					leftBucket.append(hopsMutable[i])
 				} else {
-					rightBucket.append(hops[i])
+					rightBucket.append(hopsMutable[i])
 				}
 			}
 			
