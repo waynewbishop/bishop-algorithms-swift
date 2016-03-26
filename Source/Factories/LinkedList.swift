@@ -32,7 +32,7 @@ public class LinkedList<T: Equatable> {
                 //cycle through the list of items
                 while current.next != nil {
                     current = current.next!
-                    x++
+                    x += 1
                 }
                 
                 return x
@@ -126,7 +126,7 @@ public class LinkedList<T: Equatable> {
             //cycle through the list of items
             while (index != x) {
                 current = current.next
-                x++
+                x += 1
             }
             
             return current
@@ -250,7 +250,7 @@ public class LinkedList<T: Equatable> {
             //update the assignments
             trailer = current
             current = current?.next
-            listIndex++
+            listIndex += 1
             
         } //end while
         

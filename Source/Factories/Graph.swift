@@ -85,14 +85,15 @@ public class SwiftGraph {
     /* reverse the sequence of paths given the shortest path.
        process analagous to reversing a linked list. */
 
-    func reversePath(var head: Path!, source: Vertex) -> Path! {
+    func reversePath(head: Path!, source: Vertex) -> Path! {
         
-        if head == nil {
+        var origin = head
+        if origin == nil {
            return nil
         }
         
         
-        var current: Path! = head
+        var current: Path! = origin
         var prev: Path!
         var next: Path!
         
@@ -112,10 +113,10 @@ public class SwiftGraph {
         sourcePath.previous = prev
         sourcePath.total = nil
         
-        head = sourcePath
+        origin = sourcePath
         
         
-        return head
+        return origin
         
     }
 

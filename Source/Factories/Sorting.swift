@@ -150,17 +150,12 @@ public class Sorting {
     
     func insertionSort(numberList: Array<Int>) -> Array<Int> {
         
-        
         //mutated copy
         var output = numberList
         
-        
-        for primaryIndex in 0..<output.count {
+        for (primaryIndex, key) in output.enumerate() {
             
-            let key = output[primaryIndex]
-            
-            
-            for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
+            for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
                 
                 print("comparing \(key) and \(numberList[secondaryIndex])")
                 
@@ -169,36 +164,27 @@ public class Sorting {
                     //move into correct position
                     output.removeAtIndex(secondaryIndex + 1)
                     output.insert(key, atIndex: secondaryIndex)
-                    
+                
                 }
             }
         }
         
-        
         return output
-        
     }
 
     
-    
-
     /*
     insertion sort algorithm - (Generics)
     */
     
     func insertionSortG<T: Comparable>(sequence: [T]) -> [T] {
         
-
         //mutated copy
         var output = Array(sequence)
         
-        
-        for primaryIndex in 0..<output.count {
+        for (primaryIndex, key) in output.enumerate() {
             
-            let key = output[primaryIndex]
-            
-            
-            for var secondaryIndex = primaryIndex; secondaryIndex > -1; secondaryIndex-- {
+            for secondaryIndex in primaryIndex.stride(through: 0, by: -1) {
                 
                 print("comparing \(key) and \(sequence[secondaryIndex])")
                 
@@ -212,9 +198,7 @@ public class Sorting {
             }
         }
         
-        
         return output
-        
     }
 
     
@@ -257,7 +241,6 @@ public class Sorting {
                 }
             }
         }
-        
         
         return output
         
@@ -302,9 +285,7 @@ public class Sorting {
         
     }
     
-    
     //MARK: - Selection Sort
-    
     
     /*
     selection sort algorithm - rank items from the lowest to highest by iterating through
@@ -314,18 +295,15 @@ public class Sorting {
 
     func selectionSort(numberList: Array<Int>) -> Array<Int> {
         
-        
         //mutated copy
         var output = numberList
-        
-        
-        for primaryIndex in 0..<output.count {
+
+        // iterate through remainder
+        for primaryIndex in output.indices {
             
             var minimum = primaryIndex
             
-            // iterate through remainder
-            for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
-                
+            for secondaryIndex in primaryIndex.stride(to: output.count, by: 1) {
                 
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
@@ -335,38 +313,31 @@ public class Sorting {
                 }
             }
             
-            
             // swap minimum value with array iteration
             if primaryIndex != minimum {
                 swap(&output[primaryIndex], &output[minimum])
             }
-            
         }
         
-        
         return output
-        
     }
-    
+
     
     /*
     selection sort algorithm - (Generics)
     */
     
     func selectionSortG<T: Comparable>(sequence: [T]) -> [T] {
-
         
         //mutated copy
         var output = Array(sequence)
         
-        
-        for primaryIndex in 0..<output.count {
+        for primaryIndex in output.indices {
             
             var minimum = primaryIndex
             
             // iterate through remainder
-            for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
-                
+            for secondaryIndex in primaryIndex.stride(to: output.count, by: 1) {
                 
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
@@ -376,17 +347,13 @@ public class Sorting {
                 }
             }
             
-            
             // swap minimum value with array iteration
             if primaryIndex != minimum {
                 swap(&output[primaryIndex], &output[minimum])
             }
-            
         }
         
-        
         return output
-        
     }
 
     
@@ -399,21 +366,23 @@ public class Sorting {
 		// and moves values to the left or right of the pivot based on their value
 		// it works recursively so that either side will be eventually sorted back to the top
 
-		func quickSort(var hops:[Int]) -> [Int] {
+		func quickSort(hops:[Int]) -> [Int] {
 			
-			if (hops.count <= 1) {
+            var hopsMutable = hops
+            
+			if (hopsMutable.count <= 1) {
 				return hops
 			}
 			
-			let pivot = hops.removeAtIndex(0)
+			let pivot = hopsMutable.removeAtIndex(0)
 			var leftBucket:[Int] = []
 			var rightBucket:[Int] = []
 			
-			(hops.count - 1).times { i in
-				if (hops[i] <= pivot) {
-					leftBucket.append(hops[i])
+			(hopsMutable.count - 1).times { i in
+				if (hopsMutable[i] <= pivot) {
+					leftBucket.append(hopsMutable[i])
 				} else {
-					rightBucket.append(hops[i])
+					rightBucket.append(hopsMutable[i])
 				}
 			}
 			
@@ -481,14 +450,17 @@ public class Sorting {
                 */
                 
 				if (leftCount < left.count && (rightCount >= right.count || left[leftCount] <= right[rightCount])) {
-					sortedArray.append(left[leftCount++])
+					sortedArray.append(left[leftCount])
+                    leftCount += 1
+                    
 				} else if (rightCount < right.count && (leftCount >= left.count || right[rightCount] < left[leftCount])) {
-					sortedArray.append(right[rightCount++])
+					sortedArray.append(right[rightCount])
+                    rightCount += 1
 				}
 			}
 			
 			return sortedArray
 		}
 	
-    
+        
 }

@@ -32,7 +32,7 @@ class Stack<T> {
         //cycle through the list of items to get to the end.
         while ((current.next) != nil) {
             current = current.next!
-            x++
+            x += 1
         }
             
         return x

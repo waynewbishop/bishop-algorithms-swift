@@ -155,8 +155,7 @@ class SortingTest: XCTestCase {
     //generic method to determine sorted order
     func IsSorted<T: Comparable>(sequence: [T]) -> Bool {
         
-        
-        for var primaryIndex = 0; primaryIndex < sequence.count; primaryIndex++ {
+        for primaryIndex in 0 ..< sequence.count {
             
             //test sequence
             if (primaryIndex > 0 && sequence[primaryIndex] < sequence[primaryIndex - 1]) {
