@@ -450,9 +450,12 @@ public class Sorting {
                 */
                 
 				if (leftCount < left.count && (rightCount >= right.count || left[leftCount] <= right[rightCount])) {
-					sortedArray.append(left[leftCount++])
+					sortedArray.append(left[leftCount])
+                    leftCount += 1
+                    
 				} else if (rightCount < right.count && (leftCount >= left.count || right[rightCount] < left[leftCount])) {
-					sortedArray.append(right[rightCount++])
+					sortedArray.append(right[rightCount])
+                    rightCount += 1
 				}
 			}
 			
