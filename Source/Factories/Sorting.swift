@@ -330,23 +330,17 @@ public class Sorting {
     */
     
     func selectionSortG<T: Comparable>(sequence: [T]) -> [T] {
-
         
         //mutated copy
         var output = Array(sequence)
         
-        
-        for primaryIndex in 0..<output.count {
+        for primaryIndex in output.indices {
             
             var minimum = primaryIndex
             
             // iterate through remainder
-            //for var secondaryIndex = primaryIndex + 1; secondaryIndex < output.count; secondaryIndex++ {
+            for secondaryIndex in primaryIndex.stride(to: output.count, by: 1) {
                 
-            for (primaryIndex, key) in output.enumerate() {
-                
-                for secondaryIndex in (primaryIndex + 1).stride(through: output.count, by: +1) {
-                    
                 print("comparing \(output[minimum]) and \(output[secondaryIndex])")
                 
                 // store lowest value as minimum
@@ -359,11 +353,9 @@ public class Sorting {
             if primaryIndex != minimum {
                 swap(&output[primaryIndex], &output[minimum])
             }
-            
         }
         
         return output
-        
     }
 
     
