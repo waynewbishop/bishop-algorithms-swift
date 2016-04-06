@@ -139,6 +139,21 @@ public class Sorting {
         
     }
     
+    /*
+    linear search - (Generics)
+    */
+    
+    func linearSearchG<T:Comparable>(numberlist: [T], key: T) -> Bool {
+    
+    	//check all possible values
+    	for obj in numberlist {
+            if obj == key {
+            	return true
+            }
+        }
+    
+        return false
+    }
     
     //MARK: - Insertion Sort
     
@@ -424,7 +439,41 @@ public class Sorting {
 			
 			return mergedArray
 		}
-	
+		
+		
+	/*
+    		quick sort algorithm - (Generics)
+    	*/
+    		func quickSortG<T:Comparable>(hops:[T]) -> [T] {
+    
+    			var _hops = hops
+    
+    			if (_hops.count <= 1) {
+        			return _hops
+    			}
+    
+    			let pivot = _hops.removeAtIndex(0)
+    			var leftBucket:[T] = []
+    			var rightBucket:[T] = []
+    
+    			for e in _hops {
+        			if e <= pivot {
+            				leftBucket.append(e)
+        			}
+        			else {
+            				rightBucket.append(e)
+        			}
+    			}
+    
+    			var mergedArray:[T] = []
+    			mergedArray += quickSortG(leftBucket)
+    			mergedArray += [pivot]
+    			mergedArray += quickSortG(rightBucket)
+    
+    			return mergedArray
+		}
+
+    		
 	
         /*
 		merge sort - works by breaking down each side and sorting as it comes back up
@@ -489,6 +538,49 @@ public class Sorting {
 			
 			return sortedArray
 		}
-	
+		
+	/*
+    		merge sort algorithm - (Generics)
+    	*/
+		
+		func mergeSortG<T:Comparable>(input:[T]) -> [T] {
     
+    			//establish the base case
+    			if (input.count <= 1) {
+        			return input
+    			}
+    
+    			//find the mid point of the input and move them into two buckets
+    			let mid = Int(floor(Double(input.count / 2)))
+    			let _left = Array(input[0..<mid])
+    			let _right = Array(input[mid..<input.count])
+    
+    			//recursive call here to continue to divide each side
+    			let leftSide = mergeSortG(_left)
+    			let rightSide = mergeSortG(_right)
+    
+    			//conquer for each method invocation
+    			return sortForMergeSortG(leftSide, right: rightSide)
+		}
+
+		func sortForMergeSortG<T:Comparable>(left:[T], right:[T]) -> [T] {
+    
+    			//create a new array to place our sorted numbers
+    			var sortedArray: [T] = []
+    			var l: [T] = left
+    			var r: [T] = right
+    			var leftCount = 0
+    			var rightCount = 0
+    
+    			// For all of the numbers on both sides
+    			for var i = 0; i < (l.count + r.count); ++i {
+        			if (leftCount < l.count && (rightCount >= r.count || l[leftCount] <= r[rightCount])) {
+            				sortedArray.append(l[leftCount++])
+        			} else if (rightCount < r.count && (leftCount >= l.count || r[rightCount] < l[leftCount])) {
+            				sortedArray.append(r[rightCount++])
+        			}
+    			}
+    
+    			return sortedArray
+		}
 }
