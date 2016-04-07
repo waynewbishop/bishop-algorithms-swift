@@ -145,7 +145,10 @@ class SortingTest: XCTestCase {
     }
     
     
+    //MARK: - Other sorting algorithms - to be refactored
     
+    
+    /*
     func testQuickSort() {
         
         let resultList: Array<Int> = sortTest.quickSort(numberList)
@@ -173,6 +176,8 @@ class SortingTest: XCTestCase {
         XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
         
     }
+    
+ */
     
     
     

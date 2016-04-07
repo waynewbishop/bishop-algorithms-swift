@@ -110,8 +110,11 @@ public class Sorting {
         
         for primaryindex in 0..<output.count {
             
+
             let key = output[primaryindex]
+             
             var secondaryindex = primaryindex
+            
             
             while secondaryindex > -1 {
                 
@@ -241,8 +244,9 @@ public class Sorting {
     */
     
     func bubbleSortG<T: Comparable>(sequence: [T]) -> [T] {
+
         
-        // immediately return the trivial cases
+        //return trvial case
         guard sequence.count > 1 else {
             return sequence
         }
@@ -341,7 +345,8 @@ public class Sorting {
     
     func selectionSortG<T: Comparable>(sequence: [T]) -> [T] {
         
-        // immediately return the trivial cases
+
+        //check for trivial case
         guard sequence.count > 1 else {
             return sequence
         }
@@ -352,8 +357,9 @@ public class Sorting {
         
         
         for primaryindex in 0..<output.count {
+
             
-            
+            //set indicies
             var minimum = primaryindex
             var secondaryindex = primaryindex + 1
             
@@ -384,7 +390,7 @@ public class Sorting {
     }
 
     
-    //MARK: - Other Sorting Algorithms
+    //MARK: - Other Sorting Algorithms - to be refactored
     
     
  	
@@ -393,6 +399,8 @@ public class Sorting {
 		// and moves values to the left or right of the pivot based on their value
 		// it works recursively so that either side will be eventually sorted back to the top
 
+ /*
+    
 		func quickSort(sequence:[Int]) -> [Int] {
             
             // immediately return the trivial cases
@@ -478,14 +486,22 @@ public class Sorting {
                 */
                 
 				if (leftCount < left.count && (rightCount >= right.count || left[leftCount] <= right[rightCount])) {
+ 
 					sortedArray.append(left[leftCount++])
+                    
 				} else if (rightCount < right.count && (leftCount >= left.count || right[rightCount] < left[leftCount])) {
+ 
 					sortedArray.append(right[rightCount++])
+                    
 				}
 			}
 			
 			return sortedArray
 		}
-	
+ 
+  */
     
+ 
 }
+
+

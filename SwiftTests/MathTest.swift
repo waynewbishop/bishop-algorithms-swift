@@ -40,7 +40,7 @@ class MathTest: XCTestCase {
         let positions: Int = 9
         
         //set the number of iterations
-        math.fib(positions)
+        math.fib(positions, sequence: [0, 1])
         
         
     }

@@ -19,9 +19,11 @@ class Math {
     func fib(n: Int) -> Array<Int>! {
         
         
-        if n < 2 {
+        //check trivial condition
+        guard n > 2 else {
             return nil
         }
+        
         
         //initialize the sequence
         var sequence: Array<Int> = [0, 1]
@@ -41,39 +43,23 @@ class Math {
         return sequence
         
     }
-
     
-    
-    func someFunction(parameterWithDefault: Int = 12) {
-        // function body goes here
-        // if no arguments are passed to the function call,
-        // value of parameterWithDefault is 12
-        
-        someFunction(9)
-    }
-    
-    
-    
-    /* 
-     TODO: Recursive functions with parameters are still allowed in Swift. It's
-     only the mutation of the variable within the method scope that isn't allowed.
-     Just fix by providing a secondary "mutated" output variable..
-    */
     
     
     //build fibonacci sequence to a specified position - recursive
-    func fib(n: Int, var sequence: Array<Int> = [0, 1]) {
-
-        someFunction()
-        someFunction(6)
+    func fib(n: Int, sequence: Array<Int> = [0, 1]) {
         
-        //initialize sequence
-        if n < 2 {
+
+        //check trivial condition
+        guard n > 2 else {
             return
         }
         
+
+        //mutated copy
+        var output = sequence
         
-        let i: Int = sequence.count
+        let i: Int = output.count
         
         
         //set base condition
@@ -81,12 +67,12 @@ class Math {
             return
         }
         
-        let results: Int = sequence[i - 1] + sequence[i - 2]
-        sequence.append(results)
+        let results: Int = output[i - 1] + output[i - 2]
+        output.append(results)
 
         
         //set iteration
-        fib(n, sequence: sequence)
+        fib(n, sequence: output)
     
     }
     
@@ -95,7 +81,9 @@ class Math {
     //build fibonacci sequence to a specified position - trailing closure
     func fib(n: Int, formula: Array<Int> -> Int) -> Array<Int>! {
                 
-        if n < 2 {
+
+        //check trivial condition
+        guard n > 2 else {
             return nil
         }
         
