@@ -36,7 +36,7 @@ public class Queue<T> {
             //cycle through the list of items
             while (current.next != nil) {
                 current = current.next
-                x++
+                x += 1
             }
             
             return x

@@ -44,9 +44,28 @@ class Math {
 
     
     
+    func someFunction(parameterWithDefault: Int = 12) {
+        // function body goes here
+        // if no arguments are passed to the function call,
+        // value of parameterWithDefault is 12
+        
+        someFunction(9)
+    }
+    
+    
+    
+    /* 
+     TODO: Recursive functions with parameters are still allowed in Swift. It's
+     only the mutation of the variable within the method scope that isn't allowed.
+     Just fix by providing a secondary "mutated" output variable..
+    */
+    
+    
     //build fibonacci sequence to a specified position - recursive
     func fib(n: Int, var sequence: Array<Int> = [0, 1]) {
 
+        someFunction()
+        someFunction(6)
         
         //initialize sequence
         if n < 2 {
@@ -68,9 +87,7 @@ class Math {
         
         //set iteration
         fib(n, sequence: sequence)
-        
     
-
     }
     
     
