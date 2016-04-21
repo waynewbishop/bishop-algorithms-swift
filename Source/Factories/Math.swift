@@ -10,7 +10,7 @@ import Foundation
 
 
 class Math {
-
+    
 
     //MARK: Fibonacci algorithms
     
@@ -47,7 +47,7 @@ class Math {
     
     
     //build fibonacci sequence to a specified position - recursive
-    func fib(n: Int, sequence: Array<Int> = [0, 1]) {
+    func fibRecursive(n: Int, sequence: Array<Int> = [0, 1]) {
         
 
         //check trivial condition
@@ -72,7 +72,7 @@ class Math {
 
         
         //set iteration
-        fib(n, sequence: output)
+        fibRecursive(n, sequence: output)
     
     }
     
