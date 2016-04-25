@@ -1,27 +1,15 @@
 //
-//  enums.swift
+//  EnumModel.swift
 //  SwiftStructures
 //
-//  Created by Wayne Bishop on 4/21/16.
+//  Created by Wayne Bishop on 4/25/16.
 //  Copyright © 2016 Arbutus Software Inc. All rights reserved.
 //
 
 import Foundation
 
 
-//define the enum used to model behavior
-
-indirect enum Algorithm {
-    
-    case Empty
-    case Sequence(Array<Int>)
-    case InsertionSort(Algorithm)
-    case BubbleSort(Algorithm)
-}
-
-
 class EnumModel {
-    
     
     
     func evaluate(algorithm: Algorithm) -> Array<Int>! {
@@ -30,7 +18,9 @@ class EnumModel {
         var output: Array<Int>!
         
         
+        //actions based on scenarios
         switch algorithm {
+          
             
         case .Empty:
             return nil
@@ -39,6 +29,10 @@ class EnumModel {
         case let .Sequence(numberList):
             return numberList
             
+
+        /*
+         scenario calls evaluate() recusivley and applies resulting data
+        */
             
         case let .InsertionSort(numberList):
             
@@ -78,18 +72,16 @@ class EnumModel {
             
             return output
             
-        
+            
         //future algorithm case
-        case let .BubbleSort(numberList):
-            output = evaluate(numberList)
+        case .BubbleSort:
+            print("subsequent sorting algorithm goes here..")
             return nil
             
         }
         
-
+        
     }
-
+    
     
 }
-
-

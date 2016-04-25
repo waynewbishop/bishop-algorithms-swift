@@ -16,7 +16,7 @@ class Math {
     
     
     //build fibonacci sequence to a specified position - default
-    func fib(n: Int) -> Array<Int>! {
+    func fibNormal(n: Int) -> Array<Int>! {
         
         
         //check trivial condition
