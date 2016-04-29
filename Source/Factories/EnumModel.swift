@@ -9,6 +9,8 @@
 import Foundation
 
 
+//sample implementation model for the recursive enum model "Algorithm"
+
 class EnumModel {
     
     

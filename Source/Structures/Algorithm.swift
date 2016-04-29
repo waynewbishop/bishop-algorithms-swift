@@ -1,5 +1,5 @@
 //
-//  enum.swift
+//  Algorithm.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 4/25/16.
@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 
 //recusive enum used to help build example Algorithm "models"
 
@@ -17,4 +18,3 @@ indirect enum Algorithm {
     case InsertionSort(Algorithm)
     case BubbleSort(Algorithm)
 }
-
