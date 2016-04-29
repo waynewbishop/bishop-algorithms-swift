@@ -10,7 +10,7 @@ import Foundation
 
 class Bloom<T> {
 
-    private var bloomset: Array<Bool!>
+    private var bloomset: Array<Bool>
     private var empty: Bool
 
     
@@ -19,22 +19,21 @@ class Bloom<T> {
     data structure to hold a limited number of items.
     */
 
-    private var capacity: Int = 100
+    private let capacity: Int = 100
 
     
     
     init() {
-        self.bloomset = Array<Bool!>(count: capacity, repeatedValue: nil)
+        self.bloomset = Array<Bool>(count: capacity, repeatedValue: false)
         self.empty = true
     }
     
 
     
     //initialize with items
-    init(items: Array<T>) {
+    convenience init(items: Array<T>) {
         
-        self.bloomset = Array<Bool!>(count: capacity, repeatedValue: nil)
-        self.empty = true
+        self.init()             // Use default initalizer to init an empty bloom
 
         for s in items {
             self.addElement(s)
@@ -78,7 +77,7 @@ class Bloom<T> {
         
 
         //gaurd against collision
-        if (bloomset[position.first] != nil) && (bloomset[position.second] != nil) && (bloomset[position.third] != nil) {
+        if (bloomset[position.first] && bloomset[position.second] && bloomset[position.third]) {
             print("word collision occurred..")
             return false
         }
@@ -96,7 +95,6 @@ class Bloom<T> {
             
             self.empty = false
             return true
-            
         }
         
         
@@ -122,25 +120,17 @@ class Bloom<T> {
 
         
         //check positions
-        if bloomset[position.first] == nil {
-            return false
-        }
         
-        else if bloomset[position.second] == nil {
-            return false
-        }
-            
-        else if bloomset[position.third] == nil {
-            return false
-        }
-        
-            
-        //all passed
-        else {
+        if bloomset[position.first] &&
+            bloomset[position.second] &&
+            bloomset[position.third] {
+                
+            //all passed
             return true
+                
+        } else {
+            return false
         }
-    
-        
     } //end function
 
     
