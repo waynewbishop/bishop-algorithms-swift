@@ -34,11 +34,36 @@ import XCTest
             
             //evaluate results
             let results = enumModel.evaluate(model)
-            print(results)
+            
+            XCTAssertTrue(self.IsSorted(results))
             
             
         }
         
+        
+        //MARK: Helper Function
+        
+        
+        func IsSorted<T: Comparable>(sequence: [T]) -> Bool {
+            
+            guard sequence.count > 1 else {
+                return true
+            }
+            
+            
+            //guaranteed that sequence has at least two elements
+            let rangeFromSecondElement = sequence.startIndex.successor()..<sequence.endIndex
+            
+            return !rangeFromSecondElement.contains { index in
+                sequence[index.predecessor()] > sequence[index]
+            }
+            
+        }
+        
+        
     }
+
+
+
 
 
