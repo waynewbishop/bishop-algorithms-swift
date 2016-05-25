@@ -1,7 +1,7 @@
 Swift Structures
 ====================
 
-This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called <a href="http://www.apple.com/swift" target="_blank">Swift</a>. While details of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.  
+This project provides a framework for commonly used data structures and algorithms written in a new iOS development language called <a href="http://www.swift.org" target="_blank">Swift</a>. While details of many algorithms exists on Wikipedia, these implementations are often written as pseudocode, or are expressed in C or C++. With Swift now officially released, its general syntax should be familiar enough for most programmers to understand.  
 
 
 Audience
@@ -15,27 +15,28 @@ Features
 
 The project features code-level examples for the following items:
 
-+ Linked Lists
-+ Binary Search
-+ Insertion Sort
-+ Bubble Sort
-+ Selection Sort
-+ Quick Sort
-+ Merge Sort
-+ Fibonacci Numbers
++ [Linked Lists](/Source/Factories/LinkedList.swift)
++ [Binary Search](/Source/Factories/Sorting.swift)
++ [Insertion Sort](/Source/Factories/Sorting.swift)
++ [Bubble Sort](/Source/Factories/Sorting.swift)
++ [Selection Sort](/Source/Factories/Sorting.swift)
++ [Quick Sort](/Source/Factories/Sorting.swift)
++ [Merge Sort](/Source/Factories/Sorting.swift)
++ [Fibonacci Numbers](/Source/Factories/Math.swift)
 + Generics
-+ Closures
-+ Hash Tables
-+ Bloom Filters
-+ Binary Search Trees
-+ Tree Balancing (Rotations)
-+ Tries
-+ Stacks & Queues
-+ Graphs
-+ Dijkstra's Shortest Path
-+ Heaps & Heapsort Operations
-+ Depth-First Search
-+ Breadth-First Search
++ [Closures](/SwiftTests/ClosureTest.swift)
++ [Hash Tables](/Source/Factories/HashTable.swift)
++ [Bloom Filters](/Source/Factories/Bloom.swift)
++ [Binary Search Trees](/Source/Structures/AVLTree.swift)
++ [Tree Balancing - Rotations](/SwiftTests/AVLTest.swift)
++ [Tries](/Source/Factories/Trie.swift)
++ [Stacks](/Source/Factories/Stack.swift)
++ [Queues](/Source/Factories/Queue.swift)
++ [Graphs](/Source/Factories/Graph.swift)
++ [Dijkstra's Shortest Path](/Source/Factories/Graph.swift)
++ [Heaps & Heapsort Operations](/Source/Factories/PathHeap.swift)
++ [Depth-First Search](/Source/Structures/AVLTree.swift)
++ [Breadth-First Search](/Source/Factories/Graph.swift)
 
 The Book
 --------------------
