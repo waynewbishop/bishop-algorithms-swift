@@ -99,14 +99,13 @@ extension String {
 extension Int {
     
     //iterates the closure body a specified number of times
-    func times(closure:(Int)->Void) {
+    func times(closure: (Int)->(Void)) {
         for i in 0..<self {
             closure(i)
         }
     }
     
 }
-
 
 
 extension Array {
