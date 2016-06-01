@@ -141,14 +141,14 @@ public class LinkedList<T: Equatable> {
         
         
         //check for nil conditions
-        if ((index < 0) || (index > (self.count - 1))) {
+        if ((index < 0) || (index > self.count)) {
             print("link index does not exist..")
+            return
         }
         
-        
-        //establish the head node
-        if (head.key == nil) {
-            head.key = key
+        // do normal append
+        if (index == self.count) {
+            self.addLink(key)
             return
         }
         
@@ -203,7 +203,7 @@ public class LinkedList<T: Equatable> {
             
             
         } //end while
-        
+
     }
 
     
@@ -227,6 +227,7 @@ public class LinkedList<T: Equatable> {
         //determine if the removal is at the head
         if (index == 0) {
             current = current?.next
+            current?.previous = nil
             head = current!
             return
         }
@@ -239,6 +240,7 @@ public class LinkedList<T: Equatable> {
                 
                 //redirect the trailer and next pointers
                 trailer!.next = current?.next
+                current?.next?.previous = trailer
                 current = nil
                 break
                 

@@ -111,6 +111,41 @@ class LinkedTest: XCTestCase {
         
     } //end function
     
+    
+    
+    
+    func testAddLinkAtIndex_Append() {
+        //create list and test pair
+        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let testPair: keyIndex = keyIndex(key: 4, index: linkedList.count)
+        
+        
+        linkedList.addLinkAtIndex(testPair.key, index: testPair.index)
+        linkedList.printAllKeys()
+        
+        
+        //retrieve the selected value
+        let current = linkedList.linkAtIndex(testPair.index) as LLNode!
+        
+        
+        if ((current == nil) || (current.key != testPair.key)) {
+            XCTFail("linked list addition at index failed..")
+        }
+        
+        
+        
+        linkedList.removeLinkAtIndex(testPair.index)
+        linkedList.printAllKeys()
+        
+        
+        
+        //retrieve new value at same position
+        let removed = linkedList.linkAtIndex(testPair.index)
+        if (removed != nil) {
+            XCTFail("linked list removal failed..")
+        }
+    }
+    
 
     
 
