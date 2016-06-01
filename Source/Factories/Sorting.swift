@@ -32,7 +32,7 @@ public class Sorting {
         
         
         //check bounds
-        if key > sequence[max] || key < sequence[min] {
+        guard key > sequence[min] || key < sequence[max] else {
             print("search value \(key) not found..")
             return false
         }
