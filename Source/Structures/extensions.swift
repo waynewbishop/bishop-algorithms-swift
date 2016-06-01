@@ -10,7 +10,7 @@ import Foundation
 
 
 extension String {
-  
+    
     
     //compute the length
     var length: Int {
@@ -42,28 +42,28 @@ extension String {
         return self.replace(" ", replacement: "")
     }
     
-
+    
     //insert a string at a specified index
     func insertSubstring(string:String, index:Int) -> String {
-        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count-index))
+        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count - index))
     }
-
+    
     
     //convert a string into a character array
     func characters() ->Array<Character>! {
         return Array(self.characters)
     }
-
+    
     
     //reverse string order
     func reverse() -> String! {
-                
+        
         /*
-        notes: While this operation would normally be done 'in-place', there are limited
-        functions for manipulating native Swift strings. Even there is a
-        native Array.reverse() method, this has been added as an example interview question.
-        */
-
+         notes: While this operation would normally be done 'in-place', there are limited
+         functions for manipulating native Swift strings. Even there is a
+         native Array.reverse() method, this has been added as an example interview question.
+         */
+        
         
         //convert to array
         var characters = self.characters()
@@ -88,7 +88,7 @@ extension String {
         return String(characters)
         
     }
-
+    
     
 }
 
@@ -99,12 +99,12 @@ extension String {
 extension Int {
     
     //iterates the closure body a specified number of times
-	func times(closure:(Int)->Void) {
-		for i in 0...self {
-			closure(i)
-		}
-	}
-	
+    func times(closure:(Int)->Void) {
+        for i in 0..<self {
+            closure(i)
+        }
+    }
+    
 }
 
 
@@ -113,20 +113,19 @@ extension Array {
     
     //returns the middle index
     func midIndex() -> Index {
-        return startIndex + (count / 2)
+        return self.startIndex + (self.count / 2)
     }
     
     
     //returns the first index
     func minIndex() -> Index {
-        return startIndex
+        return self.startIndex
     }
     
     
     //returns the max index
     func maxIndex() -> Index {
-        return endIndex - 1
+        return self.endIndex - 1
     }
     
 }
-
