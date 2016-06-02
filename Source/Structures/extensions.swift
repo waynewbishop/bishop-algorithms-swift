@@ -111,20 +111,21 @@ extension Int {
 extension Array {
     
     //returns the middle index
-    func midIndex() -> Index {
+    var midIndex: Index {
         return self.startIndex + (self.count / 2)
     }
     
     
     //returns the first index
-    func minIndex() -> Index {
+    var minIndex: Index {
         return self.startIndex
     }
     
     
     //returns the max index
-    func maxIndex() -> Index {
+    var maxIndex: Index {
         return self.endIndex - 1
     }
     
 }
+
