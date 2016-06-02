@@ -34,8 +34,8 @@ class StackTest: XCTestCase {
         
         let myStack: Stack<Int>! = self.buildStack()
         
-        if myStack.count == 0 {
-            XCTFail("no stack items available..")
+        if myStack.count == 0 || myStack == nil {
+            XCTFail("test failed: no stack items available..")
         }
 
         
@@ -46,7 +46,7 @@ class StackTest: XCTestCase {
         }
 
         
-        XCTAssertTrue(myStack.isEmpty(), "stack structured not emptied..")
+        XCTAssertTrue(myStack.isEmpty(), "test failed: stack structured not emptied..")
         
         
     }
@@ -58,15 +58,13 @@ class StackTest: XCTestCase {
     func buildStack() -> Stack<Int>! {
         
         let newStack: Stack<Int>! = Stack<Int>()
-        
-        //test stack instance
-        XCTAssertTrue(newStack.count == 0, "new stack instance not created..")
+        XCTAssertNotNil(newStack, "test failed: instance not initialized..")
         
         
         //build stack
         for s in numberList {
-            print("item: \(s) added..")
             newStack.push(s)
+            print("item: \(s) added..")
         }
         
 
@@ -74,12 +72,12 @@ class StackTest: XCTestCase {
         
         
         if newStack.count != numberList.count {
-            XCTFail("stack build failed..")
             return nil
         }
+        else {
+            return newStack
+        }
 
-        
-        return newStack
         
     }
     

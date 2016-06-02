@@ -10,11 +10,11 @@ import Foundation
 
 public class Queue<T> {
    
-    private var top: QNode<T>!
+    private var top: Node<T>!
     
     
     init() {
-      top = QNode<T>()
+      top = Node<T>()
     }
     
     
@@ -29,7 +29,7 @@ public class Queue<T> {
             
         else  {
             
-            var current: QNode<T> = top
+            var current: Node<T> = top
             var x: Int = 1
             
             
@@ -82,8 +82,8 @@ public class Queue<T> {
             return
         }
         
-        let childToUse: QNode<T> = QNode<T>()
-        var current: QNode<T> = top
+        let childToUse: Node<T> = Node<T>()
+        var current: Node<T> = top
     
         
         //cycle through the list
@@ -119,7 +119,7 @@ public class Queue<T> {
           top = nextitem
         }
         else {
-            top = QNode<T>()
+            top = Node<T>()
         }
     
     
