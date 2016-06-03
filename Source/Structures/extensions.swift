@@ -88,7 +88,6 @@ extension String {
         return String(characters)
         
     }
-
     
 }
 
@@ -110,6 +109,7 @@ extension Int {
 
 
 extension Array {
+    
     
     //returns the middle index
     func midIndex() -> Index {

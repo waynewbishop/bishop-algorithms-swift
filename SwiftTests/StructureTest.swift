@@ -36,16 +36,6 @@ class StructureTest: XCTestCase {
         XCTAssertNil(testLLNode.previous, "previous node propety not initialized..")
     }
 
-    
-    
-    func testQNode() {
-        let testQNode: QNode<Int> = QNode<Int>()
-        
-        XCTAssertNotNil(testQNode, "instance not initialized..")
-        XCTAssertNil(testQNode.key, "key not initialized..")
-        XCTAssertNil(testQNode.next, "next instance not initialized..")
-    }
-    
 
     
 //MARK: Graph objects

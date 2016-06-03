@@ -11,7 +11,7 @@ import Foundation
 
 class Stack<T> {
     
-    private var top: Node<T>! = Node<T>()
+    private var top: Node<T> = Node<T>()
     
     
     //the number of items
@@ -19,7 +19,7 @@ class Stack<T> {
         
         
         //return trivial case
-        guard top != nil else {
+        guard top.key != nil else {
           return 0
         }
                 
@@ -43,12 +43,6 @@ class Stack<T> {
     func push(key: T) {
         
         
-        //check for instance
-        if  top == nil {
-            top = Node<T>()
-        }
-        
-        
         //return trivial case
         guard top.key != nil else {
             top.key = key
@@ -63,38 +57,22 @@ class Stack<T> {
             
         //set new created item at top
         childToUse.next = top
-        top = childToUse
-        
+        top = childToUse        
 
     }
     
-    
-    
+
     //remove item from the stack
-    func pop() -> T! {
-     
+    func pop() {
         
-        //return trivial case
-        guard top != nil else {
-            return nil
-        }
-        
-        //retrieve next item
-        let stackitem: T! = top.key
-        
-        
-        //reset the top value
-        if let nextitem = top.next {
-            top = nextitem
+        if self.count > 1 {
+            top = top.next
         }
         else {
-            top = nil
+            top.key = nil
         }
         
-        return stackitem
-
     }
-    
     
     
     //retrieve the top most item

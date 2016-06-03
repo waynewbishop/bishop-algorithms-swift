@@ -234,60 +234,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/StackTest.swift"
-            timestampString = "486595475.010291"
+            timestampString = "486685097.010952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "testPopStack()"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "buildStack()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.StackTest.testPopStack () -&gt; ()"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/StackTest.swift"
-                  timestampString = "486595481.250585"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "581">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.StackTest.(testPopStack () -&gt; ()).(implicit closure #2)"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/StackTest.swift"
-                  timestampString = "486595481.25079"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "33">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.StackTest.(testPopStack () -&gt; ()).(implicit closure #3)"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/StackTest.swift"
-                  timestampString = "486595481.251179"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -296,13 +249,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTests/StackTest.swift"
-            timestampString = "486596059.55891"
+            filePath = "Source/Factories/Stack.swift"
+            timestampString = "486685097.010952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "buildStack()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "isEmpty()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

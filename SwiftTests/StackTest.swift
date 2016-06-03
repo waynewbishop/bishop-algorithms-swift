@@ -13,29 +13,41 @@ import XCTest
 
 class StackTest: XCTestCase {
 
-    
     var numberList: Array<Int>!
-    
     
     override func setUp() {
         super.setUp()
+        
         numberList = [8, 2, 10, 9, 7, 5]
     }
     
+
     
-    /*
-    notes: This test class mimics the basic functionality of adding and removing stack items.
-    The "times" closure expression used is a custom implementation and is not part
-    of the core library.
-    */
+    func testPushStack() {
+    
+        //retrieve stack from helper function
+        let myStack: Stack<Int> = self.buildStack()
+        
+        XCTAssertTrue(myStack.count == numberList.count, "test failed: stack count does not match..")
+        
+    }
+
     
 
+    /*
+     notes: This test class mimics the basic functionality of adding and removing stack items.
+     The "times" closure expression used is a custom implementation and is not part
+     of the core library.
+     */
+
+
     func testPopStack() {
+
+        let myStack: Stack<Int> = self.buildStack()
         
-        let myStack: Stack<Int>! = self.buildStack()
         
-        if myStack.count == 0 || myStack == nil {
-            XCTFail("test failed: no stack items available..")
+        if myStack.count == 0 {
+           XCTFail("test failed: no stack items available..")
         }
 
         
@@ -47,18 +59,18 @@ class StackTest: XCTestCase {
 
         
         XCTAssertTrue(myStack.isEmpty(), "test failed: stack structured not emptied..")
-        
-        
+                
     }
     
     
-    //MARK: helper methods
 
+    //MARK: helper methods
     
     func buildStack() -> Stack<Int>! {
         
-        let newStack: Stack<Int>! = Stack<Int>()
-        XCTAssertNotNil(newStack, "test failed: instance not initialized..")
+        let newStack: Stack<Int> = Stack<Int>()
+        
+        XCTAssertTrue(newStack.count == 0, "test failed: count not initialized..")
         
         
         //build stack
@@ -67,17 +79,11 @@ class StackTest: XCTestCase {
             print("item: \(s) added..")
         }
         
-
+        
         print("stack count is: \(newStack.count)")
         
         
-        if newStack.count != numberList.count {
-            return nil
-        }
-        else {
-            return newStack
-        }
-
+        return newStack
         
     }
     
