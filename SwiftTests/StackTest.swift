@@ -13,29 +13,41 @@ import XCTest
 
 class StackTest: XCTestCase {
 
-    
     var numberList: Array<Int>!
-    
     
     override func setUp() {
         super.setUp()
+        
         numberList = [8, 2, 10, 9, 7, 5]
     }
     
+
     
-    /*
-    notes: This test class mimics the basic functionality of adding and removing stack items.
-    The "times" closure expression used is a custom implementation and is not part
-    of the core library.
-    */
+    func testPushStack() {
+    
+        //retrieve stack from helper function
+        let myStack: Stack<Int> = self.buildStack()
+        
+        XCTAssertTrue(myStack.count == numberList.count, "test failed: stack count does not match..")
+        
+    }
+
     
 
+    /*
+     notes: This test class mimics the basic functionality of adding and removing stack items.
+     The "times" closure expression used is a custom implementation and is not part
+     of the core library.
+     */
+
+
     func testPopStack() {
+
+        let myStack: Stack<Int> = self.buildStack()
         
-        let myStack: Stack<Int>! = self.buildStack()
         
         if myStack.count == 0 {
-            XCTFail("no stack items available..")
+           XCTFail("test failed: no stack items available..")
         }
 
         
@@ -46,38 +58,30 @@ class StackTest: XCTestCase {
         }
 
         
-        XCTAssertTrue(myStack.isEmpty(), "stack structured not emptied..")
-        
-        
+        XCTAssertTrue(myStack.isEmpty(), "test failed: stack structured not emptied..")
+                
     }
     
     
-    //MARK: helper methods
 
+    //MARK: helper methods
     
     func buildStack() -> Stack<Int>! {
         
-        let newStack: Stack<Int>! = Stack<Int>()
+        let newStack: Stack<Int> = Stack<Int>()
         
-        //test stack instance
-        XCTAssertTrue(newStack.count == 0, "new stack instance not created..")
+        XCTAssertTrue(newStack.count == 0, "test failed: count not initialized..")
         
         
         //build stack
         for s in numberList {
-            print("item: \(s) added..")
             newStack.push(s)
+            print("item: \(s) added..")
         }
         
-
+        
         print("stack count is: \(newStack.count)")
         
-        
-        if newStack.count != numberList.count {
-            XCTFail("stack build failed..")
-            return nil
-        }
-
         
         return newStack
         

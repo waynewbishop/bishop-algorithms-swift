@@ -40,12 +40,12 @@
 		DAE0021D19C5677D0035F1A0 /* PathHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021619C5677D0035F1A0 /* PathHeap.swift */; };
 		DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021719C5677D0035F1A0 /* TrieNode.swift */; };
 		DAE0022719C567A40035F1A0 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022019C567A40035F1A0 /* Path.swift */; };
-		DAE0022819C567A40035F1A0 /* QNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022119C567A40035F1A0 /* QNode.swift */; };
 		DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022219C567A40035F1A0 /* LLNode.swift */; };
 		DAE0022A19C567A40035F1A0 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022319C567A40035F1A0 /* Vertex.swift */; };
 		DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022419C567A40035F1A0 /* Edge.swift */; };
 		DAE0022C19C567A40035F1A0 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022519C567A40035F1A0 /* AVLTree.swift */; };
 		DAE0022D19C567A40035F1A0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022619C567A40035F1A0 /* extensions.swift */; };
+		DAE82A5C1D00D78C004A5FAA /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE82A5B1D00D78C004A5FAA /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,12 +117,12 @@
 		DAE0021619C5677D0035F1A0 /* PathHeap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathHeap.swift; sourceTree = "<group>"; };
 		DAE0021719C5677D0035F1A0 /* TrieNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieNode.swift; sourceTree = "<group>"; };
 		DAE0022019C567A40035F1A0 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		DAE0022119C567A40035F1A0 /* QNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNode.swift; sourceTree = "<group>"; };
 		DAE0022219C567A40035F1A0 /* LLNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNode.swift; sourceTree = "<group>"; };
 		DAE0022319C567A40035F1A0 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		DAE0022419C567A40035F1A0 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		DAE0022519C567A40035F1A0 /* AVLTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		DAE0022619C567A40035F1A0 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		DAE82A5B1D00D78C004A5FAA /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +245,7 @@
 				DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */,
 				DAE0021719C5677D0035F1A0 /* TrieNode.swift */,
 				DAE0022019C567A40035F1A0 /* Path.swift */,
-				DAE0022119C567A40035F1A0 /* QNode.swift */,
+				DAE82A5B1D00D78C004A5FAA /* Node.swift */,
 				DAE0022219C567A40035F1A0 /* LLNode.swift */,
 				DAE0022319C567A40035F1A0 /* Vertex.swift */,
 				DAE0022419C567A40035F1A0 /* Edge.swift */,
@@ -362,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE0021919C5677D0035F1A0 /* Graph.swift in Sources */,
+				DAE82A5C1D00D78C004A5FAA /* Node.swift in Sources */,
 				DA64B0A81CCF0B5F007A8F08 /* Algorithm.swift in Sources */,
 				DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */,
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
@@ -383,7 +384,6 @@
 				DA20DEEA1BE2D95A0032A378 /* Math.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,
-				DAE0022819C567A40035F1A0 /* QNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

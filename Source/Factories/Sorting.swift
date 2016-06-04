@@ -26,9 +26,9 @@ public class Sorting {
         var result = false
         
         //establish indices - extensions
-        let min = sequence.minIndex()
-        let max = sequence.maxIndex()
-        let mid = sequence.midIndex()
+        let min = sequence.minIndex
+        let max = sequence.maxIndex
+        let mid = sequence.midIndex
         
         
         //check bounds

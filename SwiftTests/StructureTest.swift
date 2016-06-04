@@ -15,26 +15,31 @@ import XCTest
 class StructureTest: XCTestCase {
 
     
-    func testLLNode() {
-        let testNode: LLNode<Int> = LLNode<Int>()
-        
-        XCTAssertNotNil(testNode, "instance not initialized..")
-        XCTAssertNil(testNode.key, "key not initialized..")
-        XCTAssertNil(testNode.next, "next node propety not initialized..")
-        XCTAssertNil(testNode.previous, "previous node propety not initialized..")
-    }
-
+//MARK: Node objects
     
     
-    func testQNode() {
-        let testNode: QNode<Int> = QNode<Int>()
+    func testNode() {
+        let testNode = Node<Int>()
         
         XCTAssertNotNil(testNode, "instance not initialized..")
         XCTAssertNil(testNode.key, "key not initialized..")
         XCTAssertNil(testNode.next, "next instance not initialized..")
     }
     
+    
+    func testLLNode() {
+        let testLLNode: LLNode<Int> = LLNode<Int>()
+        
+        XCTAssertNotNil(testLLNode, "instance not initialized..")
+        XCTAssertNil(testLLNode.key, "key not initialized..")
+        XCTAssertNil(testLLNode.next, "next node propety not initialized..")
+        XCTAssertNil(testLLNode.previous, "previous node propety not initialized..")
+    }
 
+
+    
+//MARK: Graph objects
+    
 
     func testVertex() {
         
@@ -83,6 +88,7 @@ class StructureTest: XCTestCase {
         }
         
     }
+
 
     
     func testAVLTree() {
