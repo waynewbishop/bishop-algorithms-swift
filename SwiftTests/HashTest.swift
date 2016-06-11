@@ -54,9 +54,9 @@ class HashTest: XCTestCase {
     //find the word in the hash table
     func testFindWord() {
         
-        swiftTable.findWord("Frank", lastname: "Smith") //found in hash table
-        swiftTable.findWord("John", lastname: "Cervello") //not found (no collision)
-        swiftTable.findWord("Andrew", lastname: "Collins") //not found in hash table (collision detected)
+        XCTAssertTrue(swiftTable.findWord("Frank", lastname: "Smith"), "Frank Smith should be found") //found in hash table
+        XCTAssertFalse(swiftTable.findWord("John", lastname: "Cervello"), "John Cervello should NOT be found") //not found (no collision)
+        XCTAssertFalse(swiftTable.findWord("Andrew", lastname: "Collins"), "Andrew Collins should NOT be found") //not found in hash table (collision detected)
     }
 
     

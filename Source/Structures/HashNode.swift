@@ -10,8 +10,13 @@ import Foundation
 
 class HashNode {
     
-    var firstname: String!
-    var lastname: String!
-    var next: HashNode!
+    var firstname: String
+    var lastname: String
+    var next: HashNode?
+    
+    init(firstname: String, lastname: String) {
+        self.firstname = firstname
+        self.lastname = lastname
+    }
     
 }
