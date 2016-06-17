@@ -29,6 +29,7 @@ class TrieTest: XCTestCase {
         testTrie.addWord("Ballard")
         testTrie.addWord("Bat")
         testTrie.addWord("Bar")
+        testTrie.addWord("Cat")
     }
     
     
@@ -39,13 +40,23 @@ class TrieTest: XCTestCase {
     identified as a word.
     */
 
-    func testFindWithPrefix() {
-        
-        let wordList: Array<String>! = testTrie.findWord("Ba")
-        for word in wordList {
-            print("\(word) found in trie..")
+    func testPrintAllWords() {
+        let wordList = testTrie.fetchAllWords()
+        print("All Words:")
+        for (index, word) in  wordList.enumerate() {
+            print("\(index + 1) : \(word)")
         }
-        
+    }
+    
+    func testFindWithPrefix() {
+        let prefix = "Ba"
+        let wordList: Array<String>! = testTrie.findWord(prefix)
+        print("All Words with prefix : \(prefix)")
+        if wordList != nil {
+            for (index, word) in  wordList.enumerate() {
+                print("\(index + 1) : \(word)")
+            }
+        }
     }
 
     
@@ -55,12 +66,13 @@ class TrieTest: XCTestCase {
     */
     
     func testFindWithWord() {
-        
-        let wordList: Array<String>! = testTrie.findWord("Ball")
-        for word in wordList {
-            print("\(word) found in trie..")
+        let word = "Ball"
+        let wordList: Array<String>! = testTrie.findWord(word)
+        if wordList != nil {
+            print("Word: \(word) exists.")
+        } else {
+            print("Word: \(word) doesn't exists.")
         }
-        
     }
     
     
@@ -70,18 +82,11 @@ class TrieTest: XCTestCase {
         let keyword: String = "Barstool"
         let wordList: Array<String>! = testTrie.findWord(keyword)
         
-        
-        if (wordList == nil) {
-            print("keyword \(keyword) not found in trie..")
+        if wordList != nil {
+            print("Word: \(keyword) exists.")
+        } else {
+            print("Word: \(keyword) doesn't exists.")
         }
-        
-        else {
-            for word in wordList {
-                print("\(word) found in trie..")
-            }
-        }
-        
-
         
     } //end function
     

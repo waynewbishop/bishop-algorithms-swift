@@ -7,27 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0ED0BE1D0B02FD00D086B1 /* TrieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA81469E19ED831B004516F9 /* TrieTest.swift */; };
 		DA1A7D6B1B97A2080007BD2B /* Bloom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A7D6A1B97A2080007BD2B /* Bloom.swift */; };
 		DA20DEEA1BE2D95A0032A378 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEE91BE2D95A0032A378 /* Math.swift */; };
-		DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* MathTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
-		DA5171861B9888310091F94B /* BloomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5171851B9888310091F94B /* BloomTest.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
-		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
 		DA64B0A81CCF0B5F007A8F08 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */; };
-		DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4891B1CF50500D1B43F /* ClosureTest.swift */; };
-		DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C6319CA284100D2E177 /* StructureTest.swift */; };
-		DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */; };
-		DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA81469E19ED831B004516F9 /* TrieTest.swift */; };
 		DA8146A519ED905B004516F9 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8146A419ED905B004516F9 /* Trie.swift */; };
 		DA908DDA1A015FB400DD9864 /* HashNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA908DD91A015FB400DD9864 /* HashNode.swift */; };
 		DA908DDC1A0160A300DD9864 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA908DDB1A0160A300DD9864 /* HashTable.swift */; };
-		DA908DDE1A016A7700DD9864 /* HashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA908DDD1A016A7700DD9864 /* HashTest.swift */; };
-		DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */; };
-		DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */; };
-		DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AB19D1F86300C133C9 /* SortingTest.swift */; };
-		DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AD19D222E300C133C9 /* LinkedTest.swift */; };
-		DAD971B119D2232400C133C9 /* AVLTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971B019D2232400C133C9 /* AVLTest.swift */; };
 		DAE001DF19C564720035F1A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE001DE19C564720035F1A0 /* AppDelegate.swift */; };
 		DAE001E119C564720035F1A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE001E019C564720035F1A0 /* ViewController.swift */; };
 		DAE001E419C564720035F1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE001E219C564720035F1A0 /* Main.storyboard */; };
@@ -391,19 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */,
-				DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */,
-				DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */,
-				DA5171861B9888310091F94B /* BloomTest.swift in Sources */,
-				DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */,
-				DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */,
-				DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */,
-				DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */,
-				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
-				DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */,
-				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,
-				DA908DDE1A016A7700DD9864 /* HashTest.swift in Sources */,
-				DAD971B119D2232400C133C9 /* AVLTest.swift in Sources */,
+				9E0ED0BE1D0B02FD00D086B1 /* TrieTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
