@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+
+struct BayesEvent {
+
+    var features: Array<BayesResult>
+    var outcome: BayesResult!
+    
+    
+    init() {
+        self.features = Array<BayesResult>()
+    }
+    
+}

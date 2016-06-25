@@ -8,28 +8,46 @@
 
 import XCTest
 
+@testable import SwiftStructures
+
+
 class BayesTest: XCTestCase {
+
+    
+    //create classifier
+    var classifier = NaiveBayes()
+    
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    
+    //create a medical model..
+    func testBayesMedicalModel() {
+        
+        var oneResults = Array<BayesResult>()
+        
+        
+        oneResults.append(buildFeature("Chills", label: true))
+        oneResults.append(buildFeature("Runny Nose", label: false))
+        
+
+        //establish outcome
+        let oneOutcome: BayesResult = buildFeature("Flu", label: false)
+        
+        
+        var oneTrial = classifier.train(oneResults, outcome: oneOutcome)
+        
+        
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    //helper function
+    func buildFeature(feature: String, label: Bool) -> BayesResult {
+        
+        let newResult = BayesResult(feature: feature, label: label)
+        return newResult
     }
     
 }

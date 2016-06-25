@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+
+struct BayesResult {
+    
+    var feature: String
+    var label: Bool
+    
+    
+    init(feature: String, label: Bool) {
+        
+        self.feature = feature
+        self.label = label
+    }
+    
+}

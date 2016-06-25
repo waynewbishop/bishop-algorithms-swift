@@ -21,28 +21,40 @@ class StackTest: XCTestCase {
         numberList = [8, 2, 10, 9, 7, 5]
     }
     
-
     
+    
+    //provides self-contained example of push function - essay example
     func testPushStack() {
-    
-        //retrieve stack from helper function
-        let myStack: Stack<Int> = self.buildStack()
+        
+        
+        let myStack: Stack<Int> = Stack()
+        XCTAssertTrue(myStack.count == 0, "test failed: count not initialized..")
+        
+        
+        //build stack
+        for s in numberList {
+            myStack.push(s)
+            print("item: \(s) added..")
+        }
+
         
         XCTAssertTrue(myStack.count == numberList.count, "test failed: stack count does not match..")
         
     }
-
+    
     
 
     /*
      notes: This test class mimics the basic functionality of adding and removing stack items.
-     The "times" closure expression used is a custom implementation and is not part
+     The "times" closure expression used is a custom Int extension and is not part
      of the core library.
      */
 
 
     func testPopStack() {
-
+        
+        
+        //build stack - helper function
         let myStack: Stack<Int> = self.buildStack()
         
         
@@ -56,8 +68,8 @@ class StackTest: XCTestCase {
             print("stack count: \(myStack.count)")
             myStack.pop()
         }
-
         
+ 
         XCTAssertTrue(myStack.isEmpty(), "test failed: stack structured not emptied..")
                 
     }
@@ -69,7 +81,6 @@ class StackTest: XCTestCase {
     func buildStack() -> Stack<Int>! {
         
         let newStack: Stack<Int> = Stack<Int>()
-        
         XCTAssertTrue(newStack.count == 0, "test failed: count not initialized..")
         
         

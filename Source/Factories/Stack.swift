@@ -11,10 +11,14 @@ import Foundation
 
 class Stack<T> {
     
-    private var top: Node<T> = Node<T>()
+    private var top: Node<T>
+    
+    init() {
+        top = Node<T>()
+    }
     
     
-    //the number of items
+    //the number of items - O(n)
     var count: Int {
         
         
