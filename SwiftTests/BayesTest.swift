@@ -14,40 +14,48 @@ import XCTest
 class BayesTest: XCTestCase {
 
     
-    //create classifier
+    //establish classifier
     var classifier = NaiveBayes()
+    
+    var flu, chills, runnyNose, headache, fever: BayesFeature!
     
     
     override func setUp() {
         super.setUp()
-    }
-    
-    
-    //create a medical model..
-    func testBayesMedicalModel() {
-        
-        var oneResults = Array<BayesResult>()
-        
-        
-        oneResults.append(buildFeature("Chills", label: true))
-        oneResults.append(buildFeature("Runny Nose", label: false))
-        
 
-        //establish outcome
-        let oneOutcome: BayesResult = buildFeature("Flu", label: false)
+        
+        chills = BayesFeature("Chills")
+        runnyNose = BayesFeature("Runny Nose")
+        headache = BayesFeature("Headache")
+        fever = BayesFeature("Fever")
+
+        
+        //establish outcome feature
+        flu = BayesFeature("Flu")
+        flu.isOutcome = true
+        
+    }
+
+    
+    
+    func testBayesModel() {
+
+        var bayesEvent = Array<BayesResult>()
+        
+        //chills result
+        var chillsResult = BayesResult(feature: chills)
+        
+        //TODO: This needs to be merged into its own line..
+        chillsResult.labels.append(true)
+        
+        bayesEvent.append(chillsResult)
         
         
-        var oneTrial = classifier.train(oneResults, outcome: oneOutcome)
+        //TODO: Repeat process for every
+    
         
         
     }
     
-    
-    //helper function
-    func buildFeature(feature: String, label: Bool) -> BayesResult {
-        
-        let newResult = BayesResult(feature: feature, label: label)
-        return newResult
-    }
-    
+ 
 }

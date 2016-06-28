@@ -12,6 +12,7 @@
 		DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* MathTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA5171861B9888310091F94B /* BloomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5171851B9888310091F94B /* BloomTest.swift */; };
+		DA58353D1D21EFA700803407 /* BayesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58353C1D21EFA700803407 /* BayesFeature.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
 		DA64B0A81CCF0B5F007A8F08 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */; };
@@ -25,7 +26,6 @@
 		DA908DDE1A016A7700DD9864 /* HashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA908DDD1A016A7700DD9864 /* HashTest.swift */; };
 		DAA426201D1DFE3E00C6208F /* NaiveBayes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */; };
 		DAA426221D1E251700C6208F /* BayesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA426211D1E251700C6208F /* BayesResult.swift */; };
-		DAA426241D1E26A900C6208F /* BayesEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA426231D1E26A900C6208F /* BayesEvent.swift */; };
 		DAA426281D1EEA2800C6208F /* BayesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA426271D1EEA2800C6208F /* BayesTest.swift */; };
 		DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */; };
 		DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */; };
@@ -88,6 +88,7 @@
 		DA20DEE91BE2D95A0032A378 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* MathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTest.swift; sourceTree = "<group>"; };
 		DA5171851B9888310091F94B /* BloomTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomTest.swift; sourceTree = "<group>"; };
+		DA58353C1D21EFA700803407 /* BayesFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesFeature.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		DA908DDD1A016A7700DD9864 /* HashTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTest.swift; sourceTree = "<group>"; };
 		DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveBayes.swift; sourceTree = "<group>"; };
 		DAA426211D1E251700C6208F /* BayesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesResult.swift; sourceTree = "<group>"; };
-		DAA426231D1E26A900C6208F /* BayesEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesEvent.swift; sourceTree = "<group>"; };
 		DAA426271D1EEA2800C6208F /* BayesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesTest.swift; sourceTree = "<group>"; };
 		DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
 		DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 		DAE0021F19C567870035F1A0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
-				DAA426231D1E26A900C6208F /* BayesEvent.swift */,
+				DA58353C1D21EFA700803407 /* BayesFeature.swift */,
 				DAA426211D1E251700C6208F /* BayesResult.swift */,
 				DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */,
 				DAE0021719C5677D0035F1A0 /* TrieNode.swift */,
@@ -382,7 +382,6 @@
 				DAE0021B19C5677D0035F1A0 /* Queue.swift in Sources */,
 				DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */,
 				DA908DDA1A015FB400DD9864 /* HashNode.swift in Sources */,
-				DAA426241D1E26A900C6208F /* BayesEvent.swift in Sources */,
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */,
 				DAA426201D1DFE3E00C6208F /* NaiveBayes.swift in Sources */,
@@ -397,6 +396,7 @@
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,
 				DA8146A519ED905B004516F9 /* Trie.swift in Sources */,
 				DA20DEEA1BE2D95A0032A378 /* Math.swift in Sources */,
+				DA58353D1D21EFA700803407 /* BayesFeature.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,
 			);

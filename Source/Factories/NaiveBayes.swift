@@ -10,47 +10,28 @@ import Foundation
 
 
 class NaiveBayes {
+    
+    var bayesEvents = Array<BayesResult>()
 
-
-    //refers to sample space
-    var space: Array<BayesEvent>
     
-    
-    init() {
-        space = Array<BayesEvent>()
-    }
-    
-    
-    //create new event
-    func train(features: Array<BayesResult>, outcome: BayesResult) {
+    //add results to event list
+    func train(event: Array<BayesResult>) {
 
         
-        var bayesEvent: BayesEvent = BayesEvent()
-        
-        
-        //check for trivial case
-        guard features.count != 0 else {
+        //trivial case
+        guard event.count != 0 else {
             return
         }
+        
+        
+        //TODO: //calculate probabilities for all results as they compare to the outcome
+        
+    }
+    
+    
+    //estimate outcome based on results
+    func predict(event: Array<BayesResult>) {
+        
+    }
 
-        
-        bayesEvent.features = features
-        bayesEvent.outcome = outcome
-        
-        
-        //add to proability space
-        space.append(bayesEvent)
-        
-    }
-    
-        
-    //predict based on specific result
-    func predict(features: Array<BayesResult>) -> BayesResult! {
-        
-        //TODO: pull all events from probability space
-        
-        return nil
-    }
-    
-    
 }
