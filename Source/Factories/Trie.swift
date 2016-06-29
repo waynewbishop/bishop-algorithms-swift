@@ -34,8 +34,7 @@ public class Trie {
         while (keyword.length != current.level) {
             
             var childToUse: TrieNode!
-            let searchKey: String = keyword.substringToIndex(current.level + 1)
-            
+            let searchKey: String = keyword.substring(to: current.level + 1)
             
             print("looking for prefix: \(searchKey)..")
             
@@ -101,8 +100,7 @@ public class Trie {
         while(keyword.length != current.level) {
             
             var childToUse: TrieNode!
-            let searchKey: String = keyword.substringToIndex(current.level + 1)
-            
+            let searchKey: String = keyword.substring(to: current.level + 1)
             
             //print("current has \(current.children.count) children..")
             

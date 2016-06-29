@@ -50,7 +50,7 @@ public class LinkedList<T: Equatable> {
     
     
     //append a new item to a linked list
-    func addLink(key: T) {
+    func addLink(withKey key: T) {
         
         
         //establish the head node
@@ -304,7 +304,7 @@ public class LinkedList<T: Equatable> {
     
     
     //filter list content - higher order function
-    func filter(formula: LLNode<T> -> Bool) -> LinkedList<T>! {
+    func filter(formula: (LLNode<T>) -> Bool) -> LinkedList<T>! {
         
         
         //check for instance
@@ -321,7 +321,7 @@ public class LinkedList<T: Equatable> {
             
             //filter based on formula
             if formula(current) == true {
-                results.addLink(current.key)
+                results.addLink(withKey: current.key)
             }
             
             
@@ -336,7 +336,7 @@ public class LinkedList<T: Equatable> {
     
     
     //map list content - higher order function
-    func map(formula: LLNode<T> -> T) -> LinkedList<T>! {
+    func map(formula: (LLNode<T>) -> T) -> LinkedList<T>! {
         
         
         //check for instance
@@ -357,7 +357,7 @@ public class LinkedList<T: Equatable> {
             
             //add non-nil entries
             if newKey != nil {
-                results.addLink(newKey)
+                results.addLink(withKey: newKey)
             }
             
             

@@ -21,7 +21,7 @@ public class Sorting {
     */
     
     
-    func binarySearch(sequence: Array<Int>, key: Int) -> Bool {
+    func binarySearch(_ sequence: Array<Int>, key: Int) -> Bool {
 
         var result = false
         
@@ -123,8 +123,8 @@ public class Sorting {
                 if key < output[secondaryindex] {
                     
                     //move into correct position
-                    output.removeAtIndex(secondaryindex + 1)
-                    output.insert(key, atIndex: secondaryindex)
+                    output.remove(at: secondaryindex + 1)
+                    output.insert(key, at: secondaryindex)
                     
                 }
                 
@@ -170,8 +170,8 @@ public class Sorting {
                 if key < output[secondaryindex] {
                     
                     //move into correct position
-                    output.removeAtIndex(secondaryindex + 1)
-                    output.insert(key, atIndex: secondaryindex)
+                    output.remove(at: secondaryindex + 1)
+                    output.insert(key, at: secondaryindex)
                     
                 }
                 

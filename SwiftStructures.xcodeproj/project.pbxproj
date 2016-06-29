@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA1A7D6B1B97A2080007BD2B /* Bloom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A7D6A1B97A2080007BD2B /* Bloom.swift */; };
 		DA20DEEA1BE2D95A0032A378 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEE91BE2D95A0032A378 /* Math.swift */; };
 		DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* MathTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
-		DA5171861B9888310091F94B /* BloomTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5171851B9888310091F94B /* BloomTest.swift */; };
 		DA58353D1D21EFA700803407 /* BayesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58353C1D21EFA700803407 /* BayesFeature.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -84,10 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA1A7D6A1B97A2080007BD2B /* Bloom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bloom.swift; sourceTree = "<group>"; };
 		DA20DEE91BE2D95A0032A378 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* MathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTest.swift; sourceTree = "<group>"; };
-		DA5171851B9888310091F94B /* BloomTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomTest.swift; sourceTree = "<group>"; };
 		DA58353C1D21EFA700803407 /* BayesFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesFeature.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
@@ -198,7 +194,6 @@
 				DA64B09F1CCEB90E007A8F08 /* enumTest.swift */,
 				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,
 				DA20DEEB1BE2DAC90032A378 /* MathTest.swift */,
-				DA5171851B9888310091F94B /* BloomTest.swift */,
 				DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */,
 				DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */,
 				DA66A4891B1CF50500D1B43F /* ClosureTest.swift */,
@@ -243,7 +238,6 @@
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DA908DDB1A0160A300DD9864 /* HashTable.swift */,
-				DA1A7D6A1B97A2080007BD2B /* Bloom.swift */,
 				DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */,
 			);
 			path = Factories;
@@ -385,7 +379,6 @@
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */,
 				DAA426201D1DFE3E00C6208F /* NaiveBayes.swift in Sources */,
-				DA1A7D6B1B97A2080007BD2B /* Bloom.swift in Sources */,
 				DAE0021D19C5677D0035F1A0 /* PathHeap.swift in Sources */,
 				DAE0022A19C567A40035F1A0 /* Vertex.swift in Sources */,
 				DAE0022C19C567A40035F1A0 /* AVLTree.swift in Sources */,
@@ -409,7 +402,6 @@
 				DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */,
 				DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */,
 				DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */,
-				DA5171861B9888310091F94B /* BloomTest.swift in Sources */,
 				DAA426281D1EEA2800C6208F /* BayesTest.swift in Sources */,
 				DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */,
 				DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */,

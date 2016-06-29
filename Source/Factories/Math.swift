@@ -47,7 +47,7 @@ class Math {
     
     
     //build fibonacci sequence to a specified position - recursive
-    func fibRecursive(n: Int, sequence: Array<Int> = [0, 1]) {
+    func fibRecursive(_ n: Int, sequence: Array<Int> = [0, 1]) {
         
 
         //check trivial condition
@@ -79,7 +79,7 @@ class Math {
     
     
     //build fibonacci sequence to a specified position - trailing closure
-    func fib(n: Int, formula: Array<Int> -> Int) -> Array<Int>! {
+    func fib(n: Int, formula: (Array<Int>) -> Int) -> Array<Int>! {
                 
 
         //check trivial condition

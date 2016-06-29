@@ -93,12 +93,12 @@ public class AVLTree<T: Comparable> {
             }
             
             //recalculate node height for hierarchy
-            self.setNodeHeight()
+            _ = self.setNodeHeight()
             print("traversing right side. node \(self.key!) with height: \(self.height)...")
             
             
             //check AVL property
-            self.isValidAVLTree()
+           _ = self.isValidAVLTree()
             
             
             
@@ -123,7 +123,7 @@ public class AVLTree<T: Comparable> {
     
     
     //retrieve the height of a node
-    func getNodeHeight(aNode: AVLTree!) -> Int {
+    func getNodeHeight(_ aNode: AVLTree!) -> Int {
         
         if (aNode == nil) {
             return -1
@@ -279,11 +279,11 @@ public class AVLTree<T: Comparable> {
     
     
     //use dfs with trailing closure to update all values
-    func traverse(formula: AVLTree<T> -> T) {
+    func traverse(withClosure formula: (AVLTree<T>) -> T) {
         
         
-        //check for a nil condition
-        if  self.key == nil {
+        //check for trivial condition
+        guard self.key != nil else {
             print("no key provided..")
             return
         }
@@ -291,7 +291,7 @@ public class AVLTree<T: Comparable> {
         
         //process the left side
         if self.left != nil {
-            left?.traverse(formula)
+            left?.traverse(withClosure: formula)
         }
     
         
@@ -305,7 +305,7 @@ public class AVLTree<T: Comparable> {
         
         //process the right side
         if self.right != nil {
-            right?.traverse(formula)
+            right?.traverse(withClosure: formula)
         }
         
         
@@ -316,7 +316,8 @@ public class AVLTree<T: Comparable> {
     //regular dfs traversal
     func traverse() {
 
-        //check for nil condition
+
+        //check for trivial condition
         guard self.key != nil else {
             print("no key provided..")
             return
