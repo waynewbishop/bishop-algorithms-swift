@@ -108,7 +108,7 @@ public class LinkedList<T: Equatable> {
     
     
     //obtain link at a specific index
-    func linkAtIndex(index: Int) ->LLNode<T>! {
+    func getElement(at index: Int) ->LLNode<T>! {
         
         //check for nil conditions
         if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
@@ -137,7 +137,7 @@ public class LinkedList<T: Equatable> {
     
     
     //insert at specific index
-    func addLinkAtIndex(key: T, index: Int) {
+    func insert(_ key: T, at index: Int) {
         
         
         //check for nil conditions
@@ -210,7 +210,7 @@ public class LinkedList<T: Equatable> {
     
     
     //remove at specific index
-    func removeLinkAtIndex(index: Int) {
+    func remove(at index: Int) {
         
         //check for nil conditions
         if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
@@ -304,7 +304,7 @@ public class LinkedList<T: Equatable> {
     
     
     //filter list content - higher order function
-    func filter(formula: (LLNode<T>) -> Bool) -> LinkedList<T>! {
+    func filter(_ formula: (LLNode<T>) -> Bool) -> LinkedList<T>! {
         
         
         //check for instance
@@ -336,7 +336,7 @@ public class LinkedList<T: Equatable> {
     
     
     //map list content - higher order function
-    func map(formula: (LLNode<T>) -> T) -> LinkedList<T>! {
+    func map(_ formula: (LLNode<T>) -> T) -> LinkedList<T>! {
         
         
         //check for instance

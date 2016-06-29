@@ -39,7 +39,7 @@ class QueueTest: XCTestCase {
         //deQueue list items..
         numberList.count.times { (s: Int) -> Void in
             print("the queued item is \(q.peek() as Int!)")
-            q.deQueue()
+            _ = q.deQueue()
         }
 
         

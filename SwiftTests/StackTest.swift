@@ -33,7 +33,7 @@ class StackTest: XCTestCase {
         
         //build stack
         for s in numberList {
-            myStack.push(s)
+            myStack.push(withkey: s)
             print("item: \(s) added..")
         }
 
@@ -86,7 +86,7 @@ class StackTest: XCTestCase {
         
         //build stack
         for s in numberList {
-            newStack.push(s)
+            newStack.push(withkey: s)
             print("item: \(s) added..")
         }
         
