@@ -26,7 +26,6 @@ The project features code-level examples for the following items:
 + Generics
 + [Closures](/SwiftTests/ClosureTest.swift)
 + [Hash Tables](/Source/Factories/HashTable.swift)
-+ [Bloom Filters](/Source/Factories/Bloom.swift)
 + [Binary Search Trees](/Source/Structures/AVLTree.swift)
 + [Tree Balancing - Rotations](/SwiftTests/AVLTest.swift)
 + [Tries](/Source/Factories/Trie.swift)
