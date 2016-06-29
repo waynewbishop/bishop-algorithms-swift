@@ -24,7 +24,7 @@ public class SwiftGraph {
     
     
     //create a new vertex
-    func addVertex(key key: String) -> Vertex {
+    func addVertex(_ key: String) -> Vertex {
         
         
         //set the key
@@ -42,7 +42,7 @@ public class SwiftGraph {
     
     
     //add edge to source vertex
-    func addEdge(source source: Vertex, neighbor: Vertex, weight: Int) {
+    func addEdge(_ source: Vertex, neighbor: Vertex, weight: Int) {
         
         
         //create a new edge
@@ -196,7 +196,9 @@ public class SwiftGraph {
             
             
             //remove the bestPath from the frontier
-            frontier.removeAtIndex(pathIndex)
+            //frontier.removeAtIndex(pathIndex) - Swift2
+            frontier.remove(at: pathIndex)
+            
             
             
         } //end while
@@ -369,9 +371,12 @@ public class SwiftGraph {
             //traverse the next queued vertex
             let vitem = graphQueue.deQueue() as Vertex!
             
+            guard vitem != nil else {
+                return
+            }
             
             //add unvisited vertices to the queue
-            for e in vitem.neighbors {
+            for e in vitem!.neighbors {
                 if e.neighbor.visited == false {
                     print("adding vertex: \(e.neighbor.key!) to queue..")
                     graphQueue.enQueue(e.neighbor)
@@ -379,8 +384,8 @@ public class SwiftGraph {
             }
             
             
-            vitem.visited = true
-            print("traversed vertex: \(vitem.key!)..")
+            vitem!.visited = true
+            print("traversed vertex: \(vitem!.key!)..")
             
             
         } //end while
@@ -394,7 +399,7 @@ public class SwiftGraph {
     
     
     //use bfs with trailing closure to update all values
-    func update(startingv: Vertex, formula:(Vertex -> Bool)) {
+    func update(startingv: Vertex, formula:((Vertex) -> Bool)) {
         
         
         //establish a new queue
@@ -408,11 +413,14 @@ public class SwiftGraph {
         while !graphQueue.isEmpty() {
             
             //traverse the next queued vertex
-            let vitem = graphQueue.deQueue() as Vertex!
+            let vitem = graphQueue.deQueue() as Vertex!            
             
+            guard vitem != nil else {
+                return
+            }
             
             //add unvisited vertices to the queue
-            for e in vitem.neighbors {
+            for e in vitem!.neighbors {
                 if e.neighbor.visited == false {
                     print("adding vertex: \(e.neighbor.key!) to queue..")
                     graphQueue.enQueue(e.neighbor)
@@ -421,14 +429,14 @@ public class SwiftGraph {
             
             
             //apply formula..
-            if formula(vitem) == false {
-                print("formula unable to update: \(vitem.key)")
+            if formula(vitem!) == false {
+                print("formula unable to update: \(vitem!.key)")
             }
             else {
-                print("traversed vertex: \(vitem.key!)..")
+                print("traversed vertex: \(vitem!.key!)..")
             }
             
-            vitem.visited = true
+            vitem!.visited = true
             
             
         } //end while

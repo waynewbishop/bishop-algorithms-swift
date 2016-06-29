@@ -42,14 +42,14 @@ public class PathHeap {
     func deQueue() {
         
         if (heap.count > 0) {
-            heap.removeAtIndex(0)
+            heap.remove(at: 0)
         }
         
     }
     
 
     //sort shortest paths into a min-heap (heapify)
-    func enQueue(key: Path) {
+    func enQueue(_ key: Path) {
         
 
         heap.append(key)

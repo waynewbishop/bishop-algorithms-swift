@@ -36,7 +36,7 @@ public class AVLTree<T: Comparable> {
     
     
     //position item based on its value
-    func addNode(key: T) {
+    func addNode(_ key: T) {
         
         //check for the root node
         if (self.key == nil) {
@@ -63,12 +63,12 @@ public class AVLTree<T: Comparable> {
             }
             
             //recalculate node height for hierarchy
-            self.setNodeHeight()
+            _ = self.setNodeHeight()
             print("traversing left side. node \(self.key!) with height: \(self.height)...")
 
 
             //check AVL property
-            self.isValidAVLTree()
+           _ = self.isValidAVLTree()
 
             
             

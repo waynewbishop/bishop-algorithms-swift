@@ -39,7 +39,7 @@ class EnumModel {
         case let .InsertionSort(numberList):
             
             //evaluate sequence
-            output = evaluate(numberList)
+            output = evaluate(algorithm: numberList)
             
             
             guard output.count > 2 else {
@@ -61,9 +61,8 @@ class EnumModel {
                     if key < output[secondaryindex] {
                         
                         //move into correct position
-                        output.removeAtIndex(secondaryindex + 1)
-                        output.insert(key, atIndex: secondaryindex)
-                        
+                        output.remove(at: secondaryindex + 1)
+                        output.insert(key, at: secondaryindex)
                     }
                     
                     secondaryindex -= 1

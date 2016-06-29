@@ -11,18 +11,17 @@ import Foundation
 
 class HashTable {
     
-    private var buckets: Array<HashNode!>
+    private var buckets: Array<HashNode?>
     
     
-    //initialize the buckets with nil values
+    //initialize buckets with nil values
     init(capacity: Int) {
-        self.buckets = Array<HashNode!>(count: capacity, repeatedValue:nil)
-        
+        self.buckets = Array<HashNode?>(repeatElement(nil, count: capacity))
     }
 
     
     //add the key using the specified hash
-    func addWord(firstname: String, lastname: String) {
+    func addWord(_ firstname: String, lastname: String) {
         
         var hashindex: Int!
         var fullname: String!
@@ -117,7 +116,7 @@ class HashTable {
     
     
    //return the hash value to be used
-   func createHash(fullname: String) -> Int! {
+   func createHash(_ fullname: String) -> Int! {
         
         var remainder: Int = 0
         var divisor: Int = 0

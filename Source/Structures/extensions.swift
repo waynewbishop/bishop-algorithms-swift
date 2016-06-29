@@ -20,7 +20,10 @@ extension String {
     
     //returns characters up to a specified index
     func substringToIndex(to: Int) -> String {
-        return self.substringToIndex(self.startIndex.advancedBy(to))
+        
+        //define the range
+        let range = self.index(self.startIndex, offsetBy: to)
+        return self.substring(to: range)
     }
     
     
@@ -32,14 +35,14 @@ extension String {
     
     
     //replace string content
-    func replace(string:String, replacement:String) -> String {
-        return self.stringByReplacingOccurrencesOfString(string, withString: replacement)
+    func replace(element:String, replacement:String) -> String {
+        return self.replacingOccurrences(of: element, with: replacement)
     }
     
     
     //removes empty string content
     func removeWhitespace() -> String {
-        return self.replace(" ", replacement: "")
+        return self.replace(element: " ", replacement: "")
     }
     
 

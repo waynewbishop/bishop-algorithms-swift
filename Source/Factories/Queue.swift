@@ -73,7 +73,7 @@ public class Queue<T> {
 
     
     //enqueue the specified object
-    func enQueue(key: T) {
+    func enQueue(_ key: T) {
         
         
         //check top node
