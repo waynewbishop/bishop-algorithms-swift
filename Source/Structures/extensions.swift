@@ -18,19 +18,12 @@ extension String {
     }
     
     
-    //returns characters up to a specified index
-    func substringToIndex(to: Int) -> String {
+    //returns characters up to a specified integer index
+    func substring(to: Int) -> String {
         
         //define the range
         let range = self.index(self.startIndex, offsetBy: to)
         return self.substring(to: range)
-    }
-    
-    
-    
-    //return a character at a specific index
-    func stringAtIndex(position: Int) -> String {
-        return String(Array(self.characters)[position])
     }
     
     
@@ -41,19 +34,13 @@ extension String {
     
     
     //removes empty string content
-    func removeWhitespace() -> String {
+    func removingWhitespace() -> String {
         return self.replace(element: " ", replacement: "")
     }
     
-
-    //insert a string at a specified index
-    func insertSubstring(string:String, index:Int) -> String {
-        return  String(self.characters.prefix(index)) + string + String(self.characters.suffix(self.characters.count-index))
-    }
-
     
     //convert a string into a character array
-    func characters() ->Array<Character>! {
+    func characters() ->Array<Character> {
         return Array(self.characters)
     }
 
