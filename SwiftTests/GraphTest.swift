@@ -122,7 +122,7 @@ class GraphTest: XCTestCase {
         As a result, no return type is required. Also note the trailing closure syntax.
         */
 
-        testGraph.traverse(vertexA) { (inout node: Vertex) -> () in
+        testGraph.traverse(vertexA) { ( node: inout Vertex) -> () in
             
             node.visited = true
             print("traversed vertex: \(node.key!)..")
@@ -135,7 +135,7 @@ class GraphTest: XCTestCase {
 
     
     //closure function passed as parameter
-    func traverseFormula(inout node: Vertex) -> () {
+    func traverseFormula( node: inout Vertex) -> () {
         
         /*
         notes: the inout parameter is passed by reference. 

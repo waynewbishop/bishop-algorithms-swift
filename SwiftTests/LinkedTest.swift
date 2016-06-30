@@ -41,14 +41,14 @@ class LinkedTest: XCTestCase {
 
         
         //lowest bound
-        let lowerbound: LLNode! = linkedList.linkAtIndex(0)
+        let lowerbound: LLNode! = linkedList.getElement(at: 0)
         if ((lowerbound == nil) || (lowerbound.key != numberList[0])) {
             XCTFail("lowest bound retrieve fail..")
         }
         
         
         //upper bound
-        let upperbound: LLNode! = linkedList.linkAtIndex(nodecount - 1)
+        let upperbound: LLNode! = linkedList.getElement(at: nodecount - 1)
         if ((upperbound == nil) || (upperbound.key != numberList[nodecount - 1])) {
           XCTFail("upper bound retrieve fail..")
         }
@@ -62,16 +62,14 @@ class LinkedTest: XCTestCase {
         
 
         //retrieve random index
-        let randomlink: LLNode! = linkedList.linkAtIndex(randomIndex)
+        let randomlink: LLNode! = linkedList.getElement(at: randomIndex)
         if ((randomlink == nil) || (randomlink.key != numberList[randomIndex])) {
             XCTFail("random index retrieve fail..")
         }
         
-        
     }
     
    
-
     
 
     //test nodes at a specific index
@@ -83,29 +81,29 @@ class LinkedTest: XCTestCase {
         let testPair: keyIndex = keyIndex(key: 4, index: 3)
         
         
-        linkedList.addLinkAtIndex(testPair.key, index: testPair.index)
+        linkedList.insert(testPair.key, at: testPair.index)
         linkedList.printAllKeys()
         
-
-        //retrieve the selected value
-        let current = linkedList.linkAtIndex(testPair.index) as LLNode!
-
         
-        if ((current == nil) || (current.key != testPair.key)) {
+        let current = linkedList.getElement(at: testPair.index) as LLNode!
+        
+        
+        //test condition
+        if current == nil || current?.key != testPair.key {
             XCTFail("linked list addition at index failed..")
         }
-
         
         
-        linkedList.removeLinkAtIndex(testPair.index)
+        //remove test item
+        linkedList.remove(at: testPair.index)
         linkedList.printAllKeys()
-
         
         
-        //retrieve new value at same position
-        let removed = linkedList.linkAtIndex(testPair.index) as LLNode!
-        if (removed.key == testPair.key) {
-            XCTFail("linked list removal failed..")
+        //retrieve value at same position
+        let removed = linkedList.getElement(at: testPair.index) as LLNode!
+        
+        if removed == nil || removed?.key == testPair.key {
+            XCTFail("test failed: removed linked list element not found")
         }
         
         
@@ -119,18 +117,18 @@ class LinkedTest: XCTestCase {
         
 
         let linkedList: LinkedList<Int> = self.buildLinkedList()
-        let linkForwards: LLNode! = linkedList.linkAtIndex(0)
+        let linkForwards: LLNode! = linkedList.getElement(at: 0)
         
         if (linkForwards == nil) {
             XCTFail("link for reversal not found..")
         }
         
         //reverse the list
-        linkedList.reverseLinkedList()
+        linkedList.reverse()
         linkedList.printAllKeys()
         
         
-        let linkBackwards: LLNode! = linkedList.linkAtIndex(0)
+        let linkBackwards: LLNode! = linkedList.getElement(at: 0)
 
         
         //evaluate keys
@@ -145,30 +143,27 @@ class LinkedTest: XCTestCase {
 
     //MARK: helper functions
 
+
     
-    
-    //helper method to build list
     func buildLinkedList() ->LinkedList<Int>! {
         
-        
-        //create a new instance
         let linkedList: LinkedList<Int> = LinkedList<Int>()
         
         
-        //append list items
+        //append items
         for number in numberList {
-            linkedList.addLink(number)
+            linkedList.append(number)
         }
         
-        //print all the keys
+        
         linkedList.printAllKeys()
         
         
         if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
+            XCTFail("test failed: linked list count doesn't match number list..")
             return nil
         }
-        
+                
         return linkedList
         
         

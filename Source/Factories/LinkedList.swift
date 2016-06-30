@@ -50,7 +50,7 @@ public class LinkedList<T: Equatable> {
     
     
     //append a new item to a linked list
-    func addLink(withKey key: T) {
+    func append(_ key: T) {
         
         
         //establish the head node
@@ -109,8 +109,9 @@ public class LinkedList<T: Equatable> {
     
     //obtain link at a specific index
     func getElement(at index: Int) ->LLNode<T>! {
+
         
-        //check for nil conditions
+        //check empty conditions
         if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
             return nil
         }
@@ -119,8 +120,9 @@ public class LinkedList<T: Equatable> {
         else  {
             var current: LLNode<T>! = head
             var x: Int = 0
+
             
-            //cycle through the list of items
+            //cycle through elements
             while (index != x) {
                 current = current.next
                 x += 1
@@ -147,10 +149,11 @@ public class LinkedList<T: Equatable> {
         
         
         //establish the head node
-        if (head.key == nil) {
+        guard head.key != nil else {
             head.key = key
             return
         }
+        
         
         //establish the trailer, current and new items
         var current: LLNode<T>? = head
@@ -259,7 +262,7 @@ public class LinkedList<T: Equatable> {
     
     
   //reverse the order of a linked list
-  func reverseLinkedList() {
+  func reverse() {
     
     //if count == 1 or count == 0,no need to reverse
     if self.count <= 1{
@@ -321,7 +324,7 @@ public class LinkedList<T: Equatable> {
             
             //filter based on formula
             if formula(current) == true {
-                results.addLink(withKey: current.key)
+                results.append(current.key)
             }
             
             
@@ -357,7 +360,7 @@ public class LinkedList<T: Equatable> {
             
             //add non-nil entries
             if newKey != nil {
-                results.addLink(withKey: newKey)
+                results.append(newKey)
             }
             
             

@@ -14,32 +14,27 @@ import Foundation
 class EnumModel {
     
     
-    func evaluate(algorithm: Algorithm) -> Array<Int>! {
+    func evaluate(_ model: Algorithm) -> Array<Int>! {
+
         
         //mutated copy
         var output: Array<Int>!
         
         
-        //actions based on scenarios
-        switch algorithm {
-          
+        switch model {
             
         case .Empty:
             return nil
-            
-            
+        
         case let .Sequence(numberList):
             return numberList
             
 
-        /*
-         scenario calls evaluate() recusivley and applies resulting data
-        */
-            
+         //scenario calls evaluate() recusivley
         case let .InsertionSort(numberList):
             
             //evaluate sequence
-            output = evaluate(algorithm: numberList)
+            output = evaluate(numberList)
             
             
             guard output.count > 2 else {

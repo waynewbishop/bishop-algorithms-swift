@@ -20,7 +20,7 @@ public class Trie {
     
     
     //finds all words based on the prefix
-    func findWord(keyword: String) -> Array<String>! {
+    func findWord(_ keyword: String) -> Array<String>! {
         
         
         guard keyword.length > 0 else {
@@ -87,7 +87,7 @@ public class Trie {
     
     
     //builds a iterative tree of dictionary content
-    func addWord(keyword: String) {
+    func addWord(_ keyword: String) {
         
         
         guard keyword.length > 0 else {

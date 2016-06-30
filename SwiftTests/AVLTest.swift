@@ -160,7 +160,7 @@ class AVLTest: XCTestCase {
     
     
     //helper function - build and balance bst
-    func buildAVLTree(numberList: Array<Int>) {
+    func buildAVLTree(_ numberList: Array<Int>) {
         
         
         //test for new instance

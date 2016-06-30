@@ -145,47 +145,11 @@ class SortingTest: XCTestCase {
     }
     
     
-    //MARK: - Other sorting algorithms - to be refactored
-    
-    
-    /*
-    func testQuickSort() {
-        
-        let resultList: Array<Int> = sortTest.quickSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
-        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
-        
-        //evaluate results
-        XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.IsSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
-        
-    }
-    
-    
-    
-    func testMergeSort() {
-        
-        let resultList: Array<Int> = sortTest.mergeSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
-        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
-        
-        //evaluate results
-        XCTAssertTrue(self.IsSorted(resultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.IsSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.IsSorted(emptyResultList), "item sequence not in sorted order..")
-        
-    }
-    
- */
-    
-    
-    
     //MARK: Helper Function
     
     
     //generic method to determine sorted order
-    func IsSorted<T: Comparable>(sequence: [T]) -> Bool {
+    func IsSorted<T: Comparable>(_ sequence: [T]) -> Bool {
         
         guard sequence.count > 1 else { return true } // immediately return true for trivial cases
         

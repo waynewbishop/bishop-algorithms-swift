@@ -44,7 +44,7 @@ import XCTest
         //MARK: Helper Function
         
         
-        func IsSorted<T: Comparable>(sequence: [T]) -> Bool {
+        func IsSorted<T: Comparable>(_ sequence: [T]) -> Bool {
             
             guard sequence.count > 1 else {
                 return true

@@ -73,7 +73,7 @@ public class Sorting {
     of values. algorithm performance of O(n).
     */
     
-    func linearSearch(numberlist: Array<Int>, key: Int) {
+    func linearSearch(_ numberlist: Array<Int>, key: Int) {
 
         
         //check all possible values
@@ -95,7 +95,7 @@ public class Sorting {
     inserting numbers based on a sorted and unsorted side.
     */
     
-    func insertionSort(numberList: Array<Int>) -> Array<Int> {
+    func insertionSort(_ numberList: Array<Int>) -> Array<Int> {
         
         
         //check for trivial case
@@ -146,7 +146,7 @@ public class Sorting {
     insertion sort algorithm - generic
     */
     
-    func insertionSortG<T: Comparable>(sequence: [T]) -> [T] {
+    func insertionSortG<T: Comparable>(_ sequence: [T]) -> [T] {
 
         
         // immediately return the trivial cases
@@ -198,7 +198,7 @@ public class Sorting {
     */
 
     
-    func bubbleSort(numberList: Array<Int>) -> Array<Int> {
+    func bubbleSort(_ numberList: Array<Int>) -> Array<Int> {
 
         
         //check for trivial case
@@ -243,7 +243,7 @@ public class Sorting {
     bubble sort algorithm - generic
     */
     
-    func bubbleSortG<T: Comparable>(sequence: [T]) -> [T] {
+    func bubbleSortG<T: Comparable>(_ sequence: [T]) -> [T] {
 
         
         //return trvial case
@@ -292,7 +292,7 @@ public class Sorting {
      until it reaches the end of the array.
      */
     
-    func selectionSort(numberList: Array<Int>) -> Array<Int> {
+    func selectionSort(_ numberList: Array<Int>) -> Array<Int> {
         
         
         //check for trivial case
@@ -343,7 +343,7 @@ public class Sorting {
     selection sort algorithm - generic
     */
     
-    func selectionSortG<T: Comparable>(sequence: [T]) -> [T] {
+    func selectionSortG<T: Comparable>(_ sequence: [T]) -> [T] {
         
 
         //check for trivial case

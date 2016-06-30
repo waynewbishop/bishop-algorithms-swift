@@ -130,9 +130,11 @@ class ClosureTest: XCTestCase {
         
         //iterate and compare values
         for s in 0..<numberList.count {
-            if linkedList.linkAtIndex(s).key == results.linkAtIndex(s).key {
-                XCTFail("linked list map formula not applied..")
+            
+            if linkedList.getElement(at: s).key == results.getElement(at: s).key {
+                XCTFail("test failed: linked list map formula not applied..")
             }
+            
         }
         
         
@@ -158,9 +160,11 @@ class ClosureTest: XCTestCase {
         
         //iterate and compare values
         for s in 0..<numberList.count {
-            if linkedList.linkAtIndex(s).key == results.linkAtIndex(s).key {
+            
+            if linkedList.getElement(at: s).key == results.getElement(at: s).key {
                 XCTFail("linked list map formula not applied..")
             }
+            
         }
         
         
@@ -209,7 +213,7 @@ class ClosureTest: XCTestCase {
         
         //append list items
         for number in numberList {
-            linkedList.addLink(number)
+            linkedList.append(number)
         }
         
         
