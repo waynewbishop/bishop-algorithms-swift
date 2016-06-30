@@ -279,7 +279,7 @@ public class AVLTree<T: Comparable> {
     
     
     //use dfs with trailing closure to update all values
-    func traverse(withClosure formula: (AVLTree<T>) -> T) {
+    func traverse(withFormula formula: (AVLTree<T>) -> T) {
         
         
         //check for trivial condition
@@ -291,7 +291,7 @@ public class AVLTree<T: Comparable> {
         
         //process the left side
         if self.left != nil {
-            left?.traverse(withClosure: formula)
+            left?.traverse(withFormula: formula)
         }
     
         
@@ -305,7 +305,7 @@ public class AVLTree<T: Comparable> {
         
         //process the right side
         if self.right != nil {
-            right?.traverse(withClosure: formula)
+            right?.traverse(withFormula: formula)
         }
         
         

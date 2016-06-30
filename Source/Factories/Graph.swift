@@ -24,7 +24,7 @@ public class SwiftGraph {
     
     
     //create a new vertex
-    func addVertex(_ key: String) -> Vertex {
+    func addVertex(key: String) -> Vertex {
         
         
         //set the key
@@ -42,7 +42,7 @@ public class SwiftGraph {
     
     
     //add edge to source vertex
-    func addEdge(_ source: Vertex, neighbor: Vertex, weight: Int) {
+    func addEdge(source: Vertex, neighbor: Vertex, weight: Int) {
         
         
         //create a new edge
@@ -85,7 +85,7 @@ public class SwiftGraph {
     /* reverse the sequence of paths given the shortest path.
        process analagous to reversing a linked list. */
 
-    func reversePath(head: Path!, source: Vertex) -> Path! {
+    func reversePath(_ head: Path!, source: Vertex) -> Path! {
         
         
         guard head != nil else {
@@ -127,7 +127,7 @@ public class SwiftGraph {
     
     
     //process Dijkstra's shortest path algorthim
-    func processDijkstra(source: Vertex, destination: Vertex) -> Path? {
+    func processDijkstra(_ source: Vertex, destination: Vertex) -> Path? {
         
         
         var frontier: Array<Path> = Array<Path>()
@@ -229,7 +229,7 @@ public class SwiftGraph {
     
     
     ///an optimized version of Dijkstra's shortest path algorthim
-    func processDijkstraWithHeap(source: Vertex, destination: Vertex) -> Path! {
+    func processDijkstraWithHeap(_ source: Vertex, destination: Vertex) -> Path! {
         
         
         let frontier: PathHeap = PathHeap()

@@ -54,12 +54,12 @@ class GraphTest: XCTestCase {
     
     //validate neighbor association
     func testVertexNeighbors() {
-
-        neighborTest(vertexA, neighbor: vertexD)
-        neighborTest(vertexA, neighbor: vertexB)
-        neighborTest(vertexB, neighbor: vertexD)
-        neighborTest(vertexB, neighbor: vertexC)
-        neighborTest(vertexD, neighbor: vertexE)
+        
+        neighborTest(of: vertexA, with: vertexD)
+        neighborTest(of: vertexA, with: vertexB)
+        neighborTest(of: vertexB, with: vertexD)
+        neighborTest(of: vertexB, with: vertexC)
+        neighborTest(of: vertexD, with: vertexE)
     }
     
     
@@ -150,10 +150,27 @@ class GraphTest: XCTestCase {
     
     
     //MARK: - Helper function
-
     
+    
+    //check for membership
+    func neighborTest(of source: Vertex, with neighbor: Vertex) {
+       
+        //add unvisited vertices to the queue
+        for e in source.neighbors {
+            if (e.neighbor.key == neighbor.key) {
+                return
+            }
+        }
+        
+        
+        XCTFail("vertex \(neighbor.key!) is not a neighbor of vertex \(source.key!)")
+        
+    }
+    
+
+/*
     //check for neighbor membership
-    func neighborTest(source: Vertex, neighbor: Vertex) -> Bool! {
+    func neighborTest(_ source: Vertex, neighbor: Vertex) -> Bool! {
 
         
         //add unvisited vertices to the queue
@@ -167,6 +184,8 @@ class GraphTest: XCTestCase {
         return nil
         
     }
+ */
+    
     
     
     //reverse a path data structure

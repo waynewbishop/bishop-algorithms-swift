@@ -105,7 +105,8 @@ class AVLTest: XCTestCase {
         let avlTest = self.buildClosureTree()
         
         //invoke formula function
-        avlTest.traverse(traverseFormula)
+        avlTest.traverse(withFormula: traverseFormula)
+        
         
     }
     
