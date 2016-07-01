@@ -15,36 +15,19 @@ import XCTest
 class SortingTest: XCTestCase {
 
     
-    /*
+    var sortTest = Sorting()
     
-    TODO:
-    Only have 3 collection examples. Text, numbers and an empty set. He's also missed consistently using the same method calls 
-    for each sorting example. Each of these should be reviewed carefully. Consider refactoring the isSorted method to something more
-    readable.
+    var numberList = [8, 2, 10, 9, 7, 5]
+    var trivialNumberList = [1] //single element
+    var emptyNumberList: Array<Int> = []
+    var textList = ["Dog", "Cat", "Dinasour", "Lion", "Cheetah", "Gazelle", "Elephant", "Aardvark"]
+    var triviaTextList = ["Dog"]
+    var emptyTextList: Array<String> = []
     
-    */
-    
-    private var numberList: Array<Int>!
-    private var triviaNumberList: Array<Int>!
-    private var emptyNumberList: Array<Int>!
-    private var textList: Array<String>!
-    private var triviaTextList: Array<String>!
-    private var emptyTextList: Array<String>!
-    private var sortTest: Sorting!
-
     
     override func setUp() {
         super.setUp()
-        
-        numberList = [8, 2, 10, 9, 7, 5]
-        triviaNumberList = [1] // Should have just one element
-        emptyNumberList = []
-        textList = ["Dog", "Cat", "Dinasour", "Lion", "Cheetah", "Gazelle", "Elephant", "Aardvark"]
-        triviaTextList = ["Dog"]
-        emptyTextList = []
-        sortTest = Sorting()
     }
-    
     
     
     //MARK: - Binary Search Algorithms
@@ -61,8 +44,8 @@ class SortingTest: XCTestCase {
             searchList.append(number)
         }
         
-        //perform theoretical search
-        XCTAssertTrue(sortTest.binarySearch(searchList, key: key), "binary key value \(key) not found..")
+        //perform test search
+        XCTAssertTrue(sortTest.binarySearch(searchList, key), "binary key value \(key) not found..")
         
     }
 
@@ -74,7 +57,7 @@ class SortingTest: XCTestCase {
         
         
         //test for false positive
-        XCTAssertFalse(sortTest.binarySearch(searchList, key: key), "binary key value \(key) found..")
+        XCTAssertFalse(sortTest.binarySearch(searchList, key), "binary key value \(key) found..")
         
     }
     
@@ -86,7 +69,7 @@ class SortingTest: XCTestCase {
     func testInsertionSort() {
         
         let resultList: Array<Int> = sortTest.insertionSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(trivialNumberList)
         let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
         let sequence = sortTest.insertionSortG(textList)
         let triviaSequence = sortTest.insertionSortG(triviaTextList)
@@ -107,7 +90,7 @@ class SortingTest: XCTestCase {
     func testBubbleSort() {
         
         let resultsList: Array<Int> = sortTest.bubbleSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(trivialNumberList)
         let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
         let sequence = sortTest.bubbleSortG(textList)
         let triviaSequence = sortTest.insertionSortG(triviaTextList)
@@ -127,7 +110,7 @@ class SortingTest: XCTestCase {
     func testSelectionSort() {
         
         let resultList: Array<Int> = sortTest.selectionSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(triviaNumberList)
+        let triviaResultList: Array<Int> = sortTest.insertionSort(trivialNumberList)
         let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
         let sequence = sortTest.insertionSortG(textList)
         let triviaSequence = sortTest.insertionSortG(triviaTextList)
@@ -146,23 +129,23 @@ class SortingTest: XCTestCase {
     
     
     //MARK: Helper Function
-   
+
     
-    //TODO: Test this helper method. Once complete move into protocol extension so functionality can be shared with other classes
-    
+    //TODO: Convert to Array extension.. all sorting algorithms to should be extended to the array class..
     
     func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool {
+ 
         
-        //check trivial case
-        guard sequence.count != 0 else {
-            return false
+        //check trivial cases - already sorted
+        guard sequence.count <= 1 else {
+            return true
         }
         
         var index = sequence.startIndex
 
         
         //compare sequence values
-        while index < sequence.endIndex {
+        while index < sequence.endIndex - 1 {
             if sequence[index] > sequence[sequence.index(after: index)] {
                 return false
             }
@@ -172,28 +155,6 @@ class SortingTest: XCTestCase {
         return true
         
     }
-    
-    
-    /*
-    //generic method to determine sorted order
-    func isSorted<T: Comparable>(_ sequence: [T]) -> Bool {
-        
-        guard sequence.count > 1 else { return true } // immediately return true for trivial cases
-        
-        // after the guard check we are guaranteed that sequence has at least two elements
-        
-        let rangeFromSecondElement = sequence.startIndex.successor()..<sequence.endIndex
-        
-        return !rangeFromSecondElement.contains { index in
-            
-            sequence[index.predecessor()] > sequence[index]
-            
-        }
-        
-    }
- 
-   */
-    
     
     
 }

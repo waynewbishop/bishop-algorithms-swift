@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public class Sorting {
     
     
@@ -21,7 +22,7 @@ public class Sorting {
     */
     
     
-    func binarySearch(_ sequence: Array<Int>, key: Int) -> Bool {
+    func binarySearch(_ sequence: Array<Int>, _ key: Int) -> Bool {
 
         var result = false
         
@@ -46,12 +47,12 @@ public class Sorting {
         
         if n > key {
             let slice: Array<Int> = Array(sequence[min...mid - 1])
-            result = self.binarySearch(slice, key: key)
+            result = self.binarySearch(slice, key)
         }
         
         else if n < key {
             let slice: Array<Int> = Array(sequence[mid + 1...max])
-            result = self.binarySearch(slice, key: key)
+            result = self.binarySearch(slice, key)
         }
         
         else {
@@ -109,12 +110,9 @@ public class Sorting {
         
         
         for primaryindex in 0..<output.count {
-            
 
             let key = output[primaryindex]
-             
             var secondaryindex = primaryindex
-            
             
             while secondaryindex > -1 {
                 
@@ -125,15 +123,12 @@ public class Sorting {
                     //move into correct position
                     output.remove(at: secondaryindex + 1)
                     output.insert(key, at: secondaryindex)
-                    
                 }
                 
                 secondaryindex -= 1
             }
             
-            
         }
-        
         
         return output
         
