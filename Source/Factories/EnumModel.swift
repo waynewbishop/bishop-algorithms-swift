@@ -22,10 +22,12 @@ class EnumModel {
         
         
         switch model {
+
             
         case .Empty:
             return nil
-        
+
+            
         case let .Sequence(numberList):
             return numberList
             

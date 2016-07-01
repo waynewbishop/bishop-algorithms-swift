@@ -71,7 +71,7 @@ class GraphTest: XCTestCase {
         let destinationVertex = vertexE
         
         
-        let shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex, destination: destinationVertex)
+        let shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex!, destination: destinationVertex!)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
         printPath(shortestPath)
@@ -89,7 +89,7 @@ class GraphTest: XCTestCase {
         let destinationVertex = vertexE
 
         
-        let shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
+        let shortestPath: Path! = testGraph.processDijkstra(sourceVertex!, destination: destinationVertex!)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
         printPath(shortestPath)
@@ -135,7 +135,7 @@ class GraphTest: XCTestCase {
 
     
     //closure function passed as parameter
-    func traverseFormula( node: inout Vertex) -> () {
+    func traverseFormula(node: inout Vertex) -> () {
         
         /*
         notes: the inout parameter is passed by reference. 
@@ -154,7 +154,8 @@ class GraphTest: XCTestCase {
     
     //check for membership
     func neighborTest(of source: Vertex, with neighbor: Vertex) {
-       
+
+        
         //add unvisited vertices to the queue
         for e in source.neighbors {
             if (e.neighbor.key == neighbor.key) {
@@ -162,34 +163,13 @@ class GraphTest: XCTestCase {
             }
         }
         
-        
         XCTFail("vertex \(neighbor.key!) is not a neighbor of vertex \(source.key!)")
         
     }
-    
-
-/*
-    //check for neighbor membership
-    func neighborTest(_ source: Vertex, neighbor: Vertex) -> Bool! {
-
-        
-        //add unvisited vertices to the queue
-        for e in source.neighbors {
-            if (e.neighbor.key == neighbor.key) {
-                return true
-            }
-        }
-        
-        XCTFail("vertex \(neighbor.key!) is not a neighbor of vertex \(source.key!)")
-        return nil
-        
-    }
- */
-    
     
     
     //reverse a path data structure
-    func printPath(shortestPath: Path!) {
+    func printPath(_ shortestPath: Path!) {
 
         
         var reversedPath: Path! = Path()

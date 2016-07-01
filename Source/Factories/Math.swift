@@ -16,7 +16,7 @@ class Math {
     
     
     //build fibonacci sequence to a specified position - default
-    func fibNormal(n: Int) -> Array<Int>! {
+    func fibNormal(_ n: Int) -> Array<Int>! {
         
         
         //check trivial condition
@@ -79,7 +79,7 @@ class Math {
     
     
     //build fibonacci sequence to a specified position - trailing closure
-    func fib(n: Int, formula: (Array<Int>) -> Int) -> Array<Int>! {
+    func fib(_ n: Int, formula: (Array<Int>) -> Int) -> Array<Int>! {
                 
 
         //check trivial condition

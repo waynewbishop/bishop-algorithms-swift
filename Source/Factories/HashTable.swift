@@ -9,7 +9,7 @@
 import Foundation
 
 
-class HashTable {
+class SwiftTable {
     
     private var buckets: Array<HashNode?>
     
@@ -25,8 +25,7 @@ class HashTable {
         
         var hashindex: Int!
         var fullname: String!
-        
-        
+                
         //create a hashvalue using the complete name
         fullname = firstname + lastname
         hashindex = self.createHash(fullname)
@@ -66,7 +65,7 @@ class HashTable {
     
     
     //determine if the word is found in the hash table
-    func findWord(firstname: String, lastname: String) -> Bool! {
+    func findWord(_ firstname: String, lastname: String) -> Bool! {
         
         var hashindex: Int!
         var fullname: String!

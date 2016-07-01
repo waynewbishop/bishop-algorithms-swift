@@ -14,15 +14,18 @@ import XCTest
     
     class enumsTest: XCTestCase {
         
-        
         let enumModel: EnumModel = EnumModel()
-        
         
         override func setUp() {
             super.setUp()
         }
         
+        
+        //TODO: Refactor this to use isSortable protocol extension method..
+        
     
+        /*
+        
         //build and evaluate algorithm model
         func testInsertionSort() {
             
@@ -33,32 +36,13 @@ import XCTest
             
             
             //evaluate results
-            let results = enumModel.evaluate(model)
             
+            let results = enumModel.evaluate(model)
             XCTAssertTrue(self.IsSorted(results))
             
-            
         }
-        
-        
-        //MARK: Helper Function
-        
-        
-        func IsSorted<T: Comparable>(_ sequence: [T]) -> Bool {
-            
-            guard sequence.count > 1 else {
-                return true
-            }
-            
-            
-            //guaranteed that sequence has at least two elements
-            let rangeFromSecondElement = sequence.startIndex.successor()..<sequence.endIndex
-            
-            return !rangeFromSecondElement.contains { index in
-                sequence[index.predecessor()] > sequence[index]
-            }
-            
-        }
+         
+        */
         
         
     }

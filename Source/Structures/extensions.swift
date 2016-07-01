@@ -9,6 +9,12 @@
 import Foundation
 
 
+extension Sortable {
+    
+    //TODO: Could this extension just be part of the default Comparable protocol?
+}
+
+
 extension String {
   
     

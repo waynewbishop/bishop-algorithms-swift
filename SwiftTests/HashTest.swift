@@ -15,7 +15,7 @@ import XCTest
 class HashTest: XCTestCase {
     
     var listsize: Int!
-    var swiftTable: HashTable!
+    var swiftTable: SwiftTable!
 
     
     override func setUp() {
@@ -30,7 +30,7 @@ class HashTest: XCTestCase {
         
         
         listsize = 25
-        swiftTable = HashTable(capacity: listsize)
+        swiftTable = SwiftTable(capacity: listsize)
         
         /*
         note: the addition of each word should have its own corresponding "slot" in the
@@ -54,9 +54,11 @@ class HashTest: XCTestCase {
     //find the word in the hash table
     func testFindWord() {
         
-        swiftTable.findWord("Frank", lastname: "Smith") //found in hash table
-        swiftTable.findWord("John", lastname: "Cervello") //not found (no collision)
-        swiftTable.findWord("Andrew", lastname: "Collins") //not found in hash table (collision detected)
+        //TODO: Wrap these tests in XCTAssert statement..
+        
+       _ = swiftTable.findWord("Frank", lastname: "Smith") //found in hash table
+       _ = swiftTable.findWord("John", lastname: "Cervello") //not found (no collision)
+       _ = swiftTable.findWord("Andrew", lastname: "Collins") //not found in hash table (collision detected)
     }
 
     

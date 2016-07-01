@@ -308,7 +308,7 @@ public class SwiftGraph {
     
     
     //bfs traversal with inout closure function
-    func traverse(startingv: Vertex, formula: (inout node: Vertex) -> ()) {
+    func traverse(_ startingv: Vertex, formula: (inout node: Vertex) -> ()) {
 
         
         //establish a new queue
@@ -355,7 +355,7 @@ public class SwiftGraph {
     
     
     //breadth first search
-    func traverse(startingv: Vertex) {
+    func traverse(_ startingv: Vertex) {
         
         
         //establish a new queue

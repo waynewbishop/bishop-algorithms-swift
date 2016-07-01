@@ -72,7 +72,7 @@ class MathTest: XCTestCase {
     
     
     //helper function - test results validity
-    func buildResultsTest(r: Array<Int>!) {
+    func buildResultsTest(_ r: Array<Int>!) {
 
         
         if r == nil {
