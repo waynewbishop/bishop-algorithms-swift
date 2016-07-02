@@ -10,12 +10,18 @@ import Foundation
 
 
 extension Array {
+  
+    
+    //MARK: - Index Operations
     
     
     //returns the middle index
     func midIndex() -> Index {
         return startIndex + (count / 2)
     }
+    
+    
+    //TODO: Remove these last two methods and update binary search - they just confuse readers..
     
     
     //returns the first index

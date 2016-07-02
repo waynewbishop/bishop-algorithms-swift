@@ -12,10 +12,16 @@ import XCTest
 @testable import SwiftStructures
 
 
-class SortingTest: XCTestCase {
+/*
+ notes: This test class adopts the Sortable protocol 
+*/
+
+
+class SortingTest: XCTestCase, Sortable {
 
     
     var sortTest = Sorting()
+    
     
     var numberList = [8, 2, 10, 9, 7, 5]
     var trivialNumberList = [1] //single element
@@ -29,6 +35,7 @@ class SortingTest: XCTestCase {
         super.setUp()
     }
     
+
     
     //MARK: - Binary Search Algorithms
     
@@ -55,16 +62,15 @@ class SortingTest: XCTestCase {
         let searchList: Array<Int> = [0,4,7,9,13,16,34]
         let key: Int = 8
         
-        
         //test for false positive
         XCTAssertFalse(sortTest.binarySearch(searchList, key), "binary key value \(key) found..")
-        
     }
     
     
-    
 	
+
     //MARK: General Sorting Algorithms
+    
     
     func testInsertionSort() {
         
@@ -76,13 +82,12 @@ class SortingTest: XCTestCase {
         let emptySequence = sortTest.insertionSortG(emptyTextList)
         
         //evaluate results
-        XCTAssertTrue(self.isSorted(resultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(emptyResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(sequence), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(triviaSequence), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(emptySequence), "item sequence not in sorted order..")
-        
+        XCTAssertTrue(isSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(emptyResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(sequence), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(triviaSequence), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(emptySequence), "item sequence not in sorted order..")
     }
     
     
@@ -97,12 +102,12 @@ class SortingTest: XCTestCase {
         let emptySequence = sortTest.insertionSortG(emptyTextList)
         
         //evaluate results
-        XCTAssertTrue(self.isSorted(resultsList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(emptyResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(sequence), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(triviaSequence), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(emptySequence), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(resultsList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(emptyResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(sequence), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(triviaSequence), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(emptySequence), "item sequence not in sorted order..")
     }
 
     
@@ -118,42 +123,12 @@ class SortingTest: XCTestCase {
       
         
         //evaulate results
-        XCTAssertTrue(self.isSorted(resultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(emptyResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(sequence), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(triviaSequence), "item sequence not in sorted order..")
-        XCTAssertTrue(self.isSorted(emptySequence), "item sequence not in sorted order..")
-        
-    }
-    
-    
-    //MARK: Helper Function
-
-    
-    //TODO: Convert to Array extension.. all sorting algorithms to should be extended to the array class..
-    
-    func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool {
- 
-        
-        //check trivial cases - already sorted
-        guard sequence.count <= 1 else {
-            return true
-        }
-        
-        var index = sequence.startIndex
-
-        
-        //compare sequence values
-        while index < sequence.endIndex - 1 {
-            if sequence[index] > sequence[sequence.index(after: index)] {
-                return false
-            }
-            index = sequence.index(after: index)
-        }
-        
-        return true
-        
+        XCTAssertTrue(isSorted(resultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(triviaResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(emptyResultList), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(sequence), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(triviaSequence), "item sequence not in sorted order..")
+        XCTAssertTrue(isSorted(emptySequence), "item sequence not in sorted order..")
     }
     
     
