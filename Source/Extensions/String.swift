@@ -19,7 +19,7 @@ extension String {
     }
     
     
-    //returns characters up to a specified integer index
+    //returns characters up to a specified integer 
     func substring(to: Int) -> String {
         
         //define the range

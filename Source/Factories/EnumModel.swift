@@ -32,7 +32,12 @@ class EnumModel {
             return numberList
             
 
-         //scenario calls evaluate() recusivley
+         //scenario calls evaluate() recursivley
+            
+            
+         //TODO: Add cases for all the sorting algorithms once they are defined as protocol extensions
+            
+            
         case let .InsertionSort(numberList):
             
             //evaluate sequence

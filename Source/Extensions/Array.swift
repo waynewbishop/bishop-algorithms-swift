@@ -9,10 +9,10 @@
 import Foundation
 
 
-extension Array {
+extension Array where Element: Comparable {
   
     
-    //MARK: - Index Operations
+    //MARK: Index Operations
     
     
     //returns the middle index

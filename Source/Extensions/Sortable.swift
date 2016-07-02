@@ -17,7 +17,7 @@ extension Sortable {
     func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool {
         
         
-        //check trivial cases - already sorted
+        //check trivial cases 
         guard sequence.count <= 1 else {
             return true
         }

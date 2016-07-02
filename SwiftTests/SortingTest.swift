@@ -73,7 +73,7 @@ class SortingTest: XCTestCase, Sortable {
     
     
     func testInsertionSort() {
-        
+                
         let resultList: Array<Int> = sortTest.insertionSort(numberList)
         let triviaResultList: Array<Int> = sortTest.insertionSort(trivialNumberList)
         let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)

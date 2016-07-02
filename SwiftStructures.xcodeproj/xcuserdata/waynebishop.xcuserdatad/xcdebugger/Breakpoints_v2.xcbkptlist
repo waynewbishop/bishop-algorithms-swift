@@ -89,11 +89,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "489111476.116988"
+            timestampString = "489131421.366379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "SortingTest"
             landmarkType = "3">
             <Locations>
