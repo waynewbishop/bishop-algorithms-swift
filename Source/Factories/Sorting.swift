@@ -11,7 +11,10 @@ import Foundation
 
 public class Sorting {
     
-   
+   /*
+     note: all sorting algorithms now exist as an Array extension.
+     these can be found in Array.swift
+   */
 }
 
 

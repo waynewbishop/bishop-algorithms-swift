@@ -9,7 +9,7 @@
 import Foundation
 
 
-//protocol extension
+//note: an extension on a protocol
 
 extension Sortable {
     

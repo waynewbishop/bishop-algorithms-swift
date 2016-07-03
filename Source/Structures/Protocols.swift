@@ -8,9 +8,10 @@
 
 import Foundation
 
+
 protocol Sortable {
     
-    //test array order - used with test target
+    //test sorted order
     func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool
     
 }
