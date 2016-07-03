@@ -13,14 +13,12 @@ import XCTest
 
 
 /*
- notes: This test class adopts the Sortable protocol 
+ notes: this test class adopts the Sortable protocol. as a result,
+ the isSorted function originates from the protocol extension.
 */
 
 
 class SortingTest: XCTestCase, Sortable {
-
-    
-    var sortTest = Sorting()
     
     
     var numberList = [8, 2, 10, 9, 7, 5]
@@ -42,7 +40,7 @@ class SortingTest: XCTestCase, Sortable {
 
     func testBinarySearch() {
         
-        var searchList: Array<Int> = Array<Int>()
+        var searchList = Array<Int>()
         let key: Int = 235
 
         
@@ -51,19 +49,20 @@ class SortingTest: XCTestCase, Sortable {
             searchList.append(number)
         }
         
+        
         //perform test search
-        XCTAssertTrue(sortTest.binarySearch(searchList, key), "binary key value \(key) not found..")
+        XCTAssertTrue(searchList.binarySearch(forElement: key), "binary key value \(key) not found..")
         
     }
 
     
     func testBinaryTestNotFound() {
         
-        let searchList: Array<Int> = [0,4,7,9,13,16,34]
+        var searchList: Array<Int> = [0,4,7,9,13,16,34]
         let key: Int = 8
         
         //test for false positive
-        XCTAssertFalse(sortTest.binarySearch(searchList, key), "binary key value \(key) found..")
+        XCTAssertFalse(searchList.binarySearch(forElement: key), "binary key value \(key) found..")
     }
     
     
@@ -73,62 +72,37 @@ class SortingTest: XCTestCase, Sortable {
     
     
     func testInsertionSort() {
-                
-        let resultList: Array<Int> = sortTest.insertionSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(trivialNumberList)
-        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
-        let sequence = sortTest.insertionSortG(textList)
-        let triviaSequence = sortTest.insertionSortG(triviaTextList)
-        let emptySequence = sortTest.insertionSortG(emptyTextList)
         
-        //evaluate results
-        XCTAssertTrue(isSorted(resultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(emptyResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(sequence), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(triviaSequence), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(emptySequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.isSorted(numberList.insertionSort()))
+        XCTAssertTrue(self.isSorted(trivialNumberList.insertionSort()))
+        XCTAssertTrue(self.isSorted(emptyNumberList.insertionSort()))
+        XCTAssertTrue(self.isSorted(textList.insertionSort()))
+        XCTAssertTrue(self.isSorted(triviaTextList.insertionSort()))
+        XCTAssertTrue(self.isSorted(emptyTextList.insertionSort()))
     }
     
     
     
     func testBubbleSort() {
         
-        let resultsList: Array<Int> = sortTest.bubbleSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(trivialNumberList)
-        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
-        let sequence = sortTest.bubbleSortG(textList)
-        let triviaSequence = sortTest.insertionSortG(triviaTextList)
-        let emptySequence = sortTest.insertionSortG(emptyTextList)
-        
-        //evaluate results
-        XCTAssertTrue(isSorted(resultsList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(emptyResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(sequence), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(triviaSequence), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(emptySequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.isSorted(numberList.bubbleSort()))
+        XCTAssertTrue(self.isSorted(trivialNumberList.bubbleSort()))
+        XCTAssertTrue(self.isSorted(emptyNumberList.bubbleSort()))
+        XCTAssertTrue(self.isSorted(textList.bubbleSort()))
+        XCTAssertTrue(self.isSorted(triviaTextList.bubbleSort()))
+        XCTAssertTrue(self.isSorted(emptyTextList.bubbleSort()))
     }
 
     
     
     func testSelectionSort() {
         
-        let resultList: Array<Int> = sortTest.selectionSort(numberList)
-        let triviaResultList: Array<Int> = sortTest.insertionSort(trivialNumberList)
-        let emptyResultList: Array<Int> = sortTest.insertionSort(emptyNumberList)
-        let sequence = sortTest.insertionSortG(textList)
-        let triviaSequence = sortTest.insertionSortG(triviaTextList)
-        let emptySequence = sortTest.insertionSortG(emptyTextList)
-      
-        
-        //evaulate results
-        XCTAssertTrue(isSorted(resultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(triviaResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(emptyResultList), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(sequence), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(triviaSequence), "item sequence not in sorted order..")
-        XCTAssertTrue(isSorted(emptySequence), "item sequence not in sorted order..")
+        XCTAssertTrue(self.isSorted(numberList.selectionSort()))
+        XCTAssertTrue(self.isSorted(trivialNumberList.selectionSort()))
+        XCTAssertTrue(self.isSorted(emptyNumberList.selectionSort()))
+        XCTAssertTrue(self.isSorted(textList.selectionSort()))
+        XCTAssertTrue(self.isSorted(triviaTextList.selectionSort()))
+        XCTAssertTrue(self.isSorted(emptyTextList.selectionSort()))
     }
     
     
