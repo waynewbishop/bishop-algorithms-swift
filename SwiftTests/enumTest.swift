@@ -14,16 +14,18 @@ import XCTest
     
     class enumsTest: XCTestCase {
         
-        let enumModel: EnumModel = EnumModel()
-        
         override func setUp() {
             super.setUp()
         }
         
-        
-        //TODO: Refactor this to use isSortable protocol extension method..
-        
     
+        func testEvaluateModel() {
+            
+            //build model
+//            let list = Algorithm.Sequence(<#T##Array<T>#>)
+            
+        }
+        
         /*
         
         //build and evaluate algorithm model

@@ -50,6 +50,9 @@ class SortingTest: XCTestCase, Sortable {
         }
         
         
+        XCTAssertTrue(self.isSorted(searchList), "search list of values not sorted..")
+        
+        
         //perform test search
         XCTAssertTrue(searchList.binarySearch(forElement: key), "binary key value \(key) not found..")
         
