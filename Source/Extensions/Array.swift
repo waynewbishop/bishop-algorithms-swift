@@ -21,6 +21,8 @@ extension Array where Element: Comparable {
     }
     
     
+    //MARK: - Binary Search
+    
     
     /*
      binary search algorithm. Find the value at a specified index.

@@ -10,41 +10,39 @@ import XCTest
 
 
 @testable import SwiftStructures
+
+
+//TODO: Refactor this test class so that it works like the tree balancing tests..
+
     
-    
-    class enumsTest: XCTestCase {
+    class enumsTest: XCTestCase, Sortable {
+ 
+        
+        let list = Algorithm.Sequence([8, 2, 10, 9, 7, 5])
+        
         
         override func setUp() {
             super.setUp()
         }
         
-    
-        func testEvaluateModel() {
-            
-            //build model
-//            let list = Algorithm.Sequence(<#T##Array<T>#>)
-            
-        }
         
-        /*
-        
-        //build and evaluate algorithm model
-        func testInsertionSort() {
+        func testInsertModel() {
             
             
             //build model
-            let numberList = Algorithm.Sequence([8, 2, 10, 9, 7, 5])
-            let model = Algorithm.InsertionSort(numberList)
+            let enumModel = EnumModel()
+            let model = Algorithm.InsertionSort(list)
             
+            let results = enumModel.evaluate(withModel: model)
             
-            //evaluate results
+            guard results != nil else {
+                XCTFail("error: sorted list not found")
+                return
+            }
             
-            let results = enumModel.evaluate(model)
-            XCTAssertTrue(self.IsSorted(results))
+            XCTAssertTrue(self.isSorted(results!), "list values incorrectly sorted..")
             
         }
-         
-        */
         
         
     }
