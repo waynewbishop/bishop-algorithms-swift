@@ -52,7 +52,7 @@ extension Int {
     
     
     //build fibonacci sequence to a specified position - recursive
-    mutating func fibRecursive(withSequence sequence: Array<Int> = [0, 1]) -> Array<Int>! {
+    mutating func fibRecursive(_ sequence: Array<Int> = [0, 1]) -> Array<Int>! {
         
         var final = Array<Int>()
         
@@ -81,7 +81,7 @@ extension Int {
         
         
         //set iteration
-        final = self.fibRecursive(withSequence: output)
+        final = self.fibRecursive(output)
         
         
         return final

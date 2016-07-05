@@ -24,7 +24,7 @@ class EnumModel{
             return nil
 
             
-        case let .Sequence(elementList):
+        case let .Elements(elementList):
             return elementList
             
             

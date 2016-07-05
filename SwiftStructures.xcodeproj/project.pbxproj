@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DA0C32D21D273A1200F6EE73 /* Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C32D11D273A1200F6EE73 /* Sortable.swift */; };
 		DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C32D31D273ED200F6EE73 /* Protocols.swift */; };
-		DA20DEEA1BE2D95A0032A378 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEE91BE2D95A0032A378 /* Math.swift */; };
 		DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* MathTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA58353D1D21EFA700803407 /* BayesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58353C1D21EFA700803407 /* BayesFeature.swift */; };
@@ -88,7 +87,6 @@
 /* Begin PBXFileReference section */
 		DA0C32D11D273A1200F6EE73 /* Sortable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sortable.swift; sourceTree = "<group>"; };
 		DA0C32D31D273ED200F6EE73 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		DA20DEE91BE2D95A0032A378 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* MathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTest.swift; sourceTree = "<group>"; };
 		DA58353C1D21EFA700803407 /* BayesFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesFeature.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */,
-				DA20DEE91BE2D95A0032A378 /* Math.swift */,
 				DA8146A419ED905B004516F9 /* Trie.swift */,
 				DAE0021119C5677D0035F1A0 /* LinkedList.swift */,
 				DAE0021219C5677D0035F1A0 /* Graph.swift */,
@@ -412,7 +409,6 @@
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,
 				DA8146A519ED905B004516F9 /* Trie.swift in Sources */,
 				DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */,
-				DA20DEEA1BE2D95A0032A378 /* Math.swift in Sources */,
 				DA58353D1D21EFA700803407 /* BayesFeature.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,

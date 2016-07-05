@@ -8,13 +8,17 @@
 
 import XCTest
 
+/*
+ note: fibonacci algorithms are associated directly with the Int.swift
+ class an an extension.
+*/
+
+
 @testable import SwiftStructures
 
 
-private var math: Math = Math()
-
-
 class MathTest: XCTestCase {
+    
 
     override func setUp() {
         super.setUp()
@@ -49,26 +53,29 @@ class MathTest: XCTestCase {
     
     //closure option
     func testFibClosure() {
-        
-        let positions: Int = 23
 
         
-        let results: Array<Int>! = math.fib(positions) { (sequence: Array<Int>!) -> Int in
+        let positions: Int = 23
+        
+        let results = positions.fibClosure { (sequence: Array<Int>!) -> Int in
             
             //initialize and set formula
             let i: Int = sequence.count
             let total: Int = sequence[i - 1] + sequence[i - 2]
             
             return total
+            
         }
         
-
         //test results
         buildResultsTest(results)
         
     }
     
-
+    
+    
+    //MARK: Helper Function
+    
     
     
     //helper function - test results validity

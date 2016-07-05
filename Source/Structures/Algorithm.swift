@@ -14,7 +14,7 @@ import Foundation
 indirect enum Algorithm<T> {
     
     case Empty
-    case Sequence(Array<T>)
+    case Elements(Array<T>)
     case InsertionSort(Algorithm<T>)
     case BubbleSort(Algorithm<T>)
     case SelectionSort(Algorithm<T>)
