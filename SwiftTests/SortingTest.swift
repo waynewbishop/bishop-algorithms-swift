@@ -13,7 +13,7 @@ import XCTest
 
 
 /*
- notes: this test class adopts the Sortable protocol. as a result,
+ notes: this test class adopts the Sortable protocol.
  the isSorted function originates from the protocol extension.
 */
 

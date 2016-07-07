@@ -12,50 +12,7 @@ import XCTest
 
 
 class BayesTest: XCTestCase {
-
     
-    //establish classifier
-    var classifier = NaiveBayes()
+    //TODO: work in progress..
     
-    var flu, chills, runnyNose, headache, fever: BayesFeature!
-    
-    
-    override func setUp() {
-        super.setUp()
-
-        
-        chills = BayesFeature("Chills")
-        runnyNose = BayesFeature("Runny Nose")
-        headache = BayesFeature("Headache")
-        fever = BayesFeature("Fever")
-
-        
-        //establish outcome feature
-        flu = BayesFeature("Flu")
-        flu.isOutcome = true
-        
-    }
-
-    
-    
-    func testBayesModel() {
-
-        var bayesEvent = Array<BayesResult>()
-        
-        //chills result
-        var chillsResult = BayesResult(feature: chills)
-        
-        //TODO: This needs to be merged into its own line..
-        chillsResult.labels.append(true)
-        
-        bayesEvent.append(chillsResult)
-        
-        
-        //TODO: Repeat process for every
-    
-        
-        
-    }
-    
- 
 }

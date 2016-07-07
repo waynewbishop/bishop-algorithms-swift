@@ -11,11 +11,13 @@
 		DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C32D31D273ED200F6EE73 /* Protocols.swift */; };
 		DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* MathTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
-		DA58353D1D21EFA700803407 /* BayesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58353C1D21EFA700803407 /* BayesFeature.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
 		DA64B0A81CCF0B5F007A8F08 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */; };
 		DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4891B1CF50500D1B43F /* ClosureTest.swift */; };
+		DA71F92A1D2CA718000EF8C2 /* HashList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9291D2CA718000EF8C2 /* HashList.swift */; };
+		DA71F9341D2E1029000EF8C2 /* ListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9331D2E1029000EF8C2 /* ListTest.swift */; };
+		DA71F9361D2E1CD8000EF8C2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9351D2E1CD8000EF8C2 /* List.swift */; };
 		DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C6319CA284100D2E177 /* StructureTest.swift */; };
 		DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */; };
 		DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA81469E19ED831B004516F9 /* TrieTest.swift */; };
@@ -88,11 +90,13 @@
 		DA0C32D11D273A1200F6EE73 /* Sortable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sortable.swift; sourceTree = "<group>"; };
 		DA0C32D31D273ED200F6EE73 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* MathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTest.swift; sourceTree = "<group>"; };
-		DA58353C1D21EFA700803407 /* BayesFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesFeature.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
+		DA71F9291D2CA718000EF8C2 /* HashList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashList.swift; sourceTree = "<group>"; };
+		DA71F9331D2E1029000EF8C2 /* ListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTest.swift; sourceTree = "<group>"; };
+		DA71F9351D2E1CD8000EF8C2 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		DA7B7C6319CA284100D2E177 /* StructureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureTest.swift; sourceTree = "<group>"; };
 		DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTest.swift; sourceTree = "<group>"; };
 		DA81469E19ED831B004516F9 /* TrieTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieTest.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				DAC20BFE1D2730C10095B071 /* String.swift */,
 				DAC20C001D2730CC0095B071 /* Int.swift */,
 				DA8C723B1D2732D9006D277E /* Array.swift */,
+				DA71F9351D2E1CD8000EF8C2 /* List.swift */,
 				DA0C32D11D273A1200F6EE73 /* Sortable.swift */,
 			);
 			path = Extensions;
@@ -207,6 +212,7 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA71F9331D2E1029000EF8C2 /* ListTest.swift */,
 				DAA426271D1EEA2800C6208F /* BayesTest.swift */,
 				DA64B09F1CCEB90E007A8F08 /* enumTest.swift */,
 				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,
@@ -255,6 +261,7 @@
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DA908DDB1A0160A300DD9864 /* HashTable.swift */,
+				DA71F9291D2CA718000EF8C2 /* HashList.swift */,
 				DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */,
 			);
 			path = Factories;
@@ -264,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				DA0C32D31D273ED200F6EE73 /* Protocols.swift */,
-				DA58353C1D21EFA700803407 /* BayesFeature.swift */,
 				DAA426211D1E251700C6208F /* BayesResult.swift */,
 				DA64B0A71CCF0B5F007A8F08 /* Algorithm.swift */,
 				DAE0021719C5677D0035F1A0 /* TrieNode.swift */,
@@ -388,6 +394,7 @@
 				DAE82A5C1D00D78C004A5FAA /* Node.swift in Sources */,
 				DA64B0A81CCF0B5F007A8F08 /* Algorithm.swift in Sources */,
 				DAC20C011D2730CC0095B071 /* Int.swift in Sources */,
+				DA71F92A1D2CA718000EF8C2 /* HashList.swift in Sources */,
 				DAC20BFF1D2730C10095B071 /* String.swift in Sources */,
 				DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */,
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
@@ -405,11 +412,11 @@
 				DAE0022C19C567A40035F1A0 /* AVLTree.swift in Sources */,
 				DAE001E119C564720035F1A0 /* ViewController.swift in Sources */,
 				DAE001DF19C564720035F1A0 /* AppDelegate.swift in Sources */,
+				DA71F9361D2E1CD8000EF8C2 /* List.swift in Sources */,
 				DA908DDC1A0160A300DD9864 /* HashTable.swift in Sources */,
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,
 				DA8146A519ED905B004516F9 /* Trie.swift in Sources */,
 				DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */,
-				DA58353D1D21EFA700803407 /* BayesFeature.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,
 			);
@@ -430,6 +437,7 @@
 				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
 				DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */,
 				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,
+				DA71F9341D2E1029000EF8C2 /* ListTest.swift in Sources */,
 				DA908DDE1A016A7700DD9864 /* HashTest.swift in Sources */,
 				DAD971B119D2232400C133C9 /* AVLTest.swift in Sources */,
 			);

@@ -9,8 +9,11 @@
 import Foundation
 
 
+//determine sort order
 protocol Sortable {
     
-    //test sorted order
     func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool
 }
+
+
+

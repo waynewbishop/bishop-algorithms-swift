@@ -86,6 +86,8 @@ class MathTest: XCTestCase {
             XCTFail("fibonnaci test failed..")
         }
         
+        //TODO: Adjust this so that it iterates through the entire sequence??
+        
         if r[r.endIndex - 1] != r[r.endIndex - 2] + r[r.endIndex - 3] {
             XCTFail("fibonnaci test failed..")
         }

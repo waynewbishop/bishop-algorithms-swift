@@ -17,15 +17,17 @@ import Foundation
 struct BayesResult {
 
     
-    var feature: BayesFeature
+    var feature: String
+    var isOutcome: Bool = false
     var labels: Array<Bool>
     var p: Float = 0.0
     
     
-    init(feature: BayesFeature) {
+    init(feature: String, isOutcome: Bool) {
         
         self.feature = feature
         self.labels = Array<Bool>()
+        self.isOutcome = isOutcome
     }
     
     
