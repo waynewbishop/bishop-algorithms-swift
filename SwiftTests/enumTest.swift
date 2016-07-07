@@ -68,20 +68,17 @@ import XCTest
         
         
         
-        //MARK: Helper Functions
+        //MARK: Helper Function
         
-
         
         //helper function - test enum model
         func buildEnumModel<T: Comparable>(withModel model: Algorithm<T>) {
-            
             
             let enumModel = EnumModel()
             let results = enumModel.evaluate(withModel: model)
             
             
             XCTAssertTrue(self.isSorted(results!), "list values incorrectly sorted..")
-            
         }
         
         

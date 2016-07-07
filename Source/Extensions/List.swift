@@ -9,33 +9,60 @@
 import Foundation
 
 extension HashList {
-  
+    
+
     
     //hash based on type
-    func createHash(withElement element: T) -> Int {
+    func createHash(withElement element: T) -> (Int, HashResults) {
+        
         
         var hashIndex: Int = 0
         
         
-        //TODO: Continue adding the other Int and BayesResult types
-        
+        /*
+        note: test various types to determine how they should be hashed. This statement
+        could be extended to support additional types.
+        */
         
         switch element {
             
             
         //string type
         case is String:
-            return hashString(String(element))
+            return (hashString(String(element)), HashResults.Success)
+        
+            
+        //int type
+        case is Int:
+            
+            let stringElement = String(element)
+            return (hashString(stringElement), HashResults.Success)
+
+            
+        //naive bayes type
+        case is BayesResult:
+
+            
+            //downcast and test
+            if let result = element as? BayesResult {
+                return (hashString(result.feature), HashResults.Success)
+            }
+            
+            else {
+                hashIndex = 0
+            }
             
             
         default:
             hashIndex = 0
+            return (hashIndex, HashResults.NoType)
         }
         
         
-        return hashIndex
+        return (hashIndex, HashResults.Fail)
         
     }
+    
     
     
     func hashString(_ element: String) -> Int {
@@ -59,4 +86,5 @@ extension HashList {
     }
     
     
-}
+    
+} //end class

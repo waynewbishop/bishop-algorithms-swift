@@ -20,3 +20,13 @@ indirect enum Algorithm<T> {
     case SelectionSort(Algorithm<T>)
     
 }
+
+
+//enum used to determine Hashlist algorithm processing
+
+enum HashResults {
+    
+    case Success
+    case Fail
+    case NoType
+}

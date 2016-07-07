@@ -9,7 +9,7 @@
 import Foundation
 
 
-//generic node for stacks and queues
+//generic node for stacks, queues and hashlists
 
 
 class Node<T> {
