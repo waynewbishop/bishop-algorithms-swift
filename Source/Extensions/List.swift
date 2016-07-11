@@ -13,7 +13,7 @@ extension HashList {
 
     
     //hash based on type
-    func createHash(withElement element: T) -> (Int, HashResults) {
+    func hashElement(_ element: T) -> (Int, HashResults) {
         
         
         var hashIndex: Int = 0
@@ -64,13 +64,13 @@ extension HashList {
     }
     
     
-    
-    func hashString(_ element: String) -> Int {
+    //hash based on string
+    func hashString(_ key: String) -> Int {
         
         var remainder: Int = 0
         var divisor: Int = 0
         
-        for key in element.unicodeScalars {
+        for key in key.unicodeScalars {
             divisor += Int(key.value)
         }
         

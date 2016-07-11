@@ -1,8 +1,8 @@
 //
-//  Algorithm.swift
+//  enums.swift
 //  SwiftStructures
 //
-//  Created by Wayne Bishop on 4/25/16.
+//  Created by Wayne Bishop on 7/7/16.
 //  Copyright © 2016 Arbutus Software Inc. All rights reserved.
 //
 
@@ -22,11 +22,13 @@ indirect enum Algorithm<T> {
 }
 
 
-//enum used to determine Hashlist algorithm processing
+//used to assess HashList algorithm process
 
 enum HashResults {
     
     case Success
     case Fail
+    case NotFound
     case NoType
 }
+

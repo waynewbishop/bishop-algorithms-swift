@@ -33,7 +33,7 @@ class HashList<T> {
          */
 
         
-        let hashResults = self.createHash(withElement: element)
+        let hashResults = self.hashElement(element)
 
         
         //test results
@@ -62,7 +62,7 @@ class HashList<T> {
             head = buckets[hashIndex]
             
             
-            //append new item to the head of the list
+            //append item to head of list
             childToUse.next = head
             head = childToUse
             
@@ -77,12 +77,53 @@ class HashList<T> {
     }
 
     
-    
-    func getElement(withKey key: T) -> T! {
+    //retrieve a list element
+    func getElement(_ key: String) -> (T?, HashResults) {
         
-        //TODO: hash the key, then retreive the object at that index - will also support chained lists..
         
-        return nil
+        let hashIndex = self.hashString(key)
+        
+
+        //test hash results
+        if hashIndex == 0 || buckets[hashIndex] == nil {
+            return (nil, HashResults.NotFound)
+        }
+        
+
+       // var current: Node! = buckets[hashIndex]
+        
+        
+        
+        /*
+         //iterate through the list of items to find a match
+         else {
+         
+         var current: HashNode! = buckets[hashindex]
+         
+         while (current != nil) {
+         
+         let hashName: String! = current.firstname + current.lastname
+         
+         if (hashName == fullname) {
+         print("\(current.firstname) \(current.lastname) found in hash table..")
+         return true
+         }
+         
+         
+         print("searching for word through chained list..")
+         current = current.next
+         
+         
+         } //end while
+         
+         
+         } //end if
+
+         
+        */
+        
+        
+        return (nil, HashResults.Fail)
     }
     
     

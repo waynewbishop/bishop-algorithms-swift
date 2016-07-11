@@ -179,11 +179,9 @@ extension Array where Element: Comparable {
             //"half-open" range operator
             for secondaryIndex in 0..<passes {
                 
-                let key = output[secondaryIndex]
-                
+                let key = output[secondaryIndex]                
                 
                 print("comparing \(key) and \(output[secondaryIndex + 1])")
-                
                 
                 //compare / swap positions
                 if (key > output[secondaryIndex + 1]) {
