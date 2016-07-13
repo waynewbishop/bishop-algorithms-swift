@@ -10,7 +10,54 @@ import Foundation
 
 extension HashList {
     
+    
+    
+    //retrieve key based on type
+    func getHashKey(withElement element: T) -> String? {
+        
+        /*
+         note: test various types to determine how they should be hashed. This statement
+         could be extended to support additional types.
+         */
+        
+        switch element {
+            
+            
+        //string type
+        case is String:
+            return String(element)
+            
+            
+            
+        //int type
+        case is Int:
+            
+            let stringElement = String(element)
+            return String(stringElement)
+ 
+            
+        //naive bayes type
+        case is BayesResult:
+            
+            
+            //downcast and test
+            if let resultElement = element as? BayesResult {
+                return String(resultElement.feature)
+            }
+                
+            else {
+                return nil
+            }
+            
+            
+        default:
+            return nil
+        }
+        
+        
+    }
 
+    
     
     //hash based on type
     func hashElement(_ element: T) -> (Int, HashResults) {
@@ -44,8 +91,8 @@ extension HashList {
 
             
             //downcast and test
-            if let result = element as? BayesResult {
-                return (hashString(result.feature), HashResults.Success)
+            if let resultElement = element as? BayesResult {
+                return (hashString(resultElement.feature), HashResults.Success)
             }
             
             else {

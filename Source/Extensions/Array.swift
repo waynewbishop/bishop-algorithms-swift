@@ -15,7 +15,7 @@ extension Array where Element: Comparable {
     //MARK: Index Operation
     
     
-    //returns the middle index
+    //returns middle index
     func midIndex() -> Index {
         return startIndex + (count / 2)
     }

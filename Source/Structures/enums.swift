@@ -22,9 +22,9 @@ indirect enum Algorithm<T> {
 }
 
 
-//used to assess HashList algorithm process
+//used to assess HashList types and processing
 
-enum HashResults {
+enum HashResults {  
     
     case Success
     case Fail
