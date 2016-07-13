@@ -8,11 +8,15 @@
 
 import Foundation
 
+
+//a generic element use with HashLists
+
 class HashElement<T> {
     
     var key: String
     var element: T?
     var next: HashElement<T>?
+    
     
     init(withKey key: String) {
         self.key = key

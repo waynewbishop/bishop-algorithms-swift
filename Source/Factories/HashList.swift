@@ -15,100 +15,126 @@ import Foundation
 class HashList<T> {
     
     
-    var buckets: Array<Node<T>?>
+    var buckets: Array<HashElement<T>?>
 
     
     init(capacity: Int) {
-        self.buckets = Array<Node<T>?>(repeatElement(nil, count: capacity))
+        self.buckets = Array<HashElement<T>?>(repeatElement(nil, count: capacity))
     }
     
     
-    //add item to the list
-    func append(_ element: T) -> HashResults {
-    
+    //add element to list
+    func append(_ element: T, withKey key: String) -> HashResults {
         
-         /*
-         note: The append process supports multiple types and can be extended.
-         see list.swift for details.
-         */
         
-        if let hashKey = self.getHashKey(withElement: element) {
-            
-            
-            let hashIndex = self.hashString(hashKey)
-            
-            
-            //new nodes
-            let childToUse = Node<T>()
-            var head: Node<T>!
-            
-            
-            childToUse.key = element
-            
-            
-            //check for an existing list
-            if  buckets[hashIndex] == nil {
-                buckets[hashIndex] = childToUse
-            }
-                
-            else {
-                
-                print("a collision occured. implementing chaining..")
-                head = buckets[hashIndex]
-                
-                
-                //append item to head of list
-                childToUse.next = head
-                head = childToUse
-                
-                
-                //update the chained list
-                buckets[hashIndex] = head
-            }
-
-            
-        } //end if
-            
+        let results: HashResults
         
+        
+        //determine hash
+        let hashIndex = self.createHash(key)
+        
+        
+        //placeholder elements
+        let childToUse = HashElement<T>(withKey: key)
+        var head: HashElement<T>?
+        
+        
+        childToUse.element = element
+        
+        
+        //check existing list
+        if  buckets[hashIndex] == nil {
+            buckets[hashIndex] = childToUse
+            
+            results = HashResults.Success
+        }
+            
         else {
-            return HashResults.NoType
+            
+            print("a collision occured. implementing chaining..")
+            head = buckets[hashIndex]
+            
+            
+            //append item to head of list
+            childToUse.next = head
+            head = childToUse
+            
+            
+            //update chained list
+            buckets[hashIndex] = head
+            
+            
+            results = HashResults.Collision
         }
         
         
-        return HashResults.Fail
+        return results
         
     }
+    
 
     
-    //retrieve a list element
-    func getElement(withKey key: String) -> (T?, HashResults) {
+    //retrieve list element
+    func getElement(withKey key: String) -> (HashElement<T>?, HashResults) {
         
         
-        let hashIndex = self.hashString(key)
+        let hashIndex = self.createHash(key)
         
-
-        //test results
-        if hashIndex == 0 || buckets[hashIndex] == nil {
+        
+        //trivial check
+        guard buckets[hashIndex] != nil else {
             return (nil, HashResults.NotFound)
         }
-        
 
-        let current: Node<T>! = buckets[hashIndex]
+        
+        var current: HashElement<T>? = buckets[hashIndex]
         
         
-        //check chained list
+        //check chained list for key
         while (current != nil) {
-        
-            //check for a string match based on the type of object..
             
-            //let hashKey = self.getHashKey(withElement: current)
-                    
+            if current?.key == key {
+                print("element found..")
+                
+                return (current, HashResults.Success)
+            }
+            
+            
+            print("searching through chained list..")
+            current = current?.next
+            
         }
-        
-        
         
         
         return (nil, HashResults.Fail)
+        
+    }
+    
+    
+    
+    //MARK: Helper Function
+
+    
+    
+    //hash based on string
+    func createHash(_ key: String) -> Int {
+        
+        var remainder: Int = 0
+        var divisor: Int = 0
+        
+        for key in key.unicodeScalars {
+            divisor += Int(key.value)
+        }
+        
+        
+        /*
+         note: modular math is used to calculate a hash value. The bucket count is used
+         as the dividend to ensure all possible outcomes are between 0 and the collection size.
+         */
+        
+        remainder = divisor % buckets.count
+        
+        return remainder - 1
     }
     
     

@@ -13,53 +13,54 @@ import XCTest
 
 class ListTest: XCTestCase {
     
-    
-    //create new list
-    let list = HashList<String>(capacity: 25)
-    
-    
 
     override func setUp() {
         super.setUp()
     }
     
     
-    func testAppendList() {
+    //test a string list
+    func testStringList() {
         
-         /*
-         note: the addition of each word should have its own corresponding "slot" in the
-         hash table with the exception of hash collisions.
+        
+        /*
+         note: each element has its own corresponding "slot" in the
+         hash list with the exception of hash "collisions".
          */
+
         
-        self.buildHashList(withElement: "Wayne Bishop")
-        self.buildHashList(withElement: "Frank Smith")
-        self.buildHashList(withElement: "Jennifer Hobbs")
-        self.buildHashList(withElement: "Tim Cook")
-        self.buildHashList(withElement: "Steve Jobs")
-        self.buildHashList(withElement: "Wayne Bishop") //duplicate value - collision
-        self.buildHashList(withElement: "Larry Page")
-        self.buildHashList(withElement: "Albert Einstein")
+        //create new list
+        let slist = HashList<String>(capacity: 25)
+        
+        
+        _ = slist.append("Wayne Bishop", withKey: "Wayne")
+        _ = slist.append("Frank Smith", withKey: "Frank")
+        _ = slist.append("Jennifer Hobbs", withKey: "Jennifer")
+        _ = slist.append("Tim Cook", withKey: "Tim")
+        _ = slist.append("Steve Jobs", withKey: "Steve")
+        _ = slist.append("Wayne Bishop", withKey: "Wayne")
+        _ = slist.append("Larry Page", withKey: "Larry")
+        _ = slist.append("Albert Einstien", withKey: "Albert")
+        
+        
+        //TODO: Add additional tests for retrieving..
+        
     }
     
+
     
-    
-    //example of unsupported list type
-    func testAppendNoType() {
+    //test a vertex list
+    func testVertexList() {
         
-        let boolList = HashList<Bool>(capacity: 5)
-        XCTAssertNotEqual(boolList.append(true), HashResults.Success, "append process succeeded incorrectly..")
-    }
-    
-    
-    
-    
-    //MARK: Helper Function
-    
-    
-    //build and test
-    func buildHashList(withElement element: String) {
+        let testVertex: Vertex = Vertex()
+        testVertex.key = "A"
         
-        XCTAssertEqual(list.append(element), HashResults.Success, "append process failed..")
+        let vList: HashList = HashList<Vertex>(capacity: 10)
+       _ = vList.append(testVertex, withKey: testVertex.key!)
+        
+        
+        //TODO: Add additional tests for retrieving..
+        
     }
     
     
