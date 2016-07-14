@@ -19,7 +19,7 @@ class ListTest: XCTestCase {
     }
     
     
-    //test a string list
+    //test strings
     func testStringList() {
         
         
@@ -29,37 +29,87 @@ class ListTest: XCTestCase {
          */
 
         
-        //create new list
+        //new string list
         let slist = HashList<String>(capacity: 25)
         
         
-        _ = slist.append("Wayne Bishop", withKey: "Wayne")
-        _ = slist.append("Frank Smith", withKey: "Frank")
-        _ = slist.append("Jennifer Hobbs", withKey: "Jennifer")
-        _ = slist.append("Tim Cook", withKey: "Tim")
-        _ = slist.append("Steve Jobs", withKey: "Steve")
-        _ = slist.append("Wayne Bishop", withKey: "Wayne")
-        _ = slist.append("Larry Page", withKey: "Larry")
-        _ = slist.append("Albert Einstien", withKey: "Albert")
+        _ = slist.append("Wayne Bishop", key: "Wayne")
+        _ = slist.append("Frank Smith", key: "Frank")
+        _ = slist.append("Jennifer Hobbs", key: "Jennifer")
+        _ = slist.append("Tim Cook", key: "Tim")
+        _ = slist.append("Steve Jobs", key: "Steve")
+        _ = slist.append("Wayne Bishop", key: "Wayne") //should produce collision
+        _ = slist.append("Larry Page", key: "Larry")
+        _ = slist.append("Albert Einstien", key: "Albert")
+
         
         
-        //TODO: Add additional tests for retrieving..
+        //obtain element
+        let element = slist.getElement(with: "Larry")
+        
+        if let results = element.0 {
+            let rString: String? = results.element
+            print("element with value: \(rString)")
+        }
+        
+        else {
+            XCTFail("value not retreived..")
+        }
+        
         
     }
     
-
     
-    //test a vertex list
+    //test verticies - custom
     func testVertexList() {
+        
+        
+        /*
+         note: for this test, the added element is a custom object.
+         using this technique, any potential object could be used.
+        */
+
         
         let testVertex: Vertex = Vertex()
         testVertex.key = "A"
         
         let vList: HashList = HashList<Vertex>(capacity: 10)
-       _ = vList.append(testVertex, withKey: testVertex.key!)
+       _ = vList.append(testVertex, key: testVertex.key!)
+
         
         
-        //TODO: Add additional tests for retrieving..
+        //obtain element
+        let element = vList.getElement(with: "A")
+        
+        if let results = element.0 {
+            let rVertex: Vertex? = results.element
+            print("element with key \(rVertex?.key)")
+        }
+        
+        else {
+            XCTFail("element not retreived..")
+        }
+        
+    }
+    
+    
+    //test floats
+    func testMissingList() {
+        
+        
+        //new float list
+        let fList = HashList<Float>(capacity: 5)
+        
+        _ = fList.append(10.2, key: String(10.2))
+        _ = fList.append(8.6, key: String(8.6))
+        
+        
+        //element doesn't exist..
+        let element = fList.getElement(with: String(3.7))
+        
+        if element.1 != HashResults.NotFound {
+            XCTFail("element incorrectly found..")
+        }        
         
     }
     

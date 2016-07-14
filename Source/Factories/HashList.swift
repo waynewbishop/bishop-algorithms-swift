@@ -24,7 +24,7 @@ class HashList<T> {
     
     
     //add element to list
-    func append(_ element: T, withKey key: String) -> HashResults {
+    func append(_ element: T, key: String) -> HashResults {
         
         
         let results: HashResults
@@ -75,7 +75,7 @@ class HashList<T> {
 
     
     //retrieve list element
-    func getElement(withKey key: String) -> (HashElement<T>?, HashResults) {
+    func getElement(with key: String) -> (HashElement<T>?, HashResults) {
         
         
         let hashIndex = self.createHash(key)
