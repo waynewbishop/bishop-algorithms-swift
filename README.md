@@ -7,7 +7,7 @@ This project provides a framework for commonly used data structures and algorith
 Audience
 ---------------------
 
-As a developer, you should already be familiar with the basics of programming. Beyond algorithms, this project also aims to provide an alternative for learning the basics of Swift. This includes implementations of many Swift-specific features such as optionals, extensions and generics. Beyond Swift, audiences should be familiar with Singleton and Factory design patterns along with sets, arrays and dictionaries. 
+As a developer, you should already be familiar with the basics of programming. Beyond algorithms, this project also aims to provide an alternative for learning the basics of Swift. This includes implementations of many Swift-specific features such as optionals, extensions, protocols and generics. Beyond Swift, audiences should be familiar with Singleton and Factory design patterns along with sets, arrays and dictionaries. 
 
 
 Features
@@ -20,12 +20,13 @@ The project features code-level examples for the following items:
 + [Insertion Sort](/Source/Factories/Sorting.swift)
 + [Bubble Sort](/Source/Factories/Sorting.swift)
 + [Selection Sort](/Source/Factories/Sorting.swift)
-+ [Quick Sort](/Source/Factories/Sorting.swift)
-+ [Merge Sort](/Source/Factories/Sorting.swift)
-+ [Fibonacci Numbers](/Source/Factories/Math.swift)
++ [Extensions](/Source/Extensions)
++ [Protocols](/Source/Structures/Protocols.swift)
++ [Enumerations](/SwiftTests/enumTest.swift)
++ [Fibonacci Numbers](/Source/Extensions/Int.swift)
 + Generics
 + [Closures](/SwiftTests/ClosureTest.swift)
-+ [Hash Tables](/Source/Factories/HashTable.swift)
++ [Hash Tables](/Source/Factories/HashList.swift)
 + [Binary Search Trees](/Source/Structures/AVLTree.swift)
 + [Tree Balancing - Rotations](/SwiftTests/AVLTest.swift)
 + [Tries](/Source/Factories/Trie.swift)
