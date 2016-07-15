@@ -67,13 +67,14 @@ public class Trie {
 
         
         //include only children that are words
-        for child in current.children {
-            
-            if (child.isFinal == true) {
-                wordList.append(child.key)
-            }
-            
-        }
+//        for child in current.children {
+//            
+//            if (child.isFinal == true) {
+//                wordList.append(child.key)
+//            }
+//            
+//        }
+        fetchAllWords(current, list: &wordList)
         
         
         return wordList
@@ -82,8 +83,21 @@ public class Trie {
         
     } //end function
     
+    func fetchAllWords() -> [String] {
+        var wordList = [String]()
+        fetchAllWords(root, list: &wordList)
+        return wordList
+    }
     
-    
+    private func fetchAllWords(node: TrieNode, inout list: [String]) {
+        if node.isFinal {
+            list.append(node.key)
+        }
+        
+        for child in node.children {
+            fetchAllWords(child, list: &list)
+        }
+    }
     
     
     //builds a iterative tree of dictionary content
@@ -136,7 +150,7 @@ public class Trie {
         //add final end of word check
         if (keyword.length == current.level) {
             current.isFinal = true
-            print("end of word reached!")
+            print("\(keyword) added to trie!")
             return
         }
         
