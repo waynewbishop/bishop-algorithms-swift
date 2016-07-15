@@ -40,7 +40,7 @@ The project features code-level examples for the following items:
 
 The Book
 --------------------
-Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and [contribution](/pulls) from others. 
+Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href=“https://help.github.com/articles/using-pull-requests”>contribution</a> from others. 
 
 
 Example
@@ -103,8 +103,8 @@ Individuals are welcome to use the code with commercial and open-source projects
 Branches
 --------------------
 + master - The production branch. Clone or fork this repository for the latest copy
-+ develop - The active Swift 2.2 development branch. All Swift 2.2 <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
-+ swift-3.0 - The active Swift 3.0 development branch. All Swift 3.0 <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
++ develop - The active Swift 2.2 development branch. Swift 2.2 <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
++ swift-3.0 - The active Swift 3.0 development branch. Swift 3.0 <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
 
 
 Other Projects
