@@ -40,27 +40,31 @@ The project features code-level examples for the following items:
 
 The Book
 --------------------
-Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href="http://shop.waynewbishop.com/pages/participate" target="_blank">contribution</a> from others. 
+Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and [contribution](/pulls) from others. 
 
 
 Example
 --------------------
 
 ```swift
+
     /* graph traversal - breadth first search */
-    
-    func traverse(startingv: Vertex) {
+    func traverse(_ startingv: Vertex, formula: (inout node: Vertex) -> ()) {
+
         
         //establish a new queue
         let graphQueue: Queue<Vertex> = Queue<Vertex>()
         
+        
         //queue a starting vertex
         graphQueue.enQueue(startingv)
+        
         
         while !graphQueue.isEmpty() {
             
             //traverse the next queued vertex
-            let vitem = graphQueue.deQueue() as Vertex!
+            var vitem: Vertex = graphQueue.deQueue() as Vertex!
+            
             
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
@@ -69,22 +73,25 @@ Example
                     graphQueue.enQueue(e.neighbor)
                 }
             }
+                        
+            //invoke with inout parameter
+            formula(node: &vitem)
             
-            vitem.visited = true
-            print("traversed vertex: \(vitem.key!)..")
             
         } //end while
         
-        print("graph traversal complete..")
         
-    } //end function
+        print("graph traversal complete..")        
+        
+    }
+
 ```
 
 Getting Started
 --------------------
 
-Swift Structures has been optimized for Xcode 7.3 (e.g., Swift 2.2) or later. The directories are organized as follows:
-+ Source - Code for all Swift data structures and algorithms
+Swift Structures has been optimized for Xcode 8.0 beta 2 (e.g., Swift 3.0) or later. The directories are organized as follows:
++ Source - Code for all Swift data structures, algorithms and source extensions
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
 
@@ -96,7 +103,8 @@ Individuals are welcome to use the code with commercial and open-source projects
 Branches
 --------------------
 + master - The production branch. Clone or fork this repository for the latest copy
-+ develop - The active development branch. <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">Pull requests</a> should be directed to this branch
++ develop - The active Swift 2.2 development branch. All Swift 2.2 <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
++ swift-3.0 - The active Swift 3.0 development branch. All Swift 3.0 <a href="https://help.github.com/articles/creating-a-pull-request" target=_blank">pull requests</a> should be directed to this branch
 
 
 Other Projects
