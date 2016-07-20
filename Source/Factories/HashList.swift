@@ -91,18 +91,15 @@ class HashList<T> {
         
         
         //check chained list for key
-        while (current != nil) {
+        while current != nil {
             
             if current?.key == key {
                 print("element found..")
-                
                 return (current, HashResults.Success)
             }
             
-            
             print("searching through chained list..")
             current = current?.next
-            
         }
         
         

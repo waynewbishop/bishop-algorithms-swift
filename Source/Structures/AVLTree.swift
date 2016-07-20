@@ -10,12 +10,13 @@ import Foundation
 
 
 /*
- note: self-balancing binary search tree
- when building the structure, items are positioned based on value.
+ note: self-balancing binary search tree (AVL).
+ elements are positioned based on value.
 */
 
 
 public class AVLTree<T: Comparable> {
+    
     
     var key: T?
     var left: AVLTree?
@@ -37,9 +38,10 @@ public class AVLTree<T: Comparable> {
 
     
     //add item
-    func addElement(withKey key: T) {
+    func append(element key: T) {
         
         
+        //check root
         guard self.key != nil else {
             self.key = key
             self.height = 0
@@ -52,44 +54,49 @@ public class AVLTree<T: Comparable> {
             
             
             if self.left != nil {
-               left?.addElement(withKey: key)
+                left?.append(element: key)
             }
                 
-            
+                
             else {
+                
+                //new element
                 let leftElement = AVLTree()
                 leftElement.key = key
                 leftElement.height = 0
+                
                 self.left = leftElement
             }
             
-            _ = self.setNodeHeight()
+            _ = self.setElementHeight()
             
             print("traversing left side. element \(self.key!) with height: \(self.height)...")
             
            _ = self.isValidAVLTree()
             
         }
-       
-        
+               
         
         //check right side
         if key > self.key {
             
             
             if self.right != nil {
-                right?.addElement(withKey: key)
+                right?.append(element: key)
             }
                 
                 
             else {
+                
+                //new element
                 let rightElement = AVLTree()
                 rightElement.key = key
                 rightElement.height = 0
+                
                 self.right = rightElement
             }
             
-            _ = self.setNodeHeight()
+            _ = self.setElementHeight()
             
             print("traversing right side. element \(self.key!) with height: \(self.height)...")
             
@@ -97,56 +104,49 @@ public class AVLTree<T: Comparable> {
             
         }
         
-        
-        
     } //end function
 
 
-    
     
     
     // MARK: - tree balancing algorithms
 
     
     
-    //retrieve element height
-    func getNodeHeight(_ aNode: AVLTree!) -> Int {
+    //retrieve height
+    func getElementHeight(of element: AVLTree!) -> Int {
         
-        if (aNode == nil) {
+        guard element != nil else {
             return -1
         }
-        else {
-           return aNode.height
-        }
+        
+        return element.height
         
     }
     
     
     
-    //calculate the height of a node
-    func setNodeHeight() -> Bool {
+    //calculate height
+    func setElementHeight() -> Bool {
         
         
-        //check for a nil condition
-        if (self.key == nil) {
+        //check nil condition
+        guard self.key != nil else {
             print("no key provided..")
             return false
         }
         
-        //println("key: \(self.key!)")
         
-
-        //initialize leaf variables
-        var nodeHeight: Int = 0
+        //set leaf variables
+        var elementHeight: Int = 0
         
         
-        //do comparision and calculate node height
-        nodeHeight = max(getNodeHeight(self.left), getNodeHeight(self.right)) + 1
+        //do comparison and calculate height
+        elementHeight = max(getElementHeight(of: self.left), getElementHeight(of: self.right)) + 1
         
-        self.height = nodeHeight
+        self.height = elementHeight
         
         return true
-        
     }
     
     
@@ -154,15 +154,14 @@ public class AVLTree<T: Comparable> {
     func isTreeBalanced() -> Bool {
 
         
-        //check for a nil condition
-        if (self.key == nil) {
-            print("no key provided..")
+        guard self.key != nil else {
+            print("no element provided..")
             return false
         }
         
         
         //use absolute value to manage right and left imbalances
-        if (abs(getNodeHeight(self.left) - getNodeHeight(self.right)) <= 1) {
+        if (abs(getElementHeight(of: self.left) - getElementHeight(of: self.right)) <= 1) {
             return true
         }
         else {
@@ -170,7 +169,7 @@ public class AVLTree<T: Comparable> {
         }
         
         
-    } //end function
+    }
 
     
 
@@ -179,9 +178,8 @@ public class AVLTree<T: Comparable> {
     func isValidAVLTree() -> Bool! {
         
         
-        //check for valid scenario
-        if (self.key == nil) {
-            print("no key provided..")
+        guard self.key != nil else {
+            print("no element provided..")
             return false
         }
         
@@ -191,24 +189,25 @@ public class AVLTree<T: Comparable> {
             return true
         }
         
+            
         //determine rotation type
         else {
             
             
-            //create a new leaf node
+            //new leaf node
             let childToUse : AVLTree = AVLTree()
             childToUse.height = 0
             childToUse.key = self.key
             
             
-            if (getNodeHeight(self.left) - getNodeHeight(self.right) > 1) {
+            if (getElementHeight(of: self.left) - getElementHeight(of: self.right) > 1) {
                 
                 print("\n starting right rotation on \(self.key!)..")
                 
                 
                 //reset the root node
                 self.key = self.left?.key
-                self.height = getNodeHeight(self.left)
+                self.height = getElementHeight(of: self.left)
 
                 
                 //assign the new right node
@@ -226,13 +225,13 @@ public class AVLTree<T: Comparable> {
             }
 
             
-            if (getNodeHeight(self.right) - getNodeHeight(self.left) > 1) {
+            if (getElementHeight(of: self.right) - getElementHeight(of: self.left) > 1) {
                 
                 print("\n starting left rotation on \(self.key!)..")
                 
                 //reset the root node
                 self.key = self.right?.key
-                self.height = getNodeHeight(self.right)
+                self.height = getElementHeight(of: self.right)
                 
                 
                 //assign the new left node

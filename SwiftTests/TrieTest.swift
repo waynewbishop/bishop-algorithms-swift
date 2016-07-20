@@ -21,27 +21,27 @@ class TrieTest: XCTestCase {
         super.setUp()
         
         XCTAssertNotNil(testTrie, "Trie instance not correctly intialized..")
-    
+        
         
         //add words to data structure
-        testTrie.addWord("Ball")
-        testTrie.addWord("Balls")
-        testTrie.addWord("Ballard")
-        testTrie.addWord("Bat")
-        testTrie.addWord("Bar")
+        testTrie.append(word: "Ball")
+        testTrie.append(word: "Balls")
+        testTrie.append(word: "Ballard")
+        testTrie.append(word: "Bat")
+        testTrie.append(word: "Bar")
     }
     
     
 
     /*
-    the findWord algorithm will only return strings identified as words. For example, the prefix "Ba" has 3 children,
+    the findWord algorithm will only return strings identified as words. For example, the prefix "Ba" has children,
     but only 2 are marked as final. Even though the phrase "Bal" is found in the trie, it is not
     identified as a word.
     */
 
     func testFindWithPrefix() {
         
-        let wordList: Array<String>! = testTrie.findWord("Ba")
+        let wordList: Array<String>! = testTrie.search(forWord: "Ba")
         for word in wordList {
             print("\(word) found in trie..")
         }
@@ -56,7 +56,7 @@ class TrieTest: XCTestCase {
     
     func testFindWithWord() {
         
-        let wordList: Array<String>! = testTrie.findWord("Ball")
+        let wordList: Array<String>! = testTrie.search(forWord: "Ball")
         for word in wordList {
             print("\(word) found in trie..")
         }
@@ -68,7 +68,7 @@ class TrieTest: XCTestCase {
     func testFindNoExist() {
         
         let keyword: String = "Barstool"
-        let wordList: Array<String>! = testTrie.findWord(keyword)
+        let wordList: Array<String>! = testTrie.search(forWord: keyword)
         
         
         if (wordList == nil) {

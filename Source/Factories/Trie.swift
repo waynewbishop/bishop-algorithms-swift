@@ -19,27 +19,94 @@ public class Trie {
     }
     
     
-    //finds all words based on the prefix
-    func findWord(_ keyword: String) -> Array<String>! {
+    
+    //builds a tree hierarchy of dictionary content
+    func append(word keyword: String) {
         
         
+        //trivial case
+        guard keyword.length > 0 else {
+            return
+        }
+        
+        
+        var current: TrieNode = root
+        
+        
+        while keyword.length != current.level {
+            
+            var childToUse: TrieNode!
+            let searchKey = keyword.substring(to: current.level + 1)
+            
+            
+            //print("current has \(current.children.count) children..")
+            
+            
+            //iterate through child nodes
+            for child in current.children {
+                
+                if (child.key == searchKey) {
+                    childToUse = child
+                    break
+                }
+                
+            }
+            
+            
+            //new node
+            if childToUse == nil {
+                
+                childToUse = TrieNode()
+                childToUse.key = searchKey
+                childToUse.level = current.level + 1
+                current.children.append(childToUse)
+            }
+            
+            
+            current = childToUse
+            
+            
+        } //end while
+        
+        
+        //final end of word check
+        if (keyword.length == current.level) {
+            current.isFinal = true
+            print("end of word reached!")
+            return
+        }
+        
+        
+        
+    } //end function
+    
+    
+
+    
+    //find words based on the prefix
+    func search(forWord keyword: String) -> Array<String>! {
+        
+        
+        //trivial case
         guard keyword.length > 0 else {
             return nil
         }
         
         
         var current: TrieNode = root
-        var wordList: Array<String> = Array<String>()
+        var wordList = Array<String>()
         
-        while (keyword.length != current.level) {
+        
+        while keyword.length != current.level {
             
             var childToUse: TrieNode!
-            let searchKey: String = keyword.substring(to: current.level + 1)
+            let searchKey = keyword.substring(to: current.level + 1)
             
-            print("looking for prefix: \(searchKey)..")
+
+            //print("looking for prefix: \(searchKey)..")
             
             
-            //iterate through any children
+            //iterate through any child nodes
             for child in current.children {
                 
                 if (child.key == searchKey) {
@@ -60,7 +127,7 @@ public class Trie {
         
         
         
-        //retrieve the keyword and any decendants
+        //retrieve the keyword and any descendants
         if ((current.key == keyword) && (current.isFinal)) {
             wordList.append(current.key)
         }
@@ -78,69 +145,6 @@ public class Trie {
         
         return wordList
 
-        
-        
-    } //end function
-    
-    
-    
-    
-    
-    //builds a iterative tree of dictionary content
-    func addWord(_ keyword: String) {
-        
-        
-        guard keyword.length > 0 else {
-            return
-        }
-
-        
-        var current: TrieNode = root
-        
-        while(keyword.length != current.level) {
-            
-            var childToUse: TrieNode!
-            let searchKey: String = keyword.substring(to: current.level + 1)
-            
-            //print("current has \(current.children.count) children..")
-            
-            
-            //iterate through the node children
-            for child in current.children {
-                
-                if (child.key == searchKey) {
-                    childToUse = child
-                    break
-                }
-                
-            }
-            
-            
-            //create a new node
-            if  (childToUse == nil) {
-                
-                childToUse = TrieNode()
-                childToUse.key = searchKey
-                childToUse.level = current.level + 1
-                current.children.append(childToUse)
-            }
-            
-            
-            current = childToUse
-            
-            
-        } //end while
-        
-        
-        
-        //add final end of word check
-        if (keyword.length == current.level) {
-            current.isFinal = true
-            print("end of word reached!")
-            return
-        }
-        
-        
         
     } //end function
     

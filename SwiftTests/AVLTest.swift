@@ -31,7 +31,7 @@ class AVLTest: XCTestCase {
         let tree = AVLTree<Int>()
         
         for number in numberList {
-            tree.addElement(withKey: number)
+            tree.append(element: number)
         }
         
         XCTAssert(tree.count == numberList.count, "Expected tree's size to be \(numberList.count), got \(tree.count) instead.")
@@ -175,7 +175,7 @@ class AVLTest: XCTestCase {
         //build the tree list
         for number in numberList {
             print("adding \(number) to avl tree...")
-            avlTest.addElement(withKey: number)
+            avlTest.append(element: number)
         }
         
         
@@ -207,7 +207,7 @@ class AVLTest: XCTestCase {
         //build the tree list
         for number in numberList {
             print("adding \(number) to avl tree...")
-            avlTest.addElement(withKey: number)
+            avlTest.append(element: number)
         }
 
         
