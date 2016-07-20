@@ -7,7 +7,7 @@ This project provides a framework for commonly used data structures and algorith
 Audience
 ---------------------
 
-As a developer, you should already be familiar with the basics of programming. Beyond algorithms, this project also aims to provide an alternative for learning the basics of Swift. This includes implementations of many Swift-specific features such as optionals, extensions, protocols and generics. Beyond Swift, audiences should be familiar with Singleton and Factory design patterns along with sets, arrays and dictionaries. 
+As a developer, you should already be familiar with the basics of programming. Beyond algorithms, this project also aims to provide an alternative for learning the basics of Swift. This includes implementations of many Swift-specific features such as optionals, extensions, protocols and generics. Beyond Swift, audiences should be familiar with **Singleton** and **Factory** design patterns along with sets, arrays and dictionaries. 
 
 
 Features
@@ -40,15 +40,15 @@ The project features code-level examples for the following items:
 
 The Book
 --------------------
-Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and <a href=“https://help.github.com/articles/using-pull-requests”>contribution</a> from others. 
+Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and contribution from others. 
 
 
 Example
 --------------------
 
 ```swift
-
     /* graph traversal - breadth first search */
+    
     func traverse(_ startingv: Vertex, formula: (inout node: Vertex) -> ()) {
 
         
@@ -90,7 +90,7 @@ Example
 Getting Started
 --------------------
 
-Swift Structures has been optimized for Xcode 8.0 beta 2 (e.g., Swift 3.0) or later. The directories are organized as follows:
+Swift Structures has been optimized for **Xcode 8.0** (e.g., Swift 3.0) or later. The directories are organized as follows:
 + Source - Code for all Swift data structures, algorithms and source extensions
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
