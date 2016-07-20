@@ -152,7 +152,7 @@ class LinkedTest: XCTestCase {
         
         //append items
         for number in numberList {
-            linkedList.append(number)
+            linkedList.append(element: number)
         }
         
         

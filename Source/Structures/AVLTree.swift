@@ -9,7 +9,10 @@
 import Foundation
 
 
-/* An AVL Tree is a kind of self-balancing binary search tree */
+/*
+ note: self-balancing binary search tree
+ when building the structure, items are positioned based on value.
+*/
 
 
 public class AVLTree<T: Comparable> {
@@ -21,7 +24,6 @@ public class AVLTree<T: Comparable> {
 
     
     init() {
-        //set math purposes
         self.height = -1
     }
 
@@ -32,87 +34,74 @@ public class AVLTree<T: Comparable> {
         return left + 1 + right
     }
     
+
     
-    //position item based on its value
-    func addNode(_ key: T) {
+    //add item
+    func addElement(withKey key: T) {
         
-        //check for the root node
-        if (self.key == nil) {
+        
+        guard self.key != nil else {
             self.key = key
             self.height = 0
             return
         }
         
         
-        //check the left side of the tree
-        if (key < self.key) {
+        //check left side
+        if key < self.key {
             
             
-            if (self.left != nil) {
-                left?.addNode(key)
+            if self.left != nil {
+               left?.addElement(withKey: key)
             }
                 
+            
             else {
-                //create a new left node
-                let leftChild : AVLTree = AVLTree()
-                leftChild.key = key
-                leftChild.height = 0
-                self.left = leftChild
+                let leftElement = AVLTree()
+                leftElement.key = key
+                leftElement.height = 0
+                self.left = leftElement
             }
             
-            //recalculate node height for hierarchy
             _ = self.setNodeHeight()
-            print("traversing left side. node \(self.key!) with height: \(self.height)...")
-
-
-            //check AVL property
+            
+            print("traversing left side. element \(self.key!) with height: \(self.height)...")
+            
            _ = self.isValidAVLTree()
-
             
-            
-        } //end if
+        }
        
         
         
-        //check the left side of the tree
-        if (key > self.key) {            
+        //check right side
+        if key > self.key {
             
-            if (self.right != nil) {
-                right?.addNode(key)
+            
+            if self.right != nil {
+                right?.addElement(withKey: key)
             }
                 
+                
             else {
-                //create a new right node
-                let rightChild : AVLTree = AVLTree()
-                rightChild.key = key
-                rightChild.height = 0
-                self.right = rightChild
-                         
+                let rightElement = AVLTree()
+                rightElement.key = key
+                rightElement.height = 0
+                self.right = rightElement
             }
             
-            //recalculate node height for hierarchy
             _ = self.setNodeHeight()
-            print("traversing right side. node \(self.key!) with height: \(self.height)...")
             
+            print("traversing right side. element \(self.key!) with height: \(self.height)...")
             
-            //check AVL property
-           _ = self.isValidAVLTree()
+            _ = self.isValidAVLTree()
             
-            
-            
-        } //end if
-
+        }
         
-    }
+        
+        
+    } //end function
 
 
-    
-    //TODO: find a node - O(log n)
-    func findNode(key: T) ->Bool! {
-
-        //guard for nil condition
-        return nil
-    }
     
     
     
@@ -120,7 +109,7 @@ public class AVLTree<T: Comparable> {
 
     
     
-    //retrieve the height of a node
+    //retrieve element height
     func getNodeHeight(_ aNode: AVLTree!) -> Int {
         
         if (aNode == nil) {

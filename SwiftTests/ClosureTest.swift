@@ -213,7 +213,7 @@ class ClosureTest: XCTestCase {
         
         //append list items
         for number in numberList {
-            linkedList.append(number)
+            linkedList.append(element: number)
         }
         
         

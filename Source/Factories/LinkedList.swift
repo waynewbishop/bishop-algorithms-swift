@@ -12,11 +12,11 @@ import Foundation
 public class LinkedList<T: Equatable> {
     
     
-    //create a new LLNode instance 
-    private var head: LLNode<T> = LLNode<T>()
+   //new instance
+   private var head = LLNode<T>()
     
     
-   //the number of items
+  
    var count: Int {
         
             if head.key == nil {
@@ -49,26 +49,25 @@ public class LinkedList<T: Equatable> {
     
     
     
-    //append a new item to a linked list
-    func append(_ key: T) {
+    //add link item
+    func append(element key: T) {
+
         
-        
-        //establish the head node
-        if (head.key == nil) {
+        //trivial check
+        guard head.key != nil else {
             head.key = key
             return
         }
     
         
-        //establish the iteration variables
-        var current: LLNode? =  head
+        var current: LLNode? = head
         
         
-        while (current != nil) {
+        while current != nil {
             
             if current?.next == nil {
                 
-                let childToUse: LLNode = LLNode<T>()
+                let childToUse = LLNode<T>()
                 
                 childToUse.key = key
                 childToUse.previous = current
@@ -236,9 +235,9 @@ public class LinkedList<T: Equatable> {
         
         
         //iterate through the remaining items
-        while (current != nil) {
+        while current != nil {
             
-            if (listIndex == index) {
+            if listIndex == index {
                 
                 //redirect the trailer and next pointers
                 trailer!.next = current?.next
@@ -289,12 +288,12 @@ public class LinkedList<T: Equatable> {
       //move to next node
       current = next
         
-    }//end while
+    }
     
-    
-  }//end function
+  }
     
   
+    
     
     //MARK: Closure operations
     
@@ -324,7 +323,7 @@ public class LinkedList<T: Equatable> {
             
             //filter based on formula
             if formula(current) == true {
-                results.append(current.key)
+                results.append(element: current.key)
             }
             
             
@@ -360,7 +359,7 @@ public class LinkedList<T: Equatable> {
             
             //add non-nil entries
             if newKey != nil {
-                results.append(newKey)
+                results.append(element: newKey)
             }
             
             
