@@ -28,7 +28,7 @@ class Stack<T> {
         }
                 
         
-        var current: Node = top
+        var current = top
         var x: Int = 1
         
         
@@ -44,7 +44,7 @@ class Stack<T> {
     
     
     //add item to the stack
-    func push(withkey key: T) {
+    func push(withKey key: T) {
         
         
         //return trivial case

@@ -124,6 +124,7 @@ extension Array where Element: Comparable {
             let key = output[primaryindex]
             var secondaryindex = primaryindex
             
+            
             while secondaryindex > -1 {
                 
                 print("comparing \(key) and \(output[secondaryindex])")
