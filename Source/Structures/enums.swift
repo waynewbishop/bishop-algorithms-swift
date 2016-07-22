@@ -29,6 +29,7 @@ enum HashResults {
     case Success
     case Collision
     case NotFound
+    case NotSupported
     case Fail
 }
 

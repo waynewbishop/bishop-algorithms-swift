@@ -24,28 +24,29 @@ class ListTest: XCTestCase {
         
         
         /*
-         note: each element has its own corresponding "slot" in the
-         hash list with the exception of hash "collisions".
+         note: each element has its own potential 'slot' in the
+         hash list. In this scenario, the hash table algorithm will
+         implement 'separate chaining' to support 'hash collisions'.
          */
 
         
         //new string list
-        let slist = HashList<String>(capacity: 25)
+        let slist = HashList<String>(capacity: 3)
         
         
-        _ = slist.append("Wayne Bishop", key: "Wayne")
-        _ = slist.append("Frank Smith", key: "Frank")
-        _ = slist.append("Jennifer Hobbs", key: "Jennifer")
-        _ = slist.append("Tim Cook", key: "Tim")
-        _ = slist.append("Steve Jobs", key: "Steve")
-        _ = slist.append("Wayne Bishop", key: "Wayne") //should produce collision
-        _ = slist.append("Larry Page", key: "Larry")
-        _ = slist.append("Albert Einstien", key: "Albert")
+        _ = slist.append("Wayne Bishop")
+        _ = slist.append("Frank Smith")
+        _ = slist.append("Jennifer Hobbs")
+        _ = slist.append("Tim Cook")
+        _ = slist.append("Steve Jobs")
+        _ = slist.append("Wayne Bishop") //should produce collision
+        _ = slist.append("Larry Page")
+        _ = slist.append("Albert Einstien")
 
         
         
         //obtain element
-        let element = slist.getElement(with: "Larry")
+        let element = slist.getElement(with: "Frank Smith")
         
         if let results = element.0 {
             let rString: String? = results.element
@@ -74,7 +75,7 @@ class ListTest: XCTestCase {
         testVertex.key = "A"
         
         let vList: HashList = HashList<Vertex>(capacity: 10)
-       _ = vList.append(testVertex, key: testVertex.key!)
+       _ = vList.append(testVertex)
 
         
         
@@ -100,8 +101,8 @@ class ListTest: XCTestCase {
         //new float list
         let fList = HashList<Float>(capacity: 5)
         
-        _ = fList.append(10.2, key: String(10.2))
-        _ = fList.append(8.6, key: String(8.6))
+        _ = fList.append(10.2)
+        _ = fList.append(8.6)
         
         
         //element doesn't exist..

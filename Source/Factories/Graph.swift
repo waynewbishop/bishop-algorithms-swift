@@ -59,19 +59,19 @@ public class SwiftGraph {
         
         
         //check condition for an undirected graph
-        if (isDirected == false) {
+        if isDirected == false {
             
             
-            //create a new reversed edge
-            let reverseEdge = Edge()
+           //create a new reversed edge
+           let reverseEdge = Edge()
             
             
-            //establish the reversed properties
-            reverseEdge.neighbor = source
-            reverseEdge.weight = weight
-            neighbor.neighbors.append(reverseEdge)
+           //establish the reversed properties
+           reverseEdge.neighbor = source
+           reverseEdge.weight = weight
+           neighbor.neighbors.append(reverseEdge)
             
-            print("The neighbor of vertex: \(neighbor.key as String!) is \(source.key as String!)..")
+           print("The neighbor of vertex: \(neighbor.key as String!) is \(source.key as String!)..")
             
         }
         

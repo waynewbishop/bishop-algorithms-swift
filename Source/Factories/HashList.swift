@@ -23,20 +23,29 @@ class HashList<T> {
     }
     
     
+    
     //add element to list
-    func append(_ element: T, key: String) -> HashResults {
+    func append(_ element: T) -> HashResults {
         
         
         let results: HashResults
+        var hashIndex = 0
         
         
-        //determine hash
-        let hashIndex = self.createHash(key)
+        
+        //test list types
+        if let elementKey = model(with: element) {
+            hashIndex = self.createHash(elementKey)
+        }
+        else {
+            return HashResults.NotSupported
+        }
         
         
         //placeholder elements
-        let childToUse = HashElement<T>(withKey: key)
+        let childToUse = HashElement<T>()
         var head: HashElement<T>?
+        
         
         
         childToUse.element = element
@@ -93,24 +102,75 @@ class HashList<T> {
         //check chained list for key
         while current != nil {
             
-            if current?.key == key {
-                print("element found..")
-                return (current, HashResults.Success)
+            
+            //test model - compare element keys
+            if let elementKey = model(with: (current?.element)!) {
+                
+                if elementKey == key {
+                    print("element found..")
+                    return (current, HashResults.Success)
+                }                
             }
             
             print("searching through chained list..")
             current = current?.next
+            
         }
-        
         
         return (nil, HashResults.Fail)
         
     }
     
-    
-    
-    //MARK: Helper Function
 
+    
+    
+    //MARK: Helper Functions
+    
+    
+
+    //determine supported list types
+    func model(with element: T) -> String? {
+        
+
+        /*
+         note: since various structures will manage key data differently, 
+         this model can be extended to support different types.
+        */
+        
+        switch element {
+            
+            
+        //string type
+        case is String:
+            return String(element)
+            
+
+            
+        //int type
+        case is Int:
+            let stringElement = String(element)
+            return stringElement
+
+            
+            
+        //vertex type
+        case is Vertex:
+            if let eVertex = element as? Vertex {
+                return eVertex.key
+            }
+            else {
+                return nil
+            }
+            
+            
+        default:
+            return nil
+        }
+        
+        
+    }
+
+    
     
     
     //hash based on string
@@ -131,7 +191,7 @@ class HashList<T> {
         
         remainder = divisor % buckets.count
         
-        return remainder - 1
+        return remainder
     }
     
     
