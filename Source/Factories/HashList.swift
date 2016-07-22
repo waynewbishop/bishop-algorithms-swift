@@ -24,7 +24,7 @@ class HashList<T> {
     
     
     
-    //add element to list
+    //add item to list
     func append(_ element: T) -> HashResults {
         
         
@@ -33,7 +33,7 @@ class HashList<T> {
         
         
         
-        //test list types
+        //test element type
         if let elementKey = model(with: element) {
             hashIndex = self.createHash(elementKey)
         }
@@ -60,7 +60,7 @@ class HashList<T> {
             
         else {
             
-            print("a collision occured. implementing chaining..")
+            print("a collision occurred. implementing chaining..")
             head = buckets[hashIndex]
             
             
@@ -133,8 +133,8 @@ class HashList<T> {
         
 
         /*
-         note: since various structures will manage key data differently, 
-         this model can be extended to support different types.
+         note: since various structures manage key data differently,
+         the model can be extended to support different types.
         */
         
         switch element {

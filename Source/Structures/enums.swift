@@ -22,7 +22,7 @@ indirect enum Algorithm<T> {
 }
 
 
-//used to assess hash algorithm processing
+//used for hash list processing
 
 enum HashResults {  
     

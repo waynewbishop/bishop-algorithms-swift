@@ -9,7 +9,7 @@
 import Foundation
 
 
-//a generic element use with HashLists
+//a generic hash element 
 
 class HashElement<T> {
     

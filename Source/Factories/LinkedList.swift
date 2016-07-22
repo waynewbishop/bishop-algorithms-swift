@@ -310,8 +310,8 @@ public class LinkedList<T: Equatable> {
         
         
         //check for instance
-        if head.key == nil {
-           return nil
+        guard head.key != nil else {
+            return nil
         }
         
         
@@ -342,8 +342,8 @@ public class LinkedList<T: Equatable> {
         
         
         //check for instance
-        if head.key == nil {
-           return nil
+        guard head.key != nil else {
+            return nil
         }
         
         
