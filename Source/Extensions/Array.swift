@@ -1,4 +1,4 @@
-//
+ //
 //  Array.swift
 //  SwiftStructures
 //
@@ -98,6 +98,63 @@ extension Array where Element: Comparable {
 
     
     
+    //MARK: - Quick Sort
+    
+    /*
+     quick sort algorithm - rank set of random numbers lowest to highest
+     through the use of a "pivot" element and "wall". The pivot acts a source of
+     comparision while the wall provides a mechanisim to compare sorted and unsorted
+     sides the collection. average performance of O(n log(n)).
+    */
+    
+    func quickSort() -> Array<Element> {
+
+        
+        guard self.count > 1 else {
+            return self
+        }
+        
+        var output: Array<Element> = self
+
+        
+        //establish indices
+        let pivot: Int = output.endIndex - 1
+        var wall: Int = 0
+
+        
+        while wall != pivot {
+            
+            for current in wall..<pivot {
+                
+                print("current is: \(output[current]). pivot is \(output[pivot])")
+                
+                if output[current] <= output[pivot] {
+                    
+                    //swap positions
+                    if wall != current {
+                      swap(&output[wall], &output[current])
+                    }
+                    
+                    //advance wall
+                    wall += 1
+                }
+                
+            }
+            
+            guard wall != pivot else {
+                break
+            }
+            
+            //completed evaluation of unsorted side - swap position values
+            swap(&output[wall], &output[pivot])
+            wall += 1
+            
+        }
+        
+        return output
+    }
+
+    
     
     
     //MARK: - Insertion Sort
@@ -105,7 +162,7 @@ extension Array where Element: Comparable {
     
     /*
      insertion sort algorithm - rank set of random numbers lowest to highest by
-     inserting numbers based on a sorted and unsorted side.
+     inserting numbers based on a sorted and unsorted side. performance of O(n).
      */
    
     func insertionSort() -> Array<Element> {

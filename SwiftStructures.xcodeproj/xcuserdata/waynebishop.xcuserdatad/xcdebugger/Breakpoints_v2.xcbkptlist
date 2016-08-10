@@ -10,75 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "489388241.386834"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "testBinaryTestNotFound()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.SortingTest.testBinarySearch () -&gt; ()"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
-                  timestampString = "489104029.195222"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "171">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.SortingTest.(testBinarySearch () -&gt; ()).(implicit closure #1)"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
-                  timestampString = "489104029.197567"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTests.SortingTest.(testBinarySearch () -&gt; ()).(implicit closure #2)"
-                  moduleName = "SwiftTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/waynebishop/Dropbox/iPhone%20Development/SwiftStructures/SwiftTests/SortingTest.swift"
-                  timestampString = "489104029.199649"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftTests/SortingTest.swift"
-            timestampString = "489388241.386834"
+            timestampString = "492493081.876909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "testBubbleSort()"
+            landmarkName = "testInsertionSort()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -174,6 +111,22 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "testStringList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/Extensions/Array.swift"
+            timestampString = "492493081.876909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "quickSort()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -27,7 +27,7 @@ class StackTest: XCTestCase {
     func testPushStack() {
         
         
-        let myStack: Stack<Int> = Stack()
+        let myStack = Stack<Int>()
         XCTAssertTrue(myStack.count == 0, "test failed: count not initialized..")
         
         

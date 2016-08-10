@@ -69,7 +69,19 @@ class SortingTest: XCTestCase, Sortable {
     }
     
     
-	
+    func testQuickSort() {
+        
+        //let searchList: Array<Int> = [6,5,1,3,8,4,7,2]
+        let numberList = [8, 2, 10, 9, 7, 5]
+        
+        
+        let results = numberList.quickSort()
+        print("the results are: \(results)")
+        
+    }
+    
+    
+
 
     //MARK: General Sorting Algorithms
     
