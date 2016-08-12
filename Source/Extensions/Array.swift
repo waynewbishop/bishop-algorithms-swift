@@ -129,9 +129,10 @@ extension Array where Element: Comparable {
         
         //sort left side
         qSort(wall, pivot - 1)
-        qSort(pivot + 1, end)
         
         print("made it this far..")
+        
+        qSort(pivot + 1, end)
         
     }
     
@@ -141,7 +142,7 @@ extension Array where Element: Comparable {
         let pivot: Int = end
         var wall: Int = start
         
-            for current in 0..<pivot {
+            for current in wall..<pivot {
                 
                 print(self)
                 print("current is: \(self[current]). pivot is \(self[pivot])")
