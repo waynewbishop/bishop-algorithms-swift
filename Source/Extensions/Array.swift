@@ -97,66 +97,134 @@ extension Array where Element: Comparable {
     }
 
     
-    
     //MARK: - Quick Sort
     
     /*
      quick sort algorithm - rank set of random numbers lowest to highest
      through the use of a "pivot" element and "wall". The pivot acts a source of
-     comparision while the wall provides a mechanisim to compare sorted and unsorted
-     sides the collection. average performance of O(n log(n)).
+     comparision. The "wall" manages the sorted and unsorted
+     sides of a collection. average performance of O(n log(n)).
     */
     
-    func quickSort() -> Array<Element> {
+    
+    mutating func qSort(_ start: Int = 0, _ end: Int = 0) {
 
+        
+        //initialize values
+        var pivot: Int = end
+        let wall: Int = start
+        
+        
+        //check base case
+        guard wall < pivot else {
+            return
+        }
+        
+        
+        //divide sorted and unsorted halves - set new pivot
+        pivot = qParition(wall, pivot)
+        
+        
+        print(self)
+        
+        //sort left side
+        qSort(wall, pivot - 1)
+        qSort(pivot + 1, end)
+        
+        print("made it this far..")
+        
+    }
+    
+    
+    mutating func qParition(_ start: Int, _ end: Int) -> Int {
+        
+        let pivot: Int = end
+        var wall: Int = start
+        
+            for current in 0..<pivot {
+                
+                print(self)
+                print("current is: \(self[current]). pivot is \(self[pivot])")
+                
+                if self[current] <= self[pivot] && wall != current {
+                    swap(&self[current], &self[wall])
+                    wall += 1
+                    
+                    print(self)
+                }
+            }
+        
+        
+        //move pivot to final position
+        if self[wall] > self[pivot] {
+           swap(&self[wall], &self[pivot])
+        }
+        
+        print(self)
+        
+        return wall
+        
+    }
+    
+    
+    
+    mutating func quickSort() -> Array<Element> {
+        
         
         guard self.count > 1 else {
             return self
         }
         
-        var output: Array<Element> = self
+        
+        var sequence: Array<Element> = self
 
         
-        //establish indices
-        let pivot: Int = output.endIndex - 1
-        var wall: Int = 0
-
+        //set indices
+        //let pivot = output.endIndex - 1
+        let pivot = 3 //output.midIndex()
+        var wall = 0
+        
+        
         
         while wall != pivot {
             
             for current in wall..<pivot {
                 
-                print("current is: \(output[current]). pivot is \(output[pivot])")
+                print("current is: \(sequence[current]). pivot is \(sequence[pivot])")
                 
-                if output[current] <= output[pivot] {
+                if sequence[current] <= sequence[pivot] {
                     
                     //swap positions
                     if wall != current {
-                      swap(&output[wall], &output[current])
+                      swap(&sequence[wall], &sequence[current])
                     }
                     
                     //advance wall
                     wall += 1
                 }
-                
             }
             
-            guard wall != pivot else {
+            
+            if wall == pivot {
                 break
             }
             
             //completed evaluation of unsorted side - swap position values
-            swap(&output[wall], &output[pivot])
+            swap(&sequence[wall], &sequence[pivot])
             wall += 1
             
         }
         
-        return output
+        return sequence
+        
+        
     }
 
     
     
     
+    
+  
     //MARK: - Insertion Sort
     
     

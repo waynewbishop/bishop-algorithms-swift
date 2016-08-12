@@ -67,57 +67,53 @@ class SortingTest: XCTestCase, Sortable {
         //test for false positive
         XCTAssertFalse(searchList.binarySearch(forElement: key), "binary key value \(key) found..")
     }
-    
+   
     
     func testQuickSort() {
+    
+        var searchList: Array<Int>  = [7, 2, 1, 6, 8, 5, 3, 4]
+        searchList.qSort(0, searchList.endIndex - 1)
         
-        //let searchList: Array<Int> = [6,5,1,3,8,4,7,2]
-        let numberList = [8, 2, 10, 9, 7, 5]
-        
-        
-        let results = numberList.quickSort()
-        print("the results are: \(results)")
-        
+        print("The results are: \(searchList)")
     }
     
     
-
 
     //MARK: General Sorting Algorithms
     
     
     func testInsertionSort() {
         
-        XCTAssertTrue(self.isSorted(numberList.insertionSort()))
-        XCTAssertTrue(self.isSorted(trivialNumberList.insertionSort()))
-        XCTAssertTrue(self.isSorted(emptyNumberList.insertionSort()))
-        XCTAssertTrue(self.isSorted(textList.insertionSort()))
-        XCTAssertTrue(self.isSorted(triviaTextList.insertionSort()))
-        XCTAssertTrue(self.isSorted(emptyTextList.insertionSort()))
+        XCTAssertTrue(isSorted(numberList.insertionSort()))
+        XCTAssertTrue(isSorted(trivialNumberList.insertionSort()))
+        XCTAssertTrue(isSorted(emptyNumberList.insertionSort()))
+        XCTAssertTrue(isSorted(textList.insertionSort()))
+        XCTAssertTrue(isSorted(triviaTextList.insertionSort()))
+        XCTAssertTrue(isSorted(emptyTextList.insertionSort()))
     }
     
     
     
     func testBubbleSort() {
         
-        XCTAssertTrue(self.isSorted(numberList.bubbleSort()))
-        XCTAssertTrue(self.isSorted(trivialNumberList.bubbleSort()))
-        XCTAssertTrue(self.isSorted(emptyNumberList.bubbleSort()))
-        XCTAssertTrue(self.isSorted(textList.bubbleSort()))
-        XCTAssertTrue(self.isSorted(triviaTextList.bubbleSort()))
-        XCTAssertTrue(self.isSorted(emptyTextList.bubbleSort()))
+        XCTAssertTrue(isSorted(numberList.bubbleSort()))
+        XCTAssertTrue(isSorted(trivialNumberList.bubbleSort()))
+        XCTAssertTrue(isSorted(emptyNumberList.bubbleSort()))
+        XCTAssertTrue(isSorted(textList.bubbleSort()))
+        XCTAssertTrue(isSorted(triviaTextList.bubbleSort()))
+        XCTAssertTrue(isSorted(emptyTextList.bubbleSort()))
     }
 
     
     
     func testSelectionSort() {
         
-        XCTAssertTrue(self.isSorted(numberList.selectionSort()))
-        XCTAssertTrue(self.isSorted(trivialNumberList.selectionSort()))
-        XCTAssertTrue(self.isSorted(emptyNumberList.selectionSort()))
-        XCTAssertTrue(self.isSorted(textList.selectionSort()))
-        XCTAssertTrue(self.isSorted(triviaTextList.selectionSort()))
-        XCTAssertTrue(self.isSorted(emptyTextList.selectionSort()))
+        XCTAssertTrue(isSorted(numberList.selectionSort()))
+        XCTAssertTrue(isSorted(trivialNumberList.selectionSort()))
+        XCTAssertTrue(isSorted(emptyNumberList.selectionSort()))
+        XCTAssertTrue(isSorted(textList.selectionSort()))
+        XCTAssertTrue(isSorted(triviaTextList.selectionSort()))
+        XCTAssertTrue(isSorted(emptyTextList.selectionSort()))
     }
     
     
