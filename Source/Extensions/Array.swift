@@ -111,18 +111,18 @@ extension Array where Element: Comparable {
 
         
         //initialize values
-        var pivot: Int = end
+        let iPivot: Int = end
         let wall: Int = start
         
         
         //check base case
-        guard wall < pivot else {
+        guard wall < iPivot else {
             return
         }
         
         
         //divide sorted and unsorted halves - set new pivot
-        pivot = qParition(wall, pivot)
+        let pivot = qParition(wall, iPivot)
         
         
         print(self)
@@ -130,7 +130,7 @@ extension Array where Element: Comparable {
         //sort left side
         qSort(wall, pivot - 1)
         
-        print("made it this far..")
+        print("sorting second half..")
         
         qSort(pivot + 1, end)
         
@@ -141,6 +141,7 @@ extension Array where Element: Comparable {
         
         let pivot: Int = end
         var wall: Int = start
+        
         
             for current in wall..<pivot {
                 
@@ -159,7 +160,7 @@ extension Array where Element: Comparable {
         //move pivot to final position
         if self[wall] > self[pivot] {
            swap(&self[wall], &self[pivot])
-        }
+       }
         
         print(self)
         
@@ -376,7 +377,7 @@ extension Array where Element: Comparable {
         return output
         
     }
-
+    
     
     
 }

@@ -71,10 +71,18 @@ class SortingTest: XCTestCase, Sortable {
     
     func testQuickSort() {
     
-        var searchList: Array<Int>  = [7, 2, 1, 6, 8, 5, 3, 4]
-        searchList.qSort(0, searchList.endIndex - 1)
+        // var quickList: Array<Int>  = [7, 2, 1, 6, 8, 5, 3, 4]
+       // var quickList = [8, 2, 10, 9, 7, 5]
+       //  var quickList: Array<Int> = [6, 5, 1, 3, 8, 4, 7, 9, 2]
+       // var quickList = [9, 8, 7, 6, 5, 4]
         
-        print("The results are: \(searchList)")
+        //quickList.qSort(0, quickList.endIndex - 1)
+        //print("The results are: \(quickList)")
+        
+        let sorting: QuickSort = QuickSort()
+        sorting.qSort()
+        
+        
     }
     
     
