@@ -218,19 +218,15 @@ public class LinkedList<T: Equatable> {
             return
         }
         
-
-        var current: LLNode<T>? =  head
-        var trailer: LLNode<T>?
-        var listIndex: Int = 0
-        
-        
         //determine if the removal is at the head
         if (index == 0) {
-            current = current?.next
-            head = current!
+            head = head.next != nil ? head.next! : LLNode<T>()
             return
         }
-        
+
+        var current: LLNode<T>? = head
+        var trailer: LLNode<T>?
+        var listIndex: Int = 0
         
         //iterate through the remaining items
         while (current != nil) {
