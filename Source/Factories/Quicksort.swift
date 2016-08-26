@@ -15,36 +15,40 @@ class QuickSort {
     //var sequence: Array<Int> = [7, 2, 1, 6, 8, 5, 3, 4]
     //var sequence: Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     //var sequence: Array<Int> = [8, 2, 10, 9, 7, 5]
-    var sequence: Array<Int> = [0,4,7,9,13,16,34]
+    //var sequence: Array<Int> = [0, 4, 7, 9, 13, 16, 34]
+    //var sequence: Array<Int> = [2, 5, 3, 8, 9, 5, 6, 7]
+    //var sequence: Array<Int> = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+    //var sequence: Array<Int> = [1, 2, 3, 4, 5]
 
     
-    func qSort() {
-
- 
-        //starting pivot
-        let iPivot = qPartition(start: 0, sequence.endIndex - 1)
+    //var sequence: Array<Int> = [8, 7, 6, 5, 4, 3, 2, 1]
+    //var sequence: Array<Int> = [6, 5, 4, 3, 2, 1]
+    var sequence: Array<Int> = [7, 2, 6, 5, 2, 1]
+    
+    
+    
+    //determines sorting range - performance: O(n log(n))
+    func quickSort() -> Array<Int> {
         
         
-        var leftPivot: Int = iPivot
-        var rightPivot: Int = iPivot
-        
-        
-        //sort left side
-        while leftPivot > 0 {
-            leftPivot = qPartition(start: 0, leftPivot - 1)
+        func qSort(start startIndex: Int, _ pivot: Int) {
+            
+            if (startIndex < pivot) {
+                let iPivot = qPartition(start: startIndex, pivot)
+                qSort(start: startIndex, iPivot - 1)
+                qSort(start: iPivot + 1, pivot)
+            }
+            
         }
         
-        
-        ///sort right side
-        while rightPivot < sequence.endIndex - 1 {
-            rightPivot = qPartition(start: rightPivot + 1, sequence.endIndex - 1)
-        }
-                
+        qSort(start: 0, sequence.endIndex - 1)
+        return sequence
         
     }
     
     
     
+    //sorts collection range based on pivot
     func qPartition(start startIndex: Int, _ pivot: Int) -> Int {
         
         var wallIndex: Int = startIndex
@@ -54,34 +58,23 @@ class QuickSort {
         for currentIndex in wallIndex..<pivot {
             
             print("current is: \(sequence[currentIndex]). pivot is \(sequence[pivot])")
-            if sequence[currentIndex] <= sequence[pivot] {
-                
-                
-                /*
-                 note: swift logic
-                 is required to prevent swapping "potentially" equal array
-                 indicies. With QuickSort, there  are often scenarios where 
-                 the current and wall indicies will be equilvalent.
-                */
-                
-                
+            
+            if sequence[currentIndex] <= sequence[pivot] {                
                 if wallIndex != currentIndex {
                     swap(&sequence[currentIndex], &sequence[wallIndex])
                 }
                 
+                //advance wall
                 wallIndex += 1
             }
-            
         }
         
         
         //move pivot to final position
-        if sequence[wallIndex] > sequence[pivot] {
-            swap(&sequence[wallIndex], &sequence[pivot])
+        if wallIndex != pivot {
+           swap(&sequence[wallIndex], &sequence[pivot])
         }
         
-        
-        //reuse the wall
         return wallIndex
         
     }

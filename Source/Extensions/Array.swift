@@ -97,142 +97,13 @@ extension Array where Element: Comparable {
     }
 
     
-    //MARK: - Quick Sort
-    
-    /*
-     quick sort algorithm - rank set of random numbers lowest to highest
-     through the use of a "pivot" element and "wall". The pivot acts a source of
-     comparision. The "wall" manages the sorted and unsorted
-     sides of a collection. average performance of O(n log(n)).
-    */
-    
-    
-    mutating func qSort(_ start: Int = 0, _ end: Int = 0) {
-
-        
-        //initialize values
-        let iPivot: Int = end
-        let wall: Int = start
-        
-        
-        //check base case
-        guard wall < iPivot else {
-            return
-        }
-        
-        
-        //divide sorted and unsorted halves - set new pivot
-        let pivot = qParition(wall, iPivot)
-        
-        
-        print(self)
-        
-        //sort left side
-        qSort(wall, pivot - 1)
-        
-        print("sorting second half..")
-        
-        qSort(pivot + 1, end)
-        
-    }
-    
-    
-    mutating func qParition(_ start: Int, _ end: Int) -> Int {
-        
-        let pivot: Int = end
-        var wall: Int = start
-        
-        
-            for current in wall..<pivot {
-                
-                print(self)
-                print("current is: \(self[current]). pivot is \(self[pivot])")
-                
-                if self[current] <= self[pivot] && wall != current {
-                    swap(&self[current], &self[wall])
-                    wall += 1
-                    
-                    print(self)
-                }
-            }
-        
-        
-        //move pivot to final position
-        if self[wall] > self[pivot] {
-           swap(&self[wall], &self[pivot])
-       }
-        
-        print(self)
-        
-        return wall
-        
-    }
-    
-    
-    
-    mutating func quickSort() -> Array<Element> {
-        
-        
-        guard self.count > 1 else {
-            return self
-        }
-        
-        
-        var sequence: Array<Element> = self
-
-        
-        //set indices
-        //let pivot = output.endIndex - 1
-        let pivot = 3 //output.midIndex()
-        var wall = 0
-        
-        
-        
-        while wall != pivot {
-            
-            for current in wall..<pivot {
-                
-                print("current is: \(sequence[current]). pivot is \(sequence[pivot])")
-                
-                if sequence[current] <= sequence[pivot] {
-                    
-                    //swap positions
-                    if wall != current {
-                      swap(&sequence[wall], &sequence[current])
-                    }
-                    
-                    //advance wall
-                    wall += 1
-                }
-            }
-            
-            
-            if wall == pivot {
-                break
-            }
-            
-            //completed evaluation of unsorted side - swap position values
-            swap(&sequence[wall], &sequence[pivot])
-            wall += 1
-            
-        }
-        
-        return sequence
-        
-        
-    }
-
-    
-    
-    
-    
   
     //MARK: - Insertion Sort
     
     
     /*
      insertion sort algorithm - rank set of random numbers lowest to highest by
-     inserting numbers based on a sorted and unsorted side. performance of O(n).
+     inserting numbers based on a sorted and unsorted side. performance of O(n2).
      */
    
     func insertionSort() -> Array<Element> {
@@ -281,7 +152,7 @@ extension Array where Element: Comparable {
     /*
      bubble sort algorithm - rank items from the lowest to highest by swapping
      groups of two items from left to right. The highest item in the set will bubble up to the
-     right side of the set after the first iteration.
+     right side of the set after the first iteration. performance of O(n2).
      */
     
     
@@ -330,7 +201,7 @@ extension Array where Element: Comparable {
     /*
      selection sort algorithm - rank items from the lowest to highest by iterating through
      the array and swapping the current iteration with the lowest value in the rest of the array
-     until it reaches the end of the array.
+     until it reaches the end of the array. performance of O(n2).
      */
     
     func selectionSort() -> Array<Element> {
@@ -378,6 +249,71 @@ extension Array where Element: Comparable {
         
     }
     
+    
+    
+    //MARK: - Quick Sort
+    
+    
+    /*
+     quicksort algorithm - Ranks numbers through a series of swaps.
+     Based on "conceptually" partioning a series through the application of a "wall" and "pivot".
+     Best case performance of O(n log(n)). Worst case performance of O(n2).
+     */
+    
+    
+    
+    //determines sorting range - performance: O(n log(n))
+    mutating func quickSort() -> Array<Element> {
+        
+        
+        func qSort(start startIndex: Int, _ pivot: Int) {
+            
+            if (startIndex < pivot) {
+                let iPivot = qPartition(start: startIndex, pivot)
+                qSort(start: startIndex, iPivot - 1)
+                qSort(start: iPivot + 1, pivot)
+            }
+        }
+        
+        
+        qSort(start: 0, self.endIndex - 1)
+        return self
+        
+    }
+    
+    
+    
+    //sorts collection range based on pivot
+    mutating func qPartition(start startIndex: Int, _ pivot: Int) -> Int {
+        
+        var wallIndex: Int = startIndex
+        
+        
+        //compare range with pivot
+        for currentIndex in wallIndex..<pivot {
+            
+            print("current is: \(self[currentIndex]). pivot is \(self[pivot])")
+            
+            if self[currentIndex] <= self[pivot] {
+                if wallIndex != currentIndex {
+                    swap(&self[currentIndex], &self[wallIndex])
+                }
+                
+                //advance wall
+                wallIndex += 1
+            }
+        }
+        
+        
+        //move pivot to final position
+        if wallIndex != pivot {
+            swap(&self[wallIndex], &self[pivot])
+        }
+        
+        return wallIndex
+        
+    }
+
     
     
 }
