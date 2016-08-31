@@ -142,13 +142,13 @@ class HashList<T> {
             
         //string type
         case is String:
-            return String(element)
+            return String(describing: element)
             
 
             
         //int type
         case is Int:
-            let stringElement = String(element)
+            let stringElement = String(describing: element)
             return stringElement
 
             

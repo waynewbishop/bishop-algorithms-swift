@@ -12,26 +12,6 @@ import XCTest
 @testable import SwiftStructures
 
 
-//MARK:  custom operator
-
-
-/* 
-notes: infix class operator to represent exponent operation
-single carat symbol reserved for XOR bit manipulation
-*/
-
-
-infix operator ^^ {}
-
-func ^^(base: Int, power: Int) -> Int {
-    
-    //rounded to nearest int
-    let results: Double = round(pow(Double(base), Double(power)))
-    return Int(results)
-}
-
-
-
 class ClosureTest: XCTestCase {
 
     var numberList: Array<Int>!

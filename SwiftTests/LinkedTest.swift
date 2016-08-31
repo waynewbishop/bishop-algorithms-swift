@@ -14,14 +14,13 @@ import XCTest
 
 //struct for testing indicies
 struct keyIndex {
-    private var key: Int
-    private var index: Int
+    public var key: Int
+    public var index: Int
 }
 
 
 
 class LinkedTest: XCTestCase {
-
     
     var numberList : Array<Int>!
     

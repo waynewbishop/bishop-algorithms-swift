@@ -34,7 +34,7 @@ class QuickTest: XCTestCase, Sortable {
         
         
         //evaluate results
-        buildQuickResults(with: results)
+        processQuickResults(with: results)
     }
     
     
@@ -47,7 +47,7 @@ class QuickTest: XCTestCase, Sortable {
         
         
         //evaluate results
-        buildQuickResults(with: results)
+        processQuickResults(with: results)
         
     }
     
@@ -56,10 +56,9 @@ class QuickTest: XCTestCase, Sortable {
     
     //MARK: Helper function
     
-    func buildQuickResults(with sequence: Array<Int>) {
-        
+    func processQuickResults(with sequence: Array<Int>) {
         print("quick sort results: \(sequence)")
-        XCTAssertTrue(isSorted(sequence), "test failed: sequence not sorted: " + String(sequence))
+        XCTAssertTrue(isSorted(sequence), "test failed: sequence not sorted: " + String(describing: sequence))
     }
     
 }

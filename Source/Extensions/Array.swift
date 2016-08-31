@@ -52,7 +52,8 @@ extension Array where Element: Comparable {
         //evaluate chosen number..
         let n = self[mid]
         
-        print(String(n) + " value attempted..")
+        
+        print(String(describing: n) + "value attempted..")
         
         
         if n > key {
@@ -256,13 +257,10 @@ extension Array where Element: Comparable {
     
     /*
      quicksort algorithm - Ranks numbers through a series of swaps.
-     Based on "conceptually" partioning a series through the application of a "wall" and "pivot".
+     Based on "conceptually" sorting a collection subset based on a "wall" and "pivot".
      Best case performance of O(n log(n)). Worst case performance of O(n2).
      */
     
-    
-    
-    //determines sorting range - performance: O(n log(n))
     mutating func quickSort() -> Array<Element> {
         
         
@@ -283,7 +281,7 @@ extension Array where Element: Comparable {
     
     
     
-    //sorts collection range based on pivot
+    //sorts collection-range based on pivot
     mutating func qPartition(start startIndex: Int, _ pivot: Int) -> Int {
         
         var wallIndex: Int = startIndex

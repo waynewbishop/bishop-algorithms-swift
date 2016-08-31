@@ -308,7 +308,7 @@ public class SwiftGraph {
     
     
     //bfs traversal with inout closure function
-    func traverse(_ startingv: Vertex, formula: (inout node: Vertex) -> ()) {
+    func traverse(_ startingv: Vertex, formula: (_ node: inout Vertex) -> ()) {
 
         
         //establish a new queue
@@ -340,7 +340,7 @@ public class SwiftGraph {
             */
             
             //invoke formula
-            formula(node: &vitem)
+            formula(&vitem)
             
             
         } //end while

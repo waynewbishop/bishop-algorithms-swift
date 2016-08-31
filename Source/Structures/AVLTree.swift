@@ -50,7 +50,7 @@ public class AVLTree<T: Comparable> {
         
         
         //check left side
-        if key < self.key {
+        if key < self.key! {
             
             
             if self.left != nil {
@@ -78,7 +78,7 @@ public class AVLTree<T: Comparable> {
                
         
         //check right side
-        if key > self.key {
+        if key > self.key! {
             
             
             if self.right != nil {
