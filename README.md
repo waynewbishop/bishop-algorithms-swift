@@ -16,13 +16,13 @@ Features
 The project features code-level examples for the following items:
 
 + [Linked Lists](/Source/Factories/LinkedList.swift)
-+ [Binary Search](/Source/Factories/Sorting.swift)
-+ [Insertion Sort](/Source/Factories/Sorting.swift)
-+ [Bubble Sort](/Source/Factories/Sorting.swift)
-+ [Selection Sort](/Source/Factories/Sorting.swift)
-+ [Extensions](/Source/Extensions)
-+ [Protocols](/Source/Structures/Protocols.swift)
-+ [Enumerations](/SwiftTests/enumTest.swift)
++ [Binary Search](/Source/Extensions/Array.swift)
++ [Insertion Sort](/Source/Extensions/Array.swift)
++ [Bubble Sort](/Source/Extensions/Array.swift)
++ [Selection Sort](/Source/Extensions/Array.swift)
++ [Quick Sort](/Source/Extensions/Array.swift)
++ [Protocols](/Source/Extensions/Sortable.swift)
++ [Enumerations](/Factories/enumModel.swift)
 + [Fibonacci Numbers](/Source/Extensions/Int.swift)
 + Generics
 + [Closures](/SwiftTests/ClosureTest.swift)
@@ -40,7 +40,7 @@ The project features code-level examples for the following items:
 
 The Book
 --------------------
-Available in print, ePub or pdf format, <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and contribution from others. 
+Available in print, ePub or pdf format, the <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that will benefit students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and contribution from others. 
 
 
 Example
@@ -90,7 +90,7 @@ Example
 Getting Started
 --------------------
 
-Swift Structures has been optimized for **Xcode 8.0** (e.g., Swift 3.0) or later. The directories are organized as follows:
+Swift Structures has been optimized for **Swift 3.0** (e.g., Xcode 8.0) or later. The directories are organized as follows:
 + Source - Code for all Swift data structures, algorithms and source extensions
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
