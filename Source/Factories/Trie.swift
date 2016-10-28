@@ -132,16 +132,15 @@ public class Trie {
             wordList.append(current.key)
         }
 
-        
         //include only children that are words
-        for child in current.children {
-            
-            if (child.isFinal == true) {
+        var findAllWords: ((TrieNode) -> Void)!
+        findAllWords = { (node: TrieNode) in
+            for child in node.child {
                 wordList.append(child.key)
             }
-            
+            findAllWords(child)
         }
-        
+        findAllWords(current)
         
         return wordList
 
