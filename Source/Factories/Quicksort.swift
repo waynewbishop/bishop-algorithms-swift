@@ -8,12 +8,18 @@
 
 import Foundation
 
+/*
+ notes: file established for testing purposes only. See the quickSort() method within the
+ Array class extension for current implementation
+*/
 
+
+/*
 class QuickSort {
     
     //var sequence: Array<Int> = [6, 5, 1, 3, 8, 4, 7, 9, 2]
-    //var sequence: Array<Int> = [7, 2, 1, 6, 8, 5, 3, 4]
-    //var sequence: Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    var sequence: Array<Int> = [7, 2, 1, 6, 8, 5, 3, 4]
+    //var sequence: Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8]
     //var sequence: Array<Int> = [8, 2, 10, 9, 7, 5]
     //var sequence: Array<Int> = [0, 4, 7, 9, 13, 16, 34]
     //var sequence: Array<Int> = [2, 5, 3, 8, 9, 5, 6, 7]
@@ -23,7 +29,7 @@ class QuickSort {
     
     //var sequence: Array<Int> = [8, 7, 6, 5, 4, 3, 2, 1]
     //var sequence: Array<Int> = [6, 5, 4, 3, 2, 1]
-    var sequence: Array<Int> = [7, 2, 6, 5, 2, 1]
+    //var sequence: Array<Int> = [7, 2, 6, 5, 2, 1]
     
     
     
@@ -79,5 +85,7 @@ class QuickSort {
         
     }
     
-    
 }
+ 
+*/
+

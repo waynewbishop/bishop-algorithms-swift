@@ -21,12 +21,16 @@ import XCTest
 class SortingTest: XCTestCase, Sortable {
     
     
+    //test input types for algorithms
     var numberList = [8, 2, 10, 9, 7, 5]
-    var trivialNumberList = [1] //single element
+    var trivialNumberList = [1]
     var emptyNumberList: Array<Int> = []
     var textList = ["Dog", "Cat", "Dinasour", "Lion", "Cheetah", "Gazelle", "Elephant", "Aardvark"]
     var triviaTextList = ["Dog"]
     var emptyTextList: Array<String> = []
+    
+    //string extension
+    var dateList: Array<Date> = ["12-10-2016".datevalue, "12-08-2016".datevalue, "12-09-2016".datevalue]
     
     
     override func setUp() {
@@ -69,18 +73,6 @@ class SortingTest: XCTestCase, Sortable {
     }
    
     
-    func testQuickSort() {
-    
-        
-        let testSort: QuickSort = QuickSort()
-        
-        let results = testSort.quickSort()
-        print("results are: \(results)")
-        
-        
-    }
-    
-    
 
     //MARK: General Sorting Algorithms
     
@@ -93,6 +85,8 @@ class SortingTest: XCTestCase, Sortable {
         XCTAssertTrue(isSorted(textList.insertionSort()))
         XCTAssertTrue(isSorted(triviaTextList.insertionSort()))
         XCTAssertTrue(isSorted(emptyTextList.insertionSort()))
+        XCTAssert(isSorted(dateList.insertionSort()))
+        
     }
     
     
@@ -105,6 +99,8 @@ class SortingTest: XCTestCase, Sortable {
         XCTAssertTrue(isSorted(textList.bubbleSort()))
         XCTAssertTrue(isSorted(triviaTextList.bubbleSort()))
         XCTAssertTrue(isSorted(emptyTextList.bubbleSort()))
+        XCTAssert(isSorted(dateList.bubbleSort()))
+        
     }
 
     
@@ -117,6 +113,8 @@ class SortingTest: XCTestCase, Sortable {
         XCTAssertTrue(isSorted(textList.selectionSort()))
         XCTAssertTrue(isSorted(triviaTextList.selectionSort()))
         XCTAssertTrue(isSorted(emptyTextList.selectionSort()))
+        XCTAssert(isSorted(dateList.selectionSort()))
+        
     }
     
     

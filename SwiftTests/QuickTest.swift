@@ -32,6 +32,26 @@ class QuickTest: XCTestCase, Sortable {
         var sequence: Array<Int> = [7, 2, 1, 6, 8, 5, 3, 4]
         let results = sequence.quickSort()
         
+        //evaluate results
+        processQuickResults(with: results)
+    }
+    
+    
+    //worst case scenario -
+    func testDecendingQSort() {
+        
+        var sequence: Array<Int> = [8, 7, 6, 5, 4, 3, 2, 1]
+        let results = sequence.quickSort()
+        
+        //evaluate results
+        processQuickResults(with: results)
+    }
+    
+    
+    func testAscendingQSort() {
+        
+        var sequence: Array<Int> = [1, 2, 3, 4, 5, 6, 7, 8]
+        let results = sequence.quickSort()
         
         //evaluate results
         processQuickResults(with: results)
@@ -39,10 +59,29 @@ class QuickTest: XCTestCase, Sortable {
     
     
     
-    func testDecendingQSort() {
+    //test with random numbers
+    func testRandomNumberQSort() {
+        
+        var sequence: Array<Int> = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+        
+        let results = sequence.quickSort()
+        
+        //evaluate results
+        processQuickResults(with: results)
+    }
+    
+    
+    //test example with comparable dates
+    func testDatesQSort() {
 
         
-        var sequence: Array<Int> = [8, 7, 6, 5, 4, 3, 2, 1]
+        //create random dates - extension
+        let pastdate: Date = "05-13-2016".datevalue
+        let nowdate: Date = "12-12-2016".datevalue
+        let futuredate: Date = "01-16-2017".datevalue
+        
+        
+        var sequence: Array<Date> = [nowdate, futuredate, pastdate]
         let results = sequence.quickSort()
         
         
@@ -52,11 +91,9 @@ class QuickTest: XCTestCase, Sortable {
     }
     
     
-    
-    
     //MARK: Helper function
     
-    func processQuickResults(with sequence: Array<Int>) {
+    func processQuickResults<T: Comparable>(with sequence: Array<T>) {
         print("quick sort results: \(sequence)")
         XCTAssertTrue(isSorted(sequence), "test failed: sequence not sorted: " + String(describing: sequence))
     }

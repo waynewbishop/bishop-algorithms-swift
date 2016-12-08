@@ -17,6 +17,24 @@ extension String {
     var length: Int {
         return self.characters.count
     }
+
+    
+    //formats a string to date format
+    var datevalue: Date! {
+      
+        let stringFormatter = DateFormatter()
+        stringFormatter.dateFormat = "MM-dd-yyyy"
+        stringFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        //check for correct date format
+        if let d = stringFormatter.date(from: self) {
+            return Date(timeInterval: 0, since: d)
+        }
+        else {
+            return nil
+        }
+
+    }
     
     
     //returns characters up to a specified integer 
@@ -44,9 +62,7 @@ extension String {
     func characters() ->Array<Character> {
         return Array(self.characters)
     }
-    
-    
-    
+
     
     
     //reverse string order
