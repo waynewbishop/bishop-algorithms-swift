@@ -11,27 +11,22 @@ import Foundation
 
 public class Trie {
     
-    private var root: TrieNode!
     
     
-    init(){
-        root = TrieNode()
-    }
-    
-    
+    private var root = TrieNode()
     
     //builds a tree hierarchy of dictionary content
     func append(word keyword: String) {
         
         
         //trivial case
-        guard keyword.length > 0 else {
+        guard !keyword.isEmpty else {
             return
         }
         
         
-        var current: TrieNode = root
         
+        var current = root
         
         while keyword.length != current.level {
             
@@ -45,7 +40,7 @@ public class Trie {
             //iterate through child nodes
             for child in current.children {
                 
-                if (child.key == searchKey) {
+                if child.key == searchKey {
                     childToUse = child
                     break
                 }
@@ -70,7 +65,7 @@ public class Trie {
         
         
         //final end of word check
-        if (keyword.length == current.level) {
+        if keyword.length == current.level {
             current.isFinal = true
             print("end of word reached!")
             return
@@ -84,18 +79,17 @@ public class Trie {
 
     
     //find words based on the prefix
-    func search(forWord keyword: String) -> Array<String>! {
         
+    func search(for keyword: String) -> [String]? {
         
         //trivial case
-        guard keyword.length > 0 else {
+        guard !keyword.isEmpty else {
             return nil
         }
         
         
-        var current: TrieNode = root
-        var wordList = Array<String>()
-        
+        var current = root
+        var wordList = [String]()
         
         while keyword.length != current.level {
             
@@ -109,7 +103,7 @@ public class Trie {
             //iterate through any child nodes
             for child in current.children {
                 
-                if (child.key == searchKey) {
+                if child.key == searchKey {
                     childToUse = child
                     current = childToUse
                     break
@@ -128,7 +122,7 @@ public class Trie {
         
         
         //retrieve the keyword and any descendants
-        if ((current.key == keyword) && (current.isFinal)) {
+        if current.key == keyword && current.isFinal {
             wordList.append(current.key)
         }
 
@@ -136,7 +130,7 @@ public class Trie {
         //include only children that are words
         for child in current.children {
             
-            if (child.isFinal == true) {
+            if child.isFinal {
                 wordList.append(child.key)
             }
             
