@@ -14,7 +14,7 @@ import XCTest
 
 class TrieTest: XCTestCase {
     
-    var testTrie: Trie = Trie()
+    let testTrie = Trie()
 
     
     override func setUp() {
@@ -41,7 +41,7 @@ class TrieTest: XCTestCase {
 
     func testFindWithPrefix() {
         
-        let wordList: Array<String>! = testTrie.search(forWord: "Ba")
+        guard let wordList = testTrie.search(for: "Ba") else { return }
         for word in wordList {
             print("\(word) found in trie..")
         }
@@ -56,7 +56,7 @@ class TrieTest: XCTestCase {
     
     func testFindWithWord() {
         
-        let wordList: Array<String>! = testTrie.search(forWord: "Ball")
+        guard let wordList = testTrie.search(for: "Ball") else { return }
         for word in wordList {
             print("\(word) found in trie..")
         }
@@ -67,21 +67,15 @@ class TrieTest: XCTestCase {
     //testing false search results
     func testFindNoExist() {
         
-        let keyword: String = "Barstool"
-        let wordList: Array<String>! = testTrie.search(forWord: keyword)
-        
-        
-        if (wordList == nil) {
+        let keyword = "Barstool"
+        guard let wordList = testTrie.search(for: keyword) else {
             print("keyword \(keyword) not found in trie..")
+            return
         }
         
-        else {
-            for word in wordList {
-                print("\(word) found in trie..")
-            }
+        for word in wordList {
+            print("\(word) found in trie..")
         }
-        
-
         
     } //end function
     

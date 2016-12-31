@@ -14,11 +14,10 @@ import XCTest
 
 class ClosureTest: XCTestCase {
 
-    var numberList: Array<Int>!
+    let numberList = [8, 5, 2, 10, 9, 7]
     
     override func setUp() {
         super.setUp()
-        numberList =  [8, 5, 2, 10, 9, 7]
     }
     
     
@@ -36,41 +35,33 @@ class ClosureTest: XCTestCase {
     //filter based on expression
     func testLinkFilterExpression() {
         
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList = buildLinkedList()
         
         
         //inline closure expression
-        let results: LinkedList<Int>! = linkedList.filter { (node: LLNode<Int>) -> Bool in
+        guard let results = linkedList.filter({ node in
             return node.key > 5
-        }
+        }) else { return }
         
         //display filtered results
         results.printAllKeys()
         
-        if results.count == linkedList.count {
-            XCTFail("linked list not filtered..")
-        }
-        
-        
+        XCTAssert(results.count != linkedList.count, "linked list not filtered.")
     }
     
     
     //filter based on function
     func testLinkFilterFunction() {
         
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList = buildLinkedList()
 
         //pass formula as parameter
-        let results: LinkedList<Int>! = linkedList.filter(filterFormula)
+        guard let results = linkedList.filter(filterFormula) else { return }
         
         //print results
         results.printAllKeys()
         
-        if results.count == linkedList.count {
-            XCTFail("linked list not filtered..")
-        }
-        
-        
+        XCTAssert(results.count != linkedList.count, "linked list not filtered.")
     }
 
 
@@ -81,10 +72,10 @@ class ClosureTest: XCTestCase {
     //map based on expression
     func testLinkMapExpression() {
 
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList = buildLinkedList()
         
         //inline closure expression
-        let results: LinkedList<Int> = linkedList.map { (node: LLNode<Int>) -> Int in
+        let results = linkedList.map { node in
 
             var value: Int!
             
@@ -105,15 +96,13 @@ class ClosureTest: XCTestCase {
 
         
         //print results
-        results.printAllKeys()
+        results?.printAllKeys()
 
         
         //iterate and compare values
         for s in 0..<numberList.count {
             
-            if linkedList.getElement(at: s).key == results.getElement(at: s).key {
-                XCTFail("test failed: linked list map formula not applied..")
-            }
+            XCTAssert(linkedList.getElement(at: s)?.key != results?.getElement(at: s)?.key, "test failed: linked list map formula not applied..")
             
         }
         
@@ -129,7 +118,7 @@ class ClosureTest: XCTestCase {
     //map based on function
     func testLinkMapFunction() {
         
-        let linkedList: LinkedList<Int> = self.buildLinkedList()
+        let linkedList = buildLinkedList()
         
         //pass formula as parameter
         let results: LinkedList<Int>! = linkedList.map(mapFormula)
@@ -141,9 +130,7 @@ class ClosureTest: XCTestCase {
         //iterate and compare values
         for s in 0..<numberList.count {
             
-            if linkedList.getElement(at: s).key == results.getElement(at: s).key {
-                XCTFail("linked list map formula not applied..")
-            }
+            XCTAssert(linkedList.getElement(at: s)?.key != results?.getElement(at: s)?.key, "test failed: linked list map formula not applied..")
             
         }
         
@@ -184,29 +171,25 @@ class ClosureTest: XCTestCase {
   
     
     //helper method to build list
-    func buildLinkedList() ->LinkedList<Int>! {
+    func buildLinkedList() -> LinkedList<Int> {
+        
+        let linkedList = LinkedList<Int>()
         
         
-        //create a new instance
-        let linkedList: LinkedList<Int> = LinkedList<Int>()
-        
-        
-        //append list items
+        //append items
         for number in numberList {
             linkedList.append(element: number)
         }
         
         
-        if (linkedList.count != numberList.count) {
-            XCTFail("linked list count doesn't match number list..")
-            return nil
-        }
+        linkedList.printAllKeys()
+        
+        
+        XCTAssert(linkedList.count == numberList.count, "test failed: linked list count \(linkedList.count) doesn't match number list count \(numberList.count).")
         
         return linkedList
         
-        
     }
-
 
 
 }
