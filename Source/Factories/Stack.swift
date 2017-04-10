@@ -9,47 +9,40 @@
 import Foundation
 
 
-class Stack<T> {
+class Stack<T: Comparable> {
     
     private var top: Node<T>
+    private var minimum: Node<T>
+    private var counter: Int = 0
+    
     
     init() {
         top = Node<T>()
+        minimum = Node<T>()
+    }
+    
+    
+    //the minimum value - O(1)
+    var min: Node<T> {
+        return minimum
     }
     
     
     //the number of items - O(n)
     var count: Int {
-        
-        
-        //return trivial case
-        guard top.key != nil else {
-          return 0
-        }
-                
-        
-        var current = top
-        var x: Int = 1
-        
-        
-        //cycle through list
-        while current.next != nil {
-            current = current.next!
-            x += 1
-        }
-            
-        return x        
-        
+        return counter
     }
     
     
-    //add item to the stack
+    //add item to the stack - O(1)
     func push(withKey key: T) {
         
         
         //return trivial case
         guard top.key != nil else {
             top.key = key
+            minimum = top
+            counter += 1
             return
         }
         
@@ -61,39 +54,49 @@ class Stack<T> {
             
         //set new created item at top
         childToUse.next = top
-        top = childToUse        
+        top = childToUse
 
+
+        //set counter
+        counter += 1
+
+        
+        //calulate the minimum
+        if top.key < minimum.key {
+           minimum = top
+        }
+        
     }
     
 
-    //remove item from the stack
+    //remove item from the stack - O(1)
     func pop() {
         
         if self.count > 1 {
             top = top.next
+            
+            //set counter
+            counter -= 1
+            
+            //calulate the minimum
+            if top.key < minimum.key {
+               minimum = top
+            }
+            
         }
         else {
             top.key = nil
+            counter = 0
         }
         
     }
     
     
-    //retrieve the top most item
-    func peek() -> T! {
+    //retrieve the top most item - O(1)
+    func peek() -> Node<T> {
+        return top
+    }
 
-        
-        //determine instance
-        if let topitem = top.key {
-            return topitem
-        }
-            
-        else {
-            return nil
-        }
-        
-    }
-    
     
     
     //check for value

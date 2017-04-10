@@ -35,6 +35,7 @@ class StackTest: XCTestCase {
         for s in numberList {
             myStack.push(withKey: s)
             print("item: \(s) added..")
+            print("minimum value is: \(myStack.min.key)")
         }
 
         
@@ -63,10 +64,10 @@ class StackTest: XCTestCase {
         }
 
         
-        //remove stack items..
-        myStack.count.times { (s: Int) -> Void in
+        for _ in stride(from: myStack.count, through: 0, by: -1) {
             print("stack count: \(myStack.count)")
             myStack.pop()
+            print("minimum value is: \(myStack.min.key)")
         }
         
  

@@ -16,18 +16,16 @@ import Foundation
 
 class Interview {
     
-    
-    /*
-    note: implement an algorithm to determine if all characters are unique
-    A check using unicode values ensures algorithm completeness (eg. capitals
-    small case letters and special characters).
-    */
- 
+    //question: implement a basic algorithm to determine if all characters are unique
     func isStringUnique(word keyword: String) -> Bool {
         
         //establish a container to hold results
-        var results: Array = Array<Bool>()
-
+        var results = Array<Bool>()
+        
+        /*
+         note: A check using unicode values ensures algorithm completeness (eg. capitals
+         small case letters and special characters).
+         */
         
         //find and check the unicode character value - O(n)
         for key in keyword.unicodeScalars {
