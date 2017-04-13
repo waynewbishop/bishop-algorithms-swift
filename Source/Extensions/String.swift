@@ -17,7 +17,36 @@ extension String {
     var length: Int {
         return self.characters.count
     }
+    
+    
+    
+    //determine if all characters are unique
+    func isStringUnique() -> Bool {
+        
+        
+        //evaluate trival case
+        guard self.characters.count < 128 else {
+            return false
+        }
+        
+        //match unicode representation - O(n)
+        var list = Array<Bool?>(repeatElement(nil, count: 256))
+        
+        for key in self.unicodeScalars {
+            let intKey = Int(key.value)
+            
+            if list[intKey] != nil {
+                return false
+            }
+            
+            list.insert(true, at: Int(key.value))
+        }
+        
+        return true
+        
+    }
 
+    
     
     //formats a string to date format
     var datevalue: Date! {

@@ -18,7 +18,7 @@ class StackTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        numberList = [8, 2, 10, 9, 7, 5]
+        numberList = [8, 2, 10, 9, 1, 5]
     }
     
     
@@ -35,12 +35,10 @@ class StackTest: XCTestCase {
         for s in numberList {
             myStack.push(withKey: s)
             print("item: \(s) added..")
-            print("minimum value is: \(myStack.min.key)")
         }
 
         
         XCTAssertTrue(myStack.count == numberList.count, "test failed: stack count does not match..")
-        
     }
     
     
@@ -67,7 +65,6 @@ class StackTest: XCTestCase {
         for _ in stride(from: myStack.count, through: 0, by: -1) {
             print("stack count: \(myStack.count)")
             myStack.pop()
-            print("minimum value is: \(myStack.min.key)")
         }
         
  

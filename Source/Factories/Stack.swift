@@ -12,23 +12,15 @@ import Foundation
 class Stack<T: Comparable> {
     
     private var top: Node<T>
-    private var minimum: Node<T>
     private var counter: Int = 0
     
     
     init() {
         top = Node<T>()
-        minimum = Node<T>()
     }
     
     
-    //the minimum value - O(1)
-    var min: Node<T> {
-        return minimum
-    }
-    
-    
-    //the number of items - O(n)
+    //the number of items - O(1)
     var count: Int {
         return counter
     }
@@ -41,7 +33,6 @@ class Stack<T: Comparable> {
         //return trivial case
         guard top.key != nil else {
             top.key = key
-            minimum = top
             counter += 1
             return
         }
@@ -59,12 +50,6 @@ class Stack<T: Comparable> {
 
         //set counter
         counter += 1
-
-        
-        //calulate the minimum
-        if top.key < minimum.key {
-           minimum = top
-        }
         
     }
     
@@ -77,11 +62,6 @@ class Stack<T: Comparable> {
             
             //set counter
             counter -= 1
-            
-            //calulate the minimum
-            if top.key < minimum.key {
-               minimum = top
-            }
             
         }
         else {
@@ -99,7 +79,7 @@ class Stack<T: Comparable> {
 
     
     
-    //check for value
+    //check for value - O(1)
     func isEmpty() -> Bool {
         
         if self.count == 0 {
