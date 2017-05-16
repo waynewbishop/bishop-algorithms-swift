@@ -26,7 +26,7 @@ class IEngine {
     
     init() {
         
-        //send delegate message
+        //send message
         delegate?.willProcessContent(message: "engine processing successfully initiated..")
     }
     
@@ -42,7 +42,7 @@ class IEngine {
         sleep(5)
         
         
-        //send delegate message (on main thread)
+        //send message (on main thread)
         delegate?.didProcessContent(message: "sucessfully processed element: \(element)")
     }
     

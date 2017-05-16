@@ -14,7 +14,7 @@
 		DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* MathTest.swift */; };
 		DA29A5A91ECB6FB9002FE41B /* Delegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5A81ECB6FB9002FE41B /* Delegation.swift */; };
 		DA29A5AF1ECB7F96002FE41B /* IEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5AE1ECB7F96002FE41B /* IEngine.swift */; };
-		DA29A5B11ECB8D3E002FE41B /* IEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5B01ECB8D3E002FE41B /* IEngineTest.swift */; };
+		DA29A5B31ECB903C002FE41B /* DelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5B21ECB903C002FE41B /* DelegateTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -97,7 +97,7 @@
 		DA20DEEB1BE2DAC90032A378 /* MathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTest.swift; sourceTree = "<group>"; };
 		DA29A5A81ECB6FB9002FE41B /* Delegation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegation.swift; sourceTree = "<group>"; };
 		DA29A5AE1ECB7F96002FE41B /* IEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEngine.swift; sourceTree = "<group>"; };
-		DA29A5B01ECB8D3E002FE41B /* IEngineTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEngineTest.swift; sourceTree = "<group>"; };
+		DA29A5B21ECB903C002FE41B /* DelegateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateTest.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA29A5B01ECB8D3E002FE41B /* IEngineTest.swift */,
+				DA29A5B21ECB903C002FE41B /* DelegateTest.swift */,
 				DA151F081D64124E00A3199D /* QuickTest.swift */,
 				DA71F9331D2E1029000EF8C2 /* ListTest.swift */,
 				DAA426271D1EEA2800C6208F /* BayesTest.swift */,
@@ -444,10 +444,10 @@
 				DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */,
 				DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */,
 				DAF30DAC1E997038000CCA5D /* TestNode.swift in Sources */,
+				DA29A5B31ECB903C002FE41B /* DelegateTest.swift in Sources */,
 				DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */,
 				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
 				DA20DEEC1BE2DAC90032A378 /* MathTest.swift in Sources */,
-				DA29A5B11ECB8D3E002FE41B /* IEngineTest.swift in Sources */,
 				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,
 				DA71F9341D2E1029000EF8C2 /* ListTest.swift in Sources */,
 				DAD971B119D2232400C133C9 /* AVLTest.swift in Sources */,
