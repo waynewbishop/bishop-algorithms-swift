@@ -20,7 +20,7 @@ protocol IEngineDelegate {
 
 class IEngine {
 
-    
+    //create protocol instance
     var delegate: IEngineDelegate?
     
     
@@ -33,7 +33,7 @@ class IEngine {
     
     
     //replicate long running process
-    func processContent(withElement element: String) {
+    func processContent(withElement element: Int) {
         
         /*
         note: In a real application, this content processing could be executed
@@ -42,8 +42,12 @@ class IEngine {
         sleep(5)
         
         
+        //perform some basic test operation
+        let results = element * 2
+        
+
         //send message (on main thread)
-        delegate?.didProcessContent(message: "sucessfully processed element: \(element)")
+        delegate?.didProcessContent(message: "results are: \(results)")
     }
     
 }

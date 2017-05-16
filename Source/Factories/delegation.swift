@@ -12,21 +12,16 @@ import Foundation
 class Delegation: IEngineDelegate {
     
     let iEngine = IEngine()
-    let element: String
-
     
     
-    //set class values
     init(withElement: String) {
-       
-       element = withElement
        iEngine.delegate = self
     }
 
     
     //start main process
     func processContent() {
-        iEngine.processContent(withElement: element)
+        iEngine.processContent(withElement: 5)
     }
     
     
@@ -41,7 +36,7 @@ class Delegation: IEngineDelegate {
     
     //invoked after process completion
     func didProcessContent(message: String) {
-        print("results are: \(message)")
+        print("the result is: \(message)")
     }
     
 }
