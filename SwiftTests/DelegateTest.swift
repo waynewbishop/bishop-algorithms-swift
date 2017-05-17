@@ -21,8 +21,8 @@ class DelegateTest: XCTestCase {
     //test delegation design pattern
     func testDelegatePattern() {
         
-        let example = Delegation(withElement: "http://www.waynewbishop.com")
-        example.processContent()
+        let example = Delegation()
+        example.processContent(withElement: 5)
         
     }
     

@@ -14,14 +14,14 @@ class Delegation: IEngineDelegate {
     let iEngine = IEngine()
     
     
-    init(withElement: String) {
+    init() {
        iEngine.delegate = self
     }
 
     
     //start main process
-    func processContent() {
-        iEngine.processContent(withElement: 5)
+    func processContent(withElement element: Int) {
+        iEngine.processContent(element)
     }
     
     
@@ -30,13 +30,13 @@ class Delegation: IEngineDelegate {
     
     //invoked prior to process start
     func willProcessContent(message: String) {
-       print(message)
+        print(message)
     }
 
     
     //invoked after process completion
-    func didProcessContent(message: String) {
-        print("the result is: \(message)")
+    func didProcessContent(results: Int) {
+        print("the result is: \(results)")
     }
     
 }

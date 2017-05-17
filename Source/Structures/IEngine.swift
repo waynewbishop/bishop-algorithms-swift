@@ -13,7 +13,7 @@ import Foundation
 protocol IEngineDelegate {
     
     func willProcessContent(message: String)
-    func didProcessContent(message: String)
+    func didProcessContent(results: Int)
 }
 
 
@@ -24,30 +24,29 @@ class IEngine {
     var delegate: IEngineDelegate?
     
     
-    init() {
-        
-        //send message
-        delegate?.willProcessContent(message: "engine processing successfully initiated..")
-    }
-    
-    
     
     //replicate long running process
-    func processContent(withElement element: Int) {
+    func processContent(_ element: Int) {
+
+        
+        //send initiation message
+        delegate?.willProcessContent(message: "engine processing successfully initiated..")
+        
+        
+        //perform some basic test operation
+        let output = element * 2
+        
         
         /*
         note: In a real application, this content processing could be executed
         on a background thread through GCD or some other multithreaded execution.
         */
-        sleep(5)
+        sleep(2)
         
-        
-        //perform some basic test operation
-        let results = element * 2
         
 
         //send message (on main thread)
-        delegate?.didProcessContent(message: "results are: \(results)")
+        delegate?.didProcessContent(results: output)
     }
     
 }
