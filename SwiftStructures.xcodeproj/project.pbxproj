@@ -15,6 +15,7 @@
 		DA29A5A91ECB6FB9002FE41B /* Delegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5A81ECB6FB9002FE41B /* Delegation.swift */; };
 		DA29A5AF1ECB7F96002FE41B /* IEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5AE1ECB7F96002FE41B /* IEngine.swift */; };
 		DA29A5B31ECB903C002FE41B /* DelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5B21ECB903C002FE41B /* DelegateTest.swift */; };
+		DA29A5B51ECCC841002FE41B /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A5B41ECCC841002FE41B /* Numbers.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -98,6 +99,7 @@
 		DA29A5A81ECB6FB9002FE41B /* Delegation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegation.swift; sourceTree = "<group>"; };
 		DA29A5AE1ECB7F96002FE41B /* IEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEngine.swift; sourceTree = "<group>"; };
 		DA29A5B21ECB903C002FE41B /* DelegateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateTest.swift; sourceTree = "<group>"; };
+		DA29A5B41ECCC841002FE41B /* Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		DAE0021019C5673F0035F1A0 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				DA29A5B41ECCC841002FE41B /* Numbers.swift */,
 				DA29A5A81ECB6FB9002FE41B /* Delegation.swift */,
 				DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */,
 				DA8146A419ED905B004516F9 /* Trie.swift */,
@@ -428,6 +431,7 @@
 				DA29A5A91ECB6FB9002FE41B /* Delegation.swift in Sources */,
 				DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
+				DA29A5B51ECCC841002FE41B /* Numbers.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

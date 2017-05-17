@@ -9,6 +9,11 @@
 import Foundation
 
 
+/*
+ note: This class describes the Delegation design pattern.
+*/
+
+
 class Delegation: IEngineDelegate {
     
     let iEngine = IEngine()
