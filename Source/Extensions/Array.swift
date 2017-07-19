@@ -27,7 +27,7 @@ extension Array where Element: Comparable {
     /*
      binary search algorithm. Find the value at a specified index.
      note the use array slicing to adjust the upper and lower array bounds.
-     returns true if the key was found in the sequence.
+     returns true if the key was found in the sequence. Average performance‎: ‎O(log n).
      */
     
     

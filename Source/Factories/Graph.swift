@@ -196,7 +196,6 @@ public class SwiftGraph {
             
             
             //remove the bestPath from the frontier
-            //frontier.removeAtIndex(pathIndex) - Swift2
             frontier.remove(at: pathIndex)
             
             
