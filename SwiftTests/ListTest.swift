@@ -69,7 +69,6 @@ class ListTest: XCTestCase {
          note: for this test, the added element is a custom object.
          using this technique, any potential object could be used.
         */
-
         
         let testVertex: Vertex = Vertex()
         testVertex.key = "A"

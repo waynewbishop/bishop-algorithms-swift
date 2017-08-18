@@ -18,7 +18,7 @@ class StackTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        numberList = [8, 2, 10, 9, 7, 5]
+        numberList = [8, 2, 10, 9, 1, 5]
     }
     
     
@@ -39,7 +39,6 @@ class StackTest: XCTestCase {
 
         
         XCTAssertTrue(myStack.count == numberList.count, "test failed: stack count does not match..")
-        
     }
     
     
@@ -63,8 +62,7 @@ class StackTest: XCTestCase {
         }
 
         
-        //remove stack items..
-        myStack.count.times { (s: Int) -> Void in
+        for _ in stride(from: myStack.count, through: 0, by: -1) {
             print("stack count: \(myStack.count)")
             myStack.pop()
         }

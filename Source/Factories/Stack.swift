@@ -9,47 +9,31 @@
 import Foundation
 
 
-class Stack<T> {
+class Stack<T: Comparable> {
     
     private var top: Node<T>
+    private var counter: Int = 0
+    
     
     init() {
         top = Node<T>()
     }
     
     
-    //the number of items - O(n)
+    //the number of items - O(1)
     var count: Int {
-        
-        
-        //return trivial case
-        guard top.key != nil else {
-          return 0
-        }
-                
-        
-        var current = top
-        var x: Int = 1
-        
-        
-        //cycle through list
-        while current.next != nil {
-            current = current.next!
-            x += 1
-        }
-            
-        return x        
-        
+        return counter
     }
     
     
-    //add item to the stack
+    //add item to the stack - O(1)
     func push(withKey key: T) {
         
         
         //return trivial case
         guard top.key != nil else {
             top.key = key
+            counter += 1
             return
         }
         
@@ -61,42 +45,41 @@ class Stack<T> {
             
         //set new created item at top
         childToUse.next = top
-        top = childToUse        
+        top = childToUse
 
+
+        //set counter
+        counter += 1
+        
     }
     
 
-    //remove item from the stack
+    //remove item from the stack - O(1)
     func pop() {
         
         if self.count > 1 {
             top = top.next
+            
+            //set counter
+            counter -= 1
+            
         }
         else {
             top.key = nil
+            counter = 0
         }
         
     }
     
     
-    //retrieve the top most item
-    func peek() -> T! {
+    //retrieve the top most item - O(1)
+    func peek() -> Node<T> {
+        return top
+    }
 
-        
-        //determine instance
-        if let topitem = top.key {
-            return topitem
-        }
-            
-        else {
-            return nil
-        }
-        
-    }
     
     
-    
-    //check for value
+    //check for value - O(1)
     func isEmpty() -> Bool {
         
         if self.count == 0 {

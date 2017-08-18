@@ -17,7 +17,36 @@ extension String {
     var length: Int {
         return self.characters.count
     }
+    
+    
+    
+    //determine if all characters are unique
+    func isStringUnique() -> Bool {
+        
+        
+        //evaluate trival case
+        guard self.characters.count < 128 else {
+            return false
+        }
+        
+        //match unicode representation - O(n)
+        var list = Array<Bool?>(repeatElement(nil, count: 256))
+        
+        for key in self.unicodeScalars {
+            let intKey = Int(key.value)
+            
+            if list[intKey] != nil {
+                return false
+            }
+            
+            list.insert(true, at: Int(key.value))
+        }
+        
+        return true
+        
+    }
 
+    
     
     //formats a string to date format
     var datevalue: Date! {
@@ -68,18 +97,16 @@ extension String {
     //reverse string order
     func reverse() -> String! {
         
-        /*
-         notes: While this operation would normally be done 'in-place', there are limited
-         functions for manipulating native Swift strings. Even there is a
-         native Array.reverse() method, this has been added as an example interview question.
+         /*
+         notes: While this operation would normally be done with the 
+         native characters.reversed() method, this has been added as an example interview question.
          */
-        
         
         //convert to array
         var characters = self.characters()
         
-        var findex: Int = 0
-        var bindex: Int = characters.count - 1
+        var findex: Int = characters.startIndex
+        var bindex: Int = characters.endIndex - 1
         
         
         while findex < bindex {

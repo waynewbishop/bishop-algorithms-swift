@@ -34,7 +34,6 @@ import XCTest
             
             let model = Algorithm.InsertionSort(list)
             self.buildEnumModel(withModel: model)
-
         }
         
         
@@ -54,7 +53,6 @@ import XCTest
             
             let model = Algorithm.BubbleSort(list)
             self.buildEnumModel(withModel: model)
-            
         }
 
         
@@ -63,7 +61,6 @@ import XCTest
             
             let model = Algorithm.SelectionSort(list)
             self.buildEnumModel(withModel: model)
-            
         }
         
         
@@ -76,8 +73,6 @@ import XCTest
             
             let enumModel = EnumModel()
             let results = enumModel.evaluate(withModel: model)
-            
-            
             XCTAssertTrue(self.isSorted(results!), "list values incorrectly sorted..")
         }
         
