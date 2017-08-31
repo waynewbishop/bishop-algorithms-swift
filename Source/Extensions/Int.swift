@@ -11,6 +11,7 @@ import Foundation
 
 extension Int {
     
+    
     //iterates the closure body a specified number of times
     func times(closure:(Int)-> Void) {
         for i in 0...self {
@@ -50,10 +51,10 @@ extension Int {
     }
     
     
-    
     //build fibonacci sequence to a specified position - recursive
     mutating func fibRecursive(_ sequence: Array<Int> = [0, 1]) -> Array<Int>! {
         
+    
         var final = Array<Int>()
         
         
@@ -88,7 +89,6 @@ extension Int {
         
     }
     
-
     
     //build fibonacci sequence to a specified position - trailing closure
     func fibClosure(withFormula formula: (Array<Int>) -> Int) -> Array<Int>! {
@@ -119,6 +119,91 @@ extension Int {
         
     } //end function
     
+    
+    
+    /*
+    example of dynamic programming. Based on memoization, this nested function 
+    produces the fibonacci sequence in linear time O(n). Also, note how the final
+    answer is obtained in constant time O(1).
+    */
+
+    //calculate results
+    mutating func fibMemoized() -> Int! {
+ 
+        
+        //builds array sequence
+        func fibSequence(_ sequence: Array<Int> = [0, 1]) -> Array<Int>? {
+            
+            print("fibSequence called..")
+            
+            var final = Array<Int>()
+            
+            
+            //mutated copy
+            var output = sequence
+            
+            
+            //check trivial condition
+            guard self > 2 else {
+                return nil
+            }
+            
+            
+            let i: Int = output.count
+            
+            
+            //set base condition - liner time O(n)
+            if i == self {
+                return output
+            }
+            
+            
+            let results: Int = output[i - 1] + output[i - 2]
+            output.append(results)
+            
+            
+            //set iteration
+            final = self.fibRecursive(output)
+            
+            return final
+            
+            
+        } //end function
+        
+        
+        
+        //calculate final result - constant time O(1)
+        if let results = fibSequence() {
+            let answer: Int = results[results.endIndex - 1] + results[results.endIndex - 2]
+            return answer
+        }
+        
+        return nil
+        
+    }
+    
+    
+    
+    //refactor method so that paramter is a optional - unwrap optional so that it can be used throughout the funtion.
+    mutating func fibExponential(_ n: Int) -> Int {
+        
+        print("fibTest called..")
+        
+        //base cases
+        if n == 0 {
+            return 0
+        }
+        
+        if n <= 2 {
+            return 1
+        }
+
+        //recursivley calculate all permuations - exponential runtime..
+        let f = fibExponential(self - 1) + fibExponential(self - 2)
+        
+        return f
+    }
+
     
 }
 

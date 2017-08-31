@@ -51,6 +51,23 @@ class MathTest: XCTestCase {
     }
     
     
+    func testFibExponential() {
+        
+        var positions: Int = 10
+        let result = positions.fibExponential()
+ 
+        
+        //trivial condition
+        guard result != 0 else {
+            XCTFail()
+            return
+        }
+        
+        print("testFibExponential results are:  \(result)")
+
+    }
+    
+    
     
     //closure option
     func testFibClosure() {
@@ -87,8 +104,8 @@ class MathTest: XCTestCase {
             XCTFail("fibonnaci test failed..")
         }
         
-        //TODO: Adjust this so that it iterates through the entire sequence??
         
+        //check calcuated answer against basic formula..
         if r[r.endIndex - 1] != r[r.endIndex - 2] + r[r.endIndex - 3] {
             XCTFail("fibonnaci test failed..")
         }
