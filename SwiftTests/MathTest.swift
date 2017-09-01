@@ -8,24 +8,33 @@
 
 import XCTest
 
+
 /*
- note: fibonacci algorithms are associated directly with the Int.swift
- class an an extension.
+ note: algorithms associated directly with the Int.swift
+ class extension.
 */
 
 
 @testable import SwiftStructures
 
 
+//TODO: rename to fibTest.swift
+
 class MathTest: XCTestCase {
+
+    
+    var count: Int = 0
     
 
     override func setUp() {
         super.setUp()
     }
     
+    
+    //MARK: Sequence Based
+    
 
-    //published example - default option
+    //iterative technique
     func testFibonnaci() {
         
         let positions: Int = 4
@@ -33,12 +42,11 @@ class MathTest: XCTestCase {
         
         //test results
         buildResultsTest(results)
-        
     }
     
     
     
-    //recursive option
+    //recursive technique
     func testFibRecursive() {
         
         var positions: Int = 4
@@ -47,24 +55,6 @@ class MathTest: XCTestCase {
         
         //test results
         buildResultsTest(results)
-        
-    }
-    
-    
-    func testFibExponential() {
-        
-        var positions: Int = 10
-        let result = positions.fibExponential()
- 
-        
-        //trivial condition
-        guard result != 0 else {
-            XCTFail()
-            return
-        }
-        
-        print("testFibExponential results are:  \(result)")
-
     }
     
     
@@ -73,7 +63,7 @@ class MathTest: XCTestCase {
     func testFibClosure() {
 
         
-        let positions: Int = 23
+        let positions: Int = 4
         
         let results = positions.fibClosure { (sequence: Array<Int>!) -> Int in
             
@@ -91,8 +81,37 @@ class MathTest: XCTestCase {
     }
     
     
+    //MARK: Single Answer
     
-    //MARK: Helper Function
+
+    
+    func testFibExponential() {
+        
+        let positions: Int = 4
+        let result = fibExponential(n: positions)
+        
+        print("the result is \(result)..")
+        print("count is: \(count)")
+        
+    }
+    
+    
+
+    func testFibMemoized() {
+        
+        var positions: Int = 4
+        let result = positions.fibMemoized()
+        
+        print("the result is \(result)..")
+        
+        //test results
+        XCTAssertNotNil(result, "fib sequence not calculated..")
+    }
+    
+
+    
+    
+    //MARK: Helper Functions
     
     
     
@@ -110,8 +129,31 @@ class MathTest: XCTestCase {
             XCTFail("fibonnaci test failed..")
         }
         
-        
     }
+
     
+    
+    /*
+     notes: method purposely left out of the Int class extension. 
+     function included for demonstration purposes and should not be 
+     considered as best practice.
+    */
+    
+    func fibExponential(n: Int) -> Int {
+        
+        print("fibExponential called..")
+        
+        count += 1
+        
+        if n == 0 {
+            return 0
+        }
+        if n <= 2 {
+            return 1
+        }
+        
+        return fibExponential(n: n-1) + fibExponential(n: n-2)
+    }
+
  
 }
