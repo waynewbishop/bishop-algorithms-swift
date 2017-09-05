@@ -18,8 +18,6 @@ import XCTest
 @testable import SwiftStructures
 
 
-//TODO: rename to fibTest.swift
-
 class FibTest: XCTestCase {
 
     
