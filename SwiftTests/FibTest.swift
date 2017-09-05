@@ -20,7 +20,7 @@ import XCTest
 
 //TODO: rename to fibTest.swift
 
-class MathTest: XCTestCase {
+class FibTest: XCTestCase {
 
     
     var count: Int = 0
@@ -102,7 +102,7 @@ class MathTest: XCTestCase {
         var positions: Int = 2
         let result = positions.fibMemoized()
         
-        print("the result is \(result)..")
+        print("the result is \(String(describing: result))..")
         
         //test results
         XCTAssertNotNil(result, "fib sequence not calculated..")

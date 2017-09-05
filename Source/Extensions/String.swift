@@ -71,7 +71,10 @@ extension String {
         
         //define the range
         let range = self.index(self.startIndex, offsetBy: to)
-        return self.substring(to: range)
+        
+       //return self.substring(to: range) - Swift 3.0
+        
+        return String(self[..<range])
     }
     
     
@@ -111,8 +114,8 @@ extension String {
         
         while findex < bindex {
             
-            //swap positions - inout parameters
-            swap(&characters[findex], &characters[bindex])
+            //swap(&characters[findex], &characters[bindex]) - Swift 3.0
+            characters.swapAt(findex, bindex)
             
             //update values
             findex += 1

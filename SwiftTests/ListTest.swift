@@ -50,7 +50,7 @@ class ListTest: XCTestCase {
         
         if let results = element.0 {
             let rString: String? = results.element
-            print("element with value: \(rString)")
+            print("element with value: \(String(describing: rString))")
         }
         
         else {
@@ -83,7 +83,7 @@ class ListTest: XCTestCase {
         
         if let results = element.0 {
             let rVertex: Vertex? = results.element
-            print("element with key \(rVertex?.key)")
+            print("element with key \(String(describing: rVertex?.key))")
         }
         
         else {

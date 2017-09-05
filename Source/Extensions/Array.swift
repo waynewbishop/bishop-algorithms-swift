@@ -185,7 +185,8 @@ extension Array where Element: Comparable {
                 
                 //compare / swap positions
                 if (key > output[secondaryIndex + 1]) {
-                    swap(&output[secondaryIndex], &output[secondaryIndex + 1])
+                  //  swap(&output[secondaryIndex], &output[secondaryIndex + 1]) - Swift 3.0
+                    output.swapAt(secondaryIndex, secondaryIndex + 1)
                 }
             }
         }
@@ -240,7 +241,8 @@ extension Array where Element: Comparable {
             
             // swap minimum value with array iteration
             if primaryindex != minimum {
-                swap(&output[primaryindex], &output[minimum])
+               // swap(&output[primaryindex], &output[minimum]) - Swift 3.0
+                output.swapAt(primaryindex, minimum)
             }
             
         }
@@ -294,7 +296,8 @@ extension Array where Element: Comparable {
             
             if self[currentIndex] <= self[pivot] {
                 if wallIndex != currentIndex {
-                    swap(&self[currentIndex], &self[wallIndex])
+                  //  swap(&self[currentIndex], &self[wallIndex]) - Swift 3.0
+                    self.swapAt(currentIndex, wallIndex)
                 }
                 
                 //advance wall
@@ -305,7 +308,8 @@ extension Array where Element: Comparable {
         
         //move pivot to final position
         if wallIndex != pivot {
-            swap(&self[wallIndex], &self[pivot])
+           // swap(&self[wallIndex], &self[pivot]) - Swift 3.0
+            self.swapAt(wallIndex, pivot)
         }
         
         return wallIndex

@@ -429,7 +429,7 @@ public class SwiftGraph {
             
             //apply formula..
             if formula(vitem!) == false {
-                print("formula unable to update: \(vitem!.key)")
+                print("formula unable to update: \(String(describing: vitem!.key))")
             }
             else {
                 print("traversed vertex: \(vitem!.key!)..")
