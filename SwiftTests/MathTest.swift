@@ -99,13 +99,16 @@ class MathTest: XCTestCase {
 
     func testFibMemoized() {
         
-        var positions: Int = 4
+        var positions: Int = 2
         let result = positions.fibMemoized()
         
         print("the result is \(result)..")
         
         //test results
         XCTAssertNotNil(result, "fib sequence not calculated..")
+        
+        //TODO: No longer returns nil. Modify conditional check..
+        
     }
     
 
