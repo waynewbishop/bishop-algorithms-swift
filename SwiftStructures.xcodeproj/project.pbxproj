@@ -17,8 +17,8 @@
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
 		DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4891B1CF50500D1B43F /* ClosureTest.swift */; };
-		DA71F92A1D2CA718000EF8C2 /* HashList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9291D2CA718000EF8C2 /* HashList.swift */; };
-		DA71F9341D2E1029000EF8C2 /* ListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9331D2E1029000EF8C2 /* ListTest.swift */; };
+		DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9291D2CA718000EF8C2 /* HashTable.swift */; };
+		DA71F9341D2E1029000EF8C2 /* HashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9331D2E1029000EF8C2 /* HashTest.swift */; };
 		DA71F93A1D2F14CD000EF8C2 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9391D2F14CD000EF8C2 /* enums.swift */; };
 		DA7B7C6419CA284100D2E177 /* StructureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B7C6319CA284100D2E177 /* StructureTest.swift */; };
 		DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */; };
@@ -34,7 +34,7 @@
 		DAA426281D1EEA2800C6208F /* BayesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA426271D1EEA2800C6208F /* BayesTest.swift */; };
 		DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */; };
 		DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */; };
-		DAB20FFA1D36797C008187B4 /* HashElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB20FF91D36797C008187B4 /* HashElement.swift */; };
+		DAB20FFA1D36797C008187B4 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB20FF91D36797C008187B4 /* Element.swift */; };
 		DAC20BFF1D2730C10095B071 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC20BFE1D2730C10095B071 /* String.swift */; };
 		DAC20C011D2730CC0095B071 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC20C001D2730CC0095B071 /* Int.swift */; };
 		DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AB19D1F86300C133C9 /* SortingTest.swift */; };
@@ -101,8 +101,8 @@
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
-		DA71F9291D2CA718000EF8C2 /* HashList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashList.swift; sourceTree = "<group>"; };
-		DA71F9331D2E1029000EF8C2 /* ListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTest.swift; sourceTree = "<group>"; };
+		DA71F9291D2CA718000EF8C2 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		DA71F9331D2E1029000EF8C2 /* HashTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTest.swift; sourceTree = "<group>"; };
 		DA71F9391D2F14CD000EF8C2 /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		DA7B7C6319CA284100D2E177 /* StructureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureTest.swift; sourceTree = "<group>"; };
 		DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTest.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		DAA426271D1EEA2800C6208F /* BayesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesTest.swift; sourceTree = "<group>"; };
 		DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
 		DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
-		DAB20FF91D36797C008187B4 /* HashElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashElement.swift; sourceTree = "<group>"; };
+		DAB20FF91D36797C008187B4 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		DAC20BFE1D2730C10095B071 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DAC20C001D2730CC0095B071 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		DAD971AB19D1F86300C133C9 /* SortingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortingTest.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				DA151F081D64124E00A3199D /* QuickTest.swift */,
-				DA71F9331D2E1029000EF8C2 /* ListTest.swift */,
+				DA71F9331D2E1029000EF8C2 /* HashTest.swift */,
 				DAA426271D1EEA2800C6208F /* BayesTest.swift */,
 				DA64B09F1CCEB90E007A8F08 /* enumTest.swift */,
 				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,
@@ -283,7 +283,7 @@
 				DAE0021419C5677D0035F1A0 /* Queue.swift */,
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
-				DA71F9291D2CA718000EF8C2 /* HashList.swift */,
+				DA71F9291D2CA718000EF8C2 /* HashTable.swift */,
 				DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */,
 				DA151F061D5F5A0300A3199D /* Quicksort.swift */,
 			);
@@ -294,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF30DAB1E997038000CCA5D /* TestNode.swift */,
-				DAB20FF91D36797C008187B4 /* HashElement.swift */,
+				DAB20FF91D36797C008187B4 /* Element.swift */,
 				DA71F9391D2F14CD000EF8C2 /* enums.swift */,
 				DA0C32D31D273ED200F6EE73 /* Protocols.swift */,
 				DAA426211D1E251700C6208F /* BayesResult.swift */,
@@ -427,14 +427,14 @@
 				DAC20C011D2730CC0095B071 /* Int.swift in Sources */,
 				DA98D1481F29365A00FB8B85 /* ModelEngine.swift in Sources */,
 				DA151F071D5F5A0300A3199D /* Quicksort.swift in Sources */,
-				DA71F92A1D2CA718000EF8C2 /* HashList.swift in Sources */,
+				DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */,
 				DAC20BFF1D2730C10095B071 /* String.swift in Sources */,
 				DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */,
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
 				DAA426221D1E251700C6208F /* BayesResult.swift in Sources */,
 				DAE0021B19C5677D0035F1A0 /* Queue.swift in Sources */,
 				DA8C723C1D2732D9006D277E /* Array.swift in Sources */,
-				DAB20FFA1D36797C008187B4 /* HashElement.swift in Sources */,
+				DAB20FFA1D36797C008187B4 /* Element.swift in Sources */,
 				DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */,
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */,
@@ -473,7 +473,7 @@
 				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
 				DA20DEEC1BE2DAC90032A378 /* FibTest.swift in Sources */,
 				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,
-				DA71F9341D2E1029000EF8C2 /* ListTest.swift in Sources */,
+				DA71F9341D2E1029000EF8C2 /* HashTest.swift in Sources */,
 				DAD971B119D2232400C133C9 /* AVLTest.swift in Sources */,
 				DA151F091D64124E00A3199D /* QuickTest.swift in Sources */,
 			);

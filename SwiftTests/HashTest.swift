@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftStructures
 
 
-class ListTest: XCTestCase {
+class HashTest: XCTestCase {
     
 
     override func setUp() {
@@ -31,7 +31,7 @@ class ListTest: XCTestCase {
 
         
         //new string list
-        let slist = HashList<String>(capacity: 3)
+        let slist = HashTable<String>(capacity: 3)
         
         
         _ = slist.append("Wayne Bishop")
@@ -73,7 +73,7 @@ class ListTest: XCTestCase {
         let testVertex: Vertex = Vertex()
         testVertex.key = "A"
         
-        let vList: HashList = HashList<Vertex>(capacity: 10)
+        let vList: HashTable = HashTable<Vertex>(capacity: 10)
        _ = vList.append(testVertex)
 
         
@@ -98,7 +98,7 @@ class ListTest: XCTestCase {
         
         
         //new float list
-        let fList = HashList<Float>(capacity: 5)
+        let fList = HashTable<Float>(capacity: 5)
         
         _ = fList.append(10.2)
         _ = fList.append(8.6)

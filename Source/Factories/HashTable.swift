@@ -12,14 +12,14 @@ import Foundation
 //a "generic" hash table
 
 
-class HashList<T> {
+class HashTable<T> {
     
     
-    var buckets: Array<HashElement<T>?>
+    var buckets: Array<Element<T>?>
 
     
     init(capacity: Int) {
-        self.buckets = Array<HashElement<T>?>(repeatElement(nil, count: capacity))
+        self.buckets = Array<Element<T>?>(repeatElement(nil, count: capacity))
     }
     
     
@@ -43,8 +43,8 @@ class HashList<T> {
         
         
         //placeholder elements
-        let childToUse = HashElement<T>()
-        var head: HashElement<T>?
+        let childToUse = Element<T>()
+        var head: Element<T>?
         
         
         
@@ -84,7 +84,7 @@ class HashList<T> {
 
     
     //retrieve list element
-    func getElement(with key: String) -> (HashElement<T>?, HashResults) {
+    func getElement(with key: String) -> (Element<T>?, HashResults) {
         
         
         let hashIndex = self.createHash(key)
@@ -96,7 +96,7 @@ class HashList<T> {
         }
 
         
-        var current: HashElement<T>? = buckets[hashIndex]
+        var current: Element<T>? = buckets[hashIndex]
         
         
         //check chained list for key

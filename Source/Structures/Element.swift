@@ -11,8 +11,8 @@ import Foundation
 
 //a generic hash element 
 
-class HashElement<T> {
+class Element<T> {
     
     var element: T?
-    var next: HashElement<T>?
+    var next: Element<T>?
 }

@@ -127,7 +127,7 @@ extension Int {
     */
 
     //calculate results
-    mutating func fibMemoized() -> Int! {
+    mutating func fibMemoized() -> Int {
  
         
         //builds array sequence
@@ -140,7 +140,6 @@ extension Int {
             
             //mutated copy
             var output = sequence
-            
             
             
             let i: Int = output.count

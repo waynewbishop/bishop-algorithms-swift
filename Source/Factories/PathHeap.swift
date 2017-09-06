@@ -80,7 +80,8 @@ public class PathHeap {
             
             //swap child and parent positions
             if childToUse.total < parentToUse.total {
-                swap(&heap[parentIndex], &heap[Int(childIndex)])
+                //swap(&heap[parentIndex], &heap[Int(childIndex)]) -- Swift 3.0
+                heap.swapAt(parentIndex, Int(childIndex))
             }
             
             

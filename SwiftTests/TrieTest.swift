@@ -41,7 +41,7 @@ class TrieTest: XCTestCase {
 
     func testFindWithPrefix() {
         
-        let wordList: Array<String>! = testTrie.search(forWord: "Ba")
+        let wordList: Array<String>! = testTrie.search(forWord: "Ba")  //TODO: This parameter name should be more accurate.
         for word in wordList {
             print("\(word) found in trie..")
         }
@@ -77,7 +77,8 @@ class TrieTest: XCTestCase {
         
         else {
             for word in wordList {
-                print("\(word) found in trie..")
+                //print("\(word) found in trie..")
+                XCTFail("Test error. \(word) found in trie..")
             }
         }
         
