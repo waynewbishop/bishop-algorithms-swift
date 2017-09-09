@@ -1,5 +1,5 @@
 //
-//  HashList.swift
+//  HashTable.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 7/5/16.
