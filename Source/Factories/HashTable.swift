@@ -32,7 +32,6 @@ class HashTable<T> {
         var hashIndex = 0
         
         
-        
         //test element type
         if let elementKey = model(with: element) {
             hashIndex = self.createHash(elementKey)

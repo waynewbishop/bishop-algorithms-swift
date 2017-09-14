@@ -12,8 +12,9 @@ import Foundation
 //note: an extension on a protocol
 
 extension Sortable {
+
     
-    
+
     func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool {
         
         

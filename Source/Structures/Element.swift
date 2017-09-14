@@ -1,5 +1,5 @@
 //
-//  HashElement.swift
+//  Element.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 7/13/16.

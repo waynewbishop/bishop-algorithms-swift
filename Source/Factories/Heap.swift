@@ -10,28 +10,32 @@ import Foundation
 
 /*
  note: a generic heap (e.g. priority queue) algorithm. This class functions
- as an min-heap but could also be modified to sort items as a max-heap
+ as a min or max heap.
 */
 
-class MinHeap<T: Comparable> {
+
+class Heap<T: Comparable> {
     
     
     private var items: Array<T>
+    private var heapType: HeapType
     
     
-    init() {
+    //min-heap default initialization
+    init(type: HeapType = .Min) {
+        
         items = Array<T>()
+        heapType = type
     }
     
     
-    //the number of frontier items
+    //number of items
     var count: Int {
         return self.items.count
     }
     
     
-    
-    //obtain the minimum path
+    //the min or max value
     func peek() -> T? {
         
         if items.count > 0 {
@@ -43,7 +47,8 @@ class MinHeap<T: Comparable> {
     }
     
     
-    //sort items into a min-heap (heapify)
+    
+    //addition of new items
     func enQueue(_ key: T) {
         
         items.append(key)
@@ -71,9 +76,23 @@ class MinHeap<T: Comparable> {
             parentToUse = items[parentIndex]
             
             
-            //swap child and parent positions
-            if childToUse < parentToUse {
-                items.swapAt(parentIndex, Int(childIndex))
+            //heapify depending on type
+            switch heapType {
+                
+            case .Min:
+                
+                //swap child and parent positions
+                if childToUse <= parentToUse {
+                    items.swapAt(parentIndex, Int(childIndex))
+                }
+                
+            case .Max:
+                
+                //swap child and parent positions
+                if childToUse >= parentToUse {
+                    items.swapAt(parentIndex, Int(childIndex))
+                }
+                
             }
             
             

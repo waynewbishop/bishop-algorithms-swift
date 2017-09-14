@@ -10,7 +10,6 @@ import Foundation
 
 
 //recusive enum used to help build example Algorithm "models"
-
 indirect enum Algorithm<T> {
     
     case Empty
@@ -22,8 +21,23 @@ indirect enum Algorithm<T> {
 }
 
 
-//used for hash list processing
+//used for generic heap data structure processing
+enum HeapType {
+    
+    case Min
+    case Max
+}
 
+
+//used for unit test cases
+enum SortOrder {
+    
+    case Ascending
+    case Descending
+}
+
+
+//used for hash list processing
 enum HashResults {  
     
     case Success
