@@ -46,7 +46,7 @@ class HashTest: XCTestCase {
         
         
         //obtain element
-        let element = slist.getElement(with: "Frank Smith")
+        let element = slist.find("Frank Smith")
         
         if let results = element.0 {
             let rString: String? = results.element
@@ -79,7 +79,7 @@ class HashTest: XCTestCase {
         
         
         //obtain element
-        let element = vList.getElement(with: "A")
+        let element = vList.find("A")
         
         if let results = element.0 {
             let rVertex: Vertex? = results.element
@@ -105,7 +105,7 @@ class HashTest: XCTestCase {
         
         
         //element doesn't exist..
-        let element = fList.getElement(with: String(3.7))
+        let element = fList.find(String(3.7))
         
         if element.1 != HashResults.NotFound {
             XCTFail("element incorrectly found..")

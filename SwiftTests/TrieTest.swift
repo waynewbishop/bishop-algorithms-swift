@@ -41,7 +41,7 @@ class TrieTest: XCTestCase {
 
     func testFindWithPrefix() {
         
-        let wordList: Array<String>! = testTrie.contains("Ba")
+        let wordList: Array<String>! = testTrie.find("Ba")
         for word in wordList {
             print("\(word) found in trie..")
         }
@@ -56,7 +56,7 @@ class TrieTest: XCTestCase {
     
     func testFindWithWord() {
         
-        let wordList: Array<String>! = testTrie.contains("Ball")
+        let wordList: Array<String>! = testTrie.find("Ball")
         for word in wordList {
             print("\(word) found in trie..")
         }
@@ -68,7 +68,7 @@ class TrieTest: XCTestCase {
     func testFindNoExist() {
         
         let keyword: String = "Barstool"
-        let wordList: Array<String>! = testTrie.contains(keyword)
+        let wordList: Array<String>! = testTrie.find(keyword)
         
         
         if (wordList == nil) {

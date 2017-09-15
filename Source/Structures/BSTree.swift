@@ -1,5 +1,5 @@
 //
-//  AVLNode.swift
+//  BSTree.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 6/26/14.
@@ -10,17 +10,17 @@ import Foundation
 
 
 /*
- note: self-balancing binary search tree (AVL).
- elements are positioned based on value.
+ note: self-balancing binary search tree (BST). Elements are positioned based on their value.
+ After insertion, BST model is checked for balance and completes any required rotations.
 */
 
 
-public class AVLTree<T: Comparable> {
+public class BSTree<T: Comparable> {
     
     
     var key: T?
-    var left: AVLTree?
-    var right: AVLTree?
+    var left: BSTree?
+    var right: BSTree?
     var height: Int
 
     
@@ -43,6 +43,7 @@ public class AVLTree<T: Comparable> {
         
         //check root
         guard self.key != nil else {
+            
             self.key = key
             self.height = 0
             return
@@ -61,18 +62,18 @@ public class AVLTree<T: Comparable> {
             else {
                 
                 //new element
-                let leftElement = AVLTree()
+                let leftElement = BSTree()
                 leftElement.key = key
                 leftElement.height = 0
                 
                 self.left = leftElement
             }
             
-            _ = self.setElementHeight()
+            _ = self.setHeight()
             
             print("traversing left side. element \(self.key!) with height: \(self.height)...")
             
-           _ = self.isValidAVLTree()
+           _ = self.rotate()
             
         }
                
@@ -89,32 +90,87 @@ public class AVLTree<T: Comparable> {
             else {
                 
                 //new element
-                let rightElement = AVLTree()
+                let rightElement = BSTree()
                 rightElement.key = key
                 rightElement.height = 0
                 
                 self.right = rightElement
             }
             
-            _ = self.setElementHeight()
+            _ = self.setHeight()
             
             print("traversing right side. element \(self.key!) with height: \(self.height)...")
             
-            _ = self.isValidAVLTree()
+            _ = self.rotate()
             
         }
         
-    } //end function
+    }
 
-
+    //TODO: Test fails due to uncontrollable scope. Rewrite using iterative technique..
+    
+    func contains(_ key: T) -> Bool {
+        
+        var results: Bool = false
+        
+        
+        func find(_ key: T) {
+            
+            
+            guard self.key != nil else {
+                results = false
+                return
+            }
+            
+            
+            //test match
+            if self.key == key {
+                results = true
+                return
+            }
+            
+            
+            //check left side
+            if key < self.key! {
+                
+                
+                if self.left != nil {
+                    _ = left?.contains(key)
+                }
+                else {
+                    results = false
+                }
+            }
+            
+            
+            //check right side
+            if key > self.key! {
+                
+                
+                if self.left != nil {
+                    _ = left?.contains(key)
+                }
+                else {
+                    results = false
+                }
+            }
+            
+        } //end function
+        
+        
+        
+        find(key)
+        
+        return results
+    }
+    
     
     
     // MARK: - tree balancing algorithms
 
     
-    
-    //retrieve height
-    func getElementHeight(of element: AVLTree!) -> Int {
+    //find element height
+    func findHeight(of element: BSTree!) -> Int {
         
         guard element != nil else {
             return -1
@@ -127,10 +183,10 @@ public class AVLTree<T: Comparable> {
     
     
     //calculate height
-    func setElementHeight() -> Bool {
+    func setHeight() -> Bool {
+
         
-        
-        //check nil condition
+        //trivial case
         guard self.key != nil else {
             print("no key provided..")
             return false
@@ -142,12 +198,13 @@ public class AVLTree<T: Comparable> {
         
         
         //do comparison and calculate height
-        elementHeight = max(getElementHeight(of: self.left), getElementHeight(of: self.right)) + 1
+        elementHeight = max(findHeight(of: self.left), findHeight(of: self.right)) + 1
         
         self.height = elementHeight
         
         return true
     }
+    
     
     
     //determine if the tree is "balanced" - operations on a balanced tree is O(log n)
@@ -161,7 +218,7 @@ public class AVLTree<T: Comparable> {
         
         
         //use absolute value to manage right and left imbalances
-        if (abs(getElementHeight(of: self.left) - getElementHeight(of: self.right)) <= 1) {
+        if (abs(findHeight(of: self.left) - findHeight(of: self.right)) <= 1) {
             return true
         }
         else {
@@ -174,8 +231,8 @@ public class AVLTree<T: Comparable> {
     
 
     
-    //check to ensure node meets avl property
-    func isValidAVLTree() -> Bool! {
+    //rotate model - if required
+    func rotate() -> Bool! {
         
         
         guard self.key != nil else {
@@ -195,19 +252,19 @@ public class AVLTree<T: Comparable> {
             
             
             //new leaf node
-            let childToUse : AVLTree = AVLTree()
+            let childToUse : BSTree = BSTree()
             childToUse.height = 0
             childToUse.key = self.key
             
             
-            if (getElementHeight(of: self.left) - getElementHeight(of: self.right) > 1) {
+            if (findHeight(of: self.left) - findHeight(of: self.right) > 1) {
                 
                 print("\n starting right rotation on \(self.key!)..")
                 
                 
                 //reset the root node
                 self.key = self.left?.key
-                self.height = getElementHeight(of: self.left)
+                self.height = findHeight(of: self.left)
 
                 
                 //assign the new right node
@@ -225,13 +282,13 @@ public class AVLTree<T: Comparable> {
             }
 
             
-            if (getElementHeight(of: self.right) - getElementHeight(of: self.left) > 1) {
+            if (findHeight(of: self.right) - findHeight(of: self.left) > 1) {
                 
                 print("\n starting left rotation on \(self.key!)..")
                 
                 //reset the root node
                 self.key = self.right?.key
-                self.height = getElementHeight(of: self.right)
+                self.height = findHeight(of: self.right)
                 
                 
                 //assign the new left node
@@ -265,7 +322,7 @@ public class AVLTree<T: Comparable> {
     
     
     //use dfs with trailing closure to update all values
-    func traverse(withFormula formula: (AVLTree<T>) -> T) {
+    func traverse(withFormula formula: (BSTree<T>) -> T) {
         
         
         //check for trivial condition

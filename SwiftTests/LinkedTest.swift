@@ -40,14 +40,14 @@ class LinkedTest: XCTestCase {
 
         
         //lowest bound
-        let lowerbound: LLNode! = linkedList.getElement(at: 0)
+        let lowerbound: LLNode! = linkedList.find(at: 0)
         if ((lowerbound == nil) || (lowerbound.key != numberList[0])) {
             XCTFail("lowest bound retrieve fail..")
         }
         
         
         //upper bound
-        let upperbound: LLNode! = linkedList.getElement(at: nodecount - 1)
+        let upperbound: LLNode! = linkedList.find(at: nodecount - 1)
         if ((upperbound == nil) || (upperbound.key != numberList[nodecount - 1])) {
           XCTFail("upper bound retrieve fail..")
         }
@@ -61,7 +61,7 @@ class LinkedTest: XCTestCase {
         
 
         //retrieve random index
-        let randomlink: LLNode! = linkedList.getElement(at: randomIndex)
+        let randomlink: LLNode! = linkedList.find(at: randomIndex)
         if ((randomlink == nil) || (randomlink.key != numberList[randomIndex])) {
             XCTFail("random index retrieve fail..")
         }
@@ -84,7 +84,7 @@ class LinkedTest: XCTestCase {
         linkedList.printAllKeys()
         
         
-        let current = linkedList.getElement(at: testPair.index) as LLNode!
+        let current = linkedList.find(at: testPair.index) as LLNode!
         
         
         //test condition
@@ -99,7 +99,7 @@ class LinkedTest: XCTestCase {
         
         
         //retrieve value at same position
-        let removed = linkedList.getElement(at: testPair.index) as LLNode!
+        let removed = linkedList.find(at: testPair.index) as LLNode!
         
         if removed == nil || removed?.key == testPair.key {
             XCTFail("test failed: removed linked list element not found")
@@ -116,7 +116,7 @@ class LinkedTest: XCTestCase {
         
 
         let linkedList: LinkedList<Int> = self.buildLinkedList()
-        let linkForwards: LLNode! = linkedList.getElement(at: 0)
+        let linkForwards: LLNode! = linkedList.find(at: 0)
         
         if (linkForwards == nil) {
             XCTFail("link for reversal not found..")
@@ -127,7 +127,7 @@ class LinkedTest: XCTestCase {
         linkedList.printAllKeys()
         
         
-        let linkBackwards: LLNode! = linkedList.getElement(at: 0)
+        let linkBackwards: LLNode! = linkedList.find(at: 0)
 
         
         //evaluate keys

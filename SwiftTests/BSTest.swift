@@ -12,10 +12,8 @@ import XCTest
 @testable import SwiftStructures
 
 
-/* An AVL Tree is another name for a balanced binary search tree*/
 
-
-class AVLTest: XCTestCase {
+class BSTest: XCTestCase {
     
     
     //called before each test invocation
@@ -28,7 +26,7 @@ class AVLTest: XCTestCase {
     func testCount() {
         
         let numberList = [1, 2, 3, 5, 234, -20]
-        let tree = AVLTree<Int>()
+        let tree = BSTree<Int>()
         
         for number in numberList {
             tree.append(element: number)
@@ -40,70 +38,84 @@ class AVLTest: XCTestCase {
 
     
     //essay documentation - single right rotation - O(n)
-    func testAVLEssayExample() {
+    func testEssayExample() {
         
         let numberList : Array<Int> = [29, 26, 23]
         
         //build and balance model
-        self.buildAVLTree(numberList)
+        let _: Void = buildBSTree(numberList)
         
     }
 
     
     
     //input for a balanced avl tree - O(log n)
-    func testAVLBalancedTree() {
+    func testBalancedTree() {
         
         let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
         
         //build and balance model
-        self.buildAVLTree(numberList)
+        let _: Void = buildBSTree(numberList)
         
     }
     
     
     //input for multiple right rotations - O(n)
-    func testAVLRotationRight() {
+    func testRotationRight() {
         
         let numberList: Array<Int> = [29, 26, 23, 20, 19]
                 
         //build and balance model
-        self.buildAVLTree(numberList)
+        let _: Void = buildBSTree(numberList)
+        
     }
     
     
     
     //input for multiple left rotations - O(n)
-    func testAVLRotationLeft() {
+    func testRotationLeft() {
         
         let numberList: Array<Int> = [19, 20, 23, 26, 29]
         
         //build and balance model
-        self.buildAVLTree(numberList)
+        let _: Void = buildBSTree(numberList)
         
     }
     
     
     
     //input for left and right rotations - 0(n)
-    func testAVLRotationLeftAndRight() {
+    func testRotationLeftAndRight() {
         
         let numberList: Array<Int> = [19, 20, 21, 26, 16, 12]
         
         //build and balance model
-        self.buildAVLTree(numberList)
-        
+        let _: Void = buildBSTree(numberList)
     }
 
-    
 
+    /*
+
+    //test to find element
+    func testBSTContains() {
+        
+       let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
+       
+        //build and balance model
+        let model: BSTree = buildBSTree(numberList)
+    
+        XCTAssertTrue(model.contains(5), "test failed: bst item not found..")
+    }
+    */
+    
+    
     
     //MARK: Closure Tests
     
 
 
     //update tree values with function
-    func testAVLTraverseFunction() {
+    func testTraverseFunction() {
         
         let avlTest = self.buildClosureTree()
         
@@ -115,7 +127,7 @@ class AVLTest: XCTestCase {
     
     
     //update avl values with closure expression
-    func testAVLTraverseExpression() {
+    func testTraverseExpression() {
         
         let avlTest = self.buildClosureTree()
         var didFail: Bool = false
@@ -125,7 +137,7 @@ class AVLTest: XCTestCase {
         this technique allows a single variable to be used.
         */
         
-        avlTest.traverse { (node: AVLTree<Int>) -> Int in
+        avlTest.traverse { (node: BSTree<Int>) -> Int in
             
             let results = node.key! + node.height
             if node.height > 0 && node.key! == results {
@@ -144,7 +156,7 @@ class AVLTest: XCTestCase {
     
     
     //update avl values with closure function
-    func traverseFormula(node: AVLTree<Int>) -> Int {
+    func traverseFormula(node: BSTree<Int>) -> Int {
         
         let results = node.key! + node.height
         if node.height > 0 && node.key! == results {
@@ -162,42 +174,71 @@ class AVLTest: XCTestCase {
     
     //MARK: Helper Functions
     
+   
     
     //helper function - build and balance bst
-    func buildAVLTree(_ numberList: Array<Int>) {
+    func buildBSTree<T: Comparable>(_ sequence: Array<T>) -> Void {
         
         
         //test for new instance
-        let avlTest: AVLTree<Int> = AVLTree<Int>()
-        XCTAssertNotNil(avlTest, "avl instance not created..")
+        let bsTest: BSTree<T> = BSTree<T>()
+        XCTAssertNotNil(bsTest, "avl instance not created..")
         
         
         //build the tree list
-        for number in numberList {
-            print("adding \(number) to avl tree...")
-            avlTest.append(element: number)
+        for item in sequence {
+            print("adding \(item) to avl tree...")
+            bsTest.append(element: item)
         }
         
         
         //traverse the completed tree
-        avlTest.traverse()
+        bsTest.traverse()
         
         
         //tree balance check
-        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
-        
+        XCTAssertTrue(bsTest.isTreeBalanced(), "tree is unbalanced..")
         
     }
+
+    
+    //helper function - build and balance bst
+    func buildBSTree<T: Comparable>(_ sequence: Array<T>) -> BSTree<T> {
+        
+        
+        //test for new instance
+        let bsTest: BSTree<T> = BSTree<T>()
+        XCTAssertNotNil(bsTest, "bst instance not created..")
+        
+        
+        //build the tree list
+        for item in sequence {
+            print("adding \(item) to bst tree...")
+            bsTest.append(element: item)
+        }
+        
+        
+        //traverse the completed tree
+        bsTest.traverse()
+        
+        
+        //tree balance check
+        XCTAssertTrue(bsTest.isTreeBalanced(), "tree is unbalanced..")
+
+        
+        return bsTest
+    }
+    
     
 
     
     //helper function - build specific model to be traversed with closures
-    func buildClosureTree() -> AVLTree<Int> {
+    func buildClosureTree() -> BSTree<Int> {
         
         
         //test for new instance
-        let avlTest: AVLTree<Int> = AVLTree<Int>()
-        XCTAssertNotNil(avlTest, "avl instance not created..")
+        let bsTest: BSTree<Int> = BSTree<Int>()
+        XCTAssertNotNil(bsTest, "avl instance not created..")
         
         
         //provide a balanced list
@@ -207,15 +248,15 @@ class AVLTest: XCTestCase {
         //build the tree list
         for number in numberList {
             print("adding \(number) to avl tree...")
-            avlTest.append(element: number)
+            bsTest.append(element: number)
         }
 
         
         //tree balance check
-        XCTAssertTrue(avlTest.isTreeBalanced(), "tree is unbalanced..")
+        XCTAssertTrue(bsTest.isTreeBalanced(), "tree is unbalanced..")
         
         
-        return avlTest
+        return bsTest
         
     }
 

@@ -91,9 +91,9 @@ class StructureTest: XCTestCase {
 
 
     
-    func testAVLTree() {
+    func testBSTree() {
         
-        let testTree: AVLTree<Int> = AVLTree<Int>()
+        let testTree: BSTree<Int> = BSTree<Int>()
         
         XCTAssertNotNil(testTree, "instance not initialized..")
         XCTAssertNil(testTree.key, "key property not initialized..")

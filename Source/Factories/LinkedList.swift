@@ -107,7 +107,7 @@ public class LinkedList<T: Equatable> {
     
     
     //obtain link at a specific index
-    func getElement(at index: Int) ->LLNode<T>! {
+    func find(at index: Int) ->LLNode<T>! {
 
         
         //check empty conditions

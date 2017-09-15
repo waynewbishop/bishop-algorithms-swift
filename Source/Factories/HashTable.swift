@@ -83,7 +83,7 @@ class HashTable<T> {
 
     
     //retrieve list element
-    func getElement(with key: String) -> (Element<T>?, HashResults) {
+    func find(_ key: String) -> (Element<T>?, HashResults) {
         
         
         let hashIndex = self.createHash(key)
