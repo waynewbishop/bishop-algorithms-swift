@@ -84,7 +84,7 @@ public class Trie {
 
     
     //find words based on the prefix
-    func search(forWord keyword: String) -> Array<String>! {
+    func contains(_ keyword: String) -> Array<String>! {
         
         
         //trivial case
