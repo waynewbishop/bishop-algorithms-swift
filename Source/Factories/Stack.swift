@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Stack<T: Comparable> {
+class Stack<T> {
     
     private var top: Node<T>
     private var counter: Int = 0

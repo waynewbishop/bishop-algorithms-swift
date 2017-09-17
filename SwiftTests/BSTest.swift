@@ -93,6 +93,26 @@ class BSTest: XCTestCase {
         let _: Void = buildBSTree(numberList)
     }
 
+    
+    
+    func testBSTrial() {
+        
+        let sequence: Array<Int> = [8, 2, 1]
+        
+        //test for new instance
+        let bsTrial: BSTrial<Int> = BSTrial<Int>()
+        XCTAssertNotNil(bsTrial, "bst instance not created..")
+        
+        
+        //build the tree list
+        for item in sequence {
+            print("adding \(item) to tree...")
+            bsTrial.append(element: item)
+        }
+        
+        
+    }
+    
 
     /*
 
@@ -182,12 +202,12 @@ class BSTest: XCTestCase {
         
         //test for new instance
         let bsTest: BSTree<T> = BSTree<T>()
-        XCTAssertNotNil(bsTest, "avl instance not created..")
+        XCTAssertNotNil(bsTest, "bst instance not created..")
         
         
         //build the tree list
         for item in sequence {
-            print("adding \(item) to avl tree...")
+            print("adding \(item) to tree...")
             bsTest.append(element: item)
         }
         

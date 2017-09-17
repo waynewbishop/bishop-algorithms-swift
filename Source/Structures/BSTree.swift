@@ -107,63 +107,7 @@ public class BSTree<T: Comparable> {
         
     }
 
-    //TODO: Test fails due to uncontrollable scope. Rewrite using iterative technique..
-    
-    func contains(_ key: T) -> Bool {
-        
-        var results: Bool = false
-        
-        
-        func find(_ key: T) {
-            
-            
-            guard self.key != nil else {
-                results = false
-                return
-            }
-            
-            
-            //test match
-            if self.key == key {
-                results = true
-                return
-            }
-            
-            
-            //check left side
-            if key < self.key! {
-                
-                
-                if self.left != nil {
-                    _ = left?.contains(key)
-                }
-                else {
-                    results = false
-                }
-            }
-            
-            
-            //check right side
-            if key > self.key! {
-                
-                
-                if self.left != nil {
-                    _ = left?.contains(key)
-                }
-                else {
-                    results = false
-                }
-            }
-            
-        } //end function
-        
-        
-        
-        find(key)
-        
-        return results
-    }
-    
+
     
     
     // MARK: - tree balancing algorithms

@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/GraphTest.swift"
-            timestampString = "526425553.477265"
+            timestampString = "527321371.400973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/Factories/Stack.swift"
-            timestampString = "526429721.923194"
+            timestampString = "527321371.401767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/StackTest.swift"
-            timestampString = "526426486.69248"
+            timestampString = "527311185.925726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/StackTest.swift"
-            timestampString = "526426486.692893"
+            timestampString = "527311185.926125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -280,7 +280,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/GraphTest.swift"
-            timestampString = "526425553.477659"
+            timestampString = "527321371.402167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -296,7 +296,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/TrieTest.swift"
-            timestampString = "527198646.741298"
+            timestampString = "527321371.402366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -328,7 +328,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/HeapTest.swift"
-            timestampString = "527198646.741388"
+            timestampString = "527321371.402503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -340,16 +340,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTests/BSTest.swift"
-            timestampString = "527198646.741449"
+            timestampString = "527321371.402578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "testBSTContains()"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "testBSTrial()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -359,13 +359,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source/Structures/BSTree.swift"
-            timestampString = "527198646.742207"
+            filePath = "Source/Factories/Graph.swift"
+            timestampString = "527321371.403119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "contains(_:)"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "traverse(_:formula:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -375,14 +375,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source/Structures/BSTree.swift"
-            timestampString = "527198646.742264"
+            filePath = "SwiftTests/GraphTest.swift"
+            timestampString = "527321371.403214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "find(_:)"
-            landmarkType = "9">
+            landmarkName = "testBFSTraverseExpression()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

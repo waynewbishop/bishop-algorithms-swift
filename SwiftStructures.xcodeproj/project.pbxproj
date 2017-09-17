@@ -17,6 +17,8 @@
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
 		DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4891B1CF50500D1B43F /* ClosureTest.swift */; };
 		DA6FC89D1F6B215000618B4C /* HeapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FC89C1F6B215000618B4C /* HeapTest.swift */; };
+		DA6FC89F1F6DCB9600618B4C /* BSNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FC89E1F6DCB9600618B4C /* BSNode.swift */; };
+		DA6FC8A11F6DCC6F00618B4C /* BSTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FC8A01F6DCC6F00618B4C /* BSTrial.swift */; };
 		DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9291D2CA718000EF8C2 /* HashTable.swift */; };
 		DA71F9341D2E1029000EF8C2 /* HashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9331D2E1029000EF8C2 /* HashTest.swift */; };
 		DA71F93A1D2F14CD000EF8C2 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9391D2F14CD000EF8C2 /* enums.swift */; };
@@ -102,6 +104,8 @@
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
 		DA6FC89C1F6B215000618B4C /* HeapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTest.swift; sourceTree = "<group>"; };
+		DA6FC89E1F6DCB9600618B4C /* BSNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSNode.swift; sourceTree = "<group>"; };
+		DA6FC8A01F6DCC6F00618B4C /* BSTrial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTrial.swift; sourceTree = "<group>"; };
 		DA71F9291D2CA718000EF8C2 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		DA71F9331D2E1029000EF8C2 /* HashTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTest.swift; sourceTree = "<group>"; };
 		DA71F9391D2F14CD000EF8C2 /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 		DAE0021019C5673F0035F1A0 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				DA6FC8A01F6DCC6F00618B4C /* BSTrial.swift */,
 				DAC42F671F61A1C500B6D461 /* Heap.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */,
@@ -296,6 +301,7 @@
 		DAE0021F19C567870035F1A0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				DA6FC89E1F6DCB9600618B4C /* BSNode.swift */,
 				DAE0022519C567A40035F1A0 /* BSTree.swift */,
 				DAF30DAB1E997038000CCA5D /* TestNode.swift */,
 				DAB20FF91D36797C008187B4 /* Element.swift */,
@@ -431,6 +437,7 @@
 				DA98D1481F29365A00FB8B85 /* ModelEngine.swift in Sources */,
 				DA151F071D5F5A0300A3199D /* Quicksort.swift in Sources */,
 				DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */,
+				DA6FC8A11F6DCC6F00618B4C /* BSTrial.swift in Sources */,
 				DAC20BFF1D2730C10095B071 /* String.swift in Sources */,
 				DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */,
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
@@ -442,6 +449,7 @@
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */,
 				DA98D14A1F29368300FB8B85 /* ModelDelegate.swift in Sources */,
+				DA6FC89F1F6DCB9600618B4C /* BSNode.swift in Sources */,
 				DA98D1401F29354F00FB8B85 /* Model.swift in Sources */,
 				DAA426201D1DFE3E00C6208F /* NaiveBayes.swift in Sources */,
 				DA71F93A1D2F14CD000EF8C2 /* enums.swift in Sources */,
