@@ -52,6 +52,7 @@ class Stack<T> {
         counter += 1
         
     }
+
     
 
     //remove item from the stack - O(1)
