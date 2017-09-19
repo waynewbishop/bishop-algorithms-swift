@@ -312,6 +312,7 @@ public class BSTree<T: Comparable> {
         
         //process the left side
         if self.left != nil {
+            print("\(String(describing: self.left?.key)) added to call stack..")
             left?.traverse()
         }
         
@@ -320,6 +321,7 @@ public class BSTree<T: Comparable> {
 
         //process the right side
         if self.right != nil {
+            print("\(String(describing: self.right?.key)) added to call stack..")
             right?.traverse()
         }
 

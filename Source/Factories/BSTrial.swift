@@ -55,33 +55,39 @@ class BSTrial<T: Comparable>{
                     current.left = childToAdd
                     break
                 }
-                
             }
             
         } //end while
         
-      
-        //TODO: run a function to pop all nodes from the stack and perform height and balance calculations..
+        
+        //calculate height and balance of call stack..
         rebalance()
         
     }
     
     
-    //stack visited elements for later processing
+    func traverse() {
+        root.traverse()
+    }
+    
+    
+    //stack elements for later processing - memoization
     func push(element: inout BSNode<T>) {
         elementStack.push(withKey: element)
     }
     
-    
-    //pop all nodes from the stack and perform height and balance calculations..
+
+    //determine height and balance
     func rebalance() {
         
         for _ in stride(from: elementStack.count, through: 1, by: -1) {
-
             
-            //obtain generic stacked node
+            //obtain generic stack node
             let current = elementStack.peek()
-            let bsNode: BSNode<T>! = current.key
+            let bsNode: BSNode<T> = current.key
+            
+            
+            setHeight(element: bsNode)
             
             
             print("current node is \(String(describing: bsNode.key)) and stack count is \(elementStack.count)")
@@ -91,10 +97,33 @@ class BSTrial<T: Comparable>{
     
     
     
+    //find element height
+    func findHeight(of element: BSNode<T>?) -> Int {
 
-    func setHeight(element: inout BSNode<T>) {
-    
+        
+        //check empty leaves
+        guard let bsNode = element else {
+            return -1
+        }
+
+        return bsNode.height
     }
     
+
+    func setHeight(element: BSNode<T>) {
+        
+        //set leaf variables
+        var elementHeight: Int = 0
+        
+        
+        //do comparison and calculate height
+        elementHeight = max(findHeight(of: element.left), findHeight(of: element.right)) + 1
+        
+        element.height = elementHeight
+        
+    }
+    
+
+  
     
 }

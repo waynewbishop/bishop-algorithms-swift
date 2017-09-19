@@ -110,9 +110,17 @@ class BSTest: XCTestCase {
             bsTrial.append(element: item)
         }
         
-        
+        bsTrial.root.traverse()
     }
     
+    
+    func testSimpleExample() {
+        
+        let sequence: Array<Int> = [8, 2, 1, 3]
+        
+        //build and balance model
+        let _: Void = buildBSTree(sequence)
+    }
 
     /*
 

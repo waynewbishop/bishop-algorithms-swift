@@ -22,4 +22,31 @@ class BSNode<T>{
         self.height = -1
     }
     
+    
+    //regular dfs traversal
+    func traverse() {
+        
+        
+        //check for trivial condition
+        guard self.key != nil else {
+            print("no key provided..")
+            return
+        }
+        
+        //process the left side
+        if self.left != nil {
+            left?.traverse()
+        }
+        
+        print("...the value is: \(self.key!) - height: \(self.height)..")
+        
+        
+        //process the right side
+        if self.right != nil {
+            right?.traverse()
+        }
+        
+        
+    }
+    
 }
