@@ -33,7 +33,7 @@ public class Queue<T> {
         
         //cycle through items
         while current.next != nil {
-            current = current.next
+            current = current.next! //TODO: Add guard statement here..
             x += 1
         }
         

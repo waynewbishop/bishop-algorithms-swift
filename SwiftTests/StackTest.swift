@@ -63,7 +63,7 @@ class StackTest: XCTestCase {
 
         
         for _ in stride(from: myStack.count, through: 0, by: -1) {
-            print("stack item is: \(myStack.peek().key). stack count: \(myStack.count)")
+            print("stack item is: \(String(describing: myStack.peek().key)). stack count: \(myStack.count)")
             myStack.pop()
         }
         

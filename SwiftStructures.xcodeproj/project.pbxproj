@@ -18,7 +18,7 @@
 		DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA66A4891B1CF50500D1B43F /* ClosureTest.swift */; };
 		DA6FC89D1F6B215000618B4C /* HeapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FC89C1F6B215000618B4C /* HeapTest.swift */; };
 		DA6FC89F1F6DCB9600618B4C /* BSNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FC89E1F6DCB9600618B4C /* BSNode.swift */; };
-		DA6FC8A11F6DCC6F00618B4C /* BSTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FC8A01F6DCC6F00618B4C /* BSTrial.swift */; };
+		DA6FC8A11F6DCC6F00618B4C /* BSTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */; };
 		DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9291D2CA718000EF8C2 /* HashTable.swift */; };
 		DA71F9341D2E1029000EF8C2 /* HashTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9331D2E1029000EF8C2 /* HashTest.swift */; };
 		DA71F93A1D2F14CD000EF8C2 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71F9391D2F14CD000EF8C2 /* enums.swift */; };
@@ -58,7 +58,7 @@
 		DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022219C567A40035F1A0 /* LLNode.swift */; };
 		DAE0022A19C567A40035F1A0 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022319C567A40035F1A0 /* Vertex.swift */; };
 		DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022419C567A40035F1A0 /* Edge.swift */; };
-		DAE0022C19C567A40035F1A0 /* BSTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022519C567A40035F1A0 /* BSTree.swift */; };
+		DAE0022C19C567A40035F1A0 /* BSRecursive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022519C567A40035F1A0 /* BSRecursive.swift */; };
 		DAE82A5C1D00D78C004A5FAA /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE82A5B1D00D78C004A5FAA /* Node.swift */; };
 		DAF30DAC1E997038000CCA5D /* TestNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF30DAB1E997038000CCA5D /* TestNode.swift */; };
 /* End PBXBuildFile section */
@@ -105,7 +105,7 @@
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
 		DA6FC89C1F6B215000618B4C /* HeapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTest.swift; sourceTree = "<group>"; };
 		DA6FC89E1F6DCB9600618B4C /* BSNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSNode.swift; sourceTree = "<group>"; };
-		DA6FC8A01F6DCC6F00618B4C /* BSTrial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTrial.swift; sourceTree = "<group>"; };
+		DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTree.swift; sourceTree = "<group>"; };
 		DA71F9291D2CA718000EF8C2 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		DA71F9331D2E1029000EF8C2 /* HashTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTest.swift; sourceTree = "<group>"; };
 		DA71F9391D2F14CD000EF8C2 /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		DAE0022219C567A40035F1A0 /* LLNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNode.swift; sourceTree = "<group>"; };
 		DAE0022319C567A40035F1A0 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		DAE0022419C567A40035F1A0 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
-		DAE0022519C567A40035F1A0 /* BSTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSTree.swift; sourceTree = "<group>"; };
+		DAE0022519C567A40035F1A0 /* BSRecursive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSRecursive.swift; sourceTree = "<group>"; };
 		DAE82A5B1D00D78C004A5FAA /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		DAF30DAB1E997038000CCA5D /* TestNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,8 +239,8 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA6FC89C1F6B215000618B4C /* HeapTest.swift */,
 				DAD971B019D2232400C133C9 /* BSTest.swift */,
+				DA6FC89C1F6B215000618B4C /* HeapTest.swift */,
 				DA151F081D64124E00A3199D /* QuickTest.swift */,
 				DA71F9331D2E1029000EF8C2 /* HashTest.swift */,
 				DAA426271D1EEA2800C6208F /* BayesTest.swift */,
@@ -281,7 +281,7 @@
 		DAE0021019C5673F0035F1A0 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				DA6FC8A01F6DCC6F00618B4C /* BSTrial.swift */,
+				DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */,
 				DAC42F671F61A1C500B6D461 /* Heap.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */,
@@ -302,7 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				DA6FC89E1F6DCB9600618B4C /* BSNode.swift */,
-				DAE0022519C567A40035F1A0 /* BSTree.swift */,
+				DAE0022519C567A40035F1A0 /* BSRecursive.swift */,
 				DAF30DAB1E997038000CCA5D /* TestNode.swift */,
 				DAB20FF91D36797C008187B4 /* Element.swift */,
 				DA71F9391D2F14CD000EF8C2 /* enums.swift */,
@@ -437,7 +437,7 @@
 				DA98D1481F29365A00FB8B85 /* ModelEngine.swift in Sources */,
 				DA151F071D5F5A0300A3199D /* Quicksort.swift in Sources */,
 				DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */,
-				DA6FC8A11F6DCC6F00618B4C /* BSTrial.swift in Sources */,
+				DA6FC8A11F6DCC6F00618B4C /* BSTree.swift in Sources */,
 				DAC20BFF1D2730C10095B071 /* String.swift in Sources */,
 				DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */,
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
@@ -456,7 +456,7 @@
 				DAE0021D19C5677D0035F1A0 /* PathHeap.swift in Sources */,
 				DAE0022A19C567A40035F1A0 /* Vertex.swift in Sources */,
 				DA0C32D21D273A1200F6EE73 /* Sortable.swift in Sources */,
-				DAE0022C19C567A40035F1A0 /* BSTree.swift in Sources */,
+				DAE0022C19C567A40035F1A0 /* BSRecursive.swift in Sources */,
 				DAE001E119C564720035F1A0 /* ViewController.swift in Sources */,
 				DAE001DF19C564720035F1A0 /* AppDelegate.swift in Sources */,
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,

@@ -5,9 +5,8 @@
 //  Created by Wayne Bishop on 9/23/14.
 //  Copyright (c) 2014 Arbutus Software Inc. All rights reserved.
 //
-
-import UIKit
 import XCTest
+
 
 @testable import SwiftStructures
 
@@ -22,7 +21,7 @@ class BSTest: XCTestCase {
     }
     
     
-    
+    /*
     func testCount() {
         
         let numberList = [1, 2, 3, 5, 234, -20]
@@ -34,6 +33,7 @@ class BSTest: XCTestCase {
         
         XCTAssert(tree.count == numberList.count, "Expected tree's size to be \(numberList.count), got \(tree.count) instead.")
     }
+    */
 
 
     
@@ -94,13 +94,13 @@ class BSTest: XCTestCase {
     }
 
     
-    
+/*
     func testBSTrial() {
         
-        let sequence: Array<Int> = [8, 2, 1]
+        let sequence: Array<Int> = [8, 2, 1, 3]
         
         //test for new instance
-        let bsTrial: BSTrial<Int> = BSTrial<Int>()
+        let bsTrial: BSTree<Int> = BSTree<Int>()
         XCTAssertNotNil(bsTrial, "bst instance not created..")
         
         
@@ -111,7 +111,9 @@ class BSTest: XCTestCase {
         }
         
         bsTrial.root.traverse()
+        
     }
+ */
     
     
     func testSimpleExample() {
@@ -122,20 +124,6 @@ class BSTest: XCTestCase {
         let _: Void = buildBSTree(sequence)
     }
 
-    /*
-
-    //test to find element
-    func testBSTContains() {
-        
-       let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
-       
-        //build and balance model
-        let model: BSTree = buildBSTree(numberList)
-    
-        XCTAssertTrue(model.contains(5), "test failed: bst item not found..")
-    }
-    */
-    
     
     
     //MARK: Closure Tests
@@ -145,27 +133,26 @@ class BSTest: XCTestCase {
     //update tree values with function
     func testTraverseFunction() {
         
-        let avlTest = self.buildClosureTree()
+        let bsTest = self.buildClosureTree()
         
         //invoke formula function
-        avlTest.traverse(withFormula: traverseFormula)
-        
-        
+        bsTest.root.traverse(withFormula: traverseFormula)
     }
     
     
-    //update avl values with closure expression
+    //update bst values with closure expression
     func testTraverseExpression() {
         
-        let avlTest = self.buildClosureTree()
+        let bsTree = self.buildClosureTree()
         var didFail: Bool = false
+        
         
         /*
         notes: for this test, the didFail variable is known to be 'captured' by the closure expression.
         this technique allows a single variable to be used.
         */
         
-        avlTest.traverse { (node: BSTree<Int>) -> Int in
+        bsTree.root.traverse { (node: BSNode<Int>) -> Int in
             
             let results = node.key! + node.height
             if node.height > 0 && node.key! == results {
@@ -173,27 +160,22 @@ class BSTest: XCTestCase {
             }
           
             return results
-            
         }
         
         XCTAssertFalse(didFail, "..closure update failed..")
-        
-        
     }
 
     
     
     //update avl values with closure function
-    func traverseFormula(node: BSTree<Int>) -> Int {
+    func traverseFormula(node: BSNode<Int>) -> Int {
         
         let results = node.key! + node.height
         if node.height > 0 && node.key! == results {
              XCTFail("closure update failed..")
         }
-
         
         return results
-        
     }
     
     
@@ -225,7 +207,7 @@ class BSTest: XCTestCase {
         
         
         //tree balance check
-        XCTAssertTrue(bsTest.isTreeBalanced(), "tree is unbalanced..")
+        XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")
         
     }
 
@@ -251,7 +233,7 @@ class BSTest: XCTestCase {
         
         
         //tree balance check
-        XCTAssertTrue(bsTest.isTreeBalanced(), "tree is unbalanced..")
+        XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")
 
         
         return bsTest
@@ -280,15 +262,13 @@ class BSTest: XCTestCase {
         }
 
         
-        //tree balance check
-        XCTAssertTrue(bsTest.isTreeBalanced(), "tree is unbalanced..")
+        //tree balance check - verify root node
+        XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")
         
         
         return bsTest
-        
     }
 
     
     
-
 }

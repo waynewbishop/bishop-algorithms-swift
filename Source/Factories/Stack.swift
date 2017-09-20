@@ -59,7 +59,7 @@ class Stack<T> {
     func pop() {
         
         if self.count > 1 {
-            top = top.next
+            top = top.next!  //TODO: Add guard statement here..
             
             //set counter
             counter -= 1

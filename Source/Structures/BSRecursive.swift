@@ -15,12 +15,12 @@ import Foundation
 */
 
 
-public class BSTree<T: Comparable> {
+public class BSRecursive<T: Comparable> {
     
     
     var key: T?
-    var left: BSTree?
-    var right: BSTree?
+    var left: BSRecursive?
+    var right: BSRecursive?
     var height: Int
 
     
@@ -62,7 +62,7 @@ public class BSTree<T: Comparable> {
             else {
                 
                 //new element
-                let leftElement = BSTree()
+                let leftElement = BSRecursive()
                 leftElement.key = key
                 leftElement.height = 0
                 
@@ -90,7 +90,7 @@ public class BSTree<T: Comparable> {
             else {
                 
                 //new element
-                let rightElement = BSTree()
+                let rightElement = BSRecursive()
                 rightElement.key = key
                 rightElement.height = 0
                 
@@ -114,7 +114,7 @@ public class BSTree<T: Comparable> {
 
     
     //find element height
-    func findHeight(of element: BSTree!) -> Int {
+    func findHeight(of element: BSRecursive!) -> Int {
         
         guard element != nil else {
             return -1
@@ -196,7 +196,7 @@ public class BSTree<T: Comparable> {
             
             
             //new leaf node
-            let childToUse : BSTree = BSTree()
+            let childToUse : BSRecursive = BSRecursive()
             childToUse.height = 0
             childToUse.key = self.key
             
@@ -266,7 +266,7 @@ public class BSTree<T: Comparable> {
     
     
     //use dfs with trailing closure to update all values
-    func traverse(withFormula formula: (BSTree<T>) -> T) {
+    func traverse(withFormula formula: (BSRecursive<T>) -> T) {
         
         
         //check for trivial condition
