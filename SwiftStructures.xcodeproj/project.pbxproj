@@ -184,6 +184,14 @@
 			path = Patterns;
 			sourceTree = "<group>";
 		};
+		DA3832501F7377C1008DA2F6 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				DAE0022519C567A40035F1A0 /* BSRecursive.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
 		DAC20BFB1D2730240095B071 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,8 +309,8 @@
 		DAE0021F19C567870035F1A0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				DA3832501F7377C1008DA2F6 /* Archive */,
 				DA6FC89E1F6DCB9600618B4C /* BSNode.swift */,
-				DAE0022519C567A40035F1A0 /* BSRecursive.swift */,
 				DAF30DAB1E997038000CCA5D /* TestNode.swift */,
 				DAB20FF91D36797C008187B4 /* Element.swift */,
 				DA71F9391D2F14CD000EF8C2 /* enums.swift */,

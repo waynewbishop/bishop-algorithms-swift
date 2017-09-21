@@ -21,19 +21,21 @@ class BSTest: XCTestCase {
     }
     
     
-    /*
+    
     func testCount() {
         
         let numberList = [1, 2, 3, 5, 234, -20]
-        let tree = BSTree<Int>()
+        let bsTree = BSTree<Int>()
         
         for number in numberList {
-            tree.append(element: number)
+            bsTree.append(element: number)
         }
         
-        XCTAssert(tree.count == numberList.count, "Expected tree's size to be \(numberList.count), got \(tree.count) instead.")
+        bsTree.root.traverse()
+        
+        XCTAssert(bsTree.root.count == numberList.count, "Expected tree's size to be \(numberList.count), got \(bsTree.root.count) instead.")
     }
-    */
+    
 
 
     
@@ -45,6 +47,15 @@ class BSTest: XCTestCase {
         //build and balance model
         let _: Void = buildBSTree(numberList)
         
+    }
+
+    
+    func testSimpleModel() {
+        
+        let sequence: Array<Int> = [8, 2, 1, 3]
+        
+        //build and balance model
+        let _: Void = buildBSTree(sequence)
     }
 
     
@@ -94,37 +105,8 @@ class BSTest: XCTestCase {
     }
 
     
-/*
-    func testBSTrial() {
-        
-        let sequence: Array<Int> = [8, 2, 1, 3]
-        
-        //test for new instance
-        let bsTrial: BSTree<Int> = BSTree<Int>()
-        XCTAssertNotNil(bsTrial, "bst instance not created..")
-        
-        
-        //build the tree list
-        for item in sequence {
-            print("adding \(item) to tree...")
-            bsTrial.append(element: item)
-        }
-        
-        bsTrial.root.traverse()
-        
-    }
- */
-    
-    
-    func testSimpleExample() {
-        
-        let sequence: Array<Int> = [8, 2, 1, 3]
-        
-        //build and balance model
-        let _: Void = buildBSTree(sequence)
-    }
 
-    
+
     
     //MARK: Closure Tests
     
@@ -203,7 +185,7 @@ class BSTest: XCTestCase {
         
         
         //traverse the completed tree
-        bsTest.traverse()
+        bsTest.root.traverse()
         
         
         //tree balance check
@@ -229,7 +211,7 @@ class BSTest: XCTestCase {
         
         
         //traverse the completed tree
-        bsTest.traverse()
+        bsTest.root.traverse()
         
         
         //tree balance check

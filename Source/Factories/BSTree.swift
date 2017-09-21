@@ -11,8 +11,8 @@ import Foundation
 
 class BSTree<T: Comparable>{
     
-    var root = BSNode<T>()    
-    var elementStack = Stack<BSNode<T>>()
+   var root = BSNode<T>()
+   private var elementStack = Stack<BSNode<T>>()
     
     
     func append(element key: T) {
@@ -29,7 +29,7 @@ class BSTree<T: Comparable>{
         
         
         //set initial indicator
-        var current: BSNode = root
+        var current: BSNode<T> = root
 
         
         while current.key != nil {
@@ -85,20 +85,16 @@ class BSTree<T: Comparable>{
     }
     
     
-    func traverse() {
-        root.traverse()
-    }
     
-    
-    //stack elements for later processing - memoization
-    func push(element: inout BSNode<T>) {
+   //stack elements for later processing - memoization
+   private func push(element: inout BSNode<T>) {
         elementStack.push(withKey: element)
         print("the stack count is: \(elementStack.count)")
     }
     
 
-    //determine height and balance
-    func rebalance() {
+  //determine height and balance
+  private func rebalance() {
         
         for _ in stride(from: elementStack.count, through: 1, by: -1) {
             
@@ -123,7 +119,7 @@ class BSTree<T: Comparable>{
     //MARK: Height Methods
     
     
-    func findHeight(of element: BSNode<T>?) -> Int {
+   private func findHeight(of element: BSNode<T>?) -> Int {
         
         //check empty leaves
         guard let bsNode = element else {
@@ -134,7 +130,7 @@ class BSTree<T: Comparable>{
     }
     
 
-    func setHeight(for element: BSNode<T>) {
+   private func setHeight(for element: BSNode<T>) {
         
         //set leaf variables
         var elementHeight: Int = 0
@@ -170,7 +166,7 @@ class BSTree<T: Comparable>{
 
     
     //perform left or right rotation
-    func rotate(element: BSNode<T>) {
+   private func rotate(element: BSNode<T>) {
         
         guard element.key != nil else {
             print("cannot rotate: no key provided..")
