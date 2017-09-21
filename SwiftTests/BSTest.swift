@@ -48,16 +48,6 @@ class BSTest: XCTestCase {
         let _: Void = buildBSTree(numberList)
         
     }
-
-    
-    func testSimpleModel() {
-        
-        let sequence: Array<Int> = [8, 2, 1, 3]
-        
-        //build and balance model
-        let _: Void = buildBSTree(sequence)
-    }
-
     
     
     //input for a balanced avl tree - O(log n)
@@ -105,6 +95,68 @@ class BSTest: XCTestCase {
     }
 
     
+    
+    //MARK: Search Tests
+
+    
+    
+    func testContainsRoot() {
+        
+        let sequence: Array<Int> = [8, 2, 1, 3]
+        let testvalue: Int = sequence[1]
+        
+        //build and balance model
+        let bsTest: BSTree<Int> = buildBSTree(sequence)
+        
+        if bsTest.contains(testvalue) == false {
+            XCTFail("contains bst test fails for value: \(testvalue)..")
+        }
+    }
+
+
+    func testContainsLeft() {
+        
+        let sequence: Array<Int> = [8, 2, 1, 3]
+        let testvalue: Int = sequence[2]
+        
+        //build and balance model
+        let bsTest: BSTree<Int> = buildBSTree(sequence)
+        
+        if bsTest.contains(testvalue) == false {
+            XCTFail("contains bst test fails for value: \(testvalue)..")
+        }
+    }
+
+    
+    func testContainsRight() {
+        
+        let sequence: Array<Int> = [8, 2, 1, 3]
+        let testvalue: Int = sequence[3]
+        
+        //build and balance model
+        let bsTest: BSTree<Int> = buildBSTree(sequence)
+        
+        if bsTest.contains(testvalue) == false {
+            XCTFail("contains bst test fails for value: \(testvalue)..")
+        }
+    }
+
+
+    func testContainsNoValue() {
+        
+        let sequence: Array<Int> = [8, 2, 1, 3]
+        
+        /* note - value not contained in set..*/
+        let testvalue: Int = 32
+
+        
+        //build and balance model
+        let bsTest: BSTree<Int> = buildBSTree(sequence)
+        
+        if bsTest.contains(testvalue) == true {
+            XCTFail("contains bst test fails for value: \(testvalue)..")
+        }
+    }
 
 
     
@@ -169,11 +221,11 @@ class BSTest: XCTestCase {
    
     
     //helper function - build and balance bst
-    func buildBSTree<T: Comparable>(_ sequence: Array<T>) -> Void {
+    func buildBSTree(_ sequence: Array<Int>) -> () {
         
         
         //test for new instance
-        let bsTest: BSTree<T> = BSTree<T>()
+        let bsTest: BSTree<Int> = BSTree<Int>()
         XCTAssertNotNil(bsTest, "bst instance not created..")
         
         
@@ -195,11 +247,11 @@ class BSTest: XCTestCase {
 
     
     //helper function - build and balance bst
-    func buildBSTree<T: Comparable>(_ sequence: Array<T>) -> BSTree<T> {
+    func buildBSTree(_ sequence: Array<Int>) -> BSTree<Int> {
         
         
         //test for new instance
-        let bsTest: BSTree<T> = BSTree<T>()
+        let bsTest: BSTree<Int> = BSTree<Int>()
         XCTAssertNotNil(bsTest, "bst instance not created..")
         
         
@@ -242,7 +294,7 @@ class BSTest: XCTestCase {
             print("adding \(number) to avl tree...")
             bsTest.append(element: number)
         }
-
+        
         
         //tree balance check - verify root node
         XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")

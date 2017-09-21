@@ -8,6 +8,11 @@
 
 import Foundation
 
+ /*
+ note: self-balancing binary search tree (BST). Elements are positioned based on their value.
+ After insertion, model is checked for balance and automatically completed required rotations.
+ */
+
 
 class BSTree<T: Comparable>{
     
@@ -85,6 +90,50 @@ class BSTree<T: Comparable>{
     }
     
     
+    //equality test
+    func contains(_ key: T) -> Bool {
+        
+        var current: BSNode<T>? = root
+        
+        while current != nil {
+            
+            guard let testkey = current?.key else {
+                return false
+            }
+            
+            //test match
+            if testkey == key {
+                return true
+            }
+            
+            //check left side
+            if key < testkey {
+                if current?.left != nil {
+                    current = current?.left
+                    continue
+                }
+                else {
+                    return false
+                }
+            }
+            
+            //check right side
+            if key > testkey {
+                if current?.right != nil {
+                    current = current?.right
+                    continue
+                }
+                else {
+                    return false
+                }
+            }
+            
+        } //end while
+        
+        return false
+    }
+    
+    
     
    //stack elements for later processing - memoization
    private func push(element: inout BSNode<T>) {
@@ -102,7 +151,7 @@ class BSTree<T: Comparable>{
             let current = elementStack.peek()
             
             guard let bsNode: BSNode<T> = current.key else {
-                print("no element found..")
+                print("element reference no found..")
                 continue
             }
             
