@@ -8,11 +8,10 @@
 
 import Foundation
 
-public class Queue<T> {
-    
-   
-    private var top: Node<T>!
-    
+class Queue<T> {
+        
+    private var top: Node<T>?
+    private var counter: Int = 0
     
     init() {
       top = Node<T>()
@@ -21,24 +20,7 @@ public class Queue<T> {
     
     //the number of items
     var count: Int {
-        
-        guard top.key != nil else {
-            return 0
-        }
-        
-        
-        var current: Node<T> = top
-        var x: Int = 1
-
-        
-        //cycle through items
-        while current.next != nil {
-            current = current.next! //TODO: Add guard statement here..
-            x += 1
-        }
-        
-        return x
-        
+        return counter
     }
 
 
@@ -47,8 +29,8 @@ public class Queue<T> {
     
     
     //retrieve the top most item
-    func peek() -> T! {
-        return top.key
+    func peek() -> T? {
+        return top?.key
     }
     
     
@@ -56,12 +38,10 @@ public class Queue<T> {
     //check for the presence of a value
     func isEmpty() -> Bool {
         
-        guard top.key != nil else {
+        guard top?.key != nil else {
             return true
         }
-        
         return false
-        
     }
 
 
@@ -74,8 +54,9 @@ public class Queue<T> {
         
         
         //trivial case
-        guard top.key != nil else {
-            top.key = key
+        guard top?.key != nil else {
+            top?.key = key
+            counter += 1
             return
         }
         
@@ -92,7 +73,7 @@ public class Queue<T> {
         //append new item
         childToUse.key = key
         current?.next = childToUse
-        
+        counter += 1
     }
     
 
@@ -102,23 +83,24 @@ public class Queue<T> {
     
     
         //determine key instance
-        guard top.key != nil else {
+        guard top?.key != nil else {
             return nil
         }
     
-    
+        
         //retrieve and queue the next item
-        let queueItem: T? = top.key
+        let queueItem: T? = top?.key
     
     
         //use optional binding 
-        if let nextItem = top.next {
+        if let nextItem = top?.next {
           top = nextItem
         }
         else {
             top = Node<T>()
         }
     
+        counter -= 1
     
         return queueItem
         

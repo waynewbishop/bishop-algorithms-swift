@@ -14,15 +14,14 @@ import XCTest
 
 class TrieTest: XCTestCase {
     
-    var testTrie: Trie = Trie()
+    var testTrie = Trie()
 
     
     override func setUp() {
         super.setUp()
         
         XCTAssertNotNil(testTrie, "Trie instance not correctly intialized..")
-        
-        
+                
         //add words to data structure
         testTrie.append(word: "Ball")
         testTrie.append(word: "Balls")
@@ -41,23 +40,29 @@ class TrieTest: XCTestCase {
 
     func testFindWithPrefix() {
         
-        let wordList: Array<String>! = testTrie.find("Ba")
-        for word in wordList {
-            print("\(word) found in trie..")
+        guard let list = testTrie["Ba"] else {
+            XCTFail("test failed: no words found..")
+            return
         }
         
+        for word in list {
+            print("\(word) found in trie..")
+        }
     }
 
     
     
-    /*
-    the findWord algorthim will identify both parents and children identified as words
-    */
-    
+ 
+    //note: the findWord algorthim will identify both parents and children identified as words
+ 
     func testFindWithWord() {
         
-        let wordList: Array<String>! = testTrie.find("Ball")
-        for word in wordList {
+        guard let list = testTrie["Ball"] else {
+            XCTFail("test failed: no words found")
+            return
+        }
+        
+        for word in list {
             print("\(word) found in trie..")
         }
         
@@ -67,24 +72,15 @@ class TrieTest: XCTestCase {
     //testing false search results
     func testFindNoExist() {
         
-        let keyword: String = "Barstool"
-        let wordList: Array<String>! = testTrie.find(keyword)
+        let keyword = "Barstool"
         
-        
-        if (wordList == nil) {
-            print("keyword \(keyword) not found in trie..")
+        //attempt to find word
+        guard let _ = testTrie[keyword] else {
+            return
         }
         
-        else {
-            for word in wordList {
-                //print("\(word) found in trie..")
-                XCTFail("Test error. \(word) found in trie..")
-            }
-        }
-        
-
-        
-    } //end function
+        XCTFail("test failed: \(keyword) incorrectly found in trie..")
+    }
     
 
 }

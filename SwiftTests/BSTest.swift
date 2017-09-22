@@ -229,20 +229,14 @@ class BSTest: XCTestCase {
         XCTAssertNotNil(bsTest, "bst instance not created..")
         
         
-        //build the tree list
         for item in sequence {
             print("adding \(item) to tree...")
             bsTest.append(element: item)
         }
         
-        
-        //traverse the completed tree
         bsTest.root.traverse()
         
-        
-        //tree balance check
         XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")
-        
     }
 
     
@@ -255,18 +249,15 @@ class BSTest: XCTestCase {
         XCTAssertNotNil(bsTest, "bst instance not created..")
         
         
-        //build the tree list
         for item in sequence {
             print("adding \(item) to bst tree...")
             bsTest.append(element: item)
         }
         
         
-        //traverse the completed tree
         bsTest.root.traverse()
         
         
-        //tree balance check
         XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")
 
         
@@ -280,23 +271,20 @@ class BSTest: XCTestCase {
     func buildClosureTree() -> BSTree<Int> {
         
         
-        //test for new instance
         let bsTest: BSTree<Int> = BSTree<Int>()
-        XCTAssertNotNil(bsTest, "avl instance not created..")
+        XCTAssertNotNil(bsTest, "bst instance not created..")
         
         
         //provide a balanced list
         let numberList : Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
         
         
-        //build the tree list
         for number in numberList {
             print("adding \(number) to avl tree...")
             bsTest.append(element: number)
         }
         
         
-        //tree balance check - verify root node
         XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")
         
         

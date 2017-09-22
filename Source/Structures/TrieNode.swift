@@ -10,8 +10,8 @@ import Foundation
 
 
 public class TrieNode {
-    
-    var key: String!
+        
+    var key: String?
     var children: Array<TrieNode>
     var isFinal: Bool
     var level: Int

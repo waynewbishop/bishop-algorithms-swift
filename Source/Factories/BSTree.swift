@@ -90,7 +90,7 @@ class BSTree<T: Comparable>{
     }
     
     
-    //equality test
+    //equality test - O(log n)
     func contains(_ key: T) -> Bool {
         
         var current: BSNode<T>? = root
@@ -192,6 +192,7 @@ class BSTree<T: Comparable>{
     
     
     //MARK: Balancing Methods
+    
     
     
     //determine if the tree is "balanced" - operations on a balanced tree is O(log n)

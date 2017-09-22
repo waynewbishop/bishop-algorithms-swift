@@ -1,5 +1,5 @@
 //
-//  SwiftFactory.swift
+//  LinkedList.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 6/7/14.
@@ -9,42 +9,32 @@
 import Foundation
 
 
-public class LinkedList<T: Equatable> {
+class LinkedList<T: Equatable> {
     
     
    //new instance
    private var head = LLNode<T>()
+   private var counter: Int  = 0
     
     
-  
-   var count: Int {
-        
-            if head.key == nil {
-                return 0
-            }
-                
-            else  {
-                
-                var current: LLNode = head
-                var x: Int = 1
-                
-                
-                //cycle through the list of items
-                while current.next != nil {
-                    current = current.next!
-                    x += 1
-                }
-                
-                return x
-                
-            }
+    
+    //the number of items - O(1)
+    var count: Int {
+        return counter
+    }
+
+    
+    //find subscript shortcut
+    subscript(index: Int) -> LLNode<T>? {
+        get {
+           return find(at: index)
+        }
     }
     
     
-    
     //empty list check
-    func isEmpty() -> Bool! {
-        return self.count == 0 || head.key == nil
+    func isEmpty() -> Bool {
+        return counter == 0 || head.key == nil
     }
     
     
@@ -56,6 +46,7 @@ public class LinkedList<T: Equatable> {
         //trivial check
         guard head.key != nil else {
             head.key = key
+            counter += 1
             return
         }
     
@@ -82,6 +73,7 @@ public class LinkedList<T: Equatable> {
             
         } //end while
         
+        counter += 1
     }
     
 
@@ -107,7 +99,7 @@ public class LinkedList<T: Equatable> {
     
     
     //obtain link at a specific index
-    func find(at index: Int) ->LLNode<T>! {
+    func find(at index: Int) ->LLNode<T>? {
 
         
         //check empty conditions
@@ -117,13 +109,13 @@ public class LinkedList<T: Equatable> {
         
             
         else  {
-            var current: LLNode<T>! = head
+            var current: LLNode<T> = head
             var x: Int = 0
 
             
             //cycle through elements
             while (index != x) {
-                current = current.next
+                current = current.next!
                 x += 1
             }
             
@@ -150,6 +142,7 @@ public class LinkedList<T: Equatable> {
         //establish the head node
         guard head.key != nil else {
             head.key = key
+            counter += 1
             return
         }
         
@@ -206,6 +199,8 @@ public class LinkedList<T: Equatable> {
             
         } //end while
         
+        counter += 1
+        
     }
 
     
@@ -253,6 +248,7 @@ public class LinkedList<T: Equatable> {
             
         } //end while
         
+        counter -= 1
         
     } //end function
     
@@ -325,8 +321,7 @@ public class LinkedList<T: Equatable> {
             if formula(current) == true {
                 results.append(element: current.key)
             }
-            
-            
+                        
             current = current.next
         }
         

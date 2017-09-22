@@ -11,12 +11,16 @@ import Foundation
 
 public class Trie {
     
-    private var root: TrieNode!
+    private var root = TrieNode()
     
     
-    init(){
-        root = TrieNode()
+    //find subscript shortcut
+    subscript(word: String) -> Array<String>? {
+        get {
+            return find(word)
+        }
     }
+    
     
     
     
@@ -84,7 +88,7 @@ public class Trie {
 
     
     //find words based on the prefix
-    func find(_ keyword: String) -> Array<String>! {
+    func find(_ keyword: String) -> Array<String>? {
         
         
         //trivial case
@@ -129,7 +133,7 @@ public class Trie {
         
         //retrieve the keyword and any descendants
         if ((current.key == keyword) && (current.isFinal)) {
-            wordList.append(current.key)
+            wordList.append(current.key!)
         }
 
         
@@ -137,7 +141,7 @@ public class Trie {
         for child in current.children {
             
             if (child.isFinal == true) {
-                wordList.append(child.key)
+                wordList.append(child.key!)
             }
             
         }

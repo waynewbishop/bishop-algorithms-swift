@@ -37,18 +37,10 @@ class StackTest: XCTestCase {
             print("item: \(s) added..")
         }
 
-        
         XCTAssertTrue(myStack.count == numberList.count, "test failed: stack count does not match..")
     }
     
     
-
-    /*
-     notes: This test class mimics the basic functionality of adding and removing stack items.
-     The "times" closure expression used is a custom Int extension and is not part
-     of the core library.
-     */
-
 
     func testPopStack() {
         
