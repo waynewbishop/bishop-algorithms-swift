@@ -1,5 +1,5 @@
 //
-//  HeapSort.swift
+//  PathHeap.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 8/9/14.

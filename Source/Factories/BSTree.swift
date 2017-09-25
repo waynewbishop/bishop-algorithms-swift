@@ -1,5 +1,5 @@
 //
-//  BSTrial.swift
+//  BSTree.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 9/16/17.
