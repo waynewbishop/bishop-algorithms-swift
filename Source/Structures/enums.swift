@@ -21,6 +21,13 @@ indirect enum Algorithm<T> {
 }
 
 
+//use for decision tree modeling
+enum LearningType {
+    
+    case Feature
+    case Label
+}
+
 //used for generic heap data structure processing
 enum HeapType {
     

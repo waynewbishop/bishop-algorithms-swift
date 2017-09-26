@@ -114,7 +114,7 @@ public class SwiftGraph {
         
         sourcePath.destination = source
         sourcePath.previous = prev
-        sourcePath.total = nil
+        sourcePath.total = 0
         
         output = sourcePath
         
@@ -166,7 +166,7 @@ public class SwiftGraph {
                
                 let itemPath: Path = frontier[x]
                 
-                if  (bestPath.total == nil) || (itemPath.total < bestPath.total) {
+                if  (bestPath.total == 0) || (itemPath.total < bestPath.total) {
                     bestPath = itemPath
                     pathIndex = x
                 }
@@ -212,7 +212,7 @@ public class SwiftGraph {
             
             if (itemPath.destination.key == destination.key) {
                 
-                if  (shortestPath.total == nil) || (itemPath.total < shortestPath.total) {
+                if  (shortestPath.total == 0) || (itemPath.total < shortestPath.total) {
                     shortestPath = itemPath
                 }
                 

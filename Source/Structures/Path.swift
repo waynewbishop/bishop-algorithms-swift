@@ -12,14 +12,15 @@ import Foundation
 
 class Path {
     
-    var total: Int!
+    var total: Int
     var destination: Vertex
-    var previous: Path!
+    var previous: Path?
 
     
     //object initialization
     init(){
         destination = Vertex()
+        total = 0
     }
     
 }
