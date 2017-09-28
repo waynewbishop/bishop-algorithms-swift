@@ -80,7 +80,7 @@ class StructureTest: XCTestCase {
         
         XCTAssertNotNil(pathTest, "instance not initialized..")
         XCTAssertNil(pathTest.previous, "path previous property not initialized..")
-        XCTAssertNil(pathTest.total, "path total property not initialized..")
+        XCTAssertTrue(pathTest.total == 0, "path total property not initialized..")
         
         let testVertex: AnyObject = pathTest.destination as AnyObject
         if !(testVertex is Vertex) {

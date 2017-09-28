@@ -81,15 +81,15 @@ class LinkedList<T: Equatable> {
     //print all keys for the class
     func printAllKeys() {
         
-        var current: LLNode! = head
+        var current: LLNode? = head
         
         print("------------------")
         
         //assign the next instance
         
         while current != nil {
-            print("link item is: \(current.key)")
-            current = current.next
+            print("link item is: \(String(describing: current?.key!))")
+            current = current?.next
         }
         
     }
@@ -302,7 +302,7 @@ class LinkedList<T: Equatable> {
     
     
     //filter list content - higher order function
-    func filter(_ formula: (LLNode<T>) -> Bool) -> LinkedList<T>! {
+    func filter(_ formula: (LLNode<T>) -> Bool) -> LinkedList<T>? {
         
         
         //check for instance
@@ -312,14 +312,16 @@ class LinkedList<T: Equatable> {
         
         
         var current: LLNode! = head
-        let results: LinkedList<T>! = LinkedList<T>()
+        let results: LinkedList<T>? = LinkedList<T>()
         
         
         while current != nil {
             
             //filter based on formula
             if formula(current) == true {
-                results.append(element: current.key)
+                if let key = current.key {
+                    results?.append(element: key)
+                }
             }
                         
             current = current.next
@@ -343,7 +345,7 @@ class LinkedList<T: Equatable> {
         
         
         var current: LLNode! = head
-        let results: LinkedList<T>! = LinkedList<T>()
+        let results: LinkedList<T> = LinkedList<T>()
         var newKey: T!
         
         
