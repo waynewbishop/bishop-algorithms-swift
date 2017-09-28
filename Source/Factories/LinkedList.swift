@@ -122,8 +122,6 @@ class LinkedList<T: Equatable> {
             return current
             
         } //end else
-        
-        
     }
 
     

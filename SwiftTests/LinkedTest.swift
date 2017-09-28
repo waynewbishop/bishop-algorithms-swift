@@ -30,8 +30,7 @@ class LinkedTest: XCTestCase {
         super.setUp()
         numberList = [8, 2, 10, 9, 7, 5]
     }
-    
-    
+        
     //retrieve specific links
     func testLinkAtIndex() {
         
@@ -97,7 +96,8 @@ class LinkedTest: XCTestCase {
         
         
         //retrieve value at same position
-        let removed = list.find(at: testPair.index) as LLNode!
+        let removed = list[testPair.index] as LLNode!
+        
         
         if removed == nil || removed?.key == testPair.key {
             XCTFail("test failed: removed linked list element not found")
