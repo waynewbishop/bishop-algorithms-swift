@@ -14,7 +14,7 @@
 		DA151F091D64124E00A3199D /* QuickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA151F081D64124E00A3199D /* QuickTest.swift */; };
 		DA20DEEC1BE2DAC90032A378 /* FibTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* FibTest.swift */; };
 		DA3130741F7ADCF300BE4F44 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3130731F7ADCF300BE4F44 /* Training.swift */; };
-		DA3130761F7C26F200BE4F44 /* Decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3130751F7C26F200BE4F44 /* Decision.swift */; };
+		DA3130761F7C26F200BE4F44 /* Leaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3130751F7C26F200BE4F44 /* Leaf.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -105,7 +105,7 @@
 		DA151F081D64124E00A3199D /* QuickTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTest.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* FibTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibTest.swift; sourceTree = "<group>"; };
 		DA3130731F7ADCF300BE4F44 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
-		DA3130751F7C26F200BE4F44 /* Decision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decision.swift; sourceTree = "<group>"; };
+		DA3130751F7C26F200BE4F44 /* Leaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaf.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 				DAE0022419C567A40035F1A0 /* Edge.swift */,
 				DA0670621F7ADA3D00AC3DEB /* Outcome.swift */,
 				DA3130731F7ADCF300BE4F44 /* Training.swift */,
-				DA3130751F7C26F200BE4F44 /* Decision.swift */,
+				DA3130751F7C26F200BE4F44 /* Leaf.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -478,7 +478,7 @@
 				DAE0022C19C567A40035F1A0 /* BSRecursive.swift in Sources */,
 				DAE001E119C564720035F1A0 /* ViewController.swift in Sources */,
 				DAE001DF19C564720035F1A0 /* AppDelegate.swift in Sources */,
-				DA3130761F7C26F200BE4F44 /* Decision.swift in Sources */,
+				DA3130761F7C26F200BE4F44 /* Leaf.swift in Sources */,
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,
 				DA8146A519ED905B004516F9 /* Trie.swift in Sources */,
 				DAC42F681F61A1C500B6D461 /* Heap.swift in Sources */,
