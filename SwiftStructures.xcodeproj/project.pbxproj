@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DA0C32D21D273A1200F6EE73 /* Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C32D11D273A1200F6EE73 /* Sortable.swift */; };
 		DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C32D31D273ED200F6EE73 /* Protocols.swift */; };
-		DA151F071D5F5A0300A3199D /* Quicksort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA151F061D5F5A0300A3199D /* Quicksort.swift */; };
 		DA151F091D64124E00A3199D /* QuickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA151F081D64124E00A3199D /* QuickTest.swift */; };
 		DA20DEEC1BE2DAC90032A378 /* FibTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* FibTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
@@ -97,7 +96,6 @@
 /* Begin PBXFileReference section */
 		DA0C32D11D273A1200F6EE73 /* Sortable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sortable.swift; sourceTree = "<group>"; };
 		DA0C32D31D273ED200F6EE73 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		DA151F061D5F5A0300A3199D /* Quicksort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quicksort.swift; sourceTree = "<group>"; };
 		DA151F081D64124E00A3199D /* QuickTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTest.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* FibTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibTest.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,
 				DA71F9291D2CA718000EF8C2 /* HashTable.swift */,
 				DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */,
-				DA151F061D5F5A0300A3199D /* Quicksort.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 				DA98D1421F29356E00FB8B85 /* Dispatch.swift in Sources */,
 				DAC20C011D2730CC0095B071 /* Int.swift in Sources */,
 				DA98D1481F29365A00FB8B85 /* ModelEngine.swift in Sources */,
-				DA151F071D5F5A0300A3199D /* Quicksort.swift in Sources */,
 				DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */,
 				DA6FC8A11F6DCC6F00618B4C /* BSTree.swift in Sources */,
 				DAC20BFF1D2730C10095B071 /* String.swift in Sources */,

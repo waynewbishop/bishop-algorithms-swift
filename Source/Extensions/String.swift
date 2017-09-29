@@ -15,7 +15,8 @@ extension String {
     
     //compute the length
     var length: Int {
-        return self.characters.count
+        //return self.characters.count - Swift 3.0
+        return self.count
     }
     
     
