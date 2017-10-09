@@ -49,7 +49,7 @@ class HashTest: XCTestCase {
         let element = slist.find("Frank Smith")
         
         if let results = element.0 {
-            let rString: String? = results.element
+            let rString: String? = results.key
             print("element with value: \(String(describing: rString))")
         }
         
@@ -82,7 +82,7 @@ class HashTest: XCTestCase {
         let element = vList.find("A")
         
         if let results = element.0 {
-            let rVertex: Vertex? = results.element
+            let rVertex: Vertex? = results.key
             print("element with key \(String(describing: rVertex?.key))")
         }
         

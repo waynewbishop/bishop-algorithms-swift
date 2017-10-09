@@ -57,11 +57,11 @@ public class PathHeap {
     
         
         var childIndex: Float = Float(heap.count) - 1
-        var parentIndex: Int! = 0
+        var parentIndex: Int = 0
         
         
         //calculate parent index
-        if (childIndex != 0) {
+        if childIndex != 0 {
             parentIndex = Int(floorf((childIndex - 1) / 2))
         }
 
@@ -88,7 +88,7 @@ public class PathHeap {
             childIndex = Float(parentIndex)
 
         
-            if (childIndex != 0) {
+            if childIndex != 0 {
                 parentIndex = Int(floorf((childIndex - 1) / 2))
             }
             

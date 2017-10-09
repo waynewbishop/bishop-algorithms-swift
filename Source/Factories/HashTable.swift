@@ -15,11 +15,11 @@ import Foundation
 class HashTable<T> {
     
     
-    var buckets: Array<Element<T>?>
+    var buckets: Array<Node<T>?>
 
     
     init(capacity: Int) {
-        self.buckets = Array<Element<T>?>(repeatElement(nil, count: capacity))
+        self.buckets = Array<Node<T>?>(repeatElement(nil, count: capacity))
     }
     
     
@@ -42,12 +42,12 @@ class HashTable<T> {
         
         
         //placeholder elements
-        let childToUse = Element<T>()
-        var head: Element<T>?
+        let childToUse = Node<T>()
+        var head: Node<T>?
         
         
         
-        childToUse.element = element
+        childToUse.key = element
         
         
         //check existing list
@@ -83,7 +83,7 @@ class HashTable<T> {
 
     
     //retrieve list element
-    func find(_ key: String) -> (Element<T>?, HashResults) {
+    func find(_ key: String) -> (Node<T>?, HashResults) {
         
         
         let hashIndex = self.createHash(key)
@@ -95,7 +95,7 @@ class HashTable<T> {
         }
 
         
-        var current: Element<T>? = buckets[hashIndex]
+        var current: Node<T>? = buckets[hashIndex]
         
         
         //check chained list for key
@@ -103,7 +103,7 @@ class HashTable<T> {
             
             
             //test model - compare element keys
-            if let elementKey = model(with: (current?.element)!) {
+            if let elementKey = model(with: (current?.key)!) {
                 
                 if elementKey == key {
                     print("element found..")

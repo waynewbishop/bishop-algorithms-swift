@@ -39,7 +39,7 @@ class Heap<T: Comparable> {
     func peek() -> T? {
         
         if items.count > 0 {
-            return items[0] //the shortest path
+            return items[0] //the min or max value
         }
         else {
             return nil
@@ -59,7 +59,7 @@ class Heap<T: Comparable> {
         
         
         //calculate parent index
-        if (childIndex != 0) {
+        if  childIndex != 0 {
             parentIndex = Int(floorf((childIndex - 1) / 2))
         }
         
@@ -100,7 +100,7 @@ class Heap<T: Comparable> {
             childIndex = Float(parentIndex)
             
             
-            if (childIndex != 0) {
+            if  childIndex != 0 {
                 parentIndex = Int(floorf((childIndex - 1) / 2))
             }
             

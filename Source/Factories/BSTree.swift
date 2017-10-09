@@ -151,7 +151,7 @@ class BSTree<T: Comparable>{
             let current = elementStack.peek()
             
             guard let bsNode: BSNode<T> = current.key else {
-                print("element reference no found..")
+                print("element reference not found..")
                 continue
             }
             

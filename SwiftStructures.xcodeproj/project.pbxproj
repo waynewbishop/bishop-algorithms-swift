@@ -59,7 +59,6 @@
 		DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022419C567A40035F1A0 /* Edge.swift */; };
 		DAE0022C19C567A40035F1A0 /* BSRecursive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0022519C567A40035F1A0 /* BSRecursive.swift */; };
 		DAE82A5C1D00D78C004A5FAA /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE82A5B1D00D78C004A5FAA /* Node.swift */; };
-		DAF30DAC1E997038000CCA5D /* TestNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF30DAB1E997038000CCA5D /* TestNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,7 +149,6 @@
 		DAE0022419C567A40035F1A0 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		DAE0022519C567A40035F1A0 /* BSRecursive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSRecursive.swift; sourceTree = "<group>"; };
 		DAE82A5B1D00D78C004A5FAA /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		DAF30DAB1E997038000CCA5D /* TestNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,14 +306,13 @@
 			children = (
 				DA3832501F7377C1008DA2F6 /* Archive */,
 				DA6FC89E1F6DCB9600618B4C /* BSNode.swift */,
-				DAF30DAB1E997038000CCA5D /* TestNode.swift */,
 				DAB20FF91D36797C008187B4 /* Element.swift */,
+				DAE82A5B1D00D78C004A5FAA /* Node.swift */,
 				DA71F9391D2F14CD000EF8C2 /* enums.swift */,
 				DA0C32D31D273ED200F6EE73 /* Protocols.swift */,
 				DAA426211D1E251700C6208F /* BayesResult.swift */,
 				DAE0021719C5677D0035F1A0 /* TrieNode.swift */,
 				DAE0022019C567A40035F1A0 /* Path.swift */,
-				DAE82A5B1D00D78C004A5FAA /* Node.swift */,
 				DAE0022219C567A40035F1A0 /* LLNode.swift */,
 				DAE0022319C567A40035F1A0 /* Vertex.swift */,
 				DAE0022419C567A40035F1A0 /* Edge.swift */,
@@ -484,7 +481,6 @@
 				DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */,
 				DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */,
 				DA6FC89D1F6B215000618B4C /* HeapTest.swift in Sources */,
-				DAF30DAC1E997038000CCA5D /* TestNode.swift in Sources */,
 				DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */,
 				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
 				DA20DEEC1BE2DAC90032A378 /* FibTest.swift in Sources */,
