@@ -247,10 +247,10 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA71F9331D2E1029000EF8C2 /* HashTest.swift */,
 				DAD971B019D2232400C133C9 /* BSTest.swift */,
 				DA6FC89C1F6B215000618B4C /* HeapTest.swift */,
 				DA151F081D64124E00A3199D /* QuickTest.swift */,
-				DA71F9331D2E1029000EF8C2 /* HashTest.swift */,
 				DAA426271D1EEA2800C6208F /* BayesTest.swift */,
 				DA64B09F1CCEB90E007A8F08 /* enumTest.swift */,
 				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,

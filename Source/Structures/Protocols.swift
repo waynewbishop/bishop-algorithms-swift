@@ -16,7 +16,7 @@ protocol Sortable {
 }
 
 
-//determine hash table compliance
+//determine hash table compliance - used a type and contraint
 protocol Keyable {
     
     var keyitem: String {get}

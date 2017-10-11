@@ -10,14 +10,14 @@ import Foundation
 
 
 /*
- note: a generic hash table. Types supported must conform to the
+ note: a generic hash table. types supported must conform to the
  custom Keyable protocol.
 */
 
 
 class HashTable<T: Keyable> {
     
-    var buckets: Array<Node<T>?>
+   private var buckets: Array<Node<T>?>
     
     
     init(capacity: Int) {
@@ -92,17 +92,30 @@ class HashTable<T: Keyable> {
             
             var current = buckets[hashIndex]
             
+            
             //check chained list for match
             while current != nil {
-                if String(describing: current?.key) == element.keyitem { //TODO: this needs to be unwrapped in order to properly test equality..
+               
+                /*
+                guard let key = current?.key as? String else {
+                    return false
+                }
+                */
+                
+                
+                //TODO: Holy smokes this works!! - just safely unwrap and this is done..
+                let item: Keyable = current!.key!
+                
+                
+                //determine match
+                if item.keyitem == element.keyitem {
                     return true
                 }
                 
                 current = current?.next
-            }
+             }
         }
-        
-        
+                
         return false
     }
     
