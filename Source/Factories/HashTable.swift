@@ -69,7 +69,6 @@ class HashTable<T: Keyable> {
             results = Results.Fail
         }
         
-        
         return results
     }
     
@@ -92,30 +91,27 @@ class HashTable<T: Keyable> {
             
             var current = buckets[hashIndex]
             
-            
             //check chained list for match
             while current != nil {
                
                 /*
-                guard let key = current?.key as? String else {
-                    return false
-                }
+                 note: test for equality. since the user provided input as well as
+                 the hash table contents both conform to the Keyable protocol, table
+                 elements can be intepreted as a Keyable "type". This centralized
+                 conformance allows seemingly different objects to
+                 be compared (e.g. String vs Vertex).
                 */
                 
-                
-                //TODO: Holy smokes this works!! - just safely unwrap and this is done..
-                let item: Keyable = current!.key!
-                
-                
-                //determine match
-                if item.keyitem == element.keyitem {
-                    return true
+                if let item: Keyable = current?.key {
+                    if item.keyitem == element.keyitem {
+                        return true
+                    }
                 }
-                
                 current = current?.next
-             }
-        }
                 
+             } //end while
+        }
+        
         return false
     }
     

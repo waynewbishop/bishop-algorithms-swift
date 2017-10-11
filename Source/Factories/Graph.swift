@@ -157,6 +157,8 @@ public class SwiftGraph {
         
         while frontier.count != 0 {
             
+            bestPath = Path()
+            
             //support path changes using the greedy approach
             var pathIndex: Int = 0
 
