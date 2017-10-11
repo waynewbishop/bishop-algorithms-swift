@@ -9,8 +9,14 @@
 import Foundation
 
 
-extension Int {
+extension Int: Keyable {
     
+    
+    //hash table requirement
+    var keyitem: String {
+        return String(self)
+    }
+
     
     //iterates the closure body a specified number of times
     func times(closure:(Int)-> Void) {

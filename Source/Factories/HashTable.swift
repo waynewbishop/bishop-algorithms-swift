@@ -9,189 +9,101 @@
 import Foundation
 
 
-//a "generic" hash table
+/*
+ note: a generic hash table. Types supported must conform to the
+ custom Keyable protocol.
+*/
 
 
-class HashTable<T> {
-    
+class HashTable<T: Keyable> {
     
     var buckets: Array<Node<T>?>
-
+    
     
     init(capacity: Int) {
         self.buckets = Array<Node<T>?>(repeatElement(nil, count: capacity))
     }
     
     
-    
     //add item to list
-    func append(_ element: T) -> HashResults {
+    func append(_ element: T) -> Results {
+        
+        let results: Results
+
+        
+        //compute hash
+        let hashIndex = element.hashkey(for: element.keyitem, using: buckets)
         
         
-        let results: HashResults
-        var hashIndex = 0
-        
-        
-        //test element type
-        if let elementKey = model(with: element) {
-            hashIndex = self.createHash(elementKey)
+        if hashIndex != -1 {
+            
+            let childToUse = Node<T>()
+            childToUse.key = element
+            
+            
+            //check existing list
+            if  buckets[hashIndex] == nil {
+                buckets[hashIndex] = childToUse
+                results = Results.Success
+            }
+                
+            else {
+                
+                print("collision occurred. implementing chaining..")
+                
+                var head = buckets[hashIndex] as Node<T>?
+                
+                //append item
+                childToUse.next = head
+                head = childToUse
+
+                
+                //update chained list
+                buckets[hashIndex] = head
+                
+                results = Results.Collision
+            }
         }
+            
         else {
-            return HashResults.NotSupported
-        }
-        
-        
-        //placeholder elements
-        let childToUse = Node<T>()
-        var head: Node<T>?
-        
-        
-        
-        childToUse.key = element
-        
-        
-        //check existing list
-        if  buckets[hashIndex] == nil {
-            buckets[hashIndex] = childToUse
-            
-            results = HashResults.Success
-        }
-            
-        else {
-            
-            print("a collision occurred. implementing chaining..")
-            head = buckets[hashIndex]
-            
-            
-            //append item to head of list
-            childToUse.next = head
-            head = childToUse
-            
-            
-            //update chained list
-            buckets[hashIndex] = head
-            
-            
-            results = HashResults.Collision
+            results = Results.Fail
         }
         
         
         return results
-        
     }
     
 
     
-    //retrieve list element
-    func find(_ key: String) -> (Node<T>?, HashResults) {
-        
-        
-        let hashIndex = self.createHash(key)
-        
-        
-        //trivial check
-        guard buckets[hashIndex] != nil else {
-            return (nil, HashResults.NotFound)
-        }
+    //test for containing element - O(1)
+    func contains<T: Keyable>(_ element: T) -> Bool  {
 
         
-        var current: Node<T>? = buckets[hashIndex]
+        //obtain hash index
+        let hashIndex = element.hashkey(for: element.keyitem, using: buckets)
         
         
-        //check chained list for key
-        while current != nil {
+        guard hashIndex != -1 else {
+            return false
+        }
+        
+        
+        if buckets[hashIndex] != nil {
             
+            var current = buckets[hashIndex]
             
-            //test model - compare element keys
-            if let elementKey = model(with: (current?.key)!) {
+            //check chained list for match
+            while current != nil {
+                if String(describing: current?.key) == element.keyitem { //TODO: this needs to be unwrapped in order to properly test equality..
+                    return true
+                }
                 
-                if elementKey == key {
-                    print("element found..")
-                    return (current, HashResults.Success)
-                }                
+                current = current?.next
             }
-            
-            print("searching through chained list..")
-            current = current?.next
-            
-        }
-        
-        return (nil, HashResults.Fail)
-        
-    }
-    
-
-    
-    
-    //MARK: Helper Functions
-    
-    
-
-    //determine supported list types
-    func model(with element: T) -> String? {
-        
-
-        /*
-         note: since various structures manage key data differently,
-         the model can be extended to support different types.
-        */
-        
-        switch element {
-            
-            
-        //string type
-        case is String:
-            return String(describing: element)
-            
-
-            
-        //int type
-        case is Int:
-            let stringElement = String(describing: element)
-            return stringElement
-
-            
-            
-        //vertex type
-        case is Vertex:
-            if let eVertex = element as? Vertex {
-                return eVertex.key
-            }
-            else {
-                return nil
-            }
-            
-            
-        default:
-            return nil
         }
         
         
+        return false
     }
-
-    
-    
-    
-    //hash based on string
-    func createHash(_ key: String) -> Int {
-        
-        var remainder: Int = 0
-        var divisor: Int = 0
-        
-        for key in key.unicodeScalars {
-            divisor += Int(key.value)
-        }
-        
-        
-        /*
-         note: modular math is used to calculate a hash value. The bucket count is used
-         as the dividend to ensure all possible outcomes are between 0 and the collection size.
-         */
-        
-        remainder = divisor % buckets.count
-        
-        return remainder
-    }
-    
     
 }

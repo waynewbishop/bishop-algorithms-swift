@@ -44,8 +44,8 @@ enum SortOrder {
 }
 
 
-//used for hash list processing
-enum HashResults {  
+//used for generic processing
+enum Results {  
     
     case Success
     case Collision

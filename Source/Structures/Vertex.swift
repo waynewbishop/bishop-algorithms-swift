@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class Vertex{
+public class Vertex: Keyable {
     
     var key: String?
     var neighbors: Array<Edge>
@@ -18,6 +18,11 @@ public class Vertex{
     init() {
         self.neighbors = Array<Edge>()
     }
+
     
+    //hash table requirement
+    var keyitem: String {
+        return self.key!
+    }
     
 }

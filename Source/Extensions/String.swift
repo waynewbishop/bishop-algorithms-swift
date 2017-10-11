@@ -10,20 +10,21 @@ import Foundation
 
 
 
-extension String {
+extension String: Keyable {
     
+    //hash table requirement
+    var keyitem: String {
+        return self
+    }
+
     
     //compute the length
     var length: Int {
-        //return self.characters.count - Swift 3.0
-        return self.count
+       return self.count
     }
-    
-    
     
     //determine if all characters are unique
     func isStringUnique() -> Bool {
-        
         
         //evaluate trival case
         guard self.characters.count < 128 else {

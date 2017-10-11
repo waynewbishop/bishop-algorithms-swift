@@ -28,7 +28,6 @@ class HashTest: XCTestCase {
          hash list. In this scenario, the hash table algorithm will
          implement 'separate chaining' to support 'hash collisions'.
          */
-
         
         //new string list
         let slist = HashTable<String>(capacity: 3)
@@ -42,21 +41,10 @@ class HashTest: XCTestCase {
         _ = slist.append("Wayne Bishop") //should produce collision
         _ = slist.append("Larry Page")
         _ = slist.append("Albert Einstien")
-
         
         
-        //obtain element
-        let element = slist.find("Frank Smith")
-        
-        if let results = element.0 {
-            let rString: String? = results.key
-            print("element with value: \(String(describing: rString))")
-        }
-        
-        else {
-            XCTFail("value not retreived..")
-        }
-        
+        //test list compliance
+        XCTAssertTrue(slist.contains("Frank Smith"), "hash table element not found..")
         
     }
     
@@ -65,11 +53,6 @@ class HashTest: XCTestCase {
     func testVertexList() {
         
         
-        /*
-         note: for this test, the added element is a custom object.
-         using this technique, any potential object could be used.
-        */
-        
         let testVertex: Vertex = Vertex()
         testVertex.key = "A"
         
@@ -77,18 +60,8 @@ class HashTest: XCTestCase {
        _ = vList.append(testVertex)
 
         
-        
-        //obtain element
-        let element = vList.find("A")
-        
-        if let results = element.0 {
-            let rVertex: Vertex? = results.key
-            print("element with key \(String(describing: rVertex?.key))")
-        }
-        
-        else {
-            XCTFail("element not retreived..")
-        }
+        //test list compliance
+        XCTAssertTrue(vList.contains("A"), "hash table element not found..")
         
     }
     
@@ -98,20 +71,14 @@ class HashTest: XCTestCase {
         
         
         //new float list
-        let fList = HashTable<Float>(capacity: 5)
+        let fList = HashTable<Double>(capacity: 5)
         
         _ = fList.append(10.2)
         _ = fList.append(8.6)
         
-        
-        //element doesn't exist..
-        let element = fList.find(String(3.7))
-        
-        if element.1 != HashResults.NotFound {
-            XCTFail("element incorrectly found..")
-        }        
+        //element doesn't exist
+        XCTAssertFalse(fList.contains(3.7), "hash table element not found..")
         
     }
-    
     
 }

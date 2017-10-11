@@ -26,7 +26,7 @@ public class PathHeap {
     
     
     //obtain the minimum path
-    func peek() -> Path! {
+    func peek() -> Path? {
         
         if heap.count > 0 {
            return heap[0] //the shortest path

@@ -11,6 +11,8 @@
 		DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C32D31D273ED200F6EE73 /* Protocols.swift */; };
 		DA151F091D64124E00A3199D /* QuickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA151F081D64124E00A3199D /* QuickTest.swift */; };
 		DA20DEEC1BE2DAC90032A378 /* FibTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* FibTest.swift */; };
+		DA3224A71F8D5530002F2225 /* Keyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3224A61F8D5530002F2225 /* Keyable.swift */; };
+		DA3224A91F8D82F9002F2225 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3224A81F8D82F9002F2225 /* Double.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -35,7 +37,6 @@
 		DAA426281D1EEA2800C6208F /* BayesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA426271D1EEA2800C6208F /* BayesTest.swift */; };
 		DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */; };
 		DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */; };
-		DAB20FFA1D36797C008187B4 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB20FF91D36797C008187B4 /* Element.swift */; };
 		DAC20BFF1D2730C10095B071 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC20BFE1D2730C10095B071 /* String.swift */; };
 		DAC20C011D2730CC0095B071 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC20C001D2730CC0095B071 /* Int.swift */; };
 		DAC42F681F61A1C500B6D461 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC42F671F61A1C500B6D461 /* Heap.swift */; };
@@ -97,6 +98,8 @@
 		DA0C32D31D273ED200F6EE73 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DA151F081D64124E00A3199D /* QuickTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTest.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* FibTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibTest.swift; sourceTree = "<group>"; };
+		DA3224A61F8D5530002F2225 /* Keyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyable.swift; sourceTree = "<group>"; };
+		DA3224A81F8D82F9002F2225 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
 		DA66A4891B1CF50500D1B43F /* ClosureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureTest.swift; sourceTree = "<group>"; };
@@ -120,7 +123,6 @@
 		DAA426271D1EEA2800C6208F /* BayesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesTest.swift; sourceTree = "<group>"; };
 		DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
 		DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
-		DAB20FF91D36797C008187B4 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		DAC20BFE1D2730C10095B071 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DAC20C001D2730CC0095B071 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		DAC42F671F61A1C500B6D461 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
@@ -192,9 +194,11 @@
 			isa = PBXGroup;
 			children = (
 				DAC20BFE1D2730C10095B071 /* String.swift */,
+				DA3224A81F8D82F9002F2225 /* Double.swift */,
 				DAC20C001D2730CC0095B071 /* Int.swift */,
 				DA8C723B1D2732D9006D277E /* Array.swift */,
 				DA0C32D11D273A1200F6EE73 /* Sortable.swift */,
+				DA3224A61F8D5530002F2225 /* Keyable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,7 +310,6 @@
 			children = (
 				DA3832501F7377C1008DA2F6 /* Archive */,
 				DA6FC89E1F6DCB9600618B4C /* BSNode.swift */,
-				DAB20FF91D36797C008187B4 /* Element.swift */,
 				DAE82A5B1D00D78C004A5FAA /* Node.swift */,
 				DA71F9391D2F14CD000EF8C2 /* enums.swift */,
 				DA0C32D31D273ED200F6EE73 /* Protocols.swift */,
@@ -435,6 +438,7 @@
 				DAE0021919C5677D0035F1A0 /* Graph.swift in Sources */,
 				DAE82A5C1D00D78C004A5FAA /* Node.swift in Sources */,
 				DA98D1421F29356E00FB8B85 /* Dispatch.swift in Sources */,
+				DA3224A71F8D5530002F2225 /* Keyable.swift in Sources */,
 				DAC20C011D2730CC0095B071 /* Int.swift in Sources */,
 				DA98D1481F29365A00FB8B85 /* ModelEngine.swift in Sources */,
 				DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */,
@@ -445,7 +449,6 @@
 				DAA426221D1E251700C6208F /* BayesResult.swift in Sources */,
 				DAE0021B19C5677D0035F1A0 /* Queue.swift in Sources */,
 				DA8C723C1D2732D9006D277E /* Array.swift in Sources */,
-				DAB20FFA1D36797C008187B4 /* Element.swift in Sources */,
 				DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */,
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */,
@@ -463,6 +466,7 @@
 				DAE0022719C567A40035F1A0 /* Path.swift in Sources */,
 				DA8146A519ED905B004516F9 /* Trie.swift in Sources */,
 				DAC42F681F61A1C500B6D461 /* Heap.swift in Sources */,
+				DA3224A91F8D82F9002F2225 /* Double.swift in Sources */,
 				DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */,
 				DAE0021A19C5677D0035F1A0 /* Sorting.swift in Sources */,
 				DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */,

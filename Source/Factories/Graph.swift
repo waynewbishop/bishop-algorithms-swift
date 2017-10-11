@@ -158,7 +158,6 @@ public class SwiftGraph {
         while frontier.count != 0 {
             
             //support path changes using the greedy approach
-            bestPath = Path()
             var pathIndex: Int = 0
 
             
@@ -228,7 +227,7 @@ public class SwiftGraph {
     
     
     ///an optimized version of Dijkstra's shortest path algorthim
-    func processDijkstraWithHeap(_ source: Vertex, destination: Vertex) -> Path! {
+    func processDijkstraWithHeap(_ source: Vertex, destination: Vertex) -> Path? {
         
         
         let frontier: PathHeap = PathHeap()
@@ -253,14 +252,12 @@ public class SwiftGraph {
         
         
         //construct the best path
-        var bestPath: Path = Path()
-        
-        
         while frontier.count != 0 {
                         
             //use the greedy approach to obtain the best path
-            bestPath = Path()
-            bestPath = frontier.peek()
+            guard let bestPath: Path = frontier.peek() else {
+                break
+            }
             
             
             //enumerate the bestPath edges
@@ -294,7 +291,7 @@ public class SwiftGraph {
         
         
         //obtain the shortest path from the heap
-        var shortestPath: Path! = Path()
+        var shortestPath: Path? = Path()
         shortestPath = finalPaths.peek()
         
         

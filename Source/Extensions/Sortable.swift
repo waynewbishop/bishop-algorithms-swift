@@ -14,7 +14,6 @@ import Foundation
 extension Sortable {
 
     
-
     func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool {
         
         
