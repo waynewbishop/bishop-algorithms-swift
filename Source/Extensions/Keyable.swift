@@ -13,8 +13,9 @@ import Foundation
 
 extension Keyable {
     
-
-    func hashkey<T>(for key: String!, using buckets: Array<T>) -> Int {
+    
+    //compute table index
+    func hashindex<T>(for key: String!, using buckets: Array<T>) -> Int {
         
         
         var remainder: Int = 0

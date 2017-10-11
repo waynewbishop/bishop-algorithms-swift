@@ -21,7 +21,7 @@ public class Vertex: Keyable {
 
     
     //hash table requirement
-    var keyitem: String {
+    var keystring: String {
         return self.key!
     }
     

@@ -13,7 +13,7 @@ extension Int: Keyable {
     
     
     //hash table requirement
-    var keyitem: String {
+    var keystring: String {
         return String(self)
     }
 

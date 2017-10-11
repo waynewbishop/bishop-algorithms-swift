@@ -32,7 +32,7 @@ class HashTable<T: Keyable> {
 
         
         //compute hash
-        let hashIndex = element.hashkey(for: element.keyitem, using: buckets)
+        let hashIndex = element.hashindex(for: element.keystring, using: buckets)
         
         
         if hashIndex != -1 {
@@ -79,7 +79,7 @@ class HashTable<T: Keyable> {
 
         
         //obtain hash index
-        let hashIndex = element.hashkey(for: element.keyitem, using: buckets)
+        let hashIndex = element.hashindex(for: element.keystring, using: buckets)
         
         
         guard hashIndex != -1 else {
@@ -99,11 +99,11 @@ class HashTable<T: Keyable> {
                  the hash table contents both conform to the Keyable protocol, table
                  elements can be intepreted as a Keyable "type". This centralized
                  conformance allows seemingly different objects to
-                 be compared (e.g. String vs Vertex).
+                 be compared equally (e.g. String vs Vertex).
                 */
                 
                 if let item: Keyable = current?.key {
-                    if item.keyitem == element.keyitem {
+                    if item.keystring == element.keystring {
                         return true
                     }
                 }
