@@ -45,7 +45,6 @@ class HashTest: XCTestCase {
         
         //test list compliance
         XCTAssertTrue(slist.contains("Frank Smith"), "hash table element not found..")
-        
     }
     
     

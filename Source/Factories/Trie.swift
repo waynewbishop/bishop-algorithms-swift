@@ -53,7 +53,6 @@ public class Trie {
                     childToUse = child
                     break
                 }
-                
             }
             
             
@@ -79,8 +78,6 @@ public class Trie {
             print("end of word reached!")
             return
         }
-        
-        
         
     } //end function
     

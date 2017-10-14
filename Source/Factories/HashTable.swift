@@ -26,9 +26,9 @@ class HashTable<T: Keyable> {
     
     
     //add item to list
-    func append(_ element: T) -> Results {
+    func append(_ element: T) -> Result {
         
-        let results: Results
+        let result: Result
 
         
         //compute hash
@@ -44,7 +44,7 @@ class HashTable<T: Keyable> {
             //check existing list
             if  buckets[hashIndex] == nil {
                 buckets[hashIndex] = childToUse
-                results = Results.Success
+                result = Result.Success
             }
                 
             else {
@@ -61,26 +61,26 @@ class HashTable<T: Keyable> {
                 //update chained list
                 buckets[hashIndex] = head
                 
-                results = Results.Collision
+                result = Result.Collision
             }
         }
             
         else {
-            results = Results.Fail
+            result = Result.Fail
         }
         
-        return results
+        return result
     }
     
 
     
-    //test for containing element - O(1)
+    //test for containing element 
     func contains<T: Keyable>(_ element: T) -> Bool  {
 
         
         //obtain hash index
         let hashIndex = element.hashindex(for: element.keystring, using: buckets)
-        
+    
         
         guard hashIndex != -1 else {
             return false
@@ -97,7 +97,7 @@ class HashTable<T: Keyable> {
                 /*
                  note: test for equality. since the user provided input as well as
                  the hash table contents both conform to the Keyable protocol, table
-                 elements can be intepreted as a Keyable "type". This centralized
+                 elements can be interpreted as a Keyable "type". This centralized
                  conformance allows seemingly different objects to
                  be compared equally (e.g. String vs Vertex).
                 */

@@ -28,7 +28,7 @@ extension Int: Keyable {
     
     
     //build fibonacci sequence to a specified position - default
-    func fibNormal() -> Array<Int>! {
+    func fibNormal() -> Array<Int>? {
         
         
         //check trivial condition
@@ -58,7 +58,7 @@ extension Int: Keyable {
     
     
     //build fibonacci sequence to a specified position - recursive
-    mutating func fibRecursive(_ sequence: Array<Int> = [0, 1]) -> Array<Int>! {
+    mutating func fibRecursive(_ sequence: Array<Int> = [0, 1]) -> Array<Int>? {
         
     
         var final = Array<Int>()
@@ -88,7 +88,7 @@ extension Int: Keyable {
         
         
         //set iteration
-        final = self.fibRecursive(output)
+        final = self.fibRecursive(output)!
         
         
         return final

@@ -45,7 +45,7 @@ enum SortOrder {
 
 
 //used for generic processing
-enum Results {  
+enum Result {  
     
     case Success
     case Collision
