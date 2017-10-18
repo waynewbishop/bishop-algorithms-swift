@@ -10,7 +10,7 @@ import Foundation
 
  /*
  note: self-balancing binary search tree (BST). Elements are positioned based on their value.
- After insertion, model is checked for balance and automatically completed required rotations.
+ After insertion, model is checked for balance and automatically completes required rotations.
  */
 
 

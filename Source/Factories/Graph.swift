@@ -171,9 +171,7 @@ public class SwiftGraph {
                     bestPath = itemPath
                     pathIndex = x
                 }
-                
             }
-            
             
             
             //enumerate the bestPath edges
@@ -188,7 +186,6 @@ public class SwiftGraph {
                 
                 //add the new path to the frontier
                 frontier.append(newPath)
-                
             }
             
             

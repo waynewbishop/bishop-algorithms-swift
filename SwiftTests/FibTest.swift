@@ -133,10 +133,9 @@ class FibTest: XCTestCase {
     
     
     /*
-     notes: method purposely left out of the Int class extension. 
-     function included for demonstration purposes and should not be 
+     notes: function included for demonstration purposes and should not be
      considered as best practice.
-    */
+     */
     
     func fibExponential(n: Int) -> Int {
         

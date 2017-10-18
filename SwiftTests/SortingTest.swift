@@ -23,6 +23,7 @@ class SortingTest: XCTestCase, Sortable {
     
     //test input types for algorithms
     var numberList = [8, 2, 10, 9, 7, 5]
+    var searchList = [0,4,7,9,13,16,34]
     var trivialNumberList = [1]
     var emptyNumberList: Array<Int> = []
     var textList = ["Dog", "Cat", "Dinasour", "Lion", "Cheetah", "Gazelle", "Elephant", "Aardvark"]
@@ -63,15 +64,21 @@ class SortingTest: XCTestCase, Sortable {
     }
 
     
-    func testBinaryTestNotFound() {
+    func testBinaryNotFound() {
         
-        var searchList: Array<Int> = [0,4,7,9,13,16,34]
         let key: Int = 8
         
         //test for false positive
         XCTAssertFalse(searchList.binarySearch(forElement: key), "binary key value \(key) found..")
     }
    
+    
+    func testBinaryFound() {
+        
+        let key: Int = 9
+        
+        XCTAssertTrue(searchList.binarySearch(forElement: key), "binary key value \(key) not found..")
+    }
     
 
     //MARK: General Sorting Algorithms
