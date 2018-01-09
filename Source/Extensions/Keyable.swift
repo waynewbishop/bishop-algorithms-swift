@@ -15,7 +15,7 @@ extension Keyable {
     
     
     //compute table index
-    func hashindex<T>(for key: String!, using buckets: Array<T>) -> Int {
+    func hashValue<T>(for key: String!, using buckets: Array<T>) -> Int {
         
         
         var remainder: Int = 0

@@ -23,6 +23,6 @@ protocol Keyable {
     var keystring: String {get}
     
     
-   func hashindex<T>(for key: String!, using buckets: Array<T>) -> Int
+   func hashValue<T>(for key: String!, using buckets: Array<T>) -> Int
 }
 

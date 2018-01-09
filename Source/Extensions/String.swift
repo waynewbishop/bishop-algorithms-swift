@@ -92,12 +92,6 @@ extension String: Keyable {
     }
     
     
-    //convert a string into a character array
-    func characters() ->Array<Character> {
-        return Array(self.characters)
-    }
-
-    
     
     //reverse string order
     func reverse() -> String! {
@@ -108,7 +102,7 @@ extension String: Keyable {
          */
         
         //convert to array
-        var characters = self.characters()
+        var characters = Array(self)
         
         var findex: Int = characters.startIndex
         var bindex: Int = characters.endIndex - 1

@@ -19,20 +19,23 @@ class HashTable<T: Keyable> {
     
    private var buckets: Array<Node<T>?>
     
-    
+    /*
+     note: initializing the hash table with an initial capactiyis shown
+     for educational purposes only. 
+    */
     init(capacity: Int) {
         self.buckets = Array<Node<T>?>(repeatElement(nil, count: capacity))
     }
     
     
     //add item to list
-    func append(_ element: T) -> Result {
+    func insert(_ element: T) -> Result {
         
         let result: Result
 
         
         //compute hash
-        let hashIndex = element.hashindex(for: element.keystring, using: buckets)
+        let hashIndex = element.hashValue(for: element.keystring, using: buckets)
         
         
         if hashIndex != -1 {
@@ -79,7 +82,7 @@ class HashTable<T: Keyable> {
 
         
         //obtain hash index
-        let hashIndex = element.hashindex(for: element.keystring, using: buckets)
+        let hashIndex = element.hashValue(for: element.keystring, using: buckets)
     
         
         guard hashIndex != -1 else {

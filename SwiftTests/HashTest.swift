@@ -33,14 +33,14 @@ class HashTest: XCTestCase {
         let slist = HashTable<String>(capacity: 3)
         
         
-        _ = slist.append("Wayne Bishop")
-        _ = slist.append("Frank Smith")
-        _ = slist.append("Jennifer Hobbs")
-        _ = slist.append("Tim Cook")
-        _ = slist.append("Steve Jobs")
-        _ = slist.append("Wayne Bishop") //should produce collision
-        _ = slist.append("Larry Page")
-        _ = slist.append("Albert Einstien")
+        _ = slist.insert("Wayne Bishop")
+        _ = slist.insert("Frank Smith")
+        _ = slist.insert("Jennifer Hobbs")
+        _ = slist.insert("Tim Cook")
+        _ = slist.insert("Steve Jobs")
+        _ = slist.insert("Wayne Bishop") //should produce collision
+        _ = slist.insert("Larry Page")
+        _ = slist.insert("Albert Einstien")
         
         
         //test list compliance
@@ -56,7 +56,7 @@ class HashTest: XCTestCase {
         testVertex.key = "A"
         
         let vList: HashTable = HashTable<Vertex>(capacity: 10)
-       _ = vList.append(testVertex)
+       _ = vList.insert(testVertex)
 
         
         //test list compliance
@@ -72,8 +72,8 @@ class HashTest: XCTestCase {
         //new float list
         let fList = HashTable<Double>(capacity: 5)
         
-        _ = fList.append(10.2)
-        _ = fList.append(8.6)
+        _ = fList.insert(10.2)
+        _ = fList.insert(8.6)
         
         //element doesn't exist
         XCTAssertFalse(fList.contains(3.7), "hash table element not found..")

@@ -1,5 +1,5 @@
 //
-//  GraphFactory.swift
+//  Graph.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 6/7/14.
@@ -25,8 +25,7 @@ public class SwiftGraph {
     
     //create a new vertex
     func addVertex(key: String) -> Vertex {
-        
-        
+         
         //set the key
         let childVertex: Vertex = Vertex()
         childVertex.key = key

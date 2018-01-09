@@ -9,7 +9,7 @@
 import Foundation
 
 
-class LinkedList<T: Equatable> {
+class LinkedList<T> {
     
     
    //new instance
@@ -36,6 +36,7 @@ class LinkedList<T: Equatable> {
     func isEmpty() -> Bool {
         return counter == 0 || head.key == nil
     }
+    
     
     
     
@@ -80,6 +81,8 @@ class LinkedList<T: Equatable> {
     
     //print all keys for the class
     func printAllKeys() {
+        
+        //a dictionary - O(1)
         
         var current: LLNode? = head
         
@@ -222,7 +225,11 @@ class LinkedList<T: Equatable> {
         //determine if the removal is at the head
         if (index == 0) {
             current = current?.next
-            head = current!
+            
+            if let headitem = current {
+                head = headitem
+                counter -= 1
+            }
             return
         }
         
