@@ -11,24 +11,29 @@ import Foundation
 
 typealias Hash = Int
 
-public class Block <T> {
+public class Block {
     
-    var previous: Hash
-    var from: Peer<T>
-    var to: Peer<T>
+    /*
+     note: all optional values are initiated by the network (e.g. Graph)
+     and fulfilled by a Miner at runtime.
+    */
+    
+    var id: Hash?
+    var previous: Hash?
+    var from: Peer?
+    var to: Peer?
     var amount: Double?
+    var miner: Blockchain.Miner? //track the Miner who mined the transaction block..
     var isPending: Bool
     var lastModified: Date
     
-
-    //block initialization
-    init(from: Peer<T>, to: Peer<T>, previous: Hash, amount: Double, isPending: Bool = true) {
     
-        self.previous = previous
-        self.from = from
-        self.to = to
-        self.amount = amount
-        self.isPending = isPending
+    //initialize class
+    init() {
+        self.isPending = true
         self.lastModified = Date()
     }
+    
 }
+
+

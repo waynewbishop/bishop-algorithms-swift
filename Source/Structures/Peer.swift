@@ -8,18 +8,24 @@
 
 import Foundation
 
-public class Peer <T> {
+
+public class Peer {
     
-    var name: T
+    var name: Hash
     var lastModified: Date
-    var isMiner: Bool
-    var neighbors: Array<Edge>?
+    var neighbors: Array<Edge>
+    var chain: Array<Block>?
     
-    
-    init(name: T, isMiner: Bool = false) {
+    //class initalization
+    init(name: String) {
         
-        self.name = name
-        self.isMiner = isMiner
+        /*
+         note: since native String types conforms to Hashable we can use this simple
+         one way hash to encrypt the name of the peer in the public ledger.
+        */
+        
+        self.name = name.hashValue
+        
         lastModified = Date()
         neighbors = Array<Edge>()
     }

@@ -29,6 +29,7 @@
 		DA8146A519ED905B004516F9 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8146A419ED905B004516F9 /* Trie.swift */; };
 		DA89E09E2022695300ED3AF9 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89E09D2022695300ED3AF9 /* Peer.swift */; };
 		DA89E0A020226ACC00ED3AF9 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89E09F20226ACC00ED3AF9 /* Block.swift */; };
+		DA89E0A220227A0400ED3AF9 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89E0A120227A0400ED3AF9 /* Blockchain.swift */; };
 		DA8C723C1D2732D9006D277E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C723B1D2732D9006D277E /* Array.swift */; };
 		DA9451921F906A800044E434 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9451901F906A380044E434 /* XCTestCase.swift */; };
 		DA98D1401F29354F00FB8B85 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA98D13F1F29354F00FB8B85 /* Model.swift */; };
@@ -118,6 +119,7 @@
 		DA8146A419ED905B004516F9 /* Trie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		DA89E09D2022695300ED3AF9 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		DA89E09F20226ACC00ED3AF9 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		DA89E0A120227A0400ED3AF9 /* Blockchain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
 		DA8C723B1D2732D9006D277E /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		DA9451901F906A380044E434 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		DA98D13F1F29354F00FB8B85 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		DAE0021019C5673F0035F1A0 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				DA89E0A120227A0400ED3AF9 /* Blockchain.swift */,
 				DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */,
 				DAC42F671F61A1C500B6D461 /* Heap.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
@@ -453,6 +456,7 @@
 				DA71F92A1D2CA718000EF8C2 /* HashTable.swift in Sources */,
 				DA6FC8A11F6DCC6F00618B4C /* BSTree.swift in Sources */,
 				DAC20BFF1D2730C10095B071 /* String.swift in Sources */,
+				DA89E0A220227A0400ED3AF9 /* Blockchain.swift in Sources */,
 				DA89E09E2022695300ED3AF9 /* Peer.swift in Sources */,
 				DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */,
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
