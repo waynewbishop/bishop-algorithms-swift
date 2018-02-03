@@ -30,6 +30,7 @@
 		DA89E09E2022695300ED3AF9 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89E09D2022695300ED3AF9 /* Peer.swift */; };
 		DA89E0A020226ACC00ED3AF9 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89E09F20226ACC00ED3AF9 /* Block.swift */; };
 		DA89E0A220227A0400ED3AF9 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89E0A120227A0400ED3AF9 /* Blockchain.swift */; };
+		DA89E0A62025249E00ED3AF9 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89E0A52025249E00ED3AF9 /* Exchange.swift */; };
 		DA8C723C1D2732D9006D277E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C723B1D2732D9006D277E /* Array.swift */; };
 		DA9451921F906A800044E434 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9451901F906A380044E434 /* XCTestCase.swift */; };
 		DA98D1401F29354F00FB8B85 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA98D13F1F29354F00FB8B85 /* Model.swift */; };
@@ -120,6 +121,7 @@
 		DA89E09D2022695300ED3AF9 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		DA89E09F20226ACC00ED3AF9 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		DA89E0A120227A0400ED3AF9 /* Blockchain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
+		DA89E0A52025249E00ED3AF9 /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		DA8C723B1D2732D9006D277E /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		DA9451901F906A380044E434 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		DA98D13F1F29354F00FB8B85 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3832501F7377C1008DA2F6 /* Archive */,
+				DA89E0A52025249E00ED3AF9 /* Exchange.swift */,
 				DA89E09D2022695300ED3AF9 /* Peer.swift */,
 				DA89E09F20226ACC00ED3AF9 /* Block.swift */,
 				DA6FC89E1F6DCB9600618B4C /* BSNode.swift */,
@@ -464,6 +467,7 @@
 				DAE0021B19C5677D0035F1A0 /* Queue.swift in Sources */,
 				DA8C723C1D2732D9006D277E /* Array.swift in Sources */,
 				DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */,
+				DA89E0A62025249E00ED3AF9 /* Exchange.swift in Sources */,
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */,
 				DA98D14A1F29368300FB8B85 /* ModelDelegate.swift in Sources */,

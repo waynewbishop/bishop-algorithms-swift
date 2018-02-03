@@ -17,7 +17,7 @@ public class Peer {
     var chain: Array<Block>?
     
     //class initalization
-    init(name: String) {
+    init(_ name: String) {
         
         /*
          note: since native String types conforms to Hashable we can use this simple

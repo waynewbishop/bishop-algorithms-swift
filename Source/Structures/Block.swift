@@ -20,10 +20,9 @@ public class Block {
     
     var id: Hash?
     var previous: Hash?
-    var from: Peer?
-    var to: Peer?
-    var amount: Double?
-    var miner: Blockchain.Miner? //track the Miner who mined the transaction block..
+    var transactions: Array<Exchange>?
+    var miner: Blockchain.Miner? //track the Miner instance who mined the transaction block..
+    
     var isPending: Bool
     var lastModified: Date
     
