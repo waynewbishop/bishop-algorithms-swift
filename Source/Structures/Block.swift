@@ -9,7 +9,7 @@
 import Foundation
 
 
-typealias Hash = Int
+typealias Hash = String
 
 public class Block {
     
@@ -18,18 +18,15 @@ public class Block {
      and fulfilled by a Miner at runtime.
     */
     
-    var id: Hash?
+    var key: Hash?
     var previous: Hash?
     var transactions: Array<Exchange>?
     var miner: Blockchain.Miner? //track the Miner instance who mined the transaction block..
-    
-    var isPending: Bool
     var lastModified: Date
     
     
     //initialize class
     init() {
-        self.isPending = true
         self.lastModified = Date()
     }
     

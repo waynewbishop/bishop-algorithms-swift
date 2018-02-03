@@ -17,23 +17,33 @@ public class Blockchain {
     var queue = Queue<Block>()
     var canvas = Graph()
     
-
-    //create a read only properties for threshold and complexity
+    
     let threshold: Int = 0
     let difficulty: Int = 0
 
 
-    //add a peer to the network
-    func newPeer(name: String) {
+    
+    //create a new peer
+    func newPeer(name: String) -> Peer {
         
-        //note: the peer object is created here and is added to the graph..
-        //let newPeer = Peer(name)
+        let newPeer = Peer(withname: name)
+        canvas.append(newPeer)
         
+        
+        return newPeer
     }
     
     
     //identify a peer relationship
-    func newEdge(source: Peer, destination: Peer, weight: Int) {
+    func newEdge(source: Peer, neighbor: Peer, weight: Int) {
+        
+        let newEdge = Edge()
+        
+        newEdge.neighbor = neighbor
+        newEdge.weight = weight
+        source.neighbors.append(newEdge)
+        
+        //TODO: apply the reverse since its a undirected graph
         
     }
 

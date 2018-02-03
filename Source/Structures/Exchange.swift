@@ -14,10 +14,13 @@ class Exchange {
     var to: Peer?
     var from: Peer?
     var amount: Double
+    var lastModified: Date
 
     //class initialization
     init() {
+        
         self.amount = 0.0
+        self.lastModified = Date()
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  Edges.swift
+//  Edge.swift
 //  SwiftStructures
 //
 //  Created by Wayne Bishop on 6/7/14.
