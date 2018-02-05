@@ -8,70 +8,57 @@
 
 import Foundation
 
-typealias Graph = Array<Peer>
 
-
-public class Blockchain {
+public class Blockchain: Graph {
     
     var chain = Array<Block>()
-    var queue = Queue<Block>()
-    var canvas = Graph()
+    var queue = Queue<Exchange>()
     
     
     let threshold: Int = 0
     let difficulty: Int = 0
 
-
     
     //create a new peer
-    func newPeer(name: String) -> Peer {
+    override func newVertex(key: String) -> Vertex {
         
-        let newPeer = Peer(withname: name)
+        let newPeer = Peer(withname: key)
+        
         canvas.append(newPeer)
-        
-        
         return newPeer
     }
     
     
-    //identify a peer relationship
-    func newEdge(source: Peer, neighbor: Peer, weight: Int) {
-        
-        let newEdge = Edge()
-        
-        newEdge.neighbor = neighbor
-        newEdge.weight = weight
-        source.neighbors.append(newEdge)
-        
-        //TODO: apply the reverse since its a undirected graph
-        
-    }
-
-    
     
     class Miner {
-        
-        
+                
         //create a block
         func queueExchange(from: Peer,
                         to: Peer,
                         amount: Double,
-                        network: Blockchain) -> Bool {
+                        network: Blockchain) {
+
+   
+            let newExchange = Exchange()
+            
+            newExchange.from = from
+            newExchange.to = to
+            newExchange.amount = amount
+            
             /*
-             note: exchanges are created here are placed into pending status before they
+             note: exchanges created are placed into the queue before they
              added into the main blockchain.
              */
             
+            if network.queue.count <= network.threshold {
+               network.queue.enQueue(newExchange)
+            }
+        
+            else {
+               self.push(network)
+            }
             
-            /*
-             note: check the count on the number of the number of exchanges
-             in the Queue. Call push() to group all pending exhanges into a single block.
-             */
             
-            self.push(network)
-            
-            
-            return false
         }
         
         
@@ -88,6 +75,8 @@ public class Blockchain {
              
             */
             
+            //grab items from the queue..
+        
             
             //note: dequeued transactions are placed inside this object added to the created block..
             var transactions: Array<Exchange>?

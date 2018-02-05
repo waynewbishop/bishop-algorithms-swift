@@ -19,7 +19,7 @@ import XCTest
 
 class GraphTest: XCTestCase {
 
-    var testGraph: SwiftGraph = SwiftGraph()
+    var testGraph: Graph = Graph()
     
     var vertexA: Vertex!
     var vertexB: Vertex!
@@ -34,20 +34,20 @@ class GraphTest: XCTestCase {
         
         /* build the vertices */
         
-        vertexA = testGraph.addVertex(key: "A")
-        vertexB = testGraph.addVertex(key: "B")
-        vertexC = testGraph.addVertex(key: "C")
-        vertexD = testGraph.addVertex(key: "D")
-        vertexE = testGraph.addVertex(key: "E")
+        vertexA = testGraph.newVertex(key: "A")
+        vertexB = testGraph.newVertex(key: "B")
+        vertexC = testGraph.newVertex(key: "C")
+        vertexD = testGraph.newVertex(key: "D")
+        vertexE = testGraph.newVertex(key: "E")
         
         
         /* connect the vertices with weighted edges */
         
-        testGraph.addEdge(source: vertexA, neighbor: vertexD, weight: 4)
-        testGraph.addEdge(source: vertexA, neighbor: vertexB, weight: 1)
-        testGraph.addEdge(source: vertexB, neighbor: vertexD, weight: 5)
-        testGraph.addEdge(source: vertexB, neighbor: vertexC, weight: 2)
-        testGraph.addEdge(source: vertexD, neighbor: vertexE, weight: 8)
+        testGraph.newEdge(source: vertexA, neighbor: vertexD, weight: 4)
+        testGraph.newEdge(source: vertexA, neighbor: vertexB, weight: 1)
+        testGraph.newEdge(source: vertexB, neighbor: vertexD, weight: 5)
+        testGraph.newEdge(source: vertexB, neighbor: vertexC, weight: 2)
+        testGraph.newEdge(source: vertexD, neighbor: vertexE, weight: 8)
 
     }
     

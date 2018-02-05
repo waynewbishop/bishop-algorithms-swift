@@ -14,7 +14,7 @@ import Foundation
  */
 
 
-public class Peer : Vertex {
+public class Peer: Vertex {
     
     var lastModified: Date
     var chain: Array<Block>?

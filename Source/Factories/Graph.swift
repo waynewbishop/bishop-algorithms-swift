@@ -9,11 +9,11 @@
 import Foundation
 
 
-public class SwiftGraph {
+public class Graph {
    
     
     //declare a default directed graph canvas
-    private var canvas: Array<Vertex>
+    internal var canvas: Array<Vertex>
     public var isDirected: Bool
     
     
@@ -24,8 +24,10 @@ public class SwiftGraph {
     
     
     //create a new vertex
-    func addVertex(key: String) -> Vertex {
-         
+    func newVertex(key: String) -> Vertex {
+        //TODO: refine this signature to newVertex(with key: String) -> Vertex
+    
+        
         //set the key
         let childVertex: Vertex = Vertex()
         childVertex.key = key
@@ -41,7 +43,7 @@ public class SwiftGraph {
     
     
     //add edge to source vertex
-    func addEdge(source: Vertex, neighbor: Vertex, weight: Int) {
+    func newEdge(source: Vertex, neighbor: Vertex, weight: Int) {
         
         
         //create a new edge
