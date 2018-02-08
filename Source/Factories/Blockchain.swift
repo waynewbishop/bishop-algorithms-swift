@@ -19,13 +19,9 @@ public class Blockchain: Graph {
     let difficulty: Int = 0
 
     
-    //create a new peer
-    override func newVertex(key: String) -> Vertex {
-        
-        let newPeer = Peer(withname: key)
-        
-        canvas.append(newPeer)
-        return newPeer
+    //initialize as an undirected graph
+    init() {
+      super.init(directed: false)
     }
     
     
@@ -50,11 +46,12 @@ public class Blockchain: Graph {
              added into the main blockchain.
              */
             
-            if network.queue.count <= network.threshold {
+            if network.queue.count < network.threshold {
                network.queue.enQueue(newExchange)
             }
         
             else {
+               network.queue.enQueue(newExchange)
                self.push(network)
             }
             

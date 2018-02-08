@@ -21,33 +21,33 @@ class GraphTest: XCTestCase {
 
     var testGraph: Graph = Graph()
     
-    var vertexA: Vertex!
-    var vertexB: Vertex!
-    var vertexC: Vertex!
-    var vertexD: Vertex!
-    var vertexE: Vertex!
+    var vertexA = Vertex(with: "A")
+    var vertexB = Vertex(with: "B")
+    var vertexC = Vertex(with: "C")
+    var vertexD = Vertex(with: "D")
+    var vertexE = Vertex(with: "E")
     
     
     //called before each test invocation
     override func setUp() {
         super.setUp()
         
-        /* build the vertices */
+        /* add the vertices */
         
-        vertexA = testGraph.newVertex(key: "A")
-        vertexB = testGraph.newVertex(key: "B")
-        vertexC = testGraph.newVertex(key: "C")
-        vertexD = testGraph.newVertex(key: "D")
-        vertexE = testGraph.newVertex(key: "E")
+        testGraph.addVertex(element: vertexA)
+        testGraph.addVertex(element: vertexB)
+        testGraph.addVertex(element: vertexC)
+        testGraph.addVertex(element: vertexD)
+        testGraph.addVertex(element: vertexE)
         
         
         /* connect the vertices with weighted edges */
         
-        testGraph.newEdge(source: vertexA, neighbor: vertexD, weight: 4)
-        testGraph.newEdge(source: vertexA, neighbor: vertexB, weight: 1)
-        testGraph.newEdge(source: vertexB, neighbor: vertexD, weight: 5)
-        testGraph.newEdge(source: vertexB, neighbor: vertexC, weight: 2)
-        testGraph.newEdge(source: vertexD, neighbor: vertexE, weight: 8)
+        testGraph.addEdge(source: vertexA, neighbor: vertexD, weight: 4)
+        testGraph.addEdge(source: vertexA, neighbor: vertexB, weight: 1)
+        testGraph.addEdge(source: vertexB, neighbor: vertexD, weight: 5)
+        testGraph.addEdge(source: vertexB, neighbor: vertexC, weight: 2)
+        testGraph.addEdge(source: vertexD, neighbor: vertexE, weight: 8)
 
     }
     
@@ -71,7 +71,7 @@ class GraphTest: XCTestCase {
         let destinationVertex = vertexE
         
         
-        let shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex!, destination: destinationVertex!)
+        let shortestPath: Path! = testGraph.processDijkstraWithHeap(sourceVertex, destination: destinationVertex)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
         printPath(shortestPath)
@@ -87,7 +87,7 @@ class GraphTest: XCTestCase {
         let destinationVertex = vertexE
 
         
-        let shortestPath: Path! = testGraph.processDijkstra(sourceVertex!, destination: destinationVertex!)
+        let shortestPath: Path! = testGraph.processDijkstra(sourceVertex, destination: destinationVertex)
         XCTAssertNotNil(shortestPath, "shortest path not found..")
         
         printPath(shortestPath)

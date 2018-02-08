@@ -13,12 +13,33 @@ import XCTest
 
 class BlockTest: XCTestCase {
     
+    var blockchain = Blockchain()
+    
+    var PeerA = Peer(with: "John Hobbs")
+    var PeerB = Peer(with: "Frank Smith")
+    var PeerC = Peer(with: "Albert Einstien")
+    
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
+        //add the vertices
+        blockchain.addVertex(element: PeerA)
+        blockchain.addVertex(element: PeerB)
+        blockchain.addVertex(element: PeerC)
+
         
+        //add the edges
+        blockchain.addEdge(source: PeerA, neighbor: PeerB, weight: 1)
+        blockchain.addEdge(source: PeerB, neighbor: PeerC, weight: 1)        
     }
     
+    
+    //simulate the intended tranactions
+    func testQueuedTranactions() {
+        
+        //TODO: Create exchanges that are passed to a miner instance for processing..
+        
+    }
     
 }

@@ -13,37 +13,25 @@ public class Graph {
    
     
     //declare a default directed graph canvas
-    internal var canvas: Array<Vertex>
-    public var isDirected: Bool
+    var canvas: Array<Vertex>
+    var isDirected: Bool
     
     
-    init() {
+    init(directed: Bool = true) {
         canvas = Array<Vertex>()
-        isDirected = true
+        isDirected = directed
     }
     
     
-    //create a new vertex
-    func newVertex(key: String) -> Vertex {
-        //TODO: refine this signature to newVertex(with key: String) -> Vertex
-    
-        
-        //set the key
-        let childVertex: Vertex = Vertex()
-        childVertex.key = key
-        
-        
-        //add the vertex to the graph canvas
-        canvas.append(childVertex)
-        
-        
-        return childVertex
+    //add vertex to graph canvas
+    func addVertex(element: Vertex) {
+        canvas.append(element)
     }
     
     
     
     //add edge to source vertex
-    func newEdge(source: Vertex, neighbor: Vertex, weight: Int) {
+    func addEdge(source: Vertex, neighbor: Vertex, weight: Int) {
         
         
         //create a new edge

@@ -92,6 +92,13 @@ extension String: Keyable {
     }
     
     
+    //create a unique identifer based on date
+    func identifierWithDate(date: Date) -> String {
+        
+        let cleartext = self + String(describing: date)
+        return String(cleartext.hashValue)
+    }
+    
     
     //reverse string order
     func reverse() -> String! {

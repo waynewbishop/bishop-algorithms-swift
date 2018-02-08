@@ -8,23 +8,20 @@
 
 import Foundation
 
-/*
- note: since native String types conforms to Hashable we can use this simple
- one way hash to encrypt the name of the peer in the public ledger.
- */
 
+ /*
+ note: peers act graph vertices with their own unique characteristics.
+ this includes the ability to track their network blockchain and owning public key identifier.
+ */
 
 public class Peer: Vertex {
     
-    var lastModified: Date
-    var chain: Array<Block>?
+   var chain: Array<Block>?
+   
     
-    
-    init(withname name: String) {
-        
-        lastModified = Date()
-        super.init()
-        super.key = String(name.hashValue)
+   override init(with name: String) {
+       super.init()
+       super.key = name.identifierWithDate(date: lastModified)
     }
     
 }
