@@ -37,16 +37,26 @@ class BlockTest: XCTestCase {
         bitcoin.addEdge(source: PeerB, neighbor: PeerC, weight: 1)
         bitcoin.addEdge(source: PeerB, neighbor: PeerD, weight: 1)
         
-        //TODO: Peers publish intended transactions which are sent to miners..
     }
     
     
-    //simulate the intended tranactions
-    func testExchanges() {
+    //network transactions start by peers publishing their intentions..
+    func testPeerIntent() {
+    
+        //these simulate intended transactions
+        PeerA.intent(with: PeerB, for: 12.95)
+        PeerB.intent(with: PeerC, for: 5.00)
+        PeerC.intent(with: PeerD, for: 10.00)
+    }
+    
+    
+    //miners monitor the peer network for intended transactions
+    func testMiningBlock() {
         
         let miner = Blockchain.Miner()
-       // miner.queueExchange(from: PeerA, to: PeerB, amount: 12.95, network: bitcoin)
         
+        miner.poll(network: bitcoin)
     }
+    
     
 }

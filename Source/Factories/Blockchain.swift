@@ -29,28 +29,32 @@ public class Blockchain: Graph {
     class Miner {
         
         
-        func newBlock(network: Blockchain) {
+        func poll(network: Blockchain) {
             
-            //TODO: use fast enumeration to iterate through the list
-            //of peers and check for intended transactions. Once complete
-            //, these "exchanges" are placed in the network queue.
-            
-            
-            /*
-             note: exchanges created are placed into the queue before they
-             added into the main blockchain.
-             */
-            
-            if network.queue.count < network.threshold {
-              // network.queue.enQueue(exchange)
+            //check for intended transactions
+            for element in network.canvas {
+                
+                guard let p = element as? Peer else {
+                    return
+                }
+                
+
+                
+                /*
+                 note: exchanges created are placed into the queue before they
+                 added into the main blockchain.
+                 */
+                
+                if network.queue.count < network.threshold {
+                    // network.queue.enQueue(exchange)
+                }
+                    
+                else {
+                    // network.queue.enQueue(exchange)
+                    self.push(network)
+                }
+                
             }
-        
-            else {
-              // network.queue.enQueue(exchange)
-               self.push(network)
-            }
-            
-            
         }
         
         

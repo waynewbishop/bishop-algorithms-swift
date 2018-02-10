@@ -11,9 +11,9 @@ import Foundation
 
  /*
  note: peers are graph vertices with their own unique characteristics.
- this includes the ability to own a copy of their network blockchain and publish a public key.
+ this includes the ability to own a copy of the network blockchain and publish their own public key.
  when peers want to complete transactions, they publish their "intention" for others (e.g. Miners).
- to review and approve.
+ to review.
  */
 
 public class Peer: Vertex {
@@ -28,10 +28,13 @@ public class Peer: Vertex {
     }
     
     
-    //publish the intended transaction
-    func exchange(with to: Peer, amount: Double) {
+    //publish an intended transaction
+    func intent(with to: Peer, for amount: Double) {
     
-        let newExchange = Exchange(from: self, to: to, amount: amount)
+        let newExchange = Exchange(from: self,
+                                   to: to,
+                                   amount: amount)
+        
         intentions?.append(newExchange)
     }
     
