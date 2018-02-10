@@ -27,19 +27,14 @@ public class Blockchain: Graph {
     
     
     class Miner {
-                
-        //create a block
-        func queueExchange(from: Peer,
-                        to: Peer,
-                        amount: Double,
-                        network: Blockchain) {
-
-   
-            let newExchange = Exchange()
+        
+        
+        func newBlock(network: Blockchain) {
             
-            newExchange.from = from
-            newExchange.to = to
-            newExchange.amount = amount
+            //TODO: use fast enumeration to iterate through the list
+            //of peers and check for intended transactions. Once complete
+            //, these "exchanges" are placed in the network queue.
+            
             
             /*
              note: exchanges created are placed into the queue before they
@@ -47,11 +42,11 @@ public class Blockchain: Graph {
              */
             
             if network.queue.count < network.threshold {
-               network.queue.enQueue(newExchange)
+              // network.queue.enQueue(exchange)
             }
         
             else {
-               network.queue.enQueue(newExchange)
+              // network.queue.enQueue(exchange)
                self.push(network)
             }
             
