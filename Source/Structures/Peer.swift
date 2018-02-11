@@ -18,8 +18,8 @@ import Foundation
 
 public class Peer: Vertex {
     
-   var chain: Array<Block>?
-   var intentions: Array<Exchange>?
+   var chain = Array<Block>()
+   var intentions = Array<Exchange>()
 
     
    override init(with name: String) {
@@ -28,14 +28,14 @@ public class Peer: Vertex {
     }
     
     
-    //publish an intended transaction
+    //publish intended transaction
     func intent(with to: Peer, for amount: Double) {
     
         let newExchange = Exchange(from: self,
                                    to: to,
                                    amount: amount)
         
-        intentions?.append(newExchange)
+        intentions.append(newExchange)
     }
     
     

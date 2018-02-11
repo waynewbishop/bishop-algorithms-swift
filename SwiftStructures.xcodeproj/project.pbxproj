@@ -304,13 +304,13 @@
 			isa = PBXGroup;
 			children = (
 				DA89E0A120227A0400ED3AF9 /* Blockchain.swift */,
+				DAE0021219C5677D0035F1A0 /* Graph.swift */,
 				DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */,
 				DAC42F671F61A1C500B6D461 /* Heap.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */,
 				DA8146A419ED905B004516F9 /* Trie.swift */,
 				DAE0021119C5677D0035F1A0 /* LinkedList.swift */,
-				DAE0021219C5677D0035F1A0 /* Graph.swift */,
 				DAE0021319C5677D0035F1A0 /* Sorting.swift */,
 				DAE0021419C5677D0035F1A0 /* Queue.swift */,
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,

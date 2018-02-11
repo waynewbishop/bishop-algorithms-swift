@@ -19,7 +19,7 @@ public class Blockchain: Graph {
     let difficulty: Int = 0
 
     
-    //initialize as an undirected graph
+    //set as undirected graph
     init() {
       super.init(directed: false)
     }
@@ -31,34 +31,40 @@ public class Blockchain: Graph {
         
         func poll(network: Blockchain) {
             
-            //check for intended transactions
-            for element in network.canvas {
+            for element in network.canvas  {
                 
-                guard let p = element as? Peer else {
+                //trivial case
+                guard let peer = element as? Peer else {
                     return
                 }
                 
-
                 
-                /*
-                 note: exchanges created are placed into the queue before they
-                 added into the main blockchain.
-                 */
-                
-                if network.queue.count < network.threshold {
-                    // network.queue.enQueue(exchange)
-                }
+                for exchange in peer.intentions {
+                   
+                    /*
+                     note: exchanges created are placed into the queue before they
+                     added into the main blockchain.
+                     */
                     
-                else {
-                    // network.queue.enQueue(exchange)
-                    self.push(network)
+                    if network.queue.count < network.threshold {
+                         network.queue.enQueue(exchange)
+                    }
+                        
+                    else {
+                        network.queue.enQueue(exchange)
+                        peer.intentions.removeAll()
+                        
+                        //create block
+                        self.newBlock(for: network)
+                    }
+                    
                 }
                 
             }
         }
         
         
-        private func push(_ network: Blockchain) {
+        private func newBlock(for network: Blockchain) {
             
             /*
             dequeue all pending exchanges from the main queue into a single block. now how the
