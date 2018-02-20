@@ -312,7 +312,7 @@ public class Graph {
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
                 if e.neighbor.visited == false {
-                    print("adding vertex: \(e.neighbor.key!) to queue..")
+                    print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
@@ -362,14 +362,14 @@ public class Graph {
             //add unvisited vertices to the queue
             for e in vitem!.neighbors {
                 if e.neighbor.visited == false {
-                    print("adding vertex: \(e.neighbor.key!) to queue..")
+                    print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
             
             
             vitem!.visited = true
-            print("traversed vertex: \(vitem!.key!)..")
+            print("traversed vertex: \(vitem!.key)..")
             
             
         } //end while
@@ -406,7 +406,7 @@ public class Graph {
             //add unvisited vertices to the queue
             for e in vitem!.neighbors {
                 if e.neighbor.visited == false {
-                    print("adding vertex: \(e.neighbor.key!) to queue..")
+                    print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
@@ -417,7 +417,7 @@ public class Graph {
                 print("formula unable to update: \(String(describing: vitem!.key))")
             }
             else {
-                print("traversed vertex: \(vitem!.key!)..")
+                print("traversed vertex: \(vitem!.key)..")
             }
             
             vitem!.visited = true

@@ -24,6 +24,7 @@ class BlockTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        
         //add the vertices
         bitcoin.addVertex(element: PeerA)
         bitcoin.addVertex(element: PeerB)
@@ -42,6 +43,8 @@ class BlockTest: XCTestCase {
     
     //network transactions start by peers publishing their intentions..
     func testPeerIntent() {
+        
+        print(PeerA.key)
     
         //these simulate intended transactions
         PeerA.intent(with: PeerB, for: 12.95)

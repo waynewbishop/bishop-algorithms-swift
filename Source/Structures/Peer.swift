@@ -23,21 +23,20 @@ public class Peer: Vertex {
 
     
    override init(with name: String) {
+    
        super.init()
        super.key = name.identifierWithDate(date: lastModified)
     }
     
     
-    //publish intended transaction
+    //publish intent
     func intent(with to: Peer, for amount: Double) {
-    
-        let newExchange = Exchange(from: self,
-                                   to: to,
-                                   amount: amount)
+        
+        //create exchange
+        let newExchange = Exchange(self.key, to.key, amount)
         
         intentions.append(newExchange)
     }
-    
     
 }
 

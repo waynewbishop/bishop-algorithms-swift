@@ -11,13 +11,13 @@ import Foundation
 
 class Exchange {
     
-    var to: Peer
-    var from: Peer
+    var to: Hash
+    var from: Hash
     var amount: Double
     var lastModified: Date
 
     //class initialization
-    init(from: Peer, to: Peer, amount: Double) {
+    init(_ from: Hash, _ to: Hash, _ amount: Double) {
         
         self.from = from
         self.to = to

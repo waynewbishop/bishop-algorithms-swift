@@ -52,10 +52,14 @@ public class Blockchain: Graph {
                         
                     else {
                         network.queue.enQueue(exchange)
+                        
+                        //TODO: refactor as a boolean. Only remove peer intensions if the block
+                        //creation process was successfull
+                        self.newBlock(for: network)
+
+                        
                         peer.intentions.removeAll()
                         
-                        //create block
-                        self.newBlock(for: network)
                     }
                     
                 }
