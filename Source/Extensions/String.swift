@@ -22,6 +22,7 @@ extension String: Keyable {
     var length: Int {
        return self.count
     }
+
     
     //determine if all characters are unique
     func isStringUnique() -> Bool {
@@ -32,20 +33,18 @@ extension String: Keyable {
         }
         
         //match unicode representation - O(n)
-        var list = Array<Bool?>(repeatElement(nil, count: 256))
+        var list = Array<Bool?>(repeatElement(nil, count: 128))
         
-        for key in self.unicodeScalars {
-            let intKey = Int(key.value)
+        for scalar in self.unicodeScalars {
+            let unicode = Int(scalar.value)
             
-            if list[intKey] != nil {
+            if list[unicode] != nil {
                 return false
             }
-            
-            list.insert(true, at: Int(key.value))
+            list[unicode] = true
         }
         
         return true
-        
     }
 
     
@@ -101,7 +100,7 @@ extension String: Keyable {
     
     
     //reverse string order
-    func reverse() -> String! {
+    func reverse() -> String {
         
          /*
          notes: While this operation would normally be done with the 

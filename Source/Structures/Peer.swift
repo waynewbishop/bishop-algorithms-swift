@@ -18,22 +18,25 @@ import Foundation
 
 public class Peer: Vertex {
     
-   var chain = Array<Block>()
-   var intentions = Array<Exchange>()
+   var chain: Array<Block>
+   var intentions: Array<Exchange>
 
     
-   override init(with name: String) {
+    override init(with name: String) {
+        
+        chain = Array<Block>()
+        intentions = Array<Exchange>()
     
-       super.init()
-       super.key = name.identifierWithDate(date: lastModified)
+        super.init()
+        super.key = name.identifierWithDate(date: lastModified)
     }
     
     
-    //publish intent
+    //create pending exchange
     func intent(with to: Peer, for amount: Double) {
         
-        //create exchange
-        let newExchange = Exchange(self.key, to.key, amount)
+        let newExchange = Exchange(self.key,
+                                   to.key, amount)
         
         intentions.append(newExchange)
     }

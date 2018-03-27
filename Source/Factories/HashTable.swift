@@ -20,12 +20,16 @@ class HashTable<T: Keyable> {
    private var buckets: Array<Node<T>?>
     
     /*
-     note: initializing the hash table with an initial capactiyis shown
+     note: initializing the hash table with an initial capacity shown
      for educational purposes only. 
     */
     init(capacity: Int) {
         self.buckets = Array<Node<T>?>(repeatElement(nil, count: capacity))
     }
+    
+    
+    //TODO: create a computed property - hashvalue that calculates the key for a specific index.
+    
     
     
     //add item to list

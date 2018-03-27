@@ -288,7 +288,10 @@ public class Graph {
     }
     
     
-    //MARK: traversal algorithms
+    //MARK: traversal algorithms f
+    
+    
+    
     
     
     //bfs traversal with inout closure function
@@ -325,7 +328,7 @@ public class Graph {
             
             //invoke formula
             formula(&vitem)
-            
+
             
         } //end while
         

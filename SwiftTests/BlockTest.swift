@@ -31,26 +31,19 @@ class BlockTest: XCTestCase {
         bitcoin.addVertex(element: PeerC)
         bitcoin.addVertex(element: PeerD)
 
-
         
         //add the edges
         bitcoin.addEdge(source: PeerA, neighbor: PeerB, weight: 1)
         bitcoin.addEdge(source: PeerB, neighbor: PeerC, weight: 1)
         bitcoin.addEdge(source: PeerB, neighbor: PeerD, weight: 1)
         
-    }
-    
-    
-    //network transactions start by peers publishing their intentions..
-    func testPeerIntent() {
         
-        print(PeerA.key)
-    
-        //these simulate intended transactions
+        //simulate intended transactions
         PeerA.intent(with: PeerB, for: 12.95)
         PeerB.intent(with: PeerC, for: 5.00)
         PeerC.intent(with: PeerD, for: 10.00)
     }
+    
     
     
     //miners monitor the peer network for intended transactions
@@ -58,7 +51,9 @@ class BlockTest: XCTestCase {
         
         let miner = Blockchain.Miner()
         
-        miner.poll(network: bitcoin)
+        miner.poll(startingv: PeerA, network: bitcoin)
+        
+        
     }
     
     

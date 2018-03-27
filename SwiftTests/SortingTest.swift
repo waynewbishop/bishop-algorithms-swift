@@ -38,6 +38,10 @@ class SortingTest: XCTestCase, Sortable {
         super.setUp()
     }
     
+    func testUniqueEssayExample(){
+        
+        let results = "Uncopyrightable".isStringUnique()
+    }
 
     
     //MARK: - Binary Search Algorithms
