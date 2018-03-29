@@ -15,8 +15,9 @@ public class Blockchain: Graph {
     var queue: Queue<Exchange>
     
     
-    let threshold: Int = 0
-    let difficulty: Int = 0
+    //todo: change these to init parameters..
+    let threshold: Int = 3
+    let difficulty: Int = 25
 
     
     //initialize as an undirected graph.
@@ -53,15 +54,17 @@ public class Blockchain: Graph {
                 }
                 
                 
-                /*
+                 /*
                  note: exchanges are queued before they are
                  added into the main blockchain.
                  */
+                
+                let queue = network.queue
+                let threshold = network.threshold
+                let chain = network.chain
  
+
                 for exchange in peer.intentions {
-                    
-                    let queue = network.queue
-                    let threshold = network.threshold
                     
                     //queue items depending on the network threshold. 
                     if queue.count <= threshold {
@@ -78,8 +81,11 @@ public class Blockchain: Graph {
                          asynchronous process.
                          */
                         
-                        self.newBlock(for: network)
-                        
+                        if self.newBlock(for: network) != true {
+                            print("unable to create new block..")
+                            return
+                        }
+                                                                        
                         //remove pending transactions
                         peer.intentions.removeAll()
                     }
@@ -91,7 +97,7 @@ public class Blockchain: Graph {
         }
         
         
-        private func newBlock(for network: Blockchain) {
+        private func newBlock(for network: Blockchain) -> Bool {
             
             //esablish queue
             let queue = network.queue
@@ -100,9 +106,9 @@ public class Blockchain: Graph {
             
             
             /*
-             note: dequeue all pending exchanges from the main queue into a single block. now how the
-             queue is a member of the Network not the specific Minder. As a result,
-             other miner instances could theroetically be able to access the shared queue to
+             note: dequeue all pending exchanges from the main queue into a single block. note how the
+             queue is a member of the network a not the specific Miner. As a result,
+             other miner instances could theroetically access the shared queue to
              push exchanges.
             */
 
@@ -114,20 +120,18 @@ public class Blockchain: Graph {
             }
             
             
-            //building the new block
+            //build the new block
             newblock.miner = self
             newblock.previous = network.currentBlock().key
             newblock.transactions = transactions
-            
-            
+            newblock.key = network.hashValue(newblock)
             
             /*
             note: This is also where the hash algorithm for each block obtained. For clarity, make the
             algorithm function an extension.
             */
             
-          
-            
+            return false
         }
         
     }

@@ -48,12 +48,8 @@ class BlockTest: XCTestCase {
     
     //miners monitor the peer network for intended transactions
     func testMiningBlock() {
-        
         let miner = Blockchain.Miner()
-        
         miner.poll(startingv: PeerA, network: bitcoin)
-        
-        
     }
     
     
