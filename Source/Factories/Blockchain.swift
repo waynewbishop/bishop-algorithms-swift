@@ -24,21 +24,25 @@ public class Blockchain: Graph {
         
       chain = Array<Block>()
       queue = Queue<Exchange>()
-        
+
       super.init(directed: false)
+        
+        
+      //initialize chain with genesis block
+      self.addBlock(genesisBlock())
     }
     
-    
-    
-    class Miner {
         
-        func poll(startingv: Peer, network: Blockchain) {
+    class Miner {
+
+        
+        func poll(startingv: Vertex, network: Blockchain) {
             
             /*
              note: this sequence performs a graph traversal via bfs
              (breadth-first search). Note the trailing closure declared
              as an inout variable. This provides the mechanisim to update effected
-             peer nodes "by reference".
+             peers "by reference".
             */
             
             network.traverse(startingv) { ( node: inout Vertex) -> () in
@@ -48,13 +52,13 @@ public class Blockchain: Graph {
                      return
                 }
                 
+                
+                /*
+                 note: exchanges are queued before they are
+                 added into the main blockchain.
+                 */
  
                 for exchange in peer.intentions {
-                    
-                     /*
-                     note: exchanges are queued before they are
-                     added into the main blockchain.
-                     */
                     
                     let queue = network.queue
                     let threshold = network.threshold
@@ -62,13 +66,19 @@ public class Blockchain: Graph {
                     //queue items depending on the network threshold. 
                     if queue.count <= threshold {
                         queue.enQueue(exchange)
+                        print("queued exchange of $\(exchange.amount).")
                     }
                     
                     
                     if queue.count == threshold {
                         
-                        //create new block
-                        self.mineBlock(for: network)
+                        /*
+                         note: due to the potential complexity in mining
+                         a new block, this process would be iniated through a
+                         asynchronous process.
+                         */
+                        
+                        self.newBlock(for: network)
                         
                         //remove pending transactions
                         peer.intentions.removeAll()
@@ -81,25 +91,38 @@ public class Blockchain: Graph {
         }
         
         
-        private func mineBlock(for network: Blockchain) {
+        private func newBlock(for network: Blockchain) {
             
             //esablish queue
             let queue = network.queue
+            let newblock = Block()
             var transactions = Array<Exchange>()
             
             
-            //dequeue exchanges to
+            /*
+             note: dequeue all pending exchanges from the main queue into a single block. now how the
+             queue is a member of the Network not the specific Minder. As a result,
+             other miner instances could theroetically be able to access the shared queue to
+             push exchanges.
+            */
+
             queue.count.times { (value: Int) in
                 
+                if let exchange = queue.deQueue() {
+                  transactions.append(exchange)
+                }
             }
             
+            
+            //building the new block
+            newblock.miner = self
+            newblock.previous = network.currentBlock().key
+            newblock.transactions = transactions
+            
+            
+            
             /*
-            dequeue all pending exchanges from the main queue into a single block. now how the
-            queue is a member of the overall graph and not the individual miner. As a result,
-            other miner instances would theroetically be able to access the shared queue to
-            push exchanges.
-         
-            This is also where the hash algorithm for each block obtained. For clarity, make the
+            note: This is also where the hash algorithm for each block obtained. For clarity, make the
             algorithm function an extension.
             */
             

@@ -23,6 +23,7 @@ public class Block {
     var transactions: Array<Exchange>?
     var miner: Blockchain.Miner? //track the Miner instance who mined the transaction block..
     var lastModified: Date
+    var description: String?
     
     
     //initialize class
