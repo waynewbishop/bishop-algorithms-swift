@@ -38,9 +38,12 @@ class SortingTest: XCTestCase, Sortable {
         super.setUp()
     }
     
-    func testUniqueEssayExample(){
+    func testLongestSequence() {
         
-        let results = "Uncopyrightable".isStringUnique()
+        let list = [0,1,0,1,1,1,0,1,1,1,1,1]
+        let results = list.longestSequence(of: 1)
+        
+        print("the longest sequence is \(results)")        
     }
 
     
@@ -97,7 +100,6 @@ class SortingTest: XCTestCase, Sortable {
         XCTAssertTrue(isSorted(triviaTextList.insertionSort()))
         XCTAssertTrue(isSorted(emptyTextList.insertionSort()))
         XCTAssert(isSorted(dateList.insertionSort()))
-        
     }
     
     

@@ -22,6 +22,8 @@ extension String: Keyable {
     var length: Int {
        return self.count
     }
+    
+    
 
     
     //determine if all characters are unique

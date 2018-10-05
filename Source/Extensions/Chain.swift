@@ -17,10 +17,14 @@ extension Blockchain {
         
         let newblock = Block()
         
+        /*
+        not required as all these properties are optional..
         newblock.key = nil
         newblock.miner = nil
         newblock.previous = nil
         newblock.transactions = nil
+        */
+        
         newblock.description = "Genesis Block"
         
         return newblock
@@ -39,54 +43,16 @@ extension Blockchain {
     }
 
     
-    //TODO: estblish new block based on provided input and the level of difficulty.
-    func hashValue(_ element: Block) -> Hash? {
-        
-        var rawvalue = Int()
-        var leadvalue = Int()
-
-        
-        //check tranactions
-        guard let items = element.transactions else {
-            return nil
-        }
-        
-        
-        //sum hash values
-        for exchange in items {
-           rawvalue = exchange.amount.hashValue
-           rawvalue += exchange.from.hashValue
-           rawvalue += exchange.to.hashValue
-           rawvalue += exchange.lastModified.hashValue
-        }
-
-        
-        //sum previous hash
-        if let previous = element.previous {
-            rawvalue += previous.hashValue
-        }
-
-       
-        while leadvalue >= difficulty {
-            
-            print("mining new block..")
-            let testvalue = rawvalue + String(describing: Date()).hashValue
-            
-            let rawlist: Array<Int> = String(testvalue).characters.flatMap{Int(String($0))}
-            
-            for m in 0..<rawlist.startIndex + 3 {
-                leadvalue += rawlist[m]
-            }
-            
-            //perform final bit shift and test leading values
-            if (leadvalue >> 2) >= difficulty {
-                return String(testvalue)
-            }
-            
-        }
-        
-        return nil
+    func puzzle(newBlock: Block) -> Hash? {
     
+     return nil
+        
+        //takes the value, converts it to a string array, send the 4 leading characters "array slice" to the closure, have it
+        //calculate the result. The closure results determines of the puzzle should repeat. 
+        
+        //the new hash is just a combination of the previous hash combined with the hash of the
+        //previous transactions along with the date..
+        
     }
 
     

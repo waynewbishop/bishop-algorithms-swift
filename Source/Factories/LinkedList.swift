@@ -293,7 +293,6 @@ class LinkedList<T> {
     
   }
     
-  
     
     
     //MARK: Closure operations

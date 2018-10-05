@@ -11,6 +11,39 @@ import Foundation
 
 extension Array where Element: Comparable {
 
+        
+        //determines the longest sequence of specified values
+    func longestSequence(of key: Element) -> Int {
+            
+            //initial values
+            var current: Element
+            var counter: Int = 0
+            var longest: Int = 0
+            
+            //iterate through list - O(n)
+            for s in self {
+                
+                //current iteration
+                current = s
+                
+                if current == key {
+                    counter += 1
+                }
+                else {
+                    counter = 0
+                }
+                
+                //preserve the longest sequence
+                if counter >= longest {
+                    longest = counter
+                }
+            }
+            
+            //return count results
+            return longest
+            
+        }
+    
     
     //MARK: Index Operation
     

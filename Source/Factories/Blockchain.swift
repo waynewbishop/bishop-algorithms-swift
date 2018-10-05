@@ -61,7 +61,7 @@ public class Blockchain: Graph {
                 
                 let queue = network.queue
                 let threshold = network.threshold
-                let chain = network.chain
+                //let chain = network.chain
  
 
                 for exchange in peer.intentions {
@@ -99,7 +99,7 @@ public class Blockchain: Graph {
         
         private func newBlock(for network: Blockchain) -> Bool {
             
-            //esablish queue
+            //establish queue
             let queue = network.queue
             let newblock = Block()
             var transactions = Array<Exchange>()
@@ -124,7 +124,7 @@ public class Blockchain: Graph {
             newblock.miner = self
             newblock.previous = network.currentBlock().key
             newblock.transactions = transactions
-            newblock.key = network.hashValue(newblock)
+            //newblock.key = network.hashValue(newblock)
             
             /*
             note: This is also where the hash algorithm for each block obtained. For clarity, make the

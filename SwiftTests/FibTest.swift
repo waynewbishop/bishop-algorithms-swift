@@ -97,7 +97,7 @@ class FibTest: XCTestCase {
 
     func testFibMemoized() {
         
-        var positions: Int = 4
+        let positions: Int = 4
         let result = positions.fibMemoized()
         
         //test trivial condition

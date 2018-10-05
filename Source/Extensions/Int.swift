@@ -25,7 +25,7 @@ extension Int: Keyable {
         }
     }
     
-    
+        
     
     //build fibonacci sequence to a specified position - default
     func fibNormal() -> Array<Int>? {
@@ -133,7 +133,7 @@ extension Int: Keyable {
     */
 
     //calculate results
-    mutating func fibMemoized() -> Int {
+     func fibMemoized() -> Int {
  
         
         //builds array sequence
