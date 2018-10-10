@@ -30,9 +30,10 @@ extension String: Keyable {
     func isStringUnique() -> Bool {
         
         //evaluate trival case
-        guard self.characters.count < 128 else {
+        guard self.count < 128 else {
             return false
         }
+        
         
         //match unicode representation - O(n)
         var list = Array<Bool?>(repeatElement(nil, count: 128))

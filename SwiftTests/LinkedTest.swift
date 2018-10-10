@@ -96,7 +96,7 @@ class LinkedTest: XCTestCase {
         
         
         //retrieve value at same position
-        let removed = list[testPair.index] as LLNode!
+        let removed = list[testPair.index] as LLNode?
         
         
         if removed == nil || removed?.key == testPair.key {

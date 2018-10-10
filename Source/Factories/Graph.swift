@@ -44,7 +44,7 @@ public class Graph {
         source.neighbors.append(newEdge)
         
         
-        print("The neighbor of vertex: \(source.key as String!) is \(neighbor.key as String!)..")
+        print("The neighbor of vertex: \(source.key as String?) is \(neighbor.key as String?)..")
         
         
         //check condition for an undirected graph
@@ -60,7 +60,7 @@ public class Graph {
            reverseEdge.weight = weight
            neighbor.neighbors.append(reverseEdge)
             
-           print("The neighbor of vertex: \(neighbor.key as String!) is \(source.key as String!)..")
+           print("The neighbor of vertex: \(neighbor.key as String?) is \(source.key as String?)..")
             
         }
         
@@ -308,9 +308,15 @@ public class Graph {
         
         while !graphQueue.isEmpty() {
             
-            //traverse the next queued vertex
-            var vitem: Vertex = graphQueue.deQueue() as Vertex!
             
+            //traverse the next queued vertex - Swift 4.0
+            //var vitem: Vertex! = graphQueue.deQueue()
+            
+            
+            //traverse the next queued vertex
+            guard var vitem = graphQueue.deQueue() else {
+                break
+            }
             
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
@@ -355,15 +361,18 @@ public class Graph {
         
         while !graphQueue.isEmpty() {
             
-            //traverse the next queued vertex
-            let vitem = graphQueue.deQueue() as Vertex!
+            //traverse the next queued vertex - Swift 4.0
+            //let vitem = graphQueue.deQueue() as Vertex!
             
-            guard vitem != nil else {
-                return
+            
+            //traverse the next queued vertex
+            guard let vitem = graphQueue.deQueue() else {
+                break
             }
+
             
             //add unvisited vertices to the queue
-            for e in vitem!.neighbors {
+            for e in vitem.neighbors {
                 if e.neighbor.visited == false {
                     print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
@@ -371,8 +380,8 @@ public class Graph {
             }
             
             
-            vitem!.visited = true
-            print("traversed vertex: \(vitem!.key)..")
+            vitem.visited = true
+            print("traversed vertex: \(vitem.key)..")
             
             
         } //end while
@@ -399,15 +408,17 @@ public class Graph {
         
         while !graphQueue.isEmpty() {
             
+            //traverse the next queued vertex - Swift 4.0
+            //let vitem = graphQueue.deQueue() as Vertex!
+
             //traverse the next queued vertex
-            let vitem = graphQueue.deQueue() as Vertex!            
-            
-            guard vitem != nil else {
-                return
+            guard let vitem = graphQueue.deQueue() else {
+                break
             }
+
             
             //add unvisited vertices to the queue
-            for e in vitem!.neighbors {
+            for e in vitem.neighbors {
                 if e.neighbor.visited == false {
                     print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
@@ -416,14 +427,14 @@ public class Graph {
             
             
             //apply formula..
-            if formula(vitem!) == false {
-                print("formula unable to update: \(String(describing: vitem!.key))")
+            if formula(vitem) == false {
+                print("formula unable to update: \(String(describing: vitem.key))")
             }
             else {
-                print("traversed vertex: \(vitem!.key)..")
+                print("traversed vertex: \(vitem.key)..")
             }
             
-            vitem!.visited = true
+            vitem.visited = true
             
             
         } //end while
