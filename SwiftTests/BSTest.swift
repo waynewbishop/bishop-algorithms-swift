@@ -31,7 +31,7 @@ class BSTest: XCTestCase {
             bsTree.append(element: number)
         }
         
-        bsTree.root.traverse()
+        bsTree.root.DFSTraverse()
         
         XCTAssert(bsTree.root.count == numberList.count, "Expected tree's size to be \(numberList.count), got \(bsTree.root.count) instead.")
     }
@@ -157,6 +157,23 @@ class BSTest: XCTestCase {
             XCTFail("contains bst test fails for value: \(testvalue)..")
         }
     }
+    
+    
+    func testBFSTraversal() {
+        
+        let sequence: Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
+        
+        //build and balance model
+        let bsTest: BSTree<Int> = buildBSTree(sequence)
+        
+        if bsTest.root.count != sequence.count {
+            XCTFail("incorrect values present for BST model..")
+        }
+        
+        //traverse model
+        bsTest.root.BFSTraverse()
+        
+    }
 
 
     
@@ -170,7 +187,8 @@ class BSTest: XCTestCase {
         let bsTest = self.buildClosureTree()
         
         //invoke formula function
-        bsTest.root.traverse(withFormula: traverseFormula)
+        bsTest.root.DFSTraverse(withFormula: traverseFormula)
+        
     }
     
     
@@ -186,7 +204,7 @@ class BSTest: XCTestCase {
         this technique allows a single variable to be used.
         */
         
-        bsTree.root.traverse { (node: BSNode<Int>) -> Int in
+        bsTree.root.DFSTraverse { (node: BSNode<Int>) -> Int in
             
             let results = node.key! + node.height
             if node.height > 0 && node.key! == results {
@@ -234,7 +252,7 @@ class BSTest: XCTestCase {
             bsTest.append(element: item)
         }
         
-        bsTest.root.traverse()
+        bsTest.root.DFSTraverse()
         
         XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")
     }
@@ -255,7 +273,7 @@ class BSTest: XCTestCase {
         }
         
         
-        bsTest.root.traverse()
+        bsTest.root.DFSTraverse()
         
         
         XCTAssertTrue(bsTest.isTreeBalanced(for: bsTest.root), "tree is unbalanced..")

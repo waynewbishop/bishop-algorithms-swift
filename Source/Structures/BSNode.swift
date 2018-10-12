@@ -28,11 +28,48 @@ class BSNode<T>{
         let right = self.right?.count ?? 0
         return left + 1 + right
     }
+
     
+//MARK: Traversal Algorithms
+
+    
+    //execute breadth-first search
+    func BFSTraverse() -> () {
+        
+        //establish a queue
+        let bsQueue = Queue<BSNode<T>>()
+        
+        //queue a starting node
+        bsQueue.enQueue(self)
+        
+        while !bsQueue.isEmpty() {
+            
+            //traverse the next queued node
+            guard let bitem = bsQueue.deQueue() else {
+                break
+            }
+            
+            print("now traversing item: \(bitem.key!)")
+            
+            //add decendants to the queue
+            if let left = bitem.left {
+                bsQueue.enQueue(left)
+            }
+            
+            if let right = bitem.right {
+                bsQueue.enQueue(right)
+            }
+
+            
+        } //end while
+        
+        print("bfs traversal complete..")
+        
+    }
     
     
     //regular dfs traversal
-    func traverse() {
+    func DFSTraverse() {
         
         //trivial condition
         guard let key = self.key else {
@@ -42,20 +79,20 @@ class BSNode<T>{
         
         //process the left side
         if self.left != nil {
-            left?.traverse()
+            left?.DFSTraverse()
         }
         
         print("...the value is: \(key) - height: \(self.height)..")
         
         //process the right side
         if self.right != nil {
-            right?.traverse()
+            right?.DFSTraverse()
         }
     }
     
     
     //use dfs with trailing closure to update all values
-    func traverse(withFormula formula: (BSNode<T>) -> T) {
+    func DFSTraverse(withFormula formula: (BSNode<T>) -> T) {
         
         
         //check for trivial condition
@@ -67,7 +104,7 @@ class BSNode<T>{
         
         //process the left side
         if self.left != nil {
-            left?.traverse(withFormula: formula)
+            left?.DFSTraverse(withFormula: formula)
         }
         
         
@@ -81,7 +118,7 @@ class BSNode<T>{
         
         //process the right side
         if self.right != nil {
-            right?.traverse(withFormula: formula)
+            right?.DFSTraverse(withFormula: formula)
         }
         
     }
