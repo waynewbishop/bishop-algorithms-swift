@@ -22,12 +22,7 @@ class Learning {
         let model = AEClassifier()
                 
         if let prediction = try? model.prediction(text: statement) {
-            if prediction.label.contains("acc") {  //accurate..
-              return true
-            }
-            else {
-              return false
-            }
+             return prediction.label.contains("acc") ? true : false
         }
         
         return false

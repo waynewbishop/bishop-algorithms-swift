@@ -31,6 +31,7 @@ class LearningTest: XCTestCase {
     func testAEClassifierExaggeration() {
         
         let statement = "It always rains in Seattle"
+        
         XCTAssertTrue(self.buildAELearningModel(with: statement), "Exaggerated statement not identitied by AEClassifier..")
     }
 
