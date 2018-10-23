@@ -14,6 +14,9 @@
 		DA3224A71F8D5530002F2225 /* Keyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3224A61F8D5530002F2225 /* Keyable.swift */; };
 		DA3224A91F8D82F9002F2225 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3224A81F8D82F9002F2225 /* Double.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
+		DA42DE04217EA17D00AC7004 /* AEClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE03217EA17D00AC7004 /* AEClassifier.mlmodel */; };
+		DA42DE06217EA32100AC7004 /* Learning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE05217EA32100AC7004 /* Learning.swift */; };
+		DA42DE08217EA6B100AC7004 /* LearningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE07217EA6B100AC7004 /* LearningTest.swift */; };
 		DA44B4DD206C679900D6DCE3 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA44B4DC206C679900D6DCE3 /* Chain.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -107,6 +110,9 @@
 		DA20DEEB1BE2DAC90032A378 /* FibTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibTest.swift; sourceTree = "<group>"; };
 		DA3224A61F8D5530002F2225 /* Keyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyable.swift; sourceTree = "<group>"; };
 		DA3224A81F8D82F9002F2225 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		DA42DE03217EA17D00AC7004 /* AEClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AEClassifier.mlmodel; sourceTree = "<group>"; };
+		DA42DE05217EA32100AC7004 /* Learning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning.swift; sourceTree = "<group>"; };
+		DA42DE07217EA6B100AC7004 /* LearningTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTest.swift; sourceTree = "<group>"; };
 		DA44B4DC206C679900D6DCE3 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
@@ -204,6 +210,14 @@
 			path = Archive;
 			sourceTree = "<group>";
 		};
+		DA42DE02217EA14500AC7004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA42DE03217EA17D00AC7004 /* AEClassifier.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DAC20BFB1D2730240095B071 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +277,7 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA42DE07217EA6B100AC7004 /* LearningTest.swift */,
 				DA89E0A72027CAC200ED3AF9 /* BlockTest.swift */,
 				DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */,
 				DA71F9331D2E1029000EF8C2 /* HashTest.swift */,
@@ -295,6 +310,7 @@
 		DAE0020F19C5670E0035F1A0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DA42DE02217EA14500AC7004 /* Models */,
 				DA105D6B1F1EBC7D0061CD72 /* Patterns */,
 				DAE0021019C5673F0035F1A0 /* Factories */,
 				DAC20BFB1D2730240095B071 /* Extensions */,
@@ -306,6 +322,7 @@
 		DAE0021019C5673F0035F1A0 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				DA42DE05217EA32100AC7004 /* Learning.swift */,
 				DA89E0A120227A0400ED3AF9 /* Blockchain.swift */,
 				DAE0021219C5677D0035F1A0 /* Graph.swift */,
 				DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */,
@@ -480,11 +497,13 @@
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,
 				DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */,
 				DA98D14A1F29368300FB8B85 /* ModelDelegate.swift in Sources */,
+				DA42DE04217EA17D00AC7004 /* AEClassifier.mlmodel in Sources */,
 				DA6FC89F1F6DCB9600618B4C /* BSNode.swift in Sources */,
 				DA98D1401F29354F00FB8B85 /* Model.swift in Sources */,
 				DA89E0A020226ACC00ED3AF9 /* Block.swift in Sources */,
 				DAA426201D1DFE3E00C6208F /* NaiveBayes.swift in Sources */,
 				DA44B4DD206C679900D6DCE3 /* Chain.swift in Sources */,
+				DA42DE06217EA32100AC7004 /* Learning.swift in Sources */,
 				DA71F93A1D2F14CD000EF8C2 /* enums.swift in Sources */,
 				DAE0021D19C5677D0035F1A0 /* PathHeap.swift in Sources */,
 				DAE0022A19C567A40035F1A0 /* Vertex.swift in Sources */,
@@ -517,6 +536,7 @@
 				DAA4C8A01B9657EA00BA1BA0 /* StackTest.swift in Sources */,
 				DA6FC89D1F6B215000618B4C /* HeapTest.swift in Sources */,
 				DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */,
+				DA42DE08217EA6B100AC7004 /* LearningTest.swift in Sources */,
 				DA81469F19ED831B004516F9 /* TrieTest.swift in Sources */,
 				DA20DEEC1BE2DAC90032A378 /* FibTest.swift in Sources */,
 				DA7BD6AE19CCD8B400DB2CB4 /* GraphTest.swift in Sources */,
@@ -619,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -669,7 +689,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.2;
