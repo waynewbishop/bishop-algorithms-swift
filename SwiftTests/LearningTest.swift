@@ -64,11 +64,11 @@ class LearningTest: XCTestCase {
     
     
     //helper function - build machine learning model
-    func buildAELearningModel(with predicition: String) -> AEClassifierResult? {
+    func buildAELearningModel(with prediction: String) -> AEClassifierResult? {
 
         //create a new learning instance using AEClassifier
         let learning = Learning()
-        let results = learning.AEPredict(using: predicition)
+        let results = learning.AEPredict(using: prediction)
         
         return results
     }

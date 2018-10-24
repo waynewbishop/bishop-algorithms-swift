@@ -28,7 +28,7 @@ class Learning {
         }
 
         
-        //send the predicted value
+        //return predicted value - String
         return prediction.label
 
         }
