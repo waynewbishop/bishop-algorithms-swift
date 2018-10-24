@@ -23,7 +23,20 @@ class LearningTest: XCTestCase {
      
         let statement = "The solar system has eight planets"
         
-        XCTAssertTrue(self.buildAELearningModel(with: statement) == AEClassifierResult.accurate, "Accurate statement not identified by AEClassifier..")
+        guard let result: AEClassifierResult = self.buildAELearningModel(with: statement) else {
+           print("test failed: no predicted value for AEClassifier..")
+           XCTFail()
+           return
+        }
+        
+        
+        if result != "accurate" {
+            print("accurate statement not identified by AEClassifier..")
+            XCTFail()
+            return
+        }
+        
+        
     }
 
     
@@ -31,9 +44,20 @@ class LearningTest: XCTestCase {
     func testAEClassifierExaggeration() {
         
         let statement = "It always rains in Seattle"
-
-        XCTAssertTrue(self.buildAELearningModel(with: statement) == AEClassifierResult.exaggeration, "Exaggerated statement not identified by AEClassifier..")
-
+        
+        guard let result: AEClassifierResult = self.buildAELearningModel(with: statement) else {
+            print("test failed: no predicted value for AEClassifier..")
+            XCTFail()
+            return
+        }
+        
+        
+        if result != "exaggeration" {
+            print("exaggerated statement not identified by AEClassifier..")
+            XCTFail()
+            return
+        }
+        
     }
     
     
