@@ -20,6 +20,13 @@ indirect enum Algorithm<T> {
     
 }
 
+//used for machine learning
+enum AEClassifierResult {
+    
+    case accurate
+    case exaggeration
+}
+
 
 //use for decision tree modeling
 enum LearningType {

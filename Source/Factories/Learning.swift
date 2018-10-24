@@ -16,16 +16,32 @@ class Learning {
     playground file.
     */
     
-    func AEPredict(using statement: String) -> Bool {
+    func AEPredict(using statement: String) -> AEClassifierResult? {
 
-        //create a new classifier
+        
         let model = AEClassifier()
-                
-        if let prediction = try? model.prediction(text: statement) {
-             return prediction.label.contains("acc") ? true : false
+        
+        guard let prediction = try? model.prediction(text: statement) else {
+            fatalError("Unexpected runtime error.")
+        }
+  
+        //obtain the results
+        let results = prediction.label
+
+        
+        //assign the results to enum
+        switch results {
+    
+        case "accurate":
+            return AEClassifierResult.accurate
+            
+        case "exaggeration":
+            return AEClassifierResult.exaggeration
+            
+        default:
+            return nil
         }
         
-        return false
     }
     
 }
