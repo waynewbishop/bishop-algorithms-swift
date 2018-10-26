@@ -11,29 +11,53 @@ import Foundation
 
 public class Blockchain: Graph {
     
-    var chain: Array<Block>
-    var queue: Queue<Exchange>
-    
-    
-    //todo: change these to init parameters..
-    let threshold: Int = 3
-    let difficulty: Int = 25
+    var chain =  Array<Block>()
+    var queue = Queue<Exchange>()
+    var threshold: Int
 
-    
-    //initialize as an undirected graph.
-    init() {
+
+    init(ithreshold: Int = 3) {
         
-      chain = Array<Block>()
-      queue = Queue<Exchange>()
-
+      threshold = ithreshold
       super.init(directed: false)
+
         
-        
-      //initialize chain with genesis block
-      self.addBlock(genesisBlock())
+      //initialize network
+      chain.append(self.genesisBlock())
     }
     
+    
+    
+//MARK: helper functions
+
+    
+    
+    //starting block
+    private func genesisBlock()-> Block {
         
+        let firstBlock = Block()
+        
+        firstBlock.id = blockIdentifier()
+        firstBlock.description = "Genesis Block"
+        
+        return firstBlock
+    }
+    
+    
+    
+    //obtain latest block
+    private func currentBlock()-> Block {
+        return chain[chain.endIndex - 1]
+    }
+    
+    
+    //generate block identifier (e.g. potential mining operation..)
+    private func blockIdentifier() -> String {
+        return UUID().uuidString
+    }
+    
+    
+    
     class Miner {
 
         
@@ -61,16 +85,22 @@ public class Blockchain: Graph {
                 
                 let queue = network.queue
                 let threshold = network.threshold
-                //let chain = network.chain
- 
+                let intentions = peer.exchanges(requester: self)
 
-                for exchange in peer.intentions {
+                
+                for exchange in intentions {
                     
+                    /*
                     //queue items depending on the network threshold. 
                     if queue.count <= threshold {
                         queue.enQueue(exchange)
                         print("queued exchange of $\(exchange.amount).")
                     }
+                    */
+                    
+                    //queue exchange
+                    queue.enQueue(exchange)
+                    print("queued exchange of $\(exchange.amount).")
                     
                     
                     if queue.count == threshold {
@@ -80,24 +110,22 @@ public class Blockchain: Graph {
                          a new block, this process would be iniated through a
                          asynchronous process.
                          */
+                        let newBlock = self.createBlock(for: network)
                         
-                        if self.newBlock(for: network) != true {
-                            print("unable to create new block..")
-                            return
-                        }
-                                                                        
-                        //remove pending transactions
-                        peer.intentions.removeAll()
                     }
-                 }
+                    
+                 } //end for
+ 
                 
+                 peer.flush(requester: self)
                  peer.visited = true
+                
             }
             
         }
         
         
-        private func newBlock(for network: Blockchain) -> Bool {
+        private func createBlock(for network: Blockchain) -> Block {
             
             //establish queue
             let queue = network.queue
@@ -111,27 +139,22 @@ public class Blockchain: Graph {
              other miner instances could theroetically access the shared queue to
              push exchanges.
             */
-
-            queue.count.times { (value: Int) in
-                
+            
+            while queue.count != 0 {
                 if let exchange = queue.deQueue() {
-                  transactions.append(exchange)
+                    transactions.append(exchange)
                 }
             }
             
             
             //build the new block
             newblock.miner = self
-            newblock.previous = network.currentBlock().key
+            newblock.id = network.blockIdentifier()
+            newblock.previous = network.currentBlock().id
             newblock.transactions = transactions
-            //newblock.key = network.hashValue(newblock)
             
-            /*
-            note: This is also where the hash algorithm for each block obtained. For clarity, make the
-            algorithm function an extension.
-            */
+            return newblock
             
-            return false
         }
         
     }

@@ -18,15 +18,15 @@ import Foundation
 
 public class Peer: Vertex {
     
-   var chain: Array<Block>
-   var intentions: Array<Exchange>
-
+   var chain: Array<Block>    
+   private var intentions: Array<Exchange>
+  
     
     override init(with name: String) {
         
         chain = Array<Block>()
         intentions = Array<Exchange>()
-    
+        
         super.init()
         super.key = name.identifierWithDate(date: lastModified)
     }
@@ -39,6 +39,19 @@ public class Peer: Vertex {
                                    to.key, amount)
         
         intentions.append(newExchange)
+    }
+
+
+    //MARK: Miner Actions - only accessible
+    
+
+    func exchanges(requester miner: Blockchain.Miner) -> Array<Exchange> {
+        return self.intentions
+    }
+    
+    
+    func flush(requester miner: Blockchain.Miner) -> () {
+        self.intentions.removeAll()
     }
     
 }

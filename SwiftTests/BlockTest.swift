@@ -15,7 +15,7 @@ class BlockTest: XCTestCase {
     
     var bitcoin = Blockchain()
     
-    var PeerA = Peer(with: "John Hobbs")
+    var PeerA = Peer(with: "John Hobbs")    
     var PeerB = Peer(with: "Frank Smith")
     var PeerC = Peer(with: "Albert Einstien")
     var PeerD = Peer(with: "Steve Jobs")
@@ -42,6 +42,7 @@ class BlockTest: XCTestCase {
         PeerA.intent(with: PeerB, for: 12.95)
         PeerB.intent(with: PeerC, for: 5.00)
         PeerC.intent(with: PeerD, for: 10.00)
+        PeerB.intent(with: PeerD, for: 4.95)
     }
     
     

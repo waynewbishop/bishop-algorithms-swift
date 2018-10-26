@@ -18,10 +18,12 @@ public class Block {
      and fulfilled by a Miner at runtime.
     */
     
-    var key: Hash?
-    var previous: Hash?
+    var id: String?
+    var previous: String?
     var transactions: Array<Exchange>?
-    var miner: Blockchain.Miner? //track the Miner instance who mined the transaction block..
+    
+    //track the entity that mined the block..
+    var miner: Blockchain.Miner?
     var lastModified: Date
     var description: String?
     
