@@ -34,10 +34,13 @@ public class Blockchain: Graph {
     
     //starting block
     private func genesisBlock()-> Block {
+        
         let firstBlock = Block()
         
         firstBlock.id = blockIdentifier()
         firstBlock.description = "Genesis Block"
+        
+        self.broadcast(block: firstBlock)
         
         return firstBlock
     }
@@ -57,8 +60,19 @@ public class Blockchain: Graph {
     
 
     //update network
-    private func add(block: Block, peer: inout Peer) {
-        peer.chain.append(block)
+    private func broadcast(block: Block) {
+        
+        /*
+         note: all participating network peers receive their
+         own copy of the newly created block.
+         */
+        
+        for vPeer in self.canvas {
+            if let bPeer = vPeer as? Peer {
+                bPeer.chain.append(block)
+            }
+        }
+        
     }
     
     
@@ -114,19 +128,21 @@ public class Blockchain: Graph {
                          */
                         
                         let newBlock = self.createBlock(for: network)
+
                         
-                        
+                        network.broadcast(block: newBlock)
                         
                         /*
                          note: all participating network peers receive their
                          own copy of the newly created block.
                         */
-                        
+                        /*
                         for vPeer in network.canvas {
                             if var bPeer = vPeer as? Peer {
                                 network.add(block: newBlock, peer: &bPeer)
                             }
                         }
+                        */
                         
                         
                     }
