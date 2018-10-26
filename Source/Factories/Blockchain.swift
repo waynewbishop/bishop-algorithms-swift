@@ -23,7 +23,7 @@ public class Blockchain: Graph {
 
         
       //initialize network
-      chain.append(self.genesisBlock())
+      chain.append(genesisBlock())
     }
     
     
@@ -34,7 +34,6 @@ public class Blockchain: Graph {
     
     //starting block
     private func genesisBlock()-> Block {
-        
         let firstBlock = Block()
         
         firstBlock.id = blockIdentifier()
@@ -56,12 +55,21 @@ public class Blockchain: Graph {
         return UUID().uuidString
     }
     
+
+    //update network
+    private func add(block: Block, peer: inout Peer) {
+        peer.chain.append(block)
+    }
+    
+    
     
     
     class Miner {
 
         
+        //poll the network for pending exchanges..
         func poll(startingv: Vertex, network: Blockchain) {
+
             
             /*
              note: this sequence performs a graph traversal via bfs
@@ -69,6 +77,7 @@ public class Blockchain: Graph {
              as an inout variable. This provides the mechanisim to update effected
              peers "by reference".
             */
+            
             
             network.traverse(startingv) { ( node: inout Vertex) -> () in
                 
@@ -90,13 +99,6 @@ public class Blockchain: Graph {
                 
                 for exchange in intentions {
                     
-                    /*
-                    //queue items depending on the network threshold. 
-                    if queue.count <= threshold {
-                        queue.enQueue(exchange)
-                        print("queued exchange of $\(exchange.amount).")
-                    }
-                    */
                     
                     //queue exchange
                     queue.enQueue(exchange)
@@ -107,10 +109,25 @@ public class Blockchain: Graph {
                         
                         /*
                          note: due to the potential complexity in mining
-                         a new block, this process would be iniated through a
+                         a new block, this process would be initiated through an
                          asynchronous process.
                          */
+                        
                         let newBlock = self.createBlock(for: network)
+                        
+                        
+                        
+                        /*
+                         note: all participating network peers receive their
+                         own copy of the newly created block.
+                        */
+                        
+                        for vPeer in network.canvas {
+                            if var bPeer = vPeer as? Peer {
+                                network.add(block: newBlock, peer: &bPeer)
+                            }
+                        }
+                        
                         
                     }
                     
@@ -124,6 +141,7 @@ public class Blockchain: Graph {
             
         }
         
+
         
         private func createBlock(for network: Blockchain) -> Block {
             
