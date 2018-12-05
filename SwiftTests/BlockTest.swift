@@ -34,7 +34,7 @@ class BlockTest: XCTestCase {
         
         //add the edges
         bitcoin.addEdge(source: PeerA, neighbor: PeerB, weight: 1)
-        bitcoin.addEdge(source: PeerB, neighbor: PeerC, weight: 1)
+        bitcoin.addEdge(source: PeerA, neighbor: PeerC, weight: 1)
         bitcoin.addEdge(source: PeerB, neighbor: PeerD, weight: 1)
         
         
@@ -48,9 +48,17 @@ class BlockTest: XCTestCase {
     
     
     //miners monitor the peer network for intended transactions
-    func testMiningBlock() {
+    func testPollForExchanges() {
+        
         let miner = Blockchain.Miner()
         miner.poll(startingv: PeerA, network: bitcoin)
+
+        
+        bitcoin.broadcast(to: &PeerA)
+        bitcoin.broadcast(to: &PeerB)
+        bitcoin.broadcast(to: &PeerC)
+        bitcoin.broadcast(to: &PeerD)
+        
     }
     
     

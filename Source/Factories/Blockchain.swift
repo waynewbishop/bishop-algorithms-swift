@@ -21,8 +21,7 @@ public class Blockchain: Graph {
       threshold = ithreshold
       super.init(directed: false)
 
-        
-      //initialize network
+
       chain.append(genesisBlock())
     }
     
@@ -30,7 +29,6 @@ public class Blockchain: Graph {
     
 //MARK: helper functions
 
-    
     
     //starting block
     private func genesisBlock()-> Block {
@@ -40,11 +38,15 @@ public class Blockchain: Graph {
         firstBlock.id = blockIdentifier()
         firstBlock.description = "Genesis Block"
         
-        self.broadcast(block: firstBlock)
-        
         return firstBlock
     }
+
     
+    //broadcast latest block to peers
+    func broadcast(to peer: inout Peer) {
+        peer.chain = self.chain
+    }
+
     
     
     //obtain latest block
@@ -59,27 +61,10 @@ public class Blockchain: Graph {
     }
     
 
-    //update network
-    private func broadcast(block: Block) {
-        
-        /*
-         note: all participating network peers receive their
-         own copy of the newly created block.
-         */
-        
-        for vPeer in self.canvas {
-            if let bPeer = vPeer as? Peer {
-                bPeer.chain.append(block)
-            }
-        }
-        
-    }
-    
-    
     
     
     class Miner {
-
+        
         
         //poll the network for pending exchanges..
         func poll(startingv: Vertex, network: Blockchain) {
@@ -128,22 +113,10 @@ public class Blockchain: Graph {
                          */
                         
                         let newBlock = self.createBlock(for: network)
-
                         
-                        network.broadcast(block: newBlock)
                         
-                        /*
-                         note: all participating network peers receive their
-                         own copy of the newly created block.
-                        */
-                        /*
-                        for vPeer in network.canvas {
-                            if var bPeer = vPeer as? Peer {
-                                network.add(block: newBlock, peer: &bPeer)
-                            }
-                        }
-                        */
-                        
+                        //update main network chain
+                        network.chain.append(newBlock)
                         
                     }
                     

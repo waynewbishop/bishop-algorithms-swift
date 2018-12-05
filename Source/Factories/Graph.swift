@@ -359,9 +359,6 @@ public class Graph {
         
         while !graphQueue.isEmpty() {
             
-            //traverse the next queued vertex - Swift 4.0
-            //let vitem = graphQueue.deQueue() as Vertex!
-            
             
             //traverse the next queued vertex
             guard let vitem = graphQueue.deQueue() else {
