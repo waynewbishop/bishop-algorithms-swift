@@ -43,16 +43,15 @@ The project features code-level examples for the following items:
 
 The Book
 --------------------
-Now in its **3rd edition** and supporting **Swift 4.0**, the <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that benefits students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and contribution from others. 
+Now in its **4th edition** and supporting **Swift 4.2**, the <a href="http://shop.waynewbishop.com" target="_blank">The Swift Algorithms Book</a> features code and color illustrations that benefits students and professionals. As a collaborative open-source effort, I also welcome <a href="https://twitter.com/waynewbishop" target="_blank">feedback</a> and contribution from others. 
 
 
 Example
 --------------------
 
 ```swift
-    /* graph traversal - breadth first search */
-    
-    func traverse(_ startingv: Vertex, formula: (inout node: Vertex) -> ()) {
+    //bfs traversal with inout closure function
+    func traverse(_ startingv: Vertex, formula: (_ node: inout Vertex) -> ()) {
 
         
         //establish a new queue
@@ -65,35 +64,40 @@ Example
         
         while !graphQueue.isEmpty() {
             
-            //traverse the next queued vertex
-            var vitem: Vertex = graphQueue.deQueue() as Vertex!
             
+            //traverse the next queued vertex - Swift 4.0
+            //var vitem: Vertex! = graphQueue.deQueue()
+            
+            
+            //traverse the next queued vertex
+            guard var vitem = graphQueue.deQueue() else {
+                break
+            }
             
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
                 if e.neighbor.visited == false {
-                    print("adding vertex: \(e.neighbor.key!) to queue..")
+                    print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
-                        
-            //invoke with inout parameter
-            formula(node: &vitem)
             
+            //invoke formula
+            formula(&vitem)
+
             
         } //end while
         
         
-        print("graph traversal complete..")        
-        
+        print("graph traversal complete..")
+                
     }
-
 ```
 
 Getting Started
 --------------------
 
-Swift Structures has been optimized for **Swift 4.0** (e.g., Xcode 9.0) or later. The directories are organized as follows:
+Swift Structures has been optimized for **Swift 4.2** (e.g., Xcode 10.0) or later. The directories are organized as follows:
 + Source - Code for all Swift data structures, algorithms and source extensions
 + Example - An empty iOS single-view application template
 + SwiftTests - Unit tests with XCTest Framework
@@ -106,7 +110,7 @@ Individuals are welcome to use the code with commercial and open-source projects
 Branches
 --------------------
 + master - The production branch. Clone or fork this repository for the latest copy
-+ develop - The active Swift 4.0 development branch. Swift 4.0 [pull requests](https://help.github.com/articles/creating-a-pull-request) should be directed to this branch
++ develop - The active Swift 4.2 development branch. Swift 4.2 [pull requests](https://help.github.com/articles/creating-a-pull-request) should be directed to this branch
 
 
 
