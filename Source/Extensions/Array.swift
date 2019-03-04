@@ -11,8 +11,14 @@ import Foundation
 
 extension Array where Element: Comparable {
 
+    
+    //returns middle index
+    var midIndex: Int {
+      return startIndex + (count / 2)
+    }
+    
         
-        //determines the longest sequence of specified values
+    //determines the longest sequence of specified values
     func longestSequence(of key: Element) -> Int {
             
             //initial values
@@ -45,14 +51,6 @@ extension Array where Element: Comparable {
         }
     
     
-    //MARK: Index Operation
-    
-    
-    //returns middle index
-    func midIndex() -> Index {
-        return startIndex + (count / 2)
-    }
-    
     
     //MARK: - Binary Search
     
@@ -72,7 +70,7 @@ extension Array where Element: Comparable {
         //establish indices
         let min = self.startIndex
         let max = self.endIndex - 1
-        let mid = self.midIndex()
+        let mid = self.midIndex
         
         
         //check bounds

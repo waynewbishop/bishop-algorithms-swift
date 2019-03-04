@@ -42,7 +42,7 @@ class LinkedList<T> {
     
     //add link item
     func append(element key: T) {
-
+        
         
         //trivial check
         guard head.key != nil else {
@@ -50,30 +50,24 @@ class LinkedList<T> {
             counter += 1
             return
         }
-    
-        
-        var current: LLNode? = head
         
         
-        while current != nil {
-            
-            if current?.next == nil {
-                
-                let childToUse = LLNode<T>()
-                
-                childToUse.key = key
-                childToUse.previous = current
-                current!.next = childToUse
-                break
-            }
-                
-            else {
-                current = current?.next
-            }
-            
-            
-        } //end while
+         var current: LLNode = head
+
+         //find the next position - O(n)
+         while let item = current.next {
+             current = item
+         }
+
         
+         //append item
+         let childToUse = LLNode<T>()
+         
+         childToUse.key = key
+         childToUse.previous = current
+         current.next = childToUse
+       
+ 
         counter += 1
     }
     

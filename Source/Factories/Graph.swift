@@ -65,6 +65,10 @@ public class Graph {
         }
         
         
+        //TODO: Now update a meta dictionary with the outgoing link pointed
+        //to that source verex.
+        
+        
     }
 
     
@@ -383,6 +387,18 @@ public class Graph {
         
     } //end function
     
+    
+    
+    //implement google pagerank based on trailing closure formula
+    func rank(startingv: Vertex, formula:((Vertex) -> Int)) {
+        
+        /*
+        note: the being that one implements pageRank based on a "score". This is a
+        a basic recursive type that is associated with each vertex. The score gets
+        updated based on the number neigbors for all associated neighbor.
+       */
+        
+    }
     
     
     //use bfs with trailing closure to update all values
