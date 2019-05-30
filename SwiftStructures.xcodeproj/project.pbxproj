@@ -123,6 +123,10 @@
 		DA71F9291D2CA718000EF8C2 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		DA71F9331D2E1029000EF8C2 /* HashTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTest.swift; sourceTree = "<group>"; };
 		DA71F9391D2F14CD000EF8C2 /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		DA76017E229F4D9900075E99 /* Car.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Car.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DA760181229F53DE00075E99 /* VProduction.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VProduction.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DA760182229F53F000075E99 /* Vessel.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Vessel.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DA760183229F540A00075E99 /* Planes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Planes.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DA7B7C6319CA284100D2E177 /* StructureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureTest.swift; sourceTree = "<group>"; };
 		DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTest.swift; sourceTree = "<group>"; };
 		DA81469E19ED831B004516F9 /* TrieTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieTest.swift; sourceTree = "<group>"; };
@@ -218,6 +222,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DA76017D229F4D1F00075E99 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				DA76017E229F4D9900075E99 /* Car.playground */,
+				DA760181229F53DE00075E99 /* VProduction.playground */,
+				DA760182229F53F000075E99 /* Vessel.playground */,
+				DA760183229F540A00075E99 /* Planes.playground */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		DAC20BFB1D2730240095B071 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +325,7 @@
 		DAE0020F19C5670E0035F1A0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DA76017D229F4D1F00075E99 /* Videos */,
 				DA42DE02217EA14500AC7004 /* Models */,
 				DA105D6B1F1EBC7D0061CD72 /* Patterns */,
 				DAE0021019C5673F0035F1A0 /* Factories */,
@@ -417,24 +433,24 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Arbutus Software Inc.";
 				TargetAttributes = {
 					DAE001D819C564720035F1A0 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = "\"Arbutus Software\"";
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					DAE0020119C564C90035F1A0 = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						TestTargetID = DAE001D819C564720035F1A0;
 					};
 				};
 			};
 			buildConfigurationList = DAE001D419C564720035F1A0 /* Build configuration list for PBXProject "SwiftStructures" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -595,6 +611,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -644,7 +661,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -652,6 +669,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -692,7 +710,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -707,7 +725,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Arbutus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -722,7 +740,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Arbutus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -739,7 +757,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Arbutus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftStructures.app/SwiftStructures";
 			};
 			name = Debug;
@@ -754,7 +772,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Arbutus.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftStructures.app/SwiftStructures";
 			};
 			name = Release;
