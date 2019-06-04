@@ -7,9 +7,11 @@ import Foundation
 */
 
 protocol Floatable {
+    //...
 }
 
 protocol Flyable {
+    //..
 }
 
 
@@ -17,7 +19,6 @@ class Vessels: Floatable {
     //boats, yachts etc..
 }
 
-
 class Seaplane: Floatable, Flyable {
-//a special non-generic object that incorporates different rules
+    //a special non-generic object that incorporates different rules
 }

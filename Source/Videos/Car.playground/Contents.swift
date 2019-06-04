@@ -1,34 +1,36 @@
 
 
 //attributes for a car
-struct CarType {
+struct CarDesign {
     
     var make = "", model = "", wheels = ""
     var seats = "", steering = ""
-    var engine: Int = 0
+    var engine: Int = 0, weight = 0
 }
+
 
 
 class Car {
     
     var make = "", model = "", wheels = ""
     var seats = "", steering = ""
-    var engine: Int = 0
+    var engine: Int = 0, weight = 0
     
     
     //only accessible from within the type
     private var isStarted: Bool = false
     
     
-    init(type design: CarType) {
+    init(type: CarDesign) {
         
-        //create instance based on attributes
-        make = design.make
-        model = design.model
-        wheels = design.wheels
-        seats = design.seats
-        steering = design.steering
-        engine = design.engine
+        //initialize properties
+        self.make = type.make
+        self.model = type.model
+        self.wheels = type.wheels
+        self.seats = type.seats
+        self.steering = type.steering
+        self.engine = type.engine
+        self.weight = type.weight
     }
     
 
@@ -38,7 +40,7 @@ class Car {
         
         print("starting the engine..")
         
-        switch engine {
+        switch self.engine {
         case 0:
             print("..it doesn't look like the car has an engine")
             isStarted = false
@@ -99,7 +101,8 @@ class Car {
 
 
 //define the type
-let porshe: CarType = CarType(make: "911", model: "Porshe", wheels: "Pirelli", seats: "Ricardo", steering: "Porshe", engine: 560)
+
+let porshe: CarDesign = CarDesign(make: "911", model: "Porshe", wheels: "Pirelli", seats: "Ricardo", steering: "Porshe", engine: 560, weight: 4000)
 
 //create a new object based on the type
 let racecar = Car(type: porshe)
