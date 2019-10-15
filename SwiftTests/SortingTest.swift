@@ -38,6 +38,19 @@ class SortingTest: XCTestCase, Sortable {
         super.setUp()
     }
     
+    
+    func testBackwardsSequence() {
+        
+        guard let results = numberList.backwards() else {
+           XCTFail("No correct values were passed..")
+           return
+        }
+        
+        print("The results are: \(results)")
+        
+    }
+    
+    
     func testLongestSequence() {
         
         let list = [0,1,0,1,1,1,0,1,1,1,1,1]

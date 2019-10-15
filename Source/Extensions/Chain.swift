@@ -11,8 +11,5 @@ import Foundation
 
 extension Blockchain {
     
-
-  
-
     
 }

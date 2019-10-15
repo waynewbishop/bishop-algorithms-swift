@@ -12,6 +12,12 @@ import Foundation
 
 extension String: Keyable {
     
+    
+    //reverse elements using Stack
+    
+    
+    
+    
     //hash table requirement
     var keystring: String {
         return self
@@ -99,6 +105,34 @@ extension String: Keyable {
         
         let cleartext = self + String(describing: date)
         return String(cleartext.hashValue)
+    }
+    
+
+    
+    //reverse string order using a Stack
+    func reverseWithStack() -> String?  {
+        
+        let items = Stack<Character>()
+        var results = ""
+        
+        
+        for s in self {
+            items.push(withKey: s)
+        }
+
+        
+        while items.count > 0 {
+            if let element = items.popValue() {
+                if let key = element.key {
+                  results += String(key)
+                }
+            }
+            
+        } //end while
+
+        
+        return results
+        
     }
     
     

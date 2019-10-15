@@ -53,29 +53,67 @@ class Stack<T> {
         
     }
 
-    
 
+//MARK: Pop functions
+
+    
+    //remove item from the stack - O(1)
+    func popValue()-> Node<T>? {
+        
+        guard top.key != nil else {
+            counter = 0
+            return nil
+        }
+
+        
+        //make assignment
+        if let top = top.next {
+            counter -= 1
+            return top
+        }
+        
+        else {
+            top.key = nil
+            counter = 0
+            return nil
+        }
+            
+    }
+    
+    
     //remove item from the stack - O(1)
     func pop() {
         
-        if self.count > 1 {
-            top = top.next!
-            
-            //set counter
-            counter -= 1
-            
+        if top.key == nil {
+            counter = 0
         }
+            
+        //make reassignment
+        if let element = top.next {
+            top = element
+            counter -= 1
+        }
+            
         else {
             top.key = nil
             counter = 0
         }
-        
+            
     }
+
+
+//MARK: Other functions
     
     
     //retrieve the top most item - O(1)
     func peek() -> Node<T> {
-        return top
+        
+        let item = Node<T>()
+        
+        item.key = top.key
+        item.next = top.next
+        
+        return item
     }
 
     

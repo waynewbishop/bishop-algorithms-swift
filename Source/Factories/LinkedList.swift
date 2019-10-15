@@ -258,13 +258,12 @@ class LinkedList<T> {
   //reverse the order of a linked list
   func reverse() {
     
-    //if count == 1 or count == 0,no need to reverse
-    if self.count <= 1{
-      return
+    guard self.count != 0 else {
+        return
     }
 
-    
-    var current : LLNode<T>? = head
+    //make assignments
+    var current : LLNode<T>? = head //existing list
     var next : LLNode<T>? = nil
     
     
