@@ -15,7 +15,7 @@ extension String: Keyable {
     
     
     //hash table requirement
-    var keystring: String {
+    var hash: String {
         return self
     }
 
@@ -115,9 +115,9 @@ extension String: Keyable {
         }
         
         
-        while items.top.key != nil {
+        while items.top.tvalue != nil {
             
-            if let character = items.peek().key {
+            if let character = items.peek().tvalue {
                 results += String(character)
             }
             

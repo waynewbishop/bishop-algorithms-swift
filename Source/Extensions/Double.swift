@@ -12,7 +12,7 @@ extension Double: Keyable {
 
     
     //hash table requirement
-    var keystring: String {
+    var hash: String {
         return String(self)
     }
     

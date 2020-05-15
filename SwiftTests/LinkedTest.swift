@@ -41,14 +41,14 @@ class LinkedTest: XCTestCase {
         
         //test lower-bound
         let lbound = list[0]
-        if ((lbound == nil) || (lbound?.key != numberList[0])) {
+        if ((lbound == nil) || (lbound?.tvalue != numberList[0])) {
             XCTFail("lowest bound retrieve fail..")
         }
         
         
         //upper bound
         let ubound = list[nodecount - 1]
-        if ((ubound == nil) || (ubound?.key != numberList[nodecount - 1])) {
+        if ((ubound == nil) || (ubound?.tvalue != numberList[nodecount - 1])) {
           XCTFail("upper bound retrieve fail..")
         }
         
@@ -60,7 +60,7 @@ class LinkedTest: XCTestCase {
 
         //retrieve random index
         let randomlink = list[randomIndex]
-        if ((randomlink == nil) || (randomlink?.key != numberList[randomIndex])) {
+        if ((randomlink == nil) || (randomlink?.tvalue != numberList[randomIndex])) {
             XCTFail("random index retrieve fail..")
         }
         
@@ -85,7 +85,7 @@ class LinkedTest: XCTestCase {
         let current = list[testPair.index]
         
         //test condition
-        if current == nil || current?.key != testPair.key {
+        if current == nil || current?.tvalue != testPair.key {
             XCTFail("linked list addition at index failed..")
         }
         
@@ -99,7 +99,7 @@ class LinkedTest: XCTestCase {
         let removed = list[testPair.index] as LLNode?
         
         
-        if removed == nil || removed?.key == testPair.key {
+        if removed == nil || removed?.tvalue == testPair.key {
             XCTFail("test failed: removed linked list element not found")
         }
         
@@ -129,7 +129,7 @@ class LinkedTest: XCTestCase {
         if let blink = list[0] {
             
             //evaluate keys
-            if (flink.key == blink.key) {
+            if (flink.tvalue == blink.tvalue) {
                 XCTFail("reversed list failed..")
             }
         }

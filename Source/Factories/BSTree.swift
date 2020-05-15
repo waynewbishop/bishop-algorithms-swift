@@ -24,9 +24,9 @@ class BSTree<T: Comparable>{
         
         
         //initialize root
-        guard root.key != nil else {
+        guard root.tvalue != nil else {
             
-            root.key = key
+            root.tvalue = key
             root.height = 0
             
             return
@@ -37,14 +37,14 @@ class BSTree<T: Comparable>{
         var current: BSNode<T> = root
 
         
-        while current.key != nil {
+        while current.tvalue != nil {
 
             //send reference of current item to stack
             push(element: &current)
             
             
             //check left side
-            if key < current.key! {
+            if key < current.tvalue! {
                 
                 if current.left != nil {
                     current = current.left!
@@ -55,7 +55,7 @@ class BSTree<T: Comparable>{
                     
                     //create new element
                     let childToAdd = BSNode<T>()
-                    childToAdd.key = key
+                    childToAdd.tvalue = key
                     childToAdd.height = 0
                     current.left = childToAdd
                     break
@@ -63,7 +63,7 @@ class BSTree<T: Comparable>{
             }
             
             //check right side
-            if key > current.key! {
+            if key > current.tvalue! {
                 
                 if current.right != nil {
                     current = current.right!
@@ -74,7 +74,7 @@ class BSTree<T: Comparable>{
                     
                     //create new element
                     let childToAdd = BSNode<T>()
-                    childToAdd.key = key
+                    childToAdd.tvalue = key
                     childToAdd.height = 0
                     current.right = childToAdd
                     break
@@ -97,7 +97,7 @@ class BSTree<T: Comparable>{
         
         while current != nil {
             
-            guard let testkey = current?.key else {
+            guard let testkey = current?.tvalue else {
                 return false
             }
             
@@ -150,7 +150,7 @@ class BSTree<T: Comparable>{
             //obtain generic stack node - by reference
             let current = elementStack.peek()
             
-            guard let bsNode: BSNode<T> = current.key else {
+            guard let bsNode: BSNode<T> = current.tvalue else {
                 print("element reference not found..")
                 continue
             }
@@ -199,7 +199,7 @@ class BSTree<T: Comparable>{
     //determine if the tree is "balanced" - operations on a balanced tree is O(log n)
     func isTreeBalanced(for element: BSNode<T>?) -> Bool {
         
-        guard element?.key != nil else {
+        guard element?.tvalue != nil else {
             print("no element provided..")
             return false
         }
@@ -219,14 +219,14 @@ class BSTree<T: Comparable>{
     //perform left or right rotation
    private func rotate(element: BSNode<T>) {
         
-        guard element.key != nil else {
+        guard element.tvalue != nil else {
             print("cannot rotate: no key provided..")
             return
         }
         
         
         if (self.isTreeBalanced(for: element) == true) {
-            print("node: \(element.key!) already balanced..")
+            print("node: \(element.tvalue!) already balanced..")
             return
         }
         
@@ -234,7 +234,7 @@ class BSTree<T: Comparable>{
         //create new element
         let childToUse = BSNode<T>()
         childToUse.height = 0
-        childToUse.key = element.key
+        childToUse.tvalue = element.tvalue
 
         
         //determine side imbalance
@@ -244,10 +244,10 @@ class BSTree<T: Comparable>{
         
         if rightSide > 1 {
             
-            print("\n starting right rotation on \(element.key!)..")
+            print("\n starting right rotation on \(element.tvalue!)..")
             
             //reset the root node
-            element.key = element.left?.key
+            element.tvalue = element.left?.tvalue
             element.height = findHeight(of: element.left)
             
             
@@ -259,15 +259,15 @@ class BSTree<T: Comparable>{
             element.left = element.left?.left
             element.left?.height = 0
             
-            print("root is: \(element.key!) | left is : \(element.left!.key!) | right is : \(element.right!.key!)..")
+            print("root is: \(element.tvalue!) | left is : \(element.left!.tvalue!) | right is : \(element.right!.tvalue!)..")
         }
         
         else if leftSide > 1 {
             
-            print("\n starting left rotation on \(element.key!)..")
+            print("\n starting left rotation on \(element.tvalue!)..")
             
             //reset the root node
-            element.key = element.right?.key
+            element.tvalue = element.right?.tvalue
             element.height = findHeight(of: element.right)
             
             
@@ -279,7 +279,7 @@ class BSTree<T: Comparable>{
             element.right = element.right?.right
             element.right?.height = 0
             
-            print("root is: \(element.key!) | left is : \(element.left!.key!) | right is : \(element.right!.key!)..")
+            print("root is: \(element.tvalue!) | left is : \(element.left!.tvalue!) | right is : \(element.right!.tvalue!)..")
             
         }
     }

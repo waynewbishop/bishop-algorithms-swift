@@ -11,7 +11,7 @@ import Foundation
 
 public class Vertex: Keyable {
     
-    var key = String()
+    var tvalue = String()
     var neighbors = Array<Edge>() 
     var visited: Bool = false
     var lastModified = Date()
@@ -20,12 +20,12 @@ public class Vertex: Keyable {
     }
     
     init(with name: String) {
-       self.key = name
+       self.tvalue = name
     }
     
     //hash table requirement
-    var keystring: String {
-        return self.key
+    var hash: String {
+        return self.tvalue
     }
     
 }

@@ -34,7 +34,7 @@ class LinkedList<T> {
     
     //empty list check
     func isEmpty() -> Bool {
-        return counter == 0 || head.key == nil
+        return counter == 0 || head.tvalue == nil
     }
     
     
@@ -45,8 +45,8 @@ class LinkedList<T> {
         
         
         //trivial check
-        guard head.key != nil else {
-            head.key = key
+        guard head.tvalue != nil else {
+            head.tvalue = key
             counter += 1
             return
         }
@@ -63,7 +63,7 @@ class LinkedList<T> {
          //append item
          let childToUse = LLNode<T>()
          
-         childToUse.key = key
+         childToUse.tvalue = key
          childToUse.previous = current
          current.next = childToUse
        
@@ -85,7 +85,7 @@ class LinkedList<T> {
         //assign the next instance
         
         while current != nil {
-            print("link item is: \(String(describing: current?.key!))")
+            print("link item is: \(String(describing: current?.tvalue!))")
             current = current?.next
         }
         
@@ -100,7 +100,7 @@ class LinkedList<T> {
 
         
         //check empty conditions
-        if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
+        if ((index < 0) || (index > (self.count - 1)) || (head.tvalue == nil)) {
             return nil
         }
         
@@ -135,8 +135,8 @@ class LinkedList<T> {
         
         
         //establish the head node
-        guard head.key != nil else {
-            head.key = key
+        guard head.tvalue != nil else {
+            head.tvalue = key
             counter += 1
             return
         }
@@ -156,7 +156,7 @@ class LinkedList<T> {
                 let childToUse: LLNode = LLNode<T>()
                 
                 //create the new node
-                childToUse.key = key
+                childToUse.tvalue = key
                 
                 
                 //connect the node infront of the current node
@@ -205,7 +205,7 @@ class LinkedList<T> {
     func remove(at index: Int) {
         
         //check for nil conditions
-        if ((index < 0) || (index > (self.count - 1)) || (head.key == nil)) {
+        if ((index < 0) || (index > (self.count - 1)) || (head.tvalue == nil)) {
             print("link index does not exist..")
             return
         }
@@ -260,7 +260,7 @@ class LinkedList<T> {
 
     
     //initial condition
-    guard head.key != nil else {
+    guard head.tvalue != nil else {
       return
     }
 
@@ -305,7 +305,7 @@ class LinkedList<T> {
         
         
         //check for instance
-        guard head.key != nil else {
+        guard head.tvalue != nil else {
             return nil
         }
         
@@ -318,7 +318,7 @@ class LinkedList<T> {
             
             //filter based on formula
             if formula(current) == true {
-                if let key = current.key {
+                if let key = current.tvalue {
                     results?.append(element: key)
                 }
             }
@@ -338,7 +338,7 @@ class LinkedList<T> {
         
         
         //check for instance
-        guard head.key != nil else {
+        guard head.tvalue != nil else {
             return nil
         }
         

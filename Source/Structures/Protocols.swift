@@ -20,7 +20,7 @@ protocol Sortable {
 protocol Keyable {
     
     //conforming types require property
-    var keystring: String {get}
+    var hash: String {get}
     
     
    func hashValue<T>(for key: String!, using buckets: Array<T>) -> Int

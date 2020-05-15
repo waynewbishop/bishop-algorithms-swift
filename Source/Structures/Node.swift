@@ -13,7 +13,7 @@ import Foundation
 
 class Node<T> {
     
-    var key: T?
+    var tvalue: T?
     var next: Node?
 }
 

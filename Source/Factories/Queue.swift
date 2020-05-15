@@ -21,7 +21,7 @@ class Queue<T> {
 
     
     func peek() -> T? {
-        return top.key
+        return top.tvalue
     }
     
     
@@ -29,7 +29,7 @@ class Queue<T> {
     //check for a value
     func isEmpty() -> Bool {
         
-        guard top.key != nil else {
+        guard top.tvalue != nil else {
             return true
         }
         
@@ -46,8 +46,8 @@ class Queue<T> {
         
         
         //trivial case
-        guard top.key != nil else {
-            top.key = key
+        guard top.tvalue != nil else {
+            top.tvalue = key
             counter += 1
             return
         }
@@ -63,7 +63,7 @@ class Queue<T> {
         
         
         //append new item
-        childToUse.key = key
+        childToUse.tvalue = key
         current.next = childToUse
         counter += 1
     }
@@ -75,13 +75,13 @@ class Queue<T> {
     
     
         //trivial case
-        guard top.key != nil else {
+        guard top.tvalue != nil else {
             return nil
         }
     
         
         //retrieve current item
-        let item = top.key
+        let item = top.tvalue
     
     
         //queue next item
@@ -91,7 +91,7 @@ class Queue<T> {
         }
     
         else {
-          top.key = nil
+          top.tvalue = nil
           counter = 0
         }
     

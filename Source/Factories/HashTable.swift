@@ -39,13 +39,13 @@ class HashTable<T: Keyable> {
         
         
         //compute hash
-        let hashIndex = element.hashValue(for: element.keystring, using: buckets)
+        let hashIndex = element.hashValue(for: element.hash, using: buckets)
         
         
         if hashIndex != -1 {
             
             let childToUse = Node<T>()
-            childToUse.key = element
+            childToUse.tvalue = element
             
             
             //check existing list
@@ -86,7 +86,7 @@ class HashTable<T: Keyable> {
 
         
         //obtain hash index
-        let hashIndex = element.hashValue(for: element.keystring, using: buckets)
+        let hashIndex = element.hashValue(for: element.hash, using: buckets)
     
         
         guard hashIndex != -1 else {
@@ -109,8 +109,8 @@ class HashTable<T: Keyable> {
                  be compared equally (e.g. String vs Vertex).
                 */
                 
-                if let item: Keyable = current?.key {
-                    if item.keystring == element.keystring {
+                if let item: Keyable = current?.tvalue {
+                    if item.hash == element.hash {
                         return true
                     }
                 }

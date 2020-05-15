@@ -53,7 +53,7 @@ class HashTest: XCTestCase {
         
         
         let testVertex: Vertex = Vertex()
-        testVertex.key = "A"
+        testVertex.tvalue = "A"
         
         let vList: HashTable = HashTable<Vertex>(capacity: 10)
        _ = vList.insert(testVertex)

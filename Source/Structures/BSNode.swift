@@ -13,7 +13,7 @@ import Foundation
 
 class BSNode<T>{
     
-    var key: T?
+    var tvalue: T?
     var left: BSNode?
     var right: BSNode?
     var height: Int
@@ -49,7 +49,7 @@ class BSNode<T>{
             if let bitem = bsQueue.deQueue() {
                 
                 
-                if let key = bitem.key {
+                if let key = bitem.tvalue {
                     print("now traversing item: \(key)")
                 }
                 
@@ -80,7 +80,7 @@ class BSNode<T>{
     func DFSTraverse() {
         
         //trivial condition
-        guard let key = self.key else {
+        guard let key = self.tvalue else {
             print("no key provided..")
             return
         }
@@ -104,7 +104,7 @@ class BSNode<T>{
         
         
         //check for trivial condition
-        guard self.key != nil else {
+        guard self.tvalue != nil else {
             print("no key provided..")
             return
         }
@@ -118,10 +118,10 @@ class BSNode<T>{
         
         //invoke formula - apply results
         let newKey: T = formula(self)
-        self.key! = newKey
+        self.tvalue! = newKey
         
         
-        print("...the updated value is: \(self.key!) - height: \(self.height)..")
+        print("...the updated value is: \(self.tvalue!) - height: \(self.height)..")
         
         
         //process the right side

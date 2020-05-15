@@ -206,8 +206,8 @@ class BSTest: XCTestCase {
         
         bsTree.root.DFSTraverse { (node: BSNode<Int>) -> Int in
             
-            let results = node.key! + node.height
-            if node.height > 0 && node.key! == results {
+            let results = node.tvalue! + node.height
+            if node.height > 0 && node.tvalue! == results {
                 didFail = true
             }
           
@@ -222,8 +222,8 @@ class BSTest: XCTestCase {
     //update avl values with closure function
     func traverseFormula(node: BSNode<Int>) -> Int {
         
-        let results = node.key! + node.height
-        if node.height > 0 && node.key! == results {
+        let results = node.tvalue! + node.height
+        if node.height > 0 && node.tvalue! == results {
              XCTFail("closure update failed..")
         }
         

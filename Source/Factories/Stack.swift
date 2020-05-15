@@ -31,8 +31,8 @@ class Stack<T> {
         
         
         //return trivial case
-        guard top.key != nil else {
-            top.key = key
+        guard top.tvalue != nil else {
+            top.tvalue = key
             counter += 1
             return
         }
@@ -40,7 +40,7 @@ class Stack<T> {
         
         //create new item
         let childToUse = Node<T>()
-        childToUse.key = key
+        childToUse.tvalue = key
             
             
         //set new created item at top
@@ -60,7 +60,7 @@ class Stack<T> {
     //remove item from the stack - O(1)
     func popValue()-> Node<T>? {
         
-        guard top.key != nil else {
+        guard top.tvalue != nil else {
             counter = 0
             return nil
         }
@@ -73,7 +73,7 @@ class Stack<T> {
         }
         
         else {
-            top.key = nil
+            top.tvalue = nil
             counter = 0
             return nil
         }
@@ -84,7 +84,7 @@ class Stack<T> {
     //remove item from the stack - O(1)
     func pop() {
         
-        if top.key == nil {
+        if top.tvalue == nil {
             counter = 0
         }
             
@@ -95,7 +95,7 @@ class Stack<T> {
         }
             
         else {
-            top.key = nil
+            top.tvalue = nil
             counter = 0
         }
             
@@ -105,7 +105,7 @@ class Stack<T> {
     func popValue() ->T? {
         
         
-        guard let results = top.key else {
+        guard let results = top.tvalue else {
             counter = 0
             return nil
         }

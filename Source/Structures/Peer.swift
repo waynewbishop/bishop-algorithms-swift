@@ -28,15 +28,15 @@ public class Peer: Vertex {
         intentions = Array<Exchange>()
         
         super.init()
-        super.key = name.identifierWithDate(date: lastModified)
+        super.tvalue = name.identifierWithDate(date: lastModified)
     }
     
     
     //create pending exchange
     func intent(with to: Peer, for amount: Double) {
         
-        let newExchange = Exchange(self.key,
-                                   to.key, amount)
+        let newExchange = Exchange(self.tvalue,
+                                   to.tvalue, amount)
         
         intentions.append(newExchange)
     }

@@ -22,7 +22,7 @@ class StructureTest: XCTestCase {
         let testNode = Node<Int>()
         
         XCTAssertNotNil(testNode, "instance not initialized..")
-        XCTAssertNil(testNode.key, "key not initialized..")
+        XCTAssertNil(testNode.tvalue, "key not initialized..")
         XCTAssertNil(testNode.next, "next instance not initialized..")
     }
     
@@ -31,7 +31,7 @@ class StructureTest: XCTestCase {
         let testLLNode: LLNode<Int> = LLNode<Int>()
         
         XCTAssertNotNil(testLLNode, "instance not initialized..")
-        XCTAssertNil(testLLNode.key, "key not initialized..")
+        XCTAssertNil(testLLNode.tvalue, "key not initialized..")
         XCTAssertNil(testLLNode.next, "next node propety not initialized..")
         XCTAssertNil(testLLNode.previous, "previous node propety not initialized..")
     }
@@ -96,7 +96,7 @@ class StructureTest: XCTestCase {
         let testNode = BSNode<Int>()
         
         XCTAssertNotNil(testNode, "instance not initialized..")
-        XCTAssertNil(testNode.key, "key property not initialized..")
+        XCTAssertNil(testNode.tvalue, "key property not initialized..")
         XCTAssertNil(testNode.left, "left property not initialized..")
         XCTAssertNil(testNode.right, "right property not initialized..")
         
