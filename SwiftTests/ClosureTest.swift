@@ -80,7 +80,7 @@ class ClosureTest: XCTestCase {
     
     //map based on expression
     func testLinkMapExpression() {
-
+        
         let linkedList: LinkedList<Int> = self.buildLinkedList()
         
         //inline closure expression

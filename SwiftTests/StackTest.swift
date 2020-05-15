@@ -21,8 +21,6 @@ class StackTest: XCTestCase {
         numberList = [8, 2, 10, 9, 1, 5]
     }
     
-    
-    
     //provides self-contained example of push function - essay example
     func testPushStack() {
         

@@ -170,6 +170,7 @@ class BSTree<T: Comparable>{
     
    private func findHeight(of element: BSNode<T>?) -> Int {
         
+            
         //check empty leaves
         guard let bsNode = element else {
             return -1

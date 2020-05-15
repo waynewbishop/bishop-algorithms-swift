@@ -161,7 +161,7 @@ class BSTest: XCTestCase {
     
     func testBFSTraversal() {
         
-        let sequence: Array<Int> = [8, 5, 10, 3, 12, 9, 6, 16]
+        let sequence: Array<Int> = [8, 2, 10, 5, 9, 11, 1]
         
         //build and balance model
         let bsTest: BSTree<Int> = buildBSTree(sequence)

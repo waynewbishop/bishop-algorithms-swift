@@ -36,29 +36,37 @@ class BSNode<T>{
     //execute breadth-first search
     func BFSTraverse() -> () {
         
-        //establish a queue
+        
         let bsQueue = Queue<BSNode<T>>()
         
         //queue a starting node
         bsQueue.enQueue(self)
         
-        while !bsQueue.isEmpty() {
+        
+        while bsQueue.peek() != nil {
             
             //traverse the next queued node
-            guard let bitem = bsQueue.deQueue() else {
-                break
+            if let bitem = bsQueue.deQueue() {
+                
+                
+                if let key = bitem.key {
+                    print("now traversing item: \(key)")
+                }
+                
+                
+                //check left decendant
+                if let left = bitem.left {
+                    bsQueue.enQueue(left)
+                }
+                
+                
+                //check right decendant
+                if let right = bitem.right {
+                    bsQueue.enQueue(right)
+                }
+                
             }
             
-            print("now traversing item: \(bitem.key!)")
-            
-            //add decendants to the queue
-            if let left = bitem.left {
-                bsQueue.enQueue(left)
-            }
-            
-            if let right = bitem.right {
-                bsQueue.enQueue(right)
-            }
 
             
         } //end while

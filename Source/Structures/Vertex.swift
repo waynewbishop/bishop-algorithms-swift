@@ -12,7 +12,7 @@ import Foundation
 public class Vertex: Keyable {
     
     var key = String()
-    var neighbors = Array<Edge>()
+    var neighbors = Array<Edge>() 
     var visited: Bool = false
     var lastModified = Date()
 

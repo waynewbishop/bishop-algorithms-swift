@@ -257,36 +257,38 @@ class LinkedList<T> {
     
   //reverse the order of a linked list
   func reverse() {
+
     
-    guard self.count != 0 else {
-        return
+    //initial condition
+    guard head.key != nil else {
+      return
     }
 
-    //make assignments
-    var current : LLNode<T>? = head //existing list
-    var next : LLNode<T>? = nil
     
-    
-    while(current != nil) {
+    var current: LLNode<T>? = head
+
+    while let item = current {
         
-      //reverse
-      next = current!.next
-      current!.next = current!.previous
-      current!.previous = next
-      
-      
-      if next == nil {
-        head = current!
-      }
-      
-      //move to next node
-      current = next
+        //preserve list
+        let next = item.next
+        item.next = item.previous
+        item.previous = next
         
-    }
+        //advance to next record
+        current = next
+        
+        
+        if next == nil {
+            head = item
+        }
+        
+    } //end while
     
+
   }
     
-    
+ 
+
     
     //MARK: Closure operations
     

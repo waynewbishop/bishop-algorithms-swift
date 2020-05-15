@@ -14,6 +14,7 @@
 		DA3224A71F8D5530002F2225 /* Keyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3224A61F8D5530002F2225 /* Keyable.swift */; };
 		DA3224A91F8D82F9002F2225 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3224A81F8D82F9002F2225 /* Double.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
+		DA3BE1B3235EB69000BB5A35 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3BE1B2235EB69000BB5A35 /* StringTest.swift */; };
 		DA42DE06217EA32100AC7004 /* Learning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE05217EA32100AC7004 /* Learning.swift */; };
 		DA42DE08217EA6B100AC7004 /* LearningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE07217EA6B100AC7004 /* LearningTest.swift */; };
 		DA42DE0A217FC96700AC7004 /* AEClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE09217FC96700AC7004 /* AEClassifier.mlmodel */; };
@@ -110,6 +111,7 @@
 		DA20DEEB1BE2DAC90032A378 /* FibTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibTest.swift; sourceTree = "<group>"; };
 		DA3224A61F8D5530002F2225 /* Keyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyable.swift; sourceTree = "<group>"; };
 		DA3224A81F8D82F9002F2225 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		DA3BE1B2235EB69000BB5A35 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
 		DA42DE05217EA32100AC7004 /* Learning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning.swift; sourceTree = "<group>"; };
 		DA42DE07217EA6B100AC7004 /* LearningTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTest.swift; sourceTree = "<group>"; };
 		DA42DE09217FC96700AC7004 /* AEClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AEClassifier.mlmodel; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				DA64B09F1CCEB90E007A8F08 /* enumTest.swift */,
 				DAD971AB19D1F86300C133C9 /* SortingTest.swift */,
 				DA20DEEB1BE2DAC90032A378 /* FibTest.swift */,
+				DA3BE1B2235EB69000BB5A35 /* StringTest.swift */,
 				DAA4C89F1B9657EA00BA1BA0 /* StackTest.swift */,
 				DAA8EB9A1B7297C6004A0CCF /* QueueTest.swift */,
 				DA66A4891B1CF50500D1B43F /* ClosureTest.swift */,
@@ -541,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3BE1B3235EB69000BB5A35 /* StringTest.swift in Sources */,
 				DA89E0A82027CAC200ED3AF9 /* BlockTest.swift in Sources */,
 				DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */,
 				DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */,

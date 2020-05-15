@@ -152,9 +152,10 @@ public class Graph {
             
             bestPath = Path()
             
-            //support path changes using the greedy approach
+            //support path changes using the greedy approach - O(n)
             var pathIndex: Int = 0
-
+            
+            //change to priorty queue!! min-heap!!
             
             for x in 0..<frontier.count {
                
@@ -348,6 +349,7 @@ public class Graph {
     //breadth first search
     func traverse(_ startingv: Vertex) {
         
+    
         
         //establish a new queue
         let graphQueue: Queue<Vertex> = Queue<Vertex>()

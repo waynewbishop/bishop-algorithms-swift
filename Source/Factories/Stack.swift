@@ -11,7 +11,7 @@ import Foundation
 
 class Stack<T> {
     
-    private var top: Node<T>
+    var top: Node<T>
     private var counter: Int = 0
     
     
@@ -100,6 +100,26 @@ class Stack<T> {
         }
             
     }
+    
+    
+    func popValue() ->T? {
+        
+        
+        guard let results = top.key else {
+            counter = 0
+            return nil
+        }
+        
+            
+        //make reassignment
+        if let element = top.next {
+            top = element
+            counter -= 1
+        }
+        
+        return results
+            
+    }
 
 
 //MARK: Other functions
@@ -107,13 +127,7 @@ class Stack<T> {
     
     //retrieve the top most item - O(1)
     func peek() -> Node<T> {
-        
-        let item = Node<T>()
-        
-        item.key = top.key
-        item.next = top.next
-        
-        return item
+        return top
     }
 
     

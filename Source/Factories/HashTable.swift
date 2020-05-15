@@ -36,7 +36,7 @@ class HashTable<T: Keyable> {
     func insert(_ element: T) -> Result {
         
         let result: Result
-
+        
         
         //compute hash
         let hashIndex = element.hashValue(for: element.keystring, using: buckets)

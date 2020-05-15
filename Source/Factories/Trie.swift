@@ -12,7 +12,7 @@ import Foundation
 public class Trie {
     
     private var root = TrieNode()
-    
+   
     
     //find subscript shortcut
     subscript(word: String) -> Array<String>? {
@@ -20,9 +20,7 @@ public class Trie {
             return find(word)
         }
     }
-    
-    
-    
+        
     
     //builds a tree hierarchy of dictionary content
     func append(word keyword: String) {
@@ -39,7 +37,7 @@ public class Trie {
         
         while keyword.length != current.level {
             
-            var childToUse: TrieNode!
+            var childToUse: TrieNode!  //TODO: Change to ?
             let searchKey = keyword.substring(to: current.level + 1)
             
             
@@ -49,7 +47,7 @@ public class Trie {
             //iterate through child nodes
             for child in current.children {
                 
-                if (child.key == searchKey) {
+                if (child.tvalue == searchKey) {
                     childToUse = child
                     break
                 }
@@ -60,7 +58,7 @@ public class Trie {
             if childToUse == nil {
                 
                 childToUse = TrieNode()
-                childToUse.key = searchKey
+                childToUse.tvalue = searchKey
                 childToUse.level = current.level + 1
                 current.children.append(childToUse)
             }
@@ -110,7 +108,7 @@ public class Trie {
             //iterate through any child nodes
             for child in current.children {
                 
-                if (child.key == searchKey) {
+                if (child.tvalue == searchKey) {
                     childToUse = child
                     current = childToUse
                     break
@@ -129,8 +127,8 @@ public class Trie {
         
         
         //retrieve the keyword and any descendants
-        if ((current.key == keyword) && (current.isFinal)) {
-            if let key = current.key {
+        if ((current.tvalue == keyword) && (current.isFinal)) {
+            if let key = current.tvalue {
                 wordList.append(key)
             }
         }
@@ -140,7 +138,7 @@ public class Trie {
         for child in current.children {
             
             if (child.isFinal == true) {
-                if let key = child.key {
+                if let key = child.tvalue {
                     wordList.append(key)
                 }
             }

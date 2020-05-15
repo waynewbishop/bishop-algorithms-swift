@@ -11,11 +11,7 @@ import Foundation
 
 
 extension String: Keyable {
-    
-    
-    //reverse elements using Stack
-    
-    
+        
     
     
     //hash table requirement
@@ -30,7 +26,6 @@ extension String: Keyable {
     }
     
     
-
     
     //determine if all characters are unique
     func isStringUnique() -> Bool {
@@ -82,8 +77,6 @@ extension String: Keyable {
         //define the range
         let range = self.index(self.startIndex, offsetBy: to)
         
-       //return self.substring(to: range) - Swift 3.0
-        
         return String(self[..<range])
     }
     
@@ -109,8 +102,9 @@ extension String: Keyable {
     
 
     
-    //reverse string order using a Stack
-    func reverseWithStack() -> String?  {
+    //reverse string order using a stack
+    
+    func reverseWithStack() -> String  {
         
         let items = Stack<Character>()
         var results = ""
@@ -119,17 +113,19 @@ extension String: Keyable {
         for s in self {
             items.push(withKey: s)
         }
-
         
-        while items.count > 0 {
-            if let element = items.popValue() {
-                if let key = element.key {
-                  results += String(key)
-                }
+        
+        while items.top.key != nil {
+            
+            if let character = items.peek().key {
+                results += String(character)
             }
             
-        } //end while
-
+            //remove item from stack..
+            items.pop()
+            
+        }
+        
         
         return results
         
@@ -155,6 +151,7 @@ extension String: Keyable {
             
             //swap(&characters[findex], &characters[bindex]) - Swift 3.0
             characters.swapAt(findex, bindex)
+
             
             //update values
             findex += 1
