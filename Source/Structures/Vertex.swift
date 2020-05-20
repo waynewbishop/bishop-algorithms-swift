@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class Vertex: Keyable {
+public class Vertex {
     
     var tvalue = String()
     var neighbors = Array<Edge>() 
@@ -23,9 +23,5 @@ public class Vertex: Keyable {
        self.tvalue = name
     }
     
-    //hash table requirement
-    var hash: String {
-        return self.tvalue
-    }
     
 }

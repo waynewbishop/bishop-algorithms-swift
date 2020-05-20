@@ -9,7 +9,19 @@
 import Foundation
 
 
-extension Int: Keyable {
+extension Int: Indexable {
+    
+    
+    var asciiRepresentation: Int {
+           var divisor: Int = 0
+
+           for item in String(self).unicodeScalars {
+            divisor += Int(item.value)
+           }
+
+           return divisor
+       }
+    
     
     
     //hash table requirement

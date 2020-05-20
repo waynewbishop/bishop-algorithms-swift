@@ -9,20 +9,18 @@
 import Foundation
 
 
+//define computed property - hashSet requirement
+protocol Indexable {
+    
+    var asciiRepresentation: Int {get}
+}
+
+
+
 //determine sort order
 protocol Sortable {
     
     func isSorted<T: Comparable>(_ sequence: Array<T>) -> Bool
 }
 
-
-//determine hash table compliance - (used a type and constraint)
-protocol Keyable {
-    
-    //conforming types require property
-    var hash: String {get}
-    
-    
-   func hashValue<T>(for key: String!, using buckets: Array<T>) -> Int
-}
 

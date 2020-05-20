@@ -19,65 +19,58 @@ class HashTest: XCTestCase {
     }
     
     
-    //test strings
-    func testStringList() {
+    func testStrings() {
         
+        //test string implementation
+        let slist = HashSet<String>()
         
-        /*
-         note: each element has its own potential 'slot' in the
-         hash list. In this scenario, the hash table algorithm will
-         implement 'separate chaining' to support 'hash collisions'.
-         */
+       _ = slist.insert("Wayne")
+       _ = slist.insert("Bishop")    
+       _ = slist.insert("is")
+       _ = slist.insert("a")
+       _ = slist.insert("loser")
+       _ = slist.insert("winner")
         
-        //new string list
-        let slist = HashTable<String>(capacity: 3)
+       //test string list compliance
+       XCTAssertTrue(slist.contains("Wayne"), "hash set element not found..")
         
-        
-        _ = slist.insert("Wayne Bishop")
-        _ = slist.insert("Frank Smith")
-        _ = slist.insert("Jennifer Hobbs")
-        _ = slist.insert("Tim Cook")
-        _ = slist.insert("Steve Jobs")
-        _ = slist.insert("Wayne Bishop") //should produce collision
-        _ = slist.insert("Larry Page")
-        _ = slist.insert("Albert Einstien")
-        
-        
-        //test list compliance
-        XCTAssertTrue(slist.contains("Frank Smith"), "hash table element not found..")
     }
-    
-    
-    //test verticies - custom
-    func testVertexList() {
-        
-        
-        let testVertex: Vertex = Vertex()
-        testVertex.tvalue = "A"
-        
-        let vList: HashTable = HashTable<Vertex>(capacity: 10)
-       _ = vList.insert(testVertex)
 
-        
-        //test list compliance
-        XCTAssertTrue(vList.contains("A"), "hash table element not found..")
     
+    
+    func testIntegers() {
+        
+        //test integer implementation
+        let slist = HashSet<Int>()
+             
+        _ = slist.insert(48)
+        _ = slist.insert(22)
+        _ = slist.insert(19)
+        _ = slist.insert(4)
+        _ = slist.insert(24)
+        _ = slist.insert(99)
+        
+        //test int list compliance
+        XCTAssertTrue(slist.contains(48), "hash set element not found..")
+                
     }
     
-    
-    //test floats
-    func testMissingList() {
+        
+    //test missing values
+    func testMissingValues() {
         
         
         //new float list
-        let fList = HashTable<Double>(capacity: 5)
+        let mlist = HashSet<Int>()
         
-        _ = fList.insert(10.2)
-        _ = fList.insert(8.6)
+        _ = mlist.insert(87)
+        _ = mlist.insert(22)
+        
         
         //element doesn't exist
-        XCTAssertFalse(fList.contains(3.7), "hash table element not found..")
+        XCTAssertFalse(mlist.contains(45), "non-existent hash set element found..")
         
     }
+
     
 }

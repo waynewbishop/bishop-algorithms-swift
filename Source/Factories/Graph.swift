@@ -155,7 +155,6 @@ public class Graph {
             //support path changes using the greedy approach - O(n)
             var pathIndex: Int = 0
             
-            //change to priorty queue!! min-heap!!
             
             for x in 0..<frontier.count {
                

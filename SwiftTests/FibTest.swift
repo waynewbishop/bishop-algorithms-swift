@@ -31,7 +31,18 @@ class FibTest: XCTestCase {
     
     //MARK: Sequence Based
     
+    //from 
+    func testSubSequence() {
 
+        //let sequence: Array<Int> = [1, 9, 3, 10, 4, 20, 2]
+        let sequence2: Array<Int> = [36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]
+        let results = sequence2.subSequence()
+        
+        print("consecutuve sequence: \(results)")
+    }
+    
+
+    
     //iterative technique
     func testFibonnaci() {
         
