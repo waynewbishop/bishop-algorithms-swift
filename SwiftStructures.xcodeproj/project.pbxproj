@@ -48,6 +48,8 @@
 		DAC20BFF1D2730C10095B071 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC20BFE1D2730C10095B071 /* String.swift */; };
 		DAC20C011D2730CC0095B071 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC20C001D2730CC0095B071 /* Int.swift */; };
 		DAC42F681F61A1C500B6D461 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC42F671F61A1C500B6D461 /* Heap.swift */; };
+		DAD9156E247CC4B3006EF00B /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD9156D247CC4B3006EF00B /* Priority.swift */; };
+		DAD91570247CC698006EF00B /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD9156F247CC698006EF00B /* Table.swift */; };
 		DAD971AC19D1F86300C133C9 /* SortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AB19D1F86300C133C9 /* SortingTest.swift */; };
 		DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971AD19D222E300C133C9 /* LinkedTest.swift */; };
 		DAD971B119D2232400C133C9 /* BSTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD971B019D2232400C133C9 /* BSTest.swift */; };
@@ -146,6 +148,8 @@
 		DAC20BFE1D2730C10095B071 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DAC20C001D2730CC0095B071 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		DAC42F671F61A1C500B6D461 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		DAD9156D247CC4B3006EF00B /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		DAD9156F247CC698006EF00B /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		DAD971AB19D1F86300C133C9 /* SortingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortingTest.swift; sourceTree = "<group>"; };
 		DAD971AD19D222E300C133C9 /* LinkedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedTest.swift; sourceTree = "<group>"; };
 		DAD971B019D2232400C133C9 /* BSTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSTest.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 				DAE0021219C5677D0035F1A0 /* Graph.swift */,
 				DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */,
 				DAC42F671F61A1C500B6D461 /* Heap.swift */,
+				DAD9156D247CC4B3006EF00B /* Priority.swift */,
 				DAE0021619C5677D0035F1A0 /* PathHeap.swift */,
 				DAA4261F1D1DFE3E00C6208F /* NaiveBayes.swift */,
 				DA8146A419ED905B004516F9 /* Trie.swift */,
@@ -353,7 +358,7 @@
 		DAE0021F19C567870035F1A0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
-				DA3832501F7377C1008DA2F6 /* Archive */,
+				DAD9156F247CC698006EF00B /* Table.swift */,
 				DA89E0A52025249E00ED3AF9 /* Exchange.swift */,
 				DA89E09D2022695300ED3AF9 /* Peer.swift */,
 				DA89E09F20226ACC00ED3AF9 /* Block.swift */,
@@ -367,6 +372,7 @@
 				DAE0022219C567A40035F1A0 /* LLNode.swift */,
 				DAE0022319C567A40035F1A0 /* Vertex.swift */,
 				DAE0022419C567A40035F1A0 /* Edge.swift */,
+				DA3832501F7377C1008DA2F6 /* Archive */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				DAE0021919C5677D0035F1A0 /* Graph.swift in Sources */,
 				DAE82A5C1D00D78C004A5FAA /* Node.swift in Sources */,
 				DA98D1421F29356E00FB8B85 /* Dispatch.swift in Sources */,
+				DAD9156E247CC4B3006EF00B /* Priority.swift in Sources */,
 				DAC20C011D2730CC0095B071 /* Int.swift in Sources */,
 				DA98D1481F29365A00FB8B85 /* ModelEngine.swift in Sources */,
 				DA6FC8A11F6DCC6F00618B4C /* BSTree.swift in Sources */,
@@ -508,6 +515,7 @@
 				DA6FC89F1F6DCB9600618B4C /* BSNode.swift in Sources */,
 				DA98D1401F29354F00FB8B85 /* Model.swift in Sources */,
 				DA89E0A020226ACC00ED3AF9 /* Block.swift in Sources */,
+				DAD91570247CC698006EF00B /* Table.swift in Sources */,
 				DAA426201D1DFE3E00C6208F /* NaiveBayes.swift in Sources */,
 				DA42DE0A217FC96700AC7004 /* AEClassifier.mlmodel in Sources */,
 				DA42DE06217EA32100AC7004 /* Learning.swift in Sources */,

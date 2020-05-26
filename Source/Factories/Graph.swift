@@ -246,7 +246,7 @@ public class Graph {
         //construct the best path
         while frontier.count != 0 {
                         
-            //use the greedy approach to obtain the best path
+            //use the greedy approach to obtain the best path - O(1)
             guard let bestPath: Path = frontier.peek() else {
                 break
             }

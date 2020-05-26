@@ -22,12 +22,6 @@ extension String: Indexable {
         return divisor
     }
     
-    
-    
-    //hash table requirement
-    var hash: String {
-        return self
-    }
 
     
     //compute the length

@@ -65,6 +65,7 @@ class HashSet <T: Indexable> {
          conforming indexable objects are required to have an
          ascii representation to be used by the hash algorithm. 
          */
+        
 
         var remainder: Int = 0
         remainder = element.asciiRepresentation % buckets.count
