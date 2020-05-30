@@ -37,7 +37,7 @@ public class Trie {
         
         while keyword.length != current.level {
             
-            var childToUse: TrieNode!  //TODO: Change to ?
+            var childToUse = TrieNode()
             let searchKey = keyword.substring(to: current.level + 1)
             
             
@@ -55,9 +55,7 @@ public class Trie {
             
             
             //new node
-            if childToUse == nil {
-                
-                childToUse = TrieNode()
+            if childToUse.tvalue == nil {
                 childToUse.tvalue = searchKey
                 childToUse.level = current.level + 1
                 current.children.append(childToUse)
