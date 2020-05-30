@@ -20,13 +20,13 @@ class BSTree<T: Comparable>{
    private var elementStack = Stack<BSNode<T>>()
     
     
-    func append(element key: T) {
+    func append(_ tvalue: T) {
         
         
         //initialize root
         guard root.tvalue != nil else {
             
-            root.tvalue = key
+            root.tvalue = tvalue
             root.height = 0
             
             return
@@ -37,14 +37,14 @@ class BSTree<T: Comparable>{
         var current: BSNode<T> = root
 
         
-        while current.tvalue != nil {
+        while current.tvalue != nil {  //TODO: refine model to use standard if-let statement. 
 
             //send reference of current item to stack
             push(element: &current)
             
             
             //check left side
-            if key < current.tvalue! {
+            if tvalue < current.tvalue! {
                 
                 if current.left != nil {
                     current = current.left!
@@ -55,7 +55,7 @@ class BSTree<T: Comparable>{
                     
                     //create new element
                     let childToAdd = BSNode<T>()
-                    childToAdd.tvalue = key
+                    childToAdd.tvalue = tvalue
                     childToAdd.height = 0
                     current.left = childToAdd
                     break
@@ -63,7 +63,7 @@ class BSTree<T: Comparable>{
             }
             
             //check right side
-            if key > current.tvalue! {
+            if tvalue > current.tvalue! {
                 
                 if current.right != nil {
                     current = current.right!
@@ -74,7 +74,7 @@ class BSTree<T: Comparable>{
                     
                     //create new element
                     let childToAdd = BSNode<T>()
-                    childToAdd.tvalue = key
+                    childToAdd.tvalue = tvalue
                     childToAdd.height = 0
                     current.right = childToAdd
                     break

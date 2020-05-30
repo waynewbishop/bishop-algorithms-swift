@@ -8,7 +8,11 @@
 
 import Foundation
 
-//note: organize a list of repeating elements based on occurence
+/*
+ note: organize a list of repeating elements based on occurence.
+ based on the concept of the max-heap. the custom "table" could be
+ replaced with a standard dictionary collection.
+*/
 
 
 class Priority <T: Comparable> {

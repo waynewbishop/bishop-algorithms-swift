@@ -16,6 +16,7 @@
 		DA42DE06217EA32100AC7004 /* Learning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE05217EA32100AC7004 /* Learning.swift */; };
 		DA42DE08217EA6B100AC7004 /* LearningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE07217EA6B100AC7004 /* LearningTest.swift */; };
 		DA42DE0A217FC96700AC7004 /* AEClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE09217FC96700AC7004 /* AEClassifier.mlmodel */; };
+		DA48067A2482C3CF00F8DDC6 /* PriorityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4806792482C3CF00F8DDC6 /* PriorityTest.swift */; };
 		DA5B235F24734976004B361B /* HashSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5B235E24734976004B361B /* HashSet.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -112,6 +113,7 @@
 		DA42DE05217EA32100AC7004 /* Learning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning.swift; sourceTree = "<group>"; };
 		DA42DE07217EA6B100AC7004 /* LearningTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTest.swift; sourceTree = "<group>"; };
 		DA42DE09217FC96700AC7004 /* AEClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AEClassifier.mlmodel; sourceTree = "<group>"; };
+		DA4806792482C3CF00F8DDC6 /* PriorityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityTest.swift; sourceTree = "<group>"; };
 		DA5B235E24734976004B361B /* HashSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashSet.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
@@ -289,12 +291,13 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA4806792482C3CF00F8DDC6 /* PriorityTest.swift */,
+				DA6FC89C1F6B215000618B4C /* HeapTest.swift */,
 				DA42DE07217EA6B100AC7004 /* LearningTest.swift */,
 				DA89E0A72027CAC200ED3AF9 /* BlockTest.swift */,
 				DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */,
 				DA71F9331D2E1029000EF8C2 /* HashTest.swift */,
 				DAD971B019D2232400C133C9 /* BSTest.swift */,
-				DA6FC89C1F6B215000618B4C /* HeapTest.swift */,
 				DA151F081D64124E00A3199D /* QuickTest.swift */,
 				DAA426271D1EEA2800C6208F /* BayesTest.swift */,
 				DA64B09F1CCEB90E007A8F08 /* enumTest.swift */,
@@ -543,6 +546,7 @@
 				DA3BE1B3235EB69000BB5A35 /* StringTest.swift in Sources */,
 				DA89E0A82027CAC200ED3AF9 /* BlockTest.swift in Sources */,
 				DA66A48A1B1CF50500D1B43F /* ClosureTest.swift in Sources */,
+				DA48067A2482C3CF00F8DDC6 /* PriorityTest.swift in Sources */,
 				DAD971AE19D222E300C133C9 /* LinkedTest.swift in Sources */,
 				DA9451921F906A800044E434 /* XCTestCase.swift in Sources */,
 				DAA8EB9B1B7297C6004A0CCF /* QueueTest.swift in Sources */,

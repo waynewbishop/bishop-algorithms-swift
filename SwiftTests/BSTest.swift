@@ -28,7 +28,7 @@ class BSTest: XCTestCase {
         let bsTree = BSTree<Int>()
         
         for number in numberList {
-            bsTree.append(element: number)
+            bsTree.append(number)
         }
         
         bsTree.root.DFSTraverse()
@@ -249,7 +249,7 @@ class BSTest: XCTestCase {
         
         for item in sequence {
             print("adding \(item) to tree...")
-            bsTest.append(element: item)
+            bsTest.append(item)
         }
         
         bsTest.root.DFSTraverse()
@@ -269,7 +269,7 @@ class BSTest: XCTestCase {
         
         for item in sequence {
             print("adding \(item) to bst tree...")
-            bsTest.append(element: item)
+            bsTest.append(item)
         }
         
         
@@ -299,7 +299,7 @@ class BSTest: XCTestCase {
         
         for number in numberList {
             print("adding \(number) to avl tree...")
-            bsTest.append(element: number)
+            bsTest.append(number)
         }
         
         
