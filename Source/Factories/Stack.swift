@@ -26,13 +26,43 @@ class Stack<T> {
     }
     
     
+    //MARK: Other functions
+    
+    
+    //retrieve the top most item - O(1)
+    func peek() -> T? {
+        
+        if let item = top.tvalue {
+            return item
+        }
+        else {
+            return nil
+        }
+    }
+
+    
+    
+    //check for value - O(1)
+    func isEmpty() -> Bool {
+        
+        if self.count == 0 {
+            return true
+        }
+        
+        else {
+            return false
+        }
+        
+    }
+    
+    
     //add item to the stack - O(1)
-    func push(withKey key: T) {
+    func push(_ tvalue: T) {
         
         
         //return trivial case
         guard top.tvalue != nil else {
-            top.tvalue = key
+            top.tvalue = tvalue
             counter += 1
             return
         }
@@ -40,7 +70,7 @@ class Stack<T> {
         
         //create new item
         let childToUse = Node<T>()
-        childToUse.tvalue = key
+        childToUse.tvalue = tvalue
             
             
         //set new created item at top
@@ -57,28 +87,26 @@ class Stack<T> {
 //MARK: Pop functions
 
     
-    //remove item from the stack - O(1)
-    func popValue()-> Node<T>? {
+    //returns item from the stack - O(1)
+    func popValue() ->T? {
         
-        guard top.tvalue != nil else {
+        
+        guard let results = top.tvalue else {
             counter = 0
             return nil
         }
-
         
-        //make assignment
-        if let top = top.next {
+            
+        //make reassignment
+        if let element = top.next {
+            top = element
             counter -= 1
-            return top
         }
         
-        else {
-            top.tvalue = nil
-            counter = 0
-            return nil
-        }
+        return results
             
     }
+    
     
     
     //remove item from the stack - O(1)
@@ -102,46 +130,6 @@ class Stack<T> {
     }
     
     
-    func popValue() ->T? {
-        
-        
-        guard let results = top.tvalue else {
-            counter = 0
-            return nil
-        }
-        
-            
-        //make reassignment
-        if let element = top.next {
-            top = element
-            counter -= 1
-        }
-        
-        return results
-            
-    }
 
 
-//MARK: Other functions
-    
-    
-    //retrieve the top most item - O(1)
-    func peek() -> Node<T> {
-        return top
-    }
-
-    
-    
-    //check for value - O(1)
-    func isEmpty() -> Bool {
-        
-        if self.count == 0 {
-            return true
-        }
-        
-        else {
-            return false
-        }
-        
-    }
 }

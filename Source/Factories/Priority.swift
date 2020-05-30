@@ -30,7 +30,7 @@ class Priority <T: Comparable> {
 
     
     
-    func enqueue(_ tvalue: T) {
+    func add(_ tvalue: T) {
         
         var isAdded: Bool = false
         
@@ -38,6 +38,8 @@ class Priority <T: Comparable> {
         var addedIndex: Float = -1
         var childIndex: Float = 0
         
+        
+        //dp - check for existing values
         
         for s in items {
             addedIndex += 1
@@ -81,7 +83,7 @@ class Priority <T: Comparable> {
               
                   
               //swap child and parent positions
-              if childToUse.count >= parentToUse.count {
+              if childToUse.count > parentToUse.count {
                   items.swapAt(parentIndex, Int(childIndex))
               }
               

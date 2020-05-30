@@ -22,6 +22,49 @@ class HeapTest: XCTestCase {
         super.setUp()
     }
     
+    //MARK: Priority Queue
+    
+    
+    func testPriority() {
+        
+        let pqueue = Priority<String>()
+        
+        //this is a test of the emergency broadcast system this is only a test dog dog dog
+        
+        pqueue.add("dog")
+        pqueue.add("this")
+        pqueue.add("is")
+        pqueue.add("a")
+        pqueue.add("test")
+        pqueue.add("of")
+        pqueue.add("the")
+        pqueue.add("emergency")
+        pqueue.add("broadcast")
+        pqueue.add("system")
+        pqueue.add("this")
+        pqueue.add("is")
+        pqueue.add("only")
+        pqueue.add("a")
+        pqueue.add("test")
+        pqueue.add("dog")
+        pqueue.add("dog")
+        //pqueue.add("dog")
+ 
+        
+        //iterate through the results
+        
+        if let results = pqueue.peek() {
+            for item in results {
+                if let tvalue = item.tvalue {
+                  print("\(String(describing: tvalue)):\(item.count)")
+                }
+                
+            }
+        } //end if
+        
+    }
+    
+    
     
     //MARK: Numeric Tests
     

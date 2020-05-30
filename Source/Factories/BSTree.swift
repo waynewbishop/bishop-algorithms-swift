@@ -137,7 +137,7 @@ class BSTree<T: Comparable>{
     
    //stack elements for later processing - memoization
    private func push(element: inout BSNode<T>) {
-        elementStack.push(withKey: element)
+        elementStack.push(element)
         print("the stack count is: \(elementStack.count)")
     }
     
@@ -150,7 +150,7 @@ class BSTree<T: Comparable>{
             //obtain generic stack node - by reference
             let current = elementStack.peek()
             
-            guard let bsNode: BSNode<T> = current.tvalue else {
+            guard let bsNode: BSNode<T> = current else {
                 print("element reference not found..")
                 continue
             }

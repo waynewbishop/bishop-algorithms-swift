@@ -115,13 +115,13 @@ extension String: Indexable {
         
         
         for s in self {
-            items.push(withKey: s)
+            items.push(s)
         }
         
         
         while items.top.tvalue != nil {
             
-            if let character = items.peek().tvalue {
+            if let character = items.peek() {
                 results += String(character)
             }
             

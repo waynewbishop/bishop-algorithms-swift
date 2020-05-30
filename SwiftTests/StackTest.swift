@@ -13,29 +13,29 @@ import XCTest
 
 class StackTest: XCTestCase {
 
-    var numberList: Array<Int>!
+    var numberList: Array<Int> = [8, 2, 10, 9, 1, 5]
+    
     
     override func setUp() {
         super.setUp()
-        
-        numberList = [8, 2, 10, 9, 1, 5]
     }
+    
     
     //provides self-contained example of push function - essay example
     func testPushStack() {
         
         
-        let myStack = Stack<Int>()
-        XCTAssertTrue(myStack.count == 0, "test failed: count not initialized..")
+        let tstack = Stack<Int>()
+        XCTAssertTrue(tstack.count == 0, "test failed: count not initialized..")
         
         
         //build stack
         for s in numberList {
-            myStack.push(withKey: s)
+            tstack.push(s)
             print("item: \(s) added..")
         }
 
-        XCTAssertTrue(myStack.count == numberList.count, "test failed: stack count does not match..")
+        XCTAssertTrue(tstack.count == numberList.count, "test failed: stack count does not match..")
     }
     
     
@@ -44,21 +44,23 @@ class StackTest: XCTestCase {
         
         
         //build stack - helper function
-        let myStack: Stack<Int> = self.buildStack()
+        let tstack: Stack<Int> = self.buildStack()
         
         
-        if myStack.count == 0 {
+        if tstack.count == 0 {
            XCTFail("test failed: no stack items available..")
         }
-
         
-        for _ in stride(from: myStack.count, through: 0, by: -1) {
-            print("stack item is: \(String(describing: myStack.peek().tvalue)). stack count: \(myStack.count)")
-            myStack.pop()
+        
+        while tstack.count > 0 {
+            if let item = tstack.peek() {
+                print("poppped item: \(item). stack count: \(tstack.count)")
+                tstack.pop()
+            }
         }
         
  
-        XCTAssertTrue(myStack.isEmpty(), "test failed: stack structured not emptied..")
+        XCTAssertTrue(tstack.isEmpty(), "test failed: stack structured not emptied..")
                 
     }
     
@@ -66,7 +68,7 @@ class StackTest: XCTestCase {
 
     //MARK: helper methods
     
-    func buildStack() -> Stack<Int>! {
+    func buildStack() -> Stack<Int> {
         
         let newStack: Stack<Int> = Stack<Int>()
         XCTAssertTrue(newStack.count == 0, "test failed: count not initialized..")
@@ -74,7 +76,7 @@ class StackTest: XCTestCase {
         
         //build stack
         for s in numberList {
-            newStack.push(withKey: s)
+            newStack.push(s)
             print("item: \(s) added..")
         }
         
