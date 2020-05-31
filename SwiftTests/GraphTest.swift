@@ -123,7 +123,7 @@ class GraphTest: XCTestCase {
         testGraph.traverse(vertexA) { ( node: inout Vertex) -> () in
             
             node.visited = true
-            print("traversed vertex: \(node.tvalue)..")
+            print("traversed vertex: \(node.key)..")
             
         }
         
@@ -141,7 +141,7 @@ class GraphTest: XCTestCase {
         */
         
         node.visited = true
-        print("traversed vertex: \(node.tvalue)..")
+        print("traversed vertex: \(node.key)..")
     }
 
     
@@ -156,12 +156,12 @@ class GraphTest: XCTestCase {
         
         //add unvisited vertices to the queue
         for e in source.neighbors {
-            if (e.neighbor.tvalue == neighbor.tvalue) {
+            if (e.neighbor.key == neighbor.key) {
                 return
             }
         }
         
-        XCTFail("vertex \(neighbor.tvalue) is not a neighbor of vertex \(source.tvalue)")
+        XCTFail("vertex \(neighbor.key) is not a neighbor of vertex \(source.key)")
         
     }
     
@@ -181,7 +181,7 @@ class GraphTest: XCTestCase {
         
         //iterate and print each path sequence
         while (current != nil) {
-            print("The path is : \(current.destination.tvalue) with a total of : \(current.total)..")
+            print("The path is : \(current.destination.key) with a total of : \(current.total)..")
             current = current.previous
         }
 

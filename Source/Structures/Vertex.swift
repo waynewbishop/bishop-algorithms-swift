@@ -11,7 +11,7 @@ import Foundation
 
 public class Vertex {
     
-    var tvalue = String()
+    var key = String()
     var neighbors = Array<Edge>() 
     var visited: Bool = false
     var lastModified = Date()
@@ -20,7 +20,7 @@ public class Vertex {
     }
     
     init(with name: String) {
-       self.tvalue = name
+       self.key = name
     }
     
     

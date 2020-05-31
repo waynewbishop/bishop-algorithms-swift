@@ -18,6 +18,9 @@ public class Block {
      and fulfilled by a Miner at runtime.
     */
     
+    //TODO: This model needs to be refined so that is resembles a doubly linked list data structure.
+    
+    
     var id: String?
     var previous: String?
     var transactions: Array<Exchange>?

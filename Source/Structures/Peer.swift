@@ -16,31 +16,34 @@ import Foundation
  to review.
  */
 
+
 public class Peer: Vertex {
     
-   var chain: Array<Block>    
-   private var intentions: Array<Exchange>
+   var chain = Array<Block>()
+   var description: String?
+  
+   
+    
+   //pending transactions
+   private var intentions = Array<Exchange>()
   
     
+    
     override init(with name: String) {
-        
-        chain = Array<Block>()
-        intentions = Array<Exchange>()
-        
         super.init()
-        super.tvalue = name.identifierWithDate(date: lastModified)
+        super.key = name.identifierWithDate(date: lastModified)
     }
     
     
-    //create pending exchange
+    //a pending exchange
     func intent(with to: Peer, for amount: Double) {
         
-        let newExchange = Exchange(self.tvalue,
-                                   to.tvalue, amount)
-        
+        let newExchange = Exchange(self.key, to.key, amount)
         intentions.append(newExchange)
     }
 
+    
+    
 
     //MARK: Miner Actions - only accessible
     

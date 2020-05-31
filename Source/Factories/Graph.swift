@@ -44,7 +44,7 @@ public class Graph {
         source.neighbors.append(newEdge)
         
         
-        print("The neighbor of vertex: \(source.tvalue as String?) is \(neighbor.tvalue as String?)..")
+        print("The neighbor of vertex: \(source.key as String?) is \(neighbor.key as String?)..")
         
         
         //check condition for an undirected graph
@@ -60,7 +60,7 @@ public class Graph {
            reverseEdge.weight = weight
            neighbor.neighbors.append(reverseEdge)
             
-           print("The neighbor of vertex: \(neighbor.tvalue as String?) is \(source.tvalue as String?)..")
+           print("The neighbor of vertex: \(neighbor.key as String?) is \(source.key as String?)..")
             
         }
         
@@ -201,7 +201,7 @@ public class Graph {
         
         for itemPath in finalPaths {
             
-            if (itemPath.destination.tvalue == destination.tvalue) {
+            if (itemPath.destination.key == destination.key) {
                 
                 if  (shortestPath.total == 0) || (itemPath.total < shortestPath.total) {
                     shortestPath = itemPath
@@ -269,7 +269,7 @@ public class Graph {
             
             
             //preserve the bestPaths that match destination
-            if (bestPath.destination.tvalue == destination.tvalue) {
+            if (bestPath.destination.key == destination.key) {
                 finalPaths.enQueue(bestPath)
             }
             
@@ -319,7 +319,7 @@ public class Graph {
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
                 if e.neighbor.visited == false {
-                    print("adding vertex: \(e.neighbor.tvalue) to queue..")
+                    print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
@@ -370,14 +370,14 @@ public class Graph {
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
                 if e.neighbor.visited == false {
-                    print("adding vertex: \(e.neighbor.tvalue) to queue..")
+                    print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
             
             
             vitem.visited = true
-            print("traversed vertex: \(vitem.tvalue)..")
+            print("traversed vertex: \(vitem.key)..")
             
             
         } //end while
@@ -428,7 +428,7 @@ public class Graph {
             //add unvisited vertices to the queue
             for e in vitem.neighbors {
                 if e.neighbor.visited == false {
-                    print("adding vertex: \(e.neighbor.tvalue) to queue..")
+                    print("adding vertex: \(e.neighbor.key) to queue..")
                     graphQueue.enQueue(e.neighbor)
                 }
             }
@@ -436,10 +436,10 @@ public class Graph {
             
             //apply formula..
             if formula(vitem) == false {
-                print("formula unable to update: \(String(describing: vitem.tvalue))")
+                print("formula unable to update: \(String(describing: vitem.key))")
             }
             else {
-                print("traversed vertex: \(vitem.tvalue)..")
+                print("traversed vertex: \(vitem.key)..")
             }
             
             vitem.visited = true
