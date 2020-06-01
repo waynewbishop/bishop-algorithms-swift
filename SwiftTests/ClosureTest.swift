@@ -196,7 +196,7 @@ class ClosureTest: XCTestCase {
         
         //append list items
         for number in numberList {
-            linkedList.append(element: number)
+            linkedList.append(number)
         }
         
         

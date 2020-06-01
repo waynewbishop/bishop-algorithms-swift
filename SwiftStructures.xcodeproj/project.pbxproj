@@ -17,6 +17,7 @@
 		DA42DE08217EA6B100AC7004 /* LearningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE07217EA6B100AC7004 /* LearningTest.swift */; };
 		DA42DE0A217FC96700AC7004 /* AEClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA42DE09217FC96700AC7004 /* AEClassifier.mlmodel */; };
 		DA48067A2482C3CF00F8DDC6 /* PriorityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4806792482C3CF00F8DDC6 /* PriorityTest.swift */; };
+		DA48067D2485979500F8DDC6 /* Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA48067C2485979500F8DDC6 /* Miner.swift */; };
 		DA5B235F24734976004B361B /* HashSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5B235E24734976004B361B /* HashSet.swift */; };
 		DA64B09C1CCEB7DF007A8F08 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */; };
 		DA64B0A01CCEB90E007A8F08 /* enumTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64B09F1CCEB90E007A8F08 /* enumTest.swift */; };
@@ -114,6 +115,7 @@
 		DA42DE07217EA6B100AC7004 /* LearningTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTest.swift; sourceTree = "<group>"; };
 		DA42DE09217FC96700AC7004 /* AEClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AEClassifier.mlmodel; sourceTree = "<group>"; };
 		DA4806792482C3CF00F8DDC6 /* PriorityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityTest.swift; sourceTree = "<group>"; };
+		DA48067C2485979500F8DDC6 /* Miner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miner.swift; sourceTree = "<group>"; };
 		DA5B235E24734976004B361B /* HashSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashSet.swift; sourceTree = "<group>"; };
 		DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		DA64B09F1CCEB90E007A8F08 /* enumTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumTest.swift; sourceTree = "<group>"; };
@@ -222,6 +224,17 @@
 				DA42DE09217FC96700AC7004 /* AEClassifier.mlmodel */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DA48067B2485975E00F8DDC6 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				DA89E0A52025249E00ED3AF9 /* Exchange.swift */,
+				DA89E09D2022695300ED3AF9 /* Peer.swift */,
+				DA48067C2485979500F8DDC6 /* Miner.swift */,
+				DA89E09F20226ACC00ED3AF9 /* Block.swift */,
+			);
+			path = Blockchain;
 			sourceTree = "<group>";
 		};
 		DA76017D229F4D1F00075E99 /* Videos */ = {
@@ -340,7 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				DA42DE05217EA32100AC7004 /* Learning.swift */,
-				DA89E0A120227A0400ED3AF9 /* Blockchain.swift */,
 				DAE0021219C5677D0035F1A0 /* Graph.swift */,
 				DA6FC8A01F6DCC6F00618B4C /* BSTree.swift */,
 				DAC42F671F61A1C500B6D461 /* Heap.swift */,
@@ -354,6 +366,7 @@
 				DAE0021519C5677D0035F1A0 /* Stack.swift */,
 				DA5B235E24734976004B361B /* HashSet.swift */,
 				DA64B09B1CCEB7DF007A8F08 /* EnumModel.swift */,
+				DA89E0A120227A0400ED3AF9 /* Blockchain.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -361,10 +374,8 @@
 		DAE0021F19C567870035F1A0 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				DA48067B2485975E00F8DDC6 /* Blockchain */,
 				DAD9156F247CC698006EF00B /* Table.swift */,
-				DA89E0A52025249E00ED3AF9 /* Exchange.swift */,
-				DA89E09D2022695300ED3AF9 /* Peer.swift */,
-				DA89E09F20226ACC00ED3AF9 /* Block.swift */,
 				DA6FC89E1F6DCB9600618B4C /* BSNode.swift */,
 				DAE82A5B1D00D78C004A5FAA /* Node.swift */,
 				DA71F9391D2F14CD000EF8C2 /* enums.swift */,
@@ -510,6 +521,7 @@
 				DAA426221D1E251700C6208F /* BayesResult.swift in Sources */,
 				DAE0021B19C5677D0035F1A0 /* Queue.swift in Sources */,
 				DA8C723C1D2732D9006D277E /* Array.swift in Sources */,
+				DA48067D2485979500F8DDC6 /* Miner.swift in Sources */,
 				DAE0021C19C5677D0035F1A0 /* Stack.swift in Sources */,
 				DA89E0A62025249E00ED3AF9 /* Exchange.swift in Sources */,
 				DAE0021E19C5677D0035F1A0 /* TrieNode.swift in Sources */,

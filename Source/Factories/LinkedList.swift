@@ -41,7 +41,7 @@ class LinkedList<T> {
     
     
     //add link item
-    func append(element key: T) {
+    func append(_ key: T) {
         
         
         //trivial check
@@ -319,7 +319,7 @@ class LinkedList<T> {
             //filter based on formula
             if formula(current) == true {
                 if let key = current.tvalue {
-                    results?.append(element: key)
+                    results?.append(key)
                 }
             }
                         
@@ -355,7 +355,7 @@ class LinkedList<T> {
             
             //add non-nil entries
             if newKey != nil {
-                results.append(element: newKey)
+                results.append(newKey)
             }
             
             
