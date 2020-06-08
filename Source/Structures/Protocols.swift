@@ -9,15 +9,6 @@
 import Foundation
 
 
-//used by peers and miners - blockchain requirement
-protocol Blockable {
-    
-    var description: String? {get}
-    var chain: LinkedList<Block> {get}
-}
-
-
-
 //define computed property - hashSet requirement
 protocol Indexable {
     var asciiRepresentation: Int {get}

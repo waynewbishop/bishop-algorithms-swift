@@ -9,49 +9,78 @@
 import Foundation
 
 
-class Blockchain: Graph {
+class Blockchain {
     
-    var chain =  LinkedList<Block>()
-    var queue = Queue<Exchange>()
-    var threshold: Int
+    
+       /*
+       notes: all blockchain resources are shared by peers and miners by reference.
+       any change to shared resources by either type is reflected directly the blockchain.
+       */
+    
+    
+      private var intent = Array<Exchange>()
+      private var blockchain = LinkedList<Block>()
+    
+      //entity types
+      private var peers = Array<Peer>()
+      private var miners = Array<Miner>()
 
 
-    init(threshold: Int = 3) {
+    
+    
+      //MARK: peer function
+    
+      func newPeer(item: Peer) {
+        self.peers.append(item)
+      }
+
+    
+     
+      //MARK: exchange functions
+    
+      func newExchange(exchange: Exchange) {
+        intent.append(exchange)
+      }
+      
+    
+      func exchangeList(requester: Miner) -> Array<Exchange> {
+         return self.intent
+      }
+    
+    
+    
+      //MARK: mining functions
+      
+      func mineblock(requester: Miner) -> Block {
+    
+        print("mining new block..")
         
-      self.threshold = threshold
-      super.init(directed: false)
-        
-      chain.append(startingBlock())
-        
-    }
+        let newblock = Block()
+        return newblock
+      }
+      
+ 
+    
+      //return current blockchain
+      func currentChain() -> LinkedList<Block> {
+          return blockchain
+      }
     
     
     
-    
-//MARK: block functions
+      func updateChain(with newblock: Block) {
+        blockchain.append(newblock)
+      }
+          
 
     
-    //starting block
-    private func startingBlock()-> Block {
-        
-        let first = Block()
-        
-        first.hash = mineBlock()
-        first.description = "genesis block"
-        return first
-    }
+      //update all participants
+      func updatePeers(with newblock: Block){
+        for p in peers {
+            p.blockchain.append(newblock)
+        }
+      }
     
-
     
-    //generate block identifier (e.g. potential mining operation..)
-    private func mineBlock() -> String {
-        return UUID().uuidString
-    }
-
-    
-    //TODO: the network polls for pending exchanges 
-
-    
-    //TODO: broadcast latest block to peers to be done via BFS traversal.
         
 }

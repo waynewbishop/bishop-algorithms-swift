@@ -304,10 +304,10 @@
 		DAE0020319C564C90035F1A0 /* SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA89E0A72027CAC200ED3AF9 /* BlockTest.swift */,
 				DA4806792482C3CF00F8DDC6 /* PriorityTest.swift */,
 				DA6FC89C1F6B215000618B4C /* HeapTest.swift */,
 				DA42DE07217EA6B100AC7004 /* LearningTest.swift */,
-				DA89E0A72027CAC200ED3AF9 /* BlockTest.swift */,
 				DA7BD6AD19CCD8B400DB2CB4 /* GraphTest.swift */,
 				DA71F9331D2E1029000EF8C2 /* HashTest.swift */,
 				DAD971B019D2232400C133C9 /* BSTest.swift */,

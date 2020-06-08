@@ -13,17 +13,13 @@ import XCTest
 
 class BlockTest: XCTestCase {
     
-    var bitcoin = Blockchain()
-    
-    var PeerA = Peer(with: "John Hobbs")    
-    var PeerB = Peer(with: "Frank Smith")
-    var PeerC = Peer(with: "Albert Einstien")
-    var PeerD = Peer(with: "Steve Jobs")
+    var blockchain = Blockchain()
     
     
     override func setUp() {
         super.setUp()
     }
+    
     
     
 }

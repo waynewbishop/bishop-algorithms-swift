@@ -9,19 +9,18 @@
 import Foundation
 
 
-class Miner: Vertex, Blockable {
+class Miner {
   
     
   var chain = LinkedList<Block>()
   var description: String?
+  var balance: Float = 0.0
   
-  
-  override init(with name: String) {
     
-      super.init()
-      super.key = name.identifierWithDate(date: lastModified)
-      self.description = name
-  }
+    func updateBalance(with funds: Float) {
+        self.balance = funds
+    }
+    
     
     
 }
