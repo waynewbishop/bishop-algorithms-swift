@@ -2,7 +2,7 @@
 //  Blockchain.swift
 //  SwiftStructures
 //
-//  Created by Wayne Bishop on 1/31/18.
+//  Created by Wayne Bishop on 06/08/20.
 //  Copyright © 2018 Arbutus Software Inc. All rights reserved.
 //
 
@@ -38,7 +38,7 @@ class Blockchain {
      
       //MARK: exchange functions
     
-      func newExchange(exchange: Exchange) {
+      func newExchange(_ exchange: Exchange) {
         intent.append(exchange)
       }
       

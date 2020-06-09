@@ -13,22 +13,34 @@ import Foundation
     
    var blockchain = LinkedList<Block>()
    var balance: Float = 0.0
+   var description: String?
     
     
-   //pending transactions - accessed by Miners
-   var intentions = Array<Exchange>()
-
-    
-    
-    //a pending exchange
-    func intent(to destination: Peer, for amount: Double) {
+    init(balance: Float = 0.0, model: Blockchain){
         
-        let exchange = Exchange(self, destination, amount)
-        intentions.append(exchange)
+        //add references to main network
+        
+        self.blockchain = model.currentChain()
+        self.balance = balance
+        
+        model.newPeer(item: self)
+        
+    }
+    
+    
+    //a pending exchange - private to ensure only the peer instance can send transaction
+    private func intent(to recipient: Peer, for amount: Float, model: inout Blockchain) {
+        
+        if amount <= balance {
+            let exchange = Exchange(self, recipient, amount)
+            model.newExchange(exchange)
+        }
+        
     }
 
-        
+
     
+    //revised balance
     func newBalance(of funds: Float, requester: Miner) {
         self.balance = funds
     }

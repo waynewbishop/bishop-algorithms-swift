@@ -13,13 +13,13 @@ class Exchange {
     
     var to: Peer
     var from: Peer
-    var amount: Double
+    var amount: Float
     var miner: Miner?
     var lastModified: Date
 
     
     //class initialization
-    init(_ from: Peer, _ to: Peer, _ amount: Double) {
+    init(_ from: Peer, _ to: Peer, _ amount: Float) {
         
         self.from = from
         self.to = to

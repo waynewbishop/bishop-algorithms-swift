@@ -11,8 +11,6 @@ import Foundation
 
 public class Block {
     
-    
-    var hash: String?
     var transactions: Array<Exchange>?
     var miner: Miner?
     var lastModified: Date

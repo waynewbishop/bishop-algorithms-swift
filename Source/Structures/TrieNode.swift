@@ -11,8 +11,8 @@ import Foundation
 
 public class TrieNode {
         
-    var tvalue: String?  //Ba
-    var children: Array<TrieNode>  //Bag, Bat..
+    var tvalue: String?  
+    var children: Array<TrieNode>
     var isFinal: Bool
     var level: Int
 
