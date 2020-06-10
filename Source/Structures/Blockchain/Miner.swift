@@ -14,44 +14,62 @@ class Miner {
     
   var blockchain = LinkedList<Block>()
   var description: String?
-  var balance: Float = 0.0
+  private var balance: Float = 0.0
     
     
-    init(balance: Float = 0.0) {
+    init(balance: Float = 0.0, desc: String = "") {
         self.balance = balance
+        self.description = desc
     }
+    
 
+    var bal: Float {
+        return self.balance
+    }
     
     
     //check shared network
    func poll(model: inout Blockchain) {
        
+    
         //obtain pending exchanges
         let plist = model.exchangeList(requester: self)
 
 
         for trans in plist {
-            //TODO: Update balances of senders and receivers.
+            
+            let amount = trans.amount
+            
+            trans.from.removefunds(amount, requester: self)
+            trans.to.addfunds(amount, requester: self)
+            trans.miner = self
         }
+
     
     
         if plist.count > 0 {
             
-            //receive reward for mining block.. update balance..
-            self.balance += model.sendreward(to: self)
+            //mine new block
+            let newblock = self.mineBlock()
+            
+            newblock.transactions = plist
+            newblock.miner = self
+            newblock.description = "test block.."
+            
+            
+            model.updateChain(with: newblock)
 
             
-            //TODO:reset the number of main network transactions.
-            
+            //receive mining reward
+            self.balance += model.sendreward(to: self)
         }
-    
         
     }
     
     
     
     
-    //mine a new block - as part of this
+    //mine a new block - the miner does this as part of their local instance..
     private func mineBlock() -> Block {
         return Block()
     }

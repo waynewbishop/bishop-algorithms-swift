@@ -21,5 +21,41 @@ class BlockTest: XCTestCase {
     }
     
     
+    func testSimpleNetwork() {
+
+        
+        let elliott = Peer(balance: 45, desc: "Elliott", model: blockchain)
+        let karen = Peer(balance: 75, desc: "Karen", model: blockchain)
+        let wayne = Peer(balance: 20, desc: "Wayne", model: blockchain)
+
+        
+        print("elliott: starting balance - \(elliott.bal)")
+        print("karen: starting balance - \(karen.bal)")
+        print("wayne: starting balance -\(wayne.bal)")
+
+        
+        
+        //plan pending exchange
+        karen.intent(to: elliott, for: 20, model: &blockchain)
+
+        
+        //add new miner to the network
+        let rishi = Miner(balance: 5, desc: "rishi")
+
+        
+        //check network for pending transactions
+        rishi.poll(model: &blockchain)
+        
+        
+        print("elliott: ending balance - \(elliott.bal)")
+        print("karen: ending balance - \(karen.bal)")
+        print("wayne: ending balance -\(wayne.bal)")
+
+        
+        //check miner balance
+        print("rishi: ending balance -\(rishi.bal)")
+        
+        
+    }
     
 }

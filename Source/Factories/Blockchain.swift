@@ -68,19 +68,17 @@ class Blockchain {
       }
     
     
+      //update network and participants
       func updateChain(with newblock: Block) {
+        
+        /*
+         note: all peers maintain a reference to the main network blockchain
+         any change in this status is promoted to all participants
+        */
+        
         blockchain.append(newblock)
+        
       }
-          
-
-    
-      //update all participants
-      func updatePeers(with newblock: Block){
-        for p in peers {
-            p.blockchain.append(newblock)
-        }
-      }
-    
-    
+              
         
 }
