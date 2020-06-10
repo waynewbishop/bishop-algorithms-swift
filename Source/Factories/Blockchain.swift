@@ -24,6 +24,7 @@ class Blockchain {
       //entity types
       private var peers = Array<Peer>()
       private var miners = Array<Miner>()
+      private var reward: Float = 20.0
 
 
     
@@ -34,6 +35,7 @@ class Blockchain {
         self.peers.append(item)
       }
 
+    
     
      
       //MARK: exchange functions
@@ -48,24 +50,22 @@ class Blockchain {
       }
     
     
+        
+    
     
       //MARK: mining functions
-      
-      func mineblock(requester: Miner) -> Block {
     
-        print("mining new block..")
-        
-        let newblock = Block()
-        return newblock
+    
+      //send a reward for mining block
+      func sendreward(to requester: Miner) -> Float {
+        return self.reward
       }
-      
  
     
       //return current blockchain
       func currentChain() -> LinkedList<Block> {
           return blockchain
       }
-    
     
     
       func updateChain(with newblock: Block) {

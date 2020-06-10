@@ -16,9 +16,8 @@ import Foundation
    var description: String?
     
     
+    //add references to main network
     init(balance: Float = 0.0, model: Blockchain){
-        
-        //add references to main network
         
         self.blockchain = model.currentChain()
         self.balance = balance
@@ -28,9 +27,10 @@ import Foundation
     }
     
     
-    //a pending exchange - private to ensure only the peer instance can send transaction
+    //a pending exchange - only peer instance can issue transaction
     private func intent(to recipient: Peer, for amount: Float, model: inout Blockchain) {
         
+        //TODO: Debit pending amount from peer balance? 
         if amount <= balance {
             let exchange = Exchange(self, recipient, amount)
             model.newExchange(exchange)
@@ -38,12 +38,6 @@ import Foundation
         
     }
 
-
-    
-    //revised balance
-    func newBalance(of funds: Float, requester: Miner) {
-        self.balance = funds
-    }
     
 }
 
