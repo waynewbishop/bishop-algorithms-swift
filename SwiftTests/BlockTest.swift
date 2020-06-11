@@ -40,7 +40,7 @@ class BlockTest: XCTestCase {
 
         
         //add new miner to the network
-        let rishi = Miner(balance: 5, desc: "rishi")
+        let rishi = Miner(balance: 5, desc: "rishi", model: blockchain)
 
         
         //check network for pending transactions

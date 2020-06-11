@@ -26,7 +26,12 @@ class Blockchain {
       private var miners = Array<Miner>()
       private var reward: Float = 20.0
 
-
+    
+    
+      init() {
+        self.updateChain(with: genesisBlock())
+      }
+    
     
     
       //MARK: peer function
@@ -35,7 +40,6 @@ class Blockchain {
         self.peers.append(item)
       }
 
-    
     
      
       //MARK: exchange functions
@@ -50,25 +54,40 @@ class Blockchain {
       }
     
     
-        
+      func clearExchange(requester: Miner) {
+        intent.removeAll()
+      }
     
     
       //MARK: mining functions
     
-    
-      //send a reward for mining block
-      func sendreward(to requester: Miner) -> Float {
-        return self.reward
+      
+      //empty block
+      func genesisBlock() -> Block {
+        
+        let newblock = Block()
+        newblock.description = "genesis block.."
+        
+        return newblock
       }
- 
+    
+
     
       //return current blockchain
       func currentChain() -> LinkedList<Block> {
           return blockchain
       }
+        
     
     
-      //update network and participants
+      //issue reward for mining block
+      func sendreward(to requester: Miner) -> Float {
+        return self.reward
+      }
+ 
+ 
+    
+      //update network participants
       func updateChain(with newblock: Block) {
         
         /*

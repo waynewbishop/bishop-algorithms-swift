@@ -34,7 +34,7 @@ import Foundation
     
     
     //a pending exchange
-    func intent(to recipient: Peer, for amount: Float, model: inout Blockchain) {
+    func intent(to recipient: Peer, for amount: Float, desc: String = "", model: inout Blockchain) {
         
         if amount <= balance {
             let exchange = Exchange(self, recipient, amount)
