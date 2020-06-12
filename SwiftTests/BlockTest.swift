@@ -27,6 +27,7 @@ class BlockTest: XCTestCase {
         let elliott = Peer(balance: 45, desc: "Elliott", model: blockchain)
         let karen = Peer(balance: 75, desc: "Karen", model: blockchain)
         let wayne = Peer(balance: 20, desc: "Wayne", model: blockchain)
+    
 
         
         print("elliott: starting balance - \(elliott.bal)")

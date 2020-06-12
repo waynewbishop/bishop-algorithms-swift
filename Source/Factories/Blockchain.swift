@@ -20,6 +20,8 @@ class Blockchain {
     
       private var intent = Array<Exchange>()
       private var blockchain = LinkedList<Block>()
+      private var audit = Stack<Audit>()
+ 
     
       //entity types
       private var peers = Array<Peer>()
@@ -50,11 +52,15 @@ class Blockchain {
       
     
       func exchangeList(requester: Miner) -> Array<Exchange> {
+        
+         audit.push(Audit(action: "get exchange list", requester))
          return self.intent
       }
     
     
       func clearExchange(requester: Miner) {
+        
+        audit.push(Audit(action: "clear exchange", requester))
         intent.removeAll()
       }
     
@@ -82,6 +88,8 @@ class Blockchain {
     
       //issue reward for mining block
       func sendreward(to requester: Miner) -> Float {
+        
+        audit.push(Audit(action: "issue reward", requester))
         return self.reward
       }
  
