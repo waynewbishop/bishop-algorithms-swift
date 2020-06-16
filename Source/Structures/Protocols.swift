@@ -8,6 +8,24 @@
 
 import Foundation
 
+/*
+ note: to have this model working means the concept of the Miner as a contrete type goes away.
+ this means all blockchain functions that were exlusive to peers can now be opened by implemented by miners.
+ */
+
+protocol Mineable {
+        
+    var blockchain: LinkedList<Block> {get}
+    var description: String? {get}
+    var balance: Float {get}
+    var miner: Peer? {get}
+    
+    func poll(model: inout Blockchain)
+    func mineBlock() -> Block
+        
+}
+
+
 
 //define computed property - hashSet requirement
 protocol Indexable {

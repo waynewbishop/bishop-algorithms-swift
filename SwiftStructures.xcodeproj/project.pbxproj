@@ -11,6 +11,7 @@
 		DA0C32D41D273ED200F6EE73 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C32D31D273ED200F6EE73 /* Protocols.swift */; };
 		DA151F091D64124E00A3199D /* QuickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA151F081D64124E00A3199D /* QuickTest.swift */; };
 		DA1E6F122492848B00CBA8E3 /* Audit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1E6F112492848B00CBA8E3 /* Audit.swift */; };
+		DA1E6F14249958FF00CBA8E3 /* Mineable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1E6F13249958FF00CBA8E3 /* Mineable.swift */; };
 		DA20DEEC1BE2DAC90032A378 /* FibTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DEEB1BE2DAC90032A378 /* FibTest.swift */; };
 		DA34571419CA3A9000DC871F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE0021119C5677D0035F1A0 /* LinkedList.swift */; };
 		DA3BE1B3235EB69000BB5A35 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3BE1B2235EB69000BB5A35 /* StringTest.swift */; };
@@ -111,6 +112,7 @@
 		DA0C32D31D273ED200F6EE73 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DA151F081D64124E00A3199D /* QuickTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTest.swift; sourceTree = "<group>"; };
 		DA1E6F112492848B00CBA8E3 /* Audit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audit.swift; sourceTree = "<group>"; };
+		DA1E6F13249958FF00CBA8E3 /* Mineable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mineable.swift; sourceTree = "<group>"; };
 		DA20DEEB1BE2DAC90032A378 /* FibTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibTest.swift; sourceTree = "<group>"; };
 		DA3BE1B2235EB69000BB5A35 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
 		DA42DE05217EA32100AC7004 /* Learning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		DAC20BFB1D2730240095B071 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DA1E6F13249958FF00CBA8E3 /* Mineable.swift */,
 				DAC20BFE1D2730C10095B071 /* String.swift */,
 				DAC20C001D2730CC0095B071 /* Int.swift */,
 				DA8C723B1D2732D9006D277E /* Array.swift */,
@@ -519,6 +522,7 @@
 				DA6FC8A11F6DCC6F00618B4C /* BSTree.swift in Sources */,
 				DAC20BFF1D2730C10095B071 /* String.swift in Sources */,
 				DA89E0A220227A0400ED3AF9 /* Blockchain.swift in Sources */,
+				DA1E6F14249958FF00CBA8E3 /* Mineable.swift in Sources */,
 				DA89E09E2022695300ED3AF9 /* Peer.swift in Sources */,
 				DAE0022919C567A40035F1A0 /* LLNode.swift in Sources */,
 				DAE0022B19C567A40035F1A0 /* Edge.swift in Sources */,
