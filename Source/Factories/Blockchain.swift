@@ -17,6 +17,8 @@ class Blockchain {
        any change to shared resources by either type is reflected directly the blockchain.
        */
     
+     //TODO: the balance is maintained as a record on the blockchain. 
+    
     
       private var intent = Array<Exchange>()
       private var blockchain = LinkedList<Block>()
@@ -102,6 +104,7 @@ class Blockchain {
          note: all peers maintain a reference to the main network blockchain
          any change in this status is promoted to all participants
         */
+        
         
         blockchain.append(newblock)
         

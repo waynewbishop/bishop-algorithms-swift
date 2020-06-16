@@ -10,7 +10,10 @@ import Foundation
 
 
 class Miner {
+    
   
+  //TODO: Update Miner model to work as a protocol (and extension). 
+    
     
   var blockchain = LinkedList<Block>()
   var description: String?

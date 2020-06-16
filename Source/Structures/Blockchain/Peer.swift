@@ -13,12 +13,18 @@ import Foundation
     
    private var balance: Float = 0.0
    private var description: String?
+   private var audit = Stack<Audit>()
+    
    var blockchain = LinkedList<Block>()
 
+    
+    //TODO: balance is discovered by iterating through the local blockchain. Computed property??
+    
     
     var bal: Float {
         return self.balance
     }
+    
     
     
     //add references to main network
@@ -48,12 +54,19 @@ import Foundation
     //MARK: Balance actions
     
     
+    //TODO: iterate through the linked list to calculate balances..
+    
+    
     func addfunds(_ amount: Float, requester: Miner) {
+        
+        audit.push(Audit(action: "debit", requester))
         self.balance += amount
     }
     
     
     func removefunds(_ amount: Float, requester: Miner) {
+        
+        audit.push(Audit(action: "credit", requester))
         self.balance -= amount
     }
     
