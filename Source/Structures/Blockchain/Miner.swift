@@ -9,15 +9,12 @@
 import Foundation
 
 
-class Miner {
-    
-  
-  //TODO: Update Miner model to work as a protocol (and extension). 
+class Miner: Blockable {
     
     
-  var blockchain = LinkedList<Block>()
-  var description: String?
-  private var balance: Float = 0.0
+  internal var blockchain = LinkedList<Block>()
+  internal var description: String?
+  internal var balance: Float = 0.0
 
     
     init(balance: Float = 0.0, desc: String = "", model: Blockchain) {

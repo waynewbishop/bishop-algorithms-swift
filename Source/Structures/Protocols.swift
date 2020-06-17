@@ -13,16 +13,13 @@ import Foundation
  this means all blockchain functions that were exlusive to peers can now be opened by implemented by miners.
  */
 
-protocol Mineable {
+protocol Blockable {
         
     var blockchain: LinkedList<Block> {get}
     var description: String? {get}
     var balance: Float {get}
-    var miner: Peer? {get}
-    
-    func poll(model: inout Blockchain)
-    func mineBlock() -> Block
-        
+    var bal: Float {get}
+            
 }
 
 

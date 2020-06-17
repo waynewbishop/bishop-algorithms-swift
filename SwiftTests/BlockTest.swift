@@ -29,11 +29,11 @@ class BlockTest: XCTestCase {
         let wayne = Peer(balance: 20, desc: "Wayne", model: blockchain)
     
 
-        
+        /*
         print("elliott: starting balance - \(elliott.bal)")
         print("karen: starting balance - \(karen.bal)")
         print("wayne: starting balance -\(wayne.bal)")
-
+        */
         
         
         //plan pending exchange

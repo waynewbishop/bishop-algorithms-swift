@@ -45,7 +45,7 @@ class ClosureTest: XCTestCase {
         }
         
         //display filtered results
-        results.printAllKeys()
+        results.listkeys()
         
         if results.count == linkedList.count {
             XCTFail("linked list not filtered..")
@@ -64,7 +64,7 @@ class ClosureTest: XCTestCase {
         let results: LinkedList<Int>! = linkedList.filter(filterFormula)
         
         //print results
-        results.printAllKeys()
+        results.listkeys()
         
         if results.count == linkedList.count {
             XCTFail("linked list not filtered..")
@@ -107,7 +107,7 @@ class ClosureTest: XCTestCase {
 
         
         //print results
-        results.printAllKeys()
+        results.listkeys()
 
         
         //iterate and compare values
@@ -137,7 +137,7 @@ class ClosureTest: XCTestCase {
         let results: LinkedList<Int>! = linkedList.map(mapFormula)
         
         //print results
-        results.printAllKeys()
+        results.listkeys()
 
         
         //iterate and compare values

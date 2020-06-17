@@ -79,7 +79,7 @@ class LinkedTest: XCTestCase {
         
         
         list.insert(testPair.key, at: testPair.index)
-        list.printAllKeys()
+        list.listkeys()
         
         
         let current = list[testPair.index]
@@ -92,7 +92,7 @@ class LinkedTest: XCTestCase {
         
         //remove test item
         list.remove(at: testPair.index)
-        list.printAllKeys()
+        list.listkeys()
         
         
         //retrieve value at same position
@@ -123,7 +123,7 @@ class LinkedTest: XCTestCase {
         
         //reverse the list
         list.reverse()
-        list.printAllKeys()
+        list.listkeys()
         
         
         if let blink = list[0] {
@@ -148,9 +148,9 @@ class LinkedTest: XCTestCase {
         for number in numberList {
             list.append(number)
         }
+
         
-        
-       list.printAllKeys()
+       list.listkeys()
        XCTAssertFalse(list.count != numberList.count, "test failed: linked list count doesn't match number list..")
         
        return list

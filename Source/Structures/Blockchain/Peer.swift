@@ -9,20 +9,39 @@
 import Foundation
 
 
- class Peer {
+class Peer: Blockable {
+
     
-   private var balance: Float = 0.0
-   private var description: String?
-   private var audit = Stack<Audit>()
+   internal var balance: Float = 0.0
+   internal var description: String?
+   internal var audit = Stack<Audit>()
+
     
    var blockchain = LinkedList<Block>()
 
     
-    //TODO: balance is discovered by iterating through the local blockchain. Computed property??
-    
-    
     var bal: Float {
-        return self.balance
+        
+        //calculate my balance
+        
+        let blocks = blockchain.keys
+        var value: Float = 0.0
+        
+        for b in blocks {
+            if let exchanges = b.transactions {
+                for e in exchanges {
+                    if e.from.description == self.description {
+                        value -= e.amount
+                    }
+                   
+                    if e.to.description == self.description {
+                        value += e.amount
+                    }
+                }
+            }
+        }
+        
+        return value
     }
     
     

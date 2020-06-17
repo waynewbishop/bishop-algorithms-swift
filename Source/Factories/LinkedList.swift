@@ -30,6 +30,24 @@ class LinkedList<T> {
            return find(at: index)
         }
     }
+
+    
+    //returns all keys
+    var keys: Array<T> {
+        
+        var current: LLNode? = head
+        var results = Array<T>()
+        
+        while let item = current {
+            if let tvalue = item.tvalue {
+                results.append(tvalue)
+            }
+            current = item.next
+        }
+        
+        return results
+    }
+    
     
     
     //empty list check
@@ -74,7 +92,7 @@ class LinkedList<T> {
 
     
     //print all keys for the class
-    func printAllKeys() {
+    func listkeys() {
         
         //a dictionary - O(1)
         
