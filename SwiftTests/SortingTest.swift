@@ -39,6 +39,14 @@ class SortingTest: XCTestCase, Sortable {
     }
     
     
+    func testlemonade() {
+        let bills = [5,5,10,10,20]
+        
+        let result = bills.lemonadeChange(bills: bills)
+        print(result)
+    }
+    
+    
     func testBackwardsSequence() {
         
         guard let results = numberList.backwards() else {

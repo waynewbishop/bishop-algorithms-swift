@@ -8,18 +8,13 @@
 
 import Foundation
 
-/*
- note: to have this model working means the concept of the Miner as a contrete type goes away.
- this means all blockchain functions that were exlusive to peers can now be opened by implemented by miners.
- */
 
-protocol Blockable {
+//peers and miners share blockchain membership
+protocol Member {
         
     var blockchain: LinkedList<Block> {get}
-    var description: String? {get}
-    var balance: Float {get}
+    var desc: String? {get}
     var bal: Float {get}
-            
 }
 
 

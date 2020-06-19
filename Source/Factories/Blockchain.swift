@@ -17,8 +17,6 @@ class Blockchain {
        any change to shared resources by either type is reflected directly the blockchain.
        */
     
-     //TODO: the balance is maintained as a record on the blockchain. 
-    
     
       private var intent = Array<Exchange>()
       private var blockchain = LinkedList<Block>()
@@ -26,8 +24,7 @@ class Blockchain {
  
     
       //entity types
-      private var peers = Array<Peer>()
-      private var miners = Array<Miner>()
+      private var members = Array<Member>()
       private var reward: Float = 20.0
 
     
@@ -38,10 +35,10 @@ class Blockchain {
     
     
     
-      //MARK: peer function
+      //MARK: member function (e.g. peer or miner)
     
-      func newPeer(item: Peer) {
-        self.peers.append(item)
+      func newMember(item: Member) {
+        self.members.append(item)
       }
 
     
@@ -101,7 +98,7 @@ class Blockchain {
       func updateChain(with newblock: Block) {
         
         /*
-         note: all peers maintain a reference to the main network blockchain
+         note: all members maintain a reference to the main network blockchain
          any change in this status is promoted to all participants
         */
         

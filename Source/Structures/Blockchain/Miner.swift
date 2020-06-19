@@ -9,26 +9,28 @@
 import Foundation
 
 
-class Miner: Blockable {
+class Miner: Member {
     
     
   internal var blockchain = LinkedList<Block>()
-  internal var description: String?
-  internal var balance: Float = 0.0
+  internal var desc: String?
 
     
-    init(balance: Float = 0.0, desc: String = "", model: Blockchain) {
+    init(balance: Float = 0.0, desc: String = "", model: inout Blockchain) {
         
-        self.balance = balance
-        self.description = desc
+        self.desc = desc
         self.blockchain = model.currentChain()
-    }
-    
+        
+        
+        let sBalance = Exchange(nil, self, balance, "starting balance..")
+        model.newExchange(sBalance)
 
-    var bal: Float {
-        return self.balance
+               
+        //send reference
+        model.newMember(item: self)
+        
     }
-    
+        
     
     //check shared network
    func poll(model: inout Blockchain) {
@@ -39,21 +41,17 @@ class Miner: Blockable {
 
     
         if plist.count > 0 {
-            
-            
-            for trans in plist {
-                
-                let amount = trans.amount
 
-                //TODO: recheck funds availability before removal..perhaps this function needs to ba boolean..
-                trans.from.removefunds(amount, requester: self)
-                trans.to.addfunds(amount, requester: self)
+            
+            //add audit to transactions
+            for trans in plist {
                 trans.miner = self
             }
             
             
             //mine new block
             let newblock = self.mineBlock()
+            
             
             newblock.transactions = plist
             newblock.miner = self
@@ -67,8 +65,14 @@ class Miner: Blockable {
             model.clearExchange(requester: self)
 
             
-            //receive mining reward
-            self.balance += model.sendreward(to: self)
+            //receive reward
+            let amount = model.sendreward(to: self)
+
+            
+            //publish intent
+            let reward = Exchange(nil, self, amount, "mining reward..")
+            model.newExchange(reward)
+            
         }
         
     }

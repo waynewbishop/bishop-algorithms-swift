@@ -10,6 +10,24 @@ import Foundation
 
 
 extension Array where Element: Comparable {
+    
+    
+    //the function is greedy because it doesn't consider having a larger till to accept larger quantities.
+    func lemonadeChange(bills: Array<Int>) -> Bool {
+        
+        
+        /*
+        var till = Priority<Int>()
+        var currency = [Int]()
+        let price: Int = 5
+        
+       
+        return false
+        */
+        
+        return false 
+    }
+
         
     
     //find the length of the longest sub-sequence

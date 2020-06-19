@@ -24,24 +24,39 @@ class BlockTest: XCTestCase {
     func testSimpleNetwork() {
 
         
-        let elliott = Peer(balance: 45, desc: "Elliott", model: blockchain)
-        let karen = Peer(balance: 75, desc: "Karen", model: blockchain)
-        let wayne = Peer(balance: 20, desc: "Wayne", model: blockchain)
-    
-
-        /*
-        print("elliott: starting balance - \(elliott.bal)")
-        print("karen: starting balance - \(karen.bal)")
-        print("wayne: starting balance -\(wayne.bal)")
-        */
-        
-        
-        //plan pending exchange
-        karen.intent(to: elliott, for: 20, model: &blockchain)
+        let elliott = Peer(balance: 45, desc: "Elliott", model: &blockchain)
+        let karen = Peer(balance: 75, desc: "Karen", model: &blockchain)
+        let wayne = Peer(balance: 20, desc: "Wayne", model: &blockchain)
 
         
         //add new miner to the network
-        let rishi = Miner(balance: 5, desc: "rishi", model: blockchain)
+        let phil = Miner(balance: 5, desc: "phil", model: &blockchain)
+
+                
+        //check network for pending transactions
+        phil.poll(model: &blockchain)
+        
+        
+        print("elliott: starting balance: \(elliott.bal)")
+        print("karen: starting balance: \(karen.bal)")
+        print("wayne: starting balance: \(wayne.bal)")
+        
+        
+        //check miner balance
+         print("phil: starting balance: \(phil.bal)")
+        
+        
+        
+        
+        
+        
+        //plan pending exchange
+        karen.intent(from: karen, to: elliott, for: 20, desc: nil, model: &blockchain)
+
+        
+        
+        //add new miner to the network
+        let rishi = Miner(balance: 5, desc: "rishi", model: &blockchain)
 
         
         //check network for pending transactions
