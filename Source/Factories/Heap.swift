@@ -18,7 +18,7 @@ import Foundation
 class Heap<T: Comparable> {
     
     
-    private var items: Array<T>
+    var items: Array<T>
     private var heapType: HeapType
     
     
@@ -27,6 +27,12 @@ class Heap<T: Comparable> {
         
         items = Array<T>()
         heapType = type
+    }
+    
+    
+    //entire list
+    var sequence: Array<T> {
+        return self.items
     }
     
     

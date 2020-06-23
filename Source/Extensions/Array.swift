@@ -13,19 +13,70 @@ extension Array where Element: Comparable {
     
     
     //the function is greedy because it doesn't consider having a larger till to accept larger quantities.
-    func lemonadeChange(bills: Array<Int>) -> Bool {
-        
+    func lemonadeChange() -> Bool {
+    
+        let till = Heap<Int>(type: .Max)
+        let price: Int = 5
+        var change: Int = 0
+        let currency = [20, 10, 5]
+        var returned: Int = 0
+
         
         /*
-        var till = Priority<Int>()
-        var currency = [Int]()
-        let price: Int = 5
+         note: the goal of the model is to intepret the model of a cash register (e.g. till).
+         as such, we need to determine what should be correct change, and then determine
+         if we have the correct quanties of bills to give correct change.
+         */
+            
+        let sequence = self as? Array<Int>
         
-       
-        return false
-        */
+        if let bills = sequence {
+            
+            for b in bills {
+                
+                    //add to till
+                    till.enQueue(b)
+                    
+                    //calculate change
+                    change = b - price
+                    
+                    //reset change provided
+                    returned = 0
+
+                    
+                    if change == 0 {
+                        print("correct change found..")
+                        continue
+                    }
+                    else {
+                                        
+                        //determine if correct change can be provided
+                        for (index, item) in till.items.enumerated() {
+                            if (item <= change) && (currency.contains(item)) {
+                                    returned +=  item
+                                    till.items.remove(at: index)
+                            }
+                            
+                            if returned == change {
+                                print("correct change found..")
+                                break
+                            }
+                            
+                        } //end for
+                        
+                    } //end if
+                
+                } //end for
+        }
         
-        return false 
+        //all bills checked..
+        if returned == change {
+            return true
+        }
+        else {
+            return false
+        }
+        
     }
 
         

@@ -40,9 +40,12 @@ class SortingTest: XCTestCase, Sortable {
     
     
     func testlemonade() {
-        let bills = [5,5,10,10,20]
+        //let bills = [5,5,10,10,20]
+        //let bills = [5, 10, 20]
+        let bills = [5,5,5,10,20]
+         //bills = [10,10]
         
-        let result = bills.lemonadeChange(bills: bills)
+        let result = bills.lemonadeChange()
         print(result)
     }
     

@@ -13,8 +13,6 @@ import XCTest
 
 class BlockTest: XCTestCase {
     
-    var blockchain = Blockchain()
-    
     
     override func setUp() {
         super.setUp()
@@ -24,17 +22,37 @@ class BlockTest: XCTestCase {
     func testSimpleNetwork() {
 
         
-        let elliott = Peer(balance: 45, desc: "Elliott", model: &blockchain)
-        let karen = Peer(balance: 75, desc: "Karen", model: &blockchain)
-        let wayne = Peer(balance: 20, desc: "Wayne", model: &blockchain)
+        var blockchain = Blockchain()
+        
+        
+        /*
+         note: add new members to the network. starting balances are posted
+         pending transactions that are eventually added to the blockchain.
+         */
+        
+        let elliott = Peer(balance: 45, desc: "elliott", model: &blockchain)
+        let karen = Peer(balance: 75, desc: "karen", model: &blockchain)
+        let wayne = Peer(balance: 20, desc: "wayne", model: &blockchain)
 
         
-        //add new miner to the network
+        
+        /*
+         note: peers and miners participate as "members" in the same network.
+         using the common member protocol.
+         */
+        
         let phil = Miner(balance: 5, desc: "phil", model: &blockchain)
 
+        
+        /*
+         this miner will process the opening peer opening balances and will
+         receive a reward for mining a new block. Their reward is posted as
+         another network pending transaction that will be processed when the next
+         block is created.
+         */
                 
-        //check network for pending transactions
         phil.poll(model: &blockchain)
+        
         
         
         print("elliott: starting balance: \(elliott.bal)")
@@ -42,10 +60,8 @@ class BlockTest: XCTestCase {
         print("wayne: starting balance: \(wayne.bal)")
         
         
-        //check miner balance
+         //check miner balance
          print("phil: starting balance: \(phil.bal)")
-        
-        
         
         
         
@@ -55,21 +71,28 @@ class BlockTest: XCTestCase {
 
         
         
-        //add new miner to the network
+        //add a second miner to the network
         let rishi = Miner(balance: 5, desc: "rishi", model: &blockchain)
 
         
-        //check network for pending transactions
+        /*
+         note: check network for pending transactions. these transactions
+         will include the 20 coin transfer to elliott as well as mining reward originally
+         send to phil.
+        */
+        
         rishi.poll(model: &blockchain)
         
         
-        print("elliott: ending balance - \(elliott.bal)")
-        print("karen: ending balance - \(karen.bal)")
-        print("wayne: ending balance -\(wayne.bal)")
+        print("elliott: ending balance: \(elliott.bal)")
+        print("karen: ending balance: \(karen.bal)")
+        print("wayne: ending balance: \(wayne.bal)")
 
         
+        
         //check miner balance
-        print("rishi: ending balance -\(rishi.bal)")
+        print("phil: ending balance: \(phil.bal)")
+        print("rishi: ending balance: \(rishi.bal)")
         
         
     }
