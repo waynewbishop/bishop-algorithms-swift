@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreML
 
 typealias AEClassifierResult = String
 
@@ -20,8 +21,17 @@ class Learning {
     
     
     func AEPredict(using statement: String) -> AEClassifierResult? {
-
-        let model = AEClassifier()
+        
+        let model: AEClassifier = {
+            do {
+                let config = MLModelConfiguration()
+                return try AEClassifier(configuration: config)
+            } catch {
+                print(error)
+                fatalError("Couldn't create SleepCalculator")
+            }
+        }()
+        
         
         guard let prediction = try? model.prediction(text: statement) else {
             fatalError("Unexpected runtime error.")
